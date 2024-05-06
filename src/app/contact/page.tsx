@@ -6,6 +6,8 @@ import Contact2 from "../../../public/images/Contact2.webp";
 import Contact3 from "../../../public/images/Contact3.webp";
 import Contact4 from "../../../public/images/Contact4.webp";
 
+import Logo from "../../../public/images/logo.webp";
+
 function page() {
   return (
     <section className="bg-gradient">
@@ -37,6 +39,24 @@ function page() {
             <Image src={Contact4} alt="Contact_2" className="object-cover" />
           </div>
         </div>
+      </div>
+
+      <div className="pb-20 flex justify-center items-center gap-4 max-w-[700px] w-full mx-auto">
+        <div>
+          <Image src={Logo} alt="fielmente-logo" width={180} height={40} />
+        </div>
+        <form action="" className="w-full">
+          <div className="bg-white rounded-full w-full flex gap-20 items-center">
+            <input
+              type="text"
+              placeholder="Enter you email for updates"
+              className="w-full px-5 py-5 text-lg outline-none text-black rounded-full"
+            />
+            <button className="bg-blue-dark px-6 py-5 rounded-full text-lg">
+              SUBSCRIBE
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );
