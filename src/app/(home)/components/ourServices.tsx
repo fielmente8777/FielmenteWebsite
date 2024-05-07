@@ -41,7 +41,7 @@ export const ServiceCard = ({ title, Icon }: OurServiceProsData) => {
   return (
     <div className="bg-white rounded-xl w-[170px] flex flex-col gap-4 items-center p-3">
       <div>{Icon}</div>
-      <h2 className="text-xl text-blue-dark text-center font-normal capitalize">
+      <h2 className="md:text-xl text-lg text-blue-dark text-center font-normal capitalize">
         {title}
       </h2>
     </div>

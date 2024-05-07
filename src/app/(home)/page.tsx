@@ -51,10 +51,10 @@ export default function Home() {
       </div>
 
       {/* Looking for Best Hotel***** */}
-      <div className="py-20">
+      <div className="py-20 px-6">
         <div className="max-w-[920px] mx-auto bg-blue-dark px-20 py-16 grid md:grid-cols-5 gap-8 items-center rounded-3xl">
           <div className="md:col-span-4">
-            <h2 className="text-4xl">
+            <h2 className="md:text-4xl text-3xl">
               Looking for the India’s Best Hotel Marketing{" "}
               <span className="text-orange-primary">Agency?</span>
             </h2>

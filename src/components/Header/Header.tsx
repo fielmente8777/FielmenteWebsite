@@ -15,7 +15,7 @@ const Header = () => {
         {/* Logo Container***** */}
         <Link
           href={"/"}
-          className="relative max-w-[164px] w-full aspect-[4/1.2]"
+          className="relative max-w-[164px] w-full aspect-[4/1.3]"
         >
           <Image
             src={Logo}
@@ -23,7 +23,7 @@ const Header = () => {
             priority={true}
             fill
             className="object-contain"
-            sizes="160px"
+            // sizes="160px"
           />
         </Link>
 
@@ -69,7 +69,7 @@ const Header = () => {
         </div> */}
 
         {/* Contact Container***** */}
-        <div className="flex gap-6 items-center">
+        <div className="hidden sm:flex gap-6 items-center">
           <Link
             href={`mailto:sachin@fielmente.com`}
             className="text-lg flex items-center gap-2 text-blue-dark"
@@ -79,7 +79,7 @@ const Header = () => {
           </Link>
           <Link
             href={"tel:+919501868775 "}
-            className="flex items-center text-orange-500 text-lg border border-[var(--primary-orange)] rounded-lg px-5 py-4"
+            className="flex items-center text-orange-500 text-lg border border-[var(--primary-orange)] rounded-lg md:px-5 px-3 md:py-4 py-2"
           >
             <OutlinePhoneIcon /> +919501868775
           </Link>

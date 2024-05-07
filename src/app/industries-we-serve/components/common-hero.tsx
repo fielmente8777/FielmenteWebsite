@@ -1,66 +1,53 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
-import HotelLuxury from "../../../../public/images/rich-luxury-modern-residential.webp";
 
 export interface AccordingDataPropsTypes {
   question: string;
   answer: string;
 }
 
-const Data = [
-  {
-    question: "What is digital marketing?",
-    answer:
-      "Digital marketing is all about promoting products, services, or brands using online platforms, strategies, and tools. It surrounds various channels like social media, email, search engines, and websites to reach and engage target audiences. Its main aim is to increase awareness, conversions, and business growth.",
-  },
-  {
-    question: "What is digital marketing?",
-    answer:
-      "Digital marketing is all about promoting products, services, or brands using online platforms, strategies, and tools. It surrounds various channels like social media, email, search engines, and websites to reach and engage target audiences. Its main aim is to increase awareness, conversions, and business growth.",
-  },
-  {
-    question: "What is digital marketing?",
-    answer:
-      "Digital marketing is all about promoting products, services, or brands using online platforms, strategies, and tools. It surrounds various channels like social media, email, search engines, and websites to reach and engage target audiences. Its main aim is to increase awareness, conversions, and business growth.",
-  },
-  {
-    question: "What is digital marketing?",
-    answer:
-      "Digital marketing is all about promoting products, services, or brands using online platforms, strategies, and tools. It surrounds various channels like social media, email, search engines, and websites to reach and engage target audiences. Its main aim is to increase awareness, conversions, and business growth.",
-  },
-  {
-    question: "What is digital marketing?",
-    answer:
-      "Digital marketing is all about promoting products, services, or brands using online platforms, strategies, and tools. It surrounds various channels like social media, email, search engines, and websites to reach and engage target audiences. Its main aim is to increase awareness, conversions, and business growth.",
-  },
-  {
-    question: "What is digital marketing?",
-    answer:
-      "Digital marketing is all about promoting products, services, or brands using online platforms, strategies, and tools. It surrounds various channels like social media, email, search engines, and websites to reach and engage target audiences. Its main aim is to increase awareness, conversions, and business growth.",
-  },
-];
+export interface CommonHeroPros {
+  direction?: string;
+  data: {
+    title?: string;
+    subtitle?: string;
+    image: {
+      src: StaticImageData;
+      alt: string;
+    };
+    faq: {
+      question: string;
+      answer: string;
+    }[];
+  };
+}
 
-function CommonHero() {
+function CommonHero({ direction, data }: CommonHeroPros) {
   return (
     <section>
-      <h2 className="text-black text-center text-5xl font-bold">
-        Why Your Hotel need to Go Online
+      <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
+        {data.title}
       </h2>
-      <div className="grid grid-cols-5 items-center mt-20">
-        <div className="col-span-2 w-full aspect-[4/4]">
-          <Image src={HotelLuxury} alt="luxury-hotel" />
+      <div className="grid lg:grid-cols-5 gap-6 items-center md:mt-20 mt-10">
+        <div
+          className={`lg:col-span-2 col-span-1 w-full flex ${
+            direction
+              ? "lg:justify-end justify-center"
+              : "lg:justify-start justify-center"
+          } ${direction && "order-2 "}`}
+        >
+          <Image
+            src={data.image.src}
+            alt={data.image.alt}
+            className="object-cover"
+          />
         </div>
-        <div className="col-span-3">
-          <p className="text-black text-lg">
-            Unshackle your hotel business’s full potential online! Elevate
-            success with India’s top hospitality consultants and the best
-            hospitality digital marketing agency. Discover the industries we
-            serve and seize growth today!
-          </p>
+        <div className={`lg:col-span-3 col-span-1 ${direction && "order-1"}`}>
+          <p className="text-black text-lg">{data.subtitle}</p>
           <div className="mt-16">
-            <Accordin Data={Data} />
+            <Accordin Data={data.faq} />
           </div>
         </div>
       </div>

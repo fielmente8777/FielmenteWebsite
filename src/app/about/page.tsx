@@ -36,7 +36,7 @@ function About() {
 
       <div className="py-20 bg-blue-dark">
         <div className="max-width">
-          <Form />
+          <Form title={"Get a free audit report"} />
         </div>
       </div>
     </div>

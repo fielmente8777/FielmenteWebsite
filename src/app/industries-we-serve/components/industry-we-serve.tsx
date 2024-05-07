@@ -4,11 +4,11 @@ import React from "react";
 function IndustryWeServe() {
   return (
     <div>
-      <div className="flex flex-col gap-8 items-center">
-        <h2 className="text-black text-6xl font-semibold">
+      <div className="flex flex-col md:gap-8 gap-4 items-center">
+        <h2 className="text-black md:text-6xl text-3xl font-semibold">
           Industries We Serve
         </h2>
-        <p className="text-black text-xl font-semibold ">
+        <p className="text-black text-center md:text-xl text-lg font-semibold ">
           Hospitality Marketing Agency with over 10+ Years of Experience in the
           industries we serve
         </p>
@@ -20,10 +20,10 @@ function IndustryWeServe() {
         </Link>
       </div>
 
-      <div className="grid grid-cols-3 gap-8 mt-20">
+      <div className="lg:grid grid-cols-3 gap-8 md:mt-20 mt-10">
         <div className="h-5 bg-white border rounded-xl border-gray-300"></div>
-        <div className="h-5 bg-white border rounded-xl border-gray-300 mt-10"></div>
-        <div className="h-5 bg-white border rounded-xl border-gray-300 mt-20"></div>
+        <div className="h-5 bg-white border rounded-xl border-gray-300 lg:mt-10 mt-8"></div>
+        <div className="h-5 bg-white border rounded-xl border-gray-300 lg:mt-20 mt-8"></div>
       </div>
     </div>
   );

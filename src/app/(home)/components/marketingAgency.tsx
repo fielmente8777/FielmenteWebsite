@@ -5,7 +5,7 @@ function MarketingAgency() {
     <section className="grid lg:grid-cols-2 gap-10">
       {/* Left Content**** */}
       <div className="flex flex-col gap-6">
-        <h2 className="text-6xl w-[90%] font-medium">
+        <h2 className="md:text-6xl text-4xl w-[90%] font-medium">
           Work with the India’s Best Hotel Marketing{" "}
           <span className="text-orange-primary font-bold">Agency</span>
         </h2>
@@ -13,7 +13,7 @@ function MarketingAgency() {
           Transforming hotels & restaurants into thriving destinations with our
           expert hospitality marketing solutions.
         </p>
-        <div className="flex items-center gap-8">
+        <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">
           <p className="text-lg flex items-center gap-5">
             Trusted by leading brands: <GoogleIcon />
           </p>
@@ -31,7 +31,7 @@ function MarketingAgency() {
 
 export const ConsulationForm = () => {
   return (
-    <form className="min-w-[330px] bg-gray-50 rounded-lg flex flex-col gap-8 px-6 py-8">
+    <form className="md:min-w-[330px] bg-gray-50 rounded-lg flex flex-col gap-8 px-6 py-8">
       <h2 className="text-blue-dark capitalize text-3xl font-normal">
         Get A FREE Consultation!
       </h2>
@@ -39,7 +39,7 @@ export const ConsulationForm = () => {
         <FillUserIcon />
         <input
           type="text"
-          className="outline-none text-black text-lg font-medium"
+          className="outline-none text-black sm:text-lg font-medium"
           placeholder="Your Name*"
         />
       </div>
@@ -47,7 +47,7 @@ export const ConsulationForm = () => {
         <FillPhoneIcon />
         <input
           type="text"
-          className="outline-none text-black text-lg font-medium"
+          className="outline-none text-black sm:text-lg font-medium"
           placeholder="Phone Number*"
         />
       </div>
@@ -55,7 +55,7 @@ export const ConsulationForm = () => {
         <FillMail />
         <input
           type="text"
-          className="outline-none text-black text-lg font-medium"
+          className="outline-none text-black sm:text-lg font-medium"
           placeholder="Email*"
         />
       </div>
@@ -63,7 +63,7 @@ export const ConsulationForm = () => {
         <FillMessage />
         <input
           type="text"
-          className="outline-none text-black text-lg font-medium"
+          className="outline-none text-black sm:text-lg font-medium"
           placeholder="Message*"
         />
       </div>
