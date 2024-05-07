@@ -71,8 +71,8 @@ function CommonHero() {
 export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   return (
     <div className=" flex flex-col gap-5">
-      {Data.map((item) => (
-        <AccordinContent {...item} />
+      {Data.map((item, index) => (
+        <AccordinContent {...item} key={index} />
       ))}
     </div>
   );

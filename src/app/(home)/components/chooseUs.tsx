@@ -21,8 +21,8 @@ function ChooseUs() {
     <div>
       <SectionHeading {...SectionHeadingDetails} />
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-16 mt-16">
-        {ChooseUsData.map((item) => (
-          <ChooseUsCard {...item} />
+        {ChooseUsData.map((item, index) => (
+          <ChooseUsCard {...item} key={index} />
         ))}
       </div>
     </div>

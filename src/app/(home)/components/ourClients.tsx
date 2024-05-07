@@ -51,8 +51,8 @@ function OurClients() {
     <div>
       <SectionHeading {...SectionHeadingDetails} />
       <div className="mt-16 grid lg:grid-cols-7 gap-y-8 md:grid-cols-4 ">
-        {ClientImages.map((item) => (
-          <div className="relative w-full aspect-[4/3.7]">
+        {ClientImages.map((item, index) => (
+          <div className="relative w-full aspect-[4/3.7]" key={index}>
             <Image
               src={item.src}
               alt={`${item.alt}`}

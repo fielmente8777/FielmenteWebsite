@@ -53,7 +53,7 @@ function HotelPerformacne() {
       <SectionHeading {...SectionHeadingDetails} />
       <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-16 mt-16">
         {HotelPerormaceData.map((item, index) => (
-          <HotelPerfomaceCard {...item} index={index} />
+          <HotelPerfomaceCard {...item} index={index} key={index} />
         ))}
       </div>
 

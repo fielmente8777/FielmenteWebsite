@@ -20,8 +20,8 @@ function OurServices() {
     <div>
       <SectionHeading {...SectionHeadingDetails} />
       <div className="flex flex-wrap gap-6 justify-center mt-16">
-        {Services.map((item) => (
-          <ServiceCard {...item} />
+        {Services.map((item, index) => (
+          <ServiceCard {...item} key={index} />
         ))}
       </div>
 

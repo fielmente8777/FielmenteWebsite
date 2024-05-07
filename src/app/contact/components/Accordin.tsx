@@ -65,8 +65,8 @@ function AccordinSection() {
 export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   return (
     <div className="grid md:grid-cols-2 gap-16">
-      {Data.map((item) => (
-        <AccordinContent {...item} />
+      {Data.map((item, index) => (
+        <AccordinContent {...item} key={index} />
       ))}
     </div>
   );
