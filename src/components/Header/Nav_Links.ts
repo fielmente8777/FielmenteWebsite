@@ -5,11 +5,11 @@ export const Nav_Links = [
   },
   {
     linkName: "Industry we serve",
-    src: "/",
+    src: "/industries-we-serve",
     subLinks: [
       {
         linkName: "Hotel Marketing",
-        src: "/",
+        src: "/industries-we-serve/hotel-marketing-agency",
       },
       {
         linkName: "Restaurant Marketing",
