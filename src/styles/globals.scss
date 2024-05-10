@@ -8,8 +8,8 @@
     --black:#1D1D1D;
     --shadow: 0px 0px 20px rgb(153, 152, 152);
     --primary-orange:#F26633;
-    --gradient:linear-gradient(120deg,#EBF3F9,#E4F2EE,#FFFAEE)
-    --gradient-second:linear-gradient(120deg,#ECF2FB,#E4F2EE,#FFFFFF)
+    --gradient:linear-gradient(120deg,#e5f2ef,#E4F2EE,#FFFAEE)
+    --gradient-second:linear-gradient(120deg,#e5f2ef,#E4F2EE,#FFFFFF)
     
 }
 
@@ -19,7 +19,7 @@ body{
 }
 .bg-gradient{
     // background: var(--gradient)
-    background: linear-gradient(180deg,#EBF3F9,#E4F2EE,#FFFAEE,#ffffff);
+    background: linear-gradient(180deg,#e5f2ef,#E4F2EE,#FFFAEE,#ffffff);
 }
 
 .bg-gradient-second{

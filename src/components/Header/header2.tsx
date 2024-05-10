@@ -1,14 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "./Header.scss";
 import Link from "next/link";
 import { Nav_Links } from "./Nav_Links";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.webp";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 import { FaPhone } from "react-icons/fa6";
+import MobileNav from "./MobileNav";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Header2 = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header>
       <nav className="max-width nav-bar-container">
@@ -33,13 +37,21 @@ const Header2 = () => {
             return (
               <div key={Index} className="flex items-center gap-6">
                 <div className="links">
-                  <Link href={Links.src}>{Links.linkName}</Link>
+                  <Link href={Links.src} className="flex items-center gap-2">
+                    {Links.linkName} {Links.subLinks && <TiArrowSortedDown />}
+                  </Link>
                   {Links.subLinks && (
                     <ul className="sub-links-container">
                       {Links.subLinks.map((SubLinks, Index) => {
                         return (
                           <li key={Index} className="sub-links">
-                            <Link href={SubLinks.src}>{SubLinks.linkName}</Link>
+                            <Link
+                              href={SubLinks.src}
+                              className="flex items-center gap-2"
+                            >
+                              {SubLinks.linkName}{" "}
+                              {SubLinks.subLinks && <TiArrowSortedDown />}
+                            </Link>
                             {SubLinks.subLinks && (
                               <ul className="child-sub-links-container">
                                 {SubLinks.subLinks.map((SubLinks, Index) => {
@@ -75,12 +87,22 @@ const Header2 = () => {
             <FaPhone size={16} /> +919501868775
           </Link>
         </div>
+
+        <div
+          className="lg:hidden"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          <AiOutlineMenu className="text-black" size={25} />
+        </div>
       </nav>
 
       {/* Bottom underline******* */}
       <hr className="bg-gray-200 h-[0.18rem] w-[95%] mx-auto" />
 
       {/* Mobile nav-bar***** */}
+      <MobileNav setIsOpen={setIsOpen} isOpen={isOpen} />
     </header>
   );
 };

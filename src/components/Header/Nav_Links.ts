@@ -1,7 +1,7 @@
 export const Nav_Links = [
   {
-    linkName: "Home",
-    src: "/",
+    linkName: "About",
+    src: "/about",
   },
   {
     linkName: "Industry we serve",
@@ -13,11 +13,11 @@ export const Nav_Links = [
       },
       {
         linkName: "Restaurant Marketing",
-        src: "/",
+        src: "/industries-we-serve/restaurant-marketing-agency/",
         subLinks: [
           {
             linkName: "Restaurant Social Media",
-            src: "/about",
+            src: "/industries-we-serve/restaurant-marketing-agency/restaurant-social-media/",
           },
         ],
       },
@@ -27,7 +27,7 @@ export const Nav_Links = [
         subLinks: [
           {
             linkName: "Restaurant Social Media",
-            src: "/about",
+            src: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media/",
           },
         ],
       },
@@ -35,7 +35,7 @@ export const Nav_Links = [
   },
   {
     linkName: "Hotel | Marketing",
-    src: "/",
+    src: "/industries-we-serve/hotel-marketing-agency",
     subLinks: [
       {
         linkName: "Industry we serve",
