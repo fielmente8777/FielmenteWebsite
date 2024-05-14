@@ -57,7 +57,7 @@ export const Nav_Links = [
   },
   {
     linkName: "services",
-    src: "/",
+    src: "/hospitality-marketing-services/",
     subLinks: [
       {
         linkName: " Socail Media Marketing",
@@ -68,8 +68,8 @@ export const Nav_Links = [
         src: "/hospitality-marketing-services/seo-agency/",
       },
       {
-        linkName: "Hotel SEO",
-        src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
+        linkName: "Paid Ad Campagins",
+        src: "/hospitality-marketing-services/google-ads-agency/",
       },
     ],
   },

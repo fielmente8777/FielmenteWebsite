@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Map from "../../../../public/images/wordmap.webp";
 
-function Form({ title }: { title: string }) {
+function Form({ title, color }: { title: string; color?: string }) {
   return (
     <div className="grid lg:grid-cols-2 items-center gap-8">
       <div className="relative max-w-full aspect-[4/3]">
@@ -46,7 +46,12 @@ function Form({ title }: { title: string }) {
           </div>
 
           <div className="">
-            <button className="w-full bg-orange-primary py-5 rounded-full text-lg">
+            <button
+              className={`w-full py-5 rounded-full text-lg`}
+              style={{
+                background: color ? "black" : "#F26633",
+              }}
+            >
               Submit
             </button>
           </div>
