@@ -8,19 +8,19 @@ import { TiArrowSortedDown } from "react-icons/ti";
 function MobileNav({ isOpen, setIsOpen }: any) {
   return (
     <div
-      className="fixed w-[300px] z-20 h-screen top-0 right-0 bg-gradient p-10 text-black"
+      className="fixed w-[300px] z-20 h-[100dvh] top-0 right-0 bg-gradient p-10 text-black"
       style={{
         right: isOpen ? "0" : "-100%",
         transition: "all 0.5s linear",
       }}
     >
       <p
-        className="text-end text-xl font-bold"
+        className="text-end text-xl font-bold px-5"
         onClick={() => setIsOpen(!isOpen)}
       >
         X
       </p>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-7">
         {Nav_Links.map((link: any, index: number) => (
           <NavLinksMobile {...link} key={index} />
         ))}
@@ -34,7 +34,7 @@ const NavLinksMobile = ({ linkName, src, subLinks }: any) => {
   return (
     <li>
       <div className="flex items-center gap-2">
-        <Link href={`${src}`} className="text-lg">
+        <Link href={`${src}`} className="text-3xl">
           {linkName}{" "}
         </Link>
         {subLinks && (
@@ -66,7 +66,7 @@ const NestedSubMenu = ({ linkName, src, subLinks }: any) => {
   return (
     <li>
       <div className="flex items-center gap-2">
-        <Link href={`${src}`} className="text-lg">
+        <Link href={`${src}`} className="text-xl">
           {linkName}{" "}
         </Link>
         {subLinks && (
@@ -85,7 +85,7 @@ const NestedSubMenu = ({ linkName, src, subLinks }: any) => {
         >
           {subLinks.map((nestedSubLink: any, nestedSubIndex: number) => (
             <li key={nestedSubIndex} className="px-5">
-              <Link href={nestedSubLink.src} className="text-lg">
+              <Link href={nestedSubLink.src} className="text-xl">
                 {nestedSubLink.linkName}
               </Link>
             </li>

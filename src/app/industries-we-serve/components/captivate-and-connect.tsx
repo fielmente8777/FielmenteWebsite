@@ -30,6 +30,7 @@ function CaptivateAndConnect() {
             </Link>
           </div>
         </div>
+
         <div className="flex flex-col gap-8 max-w-[400px] p-6">
           <Image
             src={Keyword}

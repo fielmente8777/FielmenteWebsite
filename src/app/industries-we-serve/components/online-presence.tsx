@@ -2,13 +2,13 @@ import React from "react";
 import Mobile from "../../../../public/images/online-mobile.webp";
 import Image from "next/image";
 
-function OnlinePresence() {
+function OnlinePresence({ title }: { title: string }) {
   return (
     <section>
       <div className="grid lg:grid-cols-2 gap-5 mt-20">
         <div>
           <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
-            RESTAURANT SOCIAL MEDIA MARKETING
+            {title}
           </h2>
           <h2 className="md:text-6xl text-3xl text-black font-semibold md:mt-20 mt-5">
             Make online presence With more impactful creatives.

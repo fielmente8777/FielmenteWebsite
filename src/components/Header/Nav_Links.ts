@@ -23,7 +23,7 @@ export const Nav_Links = [
       },
       {
         linkName: "Cloud Kitchen Marketing",
-        src: "/",
+        src: "/industries-we-serve/cloud-kitchen-marketing-agency/",
         subLinks: [
           {
             linkName: "Restaurant Social Media",
@@ -38,27 +38,43 @@ export const Nav_Links = [
     src: "/industries-we-serve/hotel-marketing-agency",
     subLinks: [
       {
-        linkName: "Industry we serve",
-        src: "/",
+        linkName: "Hotel Socail Media",
+        src: "/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
       },
       {
-        linkName: "Resturant Marketing",
-        src: "/",
-        subLinks: [
-          {
-            linkName: "Restaurnat Social Media",
-            src: "/",
-          },
-        ],
+        linkName: "Hotel Ads",
+        src: "/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
       },
       {
-        linkName: "Cloud Kitchen Marketing",
-        src: "/",
+        linkName: "Hotel SEO",
+        src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
+      },
+      {
+        linkName: "Hotel PR Services",
+        src: "/hotelprservices",
       },
     ],
   },
   {
     linkName: "services",
+    src: "/",
+    subLinks: [
+      {
+        linkName: " Socail Media Marketing",
+        src: "/hospitality-marketing-services/social-media-marketing-agency/",
+      },
+      {
+        linkName: "Search Engine Oprimization (SEO)",
+        src: "/hospitality-marketing-services/seo-agency/",
+      },
+      {
+        linkName: "Hotel SEO",
+        src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
+      },
+    ],
+  },
+  {
+    linkName: "contact us",
     src: "/",
   },
 ];

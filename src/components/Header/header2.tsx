@@ -89,7 +89,7 @@ const Header2 = () => {
         </div>
 
         <div
-          className="lg:hidden"
+          className="xl:hidden"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
