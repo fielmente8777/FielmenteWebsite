@@ -36,11 +36,10 @@ function page() {
               </div>
             </div>
             <div className="w-full">
-              <div className="relative  max-w-[260px] mx-auto aspect-[4/5]">
+              <div className="max-w-[260px] mx-auto aspect-[4/5]">
                 <Image
                   src={Girl}
                   alt="girl"
-                  fill
                   className="object-cover rounded-lg"
                 />
               </div>

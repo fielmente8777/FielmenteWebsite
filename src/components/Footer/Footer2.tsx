@@ -97,7 +97,7 @@ function Footer2() {
 
         <div className="flex gap-16 text-gray-primary text-xl mt-10">
           <Link href={"/"}>Privacy Policy</Link>
-          <Link href={"/"}>Terms of Us</Link>
+          <Link href={"/terms-and-conditions/"}>Terms of Us</Link>
         </div>
       </div>
     </footer>
