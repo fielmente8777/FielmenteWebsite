@@ -19,6 +19,122 @@ import { Pagination } from "swiper/modules";
 import Brand1 from "../../../../../public/images/Wah-Malvan-PNG.png";
 
 import GoogleAds1 from "../../../../../public/images/HOTEL-GOOGLE-ADS-02.webp";
+import CaptivateAndConnect from "../../components/captivate-and-connect";
+
+const capitavteAndConnectData = {
+  title:
+    "Improve Your Hotel’s Digital Presence, with our Customized SEO Strategies",
+  subtitle:
+    "Discover Why SEO is Crucial for Maximizing Online Success: From increasing bookings to dominating search rankings, our tailored SEO strategies boost targeted traffic, boost visibility, and skyrocket revenue. ",
+  leftContent: {
+    title: "Save more and get visibility for your business.",
+  },
+  rightContent: {
+    title: "Advantages of Local SEO for Your Hotel",
+    icon: Keyword,
+    subtitle: `Increased online visibility for local searches.
+      Targeted exposure to potential guests in your area.
+      Improved rankings on local search engine results in pages.
+      Enhanced brand awareness within your community.
+      Higher chances of attracting qualified leads and direct bookings.
+      Competitive edge over other hotels in your vicinity.
+      Maximized occupancy rates and revenue potential.
+      Better customer engagement and personalized experiences.
+      Cost-effective marketing strategy with high ROI.
+      Establishing a solid local online presence for long-term growth.`,
+  },
+
+  items: [
+    {
+      title: "Showcase Your Hotel",
+      subtitle:
+        "With Expert Guidance Create Social Media Posts for your hotels. Highlight the Unique Features, Exquisite Experiences, and Unmatched Hospitality of Your Property.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Drive Bookings",
+      subtitle:
+        "Utilize our Effective Social Media Management Team to Ignite Interest, Capture Attention, and Convert Potential Guests into Confirmed Bookings.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Reputation Management",
+      subtitle: `Our Hotel Social Media Management Ensures Effective Brand Monitoring, Prompt Responses, and Positive Guest Experiences for Optimal Online Reputation.`,
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Visual Appeal",
+      subtitle:
+        "Capture Attention with Visual Appeal through your Hotel’s Social Media Posts and Campaigns. Our Hotel Social Media Management Expertly Crafts Eye-Catching Visuals, Showcasing the Allure and Beauty of Your Property to Engage and Attract Potential Guests.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Reach a Wider Audience ",
+      subtitle:
+        "Through Strategic Hotel Social Media Posts and Campaigns, Reach a Wide and Diverse Audience, Amplifying Brand Awareness, and Attracting New Guests.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Calendar Ideation",
+      subtitle:
+        "At Fielmente, we combine the power of unrestrained voice and strategic social engineering to create compelling digital content (static, audio, dynamic, video) for brand awareness. Our meticulous approach includes monthly content calendars with precise schedules, ensuring impactful and timely engagement with your audience.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Scheduling & publishing Content:",
+      subtitle:
+        "Streamline Social Media Content Delivery with Fielmente. Utilize Publishing and Scheduling Solutions for Hotel Social Media Posts, Empowering Your Team to Enhance Strategy and Build Stronger Connections with Consumers.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Linktree Account Setup",
+      subtitle:
+        "Elevate Your Social Media Management with Linktree. Share Multiple Links in One Tap, Maximizing Engagement and Effortlessly Connecting Users with Relevant Content.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Social Media Audit",
+      subtitle:
+        "Conduct a Comprehensive Social Media Platform Audit & Take Remedial Action. Track Data in Google Analytics to Identify Social Traffic, Monitor Campaigns, Referral Traffic, and Conversions from Hotel Social Media Posts.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+  ],
+};
 
 function page() {
   return (
@@ -124,63 +240,7 @@ function page() {
 
       <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width">
-          <section>
-            <div className="flex flex-col gap-6 max-w-[1020px] mx-auto">
-              <h2 className="text-5xl font-bold text-center text-black">
-                Improve Your Hotel’s Digital Presence, with our Customized SEO
-                Strategies
-              </h2>
-              <p className="text-center text-xl text-gray-primary">
-                Discover Why SEO is Crucial for Maximizing Online Success: From
-                increasing bookings to dominating search rankings, our tailored
-                SEO strategies boost targeted traffic, boost visibility, and
-                skyrocket revenue.
-              </p>
-            </div>
-
-            <div className="mt-20 lg:grid grid-cols-2 gap-20 items-center">
-              <div className=" bg-[#2CBCA5] p-16 rounded-xl">
-                <h2 className="sm:text-5xl text-3xl text-black font-semibold">
-                  Save more and get visibility for your business.
-                </h2>
-                <div className="flex mt-10">
-                  <Link
-                    href={"/contact"}
-                    className="bg-[#262C2E] px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
-                  >
-                    Contact us
-                  </Link>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-8 max-w-[400px] p-6">
-                <Image
-                  src={Keyword}
-                  alt="Keyword"
-                  width={65}
-                  className="object-contain"
-                />
-                <h2 className="text-black text-2xl font-semibold">
-                  Save more and get visibility for your business.
-                </h2>
-                <p className="text-lg text-gray-primary">
-                  Expand your reach with Fielmente’s social media management for
-                  restaurants. Engage a wider audience through captivating
-                  restaurant social media posts and effective social media
-                  marketing strategies.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 grid grid-cols-3 gap-x-12 gap-y-28">
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-            </div>
-          </section>
+          <CaptivateAndConnect {...capitavteAndConnectData} />
         </div>
       </div>
 

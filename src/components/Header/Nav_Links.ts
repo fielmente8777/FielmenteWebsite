@@ -26,7 +26,7 @@ export const Nav_Links = [
         src: "/industries-we-serve/cloud-kitchen-marketing-agency/",
         subLinks: [
           {
-            linkName: "Restaurant Social Media",
+            linkName: "Cloud Kitchen Social Media",
             src: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media/",
           },
         ],
@@ -34,7 +34,7 @@ export const Nav_Links = [
     ],
   },
   {
-    linkName: "Hotel | Marketing",
+    linkName: "Hotel-Marketing",
     src: "/industries-we-serve/hotel-marketing-agency",
     subLinks: [
       {
@@ -75,6 +75,6 @@ export const Nav_Links = [
   },
   {
     linkName: "contact us",
-    src: "/",
+    src: "/contact",
   },
 ];

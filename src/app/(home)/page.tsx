@@ -62,7 +62,7 @@ export default function Home() {
           <div className="md:col-span-1">
             <Link
               href={"/contact"}
-              className="bg-orange-primary px-8 py-5 rounded-md text-lg"
+              className="bg-orange-primary px-8 py-5 rounded-md text-lg border border-orange-primary hover:bg-transparent duration-300"
             >
               Contact Us
             </Link>

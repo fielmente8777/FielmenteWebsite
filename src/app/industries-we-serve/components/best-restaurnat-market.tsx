@@ -5,15 +5,15 @@ import Image from "next/image";
 function BestRestauratMarket() {
   return (
     <div className="grid lg:grid-cols-5 items-center gap-8">
-      <div className="lg:col-span-3 flex flex-col gap-6">
-        <h2 className="text-5xl text-black font-semibold">
+      <div className="lg:col-span-3 flex flex-col md:gap-10 gap-5">
+        <h2 className="sm:text-5xl text-3xl text-black font-semibold">
           Best Restaurant Marketing Agency in India
         </h2>
-        <p className="text-xl text-gray-primary">
+        <p className="sm:text-xl text-lg text-gray-primary">
           We at Fielmente create ROI-driven social media campaigns and content
           for your for your restaurant business.{" "}
         </p>
-        <p className="text-xl text-gray-primary">
+        <p className="sm:text-xl text-lg text-gray-primary">
           The restaurant business is constantly changing and evolving but one
           thing that has remained the same over the last few years are diners
           turn to the internet to help them choose where to eat.{" "}

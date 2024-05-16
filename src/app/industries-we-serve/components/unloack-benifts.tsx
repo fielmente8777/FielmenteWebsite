@@ -9,7 +9,7 @@ function UnloackBenifts() {
     <section>
       <div className="grid lg:grid-cols-5">
         <div className="lg:col-span-2 ">
-          <div className="relative lg:max-w-[400px] mx-auto aspect-[4/4]">
+          <div className="relative md:max-w-[400px] mx-auto aspect-[4/4]">
             <Image
               src={SocialCircle}
               alt="socail-icons"
@@ -42,19 +42,25 @@ function UnloackBenifts() {
 
       <div className="grid sm:grid-cols-3 gap-8 mt-20 border-b border-b-gray-300 pb-16">
         <div className="flex flex-col gap-2">
-          <h2 className="text-6xl font-normal text-black text-center">3K+</h2>
+          <h2 className="sm:text-6xl text-4xl font-normal text-black text-center">
+            3K+
+          </h2>
           <p className="text-lg font-medium text-gray-primary text-center">
             COMPLETED PROJECTS
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-6xl font-normal text-black text-center">89%</h2>
+          <h2 className="sm:text-6xl text-4xl font-normal text-black text-center">
+            89%
+          </h2>
           <p className="text-lg font-medium text-gray-primary text-center">
             SATISFACTION RATE
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="text-6xl font-normal text-black text-center">15</h2>
+          <h2 className="sm:text-6xl text-4xl font-normal text-black text-center">
+            15
+          </h2>
           <p className="text-lg font-medium text-gray-primary text-center">
             YEARS OF EXPERIENCE
           </p>

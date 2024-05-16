@@ -30,7 +30,7 @@ function CommonHero({ direction, data }: CommonHeroPros) {
       <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
         {data.title}
       </h2>
-      <div className="grid lg:grid-cols-5 gap-6 items-center md:mt-20 mt-10">
+      <div className="grid lg:grid-cols-5 gap-8 items-center md:mt-20 mt-10">
         <div
           className={`lg:col-span-2 col-span-1 w-full flex ${
             direction
@@ -45,7 +45,7 @@ function CommonHero({ direction, data }: CommonHeroPros) {
           />
         </div>
         <div className={`lg:col-span-3 col-span-1 ${direction && "order-1"}`}>
-          <p className="text-black text-lg">{data.subtitle}</p>
+          <p className="text-black sm:text-xl text-lg">{data.subtitle}</p>
           <div className="mt-16">
             <Accordin Data={data.faq} />
           </div>
@@ -75,7 +75,7 @@ export const AccordinContent = ({
       className="cursor-pointer"
       onClick={() => setOpenAccordin(!openAccordin)}
     >
-      <h2 className="text-lg font-semibold text-black border-b border-b-gray-300 py-4 flex gap-2 items-center">
+      <h2 className="text-lg font-bold text-black border-b border-b-gray-300 py-4 flex gap-2 items-center">
         <span>{openAccordin ? "-" : "+"}</span>
         {question}
       </h2>

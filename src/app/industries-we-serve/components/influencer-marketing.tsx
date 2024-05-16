@@ -25,31 +25,23 @@ function InfluencerMarketing() {
         </div>
       </div>
       <div className="lg:col-span-3 grid xl:grid-cols-3 lg:grid-cols-2 gap-6">
-        <InfluencerCard />
-        <InfluencerCard />
-        <InfluencerCard />
-        <InfluencerCard />
-        <InfluencerCard />
-        <InfluencerCard />
+        {CardDetails.map((item) => (
+          <InfluencerCard {...item} />
+        ))}
       </div>
     </div>
   );
 }
 
-const InfluencerCard = () => {
+const InfluencerCard = ({ title, subtitle, icon }: any) => {
   return (
     <div className="p-5 rounded-xl bg-[#F6D27C]">
       <div className="flex items-center gap-3">
-        <Trust />
-        <h2 className="text-2xl text-black font-semibold">
-          Trusted Recommendation
-        </h2>
+        {icon}
+        <h2 className="text-2xl text-black font-semibold">{title}</h2>
       </div>
 
-      <p className="text-black text-sm mt-4">
-        Harness the power of influencers’ trusted recommendations to showcase
-        your restaurant’s unique offerings and drive customer interest.
-      </p>
+      <p className="text-black text-sm mt-4">{subtitle}</p>
     </div>
   );
 };
@@ -71,5 +63,43 @@ export const Trust = () => {
     </svg>
   );
 };
+
+const CardDetails = [
+  {
+    title: "Trusted Recommendation",
+    subtitle:
+      "Harness the power of influencers’ trusted recommendations to showcase your restaurant’s unique offerings and drive customer interest. ",
+    icon: <Trust />,
+  },
+
+  {
+    title: "Expand Reach",
+    subtitle: `Reach a wider audience by leveraging the influencer’s dedicated following, increasing brand exposure, and attracting new customers.`,
+    icon: <Trust />,
+  },
+  {
+    title: "Engaging Content",
+    subtitle: `Collaborate with influencers to create engaging and authentic content that showcases your restaurant’s ambiance, cuisine, and dining experience.`,
+    icon: <Trust />,
+  },
+  {
+    title: "Unique Experiences",
+    subtitle:
+      "Offer exclusive experiences or tastings to influencers, allowing them to share their firsthand experience with their audience and create a buzz around your restaurant.",
+    icon: <Trust />,
+  },
+  {
+    title: "Targeted Campaigns",
+    subtitle:
+      "Work with influencers who align with your restaurant’s target audience, ensuring your message reaches the right people who are likely to be interested in dining at your establishment.",
+    icon: <Trust />,
+  },
+  {
+    title: "Increased Reservations",
+    subtitle:
+      "Influencer marketing can drive bookings and reservations, as followers are inspired to visit your restaurant based on the influencers’ recommendations.",
+    icon: <Trust />,
+  },
+];
 
 export default InfluencerMarketing;

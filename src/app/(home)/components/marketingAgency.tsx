@@ -70,7 +70,7 @@ export const ConsulationForm = () => {
 
       {/* Submit Button**** */}
       <div>
-        <button className="bg-orange-primary w-full py-3 text-lg rounded-lg">
+        <button className="bg-orange-primary border border-orange-primary hover:bg-transparent hover:text-blue-dark w-full py-3 text-lg rounded-lg inline-block active:scale-90 duration-200">
           Submit
         </button>
       </div>

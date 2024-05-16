@@ -10,7 +10,7 @@ function Hero() {
     <section>
       <div className="grid lg:grid-cols-2 gap-10">
         <div className="mt-6">
-          <h2 className="text-black text-4xl font-bold">
+          <h2 className="text-black sm:text-4xl text-3xl font-bold">
             INNOVATIVE HOSPITALITY MARKETING SOLUTIONS IN INDIA
           </h2>
           <p className="text-lg text-black mt-5">
@@ -31,7 +31,8 @@ function Hero() {
           />
         </div>
       </div>
-      <div className="grid lg:grid-cols-2 gap-10 lg:mt-0 mt-12">
+
+      <div className="grid lg:grid-cols-2 gap-10 lg:mt-0 md:mt-12 mt-8">
         <div className="relative w-full aspect-[4/3]">
           <Image
             src={Approach}
@@ -40,8 +41,8 @@ function Hero() {
             className="object-cover rounded-md"
           />
         </div>
-        <div className="mt-16">
-          <h2 className="text-black text-4xl font-bold">
+        <div className="md:mt-16">
+          <h2 className="text-black sm:text-4xl text-3xl font-bold">
             PIONEERING HOTEL & RESTAURANT MARKETING COMPANY IN INDIA
           </h2>
           <p className="text-lg text-black mt-5">
@@ -56,7 +57,7 @@ function Hero() {
           <div className="flex justify-center">
             <Link
               href={"/contact"}
-              className="bg-black text-white font-bold text-lg px-6 py-3 rounded-md mt-10"
+              className="bg-black text-white font-bold text-lg px-6 py-3 rounded-md mt-10 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
             >
               Contact us
             </Link>

@@ -9,10 +9,11 @@ import { TiArrowSortedDown } from "react-icons/ti";
 
 import { FaPhone } from "react-icons/fa6";
 import MobileNav from "./MobileNav";
-import { AiOutlineMenu } from "react-icons/ai";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 const Header2 = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <header>
       <nav className="max-width nav-bar-container">
@@ -74,7 +75,7 @@ const Header2 = () => {
 
                 {/* For Right Border***** */}
                 {Index >= 0 && Index < Nav_Links.length - 1 && (
-                  <div className="w-[0.16rem] h-6 bg-black"></div>
+                  <div className="w-[0.14rem] h-6 bg-black"></div>
                 )}
               </div>
             );
@@ -88,21 +89,42 @@ const Header2 = () => {
           </Link>
         </div>
 
-        <div
+        {/* Hamburger Menu **** */}
+        <div className="xl:hidden z-50">
+          {isNavOpen ? (
+            <div className="text-white transition-transform duration-500 ease-in-out transform delay rotate-180 scale-150">
+              <IoClose
+                color="black"
+                size={30}
+                onClick={() => setIsNavOpen(false)}
+              />
+            </div>
+          ) : (
+            <div className="transition-transform duration-500 ease-in-out transform rotate-0 scale-100">
+              <HiMenuAlt3
+                color="black"
+                size={30}
+                onClick={() => setIsNavOpen(true)}
+              />
+            </div>
+          )}
+          {/* <AiOutlineMenu size={30} /> */}
+        </div>
+        {/* <div
           className="xl:hidden"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
           <AiOutlineMenu className="text-black" size={25} />
-        </div>
+        </div> */}
       </nav>
 
       {/* Bottom underline******* */}
       <hr className="bg-gray-200 h-[0.18rem] w-[95%] mx-auto" />
 
       {/* Mobile nav-bar***** */}
-      <MobileNav setIsOpen={setIsOpen} isOpen={isOpen} />
+      <MobileNav setIsOpen={setIsNavOpen} isOpen={isNavOpen} />
     </header>
   );
 };

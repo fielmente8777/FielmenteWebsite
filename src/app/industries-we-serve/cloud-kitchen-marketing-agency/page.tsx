@@ -45,29 +45,147 @@ const Faq = [
   },
 ];
 
+const CardDetails = [
+  {
+    title: "Customer Feedback",
+    subtitle:
+      "Update menu and seasonal specials, and promotions or discounts to keep customers informed and excited about offerings.",
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+
+  {
+    title: "Menu Presentation",
+    subtitle:
+      "An organized and visually appealing menu on the website entices customers to explore and order from the cloud kitchen.",
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+  {
+    title: "Search Engine Visibility",
+    subtitle: `With our expertise in cloud kitchen SEO services, we can optimize your website to rank higher in search engine results. `,
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+  {
+    title: "Customer Trust",
+    subtitle:
+      "A website builds trust and credibility among customers, assuring them of the quality and reliability of your cloud kitchen.",
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+  {
+    title: "Online Ordering",
+    subtitle:
+      "Provide a convenient and seamless online ordering experience for customers, increasing sales and customer satisfaction.",
+    image: {
+      src: BoostVisibility,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Brand Identity",
+    subtitle:
+      "Establish a strong brand identity showcasing unique offerings through compelling visuals, enticing descriptions, and website design",
+    image: {
+      src: BoostVisibility,
+      alt: "Booking",
+    },
+  },
+];
+
+const GoogleAdsCardDetails = [
+  {
+    title: "Track and Optimize",
+    subtitle:
+      "Monitor the performance of your ads in real time, making data-driven adjustments to maximize their effectiveness and drive more orders.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+
+  {
+    title: "Enhanced Visibility",
+    subtitle:
+      "Increase your cloud kitchen’s visibility by appearing at the top of relevant Google search results, capturing the attention of hungry customers.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+
+  {
+    title: "Targeted Advertising",
+    subtitle: `Reach customers actively searching for food delivery options in your area, targeting specific keywords and locations to maximize relevance.`,
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+
+  {
+    title: "Cost-Effective Results",
+    subtitle:
+      "Set your budget and only pay for clicks or conversions, ensuring you get a measurable return on investment and control your advertising costs.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Outperform Competitors",
+    subtitle:
+      "Outrank competing cloud kitchens in paid search ads, gaining a competitive edge and increasing the likelihood of attracting customers.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Local Targeting",
+    subtitle:
+      "Focus your ads on specific geographic areas to target customers in proximity to your cloud kitchen, increasing the chances of conversion.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+];
+
 function page() {
   return (
     <section>
-      <div className="md:py-20 py-10">
+      {/* India’s Best Cloud Kitchen Marketing Agency   */}
+      <div className="lg:py-20 py-10">
         <div className="max-width">
           <div className="grid lg:grid-cols-5 items-center gap-8">
-            <div className="lg:col-span-3 flex flex-col gap-6">
-              <h2 className="text-5xl text-black font-semibold">
+            <div className="lg:col-span-3 flex flex-col sm:gap-10 gap-5">
+              <h2 className="sm:text-5xl text-3xl text-black font-semibold">
                 India’s Best Cloud Kitchen Marketing Agency
               </h2>
-              <p className="text-xl text-gray-primary">
+              <p className="sm:text-xl text-lg text-gray-primary">
                 Struggling to achieve your cloud kitchen’s order goals?
               </p>
-              <p className="text-xl text-gray-primary">
+              <p className="sm:text-xl text-lg text-gray-primary">
                 Fielmente, the leading cloud kitchen marketing agency in India,
                 has the solution! With our expert services, we’ll boost your
                 sales and empower your managers and teams to reach their desired
                 goals.
               </p>
-              <p className="text-xl text-gray-primary">
+              <p className="sm:text-xl text-lg text-gray-primary">
                 Ready to see your cloud kitchen thrive like never before?
               </p>
             </div>
+
             <div className="lg:col-span-2 w-full flex lg:justify-end justify-center">
               <div className=" md:max-w-[400px] w-full relative aspect-[4/2.5]">
                 <Image
@@ -82,16 +200,17 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      <div className="lg:py-20 py-10">
         <div className="max-width">
           <div className="w-full h-[0.1rem] bg-gray-300"></div>
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      {/* How our Cloud Kitchen Marketing Agency help you to grow  */}
+      <div className="lg:py-20 py-10">
         <div className="max-width  mx-auto">
           <div className="grid lg:grid-cols-5 items-center gap-8">
-            <div className="lg:col-span-2 md:max-w-[400px] relative aspect-[4/2.5]">
+            <div className="lg:col-span-2 md:max-w-[400px] w-full mx-auto relative aspect-[4/2.5]">
               <Image
                 src={Food}
                 alt="food"
@@ -99,6 +218,7 @@ function page() {
                 className="object-cover rounded-xl"
               />
             </div>
+
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-16">
                 <h2 className="text-3xl underline text-black font-semibold">
@@ -131,8 +251,9 @@ function page() {
         </div>
       </div>
 
+      {/* How our Cloud Kitchen Marketing Agency help you to grow  */}
       <div className="md:py-20 py-10">
-        <div className="max-width  mx-auto">
+        <div className="max-width">
           <div className="grid lg:grid-cols-5 items-center gap-8">
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-5">
@@ -172,10 +293,11 @@ function page() {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-4 gap-8 mt-32 border-b border-b-gray-300 pb-16">
+          {/* Milestones*** */}
+          <div className="max-w-[1220px] mx-auto grid sm:grid-cols-4 gap-8 mt-32 border-b border-b-gray-300 pb-16">
             <div className="flex flex-col gap-2">
               <h2 className="text-6xl font-normal text-black text-center">
-                3K+
+                50L+
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
                 COMPLETED PROJECTS
@@ -183,7 +305,7 @@ function page() {
             </div>
             <div className="flex flex-col gap-2">
               <h2 className="text-6xl font-normal text-black text-center">
-                89%
+                10K+
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
                 SATISFACTION RATE
@@ -191,7 +313,7 @@ function page() {
             </div>
             <div className="flex flex-col gap-2">
               <h2 className="text-6xl font-normal text-black text-center">
-                15
+                90 %
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
                 YEARS OF EXPERIENCE
@@ -199,7 +321,7 @@ function page() {
             </div>
             <div className="flex flex-col gap-2">
               <h2 className="text-6xl font-normal text-black text-center">
-                15
+                10+
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
                 YEARS OF EXPERIENCE
@@ -209,6 +331,7 @@ function page() {
         </div>
       </div>
 
+      {/* Why Cloud Kitchen Require a Website to expand   */}
       <div className="pb-10">
         <div className="max-width mx-auto">
           <section>
@@ -216,12 +339,9 @@ function page() {
               Why Cloud Kitchen Require a Website to expand
             </h2>
             <div className="mt-32 grid lg:grid-cols-3 sm:grid-cols-2 gap-6 ">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              {CardDetails.map((item, index) => (
+                <Card key={index} {...item} />
+              ))}
             </div>
 
             <div className="flex justify-center mt-16">
@@ -239,7 +359,13 @@ function page() {
               </h2>
 
               <div className="flex justify-center mt-20">
-                <Image src={keyword} alt="keyword" width={400} height={200} />
+                <Image
+                  src={keyword}
+                  alt="keyword"
+                  width={300}
+                  height={200}
+                  className="animate-pulse duration-1000 delay-700"
+                />
               </div>
 
               <div className="flex justify-center mt-16">
@@ -311,12 +437,9 @@ function page() {
               </div>
             </div>
             <div className="lg:col-span-3 grid xl:grid-cols-3 lg:grid-cols-2 gap-6">
-              <InfluencerCard />
-              <InfluencerCard />
-              <InfluencerCard />
-              <InfluencerCard />
-              <InfluencerCard />
-              <InfluencerCard />
+              {InfluencerCardDetails.map((item, index) => (
+                <InfluencerCard {...item} key={index} />
+              ))}
             </div>
           </div>
         </div>
@@ -330,18 +453,15 @@ function page() {
             backgroundSize: "cover",
           }}
         >
-          <div className="max-w-[1080px] mx-auto px-8">
+          <div className="max-width px-8">
             <h2 className="text-center md:text-5xl text-3xl font-bold">
               Why a Cloud Kitchen Needs Google Ads
             </h2>
 
             <div className=" grid lg:grid-cols-3 sm:grid-cols-2 md:gap-10 gap-6 mt-20">
-              <PerformaceCard />
-              <PerformaceCard />
-              <PerformaceCard />
-              <PerformaceCard />
-              <PerformaceCard />
-              <PerformaceCard />
+              {GoogleAdsCardDetails.map((item, index) => (
+                <PerformaceCard key={index} {...item} />
+              ))}
             </div>
 
             <div className="flex justify-center mt-10">
@@ -381,38 +501,28 @@ function page() {
   );
 }
 
-const Card = () => {
+const Card = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-[#E8FFF9] rounded-2xl p-6 shadow-md">
       <div className="flex justify-center">
-        <Image src={BoostVisibility} alt="boost-visiblity" />
+        <Image src={image.src} alt="boost-visiblity" />
       </div>
 
-      <h2 className="text-3xl font-semibold text-black text-center">
-        Boost Visibility
-      </h2>
-      <p className="text-gray-primary text-lg text-center mt-4">
-        Improve your search engine visibility through our effective restaurant
-        marketing strategies.{" "}
-      </p>
+      <h2 className="text-3xl font-semibold text-black text-center">{title}</h2>
+      <p className="text-gray-primary text-lg text-center mt-4">{subtitle}</p>
     </div>
   );
 };
 
-const InfluencerCard = () => {
+const InfluencerCard = ({ title, subtitle, icon }: any) => {
   return (
     <div className="p-5 rounded-xl bg-[#F6D27C]">
       <div className="flex items-center gap-3">
-        <Trust />
-        <h2 className="text-2xl text-black font-semibold">
-          Trusted Recommendation
-        </h2>
+        {icon}
+        <h2 className="text-2xl text-black font-semibold">{title}</h2>
       </div>
 
-      <p className="text-black text-sm mt-4">
-        Harness the power of influencers’ trusted recommendations to showcase
-        your restaurant’s unique offerings and drive customer interest.
-      </p>
+      <p className="text-black text-sm mt-4">{subtitle}</p>
     </div>
   );
 };
@@ -435,19 +545,14 @@ export const Trust = () => {
   );
 };
 
-const PerformaceCard = () => {
+const PerformaceCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-white p-6 rounded-xl flex flex-col gap-6">
       <div>
-        <Image src={Booking} alt="booking" width={60} />
+        <Image src={image.src} alt={image.alt} width={60} />
       </div>
-      <h2 className="text-blue-dark text-3xl font-bold">
-        Drive Direct Booking
-      </h2>
-      <p className="text-gray-primary text-lg">
-        Direct potential guests to your website or booking page, increasing
-        direct bookings and reducing reliance on third-party platforms
-      </p>
+      <h2 className="text-black text-3xl font-bold">{title}</h2>
+      <p className="text-blue-dark text-lg">{subtitle}</p>
     </div>
   );
 };
@@ -488,5 +593,43 @@ const Accordin = ({ question, answer, items }: any) => {
     </div>
   );
 };
+
+const InfluencerCardDetails = [
+  {
+    title: "Trusted Recommendation",
+    subtitle:
+      "Harness the power of influencers’ trusted recommendations to showcase your restaurant’s unique offerings and drive customer interest. ",
+    icon: <Trust />,
+  },
+
+  {
+    title: "Expand Reach",
+    subtitle: `Tap into the influencer’s dedicated following, extending your brand’s reach to a wider audience of potential customers.`,
+    icon: <Trust />,
+  },
+  {
+    title: "Engaging Content",
+    subtitle: `Collaborate with influencers to create engaging and authentic content that showcases your restaurant’s ambiance, cuisine, and dining experience.`,
+    icon: <Trust />,
+  },
+  {
+    title: "Social Proof",
+    subtitle:
+      "Benefit from the social proof generated by influencers’ positive experiences and endorsements, building trust and encouraging more customers to order from your cloud kitchen.",
+    icon: <Trust />,
+  },
+  {
+    title: "Unique Experiences",
+    subtitle:
+      "Offer exclusive tastings or experiences to influencers, allowing them to share their firsthand experiences and generate excitement around your cloud kitchen.",
+    icon: <Trust />,
+  },
+  {
+    title: "Increased Orders",
+    subtitle:
+      "Influencer marketing can drive a surge in orders as followers are inspired to try your cloud kitchen’s offerings based on the influencers’ recommendations.",
+    icon: <Trust />,
+  },
+];
 
 export default page;

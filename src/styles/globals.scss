@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+    scroll-behavior: smooth;
     font-size: 62.5%;
     --white: #ffffff;
     --black:#1D1D1D;

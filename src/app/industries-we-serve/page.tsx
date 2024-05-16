@@ -137,7 +137,7 @@ const CommonHero3 = {
 function page() {
   return (
     <section>
-      <div className="md:py-20 bg-gradient">
+      <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width">
           <IndustryWeServe />
         </div>
@@ -164,7 +164,7 @@ function page() {
         </div>
       </div>
 
-      <div className="py-20 bg-black">
+      <div className="md:py-20 py-10 bg-black">
         <div className="max-width ">
           <OurService />
         </div>

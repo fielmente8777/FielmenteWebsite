@@ -4,10 +4,68 @@ import Image from "next/image";
 import Booking from "../../../../public/images/directbooking.webp";
 import Link from "next/link";
 
+const CardDetails = [
+  {
+    title: " Drive Direct Booking",
+    subtitle:
+      "Direct potential guests to your website or booking page, increasing direct bookings and reducing reliance on third-party platforms",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+
+  {
+    title: "Compete Effectively",
+    subtitle:
+      "Stand out from competitors in search results, capturing the attention of potential guests and gaining a competitive edge.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Real-Time Optimization",
+    subtitle: `Continuously monitor and optimize your campaigns to improve performance, maximize ROI, and drive
+      more bookings.`,
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Increased Visibility",
+    subtitle:
+      "Advertise your hotel prominently on Google search results, reaching a larger audience actively searching for accommodations.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Targeted Advertising",
+    subtitle:
+      "Advertise your hotel prominently on Google search results, reaching a larger audience actively searching for accommodations.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Cost-Effective Results",
+    subtitle:
+      "Pay only for clicks or conversions, making Google Ads a cost-effective advertising method with measurable results.",
+    image: {
+      src: Booking,
+      alt: "Booking",
+    },
+  },
+];
+
 function HotelPerformance() {
   return (
     <div
-      className="py-20 "
+      className="md:py-20 py-10"
       style={{
         backgroundImage: `url(${Backgrond.src})`,
         backgroundSize: "cover",
@@ -20,12 +78,9 @@ function HotelPerformance() {
         </h2>
 
         <div className=" grid lg:grid-cols-3 sm:grid-cols-2 md:gap-10 gap-6 mt-20">
-          <PerformaceCard />
-          <PerformaceCard />
-          <PerformaceCard />
-          <PerformaceCard />
-          <PerformaceCard />
-          <PerformaceCard />
+          {CardDetails.map((item) => {
+            return <PerformaceCard {...item} />;
+          })}
         </div>
 
         <div className="flex justify-center mt-10">
@@ -41,19 +96,14 @@ function HotelPerformance() {
   );
 }
 
-const PerformaceCard = () => {
+const PerformaceCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-white p-6 rounded-xl flex flex-col gap-6">
       <div>
-        <Image src={Booking} alt="booking" width={60} />
+        <Image src={image.src} alt={image.alt} width={60} />
       </div>
-      <h2 className="text-blue-dark text-3xl font-bold">
-        Drive Direct Booking
-      </h2>
-      <p className="text-gray-primary text-lg">
-        Direct potential guests to your website or booking page, increasing
-        direct bookings and reducing reliance on third-party platforms
-      </p>
+      <h2 className="text-black text-3xl font-bold">{title}</h2>
+      <p className="text-blue-dark text-lg">{subtitle}</p>
     </div>
   );
 };

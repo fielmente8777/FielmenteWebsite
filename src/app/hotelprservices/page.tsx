@@ -43,16 +43,18 @@ function page() {
             </div>
 
             <div className="lg:w-[40%]">
-              <h2 className="text-blue-dark text-6xl font-bold">About Us</h2>
+              <h2 className="text-blue-dark sm:text-6xl text-3xl font-bold">
+                About Us
+              </h2>
               <div className="flex flex-col gap-10 justify-center mt-10">
-                <p className="text-xl text-gray-primary">
+                <p className="sm:text-xl text-lg text-gray-primary">
                   Public relations (PR) helps build and maintain a positive
                   image, increase brand awareness, and ultimately attract more
                   customers. By working with media outlets and influencers, PR
                   professionals can generate publicity and coverage, which can
                   lead to increased visibility and credibility.
                 </p>
-                <p className="text-xl text-gray-primary">
+                <p className="sm:text-xl text-lg text-gray-primary">
                   Overall, a strong PR strategy can be a valuable asset for any
                   hotel or restaurant looking to stand out in a competitive
                   market and attract more business.
@@ -82,7 +84,7 @@ function page() {
                 Organic Public Relations
               </h2>
             </div>
-            <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-20 md:px-4 px-10">
               <p className="text-lg w-[80%] font-semibold">
                 The PR campaign aims to position the brand as a visionary in
                 Hospitality, Lifestyle, Travel, F&B, etc. Through Online PR,
@@ -148,10 +150,12 @@ function page() {
 
       <div className="md:py-20 py-10">
         <div className="max-width">
-          <div className="grid grid-cols-2 items-center">
-            <div>
-              <div className="flex flex-col gap-6 max-w-[400px] mx-auto">
-                <h1 className="text-6xl text-black font-bold">Option 1</h1>
+          <div className="grid lg:grid-cols-2 gap-16 lg:items-center">
+            <div className="lg:order-1 order-2">
+              <div className="flex flex-col gap-6 lg:max-w-[400px] mx-auto">
+                <h1 className="sm:text-6xl text-3xl text-black font-bold">
+                  Option 1
+                </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
                   <li className="text-black text-lg">
                     We can plan an authored article where the brand’s
@@ -171,8 +175,8 @@ function page() {
                 </ul>
               </div>
             </div>
-            <div>
-              <div className="relative max-w-[500px] aspect-[4/5]">
+            <div className="lg:order-2 order-1">
+              <div className="relative max-w-[500px] mx-auto aspect-[4/5]">
                 <Image
                   src={Businessman}
                   alt="business-people-discussing"
@@ -183,8 +187,8 @@ function page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-16 items-center mt-10">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-16 lg:items-center mt-32">
+            <div className="lg:order-1 order-2">
               <div className="relative w-full aspect-[4/2.6]">
                 <Image
                   src={Businessman}
@@ -194,9 +198,11 @@ function page() {
                 />
               </div>
             </div>
-            <div>
+            <div className="lg:order-2 order-1">
               <div className="flex flex-col gap-6 max-w-[400px]">
-                <h1 className="text-6xl text-black font-bold">Option 2</h1>
+                <h1 className="sm:text-6xl text-3xl text-black font-bold">
+                  Option 2
+                </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
                   <li className="text-black text-lg">
                     We can plan an authored article where the brand’s
@@ -218,10 +224,12 @@ function page() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-16 items-center mt-10">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-16 lg:items-center mt-32">
+            <div className="lg:order-1 order-2">
               <div className="flex flex-col gap-6 max-w-[400px] mx-auto">
-                <h1 className="text-6xl text-black font-bold">Option 3</h1>
+                <h1 className="sm:text-6xl text-3xl text-black font-bold">
+                  Option 3
+                </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
                   <li className="text-black text-lg italic">
                     05 Media coverages both in print and online platforms mixed
@@ -245,7 +253,7 @@ function page() {
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="lg:order-2 order-1">
               <div className="relative w-full aspect-[4/2.6]">
                 <Image
                   src={Businessman}

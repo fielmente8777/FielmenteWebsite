@@ -44,17 +44,17 @@ const Data = [
 function AccordinSection() {
   return (
     <div>
-      <h2 className="text-black text-5xl font-bold text-center">
+      <h2 className="text-black md:text-5xl text-3xl font-bold text-center">
         How can we help you right now?
       </h2>
 
-      <div className="mt-24">
+      <div className="md:mt-24 mt-8 max-w-[1080px] mx-auto">
         <p className="text-gray-primary text-lg text-center">
           In order to make sure your website is user friendly and optimized for
           Google’s algorithm, our on-site optimization experts clean up the code
           and copy.
         </p>
-        <div className="mt-16">
+        <div className="md:mt-16 mt-8">
           <Accordin Data={Data} />
         </div>
       </div>
@@ -64,7 +64,7 @@ function AccordinSection() {
 
 export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   return (
-    <div className="grid md:grid-cols-2 gap-16">
+    <div className="grid md:grid-cols-2 md:gap-16 gap-6">
       {Data.map((item, index) => (
         <AccordinContent {...item} key={index} />
       ))}
@@ -82,7 +82,7 @@ export const AccordinContent = ({
       className="cursor-pointer"
       onClick={() => setOpenAccordin(!openAccordin)}
     >
-      <h2 className="text-xl font-semibold text-black border-b border-b-gray-300 py-4 flex justify-between items-center">
+      <h2 className="text-xl font-bold text-black border-b border-b-gray-300 py-4 flex justify-between items-center">
         {question} <IoIosArrowDown />
       </h2>
       <div

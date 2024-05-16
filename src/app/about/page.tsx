@@ -8,29 +8,29 @@ import Form from "./components/Form";
 function About() {
   return (
     <div>
-      <div className="py-20 bg-gradient">
+      <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width">
           <Agency />
         </div>
       </div>
 
-      <div className="mt-32 max-width">
+      <div className="sm:mt-32 max-width">
         <hr />
       </div>
 
-      <div className="py-20">
+      <div className="md:py-20 py-4">
         <div className="max-width">
           <Hero />
         </div>
       </div>
 
-      <div className="py-20">
+      <div className="md:py-20 py-10">
         <div className="max-w-[1024px] mx-auto">
           <Milestones />
         </div>
       </div>
 
-      <div className="py-20">
+      <div className="md:py-20 py-10">
         <MakeUsUnique />
       </div>
 

@@ -1,30 +1,35 @@
 import Link from "next/link";
 import React from "react";
-import Keyword from "../../../../public/images/keywords.webp";
+
 import Image from "next/image";
 
-function CaptivateAndConnect() {
+function CaptivateAndConnect({
+  title,
+  subtitle,
+  leftContent,
+  rightContent,
+  items,
+}: any) {
   return (
     <section>
       <div className="flex flex-col gap-6 max-w-[900px] mx-auto">
-        <h2 className="text-5xl font-bold text-center text-black">
-          Captivate and Connect
+        <h2 className="sm:text-5xl text-3xl font-bold text-center text-black">
+          {title}
         </h2>
-        <p className="text-center text-xl text-gray-primary">
-          Harness the Power of Restaurant Social Media Management to Engage
-          Guests, Cultivate Relationships, and Create Unforgettable Experiences.
+        <p className="text-center sm:text-xl text-lg text-gray-primary">
+          {subtitle}
         </p>
       </div>
 
       <div className="mt-20 lg:grid grid-cols-2 gap-20 items-center">
         <div className=" bg-[#2CBCA5] p-16 rounded-xl">
           <h2 className="sm:text-5xl text-3xl text-black font-semibold">
-            Accelerate Your Restaurant’s Growth with Social Media.
+            {leftContent?.title}
           </h2>
           <div className="flex mt-10">
             <Link
               href={"/contact"}
-              className="bg-[#262C2E] px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
+              className="bg-[#262C2E] px-10 py-4 rounded-lg sm:text-xl text-lg font-semibold hover:bg-black duration-200"
             >
               Contact us
             </Link>
@@ -33,51 +38,38 @@ function CaptivateAndConnect() {
 
         <div className="flex flex-col gap-8 max-w-[400px] p-6">
           <Image
-            src={Keyword}
+            src={rightContent?.icon}
             alt="Keyword"
             width={65}
             className="object-contain"
           />
           <h2 className="text-black text-2xl font-semibold">
-            Reach a Wider Audience
+            {rightContent?.title}
           </h2>
-          <p className="text-lg text-gray-primary">
-            Expand your reach with Fielmente’s social media management for
-            restaurants. Engage a wider audience through captivating restaurant
-            social media posts and effective social media marketing strategies.
-          </p>
+          <p className="text-lg text-gray-primary">{rightContent?.subtitle}</p>
         </div>
       </div>
 
-      <div className="mt-12 grid grid-cols-3 gap-x-12 gap-y-28">
-        <GrowthCard />
-        <GrowthCard />
-        <GrowthCard />
-        <GrowthCard />
-        <GrowthCard />
-        <GrowthCard />
+      <div className="mt-12 grid lg:grid-cols-3 md:grid-cols-2 gap-x-12 lg:gap-y-28 gap-y-8">
+        {items?.map((item: any, index: number) => (
+          <GrowthCard key={index} {...item} />
+        ))}
       </div>
     </section>
   );
 }
 
-const GrowthCard = () => {
+const GrowthCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="flex flex-col gap-8 bg-white p-10 shadow-md rounded-xl">
       <Image
-        src={Keyword}
+        src={image.src}
         alt="Keyword"
         width={65}
         className="object-contain"
       />
-      <h2 className="text-black text-2xl font-semibold">
-        Reach a Wider Audience
-      </h2>
-      <p className="text-xl text-gray-primary">
-        Expand your reach with Fielmente’s social media management for
-        restaurants. Engage a wider audience through captivating restaurant
-        social media posts and effective social media marketing strategies.
-      </p>
+      <h2 className="text-black text-2xl font-semibold">{title}</h2>
+      <p className="sm:text-xl text-lg text-gray-primary">{subtitle}</p>
     </div>
   );
 };

@@ -14,7 +14,7 @@ function IndustryWeServe() {
         </p>
         <Link
           href={"/contact"}
-          className="bg-black border border-black text-white text-xl font-semibold py-6 px-10 rounded-2xl hover:bg-transparent hover:text-black transition-all duration-300 mt-10"
+          className="bg-black border border-black text-white sm:text-xl text-lg font-semibold py-6 px-10 rounded-2xl hover:bg-transparent hover:text-black transition-all duration-300 mt-10"
         >
           Get Free Consultation
         </Link>

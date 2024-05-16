@@ -28,7 +28,7 @@ function OurServices() {
       <div className="flex justify-center mt-16">
         <Link
           href={"/contact"}
-          className="bg-orange-primary px-8 py-3 rounded-md text-lg"
+          className="bg-orange-primary border border-orange-primary hover:bg-transparent px-8 py-3 rounded-md text-lg active:scale-90 duration-300  "
         >
           Contact Us
         </Link>

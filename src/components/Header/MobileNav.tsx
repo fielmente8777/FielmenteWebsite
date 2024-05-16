@@ -8,19 +8,13 @@ import { TiArrowSortedDown } from "react-icons/ti";
 function MobileNav({ isOpen, setIsOpen }: any) {
   return (
     <div
-      className="fixed w-[300px] z-20 h-[100dvh] top-0 right-0 bg-gradient p-10 text-black"
+      className="fixed w-[300px] z-20 h-[100dvh] top-0 right-0 bg-gradient py-20 px-10 text-black"
       style={{
         right: isOpen ? "0" : "-100%",
         transition: "all 0.5s linear",
       }}
     >
-      <p
-        className="text-end text-xl font-bold px-5"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        X
-      </p>
-      <ul className="flex flex-col gap-7">
+      <ul className="flex flex-col gap-7 mt-16">
         {Nav_Links.map((link: any, index: number) => (
           <NavLinksMobile {...link} key={index} />
         ))}

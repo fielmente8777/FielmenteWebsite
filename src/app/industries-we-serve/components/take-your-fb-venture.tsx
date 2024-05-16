@@ -4,15 +4,72 @@ import Food from "../../../../public/images/people-taking-photos-food-1536x1024.
 import BoostVisibility from "../../../../public/images/boostvisiblity.webp";
 import Link from "next/link";
 
+const CardDetails = [
+  {
+    title: "Boost Visibility",
+    subtitle:
+      "Improve your search engine visibility through our effective restaurant marketing strategies. ",
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+
+  {
+    title: "Showcase Your Menu",
+    subtitle:
+      "Display your mouth-watering dishes, enticing customers to visit your restaurant.",
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+  {
+    title: "Location and Contact Information",
+    subtitle: `Provide accurate information, making it easy for customers to find and reach your restaurant`,
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+  {
+    title: "Online Reservation",
+    subtitle:
+      "Allow customers to conveniently book tables online, enhancing the customer experience and driving more bookings.",
+    image: {
+      src: BoostVisibility,
+      alt: "",
+    },
+  },
+  {
+    title: "Customer Reviews",
+    subtitle:
+      "Showcase positive reviews and testimonials, building trust and credibility among potential customers.",
+    image: {
+      src: BoostVisibility,
+      alt: "Booking",
+    },
+  },
+  {
+    title: "Highlight Special Offers",
+    subtitle:
+      "Promote special deals, discounts, and events to entice customers and create a sense of urgency.",
+    image: {
+      src: BoostVisibility,
+      alt: "Booking",
+    },
+  },
+];
+
 function TakeYourFbVenture() {
   return (
     <section>
       <div className="grid lg:grid-cols-5 items-center gap-8">
         <div className="lg:col-span-3 flex flex-col gap-6">
-          <h2 className="text-5xl text-black font-semibold">
+          <h2 className="sm:text-5xl text-3xl text-black font-semibold">
             Let’s take your F&B venture to next level
           </h2>
-          <p className="text-xl text-gray-primary">
+          <p className="sm:text-xl text-lg text-gray-primary">
             In today’s digital age, your restaurant’s reputation is everything.
             But fear not! At our Restaurant Marketing Agency, we’ve mastered the
             art of managing and elevating your online presence. From Google
@@ -33,12 +90,9 @@ function TakeYourFbVenture() {
       </div>
 
       <div className="mt-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
-        <VentureCard />
-        <VentureCard />
-        <VentureCard />
-        <VentureCard />
-        <VentureCard />
-        <VentureCard />
+        {CardDetails.map((item) => (
+          <VentureCard {...item} />
+        ))}
       </div>
 
       <div className="flex justify-center mt-16">
@@ -53,20 +107,15 @@ function TakeYourFbVenture() {
   );
 }
 
-const VentureCard = () => {
+const VentureCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-[#E8FFF9] rounded-2xl p-6 shadow-md">
       <div className="flex justify-center">
-        <Image src={BoostVisibility} alt="boost-visiblity" />
+        <Image src={image.src} alt="boost-visiblity" />
       </div>
 
-      <h2 className="text-3xl font-semibold text-black text-center">
-        Boost Visibility
-      </h2>
-      <p className="text-gray-primary text-lg text-center mt-4">
-        Improve your search engine visibility through our effective restaurant
-        marketing strategies.{" "}
-      </p>
+      <h2 className="text-3xl font-semibold text-black text-center">{title}</h2>
+      <p className="text-gray-primary text-lg text-center mt-4">{subtitle}</p>
     </div>
   );
 };

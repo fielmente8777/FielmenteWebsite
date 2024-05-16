@@ -5,11 +5,11 @@ import Contact from "../../../../public/images/Contact.webp";
 function ConnectWithUs() {
   return (
     <div>
-      <div className="max-w-[600px] mx-auto flex flex-col gap-10">
+      <div className="max-w-[600px] mx-auto flex flex-col md:gap-10 gap-4">
         <h2 className="text-lg text-[#2CBCA5] text-center font-bold uppercase">
           Contact Us
         </h2>
-        <h3 className="text-5xl text-blue-dark font-bold text-center">
+        <h3 className="md:text-5xl text-3xl text-blue-dark font-bold text-center">
           We’re here just for you.
         </h3>
         <p className="text-xl text-gray-primary text-center">
@@ -18,16 +18,16 @@ function ConnectWithUs() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 items-center gap-6 mt-16">
+      <div className="grid lg:grid-cols-2 items-center gap-6 mt-16">
         <div className="relative w-full aspect-[4/3.5]">
           <Image src={Contact} alt="Contact" className="object-cover" />
         </div>
         <div className="p-8 shadow-xl rounded-xl">
           <form>
-            <h2 className="text-blue-dark text-xl font-semibold">
+            <h2 className="text-blue-dark sm:text-4xl text-3xl font-semibold">
               Connect with Us
             </h2>
-            <div className="mt-10 flex flex-col gap-8">
+            <div className="mt-10 flex flex-col md:gap-8 gap-4">
               <div className="flex flex-col gap-1">
                 <label htmlFor="name" className="text-lg text-blue-dark">
                   Your Name
@@ -72,7 +72,7 @@ function ConnectWithUs() {
                 />
               </div>
               <div>
-                <button className="text-white bg-blue-dark py-4 w-full text-xl rounded-2xl">
+                <button className="text-white bg-blue-dark border border-blue-dark hover:bg-transparent hover:text-blue-dark duration-300 py-4 w-full text-xl rounded-2xl mt-5">
                   Submit
                 </button>
               </div>

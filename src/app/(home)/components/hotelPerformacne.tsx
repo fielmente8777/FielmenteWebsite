@@ -60,7 +60,7 @@ function HotelPerformacne() {
       <div className="flex justify-center mt-16">
         <Link
           href={"/contact"}
-          className="bg-orange-primary px-8 py-3 rounded-md text-lg"
+          className="bg-orange-primary px-8 py-3 rounded-md text-lg border border-orange-primary hover:bg-transparent hover:text-blue-dark duration-300"
         >
           Contact Us
         </Link>

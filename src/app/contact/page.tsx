@@ -11,37 +11,37 @@ import Logo from "../../../public/images/logo.webp";
 function page() {
   return (
     <section className="bg-gradient">
-      <div className="py-20">
+      <div className="md:py-20 py-10">
         <div className="max-width">
           <ConnectWithUs />
         </div>
       </div>
 
-      <div className="py-20">
+      <div className="md:py-20 py-10">
         <div className="max-width">
           <AccordinSection />
         </div>
       </div>
 
-      <div className="py-20">
-        <div className="max-width flex gap-6">
-          <div className="relative max-w-[400px] aspect-[4/4]">
+      <div className="md:py-20 py-10">
+        <div className="max-width grid lg:grid-cols-3 gap-6">
+          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
             <Image src={Contact2} alt="Contact_2" className="object-cover" />
           </div>
-          <div className="relative max-w-[400px] aspect-[4/4]">
+          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
             <Image
               src={Contact3}
               alt="Contact_2"
-              className="object-cover mt-32"
+              className="object-cover md:mt-32"
             />
           </div>
-          <div className="relative max-w-[400px] aspect-[4/4]">
+          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
             <Image src={Contact4} alt="Contact_2" className="object-cover" />
           </div>
         </div>
       </div>
 
-      <div className="pb-20 flex justify-center items-center gap-4 max-w-[700px] w-full mx-auto">
+      <div className="pb-20 md:flex justify-center items-center gap-4 max-w-[700px] w-full mx-auto hidden">
         <div>
           <Image src={Logo} alt="fielmente-logo" width={180} height={40} />
         </div>
