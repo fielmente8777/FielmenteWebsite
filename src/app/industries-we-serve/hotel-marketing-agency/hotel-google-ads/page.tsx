@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Mobile from "../../../../../public/images/online-mobile.webp";
+import LineDesign from "../../../../../public/images/4tg4fc4.webp";
+import Keyboard from "../../../../../public/images/Keyboard.webp";
+
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import Food from "../../../../../public/images/people-taking-photos-food-1536x1024.webp";
 import Keyword from "../../../../../public/images/keywords.webp";
 import WantToJoin from "../../components/want-to-join";
 
@@ -15,10 +16,91 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Pagination } from "swiper/modules";
-
 import Brand1 from "../../../../../public/images/Wah-Malvan-PNG.png";
 
 import GoogleAds1 from "../../../../../public/images/HOTEL-GOOGLE-ADS-02.webp";
+import GoogleAds2 from "../../../../../public/images/HOTEL-GOOGLE-ADS-03.webp";
+import GoogleAds3 from "../../../../../public/images/HOTEL-GOOGLE-ADS-04.webp";
+import GoogleAds4 from "../../../../../public/images/HOTEL-GOOGLE-ADS-05.webp";
+
+import CaptivateAndConnect from "../../components/captivate-and-connect";
+
+const capitavteAndConnectData = {
+  title:
+    "Enhance Your Hotel’s Digital Presence, with Targeted Ads Tailored for Hotels.",
+  subtitle:
+    "Staying on Top for Maximizing Online Success: From increasing bookings to dominating search rankings, our tailored SEO strategies for hotels drive targeted traffic, boost visibility, and skyrocket revenue. Experience the power of hotel SEO today!",
+  leftContent: {
+    title: "Save more and get visibility for your business with google Ads.",
+  },
+  rightContent: {
+    title: "Accelerate Your Hotel’s Growth with Paid Ads.",
+    icon: Keyword,
+    subtitle: `Paid Ads Drive Immediate Visibility, Targeted Reach, and High-Converting Bookings, Amplifying Your Online Presence and Revenue Potential.`,
+  },
+
+  items: [
+    {
+      title: "Increased Visibility",
+      subtitle:
+        "Boost your hotel’s online presence with targeted advertising strategies, expanding your reach and capturing the attention of your ideal audience.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Targeted Advertising",
+      subtitle:
+        "With Fielmente’s expertise, your hotel’s paid ads reach the right audience, maximizing engagement and driving high-quality leads.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Cost-Effective Results",
+      subtitle: `Maximize your advertising budget with our cost-effective solutions, driving tangible results and high returns on investment for your hotel.`,
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Drive Direct Bookings",
+      subtitle:
+        "Fielmente’s tailored paid ads effectively drive direct bookings, empowering your hotel to attract and convert potential guests.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Compete Effectively ",
+      subtitle: `Stay ahead of the competition in the hospitality industry by leveraging our powerful paid advertising strategies, positioning your hotel as the top choice for guests
+
+        `,
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+
+    {
+      title: "Real-Time Optimization",
+      subtitle:
+        "Benefit from real-time optimization of your paid ads, ensuring continuous improvement and maximum performance for your hotel marketing efforts.",
+      image: {
+        src: Keyword,
+        alt: "Booking",
+      },
+    },
+  ],
+};
 
 function page() {
   return (
@@ -41,10 +123,10 @@ function page() {
               </p>
             </div>
             <div className="">
-              <div className="relative max-w-[500px] mx-auto aspect-[4/4]">
+              <div className="relative max-w-[500px] mx-auto aspect-[4/3]">
                 <Image
-                  src={Mobile}
-                  alt="mobile"
+                  src={LineDesign}
+                  alt="Line-design"
                   fill
                   className="object-contain"
                 />
@@ -63,10 +145,10 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width  mx-auto">
           <div className="grid lg:grid-cols-5 items-center gap-8">
-            <div className="lg:col-span-2 md:max-w-[400px] relative aspect-[4/2.5]">
+            <div className="lg:col-span-2 md:max-w-[400px] relative aspect-[4/4.5]">
               <Image
-                src={Food}
-                alt="food"
+                src={Keyboard}
+                alt="Keyboard"
                 fill
                 className="object-cover rounded-xl"
               />
@@ -126,63 +208,7 @@ function page() {
 
       <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width">
-          <section>
-            <div className="flex flex-col gap-6 max-w-[900px] mx-auto">
-              <h2 className="text-5xl font-bold text-center text-black">
-                Enhance Your Hotel’s Digital Presence, with Targeted Ads
-                Tailored for Hotels.
-              </h2>
-              <p className="text-center text-xl text-gray-primary">
-                Staying on Top for Maximizing Online Success: From increasing
-                bookings to dominating search rankings, our tailored SEO
-                strategies for hotels drive targeted traffic, boost visibility,
-                and skyrocket revenue. Experience the power of hotel SEO today!
-              </p>
-            </div>
-
-            <div className="mt-20 lg:grid grid-cols-2 gap-20 items-center">
-              <div className=" bg-[#2CBCA5] p-16 rounded-xl">
-                <h2 className="sm:text-5xl text-3xl text-black font-semibold">
-                  Accelerate Your Restaurant’s Growth with Social Media.
-                </h2>
-                <div className="flex mt-10">
-                  <Link
-                    href={"/contact"}
-                    className="bg-[#262C2E] px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
-                  >
-                    Contact us
-                  </Link>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-8 max-w-[400px] p-6">
-                <Image
-                  src={Keyword}
-                  alt="Keyword"
-                  width={65}
-                  className="object-contain"
-                />
-                <h2 className="text-black text-2xl font-semibold">
-                  Reach a Wider Audience
-                </h2>
-                <p className="text-lg text-gray-primary">
-                  Expand your reach with Fielmente’s social media management for
-                  restaurants. Engage a wider audience through captivating
-                  restaurant social media posts and effective social media
-                  marketing strategies.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12 grid grid-cols-3 gap-x-12 gap-y-28">
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-              <GrowthCard />
-            </div>
-          </section>
+          <CaptivateAndConnect {...capitavteAndConnectData} />
         </div>
       </div>
 
@@ -198,7 +224,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={GoogleAds2}
               alt="google-ads"
               fill
               className="object-cover"
@@ -206,7 +232,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={GoogleAds3}
               alt="google-ads"
               fill
               className="object-cover"
@@ -214,7 +240,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={GoogleAds4}
               alt="google-ads"
               fill
               className="object-cover"
@@ -294,26 +320,5 @@ function page() {
     </section>
   );
 }
-
-const GrowthCard = () => {
-  return (
-    <div className="flex flex-col gap-8 bg-white p-10 shadow-md rounded-xl">
-      <Image
-        src={Keyword}
-        alt="Keyword"
-        width={65}
-        className="object-contain"
-      />
-      <h2 className="text-black text-2xl font-semibold">
-        Reach a Wider Audience
-      </h2>
-      <p className="text-xl text-gray-primary">
-        Expand your reach with Fielmente’s social media management for
-        restaurants. Engage a wider audience through captivating restaurant
-        social media posts and effective social media marketing strategies.
-      </p>
-    </div>
-  );
-};
 
 export default page;

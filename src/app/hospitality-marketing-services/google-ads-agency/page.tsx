@@ -1,14 +1,67 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
-import Girl from "../../../../public/images/Girl.jpg";
-import CircularSocial from "../../../../public/images/social-circle.webp";
+import Shakinghand from "../../../../public/images/Shakinghand.webp";
+import Girlmeet from "../../../../public/images/Girlmeet.webp";
+
+// import GoogleAds from "../../../../public/images/GOOGLE-ADS-03-1.webp";
+
+import HotelAds from "../../../../public/images/HOTEL-MARKETING.webp";
+import CloudKitchenAds from "../../../../public/images/CLOUD-KITCHEN-MARKETING.webp";
+import RestaurantAds from "../../../../public/images/RESTAURANT-MARKETING.webp";
+
+import GoogleAds08 from "../../../../public/images/GOOGLE-ADS-08.webp";
+import GoogleAds10 from "../../../../public/images/GOOGLE-ADS-10.webp";
+import GoogleAds11 from "../../../../public/images/GOOGLE-ADS-11.webp";
 
 import TrustyBrand from "../../../../public/images/hsdgvc.webp";
-import Manwithlaptop from "../../../../public/images/manwithlaptop.jpg";
+import Manwithlaptop from "../../../../public/images/Manwithlaptop2.webp";
 import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp";
 
 import Form from "@/app/about/components/Form";
+
+const CardData1 = [
+  {
+    title: "Hotel Ads",
+    subtitle:
+      "If you are looking for the best hotel advertisement company, look no further.",
+    icon: HotelAds,
+  },
+  {
+    title: "Cloud Kitchen Ads",
+    subtitle:
+      "If you are looking for the best cloud kitchen promotion, look no further.",
+    icon: CloudKitchenAds,
+  },
+  {
+    title: "Restaurant Ads",
+    subtitle:
+      "If you are looking for the best restaurant advertising, look no further.",
+    icon: RestaurantAds,
+  },
+];
+
+const CardData2 = [
+  {
+    title: "Why Google Ads Matter for Your Business",
+    subtitle:
+      "Your Potential: Discover the Impact of Effective Advertising on Your Business Success",
+    image: GoogleAds08,
+  },
+  {
+    title:
+      "Our Google Ads Services - Igniting Your Online Advertising Strategy",
+    subtitle:
+      "Precision Targeting: Drive Results with Search Advertising, Display Advertising, and Video Advertising",
+    image: GoogleAds10,
+  },
+  {
+    title: " Our Approach to Your Advertising Success",
+    subtitle:
+      "Strategic Mastery: From Planning to Execution, We Craft Customized Ads Strategies for Optimal Results",
+    image: GoogleAds11,
+  },
+];
 
 function page() {
   return (
@@ -50,58 +103,52 @@ function page() {
               </div>
             </div>
             <div className="w-full">
-              <div className="relative  max-w-[260px] mx-auto aspect-[4/5]">
-                <Image
-                  src={Girl}
-                  alt="girl"
+              <div className="relative max-w-[260px] mx-auto aspect-[4/5]">
+                {/* <Image
+                  src={GoogleAds}
+                  alt="google-ads"
                   fill
                   className="object-cover rounded-lg"
-                />
+                /> */}
               </div>
             </div>
           </div>
 
           {/* Milestones*** */}
-          <div className="grid sm:grid-cols-4 gap-8 py-16">
+          <div className="grid sm:grid-cols-4 gap-8 py-16 max-w-[1080px] mx-auto">
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-white text-center">
-                3K+
+              <h2 className="text-4xl font-bold text-white text-center">
+                100+
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
-                COMPLETED PROJECTS
+                REVIEWS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-white text-center">
-                89%
-              </h2>
+              <h2 className="text-4xl font-bold text-white text-center">88%</h2>
               <p className="text-lg font-medium text-gray-primary text-center">
-                SATISFACTION RATE
+                INCREASE IN ROAS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-white text-center">
-                15
-              </h2>
+              <h2 className="text-4xl font-bold text-white text-center">70+</h2>
               <p className="text-lg font-medium text-gray-primary text-center">
-                YEARS OF EXPERIENCE
+                HOTELIERS TRUST US
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-white text-center">
-                15
-              </h2>
+              <h2 className="text-4xl font-bold text-white text-center">90+</h2>
               <p className="text-lg font-medium text-gray-primary text-center">
-                YEARS OF EXPERIENCE
+                PROJECTS COMPLETED
               </p>
             </div>
           </div>
 
           {/* cards**** */}
-          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-20 border-t pt-32 border-b-gray-700 ">
-            <Card />
-            <Card />
-            <Card />
+          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-20 border-t pt-32 border-t-gray-700 ">
+            {CardData1.map((item, index) => (
+              <Card key={index} {...item} />
+            ))}
           </div>
 
           {/* Why Does Your Business Needs Google Ads?*** */}
@@ -123,21 +170,16 @@ function page() {
 
               <div>
                 <p className="text-xl mt-8">
-                  Discover the recipe for success as a restaurant, hotel or
-                  Cloud Kitchen in the digital age with Fielmente, the top
-                  hospitality SEO agency in India.
-                </p>
-                <p className="text-xl mt-8">
-                  Rule the search engine results, attract a steady stream of
-                  customers, and ignite real revenue growth. Rocket your
-                  business with our professional SEO services, going beyond mere
-                  rankings!
+                  At Fielmente, the top hospitality Google Ads agency in India,
+                  we amplify your brand’s visibility and drive targeted traffic.
+                  Our powerful Google Ads services fuel your business growth by
+                  unleashing the full potential of online advertising.
                 </p>
 
                 <div className="mt-10 flex flex-col gap-1">
-                  <CardTwo />
-                  <CardTwo />
-                  <CardTwo />
+                  {CardData2.map((item, index) => (
+                    <CardTwo {...item} key={index} />
+                  ))}
                 </div>
               </div>
             </div>
@@ -174,8 +216,8 @@ function page() {
             <div className="w-full flex md:justify-end">
               <div className="relative max-w-[400px] w-full aspect-[4/5]">
                 <Image
-                  src={Girl}
-                  alt="girl"
+                  src={Shakinghand}
+                  alt="shaking-hand-img"
                   fill
                   className="object-cover rounded-xl"
                 />
@@ -201,8 +243,8 @@ function page() {
         <div className="md:col-span-2 w-full flex md:justify-end">
           <div className="relative max-w-[400px] w-full aspect-[4/4]">
             <Image
-              src={Girl}
-              alt="girl"
+              src={Girlmeet}
+              alt="girl-meet-img"
               fill
               className="object-cover rounded-[4rem]"
             />
@@ -259,15 +301,14 @@ function page() {
   );
 }
 
-export const Card = () => {
+const Card = ({ title, subtitle, icon }: any) => {
   return (
-    <div className="bg-white px-4 py-12 rounded-xl">
-      <h2 className="text-5xl text-center font-bold text-black">
-        Hotel Social Media
-      </h2>
-      <p className="text-black text-xl text-center">
-        If you are looking for the best hotel seo, look no further.
-      </p>
+    <div className="bg-white px-4 py-12 rounded-xl flex flex-col gap-3">
+      <div className="flex justify-center">
+        <Image src={icon} alt="icon" width={85} />
+      </div>
+      <h2 className="text-4xl text-center font-bold text-black">{title}</h2>
+      <p className="text-black text-xl text-center">{subtitle}</p>
       <div>
         <div className="flex justify-center mt-5">
           <Link
@@ -282,29 +323,26 @@ export const Card = () => {
   );
 };
 
-export const CardTwo = () => {
+const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6">
-      <div className="relative max-w-32 w-full aspect-[4/3]">
+    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start">
+      <div className="relative max-w-28 w-full aspect-[4/3]">
         <Image
-          src={CircularSocial}
-          alt="circular-socail"
+          src={image}
+          alt="images"
           fill
-          className="object-cover"
+          className="object-contain rounded-3xl"
         />
       </div>
       <div>
-        <h2 className="text-3xl font-bold text-white">Social Media Calendar</h2>
-        <p className="text-white text-lg mt-2">
-          A well-planned content calendar to make sure that your posts are
-          always interesting and consistent.
-        </p>
+        <h2 className="text-xl font-bold text-white">{title}</h2>
+        <p className="text-white text-lg mt-2">{subtitle}</p>
       </div>
     </div>
   );
 };
 
-export const CardThree = () => {
+const CardThree = () => {
   return (
     <div className="bg-[#E9D175] px-8 py-10 rounded-[3rem] gap-6">
       <div className="flex flex-col gap-16">

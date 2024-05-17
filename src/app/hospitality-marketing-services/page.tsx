@@ -66,8 +66,9 @@ function page() {
                 OUR HOSPITALITY MARKETING SERVICES
               </h2>
               <h2 className="md:text-3xl text-3xl text-black font-bold md:mt-20 mt-5">
-                Boost Your Business with Fielmente, India's top Hospitality
-                Marketing Services!
+                {
+                  " Boost Your Business with Fielmente, India's top Hospitality Marketing Services!"
+                }
               </h2>
               <p className="text-gray-primary text-xl mt-5">
                 Attention, savvy business owners! Release the true potential of
@@ -475,7 +476,7 @@ function page() {
   );
 }
 
-export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
+const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   return (
     <div className=" flex flex-col gap-5">
       {Data.map((item, index) => (
@@ -485,10 +486,7 @@ export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   );
 };
 
-export const AccordinContent = ({
-  question,
-  answer,
-}: AccordingDataPropsTypes) => {
+const AccordinContent = ({ question, answer }: AccordingDataPropsTypes) => {
   const [openAccordin, setOpenAccordin] = useState(false);
   return (
     <div
@@ -512,7 +510,7 @@ export const AccordinContent = ({
   );
 };
 
-export const ChooseUSCard = () => {
+const ChooseUSCard = () => {
   return (
     <div className="max-w-[300px] mx-auto">
       <div className="relative w-full aspect-[4/4]">

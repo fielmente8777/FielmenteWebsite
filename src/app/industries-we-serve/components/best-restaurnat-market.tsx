@@ -20,13 +20,8 @@ function BestRestauratMarket() {
         </p>
       </div>
       <div className="lg:col-span-2 w-full flex lg:justify-end justify-center">
-        <div className=" md:max-w-[400px] w-full relative aspect-[4/2.5]">
-          <Image
-            src={Food}
-            alt="food"
-            fill
-            className="object-cover rounded-xl"
-          />
+        <div className=" md:max-w-[400px] w-full aspect-[4/2.5]">
+          <Image src={Food} alt="food" className="object-cover rounded-xl" />
         </div>
       </div>
     </div>

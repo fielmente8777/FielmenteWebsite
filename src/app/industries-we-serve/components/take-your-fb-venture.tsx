@@ -67,14 +67,14 @@ function TakeYourFbVenture() {
       <div className="grid lg:grid-cols-5 items-center gap-8">
         <div className="lg:col-span-3 flex flex-col gap-6">
           <h2 className="sm:text-5xl text-3xl text-black font-semibold">
-            Let’s take your F&B venture to next level
+            {`Let’s take your F&B venture to next level`}
           </h2>
           <p className="sm:text-xl text-lg text-gray-primary">
-            In today’s digital age, your restaurant’s reputation is everything.
+            {` In today’s digital age, your restaurant’s reputation is everything.
             But fear not! At our Restaurant Marketing Agency, we’ve mastered the
             art of managing and elevating your online presence. From Google
             Reviews to Facebook, Instagram, and LinkedIn, we’ll monitor and
-            curate the comments that can make or break your business.
+            curate the comments that can make or break your business.`}
           </p>
         </div>
         <div className="lg:col-span-2 w-full flex lg:justify-end justify-center">
@@ -90,8 +90,8 @@ function TakeYourFbVenture() {
       </div>
 
       <div className="mt-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-6">
-        {CardDetails.map((item) => (
-          <VentureCard {...item} />
+        {CardDetails.map((item, index) => (
+          <VentureCard {...item} key={index} />
         ))}
       </div>
 

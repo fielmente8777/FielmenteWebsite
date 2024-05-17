@@ -5,7 +5,7 @@ import Image from "next/image";
 function OnlinePresence({ title }: { title: string }) {
   return (
     <section>
-      <div className="grid lg:grid-cols-2 gap-5 mt-20">
+      <div className="grid lg:grid-cols-2 gap-5 md:mt-20">
         <div>
           <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
             {title}

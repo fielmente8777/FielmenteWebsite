@@ -27,7 +27,8 @@ header{
                     background-color: #E7FBF5;
                     width: 260px;
                     border-radius: 5px;
-                    z-index: 999;
+                    z-index: 99999;
+                  
                     .sub-links{
                         padding: 1rem 1.6rem;
                         position: relative;
@@ -37,12 +38,13 @@ header{
                         .child-sub-links-container{
                             display: none;
                             position: absolute;
-                            max-width: 300px;
+                            max-width: 320px;
                             width: 100%;
                             top: 0;
                             left: 100%;
                             background-color: #E7FBF5;
                             border-radius: 6px;
+                            z-index: 9999;
                         }
                         &:hover{
                             background-color: var(--white);

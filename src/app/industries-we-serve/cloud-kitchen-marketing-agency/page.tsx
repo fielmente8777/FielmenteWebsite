@@ -3,6 +3,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Food from "../../../../public/images/people-taking-photos-food-1536x1024.webp";
+import Girlwithchart from "../../../../public/images/Grilwithchart.webp";
+import Girlwithcook from "../../../../public/images/Girlwithcook.webp";
+import Marketloud from "../../../../public/images/Marketloud.webp";
+
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import BoostVisibility from "../../../../public/images/boostvisiblity.webp";
@@ -187,9 +191,9 @@ function page() {
             </div>
 
             <div className="lg:col-span-2 w-full flex lg:justify-end justify-center">
-              <div className=" md:max-w-[400px] w-full relative aspect-[4/2.5]">
+              <div className=" md:max-w-[400px] w-full relative aspect-[4/2.5] -z-10">
                 <Image
-                  src={Food}
+                  src={Girlwithchart}
                   alt="food"
                   fill
                   className="object-cover rounded-xl"
@@ -212,8 +216,8 @@ function page() {
           <div className="grid lg:grid-cols-5 items-center gap-8">
             <div className="lg:col-span-2 md:max-w-[400px] w-full mx-auto relative aspect-[4/2.5]">
               <Image
-                src={Food}
-                alt="food"
+                src={Girlwithcook}
+                alt="Cooking-girl"
                 fill
                 className="object-cover rounded-xl"
               />
@@ -285,8 +289,8 @@ function page() {
             </div>
             <div className="lg:col-span-2 md:max-w-[400px] relative aspect-[4/2.5]">
               <Image
-                src={Food}
-                alt="food"
+                src={Marketloud}
+                alt="Marketloud"
                 fill
                 className="object-cover rounded-xl"
               />
@@ -527,7 +531,7 @@ const InfluencerCard = ({ title, subtitle, icon }: any) => {
   );
 };
 
-export const Trust = () => {
+const Trust = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

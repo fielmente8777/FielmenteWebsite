@@ -2,6 +2,9 @@
 import Image from "next/image";
 import React from "react";
 import Mobile from "../../../../../public/images/online-mobile.webp";
+import LineDesign from "../../../../../public/images/4tg4fc4.webp";
+import Bookingman from "../../../../../public/images/Bookingman.webp";
+
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Food from "../../../../../public/images/people-taking-photos-food-1536x1024.webp";
@@ -18,7 +21,11 @@ import { Pagination } from "swiper/modules";
 
 import Brand1 from "../../../../../public/images/Wah-Malvan-PNG.png";
 
-import GoogleAds1 from "../../../../../public/images/HOTEL-GOOGLE-ADS-02.webp";
+import Hotelseo1 from "../../../../../public/images/HOTEL-SEO-02.webp";
+import Hotelseo2 from "../../../../../public/images/HOTEL-SEO-03.webp";
+import Hotelseo3 from "../../../../../public/images/HOTEL-SEO-04.webp";
+import Hotelseo4 from "../../../../../public/images/HOTEL-SEO-05.webp";
+
 import CaptivateAndConnect from "../../components/captivate-and-connect";
 
 const capitavteAndConnectData = {
@@ -139,9 +146,9 @@ const capitavteAndConnectData = {
 function page() {
   return (
     <section>
-      <div className="py-20 bg-gradient">
+      <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width">
-          <div className="grid lg:grid-cols-2 gap-5 mt-20">
+          <div className="grid lg:grid-cols-2 gap-5 md:mt-20">
             <div>
               <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
                 HOTEL SEO
@@ -155,10 +162,10 @@ function page() {
               </p>
             </div>
             <div className="">
-              <div className="relative max-w-[500px] mx-auto aspect-[4/4]">
+              <div className="relative max-w-[500px] mx-auto aspect-[4/3]">
                 <Image
-                  src={Mobile}
-                  alt="mobile"
+                  src={LineDesign}
+                  alt="Line-design"
                   fill
                   className="object-contain"
                 />
@@ -177,10 +184,10 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width  mx-auto">
           <div className="grid lg:grid-cols-5 items-center gap-8">
-            <div className="lg:col-span-2 md:max-w-[400px] relative aspect-[4/2.5]">
+            <div className="lg:col-span-2 md:max-w-[380px] relative aspect-[4/4.6]">
               <Image
-                src={Food}
-                alt="food"
+                src={Bookingman}
+                alt="booking-man"
                 fill
                 className="object-cover rounded-xl"
               />
@@ -248,7 +255,7 @@ function page() {
         <div className="grid grid-cols-4">
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={Hotelseo1}
               alt="google-ads"
               fill
               className="object-cover"
@@ -256,7 +263,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={Hotelseo2}
               alt="google-ads"
               fill
               className="object-cover"
@@ -264,7 +271,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={Hotelseo3}
               alt="google-ads"
               fill
               className="object-cover"
@@ -272,7 +279,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={Hotelseo4}
               alt="google-ads"
               fill
               className="object-cover"
@@ -352,26 +359,5 @@ function page() {
     </section>
   );
 }
-
-const GrowthCard = () => {
-  return (
-    <div className="flex flex-col gap-8 bg-white p-10 shadow-md rounded-xl">
-      <Image
-        src={Keyword}
-        alt="Keyword"
-        width={65}
-        className="object-contain"
-      />
-      <h2 className="text-black text-2xl font-semibold">
-        Reach a Wider Audience
-      </h2>
-      <p className="text-xl text-gray-primary">
-        Expand your reach with Fielmente’s social media management for
-        restaurants. Engage a wider audience through captivating restaurant
-        social media posts and effective social media marketing strategies.
-      </p>
-    </div>
-  );
-};
 
 export default page;

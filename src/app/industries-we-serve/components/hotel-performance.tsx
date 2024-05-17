@@ -78,8 +78,8 @@ function HotelPerformance() {
         </h2>
 
         <div className=" grid lg:grid-cols-3 sm:grid-cols-2 md:gap-10 gap-6 mt-20">
-          {CardDetails.map((item) => {
-            return <PerformaceCard {...item} />;
+          {CardDetails.map((item, index) => {
+            return <PerformaceCard {...item} key={index} />;
           })}
         </div>
 

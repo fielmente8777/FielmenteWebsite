@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import Food from "../../../../public/images/people-taking-photos-food-1536x1024.webp";
+import Mobilescreen from "../../../../public/images/mobile-screen-frame-collage-768x1097.webp";
 import Link from "next/link";
 
 function RestaurantSeo() {
@@ -23,8 +23,8 @@ function RestaurantSeo() {
         <div className="lg:col-span-2 w-full flex justify-center">
           <div className=" md:max-w-[400px] w-full relative aspect-[4/5.5]">
             <Image
-              src={Food}
-              alt="food"
+              src={Mobilescreen}
+              alt="Mobile-screen"
               fill
               className="object-cover rounded-xl"
             />

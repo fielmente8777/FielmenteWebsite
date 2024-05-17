@@ -25,7 +25,7 @@ function HotelMarketing() {
           </p>
         </div>
 
-        <div className="relative w-full aspect-[4/2.5]">
+        <div className="relative w-full aspect-[4/2.5] -z-10">
           <Image
             src={YounWoman}
             alt="young-woman"

@@ -25,8 +25,8 @@ function InfluencerMarketing() {
         </div>
       </div>
       <div className="lg:col-span-3 grid xl:grid-cols-3 lg:grid-cols-2 gap-6">
-        {CardDetails.map((item) => (
-          <InfluencerCard {...item} />
+        {CardDetails.map((item, index) => (
+          <InfluencerCard {...item} key={index} />
         ))}
       </div>
     </div>

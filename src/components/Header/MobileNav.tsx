@@ -8,7 +8,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 function MobileNav({ isOpen, setIsOpen }: any) {
   return (
     <div
-      className="fixed w-[300px] z-20 h-[100dvh] top-0 right-0 bg-gradient py-20 px-10 text-black"
+      className="fixed w-[320px] z-20 h-[100dvh] top-0 right-0 bg-gradient py-20 px-10 text-black"
       style={{
         right: isOpen ? "0" : "-100%",
         transition: "all 0.5s linear",
@@ -16,24 +16,28 @@ function MobileNav({ isOpen, setIsOpen }: any) {
     >
       <ul className="flex flex-col gap-7 mt-16">
         {Nav_Links.map((link: any, index: number) => (
-          <NavLinksMobile {...link} key={index} />
+          <NavLinksMobile {...link} key={index} setIsOpen={setIsOpen} />
         ))}
       </ul>
     </div>
   );
 }
 
-const NavLinksMobile = ({ linkName, src, subLinks }: any) => {
+const NavLinksMobile = ({ linkName, src, subLinks, setIsOpen }: any) => {
   const [open, setOpen] = useState(false);
   return (
     <li>
       <div className="flex items-center gap-2">
-        <Link href={`${src}`} className="text-3xl">
-          {linkName}{" "}
+        <Link
+          href={`${src}`}
+          className="text-3xl"
+          onClick={() => setIsOpen(false)}
+        >
+          {linkName}
         </Link>
         {subLinks && (
           <span className="cursor-pointer" onClick={() => setOpen(!open)}>
-            <TiArrowSortedDown />
+            <TiArrowSortedDown size={16} />
           </span>
         )}
       </div>
@@ -47,7 +51,7 @@ const NavLinksMobile = ({ linkName, src, subLinks }: any) => {
           }}
         >
           {subLinks.map((subLink: any, subIndex: number) => (
-            <NestedSubMenu key={subIndex} {...subLink} />
+            <NestedSubMenu key={subIndex} {...subLink} setIsOpen={setIsOpen} />
           ))}
         </ul>
       )}
@@ -55,12 +59,16 @@ const NavLinksMobile = ({ linkName, src, subLinks }: any) => {
   );
 };
 
-const NestedSubMenu = ({ linkName, src, subLinks }: any) => {
+const NestedSubMenu = ({ linkName, src, subLinks, setIsOpen }: any) => {
   const [open, setOpen] = useState(false);
   return (
     <li>
       <div className="flex items-center gap-2">
-        <Link href={`${src}`} className="text-xl">
+        <Link
+          href={`${src}`}
+          className="text-xl ml-3"
+          onClick={() => setIsOpen(false)}
+        >
           {linkName}{" "}
         </Link>
         {subLinks && (
@@ -79,7 +87,11 @@ const NestedSubMenu = ({ linkName, src, subLinks }: any) => {
         >
           {subLinks.map((nestedSubLink: any, nestedSubIndex: number) => (
             <li key={nestedSubIndex} className="px-5">
-              <Link href={nestedSubLink.src} className="text-xl">
+              <Link
+                href={nestedSubLink.src}
+                className="text-lg"
+                onClick={() => setIsOpen(false)}
+              >
                 {nestedSubLink.linkName}
               </Link>
             </li>

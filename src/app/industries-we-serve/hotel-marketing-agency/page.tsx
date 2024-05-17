@@ -1,7 +1,6 @@
 import React from "react";
 import HotelMarketing from "../components/hotel-marketing";
 import BestHotelAgency from "../components/best-hotel-agency";
-import HotelPerformacne from "@/app/(home)/components/hotelPerformacne";
 import HotelPerformance from "../components/hotel-performance";
 
 function page() {

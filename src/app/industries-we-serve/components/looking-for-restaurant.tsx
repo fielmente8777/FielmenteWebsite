@@ -1,5 +1,5 @@
 import React from "react";
-import Food from "../../../../public/images/people-taking-photos-food-1536x1024.webp";
+import Food from "../../../../public/images/traditional-italian-food-world-tourism-day-1536x1024.webp";
 import Image from "next/image";
 
 function LookingForRestaurant() {

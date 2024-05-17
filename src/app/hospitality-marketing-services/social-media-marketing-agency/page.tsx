@@ -3,9 +3,60 @@ import Link from "next/link";
 import React from "react";
 import Girl from "../../../../public/images/Girl.jpg";
 import CircularSocial from "../../../../public/images/social-circle.webp";
+import Girlwithsocial from "../../../../public/images/Grilwithsocial.webp";
+import Twowomenmeet from "../../../../public/images/Twowomenmeet.webp";
 
 import TrustyBrand from "../../../../public/images/hsdgvc.webp";
 import Form from "@/app/about/components/Form";
+
+import Smm10 from "../../../../public/images/SMM-10.webp";
+import Smm13 from "../../../../public/images/SMM-13.webp";
+import Smm14 from "../../../../public/images/SMM-14-1.webp";
+import Smm08 from "../../../../public/images/SMM-08.webp";
+
+const CardData1 = [
+  {
+    title: "Hotel Social Media",
+    subtitle: "If you are looking for the best hotel seo, look no further.",
+  },
+  {
+    title: "Cloud Kitchen Social Media",
+    subtitle:
+      "If you are looking for the best cloud kitchen promotion, look no further.",
+  },
+  {
+    title: "Restaurant Social Media",
+    subtitle:
+      "If you are looking for the best restaurant seo, look no further.",
+  },
+];
+
+const CardData2 = [
+  {
+    title: "Social Media Calendar",
+    subtitle:
+      "A well-planned content calendar to make sure that your posts are always interesting and consistent.",
+    image: Smm10,
+  },
+  {
+    title: "Content Creation",
+    subtitle:
+      "Content creation means making content that is compelling and interesting and sticks with your audience.",
+    image: Smm13,
+  },
+  {
+    title: "Social Media Campaigns",
+    subtitle:
+      "Campaigns that are planned strategically to get the most engagement and sales.",
+    image: Smm14,
+  },
+  {
+    title: "Facebook, Twitter & Linkedin Ads",
+    subtitle:
+      "Targeted ads can help you reach more people and raise brand awareness, visibility of your brand, reach professionals and people who make decisions.",
+    image: Smm08,
+  },
+];
 
 function page() {
   return (
@@ -48,9 +99,9 @@ function page() {
 
           {/* cards**** */}
           <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-20 border-b border-b-gray-700 pb-5">
-            <Card />
-            <Card />
-            <Card />
+            {CardData1.map((item, index) => (
+              <Card {...item} key={index} />
+            ))}
           </div>
           {/* Why is Social Media Marketing Important for Your Business?*** */}
           <div className="grid lg:grid-cols-2 items-center mt-10">
@@ -80,11 +131,9 @@ function page() {
               </p>
 
               <div className="mt-10 flex flex-col gap-1">
-                <CardTwo />
-                <CardTwo />
-                <CardTwo />
-                <CardTwo />
-                <CardTwo />
+                {CardData2.map((item, index) => (
+                  <CardTwo key={index} {...item} />
+                ))}
               </div>
             </div>
           </div>
@@ -92,7 +141,7 @@ function page() {
           <div className="grid md:grid-cols-2 gap-6 items-center mt-5">
             <div className="flex flex-col gap-8">
               <h2 className="text-4xl">
-                Fielmente's Social Media Marketing Approach
+                {`Fielmente's Social Media Marketing Approach`}
               </h2>
               <p className="text-gray-primary text-xl">
                 Fielmente, the premier hospitality social marketing agency,
@@ -114,8 +163,8 @@ function page() {
             <div className="w-full flex md:justify-end">
               <div className="relative max-w-[400px] w-full aspect-[4/5]">
                 <Image
-                  src={Girl}
-                  alt="girl"
+                  src={Girlwithsocial}
+                  alt="girl-with-social-image"
                   fill
                   className="object-cover rounded-xl"
                 />
@@ -127,7 +176,7 @@ function page() {
             <div className="md:col-span-2 w-full flex md:justify-end">
               <div className="relative max-w-[400px] w-full aspect-[4/4]">
                 <Image
-                  src={Girl}
+                  src={Twowomenmeet}
                   alt="girl"
                   fill
                   className="object-cover rounded-[4rem]"
@@ -137,7 +186,7 @@ function page() {
             <div className="md:col-span-3 flex flex-col gap-8">
               <div className="max-w-[700px]">
                 <h2 className="text-4xl font-bold">
-                  Let's Ignite Your Social Media Growth Together
+                  {`Let's Ignite Your Social Media Growth Together`}
                 </h2>
 
                 <p className="text-gray-primary text-xl mt-5">
@@ -189,15 +238,11 @@ function page() {
   );
 }
 
-export const Card = () => {
+const Card = ({ title, subtitle }: any) => {
   return (
     <div className="bg-white px-4 py-12 rounded-xl">
-      <h2 className="text-5xl text-center font-bold text-black">
-        Hotel Social Media
-      </h2>
-      <p className="text-black text-xl text-center">
-        If you are looking for the best hotel seo, look no further.
-      </p>
+      <h2 className="text-5xl text-center font-bold text-black">{title}</h2>
+      <p className="text-black text-xl text-center">{subtitle}</p>
       <div>
         <div className="flex justify-center mt-5">
           <Link
@@ -212,23 +257,20 @@ export const Card = () => {
   );
 };
 
-export const CardTwo = () => {
+const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6">
-      <div className="relative max-w-32 w-full aspect-[4/3]">
+    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start">
+      <div className="relative max-w-28 w-full aspect-[4/3]">
         <Image
-          src={CircularSocial}
-          alt="circular-socail"
+          src={image}
+          alt="images"
           fill
-          className="object-cover"
+          className="object-contain rounded-3xl"
         />
       </div>
       <div>
-        <h2 className="text-3xl font-bold text-white">Social Media Calendar</h2>
-        <p className="text-white text-lg mt-2">
-          A well-planned content calendar to make sure that your posts are
-          always interesting and consistent.
-        </p>
+        <h2 className="text-xl font-bold text-white">{title}</h2>
+        <p className="text-white text-lg mt-2">{subtitle}</p>
       </div>
     </div>
   );

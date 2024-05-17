@@ -116,7 +116,7 @@ const capitavteAndConnectData = {
 function page() {
   return (
     <div>
-      <div className="py-20 bg-gradient">
+      <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width">
           <OnlinePresence title={"RESTAURANT SOCIAL MEDIA MARKETING"} />
         </div>
