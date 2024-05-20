@@ -6,39 +6,86 @@ import Mobile from "../../../../../public/images/online-mobile.webp";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import SocialCircle from "../../../../../public/images/social-circle.webp";
-import Keyword from "../../../../../public/images/keywords.webp";
 import Donner from "../../../../../public/images/doner.webp";
 
-const Faq = [
+import Keyword from "../../../../../public/images/keywords.webp";
+import Promote from "../../../../../public/images/3rf.webp";
+import Hoursglass from "../../../../../public/images/hourglass.webp";
+import Contentwriting from "../../../../../public/images/content-writing.webp";
+import { Accordin } from "../../components/common-hero";
+
+const faq = [
   {
-    question: "What is Social Media Marketing in Restaurants?",
-    answer: "For marketing your Restaurant on Social Media you should:",
-    items: [
-      "Share enticing food photos,",
-      "Run contests,",
-      "Share enticing food photos,",
-      "Run contests",
-    ],
+    question: "What is a Cloud Kitchen?",
+    body: {
+      type: "number",
+      header:
+        "A cloud kitchen is a facility where food is prepared and cooked exclusively for online orders and delivery. It lacks a dine-in option, focusing on efficient production and delivery of food. Cloud Kitchen is also known as a ghost kitchen or virtual kitchen, ",
+    },
   },
   {
-    question: "What is Social Media Marketing in Restaurants?",
-    answer: "For marketing your Restaurant on Social Media you should:",
-    items: [
-      "Share enticing food photos,",
-      "Run contests,",
-      "Share enticing food photos,",
-      "Run contests",
-    ],
+    question: "How to Start a Cloud Kitchen?",
+    body: {
+      type: "number",
+      header: "You can start your own Cloud Kitchen by following these steps:",
+      list: [
+        "Research: Understand your target market and competition.",
+        " Location: Choose a strategic location with good delivery reach.",
+        " Menu Planning: Create a unique and appealing menu.",
+        " Infrastructure: Set up kitchen space with the necessary equipment.",
+        "Online Presence: Develop a user-friendly website and app for orders.",
+        " Staffing: Hire skilled cooks, kitchen staff, and delivery per sonnel.",
+        " Licensing: Obtain the required permits and licenses.",
+        " Technology: Use order management and delivery tracking systems.",
+        "  Quality Control: Maintain consistent food quality and safety.",
+        "Marketing: Promote your cloud kitchen effectively.",
+      ],
+    },
   },
   {
-    question: "What is Social Media Marketing in Restaurants?",
-    answer: "For marketing your Restaurant on Social Media you should:",
-    items: [
-      "Share enticing food photos,",
-      "Run contests,",
-      "Share enticing food photos,",
-      "Run contests",
-    ],
+    question: "How to market Cloud Kitchen?",
+    body: {
+      type: "number",
+      header: "You can Market Cloud Kitchen in:",
+      list: [
+        "Social Media: Utilize platforms like Instagram, and Facebook for visual promotions.",
+        "Online Ads: Invest in targeted online advertising.",
+        "Food Aggregators: Partner with delivery platforms like Swiggy, and UberEats.",
+        "Influencers: Collaborate with food influencers for reviews.",
+        "SEO: Optimize your website for search engines.",
+        " Email Marketing: Send promotions and updates to subscribers.",
+        "  Loyalty Programs: Offer discounts or rewards for repeat orders.",
+        " Content: Create engaging blog posts or videos about your offerings",
+      ],
+    },
+  },
+  {
+    question: "How do I advertise my cloud kitchen?",
+    body: {
+      type: "list",
+      header: "Advertise your cloud kitchen on social media by ",
+      list: [
+        " Creating visually appealing posts showcasing your menu, specials, and behind-the-scenes glimpses. ",
+        "Engage with followers through interactive content, ",
+        "   Collaborate with food influencers, run targeted ads, and use relevant hashtags to increase reach.",
+        "Encourage user-generated content and prompt online orders for effective promotion.",
+      ],
+    },
+  },
+  {
+    question: "Who is the target audience of cloud kitchens?",
+    body: {
+      type: "list",
+      header: "The target audience for cloud kitchens is:",
+      list: [
+        " Busy professionals, ",
+        "  Families,",
+        "Students, and ",
+        "anyone seeking convenient and quick meal options.",
+      ],
+      footer:
+        "It’s especially appealing to those who prefer ordering food online and getting it delivered to their doorstep.",
+    },
   },
 ];
 
@@ -48,7 +95,7 @@ const CardDetails = [
     subtitle:
       "Cultivate strong customer relationships with Fielmente’s social media management for restaurants. Engage directly with customers, promptly responding to comments, inquiries, and reviews, fostering a vibrant community that builds loyalty and strengthens your restaurant’s reputation.",
     image: {
-      src: Keyword,
+      src: Contentwriting,
       alt: "Booking",
     },
   },
@@ -58,7 +105,7 @@ const CardDetails = [
     subtitle:
       "Drive customer engagement with Fielmente’s social media management for restaurants. Promote exclusive discounts, limited-time offers, and enticing promotions, creating a sense of urgency that attracts customers and fills your restaurant with eager diners.",
     image: {
-      src: Keyword,
+      src: Promote,
       alt: "Booking",
     },
   },
@@ -67,7 +114,7 @@ const CardDetails = [
     title: "Build Brand Personality",
     subtitle: `Unleash your restaurant’s unique brand personality with Fielmente’s social media management. Develop a distinctive identity and voice that resonates with customers, creating a memorable and relatable image that sets your establishment apart.`,
     image: {
-      src: Keyword,
+      src: Hoursglass,
       alt: "Booking",
     },
   },
@@ -77,7 +124,7 @@ const CardDetails = [
     subtitle:
       "Ignite cravings and drive orders with Fielmente’s cloud kitchen website design. Showcase tantalizing food photos and mouthwatering videos that captivate and entice customers, leaving them with no choice but to succumb to the temptation and indulge in the delicious offerings from your cloud kitchen.",
     image: {
-      src: Keyword,
+      src: Contentwriting,
       alt: "Booking",
     },
   },
@@ -87,7 +134,7 @@ const CardDetails = [
     subtitle:
       "At Fielmente, we understand the power of customer feedback. Engage with your customers by responding to their reviews. Utilize social listening tools to gather valuable insights. By actively responding to feedback, you can continuously improve your cloud kitchen’s offerings, ensuring customer satisfaction and maintaining a strong reputation in the industry.",
     image: {
-      src: Keyword,
+      src: Promote,
       alt: "Booking",
     },
   },
@@ -97,7 +144,7 @@ const CardDetails = [
     subtitle:
       "Expand your reach and boost brand awareness with Fielmente’s influencer collaboration services. By partnering with influential figures in the food and lifestyle industry, you can tap into their engaged audience, attract new customers, and create a buzz around your cloud kitchen, ultimately driving more orders and establishing your brand as a prominent player in the culinary scene.",
     image: {
-      src: Keyword,
+      src: Hoursglass,
       alt: "Booking",
     },
   },
@@ -107,7 +154,7 @@ const CardDetails = [
     subtitle:
       "Streamline Social Media Content Delivery with Fielmente. Utilize Publishing and Scheduling Solutions for Hotel Social Media Posts, Empowering Your Team to Enhance Strategy and Build Stronger Connections with Consumers.",
     image: {
-      src: Keyword,
+      src: Hoursglass,
       alt: "Booking",
     },
   },
@@ -117,7 +164,7 @@ const CardDetails = [
     subtitle:
       "Elevate Your Social Media Management with Linktree. Share Multiple Links in One Tap, Maximizing Engagement and Effortlessly Connecting Users with Relevant Content.",
     image: {
-      src: Keyword,
+      src: Contentwriting,
       alt: "Booking",
     },
   },
@@ -127,7 +174,7 @@ const CardDetails = [
     subtitle:
       "Conduct a Comprehensive Social Media Platform Audit & Take Remedial Action. Track Data in Google Analytics to Identify Social Traffic, Monitor Campaigns, Referral Traffic, and Conversions from cloud kitchen Social Media Posts.",
     image: {
-      src: Keyword,
+      src: Promote,
       alt: "Booking",
     },
   },
@@ -370,9 +417,7 @@ function page() {
             </h2>
 
             <div className="mt-10 flex flex-col gap-8">
-              {Faq.map((item, index) => (
-                <Accordin {...item} key={index} />
-              ))}
+              <Accordin Data={faq} />
             </div>
           </section>
         </div>
@@ -392,43 +437,6 @@ const GrowthCard = ({ title, subtitle, image }: any) => {
       />
       <h2 className="text-black sm:text-4xl text-3xl font-medium">{title}</h2>
       <p className="sm:text-xl text-lg text-gray-primary">{subtitle}</p>
-    </div>
-  );
-};
-
-const Accordin = ({ question, answer, items }: any) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div>
-      <h2
-        className="text-black sm:text-xl text-lg font-semibold flex gap-2"
-        onClick={() => setOpen(!open)}
-      >
-        <span className="text-xl font-bold cursor-pointer">+</span>
-        {question}
-      </h2>
-      <div
-        className="flex flex-col gap-5"
-        style={{
-          maxHeight: open ? "1200px" : "0px",
-          overflow: "hidden",
-          transition: "all 0.8s linear",
-        }}
-      >
-        {answer && <p className="text-black text-lg mt-8 px-10">{answer}</p>}
-
-        {items.length > 0 && (
-          <ul className="list-disc list-inside">
-            {items.map((item: any, index: number) => {
-              return (
-                <li className="text-black text-lg" key={index}>
-                  {item}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
     </div>
   );
 };

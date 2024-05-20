@@ -6,7 +6,6 @@ import Keyboard from "../../../../../public/images/Keyboard.webp";
 
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import Keyword from "../../../../../public/images/keywords.webp";
 import WantToJoin from "../../components/want-to-join";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,7 +22,80 @@ import GoogleAds2 from "../../../../../public/images/HOTEL-GOOGLE-ADS-03.webp";
 import GoogleAds3 from "../../../../../public/images/HOTEL-GOOGLE-ADS-04.webp";
 import GoogleAds4 from "../../../../../public/images/HOTEL-GOOGLE-ADS-05.webp";
 
+import Keyword from "../../../../../public/images/keywords.webp";
+import Promote from "../../../../../public/images/3rf.webp";
+import Hoursglass from "../../../../../public/images/hourglass.webp";
+import Contentwriting from "../../../../../public/images/content-writing.webp";
+
 import CaptivateAndConnect from "../../components/captivate-and-connect";
+import { Accordin } from "../../components/common-hero";
+
+const faq = [
+  {
+    question: "What is Hotel Google Ads?",
+    body: {
+      type: "null",
+      header:
+        "Hotel Google Ads are the digital advertisements. These Ads are specially designed to promote your hotels and its accommodations on Google’s advertising platform.",
+    },
+  },
+  {
+    question: "How to Advertise a Hotel online?",
+    header: "To advertise a hotel online, follow these steps:",
+    body: {
+      type: "number",
+      list: [
+        "Create a user-friendly, responsive website. It should showcase your Hotel, accommodation, and services.",
+        "Use search engine optimization (SEO) techniques. Ensure your website appears in relevant search results when users look for accommodations in your area.",
+        "You should use Social Media platforms like Facebook, Instagram, and Twitter. Share high-quality images, videos, and information about your hotel on those platforms.",
+        " Partner with popular Online Travel Agencies (OTAs). Like Booking.com, Ola, Uber, and Airbnb to list your property and attract potential guests.",
+        "Creatively use Google’s hotel advertising platform. For displaying your hotel’s pricing and availability directly in search results.",
+        " Create valuable and informative content related to travel, local attractions, and tips for travelers. This can attract potential guests and establish your hotel as an authority in the field.",
+        "Collect email addresses from interested parties and send out promotional offers, newsletters, and updates.",
+      ],
+    },
+  },
+  {
+    question: "How do I write a hotel Ads?",
+    body: {
+      type: "null",
+      header:
+        "Writing tempting hotel Ads involves showcasing your hotel’s special features. Like the amenities, benefits, etc. Use clarifying language, focus on what sets your hotel apart, and consider using attention-seeking headlines. Mention key selling points like location, room types, special offers, and guest experiences.",
+    },
+  },
+  {
+    question: "How does Google Hotel Ads work?",
+    body: {
+      type: "list",
+      header:
+        "Google Hotel Ads allows your hotels to show the rates and availability directly within Google Search and Google Maps. When users search for accommodations, they see a list of hotels with their rates and booking options. When they click on any of the hotels, it leads them to a page with more details. The page in which there is an option to book directly through the hotel’s website or other booking platforms.",
+    },
+  },
+  {
+    question: "What are Google Local Ads?",
+    body: {
+      type: "null",
+      list: [
+        " Google Local Ads is a type of online advertising. Local Ads help local businesses and hotels to rank on SERPs. When the users search for services in their local area, the hotels appear at the top of Google Search results. These ads include the business or hotel’s name, contact information, reviews, and a short description.",
+        "Google Local Ads is also known as Local Services Ads.",
+      ],
+    },
+  },
+  {
+    question: "What are the benefits of Google Hotel Ads?",
+    body: {
+      type: "number",
+      header: "The Benefits of using Google Hotel Ads are:",
+      list: [
+        "It helps to increase the visibility of your hotel. Your hotel is displayed on Google Search and Maps results.",
+        "It can target specific audiences. They can be based on factors like location, travel dates, and preferences.",
+        "It display the rates of your hotel alongside your competition. It allows travelers to compare and choose.",
+        "Google provides analytics and insights to help you understand how your ads are performing. It helps to make necessary adjustments",
+        "Many travelers use mobile devices to search and book hotels. Google Ads help hotels appear seamlessly on every device.",
+      ],
+    },
+  },
+];
 
 const capitavteAndConnectData = {
   title:
@@ -45,7 +117,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Boost your hotel’s online presence with targeted advertising strategies, expanding your reach and capturing the attention of your ideal audience.",
       image: {
-        src: Keyword,
+        src: Contentwriting,
         alt: "Booking",
       },
     },
@@ -55,7 +127,7 @@ const capitavteAndConnectData = {
       subtitle:
         "With Fielmente’s expertise, your hotel’s paid ads reach the right audience, maximizing engagement and driving high-quality leads.",
       image: {
-        src: Keyword,
+        src: Promote,
         alt: "Booking",
       },
     },
@@ -64,7 +136,7 @@ const capitavteAndConnectData = {
       title: "Cost-Effective Results",
       subtitle: `Maximize your advertising budget with our cost-effective solutions, driving tangible results and high returns on investment for your hotel.`,
       image: {
-        src: Keyword,
+        src: Hoursglass,
         alt: "Booking",
       },
     },
@@ -74,7 +146,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Fielmente’s tailored paid ads effectively drive direct bookings, empowering your hotel to attract and convert potential guests.",
       image: {
-        src: Keyword,
+        src: Contentwriting,
         alt: "Booking",
       },
     },
@@ -85,7 +157,7 @@ const capitavteAndConnectData = {
 
         `,
       image: {
-        src: Keyword,
+        src: Promote,
         alt: "Booking",
       },
     },
@@ -95,7 +167,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Benefit from real-time optimization of your paid ads, ensuring continuous improvement and maximum performance for your hotel marketing efforts.",
       image: {
-        src: Keyword,
+        src: Hoursglass,
         alt: "Booking",
       },
     },
@@ -315,6 +387,20 @@ function page() {
       <div className="md:py-20 py-10 bg-black">
         <div className="max-width">
           <WantToJoin />
+        </div>
+      </div>
+
+      <div className="md:py-20 py-10">
+        <div className="max-width">
+          <section>
+            <h2 className="text-5xl font-bold text-black text-center">
+              Frequently Asked Questions
+            </h2>
+
+            <div className="mt-10 flex flex-col gap-8">
+              <Accordin Data={faq} />
+            </div>
+          </section>
         </div>
       </div>
     </section>

@@ -9,43 +9,102 @@ import Marketloud from "../../../../public/images/Marketloud.webp";
 
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import BoostVisibility from "../../../../public/images/boostvisiblity.webp";
 import keyword from "../../../../public/images/keywords.webp";
 import SocialCircle from "../../../../public/images/social-circle.webp";
-import Booking from "../../../../public/images/directbooking.webp";
 import Backgrond from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
 import Form from "@/app/about/components/Form";
 
-const Faq = [
+import Track from "../../../../public/images/trackandoptimize.webp";
+import Enhanced from "../../../../public/images/inhancevisiblity.webp";
+import Target from "../../../../public/images/targetingadvertised.webp";
+import Costeffective from "../../../../public/images/costeffective.webp";
+import Outperform from "../../../../public/images/outperform.webp";
+import Local from "../../../../public/images/localtargeting.webp";
+
+import BoostVisibility from "../../../../public/images/boostvisiblity.webp";
+import CustomerFeedback from "../../../../public/images/cusomerfeedback.webp";
+import Showcasemenu from "../../../../public/images/showcasemenu.webp";
+import Customertrust from "../../../../public/images/customertrust.webp";
+import Onlineordering from "../../../../public/images/onlineordering.webp";
+import Brandidentify from "../../../../public/images/brandidentify.webp";
+import { Accordin } from "../components/common-hero";
+
+const faq = [
   {
-    question: "What is Social Media Marketing in Restaurants?",
-    answer: "For marketing your Restaurant on Social Media you should:",
-    items: [
-      "Share enticing food photos,",
-      "Run contests,",
-      "Share enticing food photos,",
-      "Run contests",
-    ],
+    question: "Is Cloud Kitchen profitable business?",
+    body: {
+      type: "null",
+
+      list: [
+        " Yes, cloud kitchens can be a profitable business if managed efficiently and strategically.",
+        "If you want to run your cloud kitchen business profitable, get on a call with our expert for a free one on one consultation.",
+      ],
+    },
   },
   {
-    question: "What is Social Media Marketing in Restaurants?",
-    answer: "For marketing your Restaurant on Social Media you should:",
-    items: [
-      "Share enticing food photos,",
-      "Run contests,",
-      "Share enticing food photos,",
-      "Run contests",
-    ],
+    question: "Is Cloud Kitchen B2B and B2C?",
+    body: {
+      type: "null",
+      list: [
+        "Yes, cloud kitchens can operate as both B2B (Business-to-Business) and B2C (Business-to-Consumer) models, serving food delivery platforms and individual customers directly.",
+
+        "If you want to create a sensational brand of your cloud kitchen?",
+
+        "Connect with our expert cloud kitchen marketing agency, to skyrocket your revenue.",
+      ],
+    },
   },
   {
-    question: "What is Social Media Marketing in Restaurants?",
-    answer: "For marketing your Restaurant on Social Media you should:",
-    items: [
-      "Share enticing food photos,",
-      "Run contests,",
-      "Share enticing food photos,",
-      "Run contests",
-    ],
+    question: "Does Cloud Kitchen needs license in India?",
+    body: {
+      type: "null",
+      header:
+        "Yes, cloud kitchens in India require licenses and permits to operate legally. The specific licenses may vary depending on the location and local regulations. It’s essential for cloud kitchen operators to comply with food safety and hygiene guidelines, trade licenses, and other necessary permits.",
+    },
+  },
+  {
+    question: "what is the startup cost of Cloud Kitchen?",
+    body: {
+      type: "number",
+      header:
+        "The startup cost of a cloud kitchen can be broken down as follows:",
+      list: [
+        " Kitchen Setup: INR 2,50,000 to INR 10,00,000 depending on the size and location of the kitchen.",
+        "Equipment: Approximately INR 3,00,000 to INR 5,00,000 for high-quality kitchen appliances and tools.",
+        "Licenses and Permits: Budget around INR 1,00,000 for various licenses and permits required for legal operations.",
+        "Staffing: Initial staffing costs may range from INR 1,50,000 to INR 3,00,000, including salaries and training.",
+        "Branding and Marketing: Allocate INR 50,000 to INR 1,50,000 for logo design, menu creation, and initial marketing efforts.",
+        "Initial Inventory: Plan for INR 1,00,000 to INR 3,00,000 for purchasing ingredients and supplies.",
+        "Technology: Invest around INR 50,000 to INR 1,00,000 for online ordering systems and delivery management software.",
+        "Utilities and Insurance: Set aside INR 30,000 to INR 50,000 for covering water, electricity, and insurance costs.",
+      ],
+      footer: `Keep in mind that these figures are approximate and can vary based on various factors.
+
+        Proper financial planning and budgeting are crucial for a successful cloud kitchen startup.`,
+    },
+  },
+  {
+    question: "What is required for Cloud Kitchen?",
+    body: {
+      type: "number",
+      header: "To set up a cloud kitchen, you need:",
+      list: [
+        " Commercial kitchen space.",
+        " Essential kitchen equipment.",
+        "Licenses and permits.",
+        "Online ordering system.",
+        "Delivery fleet or partnership.",
+        "  Well-curated menu.",
+        "   Branding and marketing.",
+        "   Skilled staff.",
+        "Quality ingredients and suppliers.",
+        "Proper packaging and hygiene.",
+        " Technology and software.",
+        "  Comprehensive financial planning.",
+      ],
+      footer:
+        "To make your process of setting up a cloud kitchen and creating a brand that talks, our cloud kitchen marketing agency is your go to place.",
+    },
   },
 ];
 
@@ -55,7 +114,7 @@ const CardDetails = [
     subtitle:
       "Update menu and seasonal specials, and promotions or discounts to keep customers informed and excited about offerings.",
     image: {
-      src: BoostVisibility,
+      src: CustomerFeedback,
       alt: "",
     },
   },
@@ -65,7 +124,7 @@ const CardDetails = [
     subtitle:
       "An organized and visually appealing menu on the website entices customers to explore and order from the cloud kitchen.",
     image: {
-      src: BoostVisibility,
+      src: Showcasemenu,
       alt: "",
     },
   },
@@ -82,7 +141,7 @@ const CardDetails = [
     subtitle:
       "A website builds trust and credibility among customers, assuring them of the quality and reliability of your cloud kitchen.",
     image: {
-      src: BoostVisibility,
+      src: Customertrust,
       alt: "",
     },
   },
@@ -91,7 +150,7 @@ const CardDetails = [
     subtitle:
       "Provide a convenient and seamless online ordering experience for customers, increasing sales and customer satisfaction.",
     image: {
-      src: BoostVisibility,
+      src: Onlineordering,
       alt: "Booking",
     },
   },
@@ -100,7 +159,7 @@ const CardDetails = [
     subtitle:
       "Establish a strong brand identity showcasing unique offerings through compelling visuals, enticing descriptions, and website design",
     image: {
-      src: BoostVisibility,
+      src: Brandidentify,
       alt: "Booking",
     },
   },
@@ -112,7 +171,7 @@ const GoogleAdsCardDetails = [
     subtitle:
       "Monitor the performance of your ads in real time, making data-driven adjustments to maximize their effectiveness and drive more orders.",
     image: {
-      src: Booking,
+      src: Track,
       alt: "Booking",
     },
   },
@@ -122,7 +181,7 @@ const GoogleAdsCardDetails = [
     subtitle:
       "Increase your cloud kitchen’s visibility by appearing at the top of relevant Google search results, capturing the attention of hungry customers.",
     image: {
-      src: Booking,
+      src: Enhanced,
       alt: "Booking",
     },
   },
@@ -131,7 +190,7 @@ const GoogleAdsCardDetails = [
     title: "Targeted Advertising",
     subtitle: `Reach customers actively searching for food delivery options in your area, targeting specific keywords and locations to maximize relevance.`,
     image: {
-      src: Booking,
+      src: Target,
       alt: "Booking",
     },
   },
@@ -141,7 +200,7 @@ const GoogleAdsCardDetails = [
     subtitle:
       "Set your budget and only pay for clicks or conversions, ensuring you get a measurable return on investment and control your advertising costs.",
     image: {
-      src: Booking,
+      src: Costeffective,
       alt: "Booking",
     },
   },
@@ -150,7 +209,7 @@ const GoogleAdsCardDetails = [
     subtitle:
       "Outrank competing cloud kitchens in paid search ads, gaining a competitive edge and increasing the likelihood of attracting customers.",
     image: {
-      src: Booking,
+      src: Outperform,
       alt: "Booking",
     },
   },
@@ -159,7 +218,7 @@ const GoogleAdsCardDetails = [
     subtitle:
       "Focus your ads on specific geographic areas to target customers in proximity to your cloud kitchen, increasing the chances of conversion.",
     image: {
-      src: Booking,
+      src: Local,
       alt: "Booking",
     },
   },
@@ -494,9 +553,7 @@ function page() {
             </h2>
 
             <div className="mt-10 flex flex-col gap-8">
-              {Faq.map((item, index) => (
-                <Accordin {...item} key={index} />
-              ))}
+              <Accordin Data={faq} />
             </div>
           </section>
         </div>
@@ -509,7 +566,7 @@ const Card = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-[#E8FFF9] rounded-2xl p-6 shadow-md">
       <div className="flex justify-center">
-        <Image src={image.src} alt="boost-visiblity" />
+        <Image src={image.src} alt="boost-visiblity" width={140} />
       </div>
 
       <h2 className="text-3xl font-semibold text-black text-center">{title}</h2>
@@ -557,43 +614,6 @@ const PerformaceCard = ({ title, subtitle, image }: any) => {
       </div>
       <h2 className="text-black text-3xl font-bold">{title}</h2>
       <p className="text-blue-dark text-lg">{subtitle}</p>
-    </div>
-  );
-};
-
-const Accordin = ({ question, answer, items }: any) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div>
-      <h2
-        className="text-black text-xl font-semibold flex gap-2"
-        onClick={() => setOpen(!open)}
-      >
-        <span className="text-xl font-bold cursor-pointer">+</span>
-        {question}
-      </h2>
-      <div
-        className="flex flex-col gap-5"
-        style={{
-          maxHeight: open ? "1200px" : "0px",
-          overflow: "hidden",
-          transition: "all 0.8s linear",
-        }}
-      >
-        {answer && <p className="text-black text-lg mt-8 px-10">{answer}</p>}
-
-        {items.length > 0 && (
-          <ul className="list-disc list-inside">
-            {items.map((item: any, index: number) => {
-              return (
-                <li className="text-black text-lg" key={index}>
-                  {item}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
     </div>
   );
 };

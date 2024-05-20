@@ -2,6 +2,12 @@ import Image from "next/image";
 import React from "react";
 import Food from "../../../../public/images/people-taking-photos-food-1536x1024.webp";
 import BoostVisibility from "../../../../public/images/boostvisiblity.webp";
+import Showcasemenu from "../../../../public/images/showcasemenu.webp";
+import Locationandcontact from "../../../../public/images/locationandcontactinformation.webp";
+import onlinereservation from "../../../../public/images/onlinereservation.webp";
+import customerreviews from "../../../../public/images/customerreviews.webp";
+import specialoffer from "../../../../public/images/heighlighspecialoffers.webp";
+
 import Link from "next/link";
 
 const CardDetails = [
@@ -20,7 +26,7 @@ const CardDetails = [
     subtitle:
       "Display your mouth-watering dishes, enticing customers to visit your restaurant.",
     image: {
-      src: BoostVisibility,
+      src: Showcasemenu,
       alt: "",
     },
   },
@@ -28,7 +34,7 @@ const CardDetails = [
     title: "Location and Contact Information",
     subtitle: `Provide accurate information, making it easy for customers to find and reach your restaurant`,
     image: {
-      src: BoostVisibility,
+      src: Locationandcontact,
       alt: "",
     },
   },
@@ -37,7 +43,7 @@ const CardDetails = [
     subtitle:
       "Allow customers to conveniently book tables online, enhancing the customer experience and driving more bookings.",
     image: {
-      src: BoostVisibility,
+      src: onlinereservation,
       alt: "",
     },
   },
@@ -46,7 +52,7 @@ const CardDetails = [
     subtitle:
       "Showcase positive reviews and testimonials, building trust and credibility among potential customers.",
     image: {
-      src: BoostVisibility,
+      src: customerreviews,
       alt: "Booking",
     },
   },
@@ -55,7 +61,7 @@ const CardDetails = [
     subtitle:
       "Promote special deals, discounts, and events to entice customers and create a sense of urgency.",
     image: {
-      src: BoostVisibility,
+      src: specialoffer,
       alt: "Booking",
     },
   },

@@ -5,7 +5,11 @@ import CaptivateAndConnect from "../../components/captivate-and-connect";
 import Mobiles from "../../components/mobiles";
 import WantToJoin from "../../components/want-to-join";
 import Frequently from "../../components/frequently";
+
 import Keyword from "../../../../../public/images/keywords.webp";
+import Promote from "../../../../../public/images/3rf.webp";
+import Hoursglass from "../../../../../public/images/hourglass.webp";
+import Contentwriting from "../../../../../public/images/content-writing.webp";
 
 const capitavteAndConnectData = {
   title: "Captivate and Connect",
@@ -27,7 +31,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Cultivate strong customer relationships with Fielmente’s social media management for restaurants. Engage directly with customers, promptly responding to comments, inquiries, and reviews, fostering a vibrant community that builds loyalty and strengthens your restaurant’s reputation.",
       image: {
-        src: Keyword,
+        src: Contentwriting,
         alt: "Booking",
       },
     },
@@ -37,7 +41,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Drive customer engagement with Fielmente’s social media management for restaurants. Promote exclusive discounts, limited-time offers, and enticing promotions, creating a sense of urgency that attracts customers and fills your restaurant with eager diners.",
       image: {
-        src: Keyword,
+        src: Promote,
         alt: "Booking",
       },
     },
@@ -46,7 +50,7 @@ const capitavteAndConnectData = {
       title: "Build Brand Personality",
       subtitle: `Unleash your restaurant’s unique brand personality with Fielmente’s social media management. Develop a distinctive identity and voice that resonates with customers, creating a memorable and relatable image that sets your establishment apart.`,
       image: {
-        src: Keyword,
+        src: Hoursglass,
         alt: "Booking",
       },
     },
@@ -56,7 +60,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Harness the power of user-generated content with Fielmente’s social media management for restaurants. Encourage customers to share their experiences and food photos, amplifying your restaurant’s online presence and creating a vibrant community of loyal diners.",
       image: {
-        src: Keyword,
+        src: Contentwriting,
         alt: "Booking",
       },
     },
@@ -66,7 +70,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Keep your restaurant in the mind of customers with Fielmente’s social media management for restaurants. Engage customers with captivating content, ensuring your restaurant remains unforgettable and encouraging repeat visits.",
       image: {
-        src: Keyword,
+        src: Promote,
         alt: "Booking",
       },
     },
@@ -76,7 +80,7 @@ const capitavteAndConnectData = {
       subtitle:
         "At Fielmente, we combine the power of unrestrained voice and strategic social engineering to create compelling digital content (static, audio, dynamic, video) for brand awareness. Our meticulous approach includes monthly content calendars with precise schedules, ensuring impactful and timely engagement with your audience.",
       image: {
-        src: Keyword,
+        src: Hoursglass,
         alt: "Booking",
       },
     },
@@ -86,7 +90,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Fielmente. Utilize Publishing and Scheduling Solutions for Restaurant Social Media Posts, Empowering Your Team to Enhance Strategy and Build Stronger Connections with Consumers.",
       image: {
-        src: Keyword,
+        src: Hoursglass,
         alt: "Booking",
       },
     },
@@ -96,7 +100,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Elevate Your Social Media Management with Linktree. Share Multiple Links in One Tap, Maximizing Engagement and Effortlessly Connecting Users with Relevant Content.",
       image: {
-        src: Keyword,
+        src: Contentwriting,
         alt: "Booking",
       },
     },
@@ -106,7 +110,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Optimize Social Media Performance: Conduct a Comprehensive Social Media Platform Audit & Take Remedial Action. Track Data in Google Analytics to Identify Social Traffic, Monitor Campaigns, Referral Traffic, and Conversions from restaurant Social Media Posts.",
       image: {
-        src: Keyword,
+        src: Promote,
         alt: "Booking",
       },
     },

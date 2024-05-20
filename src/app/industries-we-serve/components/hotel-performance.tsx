@@ -4,6 +4,12 @@ import Image from "next/image";
 import Booking from "../../../../public/images/directbooking.webp";
 import Link from "next/link";
 
+import Enhanced from "../../../../public/images/inhancevisiblity.webp";
+import Target from "../../../../public/images/targetingadvertised.webp";
+import Costeffective from "../../../../public/images/costeffective.webp";
+import Complete from "../../../../public/images/completeffectively.webp";
+import Realtime from "../../../../public/images/realtimeoptimization.webp";
+
 const CardDetails = [
   {
     title: " Drive Direct Booking",
@@ -20,7 +26,7 @@ const CardDetails = [
     subtitle:
       "Stand out from competitors in search results, capturing the attention of potential guests and gaining a competitive edge.",
     image: {
-      src: Booking,
+      src: Complete,
       alt: "Booking",
     },
   },
@@ -29,7 +35,7 @@ const CardDetails = [
     subtitle: `Continuously monitor and optimize your campaigns to improve performance, maximize ROI, and drive
       more bookings.`,
     image: {
-      src: Booking,
+      src: Realtime,
       alt: "Booking",
     },
   },
@@ -38,7 +44,7 @@ const CardDetails = [
     subtitle:
       "Advertise your hotel prominently on Google search results, reaching a larger audience actively searching for accommodations.",
     image: {
-      src: Booking,
+      src: Enhanced,
       alt: "Booking",
     },
   },
@@ -47,7 +53,7 @@ const CardDetails = [
     subtitle:
       "Advertise your hotel prominently on Google search results, reaching a larger audience actively searching for accommodations.",
     image: {
-      src: Booking,
+      src: Target,
       alt: "Booking",
     },
   },
@@ -56,7 +62,7 @@ const CardDetails = [
     subtitle:
       "Pay only for clicks or conversions, making Google Ads a cost-effective advertising method with measurable results.",
     image: {
-      src: Booking,
+      src: Costeffective,
       alt: "Booking",
     },
   },
@@ -100,7 +106,7 @@ const PerformaceCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-white p-6 rounded-xl flex flex-col gap-6">
       <div>
-        <Image src={image.src} alt={image.alt} width={60} />
+        <Image src={image.src} alt={image.alt} width={50} />
       </div>
       <h2 className="text-black text-3xl font-bold">{title}</h2>
       <p className="text-blue-dark text-lg">{subtitle}</p>

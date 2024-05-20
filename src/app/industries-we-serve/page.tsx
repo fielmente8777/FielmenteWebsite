@@ -20,33 +20,45 @@ const CommonHero1 = {
   faq: [
     {
       question: "Expanding Reach",
-      answer:
-        "Reach global travelers and widen your audience through our hospitality digital marketing services.",
+      body: {
+        header:
+          "Reach global travelers and widen your audience through our hospitality digital marketing services.",
+      },
     },
     {
       question: "Boosting Bookings",
-      answer:
-        "Online presence drives more bookings, converting visitors into loyal guests.",
+      body: {
+        header:
+          "Online presence drives more bookings, converting visitors into loyal guests.",
+      },
     },
     {
       question: "Competing Effectively",
-      answer:
-        "Stay ahead in the hospitality industry with cutting-edge digital marketing strategies.",
+      body: {
+        header:
+          "Stay ahead in the hospitality industry with cutting-edge digital marketing strategies.",
+      },
     },
     {
       question: "Targeted Advertising",
-      answer:
-        "Reach your ideal guests with precise targeting and personalized ads.",
+      body: {
+        header:
+          "Reach your ideal guests with precise targeting and personalized ads.",
+      },
     },
     {
       question: "Enhanced Guest Experience",
-      answer:
-        "Create seamless interactions and offer convenience through online channels.",
+      body: {
+        header:
+          "Create seamless interactions and offer convenience through online channels.",
+      },
     },
     {
       question: "Data-Driven Insights",
-      answer:
-        "Leverage data to optimize marketing efforts and make informed business decisions..",
+      body: {
+        header:
+          "Leverage data to optimize marketing efforts and make informed business decisions..",
+      },
     },
   ],
 };
@@ -62,32 +74,42 @@ const CommonHero2 = {
   faq: [
     {
       question: "Expanded Customer Base",
-      answer:
-        "Tap into a wider audience pool by going online with our hospitality digital marketing services",
+      body: {
+        header:
+          "Tap into a wider audience pool by going online with our hospitality digital marketing services",
+      },
     },
     {
       question: "Drive Online Orders",
-      answer:
-        "Boost sales with a robust online ordering system and targeted promotions.",
+      body: {
+        header:
+          "Boost sales with a robust online ordering system and targeted promotions.",
+      },
     },
     {
       question: "Stay Competitive",
-      answer:
-        "Stand out in the industry by embracing digital channels for your restaurant.",
+      body: {
+        header:
+          "Stand out in the industry by embracing digital channels for your restaurant.",
+      },
     },
     {
       question: "Enhanced Visibility",
-      answer:
-        "Increase brand visibility and attract more local customers through digital marketing strategies.",
+      body: {
+        header:
+          "Increase brand visibility and attract more local customers through digital marketing strategies.",
+      },
     },
     {
       question: "Engage with Customers",
-      answer:
-        "Connect with diners through social media and personalized interactions for lasting loyalty.",
+      body: {
+        header:
+          "Connect with diners through social media and personalized interactions for lasting loyalty.",
+      },
     },
     {
       question: "Insights for Growth",
-      answer: "Insights for Growth",
+      body: { header: "Insights for Growth" },
     },
   ],
 };
@@ -103,33 +125,45 @@ const CommonHero3 = {
   faq: [
     {
       question: "Tap into Wider Audience",
-      answer:
-        "Expand your customer base beyond local reach with our digital marketing services for cloud kitchens.",
+      body: {
+        header:
+          "Expand your customer base beyond local reach with our digital marketing services for cloud kitchens.",
+      },
     },
     {
       question: "Enhanced Visibility",
-      answer:
-        "Online presence drives higher visibility, attracting hungry customers to your cloud kitchen.",
+      body: {
+        header:
+          "Online presence drives higher visibility, attracting hungry customers to your cloud kitchen.",
+      },
     },
     {
       question: "Seamless Online Ordering",
-      answer:
-        "Embrace convenience with a user-friendly online ordering system for your cloud kitchen.",
+      body: {
+        header:
+          "Embrace convenience with a user-friendly online ordering system for your cloud kitchen.",
+      },
     },
     {
       question: "Stay Competitive",
-      answer:
-        "Stay ahead of the curve with cutting-edge digital marketing strategies tailored for cloud kitchens.",
+      body: {
+        header:
+          "Stay ahead of the curve with cutting-edge digital marketing strategies tailored for cloud kitchens.",
+      },
     },
     {
       question: "Targeted Promotions",
-      answer:
-        "Reach your ideal diners with targeted promotions and personalized marketing campaigns.",
+      body: {
+        header:
+          "Reach your ideal diners with targeted promotions and personalized marketing campaigns.",
+      },
     },
     {
       question: "Optimize Operations",
-      answer:
-        "Leverage data insights to optimize operations and elevate the efficiency of your cloud kitchen.",
+      body: {
+        header:
+          "Leverage data insights to optimize operations and elevate the efficiency of your cloud kitchen.",
+      },
     },
   ],
 };

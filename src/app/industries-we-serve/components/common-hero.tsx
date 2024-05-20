@@ -4,8 +4,13 @@ import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 
 export interface AccordingDataPropsTypes {
-  question: string;
-  answer: string;
+  question?: string;
+  body?: {
+    type?: string;
+    header?: string;
+    list?: string[];
+    footer?: string;
+  };
 }
 
 export interface CommonHeroPros {
@@ -17,10 +22,7 @@ export interface CommonHeroPros {
       src: StaticImageData;
       alt: string;
     };
-    faq: {
-      question: string;
-      answer: string;
-    }[];
+    faq: AccordingDataPropsTypes[];
   };
 }
 
@@ -67,7 +69,7 @@ export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
 
 export const AccordinContent = ({
   question,
-  answer,
+  body,
 }: AccordingDataPropsTypes) => {
   const [openAccordin, setOpenAccordin] = useState(false);
   return (
@@ -86,7 +88,37 @@ export const AccordinContent = ({
           transition: "all 0.8s linear",
         }}
       >
-        <p className="text-lg text-gray-primary py-4">{answer}</p>
+        {body?.header && (
+          <p className="text-lg text-black py-4 px-5">{body.header}</p>
+        )}
+
+        {body?.list && body?.type == "number" && (
+          <ul className="list-decimal list-inside text-black flex flex-col text-lg">
+            {body?.list?.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+
+        {body?.list && body?.type == "list" && (
+          <ul className="list-disc list-inside text-black flex flex-col text-lg mt-6">
+            {body?.list?.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+
+        {body?.list && body?.type == "null" && (
+          <ul className="list-inside text-black flex flex-col gap-6 text-lg mt-6">
+            {body?.list?.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+
+        {body?.footer && (
+          <p className="mt-5 text-lg text-black px-5">{body.footer}</p>
+        )}
       </div>
     </div>
   );

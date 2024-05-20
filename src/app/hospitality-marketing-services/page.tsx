@@ -5,7 +5,10 @@ import React, { useState } from "react";
 import Manwithdocuments from "../../../public/images/briefing-staff-hotel-restaurant-1.png";
 import Link from "next/link";
 import Form from "../about/components/Form";
-import GoogleAds1 from "../../../public/images/HOTEL-GOOGLE-ADS-02.webp";
+import GoogleAds1 from "../../../public/images/smileman.webp";
+import GoogleAds2 from "../../../public/images/pizaparty.webp";
+import GoogleAds3 from "../../../public/images/manwithipad.webp";
+import GoogleAds4 from "../../../public/images/oldldy.webp";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,7 +17,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import Brand1 from "../../../public/images/Wah-Malvan-PNG.png";
-import { TrustPiolet } from "../(home)/components/marketingAgency";
+
+import Manger from "../../../public/images/confident-manager-restaurant-1.webp";
+
+import ChooseUs1 from "../../../public/images/i3ruf.webp";
+import ChooseUs2 from "../../../public/images/i3urhf.webp";
+import ChooseUs3 from "../../../public/images/o3irjf.webp";
+import ChooseUs4 from "../../../public/images/2iut4hg.webp";
 
 export interface AccordingDataPropsTypes {
   question: string;
@@ -51,6 +60,45 @@ const faq = [
     question: "Data-Driven Insights",
     answer:
       "Leverage data to optimize marketing efforts and make informed business decisions..",
+  },
+];
+
+const chooseUsData = [
+  {
+    title: "Expertise",
+    subtitle:
+      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+    image: ChooseUs1,
+  },
+  {
+    title: "Expertise",
+    subtitle:
+      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+    image: ChooseUs2,
+  },
+  {
+    title: "Expertise",
+    subtitle:
+      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+    image: ChooseUs3,
+  },
+  {
+    title: "Expertise",
+    subtitle:
+      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+    image: ChooseUs2,
+  },
+  {
+    title: "Expertise",
+    subtitle:
+      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+    image: ChooseUs3,
+  },
+  {
+    title: "Expertise",
+    subtitle:
+      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+    image: ChooseUs4,
   },
 ];
 
@@ -117,7 +165,7 @@ function page() {
         <div className="max-width grid lg:grid-cols-2 gap-10">
           <div className="relative w-full aspect-[4/2.4]">
             <Image
-              src={Manwithdocuments}
+              src={Manger}
               alt="man-with-documents"
               fill
               className="object-cover rounded-3xl"
@@ -164,7 +212,7 @@ function page() {
             <div className="w-full">
               <div className="relative max-w-[340px] mx-auto aspect-[4/5]">
                 <Image
-                  src={Manwithdocuments}
+                  src={GoogleAds2}
                   alt=""
                   fill
                   className="object-cover rounded-3xl"
@@ -211,12 +259,9 @@ function page() {
           </p>
 
           <div className="grid lg:grid-cols-3 gap-y-32 mt-20">
-            <ChooseUSCard />
-            <ChooseUSCard />
-            <ChooseUSCard />
-            <ChooseUSCard />
-            <ChooseUSCard />
-            <ChooseUSCard />
+            {chooseUsData.map((item) => (
+              <ChooseUSCard {...item} />
+            ))}
           </div>
 
           <div className="grid sm:grid-cols-4 gap-8 py-16 mt-20">
@@ -260,7 +305,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={GoogleAds2}
               alt="google-ads"
               fill
               className="object-cover"
@@ -268,7 +313,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={GoogleAds3}
               alt="google-ads"
               fill
               className="object-cover"
@@ -276,7 +321,7 @@ function page() {
           </div>
           <div className="relative w-full aspect-[4/4.5]">
             <Image
-              src={GoogleAds1}
+              src={GoogleAds4}
               alt="google-ads"
               fill
               className="object-cover"
@@ -510,19 +555,15 @@ const AccordinContent = ({ question, answer }: AccordingDataPropsTypes) => {
   );
 };
 
-const ChooseUSCard = () => {
+const ChooseUSCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="max-w-[300px] mx-auto">
       <div className="relative w-full aspect-[4/4]">
-        <Image src={Manwithdocuments} alt="" fill className="object-cover" />
+        <Image src={image} alt="" fill className="object-cover" />
       </div>
       <div className="flex flex-col gap-4 mt-4">
-        <h2 className="text-center text-3xl text-black">Expertise</h2>
-        <p className="text-center text-lg text-black">
-          Benefit from our extensive experience and expertise in digital
-          marketing for hotels, ensuring effective strategies tailored to your
-          specific needs.
-        </p>
+        <h2 className="text-center text-3xl text-black">{title}</h2>
+        <p className="text-center text-lg text-black">{subtitle}</p>
       </div>
     </div>
   );
