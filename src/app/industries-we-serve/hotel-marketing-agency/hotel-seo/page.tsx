@@ -31,6 +31,78 @@ import Keyword from "../../../../../public/images/keywords.webp";
 import Promote from "../../../../../public/images/3rf.webp";
 import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
+import { Accordin } from "../../components/common-hero";
+
+const faq = [
+  {
+    question: "How to do hotel SEO?",
+    body: {
+      type: "list",
+      header:
+        "Hotel SEO is all about optimizing your website for search engines. It helps to improve its visibility in search results. It includes:",
+      list: [
+        "Using relevant keywords,",
+        "Optimizing meta tags,",
+        "Creating high-quality content,",
+        "Improving website speed,",
+        "Developing backlinks from reputable sources and ensure your site is mobile-friendly.",
+      ],
+    },
+  },
+  {
+    question: "How to do SEO for a hotel website?",
+    body: {
+      type: "number",
+      header: "For doing SEO for Hotel you should follow the steps:",
+      list: [
+        "  Optimize your hotel website by conducting keyword research, ",
+        "Optimize meta titles and descriptions,",
+        "  Create high-quality content,",
+        "Improve site speed, and",
+        "  Acquire quality backlinks. ",
+      ],
+      footer:
+        "Local SEO is also very important. Also, create an account and optimize your Google My Business listing.",
+    },
+  },
+  {
+    question: "What are SEO and SEM for hotels?",
+    body: {
+      type: "null",
+      list: [
+        "SEO (Search Engine Optimization) for hotels is improving organic search rankings.",
+
+        "SEM (Search Engine Marketing) involves paid advertising to gain immediate visibility on search engines.",
+
+        "Both SEO and SEM help hotels attract more online visitors and potential guests.",
+      ],
+    },
+  },
+  {
+    question: "Why is SEO important for hotels?",
+    body: {
+      type: "list",
+      header: "SEO is important for Hotels for the following reason:",
+      list: [
+        " SEO boosts the online visibility. It further makes it easier for potential guests to find.",
+        "SEO increases organic website traffic.",
+        "It enhances brand exposure.",
+      ],
+      footer: `By ranking higher on search engines, hotels can attract more bookings and revenue.`,
+    },
+  },
+  {
+    question: "What does SEO stand for in a hotel?",
+    body: {
+      type: "null",
+      list: [
+        "  In a hotel context, SEO stands for Search Engine Optimization.",
+
+        "It’s the process of boosting a hotel website’s online visibility. By optimizing various factors to improve its ranking on search engine results pages.",
+      ],
+    },
+  },
+];
 
 const capitavteAndConnectData = {
   title:
@@ -328,6 +400,20 @@ function page() {
       <div className="md:py-20 py-10 bg-black">
         <div className="max-width">
           <WantToJoin />
+        </div>
+      </div>
+
+      <div className="md:py-20 py-10">
+        <div className="max-width">
+          <section>
+            <h2 className="text-5xl font-bold text-black text-center">
+              Frequently Asked Questions
+            </h2>
+
+            <div className="mt-10 flex flex-col gap-8">
+              <Accordin Data={faq} />
+            </div>
+          </section>
         </div>
       </div>
     </section>
