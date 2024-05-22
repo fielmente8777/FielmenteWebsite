@@ -126,14 +126,7 @@ function page() {
             <h2 className="font-bold text-5xl text-black">
               7) Check-In on Facebook, Instagram, and Twitter:
             </h2>
-            <p className="text-black text-lg mt-5">
-              Having a clean restaurant is important, but having a clean
-              restaurant that is free of contaminants is even more important.
-              Food safety is one of the most vital parts of doing business in
-              the hospitality industry and it has been proven time and time
-              again that it can be an incredibly successful strategy for
-              restaurants.
-            </p>
+            <p className="text-black text-lg mt-5"></p>
           </div>
           <div className="mt-14">
             <h2 className="font-bold text-5xl text-black">
