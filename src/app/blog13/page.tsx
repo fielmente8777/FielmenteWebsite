@@ -129,16 +129,13 @@ function page() {
             <p className="text-black text-lg mt-5"></p>
           </div>
           <div className="mt-14">
-            <h2 className="font-bold text-5xl text-black">
-              6) Maintain Quality Systems (i.e. HACCP):
-            </h2>
+            <h2 className="font-bold text-5xl text-black">Final words</h2>
             <p className="text-black text-lg mt-5">
-              Having a clean restaurant is important, but having a clean
-              restaurant that is free of contaminants is even more important.
-              Food safety is one of the most vital parts of doing business in
-              the hospitality industry and it has been proven time and time
-              again that it can be an incredibly successful strategy for
-              restaurants.
+              This is not an exhaustive list of marketing strategies. This list
+              was created to be complementary to the knowledge you already have
+              and are familiar with. If you have a different marketing strategy
+              that has helped you, or know that other strategies work, please
+              feel free to share them in the comments below!
             </p>
           </div>
         </div>
