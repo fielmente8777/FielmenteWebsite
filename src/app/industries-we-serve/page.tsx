@@ -9,6 +9,13 @@ import Threechef from "../../../public/images/three-chefs-are-restaurant-kitchen
 import OurService from "./components/our-service";
 import Form from "../about/components/Form";
 
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 const CommonHero1 = {
   title: "Why Your Hotel need to Go Online",
   subtitle:
@@ -188,7 +195,7 @@ function page() {
             <h2 className="text-black md:text-5xl text-3xl text-center font-semibold">
               Why Fielmente Hospitality Marketing?
             </h2>
-            <p className="text-gray-500 text-center md:text-xl text-lg">
+            <p className="text-gray-500 text-center md:text-xl text-lg ">
               Unseal limitless possibilities with Fielmente’s tailored expertise
               and results-driven solutions! Our hospitality digital marketing
               services cater precisely to the industries we serve, empowering

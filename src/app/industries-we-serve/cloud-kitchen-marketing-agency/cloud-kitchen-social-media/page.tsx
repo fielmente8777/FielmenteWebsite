@@ -1,4 +1,4 @@
-"use client";
+
 
 import Image from "next/image";
 import React, { useState } from "react";
@@ -13,6 +13,13 @@ import Promote from "../../../../../public/images/3rf.webp";
 import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
 
 const faq = [
   {
@@ -188,13 +195,13 @@ function page() {
           <section>
             <div className="grid lg:grid-cols-2 gap-5 lg:mt-20">
               <div>
-                <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl tracking-[0.3rem]">
+                <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl tracking-[0.3rem] lg:text-start text-center">
                   CLOUD KITCHEN SOCIAL MEDIA MARKETING
                 </h2>
-                <h2 className="md:text-6xl text-3xl text-black font-semibold md:mt-20 mt-5">
+                <h2 className="md:text-6xl text-3xl text-black font-semibold md:mt-20 mt-5 lg:text-start text-center">
                   Make online presence With more impactful creatives.
                 </h2>
-                <p className="text-gray-primary text-xl md:mt-20 mt-5">
+                <p className="text-gray-primary text-xl md:mt-20 mt-5 lg:text-start text-center">
                   Enhance Your Online Presence with Compelling Restaurant Social
                   Media Posts or Campaigns. Our Expert Social Media Management
                   Team Delivers Engaging Creatives for Effective Audience
@@ -247,7 +254,7 @@ function page() {
                   Your Hotel Ahead of the Curve.
                 </p>
 
-                <div className="flex">
+                <div className="flex lg:justify-start justify-center">
                   <Link
                     href={"/contact"}
                     className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium mt-10 pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
@@ -258,7 +265,7 @@ function page() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-8 mt-20 border-b border-b-gray-300 pb-16">
+            <div className="grid sm:grid-cols-3 gap-8 mt-20 border-b border-b-gray-300 lg:pb-16">
               <div className="flex flex-col gap-2">
                 <h2 className="text-6xl font-normal text-black text-center">
                   3K+
@@ -292,10 +299,10 @@ function page() {
         <div className="max-width">
           <section>
             <div className="flex flex-col gap-6 max-w-[900px] mx-auto">
-              <h2 className="text-5xl font-bold text-center text-black">
+              <h2 className="lg:text-5xl text-3xl font-bold text-center text-black">
                 Captivate and Connect
               </h2>
-              <p className="text-center text-xl text-gray-primary">
+              <p className="text-center lg:text-xl text-lg text-gray-primary">
                 Harness the Power of Restaurant Social Media Management to
                 Engage Guests, Cultivate Relationships, and Create Unforgettable
                 Experiences.
@@ -304,10 +311,10 @@ function page() {
 
             <div className="mt-20 lg:grid grid-cols-2 gap-20 items-center">
               <div className=" bg-[#2CBCA5] p-16 rounded-xl">
-                <h2 className="sm:text-5xl text-3xl text-black font-semibold">
+                <h2 className="sm:text-5xl text-3xl text-black font-semibold lg:text-start text-center">
                   Accelerate Your Restaurant’s Growth with Social Media.
                 </h2>
-                <div className="flex mt-10">
+                <div className="flex mt-10 lg:justify-start justify-center">
                   <Link
                     href={"/contact"}
                     className="bg-[#262C2E] px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
@@ -388,9 +395,9 @@ function page() {
       <div className="md:py-20 py-10 bg-black">
         <div className="max-width">
           <section className="grid lg:grid-cols-2 items-center">
-            <div className="p-20">
-              <h2 className="text-5xl font-bold">Want to join?</h2>
-              <p className="text-xl text-gray-primary mt-6">
+            <div className="lg:p-20 mb-6">
+              <h2 className="lg:text-5xl text-3xl font-bold lg:text-start text-center">Want to join?</h2>
+              <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary mt-6">
                 Find a team of digital marketers you can rely on. Every day, we
                 build trust through communication, transparency, and results.
               </p>
@@ -412,7 +419,7 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width">
           <section>
-            <h2 className="sm:text-5xl text-3xl font-bold text-black">
+            <h2 className="sm:text-5xl text-3xl text-center font-bold text-black">
               Frequently Asked Questions
             </h2>
 

@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import React, { useState } from "react";
 import Manwithdocuments from "../../../public/images/briefing-staff-hotel-restaurant-1.png";
 import Link from "next/link";
 import Form from "../about/components/Form";
@@ -10,20 +7,27 @@ import GoogleAds2 from "../../../public/images/pizaparty.webp";
 import GoogleAds3 from "../../../public/images/manwithipad.webp";
 import GoogleAds4 from "../../../public/images/oldldy.webp";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import Brand1 from "../../../public/images/Wah-Malvan-PNG.png";
-
 import Manger from "../../../public/images/confident-manager-restaurant-1.webp";
 
 import ChooseUs1 from "../../../public/images/i3ruf.webp";
 import ChooseUs2 from "../../../public/images/i3urhf.webp";
 import ChooseUs3 from "../../../public/images/o3irjf.webp";
 import ChooseUs4 from "../../../public/images/2iut4hg.webp";
+import BrandWeWork from "./components/BrandWeWork";
+import PeopleSay from "./components/PeopleSay";
+
+import AccordinContent from "./components/AccordinContent";
+
+import Hotels from "../../../public/images/hotel.png";
+import Resorts from "../../../public/images/stays.png";
+import Restaurants from "../../../public/images/restaurants.png";
+import kitchens from "../../../public/images/kitchen.png";
+
+
+
+export async function generateStaticParams() {
+  return [{ params: {} }];
+}
 
 export interface AccordingDataPropsTypes {
   question: string;
@@ -71,33 +75,33 @@ const chooseUsData = [
     image: ChooseUs1,
   },
   {
-    title: "Expertise",
+    title: "Results-Driven Approach",
     subtitle:
-      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+      "We are dedicated to delivering tangible results, maximizing your online presence, and driving increased bookings and revenue for your hotel.",
     image: ChooseUs2,
   },
   {
-    title: "Expertise",
+    title: "Industry Focus",
     subtitle:
-      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+      "Specializing on the hotel sector, we understand the unique challenges and opportunities, enabling us to provide solutions for a competitive edge.",
     image: ChooseUs3,
   },
   {
-    title: "Expertise",
+    title: "Customized Solutions",
     subtitle:
-      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+      "We take the time to understand your hotel's goals and objectives, crafting customized strategies and solutions that align with your brand and resonate with your target audience.",
     image: ChooseUs2,
   },
   {
-    title: "Expertise",
+    title: "Integrated Services",
     subtitle:
-      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+      "From SEO and web design to social media and paid advertising, our comprehensive suite of services ensures a cohesive and holistic approach to your digital marketing efforts.",
     image: ChooseUs3,
   },
   {
-    title: "Expertise",
+    title: "Exceptional Client Service",
     subtitle:
-      "Benefit from our extensive experience and expertise in digital marketing for hotels, ensuring effective strategies tailored to your specific needs.",
+      "Enjoy a seamless and personalized experience with our attentive and dedicated client service team, ensuring your satisfaction and success throughout our partnership.",
     image: ChooseUs4,
   },
 ];
@@ -106,9 +110,9 @@ function page() {
   return (
     <section>
       {/* Boost Your Business with Fielmente, India's top Hospitality Marketing Services! */}
-      <div className="py-20 bg-gradient">
+      <div className="lg:py-20 py-9 bg-gradient">
         <div className="max-width">
-          <div className="grid lg:grid-cols-2 gap-5 mt-20">
+          <div className="grid lg:grid-cols-2 gap-5 lg:mt-20 mt-6">
             <div>
               <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
                 OUR HOSPITALITY MARKETING SERVICES
@@ -118,13 +122,13 @@ function page() {
                   " Boost Your Business with Fielmente, India's top Hospitality Marketing Services!"
                 }
               </h2>
-              <p className="text-gray-primary text-xl mt-5">
+              <p className="text-gray-primary text-xl mt-5 text-center lg:text-start">
                 Attention, savvy business owners! Release the true potential of
                 your online presence with Fielmente, your go-to hospitality
                 marketing services in India.
               </p>
 
-              <p className="text-gray-primary text-xl mt-5">
+              <p className="text-gray-primary text-xl mt-5 text-center lg:text-start">
                 Let our experts empower your business with tailored strategies,
                 setting new standards for success in the hospitality industry!
               </p>
@@ -144,12 +148,12 @@ function page() {
       </div>
 
       {/* What We Offer */}
-      <div className="py-20">
+      <div className="lg:py-20 py-9">
         <div className="max-width">
-          <h2 className="text-black text-center text-4xl font-bold">
+          <h2 className="text-black text-center lg:text-4xl text-3xl font-bold">
             What We Offer
           </h2>
-          <p className="text-black text-center text-xl mt-10">
+          <p className="text-black text-center lg:text-xl text-lg mt-10">
             Want to embrace the Digital Frontier? Boost your hospitality
             business with our cutting-edge Hospitality Marketing Services and
             Hospitality Digital Marketing Services. Conquer the online realm,
@@ -161,7 +165,7 @@ function page() {
       </div>
 
       {/* Industries We Serve:  */}
-      <div className="py-20">
+      <div className="lg:py-20 py-9">
         <div className="max-width grid lg:grid-cols-2 gap-10">
           <div className="relative w-full aspect-[4/2.4]">
             <Image
@@ -172,15 +176,33 @@ function page() {
             />
           </div>
           <div className="">
-            <h2 className="text-5xl text-black font-bold">
+            <h2 className="lg:text-5xl text-3xl lg:text-start text-center text-black font-bold">
               Industries We Serve:
             </h2>
-            <div className="text-black sm:text-3xl text-xl font-bold text-center mt-5 flex gap-6 justify-center">
+            {/* <div className="text-black sm:text-3xl text-xl font-bold text-center mt-5 flex gap-6 justify-center">
               <p> Hotels</p>
               <p>Restaurants Cloud</p>
               <p>Kitchens</p>
+            </div> */}
+            <div className="grid lg:grid-cols-4 grid-cols-2 gap-10 mt-10">
+              {cardDt.map((item, index) => (
+                <div
+                  className="flex flex-col lg:gap-4 gap-2 rounded-3xl items-center justify-center lg:p-9 p-5 shadow-lg bg-[#E8FFF9]"
+                  key={index}
+                >
+                  <div className="relative w-24 h-24 aspect-[4/4]">
+                    <Image
+                      src={item.icon}
+                      alt="man-with-documents"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <h3 className="text-black font-bold text-[1.2rem]">{item.title}</h3>
+                </div>
+              ))}
             </div>
-            <p className="text-xl text-black mt-10">
+            <p className="lg:text-xl text-lg text-center lg:text-start text-black mt-10">
               Fielmente is a place, where we excel in revolutionizing your
               business! As the finest hospitality marketing agency in India, we
               exclusively cater to hotels, cloud kitchens, and restaurants.
@@ -194,12 +216,12 @@ function page() {
       </div>
 
       {/* Why do You need to Go Online?*/}
-      <div className="py-20">
+      <div className="lg:py-20 py-9">
         <div className="max-width">
-          <h2 className="text-black text-center text-5xl font-bold">
+          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
             Why do You need to Go Online?
           </h2>
-          <p className="text-black text-center text-xl mt-10">
+          <p className="text-black text-center text-lg lg:text-xl mt-10">
             Unwrap your business’s true potential and reach new heights with the
             irresistible allure of online presence with Fielmente’s cutting-edge
             hospitality marketing services!
@@ -224,13 +246,13 @@ function page() {
       </div>
 
       {/* Are you ready to unlock the full potential  */}
-      <div className="py-20">
+      <div className="lg:py-20 py-9">
         <div className="max-width">
-          <h2 className="text-black text-center text-5xl font-bold">
+          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
             Are you ready to unlock the full potential of your business’s online
             presence with our Hospitality Marketing Services?
           </h2>
-          <p className="text-black text-center text-xl mt-10">
+          <p className="text-black text-center text-lg lg:text-xl mt-10">
             Hospitality Marketing Services? Go online and take your hospitality
             business to new heights! With the leading hospitality consultants in
             India and the best hospitality marketing agency, today.
@@ -247,45 +269,53 @@ function page() {
       </div>
 
       {/* Why Choose Us?  */}
-      <div className="py-20">
+      <div className="lg:py-20 py-10">
         <div className="max-width">
-          <h2 className="text-black text-center text-5xl font-bold">
+          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
             Why Choose Us?
           </h2>
-          <p className="text-black text-center text-xl mt-10">
+          <p className="text-black text-center lg:text-xl text-lg mt-10">
             Your business’s success is with Fielmente, your ultimate hospitality
             consultant, offering tailored and result-driven hospitality
             marketing services in India, crafted precisely for your needs!
           </p>
 
           <div className="grid lg:grid-cols-3 gap-y-32 mt-20">
-            {chooseUsData.map((item) => (
-              <ChooseUSCard {...item} />
+            {chooseUsData.map((item, index) => (
+              <ChooseUSCard {...item} key={index} />
             ))}
           </div>
 
-          <div className="grid sm:grid-cols-4 gap-8 py-16 mt-20">
+          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 py-16 mt-20">
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-bold text-black text-center">3K+</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+                3K+
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
                 COMPLETED PROJECTS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-bold text-black text-center">89%</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+                89%
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
                 SATISFACTION RATE
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-bold text-black text-center">15</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+                15
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
                 YEARS OF EXPERIENCE
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-bold text-black text-center">15</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+                15
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
                 YEARS OF EXPERIENCE
               </p>
             </div>
@@ -294,7 +324,7 @@ function page() {
       </div>
 
       <div className="md:py-20 py-10">
-        <div className="grid grid-cols-4">
+        <div className="grid lg:grid-cols-4 grid-cols-2">
           <div className="relative w-full aspect-[4/4.5]">
             <Image
               src={GoogleAds1}
@@ -331,13 +361,13 @@ function page() {
       </div>
 
       {/* Hire us as your hospitality marketing agency  */}
-      <div className="py-20">
+      <div className="lg:py-20 py-10">
         <div className="max-width">
-          <h2 className="text-black text-center text-5xl font-bold">
+          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
             Hire us as your hospitality marketing agency and unlock the full
             potential of your business.
           </h2>
-          <p className="text-black text-center text-xl mt-10">
+          <p className="text-black text-center lg:text-xl text-lg mt-10">
             Experience our expertise, results-driven approach, and personalized
             hospitality marketing service that set us apart in the industry.
           </p>
@@ -353,163 +383,10 @@ function page() {
       </div>
 
       {/* Brand We Work With  */}
-      <div className="md:py-20 py-10">
-        <div className="max-width">
-          <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-            <h2 className="text-center text-black text-5xl font-bold">
-              Brand We Work With
-            </h2>
-          </div>
-
-          <div className="mt-16">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={2}
-              pagination={{
-                type: "progressbar",
-              }}
-              modules={[Pagination]}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 10,
-                },
-                1024: {
-                  slidesPerView: 5,
-                  spaceBetween: 10,
-                },
-              }}
-              onSlideChange={() => console.log("slide change")}
-            >
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
+      <BrandWeWork />
 
       {/* What People Say About Us  */}
-      <div className="md:py-20 py-10">
-        <div className="max-width">
-          <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-            <h2 className="text-center text-black text-5xl font-bold">
-              What People Say About Us
-            </h2>
-          </div>
-
-          <div className="mt-16">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              modules={[Pagination]}
-              breakpoints={{
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 10,
-                },
-              }}
-              onSlideChange={() => console.log("slide change")}
-            >
-              <SwiperSlide>
-                <div className="border p-6">
-                  <div className="flex justify-between">
-                    <div className="flex gap-3 items-center">
-                      <Image src={Brand1} alt="brand" width={65} />
-                      <div>
-                        <h2 className="text-xl text-black font-bold">
-                          Antinder Bajwa
-                        </h2>
-                      </div>
-                    </div>
-                    <div></div>
-                  </div>
-                  <p className="text-black text-lg">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Facilis doloremque excepturi mollitia placeat voluptatum ex
-                    hic ipsam quo cum, eos aliquid esse in, at error corrupti
-                    dolor iure commodi nemo.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="border p-6">
-                  <div className="flex justify-between">
-                    <div className="flex gap-3 items-center">
-                      <Image src={Brand1} alt="brand" width={65} />
-                      <div>
-                        <h2 className="text-xl text-black font-bold">
-                          Antinder Bajwa
-                        </h2>
-                      </div>
-                    </div>
-                    <div></div>
-                  </div>
-                  <p className="text-black text-lg">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Facilis doloremque excepturi mollitia placeat voluptatum ex
-                    hic ipsam quo cum, eos aliquid esse in, at error corrupti
-                    dolor iure commodi nemo.
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="border p-6">
-                  <div className="flex justify-between">
-                    <div className="flex gap-3 items-center">
-                      <Image src={Brand1} alt="brand" width={65} />
-                      <div>
-                        <h2 className="text-xl text-black font-bold">
-                          Antinder Bajwa
-                        </h2>
-                      </div>
-                    </div>
-                    <div></div>
-                  </div>
-                  <p className="text-black text-lg">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Facilis doloremque excepturi mollitia placeat voluptatum ex
-                    hic ipsam quo cum, eos aliquid esse in, at error corrupti
-                    dolor iure commodi nemo.
-                  </p>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
+      <PeopleSay />
 
       {/* Form*** */}
       <div className="py-20 bg-blue-dark">
@@ -531,30 +408,6 @@ const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   );
 };
 
-const AccordinContent = ({ question, answer }: AccordingDataPropsTypes) => {
-  const [openAccordin, setOpenAccordin] = useState(false);
-  return (
-    <div
-      className="cursor-pointer"
-      onClick={() => setOpenAccordin(!openAccordin)}
-    >
-      <h2 className="text-xl font-bold text-black border-b border-b-gray-300 py-4 flex gap-2 items-center">
-        <span>{openAccordin ? "-" : "+"}</span>
-        {question}
-      </h2>
-      <div
-        style={{
-          maxHeight: openAccordin ? "1600px" : "0",
-          overflow: "hidden",
-          transition: "all 0.8s linear",
-        }}
-      >
-        <p className="text-lg text-gray-primary py-4">{answer}</p>
-      </div>
-    </div>
-  );
-};
-
 const ChooseUSCard = ({ title, subtitle, image }: any) => {
   return (
     <div className="max-w-[300px] mx-auto">
@@ -570,3 +423,22 @@ const ChooseUSCard = ({ title, subtitle, image }: any) => {
 };
 
 export default page;
+
+const cardDt = [
+  {
+    icon: Hotels,
+    title: "Hotels",
+  },
+  {
+    icon: Resorts,
+    title: "Resorts",
+  },
+  {
+    icon: Restaurants,
+    title: "Restaurants",
+  },
+  {
+    icon: kitchens,
+    title: "Cloud kitchens",
+  },
+];

@@ -47,7 +47,7 @@ function CommonHero({ direction, data }: CommonHeroPros) {
           />
         </div>
         <div className={`lg:col-span-3 col-span-1 ${direction && "order-1"}`}>
-          <p className="text-black sm:text-xl text-lg">{data.subtitle}</p>
+          <p className="text-black sm:text-xl text-lg lg:text-start text-center">{data.subtitle}</p>
           <div className="mt-16">
             <Accordin Data={data.faq} />
           </div>
@@ -94,24 +94,24 @@ export const AccordinContent = ({
 
         {body?.list && body?.type == "number" && (
           <ul className="list-decimal list-inside text-black flex flex-col text-lg">
-            {body?.list?.map((item) => (
-              <li>{item}</li>
+            {body?.list?.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         )}
 
         {body?.list && body?.type == "list" && (
           <ul className="list-disc list-inside text-black flex flex-col text-lg mt-6">
-            {body?.list?.map((item) => (
-              <li>{item}</li>
+            {body?.list?.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         )}
 
         {body?.list && body?.type == "null" && (
           <ul className="list-inside text-black flex flex-col gap-6 text-lg mt-6">
-            {body?.list?.map((item) => (
-              <li>{item}</li>
+            {body?.list?.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         )}

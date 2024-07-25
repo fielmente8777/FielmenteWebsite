@@ -19,17 +19,17 @@ function UnloackBenifts() {
           </div>
         </div>
         <div className="lg:col-span-3">
-          <h2 className="text-black md:text-[4.8rem] md:leading-[6rem] text-3xl font-semibold">
+          <h2 className="text-black md:text-[4.8rem] md:leading-[6rem] text-3xl lg:text-start text-center font-semibold">
             Unlock the Benefits with The Power of Social Media Presence for Your
             Restaurant.
           </h2>
-          <p className="text-xl text-gray-primary mt-10">
+          <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary mt-10">
             Our Restaurant Social Media Management Ensures a Dynamic Presence,
             Engaging Posts, and Best-in-Class Campaigns to Keep Your Hotel Ahead
             of the Curve.
           </p>
 
-          <div className="flex">
+          <div className="flex lg:justify-start justify-center">
             <Link
               href={"/contact"}
               className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium mt-10 pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"

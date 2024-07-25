@@ -1,24 +1,12 @@
-"use client";
+
 import Image from "next/image";
 import React from "react";
-import Mobile from "../../../../../public/images/online-mobile.webp";
 import LineDesign from "../../../../../public/images/4tg4fc4.webp";
 import Bookingman from "../../../../../public/images/Bookingman.webp";
 
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import Food from "../../../../../public/images/people-taking-photos-food-1536x1024.webp";
 import WantToJoin from "../../components/want-to-join";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-import { Pagination } from "swiper/modules";
-
-import Brand1 from "../../../../../public/images/Wah-Malvan-PNG.png";
 
 import Hotelseo1 from "../../../../../public/images/HOTEL-SEO-02.webp";
 import Hotelseo2 from "../../../../../public/images/HOTEL-SEO-03.webp";
@@ -32,6 +20,14 @@ import Promote from "../../../../../public/images/3rf.webp";
 import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
+import WeAreDef from "./components/WeAreDef";
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
 
 const faq = [
   {
@@ -115,16 +111,18 @@ const capitavteAndConnectData = {
   rightContent: {
     title: "Advantages of Local SEO for Your Hotel",
     icon: Keyword,
-    subtitle: `Increased online visibility for local searches.
-      Targeted exposure to potential guests in your area.
-      Improved rankings on local search engine results in pages.
-      Enhanced brand awareness within your community.
-      Higher chances of attracting qualified leads and direct bookings.
-      Competitive edge over other hotels in your vicinity.
-      Maximized occupancy rates and revenue potential.
-      Better customer engagement and personalized experiences.
-      Cost-effective marketing strategy with high ROI.
-      Establishing a solid local online presence for long-term growth.`,
+    subtitle: [
+      "Increased online visibility for local searches.",
+      "Targeted exposure to potential guests in your area.",
+      "Improved rankings on local search engine results in pages.",
+      "Enhanced brand awareness within your community.",
+      "Higher chances of attracting qualified leads and direct bookings.",
+      "Competitive edge over other hotels in your vicinity.",
+      "Maximized occupancy rates and revenue potential.",
+      "Better customer engagement and personalized experiences.",
+      "Cost-effective marketing strategy with high ROI.",
+      "Establishing a solid local online presence for long-term growth.",
+    ],
   },
 
   items: [
@@ -199,10 +197,10 @@ function page() {
               <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
                 HOTEL SEO
               </h2>
-              <h2 className="md:text-5xl md:!leading-[6.5rem] text-3xl text-black font-medium md:mt-20 mt-5">
+              <h2 className="md:text-5xl md:!leading-[6.5rem] text-3xl text-black font-medium md:mt-20 mt-5 lg:text-start text-center">
                 Skyrocket Your Hotel’s Success with Fielmente’s SEO Strategies!
               </h2>
-              <p className="text-gray-primary text-xl md:mt-20 mt-5">
+              <p className="text-gray-primary text-xl md:mt-20 mt-5 lg:text-start text-center">
                 Enhance the Potential of Your Hotel with our Targeted SEO
                 Services and a Winning Strategy.
               </p>
@@ -241,10 +239,10 @@ function page() {
 
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <h2 className="text-5xl w-[80%] text-black font-bold">
+                <h2 className="lg:text-5xl text-3xl lg:w-[80%] lg:text-start text-center text-black font-bold">
                   What We Offer: Local SEO for Hotels
                 </h2>
-                <p className="text-xl text-gray-primary">
+                <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary">
                   Dominate the Local Market with Specialized SEO Solutions
                   Tailored Exclusively for Hotels, Boosting Your Visibility and
                   Attracting More Guests.
@@ -298,7 +296,7 @@ function page() {
       </div>
 
       <div className="md:py-20 py-10">
-        <div className="grid grid-cols-4">
+        <div className="grid lg:grid-cols-4 grid-cols-1">
           <div className="relative w-full aspect-[4/4.5]">
             <Image
               src={Hotelseo1}
@@ -334,68 +332,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
-        <div className="max-width">
-          <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-            <h2 className="text-center text-black text-5xl font-bold">
-              Why we are different?
-            </h2>
-            <p className="text-center text-gray-primary text-xl">
-              Optimise Your Hotel’s Online Presence with Fielmente’s Expert
-              On-Page SEO Strategies. Enhancing Search Rankings and Driving More
-              Traffic to Your Website.
-            </p>
-          </div>
-
-          <div className="mt-20">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={5}
-              pagination={{
-                type: "progressbar",
-              }}
-              modules={[Pagination]}
-              onSlideChange={() => console.log("slide change")}
-            >
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
+      <WeAreDef />
 
       <div className="md:py-20 py-10 bg-black">
         <div className="max-width">

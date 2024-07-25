@@ -73,7 +73,7 @@ const Faq = [
 function Frequently() {
   return (
     <section>
-      <h2 className="lg:text-5xl text-3xl font-bold text-black">
+      <h2 className="lg:text-5xl text-3xl font-bold text-black lg:text-start text-center">
         Frequently Asked Questions
       </h2>
 

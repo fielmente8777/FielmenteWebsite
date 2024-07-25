@@ -6,14 +6,14 @@ function BestRestauratMarket() {
   return (
     <div className="grid lg:grid-cols-5 items-center gap-8">
       <div className="lg:col-span-3 flex flex-col md:gap-10 gap-5">
-        <h2 className="sm:text-5xl text-3xl text-black font-semibold">
+        <h2 className="sm:text-5xl text-3xl text-black font-semibold lg:text-start text-center">
           Best Restaurant Marketing Agency in India
         </h2>
-        <p className="sm:text-xl text-lg text-gray-primary">
+        <p className="sm:text-xl text-lg text-gray-primary lg:text-start text-center">
           We at Fielmente create ROI-driven social media campaigns and content
           for your for your restaurant business.{" "}
         </p>
-        <p className="sm:text-xl text-lg text-gray-primary">
+        <p className="sm:text-xl text-lg text-gray-primary lg:text-start text-center">
           The restaurant business is constantly changing and evolving but one
           thing that has remained the same over the last few years are diners
           turn to the internet to help them choose where to eat.{" "}

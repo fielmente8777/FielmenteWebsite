@@ -72,10 +72,10 @@ function TakeYourFbVenture() {
     <section>
       <div className="grid lg:grid-cols-5 items-center gap-8">
         <div className="lg:col-span-3 flex flex-col gap-6">
-          <h2 className="sm:text-5xl text-3xl text-black font-semibold">
+          <h2 className="sm:text-5xl text-3xl text-black font-semibold lg:text-start text-center">
             {`Let’s take your F&B venture to next level`}
           </h2>
-          <p className="sm:text-xl text-lg text-gray-primary">
+          <p className="sm:text-xl text-lg text-gray-primary lg:text-start text-center">
             {` In today’s digital age, your restaurant’s reputation is everything.
             But fear not! At our Restaurant Marketing Agency, we’ve mastered the
             art of managing and elevating your online presence. From Google

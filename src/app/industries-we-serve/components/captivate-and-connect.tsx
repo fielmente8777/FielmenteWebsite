@@ -21,12 +21,12 @@ function CaptivateAndConnect({
         </p>
       </div>
 
-      <div className="mt-20 lg:grid grid-cols-2 gap-20 items-center">
+      <div className="lg:mt-20 mt-10 lg:grid grid-cols-2 lg:gap-20 items-center flex flex-col-reverse gap-10 ">
         <div className=" bg-[#2CBCA5] p-16 rounded-xl">
           <h2 className="sm:text-5xl text-3xl text-black font-semibold">
             {leftContent?.title}
           </h2>
-          <div className="flex mt-10">
+          <div className="flex mt-10 lg:justify-start justify-center">
             <Link
               href={"/contact"}
               className="bg-[#262C2E] px-10 py-4 rounded-lg sm:text-xl text-lg font-semibold hover:bg-black duration-200"
@@ -36,7 +36,7 @@ function CaptivateAndConnect({
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 max-w-[400px] p-6">
+        <div className="flex flex-col gap-8 p-6 bg-white rounded-2xl">
           <Image
             src={rightContent?.icon}
             alt="Keyword"
@@ -46,7 +46,20 @@ function CaptivateAndConnect({
           <h2 className="text-black text-2xl font-semibold">
             {rightContent?.title}
           </h2>
-          <p className="text-lg text-gray-primary">{rightContent?.subtitle}</p>
+          {rightContent?.subtitleText && (
+            <p className="text-gray-primary text-[1.5rem]">
+              {rightContent?.subtitleText}
+            </p>
+          )}
+          {rightContent?.subtitle && (
+            <ul className="list-disc ps-6">
+              {rightContent?.subtitle?.map((item: any, index: number) => (
+                <li key={index} className="text-gray-primary text-[1.5rem]">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
 

@@ -9,13 +9,13 @@ function Footer2() {
       <div className="max-width">
         <div className="flex flex-col gap-8">
           <h2 className="text-center text-gray-primary text-4xl">Find Us On</h2>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-4 gap-8 lg:ps-0 ps-3">
             <Link
               href={
                 "https://www.instagram.com/fielmente_marketing_agency?igshid=MzMyNGUyNmU2YQ%3D%3D"
               }
               target="_blank"
-              className="text-blue-dark sm:text-4xl text-3xl font-semibold md:text-center"
+              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
             >
               Instagram
             </Link>
@@ -24,7 +24,7 @@ function Footer2() {
                 "https://www.facebook.com/fielmentebusiness?mibextid=ViGcVu"
               }
               target="_blank"
-              className="text-blue-dark sm:text-4xl text-3xl font-semibold md:text-center"
+              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
             >
               Facebook
             </Link>
@@ -33,14 +33,14 @@ function Footer2() {
                 "https://twitter.com/i/flow/login?redirect_after_login=%2Ffieladvisors"
               }
               target="_blank"
-              className="text-blue-dark sm:text-4xl text-3xl font-semibold md:text-center"
+              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
             >
               Twitter
             </Link>
             <Link
               href={"https://www.linkedin.com/company/fielmente/"}
               target="_blank"
-              className="text-blue-dark sm:text-4xl text-3xl font-semibold md:text-center"
+              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
             >
               LinkedIn
             </Link>
@@ -54,8 +54,8 @@ function Footer2() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-16 md:mt-32 mt-12">
-          <div className="md:col-span-2 flex flex-col md:gap-20 gap-8">
-            <Link href={"/"}>
+          <div className="md:col-span-2 flex flex-col md:gap-20 gap-8 ">
+            <Link href={"/"} className="flex items-center justify-center lg:justify-start">
               <Image src={Logo} alt="fielmente-logo" />
             </Link>
             <Link
@@ -99,7 +99,7 @@ function Footer2() {
           </div>
         </div>
 
-        <div className="flex gap-16 text-gray-primary text-xl mt-10">
+        <div className="flex gap-16 text-gray-primary justify-between text-xl mt-10">
           <Link href={"/"}>Privacy Policy</Link>
           <Link href={"/terms-and-conditions/"}>Terms of Us</Link>
         </div>

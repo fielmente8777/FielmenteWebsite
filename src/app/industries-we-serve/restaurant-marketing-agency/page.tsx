@@ -7,6 +7,14 @@ import Form from "@/app/about/components/Form";
 import InfluencerMarketing from "../components/influencer-marketing";
 import { Accordin } from "../components/common-hero";
 
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 const faq = [
   {
     question: "What is Marketing for a Restaurant?",
@@ -145,7 +153,7 @@ function page() {
 
       <div className="md:py-20 py-10 bg-white">
         <div className="max-width  mx-auto">
-          <h2 className="text-center text-5xl font-bold text-black">
+          <h2 className="text-center lg:text-5xl text-3xl font-bold text-black">
             Frequently Asked Questions
           </h2>
           <div className="mt-5 max-w-[1024px] mx-auto">

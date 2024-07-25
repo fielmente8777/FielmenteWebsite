@@ -5,6 +5,12 @@ import Milestones from "./components/Milestones";
 import MakeUsUnique from "./components/MakeUsUnique";
 import Form from "./components/Form";
 
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 function About() {
   return (
     <div>

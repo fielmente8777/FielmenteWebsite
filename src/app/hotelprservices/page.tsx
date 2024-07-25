@@ -3,6 +3,17 @@ import Link from "next/link";
 import React from "react";
 import Book from "../../../public/images/aerial-view-barista-book-1024x1024.webp";
 import Businessman from "../../../public/images/business-people-discussing-document-1.webp";
+import aboutus from "../../../public/images/man-with-coffee-newspaper-walking-city-1536x1024.webp";
+import img3 from "../../../public/images/img2.png";
+
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 
 function page() {
   return (
@@ -37,9 +48,9 @@ function page() {
 
       <div className="md:py-20 py-10">
         <div className="max-width">
-          <div className="flex lg:flex-row flex-col gap-10">
-            <div className="lg:w-[60%] relative aspect-[4/2.5] mt-20">
-              <Image src={Book} alt="book" fill className="object-cover" />
+          <div className="flex lg:flex-row flex-col gap-10 justify-center items-center">
+            <div className="lg:w-[60%] relative aspect-[4/2.5]">
+              <Image src={aboutus} alt="book" fill className="object-cover" />
             </div>
 
             <div className="lg:w-[40%]">
@@ -73,16 +84,18 @@ function page() {
 
           <div className="bg-black mt-10 grid lg:grid-cols-2 gap-10 py-32">
             <div
-              className="flex items-center w-full aspect-[4/6]"
+              className="w-full aspect-[4/6]"
               style={{
                 backgroundImage: `url(${Book.src})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
               }}
             >
-              <h2 className="sm:text-6xl font-bold text-3xl px-10 w-[60%]">
-                Organic Public Relations
-              </h2>
+              <div className="w-full h-full flex items-center bg-[rgba(0,0,0,0.5)]">
+                <h2 className="lg:text-6xl text-4xl font-bold  px-10 w-[60%]">
+                  Organic Public Relations
+                </h2>
+              </div>
             </div>
             <div className="flex flex-col gap-20 md:px-4 px-10">
               <p className="text-lg w-[80%] font-semibold">
@@ -115,10 +128,7 @@ function page() {
                   Industry stories featuring quotes by the GM in relevant
                   sectors.
                 </li>
-                <li className="text-lg font-semibold w-[80%]">
-                  Industry stories featuring quotes by the GM in relevant
-                  sectors.
-                </li>
+
                 <li className="text-lg font-semibold w-[80%]">
                   Press release dissemination mainly in digital media and
                   Regional media.
@@ -152,7 +162,7 @@ function page() {
         <div className="max-width">
           <div className="grid lg:grid-cols-2 gap-16 lg:items-center">
             <div className="lg:order-1 order-2">
-              <div className="flex flex-col gap-6 lg:max-w-[400px] mx-auto">
+              <div className="flex flex-col gap-6 lg:max-w-[400px] ">
                 <h1 className="sm:text-6xl text-3xl text-black font-bold">
                   Option 1
                 </h1>
@@ -163,14 +173,13 @@ function page() {
                     that need to be highlighted.
                   </li>
                   <li className="text-black text-lg">
-                    We can plan an authored article where the brand’s
-                    spokesperson can share the brand’s details and other things
-                    that need to be highlighted.
+                    We will provide coverage in CAT-A or CAT-B publications of
+                    the same.
                   </li>
                   <li className="text-black text-lg">
-                    We can plan an authored article where the brand’s
-                    spokesperson can share the brand’s details and other things
-                    that need to be highlighted.
+                    It will be informative content instead of promotional, which
+                    will appear with the byline of the spokesperson and his/her
+                    designation.
                   </li>
                 </ul>
               </div>
@@ -187,37 +196,31 @@ function page() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 lg:items-center mt-32">
+          <div className="lg:grid flex flex-col-reverse lg:grid-cols-2 gap-16 lg:items-center mt-32">
             <div className="lg:order-1 order-2">
               <div className="relative w-full aspect-[4/2.6]">
                 <Image
-                  src={Businessman}
+                  src={aboutus}
                   alt="business-people-discussing"
                   fill
                   className="object-cover"
                 />
               </div>
             </div>
-            <div className="lg:order-2 order-1">
-              <div className="flex flex-col gap-6 max-w-[400px]">
+            <div className="lg:order-2 order-1 flex justify-end">
+              <div className="flex flex-col gap-6 max-w-[400px] ">
                 <h1 className="sm:text-6xl text-3xl text-black font-bold">
                   Option 2
                 </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
                   <li className="text-black text-lg">
-                    We can plan an authored article where the brand’s
-                    spokesperson can share the brand’s details and other things
-                    that need to be highlighted.
+                    We can plan an authored article where the brand spokesperson
+                    can share the Brand details and other things that need to be
+                    highlighted. Where we will provide 8 –10 assured coverages
+                    in CAT-A and CAT-B publications.
                   </li>
                   <li className="text-black text-lg">
-                    We can plan an authored article where the brand’s
-                    spokesperson can share the brand’s details and other things
-                    that need to be highlighted.
-                  </li>
-                  <li className="text-black text-lg">
-                    We can plan an authored article where the brand’s
-                    spokesperson can share the brand’s details and other things
-                    that need to be highlighted.
+                    The content will be the same in all publications.
                   </li>
                 </ul>
               </div>
@@ -226,12 +229,17 @@ function page() {
 
           <div className="grid lg:grid-cols-2 gap-16 lg:items-center mt-32">
             <div className="lg:order-1 order-2">
-              <div className="flex flex-col gap-6 max-w-[400px] mx-auto">
+              <div className="flex flex-col gap-6 max-w-[400px] ">
                 <h1 className="sm:text-6xl text-3xl text-black font-bold">
                   Option 3
                 </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
-                  <li className="text-black text-lg italic">
+                  <li className="text-black text-lg font-semibold">
+                    Below are the deliverables from our side:
+                  </li>
+                </ul>
+                <ul className="list-decimal list-inside flex flex-col gap-4">
+                  <li className="text-black text-lg ">
                     05 Media coverages both in print and online platforms mixed
                     with CAT A and B publications. (This coverage can be in the
                     form of Profiling, Industry Story Participation, Regional
@@ -239,16 +247,24 @@ function page() {
                     Releases). Here, press release dissemination would be
                     counted as one coverage.
                   </li>
-                  <li className="text-black text-lg italic">
+                  <li className="text-black text-lg ">
                     Instagram Posts/Stories by Food and Travel Influencers who
                     have above 20K followers. (Barter or Paid). Here we can
                     mutually discuss the Bloggers/Influencers requirements every
                     month.
                   </li>
-                  <li className="text-black text-lg italic">
+                  <li className="text-black text-lg ">
                     Creating all the press information material for the client.
                     This will be based on the information that will be provided
                     by the client.
+                  </li>
+                  <li className="text-black text-lg ">
+                    Suggest a strategy to the client if anything relevant comes
+                    up.
+                  </li>
+                  <li className="text-black text-lg ">
+                    Prepare and share a monthly PR Report at the end of every
+                    month.
                   </li>
                 </ul>
               </div>
@@ -256,7 +272,7 @@ function page() {
             <div className="lg:order-2 order-1">
               <div className="relative w-full aspect-[4/2.6]">
                 <Image
-                  src={Businessman}
+                  src={img3}
                   alt="business-people-discussing"
                   fill
                   className="object-cover"

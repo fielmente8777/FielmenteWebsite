@@ -71,31 +71,33 @@ const CardDetails = [
 function HotelPerformance() {
   return (
     <div
-      className="md:py-20 py-10"
+      className=""
       style={{
         backgroundImage: `url(${Backgrond.src})`,
         backgroundSize: "cover",
       }}
     >
-      <div className="max-w-[1080px] mx-auto px-8">
-        <h2 className="text-center md:text-5xl text-3xl font-bold">
-          Let us handle your Hotel Performance Marketing and you see your
-          property grow 5X
-        </h2>
+      <div className="w-full h-full bg-[rgba(0,0,0,0.5)]">
+        <div className="max-w-[1080px] mx-auto px-8 md:py-20 py-10">
+          <h2 className="text-center md:text-5xl text-3xl font-bold">
+            Let us handle your Hotel Performance Marketing and you see your
+            property grow 5X
+          </h2>
 
-        <div className=" grid lg:grid-cols-3 sm:grid-cols-2 md:gap-10 gap-6 mt-20">
-          {CardDetails.map((item, index) => {
-            return <PerformaceCard {...item} key={index} />;
-          })}
-        </div>
+          <div className=" grid lg:grid-cols-3 sm:grid-cols-2 md:gap-10 gap-6 mt-20">
+            {CardDetails.map((item, index) => {
+              return <PerformaceCard {...item} key={index} />;
+            })}
+          </div>
 
-        <div className="flex justify-center mt-10">
-          <Link
-            href={"/contact"}
-            className="bg-blue-dark px-16 py-4 text-xl font-bold rounded-full hover:bg-white hover:text-black duration-200"
-          >
-            Contact Us
-          </Link>
+          <div className="flex justify-center mt-10">
+            <Link
+              href={"/contact"}
+              className="bg-blue-dark px-16 py-4 text-xl font-bold rounded-full hover:bg-white hover:text-black duration-200"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </div>

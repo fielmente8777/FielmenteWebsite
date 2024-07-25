@@ -5,8 +5,8 @@ function WantToJoin() {
   return (
     <section className="grid lg:grid-cols-2 items-center">
       <div className="lg:p-20">
-        <h2 className="sm:text-6xl text-3xl font-bold">Want to join?</h2>
-        <p className="sm:text-xl text-lg text-gray-primary mt-6">
+        <h2 className="sm:text-6xl text-3xl lg:text-start text-center font-bold">Want to join?</h2>
+        <p className="sm:text-xl text-lg lg:text-start text-center text-gray-primary mt-6">
           Find a team of digital marketers you can rely on. Every day, we build
           trust through communication, transparency, and results.
         </p>

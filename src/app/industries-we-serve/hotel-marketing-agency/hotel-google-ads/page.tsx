@@ -1,4 +1,4 @@
-"use client";
+
 import Image from "next/image";
 import React from "react";
 import LineDesign from "../../../../../public/images/4tg4fc4.webp";
@@ -8,14 +8,7 @@ import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import WantToJoin from "../../components/want-to-join";
 
-import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-import { Pagination } from "swiper/modules";
-import Brand1 from "../../../../../public/images/Wah-Malvan-PNG.png";
 
 import GoogleAds1 from "../../../../../public/images/HOTEL-GOOGLE-ADS-02.webp";
 import GoogleAds2 from "../../../../../public/images/HOTEL-GOOGLE-ADS-03.webp";
@@ -29,6 +22,14 @@ import Contentwriting from "../../../../../public/images/content-writing.webp";
 
 import CaptivateAndConnect from "../../components/captivate-and-connect";
 import { Accordin } from "../../components/common-hero";
+import WeAreDef from "../hotel-seo/components/WeAreDef";
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
 
 const faq = [
   {
@@ -108,7 +109,7 @@ const capitavteAndConnectData = {
   rightContent: {
     title: "Accelerate Your Hotel’s Growth with Paid Ads.",
     icon: Keyword,
-    subtitle: `Paid Ads Drive Immediate Visibility, Targeted Reach, and High-Converting Bookings, Amplifying Your Online Presence and Revenue Potential.`,
+    subtitleText: `Paid Ads Drive Immediate Visibility, Targeted Reach, and High-Converting Bookings, Amplifying Your Online Presence and Revenue Potential.`,
   },
 
   items: [
@@ -228,14 +229,16 @@ function page() {
 
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <h2 className="text-5xl w-[80%] text-black font-bold">
+                <h2 className="lg:text-5xl text-3xl lg:w-[80%] text-center text-black font-bold">
                   What We Offer: Paid Ads for Hotel
                 </h2>
-                <p className="text-xl text-gray-primary">
-                  Paid Ads Drive Immediate Visibility, Targeted Reach, and
-                  High-Converting Bookings, Amplifying Your Online Presence and
-                  Revenue Potential.
-                </p>
+                <div>
+                  <p className="lg:text-xl text-lg w-full text-gray-primary">
+                    Paid Ads Drive Immediate Visibility, Targeted Reach, and
+                    High-Converting Bookings, Amplifying Your Online Presence
+                    and Revenue Potential.
+                  </p>
+                </div>
               </div>
 
               <div className="flex">
@@ -285,7 +288,7 @@ function page() {
       </div>
 
       <div className="md:py-20 py-10">
-        <div className="grid grid-cols-4">
+        <div className="grid lg:grid-cols-4">
           <div className="relative w-full aspect-[4/4.5]">
             <Image
               src={GoogleAds1}
@@ -321,68 +324,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
-        <div className="max-width">
-          <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-            <h2 className="text-center text-black text-5xl font-bold">
-              Why we are different?
-            </h2>
-            <p className="text-center text-gray-primary text-xl">
-              Optimise Your Hotel’s Online Presence with Fielmente’s Expert
-              On-Page SEO Strategies. Enhancing Search Rankings and Driving More
-              Traffic to Your Website.
-            </p>
-          </div>
-
-          <div className="mt-20">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={5}
-              pagination={{
-                type: "progressbar",
-              }}
-              modules={[Pagination]}
-              onSlideChange={() => console.log("slide change")}
-            >
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div>
-                  <Image src={Brand1} alt="brand" />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div>
+      <WeAreDef />
 
       <div className="md:py-20 py-10 bg-black">
         <div className="max-width">
@@ -393,7 +335,7 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width">
           <section>
-            <h2 className="text-5xl font-bold text-black text-center">
+            <h2 className="lg:text-5xl text-3xl font-bold text-black text-center">
               Frequently Asked Questions
             </h2>
 

@@ -11,9 +11,17 @@ import Promote from "../../../../../public/images/3rf.webp";
 import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 const capitavteAndConnectData = {
   title: "Captivate and Connect",
-  subtitle:
+  subtitleText:
     "Harness the Power of Restaurant Social Media Management to Engage Guests, Cultivate Relationships, and Create Unforgettable Experiences.",
   leftContent: {
     title: "Accelerate Your Restaurant’s Growth with Social Media.",
@@ -21,14 +29,14 @@ const capitavteAndConnectData = {
   rightContent: {
     title: "Reach a Wider Audience",
     icon: Keyword,
-    subtitle:
+    subtitleText:
       "Expand your reach with Fielmente’s social media management for restaurants. Engage a wider audience through captivating restaurant social media posts and effective social media marketing strategies.",
   },
 
   items: [
     {
       title: "Engage with Customers",
-      subtitle:
+      subtitleText:
         "Cultivate strong customer relationships with Fielmente’s social media management for restaurants. Engage directly with customers, promptly responding to comments, inquiries, and reviews, fostering a vibrant community that builds loyalty and strengthens your restaurant’s reputation.",
       image: {
         src: Contentwriting,

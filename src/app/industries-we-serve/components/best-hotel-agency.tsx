@@ -16,10 +16,10 @@ function BestHotelAgency() {
           />
         </div>
         <div className="flex flex-col gap-8 md:col-span-4">
-          <h2 className="md:text-6xl text-4xl font-bold text-black">
+          <h2 className="md:text-6xl text-3xl lg:text-start text-center font-bold text-black">
             India’s Best Hotel Social Media Agency
           </h2>
-          <p className="text-xl text-gray-primary">
+          <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary">
             Boost guest engagement and attract potential guests with an
             impactful social media presence, customized by Fielmente, a renowned
             hotel marketing agency in India. Social media management for the

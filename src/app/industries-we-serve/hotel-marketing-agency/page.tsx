@@ -3,6 +3,14 @@ import HotelMarketing from "../components/hotel-marketing";
 import BestHotelAgency from "../components/best-hotel-agency";
 import HotelPerformance from "../components/hotel-performance";
 
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 function page() {
   return (
     <section>

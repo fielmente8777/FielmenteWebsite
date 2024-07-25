@@ -1,5 +1,13 @@
 import React from "react";
 
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 function page() {
   return (
     <section>

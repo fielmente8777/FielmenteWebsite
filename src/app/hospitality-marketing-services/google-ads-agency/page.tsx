@@ -4,7 +4,7 @@ import React from "react";
 import Shakinghand from "../../../../public/images/Shakinghand.webp";
 import Girlmeet from "../../../../public/images/Girlmeet.webp";
 
-// import GoogleAds from "../../../../public/images/GOOGLE-ADS-03-1.webp";
+import GoogleAds from "../../../../public/images/GOOGLE-ADS-03-1.webp";
 
 import HotelAds from "../../../../public/images/HOTEL-MARKETING.webp";
 import CloudKitchenAds from "../../../../public/images/CLOUD-KITCHEN-MARKETING.webp";
@@ -19,6 +19,14 @@ import Manwithlaptop from "../../../../public/images/Manwithlaptop2.webp";
 import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp";
 
 import Form from "@/app/about/components/Form";
+import Container from "@/components/Container";
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
 
 const CardData1 = [
   {
@@ -26,18 +34,21 @@ const CardData1 = [
     subtitle:
       "If you are looking for the best hotel advertisement company, look no further.",
     icon: HotelAds,
+    link:"/industries-we-serve/hotel-marketing-agency/hotel-google-ads"
   },
   {
     title: "Cloud Kitchen Ads",
     subtitle:
       "If you are looking for the best cloud kitchen promotion, look no further.",
     icon: CloudKitchenAds,
+    link:"/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-google-ads"
   },
   {
     title: "Restaurant Ads",
     subtitle:
       "If you are looking for the best restaurant advertising, look no further.",
     icon: RestaurantAds,
+    link:"/"
   },
 ];
 
@@ -69,17 +80,17 @@ function page() {
       <div className="bg-[#1E1928] py-20">
         <div className="max-width">
           {/* Ignite Your Hospitality Growth with Leading Hospitality Google Ads Agency:***** */}
-          <div className="grid md:grid-cols-2 gap-4 items-center">
-            <div className="flex flex-col gap-8">
-              <h2 className="text-4xl">
+          <div className="md:grid md:grid-cols-2 gap-4 items-center flex flex-col-reverse ">
+            <div className="flex flex-col gap-8 lg:mt-0 mt-6">
+              <h2 className="lg:text-4xl text-[1.9rem] lg:text-start text-center">
                 Ignite Your Hospitality Growth with Leading Hospitality Google
                 Ads Agency
               </h2>
-              <p className="text-gray-primary text-xl">
+              <p className="text-[#FFFFFF] lg:text-xl text-lg lg:text-start text-center">
                 Experience the magic of Fielmente, the leading hospitality
                 Google Ads agency in India.
               </p>
-              <p className="text-gray-primary text-xl">
+              <p className="text-[#FFFFFF] lg:text-xl text-lg lg:text-start text-center">
                 Our expertly crafted campaigns ensure your hotel, restaurant, or
                 resort shines in the digital arena, delivering remarkable
                 results. Trust the best in the industry, partner with
@@ -87,13 +98,13 @@ function page() {
                 unprecedented heights through targeted advertising.
               </p>
 
-              <p className="text-gray-primary text-xl">
+              <p className="text-[#FFFFFF] text-xl lg:text-start text-center">
                 Let your brand captivate, engage, and thrive with our
                 specialized expertise in the hospitality sector. Unleash the
                 full potential of your business – choose Fielmente today!
               </p>
 
-              <div className="flex">
+              <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
                   className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
@@ -102,50 +113,56 @@ function page() {
                 </Link>
               </div>
             </div>
-            <div className="w-full">
-              <div className="relative max-w-[260px] mx-auto aspect-[4/5]">
-                {/* <Image
+            <div className="w-full flex items-center lg:justify-end justify-center">
+              <div className="relative max-w-[260px] w-full aspect-[5/5] ">
+                <Image
                   src={GoogleAds}
                   alt="google-ads"
                   fill
                   className="object-cover rounded-lg"
-                /> */}
+                />
               </div>
             </div>
           </div>
 
           {/* Milestones*** */}
-          <div className="grid sm:grid-cols-4 gap-8 py-16 max-w-[1080px] mx-auto">
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-8 py-16 max-w-[1080px] mx-auto">
             <div className="flex flex-col gap-2">
-              <h2 className="text-4xl font-bold text-white text-center">
+              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
                 100+
               </h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <p className="lg:text-lg text-base font-medium text-white text-center">
                 REVIEWS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-4xl font-bold text-white text-center">88%</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+                88%
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-white text-center">
                 INCREASE IN ROAS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-4xl font-bold text-white text-center">70+</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+                70+
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-white text-center">
                 HOTELIERS TRUST US
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-4xl font-bold text-white text-center">90+</h2>
-              <p className="text-lg font-medium text-gray-primary text-center">
+              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+                90+
+              </h2>
+              <p className="lg:text-lg text-base font-medium text-white text-center">
                 PROJECTS COMPLETED
               </p>
             </div>
           </div>
 
           {/* cards**** */}
-          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-20 border-t pt-32 border-t-gray-700 ">
+          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 lg:px-20 border-t lg:pt-32 border-t-gray-700 ">
             {CardData1.map((item, index) => (
               <Card key={index} {...item} />
             ))}
@@ -153,7 +170,7 @@ function page() {
 
           {/* Why Does Your Business Needs Google Ads?*** */}
           <div className="mt-20">
-            <h2 className="text-center text-5xl md:w-[70%] mx-auto font-bold">
+            <h2 className="text-center lg:text-5xl text-3xl md:w-[70%] mx-auto font-bold">
               Why Does Your Business Needs Google Ads?
             </h2>
             <div className="grid lg:grid-cols-2 items-center mt-10">
@@ -169,14 +186,14 @@ function page() {
               </div>
 
               <div>
-                <p className="text-xl mt-8">
+                <p className="lg:text-xl text-lg lg:text-start text-center mt-8">
                   At Fielmente, the top hospitality Google Ads agency in India,
                   we amplify your brand’s visibility and drive targeted traffic.
                   Our powerful Google Ads services fuel your business growth by
                   unleashing the full potential of online advertising.
                 </p>
 
-                <div className="mt-10 flex flex-col gap-1">
+                <div className="mt-10 flex flex-col gap-5">
                   {CardData2.map((item, index) => (
                     <CardTwo {...item} key={index} />
                   ))}
@@ -186,13 +203,13 @@ function page() {
           </div>
 
           {/* Success Stories and Clientele - Experience the Power of Google Ads**** */}
-          <div className="grid md:grid-cols-2 gap-6 items-center mt-5">
-            <div className="flex flex-col gap-8">
-              <h2 className="text-4xl">
+          <div className="lg:grid grid-cols-2 gap-6 items-center flex flex-col-reverse mt-5">
+            <div className="flex flex-col gap-8 ">
+              <h2 className="lg:text-4xl text-3xl lg:text-start text-center">
                 Success Stories and Clientele - Experience the Power of Google
                 Ads
               </h2>
-              <p className="text-white text-xl">
+              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
                 At Fielmente, we pride ourselves on success stories that
                 showcase the unparalleled power of Google Ads. Our clientele has
                 experienced extraordinary results, with increased brand
@@ -204,7 +221,7 @@ function page() {
                 next success story in the world of digital advertising
               </p>
 
-              <div className="flex">
+              <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
                   className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
@@ -226,11 +243,11 @@ function page() {
           </div>
 
           {/* Explore Our Comprehensive Digital Marketing Services */}
-          <div className="mt-20 py-12">
-            <h2 className="text-center text-4xl font-bold">
+          <div className="lg:mt-20 lg:py-12 py-9">
+            <h2 className="text-center lg:text-4xl text-3xl font-bold">
               Explore Our Comprehensive Digital Marketing Services
             </h2>
-            <p className="text-center text-xl mt-6">
+            <p className="text-center lg:text-xl text-lg mt-6">
               Expand Your Horizons: Discover the Full Range of Digital Marketing
               Solutions We Offer for your Hospitality Business.
             </p>
@@ -239,56 +256,60 @@ function page() {
       </div>
 
       {/* Expert Consultation - Unlocking Your Advertising Potential */}
-      <div className="grid md:grid-cols-5 gap-10 items-center py-12 bg-[#15151D]">
-        <div className="md:col-span-2 w-full flex md:justify-end">
-          <div className="relative max-w-[400px] w-full aspect-[4/4]">
-            <Image
-              src={Girlmeet}
-              alt="girl-meet-img"
-              fill
-              className="object-cover rounded-[4rem]"
-            />
-          </div>
-        </div>
-        <div className="md:col-span-3 flex flex-col gap-8">
-          <div className="max-w-[700px]">
-            <h2 className="text-4xl font-bold">
-              Expert Consultation - Unlocking Your Advertising Potential
-            </h2>
-
-            <p className="text-gray-primary text-xl mt-5">
-              Unleash Your Business’s Full Potential: Get a Website Audit and
-              Expert Advice from Our Seasoned Google Ads Professionals
-            </p>
-
-            <div className="mt-10 flex gap-5 items-center">
-              <Image
-                src={TrustyBrand}
-                alt="trust by many brands"
-                width={250}
-                height={55}
-              />
-              <p className="text-lg">
-                Fielmente: Hospitality Google Ads Agency Trusted by many brands
-                around the globe
-              </p>
+      <div className="py-12 bg-[#15151D]">
+        <Container>
+          <div className="grid md:grid-cols-5 gap-10 items-center ">
+            <div className="md:col-span-2 w-full flex md:justify-end">
+              <div className="relative max-w-[400px] w-full aspect-[4/4] lg:block hidden">
+                <Image
+                  src={Girlmeet}
+                  alt="girl-meet-img"
+                  fill
+                  className="object-cover rounded-[4rem]"
+                />
+              </div>
             </div>
+            <div className="md:col-span-3 flex flex-col gap-8">
+              <div className="max-w-[700px] ">
+                <h2 className="lg:text-4xl text-[2rem] text-center lg:text-start font-bold">
+                  Expert Consultation - Unlocking Your Advertising Potential
+                </h2>
 
-            <div className="flex mt-5">
-              <Link
-                href={"/"}
-                className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
-              >
-                Connect With Our Experts
-              </Link>
+                <p className="text-white lg:text-xl text-[1.5rem] lg:text-start text-center mt-5">
+                  Unleash Your Business’s Full Potential: Get a Website Audit
+                  and Expert Advice from Our Seasoned Google Ads Professionals
+                </p>
+
+                <div className="mt-10 flex gap-5 items-center lg:flex-row flex-col">
+                  <Image
+                    src={TrustyBrand}
+                    alt="trust by many brands"
+                    width={250}
+                    height={55}
+                  />
+                  <p className="text-lg lg:text-start text-center">
+                    Fielmente: Hospitality Google Ads Agency Trusted by many
+                    brands around the globe
+                  </p>
+                </div>
+
+                <div className="flex mt-5 lg:justify-start justify-center">
+                  <Link
+                    href={"/"}
+                    className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                  >
+                    Connect With Our Experts
+                  </Link>
+                </div>
+
+                <p className="text-lg text-center mt-10">
+                  Get Started Now: Let’s Work Together to Ignite Your Brand’s
+                  Online Growth
+                </p>
+              </div>
             </div>
-
-            <p className="text-lg text-center mt-10">
-              Get Started Now: Let’s Work Together to Ignite Your Brand’s Online
-              Growth
-            </p>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Form  */}
@@ -301,7 +322,7 @@ function page() {
   );
 }
 
-const Card = ({ title, subtitle, icon }: any) => {
+const Card = ({ title, subtitle, icon,link }: any) => {
   return (
     <div className="bg-white px-4 py-12 rounded-xl flex flex-col gap-3">
       <div className="flex justify-center">
@@ -312,7 +333,7 @@ const Card = ({ title, subtitle, icon }: any) => {
       <div>
         <div className="flex justify-center mt-5">
           <Link
-            href={"/"}
+            href={link}
             className="bg-black px-12 font-medium py-4 rounded-2xl text-white text-xl"
           >
             Know More
@@ -325,8 +346,8 @@ const Card = ({ title, subtitle, icon }: any) => {
 
 const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start">
-      <div className="relative max-w-28 w-full aspect-[4/3]">
+    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start shadow-xl lg:flex-row flex-col ">
+      <div className="relative max-w-28 w-full aspect-[4/3] lg:mx-0 mx-auto">
         <Image
           src={image}
           alt="images"
@@ -335,8 +356,8 @@ const CardTwo = ({ title, subtitle, image }: any) => {
         />
       </div>
       <div>
-        <h2 className="text-xl font-bold text-white">{title}</h2>
-        <p className="text-white text-lg mt-2">{subtitle}</p>
+        <h2 className="text-xl font-bold text-white lg:text-start text-center">{title}</h2>
+        <p className="text-white text-lg mt-2 lg:text-start text-center">{subtitle}</p>
       </div>
     </div>
   );

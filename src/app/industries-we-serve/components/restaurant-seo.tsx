@@ -31,10 +31,10 @@ function RestaurantSeo() {
           </div>
         </div>
         <div className="lg:col-span-3 flex flex-col gap-12">
-          <h2 className="lg:text-6xl text-3xl text-black font-bold">
+          <h2 className="lg:text-6xl text-3xl text-black font-bold lg:text-start text-center">
             Why do Your Restaurant needs Social media presence?
           </h2>
-          <p className="text-xl text-gray-primary">
+          <p className="text-xl text-gray-primary lg:text-start text-center">
             Nowadays there is a strong need for social media presence in
             attracting customers and elevating your restaurant’s success. Let
             Fielmente, the trusted restaurant marketing agency, help you with

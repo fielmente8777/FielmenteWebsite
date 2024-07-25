@@ -1,4 +1,4 @@
-"use client";
+
 
 import Image from "next/image";
 import React, { useState } from "react";
@@ -28,6 +28,12 @@ import Customertrust from "../../../../public/images/customertrust.webp";
 import Onlineordering from "../../../../public/images/onlineordering.webp";
 import Brandidentify from "../../../../public/images/brandidentify.webp";
 import { Accordin } from "../components/common-hero";
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
 
 const faq = [
   {
@@ -232,24 +238,24 @@ function page() {
         <div className="max-width">
           <div className="grid lg:grid-cols-5 items-center gap-8">
             <div className="lg:col-span-3 flex flex-col sm:gap-10 gap-5">
-              <h2 className="sm:text-5xl text-3xl text-black font-semibold">
+              <h2 className="sm:text-5xl text-3xl text-black font-semibold lg:text-start text-center">
                 India’s Best Cloud Kitchen Marketing Agency
               </h2>
-              <p className="sm:text-xl text-lg text-gray-primary">
+              <p className="sm:text-xl text-lg text-gray-primary lg:text-start text-center">
                 Struggling to achieve your cloud kitchen’s order goals?
               </p>
-              <p className="sm:text-xl text-lg text-gray-primary">
+              <p className="sm:text-xl text-lg text-gray-primary lg:text-start text-center">
                 Fielmente, the leading cloud kitchen marketing agency in India,
                 has the solution! With our expert services, we’ll boost your
                 sales and empower your managers and teams to reach their desired
                 goals.
               </p>
-              <p className="sm:text-xl text-lg text-gray-primary">
+              <p className="sm:text-xl text-lg text-gray-primary lg:text-start text-center">
                 Ready to see your cloud kitchen thrive like never before?
               </p>
             </div>
 
-            <div className="lg:col-span-2 w-full flex lg:justify-end justify-center">
+            <div className="lg:col-span-2 w-full lg:flex hidden lg:justify-end justify-center ">
               <div className=" md:max-w-[400px] w-full relative aspect-[4/2.5] -z-10">
                 <Image
                   src={Girlwithchart}
@@ -284,16 +290,16 @@ function page() {
 
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-16">
-                <h2 className="text-3xl underline text-black font-semibold">
+                <h2 className="lg:text-3xl text-[1.8rem]/[2.5rem] underline text-black font-semibold lg:text-start text-center">
                   How our Cloud Kitchen Marketing Agency help you to grow
                 </h2>
-                <h2 className="text-4xl text-black font-bold">
+                <h3 className="lg:text-4xl text-3xl lg:text-start text-center  text-black font-bold">
                   You focus on cooking and We Grow Your Cloud Kitchen Business
                   through our marketing strategy
-                </h2>
+                </h3>
               </div>
 
-              <p className="text-xl text-gray-primary">
+              <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary">
                 Join forces with Fielmente, India’s premier cloud kitchen
                 marketing agency. Maximize online orders, boost sales, and
                 unleash your business’s full potential. Our expert strategies
@@ -301,10 +307,10 @@ function page() {
                 seamless growth.
               </p>
 
-              <div className="flex">
+              <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/contact"}
-                  className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
+                  className="border-b-2 border-b-[#6664E4] text-black lg:text-xl text-lg font-medium pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
                 >
                   Contact us <AiOutlineArrowRight />
                 </Link>
@@ -320,10 +326,10 @@ function page() {
           <div className="grid lg:grid-cols-5 items-center gap-8">
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <h2 className="text-3xl underline text-black font-semibold">
+                <h2 className="text-3xl underline text-black font-semibold lg:text-start text-center">
                   How our Cloud Kitchen Marketing Agency help you to grow
                 </h2>
-                <p className="text-xl text-gray-primary">
+                <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary">
                   Building an online brand organically is a laborious yet
                   rewarding process. Establishing an attractive Food Aggegerator
                   Optimization, an effective marketing plan and social media
@@ -331,16 +337,16 @@ function page() {
                 </p>
               </div>
 
-              <p className="text-xl text-gray-primary">
+              <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary">
                 For business growth, leverage Fielmente, the best cloud kitchen
                 marketing agency in India. Let our expert cloud kitchen
                 marketing company lead you to success.
               </p>
 
-              <div className="flex">
+              <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/contact"}
-                  className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
+                  className="border-b-2 border-b-[#6664E4] text-black lg:text-xl text-lg font-medium pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
                 >
                   Contact us <AiOutlineArrowRight />
                 </Link>
@@ -398,10 +404,10 @@ function page() {
       <div className="pb-10">
         <div className="max-width mx-auto">
           <section>
-            <h2 className="text-center text-5xl text-black font-bold">
+            <h2 className="text-center text-3xl lg:text-5xl text-black font-bold">
               Why Cloud Kitchen Require a Website to expand
             </h2>
-            <div className="mt-32 grid lg:grid-cols-3 sm:grid-cols-2 gap-6 ">
+            <div className="lg:mt-32 mt-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-6 ">
               {CardDetails.map((item, index) => (
                 <Card key={index} {...item} />
               ))}
@@ -417,11 +423,11 @@ function page() {
             </div>
 
             <div className="mt-28">
-              <h2 className="text-center text-5xl text-black font-bold">
+              <h2 className="text-center lg:text-5xl text-3xl text-black font-bold">
                 Why Cloud Kitchen Needs Google SEO
               </h2>
 
-              <div className="flex justify-center mt-20">
+              <div className="lg:flex hidden justify-center mt-20">
                 <Image
                   src={keyword}
                   alt="keyword"
@@ -455,10 +461,10 @@ function page() {
                     </div>
                   </div>
                   <div className="lg:col-span-3">
-                    <h2 className="text-black md:text-[4.8rem] md:leading-[6rem] text-3xl font-bold">
+                    <h2 className="text-black md:text-[4.8rem] md:leading-[6rem] text-3xl font-bold lg:text-start text-center">
                       Why Cloud Kitchens should have Social media presence
                     </h2>
-                    <p className="text-xl text-gray-primary mt-10">
+                    <p className="text-xl text-gray-primary mt-10 lg:text-start text-center">
                       Fielmente, the leading cloud kitchen marketing agency
                       knows the power of social media in reaching a wider
                       audience, engaging with customers, and more to it. Here’s
@@ -484,8 +490,8 @@ function page() {
       <div className="md:py-20 py-10 bg-black">
         <div className="max-width  mx-auto">
           <div className="grid lg:grid-cols-5 gap-16">
-            <div className="lg:col-span-2 flex flex-col justify-center items-end gap-16">
-              <h2 className="md:text-4xl text-3xl text-end font-bold">
+            <div className="lg:col-span-2 flex flex-col justify-center lg:items-end items-center gap-16">
+              <h2 className="md:text-4xl text-3xl lg:text-end text-center font-bold">
                 How our Food Influencer Marketing help your cloud kitchen to
                 grow
               </h2>
@@ -510,12 +516,13 @@ function page() {
 
       <div>
         <div
-          className="py-20 "
+          className=""
           style={{
             backgroundImage: `url(${Backgrond.src})`,
             backgroundSize: "cover",
           }}
         >
+          <div className="w-full h-full bg-[rgba(0,0,0,0.5)] lg:py-20 py-10">
           <div className="max-width px-8">
             <h2 className="text-center md:text-5xl text-3xl font-bold">
               Why a Cloud Kitchen Needs Google Ads
@@ -536,6 +543,7 @@ function page() {
               </Link>
             </div>
           </div>
+          </div>
         </div>
       </div>
 
@@ -548,7 +556,7 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width">
           <section>
-            <h2 className="text-5xl font-bold text-black">
+            <h2 className="lg:text-5xl text-3xl lg:text-start text-center font-bold text-black">
               Frequently Asked Questions
             </h2>
 

@@ -21,7 +21,7 @@ function MakeUsUnique() {
         </p>
       </div>
 
-      <div className="grid grid-cols-4 mt-20">
+      <div className="lg:grid grid-cols-4 mt-20">
         <div className="relative w-full aspect-[4/4]">
           <Image src={Hotel1} alt="hotel" fill className="object-cover" />
         </div>

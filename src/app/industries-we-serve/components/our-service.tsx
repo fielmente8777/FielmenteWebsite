@@ -17,14 +17,14 @@ function OurService() {
 
       <div className="grid lg:grid-cols-2 items-center gap-20 mt-20">
         <div className="flex flex-col gap-10">
-          <h2 className="md:text-5xl text-3xl font-bold">
+          <h2 className="md:text-5xl text-3xl font-bold lg:text-start text-center">
             Our Expertise : Your Tremendous Business Growth Awaits
           </h2>
-          <p className="sm:text-xl text-gray-primary text-lg">
+          <p className="sm:text-xl text-gray-primary text-lg lg:text-start text-center">
             Click the true potential of your business as thriving destinations
             with our unmatched hospitality digital marketing solutions.
           </p>
-          <p className="sm:text-xl text-gray-primary text-lg">
+          <p className="sm:text-xl text-gray-primary text-lg lg:text-start text-center">
             Tantalize taste buds and elevate your business’s success with
             Fielmente – The premier Hospitality marketing agency in the
             industries we serve!

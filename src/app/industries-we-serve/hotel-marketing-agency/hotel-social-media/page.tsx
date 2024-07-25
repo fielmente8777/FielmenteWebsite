@@ -12,6 +12,13 @@ import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
 
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 const faq = [
   {
     question: "How to promote your Hotel on Social Media?",
@@ -82,7 +89,7 @@ const faq = [
 
 const capitavteAndConnectData = {
   title: "Captivate and Connect",
-  subtitle:
+  subtitleText:
     "Harness the Power of Restaurant Social Media Management to Engage Guests, Cultivate Relationships, and Create Unforgettable Experiences.",
   leftContent: {
     title: "Accelerate Your Hotel’s Growth with Social Media.",
@@ -90,7 +97,7 @@ const capitavteAndConnectData = {
   rightContent: {
     title: "Reach a Wider Audience",
     icon: Keyword,
-    subtitle:
+    subtitleText:
       "Through Strategic Hotel Social Media Posts and Campaigns, Reach a Wide and Diverse Audience, Amplifying Brand Awareness, and Attracting New Guests.",
   },
 
@@ -228,7 +235,7 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width">
           <section>
-            <h2 className="text-5xl font-bold text-black text-center">
+            <h2 className="lg:text-5xl text-3xl font-bold text-black text-center">
               Frequently Asked Questions
             </h2>
 

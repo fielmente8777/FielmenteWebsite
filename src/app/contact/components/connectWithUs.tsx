@@ -1,8 +1,65 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Contact from "../../../../public/images/Contact.webp";
+import axios from "axios";
 
 function ConnectWithUs() {
+
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userMessage, setUserMessage] = useState("");
+  const [userPhone, setUserPhone] = useState("");
+  const [formRes, setFormRes] = useState(false);
+
+  const [openPopup, setOpenPopup] = useState(false);
+  const [popupMsg, setPopupMsg] = useState("");
+  const [loader, setLoader] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormRes(true);
+
+    try {
+      setLoader(true);
+      const data = await axios.post(
+        "https://nexon.eazotel.com/eazotel/addcontacts",
+        {
+          Domain: "fielmente", // Replace with your actual domain value
+          email: userEmail,
+          Name: userName,
+          Contact: userPhone,
+          // Subject: userMessage,
+          Description: userMessage,
+        }
+      );
+      if (data.status) {
+        setLoader(false);
+        setPopupMsg("You information has been Received");
+        setOpenPopup(true);
+        // console.log(data.Status);
+        setFormRes(true);
+        setUserName("");
+        setUserEmail("");
+        setUserMessage("");
+        setUserPhone("");
+      } else {
+        setLoader(false);
+        setPopupMsg("Something went wrong!");
+        setOpenPopup(false);
+        setFormRes(false);
+      }
+    } catch (error) {
+      setLoader(false);
+      console.error("Error submitting form:", error);
+      setFormRes(false);
+      alert("Something went wrong!");
+    }
+  };
+
+  const onClose = () => {
+    setOpenPopup(!openPopup);
+  };
   return (
     <div>
       <div className="max-w-[600px] mx-auto flex flex-col md:gap-10 gap-4">
@@ -18,12 +75,12 @@ function ConnectWithUs() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 items-center gap-6 mt-16">
-        <div className="relative w-full aspect-[4/3.5]">
-          <Image src={Contact} alt="Contact" className="object-cover" />
+      <div className="grid lg:grid-cols-2 items-center justify-center gap-6 mt-16">
+        <div className="relative w-full aspect-[4/3.5] mt-10">
+          <Image src={Contact} alt="Contact" className="object-cover rounded-3xl" />
         </div>
-        <div className="p-8 shadow-xl rounded-xl">
-          <form>
+        <div className="p-10 shadow-xl rounded-xl">
+          <form onSubmit={handleSubmit}>
             <h2 className="text-blue-dark sm:text-4xl text-3xl font-semibold">
               Connect with Us
             </h2>
@@ -35,6 +92,8 @@ function ConnectWithUs() {
                 <input
                   type="text"
                   id="name"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
                   className="outline-none text-lg px-3 py-3 border border-gray-300 text-blue-dark rounded-2xl"
                 />
               </div>
@@ -45,6 +104,8 @@ function ConnectWithUs() {
                 <input
                   type="text"
                   id="email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
                   className="outline-none text-lg px-3 py-3 border border-gray-300 text-blue-dark rounded-2xl"
                 />
               </div>
@@ -55,6 +116,8 @@ function ConnectWithUs() {
                 <input
                   type="text"
                   id="number"
+                  value={userPhone}
+                  onChange={(e) => setUserPhone(e.target.value)}
                   className="outline-none text-lg px-3 py-3 border border-gray-300 text-blue-dark rounded-2xl"
                 />
               </div>
@@ -72,7 +135,7 @@ function ConnectWithUs() {
                 />
               </div>
               <div>
-                <button className="text-white bg-blue-dark border border-blue-dark hover:bg-transparent hover:text-blue-dark duration-300 py-4 w-full text-xl rounded-2xl mt-5">
+                <button type="submit" className="text-white bg-blue-dark border border-blue-dark hover:bg-transparent hover:text-blue-dark duration-300 py-4 w-full text-xl rounded-2xl mt-5">
                   Submit
                 </button>
               </div>

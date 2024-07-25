@@ -14,20 +14,30 @@ import Smm13 from "../../../../public/images/SMM-13.webp";
 import Smm14 from "../../../../public/images/SMM-14-1.webp";
 import Smm08 from "../../../../public/images/SMM-08.webp";
 
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 const CardData1 = [
   {
     title: "Hotel Social Media",
     subtitle: "If you are looking for the best hotel seo, look no further.",
+    link: "/industries-we-serve/hotel-marketing-agency/hotel-social-media",
   },
   {
     title: "Cloud Kitchen Social Media",
     subtitle:
       "If you are looking for the best cloud kitchen promotion, look no further.",
+    link: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media",
   },
   {
     title: "Restaurant Social Media",
     subtitle:
       "If you are looking for the best restaurant seo, look no further.",
+    link: "/industries-we-serve/restaurant-marketing-agency/restaurant-social-media",
   },
 ];
 
@@ -64,23 +74,23 @@ function page() {
       <div className="bg-[#1E1928] py-20">
         <div className="max-width">
           {/* Hospitality Social Media Marketing:***** */}
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="lg:grid grid-cols-2 gap-4 flex flex-col-reverse">
             <div className="flex flex-col gap-8">
-              <h2 className="text-4xl">
+              <h2 className="lg:text-4xl text-3xl/[3.5rem] lg:text-start text-center">
                 Hospitality Social Media Marketing: Forge lasting bonds with
                 customers, fueling exponential business growth!
               </h2>
-              <p className="text-gray-primary text-xl">
+              <p className="text-gray-primary lg:text-xl text-lg lg:text-start text-center">
                 At Fielmente, our expertise lies in crafting hospitality social
                 media marketing campaigns and content with a remarkable ROI,
                 elevating brand visibility, nurturing customer relationships,
                 and driving sales like never before.
               </p>
 
-              <div className="flex">
+              <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
                 >
                   Know More
                 </Link>
@@ -98,7 +108,7 @@ function page() {
           </div>
 
           {/* cards**** */}
-          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 px-20 border-b border-b-gray-700 pb-5">
+          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 lg:px-20 border-b border-b-gray-700 pb-5">
             {CardData1.map((item, index) => (
               <Card {...item} key={index} />
             ))}
@@ -116,11 +126,11 @@ function page() {
               </div>
             </div>
             <div>
-              <h2 className="text-4xl font-bold">
+              <h2 className="lg:text-4xl text-3xl lg:text-start text-center font-bold">
                 Why is Social Media Marketing Important for Your Business?
               </h2>
 
-              <p className="text-xl mt-8">
+              <p className="lg:text-xl text-lg lg:text-start text-center mt-8">
                 Embrace the power of social media in the digital era with
                 Fielmente, the leading hospitality social media marketing
                 agency. Connect with your target audience, showcase your brand’s
@@ -138,12 +148,12 @@ function page() {
             </div>
           </div>
           {/* Fielmente's Social Media Marketing Approach**** */}
-          <div className="grid md:grid-cols-2 gap-6 items-center mt-5">
+          <div className="flex flex-col-reverse lg:grid grid-cols-2 gap-6 items-center mt-5">
             <div className="flex flex-col gap-8">
-              <h2 className="text-4xl">
+              <h2 className="lg:text-4xl text-3xl lg:text-start text-center font-bold">
                 {`Fielmente's Social Media Marketing Approach`}
               </h2>
-              <p className="text-gray-primary text-xl">
+              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
                 Fielmente, the premier hospitality social marketing agency,
                 employs custom content planning, precise scheduling, and
                 strategic campaigns aligned with your business goals. We ensure
@@ -151,10 +161,10 @@ function page() {
                 informed when conversations about your business ignite.
               </p>
 
-              <div className="flex">
+              <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
                 >
                   Get Started
                 </Link>
@@ -173,7 +183,7 @@ function page() {
           </div>
 
           <div className="grid md:grid-cols-5 gap-10 items-center mt-5">
-            <div className="md:col-span-2 w-full flex md:justify-end">
+            <div className="md:col-span-2 w-full  md:justify-end lg:flex hidden">
               <div className="relative max-w-[400px] w-full aspect-[4/4]">
                 <Image
                   src={Twowomenmeet}
@@ -185,11 +195,11 @@ function page() {
             </div>
             <div className="md:col-span-3 flex flex-col gap-8">
               <div className="max-w-[700px]">
-                <h2 className="text-4xl font-bold">
+                <h2 className="lg:text-4xl text-3xl lg:text-start text-center font-bold">
                   {`Let's Ignite Your Social Media Growth Together`}
                 </h2>
 
-                <p className="text-gray-primary text-xl mt-5">
+                <p className="text-white lg:text-xl text-lg lg:text-start text-center mt-5">
                   Fielmente, the premier hospitality social marketing agency,
                   employs custom content planning, precise scheduling, and
                   strategic campaigns aligned with your business goals. We
@@ -197,7 +207,7 @@ function page() {
                   you informed when conversations about your business ignite.
                 </p>
 
-                <div className="mt-10 flex gap-5 items-center">
+                <div className="mt-10 flex gap-5 items-center lg:flex-row flex-col">
                   <Image
                     src={TrustyBrand}
                     alt="trust by many brands"
@@ -209,10 +219,10 @@ function page() {
                   </p>
                 </div>
 
-                <div className="flex mt-5">
+                <div className="flex mt-5 lg:justify-start justify-center">
                   <Link
                     href={"/"}
-                    className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                    className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
                   >
                     Get Started
                   </Link>
@@ -238,7 +248,7 @@ function page() {
   );
 }
 
-const Card = ({ title, subtitle }: any) => {
+const Card = ({ title, subtitle, link }: any) => {
   return (
     <div className="bg-white px-4 py-12 rounded-xl">
       <h2 className="text-5xl text-center font-bold text-black">{title}</h2>
@@ -246,7 +256,7 @@ const Card = ({ title, subtitle }: any) => {
       <div>
         <div className="flex justify-center mt-5">
           <Link
-            href={"/"}
+            href={link}
             className="bg-black px-12 font-medium py-4 rounded-2xl text-white text-xl"
           >
             Know More
@@ -259,8 +269,8 @@ const Card = ({ title, subtitle }: any) => {
 
 const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start">
-      <div className="relative max-w-28 w-full aspect-[4/3]">
+    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start lg:flex-row flex-col">
+      <div className="relative max-w-28 w-full aspect-[4/3] lg:mx-0 mx-auto">
         <Image
           src={image}
           alt="images"
@@ -269,8 +279,12 @@ const CardTwo = ({ title, subtitle, image }: any) => {
         />
       </div>
       <div>
-        <h2 className="text-xl font-bold text-white">{title}</h2>
-        <p className="text-white text-lg mt-2">{subtitle}</p>
+        <h2 className="text-xl font-bold text-white lg:text-start text-center">
+          {title}
+        </h2>
+        <p className="text-white text-lg mt-2 lg:text-start text-center">
+          {subtitle}
+        </p>
       </div>
     </div>
   );

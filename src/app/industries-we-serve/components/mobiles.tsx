@@ -7,8 +7,8 @@ import Thehakkaclub from "../../../../public/images/Thehakkaclub.webp";
 
 function Mobiles() {
   return (
-    <section>
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-10">
+    <section className="py-9">
+      <div className="grid lg:grid-cols-4 grid-cols-1 gap-10">
         <div className="relative aspect-[4/5]">
           <Image src={Donner} alt="donner" fill className="object-contain" />
         </div>

@@ -4,11 +4,11 @@ import React from "react";
 function InfluencerMarketing() {
   return (
     <div className="grid lg:grid-cols-5 gap-16">
-      <div className="lg:col-span-2 flex flex-col justify-end items-end gap-8">
-        <h2 className="md:text-4xl text-3xl text-end font-bold">
+      <div className="lg:col-span-2 flex flex-col justify-center lg:items-end items-center gap-8">
+        <h2 className="md:text-4xl text-3xl lg:text-end text-center font-bold">
           Why do Your Restaurant Needs Influencer Marketing?
         </h2>
-        <p className="text-lg text-end">
+        <p className="text-lg text-center lg:text-end">
           The power of influencer marketing in driving customer interest and
           boosting your restaurant’s success is increasing. Let Fielmente, The
           renowned restaurant marketing agency help you harness the influence of

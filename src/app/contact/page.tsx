@@ -8,6 +8,14 @@ import Contact4 from "../../../public/images/Contact4.webp";
 
 import Logo from "../../../public/images/logo.webp";
 
+
+
+export async function generateStaticParams() {
+  return [
+    { params: {} },
+  ];
+}
+
 function page() {
   return (
     <section className="bg-gradient">
@@ -23,19 +31,19 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      <div className="md:py-20 py-10 bg-gradient">
         <div className="max-width grid lg:grid-cols-3 gap-6">
           <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
             <Image src={Contact2} alt="Contact_2" className="object-cover" />
           </div>
-          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
+          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4] lg:block hidden">
             <Image
               src={Contact3}
               alt="Contact_2"
               className="object-cover md:mt-32"
             />
           </div>
-          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
+          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4] lg:block hidden">
             <Image src={Contact4} alt="Contact_2" className="object-cover" />
           </div>
         </div>
@@ -46,13 +54,13 @@ function page() {
           <Image src={Logo} alt="fielmente-logo" width={180} height={40} />
         </div>
         <form action="" className="w-full">
-          <div className="bg-white rounded-full w-full flex gap-20 items-center">
+          <div className="bg-white rounded-full w-full flex gap-20 items-center border-2 border-black">
             <input
               type="text"
               placeholder="Enter you email for updates"
               className="w-full px-5 py-5 text-lg outline-none text-black rounded-full"
             />
-            <button className="bg-blue-dark px-6 py-5 rounded-full text-lg">
+            <button className="bg-blue-dark px-14 py-5 rounded-full text-lg border">
               SUBSCRIBE
             </button>
           </div>
