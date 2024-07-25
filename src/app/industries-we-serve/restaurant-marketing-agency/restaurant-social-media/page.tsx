@@ -36,7 +36,7 @@ const capitavteAndConnectData = {
   items: [
     {
       title: "Engage with Customers",
-      subtitleText:
+      subtitle:
         "Cultivate strong customer relationships with Fielmente’s social media management for restaurants. Engage directly with customers, promptly responding to comments, inquiries, and reviews, fostering a vibrant community that builds loyalty and strengthens your restaurant’s reputation.",
       image: {
         src: Contentwriting,
