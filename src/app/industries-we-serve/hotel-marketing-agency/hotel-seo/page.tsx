@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import React from "react";
 import LineDesign from "../../../../../public/images/4tg4fc4.webp";
@@ -22,13 +21,13 @@ import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
 import WeAreDef from "./components/WeAreDef";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
+export const metadata: Metadata = {
+  title: "Hotel SEO Agency India | Best Hotel SEO Services- Fielmente",
+  description:
+    "Boost your hotel's organic online presence with Fielmente, the premier hotel SEO agency in India. Helping Local SEO for hotels to boost the booking.",
+};
 const faq = [
   {
     question: "How to do hotel SEO?",

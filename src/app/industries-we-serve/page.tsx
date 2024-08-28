@@ -9,12 +9,13 @@ import Threechef from "../../../public/images/three-chefs-are-restaurant-kitchen
 import OurService from "./components/our-service";
 import Form from "../about/components/Form";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
+export const metadata: Metadata = {
+  title: "Fielmente Marketing Agency - Industries We Serve | Contact Now",
+  description:
+    "Here's our expertise in the hospitality industries we serve: hotels, restaurants, cloud kitchens, and resorts. Get in touch with our experts!",
+};
 
 const CommonHero1 = {
   title: "Why Your Hotel need to Go Online",

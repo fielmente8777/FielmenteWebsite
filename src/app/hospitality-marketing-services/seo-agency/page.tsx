@@ -31,35 +31,34 @@ import Form from "@/app/about/components/Form";
 import Section from "@/components/Section";
 import Container from "@/components/Container";
 
+import type { Metadata } from "next";
 
-
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
+export const metadata: Metadata = {
+  title: "India's Leading Hospitality SEO Agency - Fielmente",
+  description:
+    "Fielmente: Your trusted hospitality SEO agency, providing targeted marketing services for hotels, restaurants, cloud kitchens, and resorts.",
+};
 const CardData1 = [
   {
     title: "Hotel SEO",
     subtitle:
       "If you are looking for the best hotel advertisement company, look no further.",
     icon: HotelAds,
-    link:"/industries-we-serve/hotel-marketing-agency/hotel-seo"
+    link: "/industries-we-serve/hotel-marketing-agency/hotel-seo",
   },
   {
     title: "Cloud Kitchen SEO",
     subtitle:
       "If you are looking for the best cloud kitchen promotion, look no further.",
     icon: CloudKitchenAds,
-    link:"/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-seo"
+    link: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-seo",
   },
   {
     title: "Restaurant SEO",
     subtitle:
       "If you are looking for the best restaurant advertising, look no further.",
     icon: RestaurantAds,
-    link:"/"
+    link: "/",
   },
 ];
 
@@ -100,25 +99,25 @@ const CardData3 = [
     title: "Expertise",
     subtitle: "A team of seasoned professionals dedicated to your success.",
     image: Monthly,
-    color:"#E9D175"
+    color: "#E9D175",
   },
   {
     title: "Customization",
     subtitle: "Tailored strategies to fit your unique business needs.",
     image: Searchengine,
-    color:"#9896FF"
+    color: "#9896FF",
   },
   {
     title: "Innovation",
     subtitle: "Staying ahead with cutting-edge SEO techniques.",
     image: Adwords,
-    color:"#E9D175"
+    color: "#E9D175",
   },
   {
     title: " Patnership",
     subtitle: "Collaborating closely for mutual growth and prosperity",
     image: GoogleAdwords,
-    color:"#9896FF"
+    color: "#9896FF",
   },
 ];
 

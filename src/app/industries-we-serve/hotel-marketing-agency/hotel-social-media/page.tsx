@@ -12,12 +12,13 @@ import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
+export const metadata: Metadata = {
+  title: "Best Hotel Social Media Campaign | Hotel Social Media Management",
+  description:
+    "Boost your Hotel Social Media Management presence with Fielmente, the leading hotel social media marketing agency in India. Drive engagement and bookings.",
+};
 
 const faq = [
   {

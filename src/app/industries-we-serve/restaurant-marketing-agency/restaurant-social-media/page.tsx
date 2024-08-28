@@ -11,14 +11,13 @@ import Promote from "../../../../../public/images/3rf.webp";
 import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 
+import type { Metadata } from "next";
 
-
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
+export const metadata: Metadata = {
+  title: "Best Restaurant Social Media Marketing Agency - Fielmente",
+  description:
+    "Elevate your online presence with Fielmente, the leading restaurant social media agency in India. Powerful social media marketing strategies!",
+};
 const capitavteAndConnectData = {
   title: "Captivate and Connect",
   subtitleText:

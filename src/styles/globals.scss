@@ -4,7 +4,7 @@
 
 :root {
   scroll-behavior: smooth;
-  font-size: 62.5%;
+
   --white: #ffffff;
   --black: #1d1d1d;
   --shadow: 0px 0px 20px rgb(153, 152, 152);
@@ -14,8 +14,28 @@
 }
 
 body {
-  line-height: 1.5;
-  color: var(--white);
+  // line-height: 1.5;
+  // color: var(--white);
+  background: #f5f5f5;
+}
+
+body {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1d1d1d;
+    border-radius: 0.5rem;
+    margin-block: 0.2rem;
+    border: #1d1d1dbf 1px solid;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fffaee;
+    border-radius: 0.6rem;
+    border: #1d1d1d 1px solid;
+  }
 }
 
 .bg-gradient {
@@ -72,7 +92,7 @@ body {
   line-height: 2.5rem;
   text-align: justify;
   @media (width<=768px) {
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
   }
 }
 .blog-d-container br {
@@ -123,8 +143,7 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   font-style: normal;
-  text-decoration: none
-
+  text-decoration: none;
 }
 
 .blog-d-container {
@@ -139,19 +158,43 @@ body {
   }
 }
 
-.accordclass{
-  ul{
-    list-style: disc!important;
+.accordclass {
+  ul {
+    list-style: disc !important;
   }
 
-  ol{
-    list-style: decimal!important;
+  ol {
+    list-style: decimal !important;
   }
-  b{
-    color: #1d1d1d ;
+  b {
+    color: #1d1d1d;
     font-weight: 700;
   }
 }
 
+.box_shadow {
+  box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  &:hover {
+    box-shadow: none;
+  }
+}
+.imgrotate {
+  transform: skew(180deg);
+}
 
+.pagination {
+  .swiper-pagination-bullet {
+    background-color: #FFFFFF;
+    width: 0.5rem;
+    height: 0.5rem;
+    opacity: 1;
+    border-radius: 50%;
+  }
 
+  .swiper-pagination-bullet-active {
+    background-color: #F26633;
+    width: 1rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+  }
+}

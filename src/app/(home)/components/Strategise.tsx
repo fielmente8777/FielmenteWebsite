@@ -4,17 +4,16 @@ import Image, { StaticImageData } from "next/image";
 import consult from "../../../../public/images/partners-sitting-table.webp";
 import strategise from "../../../../public/images/img1.png";
 import execute from "../../../../public/images/aerial-view-barista-book-1024x1024.webp";
-import { title } from "process";
 
 const Strategise: React.FC = () => {
   return (
-    <Section className="bg-[#0F110F] lg:py-24">
+    <Section className="bg-[#0F110F] text-white lg:py-24">
       <Container>
         <article>
-          <h2 className="lg:text-5xl text-3xl font-bold text-center">
+          <h2 className="lg:text-4xl text-3xl font-bold text-center">
             This is our Behind the Scene
           </h2>
-          <p className="text-[#BCBCBC] lg:text-[1.68rem]/[2rem] text-2xl text-center mt-6 max-w-5xl mx-auto">
+          <p className="text-[#BCBCBC] lg:text-[1.125rem]/[2.1375rem] max-w-[43rem] text-2xl text-center mt-6 max-w-5xl mx-auto">
             These are the foundation of our hospitality marketing agency&apos;s
             approach, aimed at making your hospitality business thrive, leading
             to success
@@ -73,19 +72,17 @@ export const Card: React.FC<{
 }> = ({ title, subtitle, src, alt, color }) => {
   return (
     <div
-      className="rounded-[3.5rem] p-14 shadow-md flex flex-col  items-center gap-6 lg:mb-0 mb-6"
+      className="rounded-[3.5rem] py-11 px-9 shadow-md flex flex-col items-center gap-6 lg:mb-0 justify-between mb-6"
       style={{ background: color }}
     >
       <div className="w-full">
         <h3 className="text-3xl font-bold text-black text-center lg:text-start">
           {title}
         </h3>
+        <p className="text-black  text-[1.125rem]/[1.9rem] mt-2">{subtitle}</p>
       </div>
-      <p className="text-black lg:text-[1.6rem]/[2.5rem]  text-lg mt-4 text-center lg:text-justify">
-        {subtitle}
-      </p>
-      <div className="flex justify-center relative w-full aspect-[4/4] overflow-hidden rounded-xl">
-        <Image src={src} alt={alt} fill className="object-cover rounded-3xl" />
+      <div className="relative w-full aspect-[1/1] overflow-hidden rounded-3xl">
+        <Image src={src} alt={alt} fill className="object-contain rounded-3xl" />
       </div>
     </div>
   );

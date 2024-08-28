@@ -6,14 +6,13 @@ import Businessman from "../../../public/images/business-people-discussing-docum
 import aboutus from "../../../public/images/man-with-coffee-newspaper-walking-city-1536x1024.webp";
 import img3 from "../../../public/images/img2.png";
 
+import type { Metadata } from "next";
 
-
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
+export const metadata: Metadata = {
+  title: "Hotel PR Services: Building Brand Image and Increasing Visibility",
+  description:
+    "Boost your hotel's visibility and credibility with effective PR services. Increase brand awareness and attract more customers.",
+};
 
 function page() {
   return (

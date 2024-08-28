@@ -14,12 +14,13 @@ import Smm13 from "../../../../public/images/SMM-13.webp";
 import Smm14 from "../../../../public/images/SMM-14-1.webp";
 import Smm08 from "../../../../public/images/SMM-08.webp";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
+export const metadata: Metadata = {
+  title: "India's Best Hospitality Social Media Marketing Agency - Fielmente",
+  description:
+    "Rocket your brand's online presence with Fielmente, the top hospitality social media marketing agency. Boost success with our expert!",
+};
 
 const CardData1 = [
   {

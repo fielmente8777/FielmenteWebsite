@@ -23,11 +23,13 @@ import Resorts from "../../../public/images/stays.png";
 import Restaurants from "../../../public/images/restaurants.png";
 import kitchens from "../../../public/images/kitchen.png";
 
+import type { Metadata } from "next";
 
-
-export async function generateStaticParams() {
-  return [{ params: {} }];
-}
+export const metadata: Metadata = {
+  title: "India's Leading Hospitality Marketing Services - Fielmente",
+  description:
+    "Fielmente: Thriving hospitality marketing services, elevating your brand with expert digital strategies. Get your success today!",
+};
 
 export interface AccordingDataPropsTypes {
   question: string;
@@ -198,7 +200,9 @@ function page() {
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="text-black font-bold text-[1.2rem]">{item.title}</h3>
+                  <h3 className="text-black font-bold text-[1.2rem]">
+                    {item.title}
+                  </h3>
                 </div>
               ))}
             </div>

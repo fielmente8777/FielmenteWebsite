@@ -9,11 +9,11 @@ const Banner : React.FC = () => {
   return (
     <Section>
       <Container>
-        <div className="lg:pb-32 lg:pt-36 bg-contain bg-center bg-no-repeat bg-[url('/images/uih7.webp')]">
-          <h1 className="lg:text-9xl text-[2.6rem] text-black font-bold text-center">
+        <div className="lg:pb-20">
+          <h1 className="lg:text-[4.5rem]/[5rem] text-[2.6rem] text-black font-bold py-10 text-center bg-contain w-full h-full bg-center bg-no-repeat bg-[url('/images/uih7.webp')]">
             Hospitality <br className="lg:block hidden" /> Marketing Agency
           </h1>
-          <p className="text-[#111] lg:text-[2rem] text-2xl text-center mt-6">
+          <p className="text-[#111] lg:text-[1.38rem]/[2rem] text-2xl text-center mt-6">
             India’s Leading Hotel & Restaurant Marketing Agency with over 10+
             Years of Experience
           </p>

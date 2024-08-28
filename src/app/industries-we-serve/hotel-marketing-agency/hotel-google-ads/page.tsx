@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import React from "react";
 import LineDesign from "../../../../../public/images/4tg4fc4.webp";
@@ -7,8 +6,6 @@ import Keyboard from "../../../../../public/images/Keyboard.webp";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import WantToJoin from "../../components/want-to-join";
-
-
 
 import GoogleAds1 from "../../../../../public/images/HOTEL-GOOGLE-ADS-02.webp";
 import GoogleAds2 from "../../../../../public/images/HOTEL-GOOGLE-ADS-03.webp";
@@ -24,12 +21,13 @@ import CaptivateAndConnect from "../../components/captivate-and-connect";
 import { Accordin } from "../../components/common-hero";
 import WeAreDef from "../hotel-seo/components/WeAreDef";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
+export const metadata: Metadata = {
+  title: "India's Leading Hotel Google Ads Agency - Fielmente",
+  description:
+    "Drive hotel success with our leading hotel Google Ads agency in India. Maximize ROI with expertly managed campaigns. Partner with us now!",
+};
 
 const faq = [
   {

@@ -4,12 +4,13 @@ import Hero from "./components/Hero";
 import Milestones from "./components/Milestones";
 import MakeUsUnique from "./components/MakeUsUnique";
 import Form from "./components/Form";
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
+export const metadata: Metadata = {
+  title: "Fielmente Agency | Best Hospitality Marketing Consultants in India",
+  description:
+    "About Fielmente, the expert F&amp;B and hospitality marketing consultant. Unveil our transformative expertise &amp; experience in your businesses",
+};
 
 function About() {
   return (

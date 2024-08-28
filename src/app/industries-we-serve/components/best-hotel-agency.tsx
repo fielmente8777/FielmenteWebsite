@@ -1,39 +1,41 @@
 import Link from "next/link";
 import React from "react";
-import BookNowPhone from "../../../../public/images/BookNowPhone.webp";
+import BookNowPhone from "../../../../public/images/hotel-receptionist-check.png";
 import Image from "next/image";
 
 function BestHotelAgency() {
   return (
     <section>
-      <div className="grid md:grid-cols-6 gap-6">
-        <div className="relative md:col-span-2 col-span-1 w-full aspect-[4/3.8]">
+      <div className="lg:grid grid-cols-2 gap-6 flex flex-col-reverse flex-1">
+        <div className="relative w-full aspect-[4/2.72]">
           <Image
             src={BookNowPhone}
             alt="book-now-moible-pic"
             fill
-            className="object-contain"
+            className="object-cover rounded-md"
           />
         </div>
-        <div className="flex flex-col gap-8 md:col-span-4">
-          <h2 className="md:text-6xl text-3xl lg:text-start text-center font-bold text-black">
-            India’s Best Hotel Social Media Agency
+        <div className="flex flex-col gap-6">
+          <h2 className="text-[#737373] text-base md:text-lg  font-semibold border-l-4 border-orange-primary pl-4 ">
+            Our Approach
           </h2>
-          <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary">
-            Boost guest engagement and attract potential guests with an
-            impactful social media presence, customized by Fielmente, a renowned
-            hotel marketing agency in India. Social media management for the
-            Hotel & Resort is crucial for building a strong online presence,
-            engaging with customers, and attracting new guests. We involve
-            various activities to create, curate, and optimize content, engage
-            with the audience, and achieve specific business goals through
-            social media channels.
+          <h3 className="text-black md:text-5xl/[3.2rem] text-3xl font-normal">
+            We are here to Serve You{" "}
+            <b className="text-orange-primary">Serve You</b>
+          </h3>
+          <p className="text-gray-500 text-lg">
+            We are a well-rooted Hotel Advertisement Company, you will always
+            find Fielmente standing near you with our targeted, site-specific
+            programs to boost your marketing campaigns in India.
           </p>
-
-          <div className="flex justify-center">
+          <p className="text-gray-500 text-lg">
+            With our Hospitality expert’s guidance, we make sure your Hotel
+            drives full occupancy and generates more revenue.
+          </p>
+          <div className="flex lg:justify-start justify-center">
             <Link
-              href={"/contact"}
-              className="bg-blue-dark py-5 px-16 text-lg font-bold rounded-full hover:bg-white hover:text-black transition-all duration-200"
+              href="/contact"
+              className="bg-blue-dark text-white py-3 px-6 border border-blue-dark rounded-lg text-lg font-semibold hover:bg-white hover:text-black duration-700 transition box_shadow"
             >
               Contact Us
             </Link>

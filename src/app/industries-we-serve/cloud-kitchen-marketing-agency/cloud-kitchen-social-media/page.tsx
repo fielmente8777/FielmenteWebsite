@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import React, { useState } from "react";
 import Mobile from "../../../../../public/images/online-mobile.webp";
@@ -14,13 +12,13 @@ import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
+export const metadata: Metadata = {
+  title: "Best Cloud Kitchen Social Media Agency in India- Fielmente",
+  description:
+    "Drive success with Fielmente, the top cloud kitchen social media agency in India. Elevate your brand with expert social media marketing.",
+};
 const faq = [
   {
     question: "What is a Cloud Kitchen?",
@@ -396,7 +394,9 @@ function page() {
         <div className="max-width">
           <section className="grid lg:grid-cols-2 items-center">
             <div className="lg:p-20 mb-6">
-              <h2 className="lg:text-5xl text-3xl font-bold lg:text-start text-center">Want to join?</h2>
+              <h2 className="lg:text-5xl text-3xl font-bold lg:text-start text-center">
+                Want to join?
+              </h2>
               <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary mt-6">
                 Find a team of digital marketers you can rely on. Every day, we
                 build trust through communication, transparency, and results.

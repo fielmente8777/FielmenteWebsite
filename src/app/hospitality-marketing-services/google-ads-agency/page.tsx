@@ -21,34 +21,34 @@ import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp
 import Form from "@/app/about/components/Form";
 import Container from "@/components/Container";
 
+import type { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
+export const metadata: Metadata = {
+  title: "India's Leading Hospitality Google Ads Agency - Fielmente",
+  description:
+    "Boost your hotel, restaurant, or resort with Fielmente, the leading hospitality Google Ads agency. Campaigns for social media and business.",
+};
 const CardData1 = [
   {
     title: "Hotel Ads",
     subtitle:
       "If you are looking for the best hotel advertisement company, look no further.",
     icon: HotelAds,
-    link:"/industries-we-serve/hotel-marketing-agency/hotel-google-ads"
+    link: "/industries-we-serve/hotel-marketing-agency/hotel-google-ads",
   },
   {
     title: "Cloud Kitchen Ads",
     subtitle:
       "If you are looking for the best cloud kitchen promotion, look no further.",
     icon: CloudKitchenAds,
-    link:"/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-google-ads"
+    link: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-google-ads",
   },
   {
     title: "Restaurant Ads",
     subtitle:
       "If you are looking for the best restaurant advertising, look no further.",
     icon: RestaurantAds,
-    link:"/"
+    link: "/",
   },
 ];
 
@@ -322,7 +322,7 @@ function page() {
   );
 }
 
-const Card = ({ title, subtitle, icon,link }: any) => {
+const Card = ({ title, subtitle, icon, link }: any) => {
   return (
     <div className="bg-white px-4 py-12 rounded-xl flex flex-col gap-3">
       <div className="flex justify-center">
@@ -356,8 +356,12 @@ const CardTwo = ({ title, subtitle, image }: any) => {
         />
       </div>
       <div>
-        <h2 className="text-xl font-bold text-white lg:text-start text-center">{title}</h2>
-        <p className="text-white text-lg mt-2 lg:text-start text-center">{subtitle}</p>
+        <h2 className="text-xl font-bold text-white lg:text-start text-center">
+          {title}
+        </h2>
+        <p className="text-white text-lg mt-2 lg:text-start text-center">
+          {subtitle}
+        </p>
       </div>
     </div>
   );

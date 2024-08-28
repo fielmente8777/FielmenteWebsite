@@ -9,11 +9,7 @@ import {
 } from "./components";
 import Section from "@/components/Section";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
+
 
 export default function Home() {
   return (
