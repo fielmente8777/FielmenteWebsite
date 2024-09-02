@@ -13,17 +13,17 @@ const WeAreDef = () => {
         <div className="md:py-20 py-10">
         <div className="max-width">
           <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-            <h2 className="text-center text-black lg:text-5xl text-3xl font-bold">
+            <h2 className="text-center text-black lg:text-4xl text-3xl font-bold">
               Why we are different?
             </h2>
-            <p className="text-center text-gray-primary lg:text-xl text-lg">
+            <p className="text-center text-gray-primary lg:text-lg text-base">
               Optimise Your Hotel’s Online Presence with Fielmente’s Expert
               On-Page SEO Strategies. Enhancing Search Rankings and Driving More
               Traffic to Your Website.
             </p>
           </div>
 
-          <div className="mt-20">
+          <div className="mt-16">
             <Swiper
               
               pagination={{
@@ -55,10 +55,10 @@ const WeAreDef = () => {
               className="mySwiper"
             >
               {ClientImages.map((item, index) => (
-                <SwiperSlide key={index} className="py-4">
+                <SwiperSlide key={index} className="py-4 mt-4">
                   <Link
                     href={"/"}
-                    className="relative w-full lg:aspect-[4/3.4] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[15rem] rounded-md flex justify-center items-center"
+                    className="relative w-full lg:aspect-[4/3.4] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[9rem] rounded-md flex justify-center items-center"
                   >
                     <Image
                       src={item.src}

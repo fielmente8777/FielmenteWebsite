@@ -3,7 +3,6 @@ import BestRestauratMarket from "../components/best-restaurnat-market";
 import LookingForRestaurant from "../components/looking-for-restaurant";
 import TakeYourFbVenture from "../components/take-your-fb-venture";
 import RestaurantSeo from "../components/restaurant-seo";
-import Form from "@/app/about/components/Form";
 import InfluencerMarketing from "../components/influencer-marketing";
 import { Accordin } from "../components/common-hero";
 import {

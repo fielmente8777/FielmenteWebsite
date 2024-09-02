@@ -7,9 +7,10 @@ import Popularrestaurnat from "../../../public/images/popular-val-s-restaurant-f
 import Threechef from "../../../public/images/three-chefs-are-restaurant-kitchen-one-them-is-wearing-white-apron-1.webp";
 
 import OurService from "./components/our-service";
-import Form from "../about/components/Form";
+
 
 import type { Metadata } from "next";
+import Form from "../about-fielmente-best-hospitality-marketing-agency/components/Form";
 
 export const metadata: Metadata = {
   title: "Fielmente Marketing Agency - Industries We Serve | Contact Now",
@@ -179,13 +180,13 @@ const CommonHero3 = {
 function page() {
   return (
     <section>
-      <div className="md:py-20 py-10 bg-gradient">
+      <div className="md:py-14 py-10 bg-gradient">
         <div className="max-width">
           <IndustryWeServe />
         </div>
       </div>
 
-      <div className="md:py-20 py-10 bg-gradient-second">
+      <div className="md:py-12 py-10 bg-gradient-second">
         <div className="max-w-[1080px] w-full mx-auto px-6 flex flex-col lg:gap-32 gap-20">
           <CommonHero data={CommonHero1} />
           <CommonHero data={CommonHero2} direction={"reverse"} />
@@ -193,10 +194,10 @@ function page() {
         </div>
         <div className="mt-32">
           <div className="max-width flex flex-col gap-8">
-            <h2 className="text-black md:text-5xl text-3xl text-center font-semibold">
+            <h2 className="text-black md:text-4xl text-2xl text-center font-semibold">
               Why Fielmente Hospitality Marketing?
             </h2>
-            <p className="text-gray-500 text-center md:text-xl text-lg ">
+            <p className="text-gray-500 text-center md:text-lg text-base ">
               Unseal limitless possibilities with Fielmente’s tailored expertise
               and results-driven solutions! Our hospitality digital marketing
               services cater precisely to the industries we serve, empowering
@@ -206,7 +207,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10 bg-black">
+      <div className="md:py-20 py-10 bg-black text-white">
         <div className="max-width ">
           <OurService />
         </div>

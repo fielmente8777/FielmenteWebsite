@@ -3,7 +3,7 @@ const Section: React.FC<{ className?: string; children: React.ReactNode }> = ({
   className,
 }) => {
   return (
-    <section className={`${className ? className : "md:py-10"} py-8`}>
+    <section className={`${className ? className : "md:py-10"} py-6`}>
       {children}
     </section>
   );

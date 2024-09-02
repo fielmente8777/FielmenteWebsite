@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 function page() {
   return (
     <section className="bg-gradient">
-      <div className="md:py-20 py-10">
+      <div className="md:py-12 py-10">
         <div className="max-width">
           <ConnectWithUs />
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      <div className="md:py-12 py-10">
         <div className="max-width">
           <AccordinSection />
         </div>
@@ -60,7 +60,7 @@ function page() {
               placeholder="Enter you email for updates"
               className="w-full px-5 py-5 text-lg outline-none text-black rounded-full"
             />
-            <button className="bg-blue-dark px-14 py-5 rounded-full text-lg border">
+            <button className="bg-blue-dark text-white px-14 py-5 rounded-full text-lg border">
               SUBSCRIBE
             </button>
           </div>

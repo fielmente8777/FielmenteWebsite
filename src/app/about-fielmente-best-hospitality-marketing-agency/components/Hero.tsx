@@ -10,7 +10,7 @@ function Hero() {
     <section>
       <div className="grid lg:grid-cols-2 gap-10">
         <div className="mt-6">
-          <h2 className="text-black sm:text-4xl text-3xl font-bold">
+          <h2 className="text-black sm:text-3xl text-2xl font-bold">
             INNOVATIVE HOSPITALITY MARKETING SOLUTIONS IN INDIA
           </h2>
           <p className="text-lg text-black mt-5">
@@ -42,7 +42,7 @@ function Hero() {
           />
         </div>
         <div className="md:mt-16">
-          <h2 className="text-black sm:text-4xl text-3xl font-bold">
+          <h2 className="text-black sm:text-3xl text-2xl font-bold">
             PIONEERING HOTEL & RESTAURANT MARKETING COMPANY IN INDIA
           </h2>
           <p className="text-lg text-black mt-5">

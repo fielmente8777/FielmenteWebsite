@@ -13,7 +13,7 @@ function MakeUsUnique() {
         <h2 className="md:text-4xl text-3xl font-bold text-black text-center">
           WHAT MAKES US UNIQUE?
         </h2>
-        <p className="sm:text-xl text-lg text-black text-center">
+        <p className="sm:text-lg text-base text-black text-center">
           Fielmente, the premier hospitality digital marketing consultant, knows
           that F&B businesses have unique needs. Our personalized strategies
           build trust, authority, and drive extreme growth, tailored to your

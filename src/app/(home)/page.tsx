@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import Form from "../about/components/Form";
+
 import {
   Banner,
   Strategise,
@@ -8,8 +8,7 @@ import {
   CardSection,
 } from "./components";
 import Section from "@/components/Section";
-
-
+import Form from "../about-fielmente-best-hospitality-marketing-agency/components/Form";
 
 export default function Home() {
   return (

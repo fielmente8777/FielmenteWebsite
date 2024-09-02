@@ -18,7 +18,7 @@ const PeopleSay = () => {
     <div className="md:py-20 py-10">
       <div className="max-width">
         <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-          <h2 className="text-center text-black lg:text-5xl text-3xl font-bold">
+          <h2 className="text-center text-black lg:text-4xl text-2xl font-bold">
             What People Say About Us
           </h2>
         </div>
@@ -74,7 +74,7 @@ const Card = ({
   Icon: string | StaticImageData;
 }) => {
   return (
-    <div className="border border-gray-300 rounded-3xl  min-h-[25rem]">
+    <div className="border border-gray-300 rounded-3xl  min-h-[19rem]">
       <div className="flex flex-col gap-5">
         <div className="flex gap-4 items-center justify-between px-10 py-4">
           <div className="flex gap-4 items-center">

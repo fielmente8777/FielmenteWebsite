@@ -14,15 +14,15 @@ const GotEnquiry: React.FC<data_type> = ({ title, description, span }) => {
     <Section>
       <Container>
         <div className="max-w-[1040px] mx-auto bg-blue-dark">
-          <div className="flex flex-col gap-7 justify-center items-center lg:pt-[4.5rem] ">
+          <div className="flex flex-col gap-7 justify-center items-center lg:pt-[4.5rem] py-4">
             <h2 className="text-xl text-center text-white">
               {title}
             </h2>
-            <p className="text-white lg:text-[2.875rem]/[3.5rem] text-center px-16">{description}
+            <p className="text-white lg:text-[2.875rem]/[3.5rem] text-center lg:px-16">{description}
                 {" "}<b className="text-orange-primary">{span}</b>
             </p>
           </div>
-          <div className="flex justify-center items-center py-10 mt-2">
+          <div className="flex justify-center items-center py-6 lg:py-10 lg:mt-2">
             <Link
               href="/contact-us"
               className="bg-transparent px-6 hover:bg-white font-medium py-3 rounded-full text-orange-primary border-2 border-orange-primary lg:text-xl text-lg flex gap-2 items-center"

@@ -19,11 +19,11 @@ function UnloackBenifts() {
           </div>
         </div>
         <div className="lg:col-span-3">
-          <h2 className="text-black md:text-[4.8rem] md:leading-[6rem] text-3xl lg:text-start text-center font-semibold">
+          <h2 className="text-black md:text-[3rem] md:leading-[4rem] text-3xl lg:text-start text-center font-semibold">
             Unlock the Benefits with The Power of Social Media Presence for Your
             Restaurant.
           </h2>
-          <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary mt-10">
+          <p className="lg:text-lg text-base lg:text-start text-center text-gray-primary mt-10">
             Our Restaurant Social Media Management Ensures a Dynamic Presence,
             Engaging Posts, and Best-in-Class Campaigns to Keep Your Hotel Ahead
             of the Curve.
@@ -40,28 +40,28 @@ function UnloackBenifts() {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-3 gap-8 mt-20 border-b border-b-gray-300 pb-16">
+      <div className="grid sm:grid-cols-3 gap-8 mt-8 border-b border-b-gray-300 pb-10">
         <div className="flex flex-col gap-2">
-          <h2 className="sm:text-6xl text-4xl font-normal text-black text-center">
+          <h2 className="sm:text-5xl text-3xl font-normal text-black text-center">
             3K+
           </h2>
-          <p className="text-lg font-medium text-gray-primary text-center">
+          <p className="text-base font-medium text-gray-primary text-center">
             COMPLETED PROJECTS
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="sm:text-6xl text-4xl font-normal text-black text-center">
+          <h2 className="sm:text-5xl text-3xl font-normal text-black text-center">
             89%
           </h2>
-          <p className="text-lg font-medium text-gray-primary text-center">
+          <p className="text-base font-medium text-gray-primary text-center">
             SATISFACTION RATE
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h2 className="sm:text-6xl text-4xl font-normal text-black text-center">
+          <h2 className="sm:text-5xl text-3xl font-normal text-black text-center">
             15
           </h2>
-          <p className="text-lg font-medium text-gray-primary text-center">
+          <p className="text-base font-medium text-gray-primary text-center">
             YEARS OF EXPERIENCE
           </p>
         </div>

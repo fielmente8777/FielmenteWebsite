@@ -44,7 +44,7 @@ const Needs: React.FC<DataType> = ({
           </p>
         </div>
         <div
-          className={`lg:grid grid-cols-3 gap-9 mt-14 max-w-${
+          className={`lg:grid grid-cols-3 gap-9 mt-14 max-md:mt-5 max-w-${
             maxw && "[980px]"
           } mx-auto`}
         >

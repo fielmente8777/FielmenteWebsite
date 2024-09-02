@@ -20,13 +20,13 @@ function page() {
       <div className="md:py-20 py-10">
         <div className="max-width">
           <div className="max-w-[600px] mx-auto">
-            <h2 className="text-black text-center sm:text-6xl text-3xl">
+            <h2 className="text-black text-center sm:text-5xl text-3xl">
               Public-Relations & Communication
             </h2>
             <div className="flex justify-center mt-10">
               <Link
                 href={"/contact"}
-                className="bg-[#467FF7] border border-[#467FF7] px-16 py-4 rounded-full text-xl font-semibold hover:bg-white hover:text-black hover:shadow-2xl duration-200"
+                className="bg-[#467FF7] border border-[#467FF7] px-10 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black hover:shadow-2xl duration-200"
               >
                 Contact us
               </Link>
@@ -53,11 +53,11 @@ function page() {
             </div>
 
             <div className="lg:w-[40%]">
-              <h2 className="text-blue-dark sm:text-6xl text-3xl font-bold">
+              <h2 className="text-blue-dark sm:text-4xl text-2xl font-bold">
                 About Us
               </h2>
               <div className="flex flex-col gap-10 justify-center mt-10">
-                <p className="sm:text-xl text-lg text-gray-primary">
+                <p className="sm:text-lg text-base text-gray-primary">
                   Public relations (PR) helps build and maintain a positive
                   image, increase brand awareness, and ultimately attract more
                   customers. By working with media outlets and influencers, PR
@@ -73,7 +73,7 @@ function page() {
               <div className="flex mt-10">
                 <Link
                   href={"/"}
-                  className="bg-[#467FF7] border border-[#467FF7] px-16 py-4 rounded-full text-xl font-semibold hover:bg-white hover:text-black hover:shadow-2xl duration-200"
+                  className="bg-[#467FF7] border border-[#467FF7] px-10 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black hover:shadow-2xl duration-200"
                 >
                   Learn More
                 </Link>
@@ -81,7 +81,7 @@ function page() {
             </div>
           </div>
 
-          <div className="bg-black mt-10 grid lg:grid-cols-2 gap-10 py-32">
+          <div className="bg-black text-white mt-10 grid lg:grid-cols-2 gap-10 py-32">
             <div
               className="w-full aspect-[4/6]"
               style={{
@@ -115,7 +115,7 @@ function page() {
                 Nature, and FNB on a retainer basis include:
               </p>
 
-              <ul className="list-disc list-inside flex flex-col gap-8">
+              <ul className="list-disc list-inside flex flex-col gap-6">
                 <li className="text-lg font-semibold w-[80%]">
                   Authored Articles by GM across different subjects and genres.
                 </li>
@@ -162,7 +162,7 @@ function page() {
           <div className="grid lg:grid-cols-2 gap-16 lg:items-center">
             <div className="lg:order-1 order-2">
               <div className="flex flex-col gap-6 lg:max-w-[400px] ">
-                <h1 className="sm:text-6xl text-3xl text-black font-bold">
+                <h1 className="sm:text-4xl text-2xl text-black font-bold">
                   Option 1
                 </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
@@ -208,7 +208,7 @@ function page() {
             </div>
             <div className="lg:order-2 order-1 flex justify-end">
               <div className="flex flex-col gap-6 max-w-[400px] ">
-                <h1 className="sm:text-6xl text-3xl text-black font-bold">
+                <h1 className="sm:text-4xl text-2xl text-black font-bold">
                   Option 2
                 </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">
@@ -229,7 +229,7 @@ function page() {
           <div className="grid lg:grid-cols-2 gap-16 lg:items-center mt-32">
             <div className="lg:order-1 order-2">
               <div className="flex flex-col gap-6 max-w-[400px] ">
-                <h1 className="sm:text-6xl text-3xl text-black font-bold">
+                <h1 className="sm:text-4xl text-2xl text-black font-bold">
                   Option 3
                 </h1>
                 <ul className="list-disc list-inside flex flex-col gap-4">

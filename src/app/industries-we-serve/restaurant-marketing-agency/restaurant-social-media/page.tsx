@@ -133,7 +133,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      <div className="bg-transparent">
         <div className="max-width">
           <div className="w-full h-[0.1rem] bg-gray-300"></div>
         </div>
@@ -157,7 +157,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10 bg-black">
+      <div className="md:py-11 py-8 bg-black text-white">
         <div className="max-width">
           <WantToJoin />
         </div>

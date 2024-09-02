@@ -3,9 +3,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Contact from "../../../../public/images/Contact.webp";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 function ConnectWithUs() {
-
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
@@ -16,6 +16,27 @@ function ConnectWithUs() {
   const [popupMsg, setPopupMsg] = useState("");
   const [loader, setLoader] = useState(false);
 
+  const [errorMessage, setErrorMessage] = useState("");
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  const router = useRouter();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value) && value.length <= 10) {
+      setUserPhone(value);
+      setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
+    }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setUserEmail(value);
+    setEmailErrorMessage(
+      !emailRegex.test(value) ? "Please enter a valid email address" : ""
+    );
+  };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormRes(true);
@@ -36,6 +57,8 @@ function ConnectWithUs() {
       if (data.status) {
         setLoader(false);
         setPopupMsg("You information has been Received");
+        router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
+
         setOpenPopup(true);
         // console.log(data.Status);
         setFormRes(true);
@@ -76,15 +99,19 @@ function ConnectWithUs() {
       </div>
 
       <div className="grid lg:grid-cols-2 items-center justify-center gap-6 mt-16">
-        <div className="relative w-full aspect-[4/3.5] mt-10">
-          <Image src={Contact} alt="Contact" className="object-cover rounded-3xl" />
+        <div className="relative w-full aspect-[4/3] mt-10">
+          <Image
+            src={Contact}
+            alt="Contact"
+            className="object-cover rounded-3xl"
+          />
         </div>
-        <div className="p-10 shadow-xl rounded-xl">
+        <div className="px-10 py-7 shadow-xl rounded-xl">
           <form onSubmit={handleSubmit}>
             <h2 className="text-blue-dark sm:text-4xl text-3xl font-semibold">
               Connect with Us
             </h2>
-            <div className="mt-10 flex flex-col md:gap-8 gap-4">
+            <div className="mt-10 flex flex-col gap-4">
               <div className="flex flex-col gap-1">
                 <label htmlFor="name" className="text-lg text-blue-dark">
                   Your Name
@@ -105,9 +132,14 @@ function ConnectWithUs() {
                   type="text"
                   id="email"
                   value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  onChange={handleEmailChange}
                   className="outline-none text-lg px-3 py-3 border border-gray-300 text-blue-dark rounded-2xl"
                 />
+                {emailErrorMessage && (
+                  <p className="text-sm text-red-500 mt-2 lg:ps-5">
+                    {emailErrorMessage}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="number" className="text-lg text-blue-dark">
@@ -117,9 +149,14 @@ function ConnectWithUs() {
                   type="text"
                   id="number"
                   value={userPhone}
-                  onChange={(e) => setUserPhone(e.target.value)}
+                  onChange={handlePhoneChange}
                   className="outline-none text-lg px-3 py-3 border border-gray-300 text-blue-dark rounded-2xl"
                 />
+                {errorMessage && (
+                  <p className="text-sm text-red-500 mt-2 lg:ps-5">
+                    {errorMessage}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col gap-1">
                 <label
@@ -135,7 +172,10 @@ function ConnectWithUs() {
                 />
               </div>
               <div>
-                <button type="submit" className="text-white bg-blue-dark border border-blue-dark hover:bg-transparent hover:text-blue-dark duration-300 py-4 w-full text-xl rounded-2xl mt-5">
+                <button
+                  type="submit"
+                  className="text-white bg-blue-dark border border-blue-dark hover:bg-transparent hover:text-blue-dark duration-300 py-4 w-full text-xl rounded-2xl mt-5"
+                >
                   Submit
                 </button>
               </div>

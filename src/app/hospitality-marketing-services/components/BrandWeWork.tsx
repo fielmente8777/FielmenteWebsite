@@ -14,12 +14,12 @@ const BrandWeWork = () => {
         <div className="md:py-20 py-10">
         <div className="max-width">
           <div className="max-w-[610px] mx-auto flex flex-col gap-4">
-            <h2 className="text-center text-black lg:text-5xl text-3xl font-bold">
+            <h2 className="text-center text-black lg:text-4xl text-2xl font-bold">
               Brand We Work With
             </h2>
           </div>
 
-          <div className="mt-16">
+          <div className="mt-10">
             <Swiper
               spaceBetween={50}
               slidesPerView={2}
@@ -45,10 +45,10 @@ const BrandWeWork = () => {
               // onSlideChange={() => console.log("slide change")}
             >
               {ClientImages.map((item, index) => (
-                <SwiperSlide key={index} className="py-6 ">
+                <SwiperSlide key={index} className="py-6 mt-6">
                   <Link
                     href={"/"}
-                    className="relative w-full lg:aspect-[4/3.4] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[15rem] rounded-md flex justify-center items-center"
+                    className="relative w-full lg:aspect-[4/3.4] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[10rem] rounded-md flex justify-center items-center"
                   >
                     <Image
                       src={item.src}

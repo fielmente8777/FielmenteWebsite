@@ -7,7 +7,7 @@ import Girlwithsocial from "../../../../public/images/Grilwithsocial.webp";
 import Twowomenmeet from "../../../../public/images/Twowomenmeet.webp";
 
 import TrustyBrand from "../../../../public/images/hsdgvc.webp";
-import Form from "@/app/about/components/Form";
+
 
 import Smm10 from "../../../../public/images/SMM-10.webp";
 import Smm13 from "../../../../public/images/SMM-13.webp";
@@ -15,6 +15,7 @@ import Smm14 from "../../../../public/images/SMM-14-1.webp";
 import Smm08 from "../../../../public/images/SMM-08.webp";
 
 import type { Metadata } from "next";
+import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
 
 export const metadata: Metadata = {
   title: "India's Best Hospitality Social Media Marketing Agency - Fielmente",
@@ -72,12 +73,12 @@ const CardData2 = [
 function page() {
   return (
     <section>
-      <div className="bg-[#1E1928] py-20">
+      <div className="bg-[#1E1928] text-white py-20">
         <div className="max-width">
           {/* Hospitality Social Media Marketing:***** */}
           <div className="lg:grid grid-cols-2 gap-4 flex flex-col-reverse">
             <div className="flex flex-col gap-8">
-              <h2 className="lg:text-4xl text-3xl/[3.5rem] lg:text-start text-center">
+              <h2 className="lg:text-4xl/[3rem] text-2xl/[1.9rem] lg:text-start text-center">
                 Hospitality Social Media Marketing: Forge lasting bonds with
                 customers, fueling exponential business growth!
               </h2>
@@ -91,14 +92,15 @@ function page() {
               <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
+                  className="bg-white px-12 font-medium py-3 shadow-2xl shadow-gray-500 rounded-full text-black lg:text-xl text-lg
+                  hover:bg-black hover:text-white transition-all duration-300"
                 >
                   Know More
                 </Link>
               </div>
             </div>
-            <div className="w-full">
-              <div className="max-w-[260px] mx-auto aspect-[4/5]">
+            <div className="w-full flex justify-center items-center">
+              <div className="max-w-[260px] relative mx-auto aspect-[4/4]">
                 <Image
                   src={Girl}
                   alt="girl"
@@ -117,7 +119,7 @@ function page() {
           {/* Why is Social Media Marketing Important for Your Business?*** */}
           <div className="grid lg:grid-cols-2 items-center mt-10">
             <div className="w-full">
-              <div className="relative max-w-2xl mx-auto aspect-[4/4]">
+              <div className="relative w-full aspect-[4/3.5]">
                 <Image
                   src={CircularSocial}
                   alt="circular-social"
@@ -127,11 +129,11 @@ function page() {
               </div>
             </div>
             <div>
-              <h2 className="lg:text-4xl text-3xl lg:text-start text-center font-bold">
+              <h2 className="lg:text-3xl text-2xl lg:text-start text-center font-bold">
                 Why is Social Media Marketing Important for Your Business?
               </h2>
 
-              <p className="lg:text-xl text-lg lg:text-start text-center mt-8">
+              <p className="lg:text-lg text-base lg:text-start text-center mt-8">
                 Embrace the power of social media in the digital era with
                 Fielmente, the leading hospitality social media marketing
                 agency. Connect with your target audience, showcase your brand’s
@@ -141,7 +143,7 @@ function page() {
                 game-changer for your business.
               </p>
 
-              <div className="mt-10 flex flex-col gap-1">
+              <div className="mt-10 flex flex-col gap-2">
                 {CardData2.map((item, index) => (
                   <CardTwo key={index} {...item} />
                 ))}
@@ -154,7 +156,7 @@ function page() {
               <h2 className="lg:text-4xl text-3xl lg:text-start text-center font-bold">
                 {`Fielmente's Social Media Marketing Approach`}
               </h2>
-              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-white text-lg lg:text-start text-center">
                 Fielmente, the premier hospitality social marketing agency,
                 employs custom content planning, precise scheduling, and
                 strategic campaigns aligned with your business goals. We ensure
@@ -165,7 +167,7 @@ function page() {
               <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
+                  className="bg-white px-8 font-medium py-3 shadow-2xl shadow-gray-500 hover:bg-black hover:text-white rounded-full text-black lg:text-xl text-lg"
                 >
                   Get Started
                 </Link>
@@ -200,7 +202,7 @@ function page() {
                   {`Let's Ignite Your Social Media Growth Together`}
                 </h2>
 
-                <p className="text-white lg:text-xl text-lg lg:text-start text-center mt-5">
+                <p className="text-white text-lg max-md:text-base lg:text-start text-center mt-5">
                   Fielmente, the premier hospitality social marketing agency,
                   employs custom content planning, precise scheduling, and
                   strategic campaigns aligned with your business goals. We
@@ -223,7 +225,7 @@ function page() {
                 <div className="flex mt-5 lg:justify-start justify-center">
                   <Link
                     href={"/"}
-                    className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
+                    className="bg-white px-8 font-medium py-3 shadow-2xl shadow-gray-500 hover:bg-black hover:text-white rounded-full text-black lg:text-xl text-lg"
                   >
                     Get Started
                   </Link>
@@ -252,13 +254,13 @@ function page() {
 const Card = ({ title, subtitle, link }: any) => {
   return (
     <div className="bg-white px-4 py-12 rounded-xl">
-      <h2 className="text-5xl text-center font-bold text-black">{title}</h2>
-      <p className="text-black text-xl text-center">{subtitle}</p>
+      <h2 className="text-4xl text-center font-bold text-black">{title}</h2>
+      <p className="text-black text-lg text-center">{subtitle}</p>
       <div>
         <div className="flex justify-center mt-5">
           <Link
             href={link}
-            className="bg-black px-12 font-medium py-4 rounded-2xl text-white text-xl"
+            className="bg-black px-10 font-medium py-3 rounded-2xl text-white text-xl"
           >
             Know More
           </Link>
@@ -270,8 +272,8 @@ const Card = ({ title, subtitle, link }: any) => {
 
 const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start lg:flex-row flex-col">
-      <div className="relative max-w-28 w-full aspect-[4/3] lg:mx-0 mx-auto">
+    <div className="bg-[#333742] py-4 px-6 rounded-[3rem] flex gap-6 items-start lg:flex-row flex-col">
+      <div className="relative max-w-28 w-full aspect-[4/3.5] lg:mx-0 mx-auto">
         <Image
           src={image}
           alt="images"
@@ -280,10 +282,10 @@ const CardTwo = ({ title, subtitle, image }: any) => {
         />
       </div>
       <div>
-        <h2 className="text-xl font-bold text-white lg:text-start text-center">
+        <h2 className="text-lg font-bold text-white lg:text-start text-center">
           {title}
         </h2>
-        <p className="text-white text-lg mt-2 lg:text-start text-center">
+        <p className="text-white text-base mt-2 lg:text-start text-center">
           {subtitle}
         </p>
       </div>

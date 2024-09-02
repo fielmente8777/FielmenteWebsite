@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
 :root {
   scroll-behavior: smooth;
 
@@ -11,6 +16,20 @@
   --primary-orange: #f26633;
   --gradient: linear-gradient(120deg, #e5f2ef, #e4f2ee, #fffaee) --gradient-second:
     linear-gradient(120deg, #e5f2ef, #e4f2ee, #ffffff);
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    @apply appearance-none;
+    margin: 0;
+  }
+
+  .no-spinner {
+    @apply appearance-none;
+  }
 }
 
 body {
@@ -54,19 +73,20 @@ body {
   margin-inline: auto;
 
   @media (width<=1280px) {
-    padding: 0 2.5rem;
+    padding: 0 1.7rem;
   }
 }
 
 .blog-d-container div {
-  padding: 1.8rem 0;
+  padding: 1.2rem 0;
   @media (width<=768px) {
     padding: 0.3rem 0;
   }
 }
 
 .blog-d-container ol {
-  padding-left: 1.8rem;
+  // padding-left: 1.8rem;
+  list-style-position: inside;
   list-style-type: decimal;
 }
 
@@ -77,35 +97,38 @@ body {
 .blog-d-container h2 {
   font-weight: 700;
   font-style: normal;
-  font-size: 3rem;
-  line-height: 3.5rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
   text-align: start;
   @media (width<=768px) {
-    font-size: 2rem;
+    font-size: 1.89rem;
+    line-height: 2.5rem;
+    // letter-spacing: -0.01rem;
   }
 }
 
 .blog-d-container h4 {
   font-weight: 700;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.5rem;
   text-align: justify;
   @media (width<=768px) {
     font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .blog-d-container br {
-  line-height: 2rem;
-  padding: 10rem;
+  line-height: 1rem;
+  padding: 5rem;
   display: block;
 }
 
 .blog-d-container h3 {
   font-weight: 700;
   font-style: normal;
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   text-align: justify;
   @media (width<=768px) {
     font-size: 1.8rem;
@@ -115,32 +138,37 @@ body {
 .blog-d-container p {
   font-weight: 500;
   font-style: normal;
-  font-size: 1.7rem;
+  font-size: 1.125rem;
   line-height: 2.5rem;
   text-align: justify;
   padding: 0.5rem 0;
+  @media (width<=768px) {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
 }
 
 .blog-d-container li {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-align: justify;
-  line-height: 2.5rem;
+  line-height: 1.8rem;
   font-weight: 500;
   font-style: normal;
 }
 .blog-d-container ul {
-  padding-left: 1.8rem;
+  // padding-left: 1.8rem;
+  list-style-position: inside;
   list-style-type: disc;
-  font-size: 1.7rem;
+  font-size: 1.125rem;
   text-align: justify;
-  line-height: 2.5rem;
+  line-height: 1.8rem;
   font-weight: 500;
   font-style: normal;
 }
 
 .blog-d-container a {
   color: rgb(68, 68, 246);
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 500;
   font-style: normal;
   text-decoration: none;
@@ -196,5 +224,16 @@ body {
     width: 1rem;
     height: 0.5rem;
     border-radius: 0.5rem;
+  }
+}
+
+.bg-imgclass{
+  background-image: url('/icon/Background.png');
+  background-size: 41.5rem;
+  background-repeat: no-repeat;
+  background-position: 48.5% 50%;
+  @media (width<=768px) {
+    background-size: 17.5rem;
+    background-position: 100% 10%;
   }
 }

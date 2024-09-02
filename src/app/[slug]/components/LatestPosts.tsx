@@ -50,7 +50,7 @@ const LatestPosts = () => {
                 <div className=" text-start overflow-hidden shadow-xl rounded-lg bg-white">
                   <Link
                     href={`/${item.link}`}
-                    className="text-black text-md h-[25rem] w-full bg-no-repeat bg-cover bg-center inline-block"
+                    className="text-black text-md h-[16rem] w-full bg-no-repeat bg-cover bg-center inline-block"
                     style={{
                       backgroundImage: `url(${item.url})`,
                     }}
@@ -66,18 +66,18 @@ const LatestPosts = () => {
                         className="uppercase px-2 py-1 rounded-2xl text-white"
                         style={{
                           backgroundColor: "#F26633",
-                          fontSize: "1rem",
+                          fontSize: ".7rem",
                         }}
                       >
                         {item.imgtitle}
                       </span>
                     </div>
                   </Link>
-                  <div className="p-12 flex flex-col gap-4">
+                  <div className="p-9 flex flex-col gap-4">
                     <Link
                       href={`/${item.link}`}
-                      className="font-bold text-2xl text-black"
-                      style={{ height: "5rem" }}
+                      className="font-bold text-base text-black"
+                      style={{ height: "04rem" }}
                     >
                       {item.title}
                     </Link>
@@ -89,7 +89,7 @@ const LatestPosts = () => {
                     </Link>
                   </div>
                   <div className="flex border-t">
-                    <p className="font-light  ps-12 py-2 mb-0 text-lg text-black/70">
+                    <p className="font-light  ps-12 py-2 mb-0 text-sm text-black/70">
                       {/* {item.month} {item.date} */}
                       October 12, 2023 • No Comments
                     </p>

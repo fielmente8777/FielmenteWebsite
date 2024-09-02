@@ -196,7 +196,7 @@ function page() {
               <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
                 HOTEL SEO
               </h2>
-              <h2 className="md:text-5xl md:!leading-[6.5rem] text-3xl text-black font-medium md:mt-20 mt-5 lg:text-start text-center">
+              <h2 className="md:text-5xl md:!leading-[3.5rem] text-3xl text-black font-medium md:mt-20 mt-5 lg:text-start text-center">
                 Skyrocket Your Hotel’s Success with Fielmente’s SEO Strategies!
               </h2>
               <p className="text-gray-primary text-xl md:mt-20 mt-5 lg:text-start text-center">
@@ -333,7 +333,7 @@ function page() {
 
       <WeAreDef />
 
-      <div className="md:py-20 py-10 bg-black">
+      <div className="md:py-12 py-10 text-white bg-black">
         <div className="max-width">
           <WantToJoin />
         </div>

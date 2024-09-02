@@ -27,7 +27,7 @@ import GoogleAds10 from "../../../../public/images/SEO-10-1.webp";
 import GoogleAds14 from "../../../../public/images/SEO-14.webp";
 import GoogleAds06 from "../../../../public/images/SEO-06.webp";
 
-import Form from "@/app/about/components/Form";
+import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
 import Section from "@/components/Section";
 import Container from "@/components/Container";
 
@@ -124,21 +124,21 @@ const CardData3 = [
 function page() {
   return (
     <section>
-      <div className="bg-[#1E1928] py-20">
+      <div className="bg-[#1E1928] text-white py-20">
         <div className="max-width">
           {/* Revolutionize Your Business with Fielmente   */}
           <div className="lg:grid grid-cols-2 items-center gap-4 flex flex-col-reverse">
             <div className="flex flex-col gap-8">
-              <h2 className="lg:text-4xl text-3xl lg:text-start text-center">
+              <h2 className="lg:text-4xl/[2.9rem] text-2xl lg:text-start text-center">
                 Revolutionize Your Business with Fielmente, the Hospitality SEO
                 Agency that Unleashes True Potential!
               </h2>
-              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-white lg:text-base text-base lg:text-start text-center">
                 Fielmente, India’s premier Hospitality SEO Agency, where success
                 awaits! Boost your online presence and skyrocket revenue with
                 our cutting-edge strategies.
               </p>
-              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-white lg:text-base text-base lg:text-start text-center">
                 Embrace the full potential of your business with personalized
                 solutions tailored for the hospitality industry. Welcome to a
                 new era of growth and prosperity!
@@ -147,7 +147,7 @@ function page() {
               <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
+                  className="bg-white px-9 shadow-2xl hover:bg-black hover:text-white shadow-gray-400 font-medium py-3 rounded-full text-black lg:text-base text-base"
                 >
                   Know More
                 </Link>
@@ -166,36 +166,36 @@ function page() {
           </div>
 
           {/* Milestones*** */}
-          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 py-16 max-w-[1080px] mx-auto">
+          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 py-10 max-w-[1080px] mx-auto">
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 100+
               </h2>
-              <p className="lg:text-lg text-[1.3rem] font-medium text-white text-center">
+              <p className="lg:text-base text-[.7rem] font-medium text-white text-center">
                 REVIEWS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 88%
               </h2>
-              <p className="lg:text-lg text-[1.3rem] font-medium text-white text-center">
+              <p className="lg:text-base text-[.7rem] font-medium text-white text-center">
                 INCREASE IN ROAS
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 70+
               </h2>
-              <p className="lg:text-lg text-[1.3rem] font-medium text-white text-center">
+              <p className="lg:text-base text-[.7rem] font-medium text-white text-center">
                 HOTELIERS TRUST US
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 90+
               </h2>
-              <p className="lg:text-lg text-[1.3rem] font-medium text-white text-center">
+              <p className="lg:text-base text-[.7rem] font-medium text-white text-center">
                 PROJECTS COMPLETED
               </p>
             </div>
@@ -209,9 +209,10 @@ function page() {
           </div>
 
           {/* Why is SEO Important for Your Hospitality Business?  */}
-          <div className="grid lg:grid-cols-2 items-center mt-10">
+          <div className="max-width">
+          <div className="lg:grid lg:grid-cols-2 items-center mt-10 ">
             <div className="w-full">
-              <div className="relative max-w-2xl mx-auto aspect-[4/5] lg:block hidden">
+              <div className="relative w-[460px] aspect-[4/4] lg:block hidden">
                 <Image
                   src={Manwithlaptop}
                   alt="circular-social"
@@ -219,7 +220,7 @@ function page() {
                   className="object-cover rounded-3xl"
                 />
               </div>
-              <div className="relative max-w-2xl mx-auto aspect-[4/4]">
+              <div className="relative max-w-[460px] w-full aspect-[4/4] max-md:mx-auto lg:mt-5">
                 <Image
                   src={Wd}
                   alt="circular-social"
@@ -234,12 +235,12 @@ function page() {
                 Why is SEO Important for Your Hospitality Business?
               </h2>
 
-              <p className="lg:text-xl text-lg mt-8 lg:text-start text-center">
+              <p className="lg:text-base text-base mt-8 lg:text-start text-center">
                 Discover the recipe for success as a restaurant, hotel or Cloud
                 Kitchen in the digital age with Fielmente, the top hospitality
                 SEO agency in India.
               </p>
-              <p className="lg:text-xl text-lg mt-8 lg:text-start text-center">
+              <p className="lg:text-base text-base mt-8 lg:text-start text-center">
                 Rule the search engine results, attract a steady stream of
                 customers, and ignite real revenue growth. Rocket your business
                 with our professional SEO services, going beyond mere rankings!
@@ -252,6 +253,7 @@ function page() {
               </div>
             </div>
           </div>
+          </div>
 
           {/* Fielmente's Social Media Marketing Approach**** */}
           <div className="lg:grid grid-cols-2 gap-6 items-center mt-5 flex flex-col-reverse">
@@ -259,7 +261,7 @@ function page() {
               <h2 className="lg:text-4xl text-3xl lg:text-start text-center">
                 Driving Success Through Revenue-Focused SEO Strategies
               </h2>
-              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-white lg:text-base text-base lg:text-start text-center">
                 Fielmente understands it’s about RESULTS, not just rankings. Our
                 hospitality SEO Agency in India drives increased organic
                 traffic, ensuring substantial revenue growth. Partner with us
@@ -269,7 +271,7 @@ function page() {
               <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
+                  className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-base text-base"
                 >
                   Get Started
                 </Link>
@@ -291,7 +293,7 @@ function page() {
             <h2 className="text-center lg:text-4xl text-3xl  font-bold">
               {`The Clear Choice for Elevating Your Brand's Digital Presence`}
             </h2>
-            <p className="text-center lg:text-xl text-lg mt-6">
+            <p className="text-center lg:text-base text-base mt-6">
               Why brands prefer Us? Fielmente. the leading hospitality SEO
               agency in India, as we deliver tangible and measurable results.
               Standout performance and unwavering excellence set us apart.
@@ -309,7 +311,7 @@ function page() {
             <h2 className="text-center lg:text-4xl text-3xl font-bold">
               Join Our Circle of Thriving Brands
             </h2>
-            <p className="text-center lg:text-xl text-lg mt-6">
+            <p className="text-center lg:text-base text-base mt-6">
               Don’t just take our word for it. Discover the stories of
               businesses like yours that have achieved remarkable success with
               Fielmente’s SEO services. Read our testimonials and see how we’ve
@@ -319,7 +321,7 @@ function page() {
             <div className="flex justify-center mt-16">
               <Link
                 href={"/"}
-                className="bg-white px-16 py-5 rounded-full lg:text-xl text-lg font-semibold duration-300 text-black"
+                className="bg-white px-16 py-5 rounded-full lg:text-base text-base font-semibold duration-300 text-black"
               >
                 Get Started
               </Link>
@@ -332,7 +334,7 @@ function page() {
         </div>
       </div>
 
-      <Section className="py-12 bg-[#15151D]">
+      <Section className="py-12 bg-[#15151D] text-white">
         <Container>
           <div className="grid md:grid-cols-5 gap-10 items-center ">
             <div className="md:col-span-2 w-full flex md:justify-end">
@@ -352,7 +354,7 @@ function page() {
                   {`Let's Ignite Your Social Media Growth Together`}
                 </h2>
 
-                <p className="text-white lg:text-xl text-lg mt-5 lg:text-start text-center">
+                <p className="text-white lg:text-base text-base mt-5 lg:text-start text-center">
                   Fielmente, the premier hospitality social marketing agency,
                   employs custom content planning, precise scheduling, and
                   strategic campaigns aligned with your business goals. We
@@ -367,7 +369,7 @@ function page() {
                     width={250}
                     height={55}
                   />
-                  <p className="text-lg">
+                  <p className="text-base">
                     Trusted by many brands around the globe
                   </p>
                 </div>
@@ -375,13 +377,13 @@ function page() {
                 <div className="flex mt-5 lg:justify-start justify-center">
                   <Link
                     href={"/"}
-                    className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-xl text-lg"
+                    className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-base text-base"
                   >
                     Get Started
                   </Link>
                 </div>
 
-                <p className="text-lg text-center mt-10">
+                <p className="text-base text-center mt-10">
                   Partner with Fielmente’s expert hospitality social media
                   marketing team to elevate your brand and dominate the digital
                   landscape. Embrace your potential today.
@@ -407,13 +409,13 @@ const Card = ({ title, subtitle, icon, link }: any) => {
       <div className="flex justify-center">
         <Image src={icon} alt="icon" width={85} />
       </div>
-      <h2 className="text-4xl text-center font-bold text-black">{title}</h2>
-      <p className="text-black text-xl text-center ">{subtitle}</p>
+      <h2 className="text-3xl text-center font-bold text-black">{title}</h2>
+      <p className="text-black text-center ">{subtitle}</p>
       <div>
         <div className="flex justify-center mt-5">
           <Link
             href={link}
-            className="bg-black px-12 font-medium py-4 rounded-2xl text-white text-xl"
+            className="bg-black px-9 font-medium py-3 rounded-2xl text-white text-xl"
           >
             Know More
           </Link>
@@ -425,20 +427,20 @@ const Card = ({ title, subtitle, icon, link }: any) => {
 
 const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex lg:flex-row flex-col gap-6 items-start">
+    <div className="bg-[#333742] px-6 py-4 rounded-[3rem] flex lg:flex-row flex-col gap-6 items-start">
       <div className="relative max-w-28 w-full aspect-[4/3] lg:mx-0 mx-auto">
         <Image
           src={image}
           alt="images"
           fill
-          className="object-contain rounded-3xl"
+          className="object-cover rounded-3xl"
         />
       </div>
       <div>
         <h2 className="text-xl font-bold text-white lg:text-start text-center">
           {title}
         </h2>
-        <p className="text-white text-lg mt-2 lg:text-start text-center">
+        <p className="text-white text-base mt-2 lg:text-start text-center">
           {subtitle}
         </p>
       </div>
@@ -449,14 +451,14 @@ const CardTwo = ({ title, subtitle, image }: any) => {
 const CardThree = ({ title, subtitle, image, color }: any) => {
   return (
     <div
-      className=" px-8 py-10 rounded-[3rem] gap-6"
+      className=" px-7 py-7 rounded-[3rem] gap-6"
       style={{ background: color }}
     >
-      <div className="flex flex-col lg:gap-16 gap-10">
-        <h2 className="lg:text-4xl text-3xl font-bold text-black lg:text-start text-center">
+      <div className="flex flex-col gap-4">
+        <h2 className="lg:text-3xl text-2xl font-bold text-black lg:text-start text-center">
           {title}
         </h2>
-        <p className="text-black lg:text-xl text-lg lg:text-start text-center mt-2">
+        <p className="text-black text-base max-md:text-center mt-2">
           {subtitle}
         </p>
         <div className="flex justify-center lg:justify-start">
@@ -469,7 +471,7 @@ const CardThree = ({ title, subtitle, image, color }: any) => {
         </div>
       </div>
 
-      <div className="relative max-w-56 w-full aspect-[4/4] mx-auto mt-10">
+      <div className="relative w-full aspect-[4/3] mx-auto mt-10">
         <Image
           src={image}
           alt="circular-socail"

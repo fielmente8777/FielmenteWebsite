@@ -18,10 +18,10 @@ import TrustyBrand from "../../../../public/images/hsdgvc.webp";
 import Manwithlaptop from "../../../../public/images/Manwithlaptop2.webp";
 import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp";
 
-import Form from "@/app/about/components/Form";
 import Container from "@/components/Container";
 
 import type { Metadata } from "next";
+import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality Google Ads Agency - Fielmente",
@@ -77,20 +77,20 @@ const CardData2 = [
 function page() {
   return (
     <section>
-      <div className="bg-[#1E1928] py-20">
+      <div className="bg-[#1E1928] text-white py-20">
         <div className="max-width">
           {/* Ignite Your Hospitality Growth with Leading Hospitality Google Ads Agency:***** */}
           <div className="md:grid md:grid-cols-2 gap-4 items-center flex flex-col-reverse ">
             <div className="flex flex-col gap-8 lg:mt-0 mt-6">
-              <h2 className="lg:text-4xl text-[1.9rem] lg:text-start text-center">
+              <h2 className="lg:text-4xl text-2xl lg:text-start text-center">
                 Ignite Your Hospitality Growth with Leading Hospitality Google
                 Ads Agency
               </h2>
-              <p className="text-[#FFFFFF] lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-[#FFFFFF] lg:text-lg text-base lg:text-start text-center">
                 Experience the magic of Fielmente, the leading hospitality
                 Google Ads agency in India.
               </p>
-              <p className="text-[#FFFFFF] lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-[#FFFFFF] lg:text-lg text-base lg:text-start text-center">
                 Our expertly crafted campaigns ensure your hotel, restaurant, or
                 resort shines in the digital arena, delivering remarkable
                 results. Trust the best in the industry, partner with
@@ -107,7 +107,7 @@ function page() {
               <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                  className="bg-white px-8 font-medium py-3 hover:bg-black hover:text-white shadow-2xl shadow-gray-primary rounded-full text-black text-lg"
                 >
                   Know More
                 </Link>
@@ -128,7 +128,7 @@ function page() {
           {/* Milestones*** */}
           <div className="grid md:grid-cols-4 grid-cols-2 gap-8 py-16 max-w-[1080px] mx-auto">
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 100+
               </h2>
               <p className="lg:text-lg text-base font-medium text-white text-center">
@@ -136,7 +136,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 88%
               </h2>
               <p className="lg:text-lg text-base font-medium text-white text-center">
@@ -144,7 +144,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 70+
               </h2>
               <p className="lg:text-lg text-base font-medium text-white text-center">
@@ -152,7 +152,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-4xl text-3xl font-bold text-white text-center">
+              <h2 className="lg:text-3xl text-2xl font-bold text-white text-center">
                 90+
               </h2>
               <p className="lg:text-lg text-base font-medium text-white text-center">
@@ -170,12 +170,12 @@ function page() {
 
           {/* Why Does Your Business Needs Google Ads?*** */}
           <div className="mt-20">
-            <h2 className="text-center lg:text-5xl text-3xl md:w-[70%] mx-auto font-bold">
+            <h2 className="text-center lg:text-4xl text-2xl md:w-[70%] mx-auto font-bold">
               Why Does Your Business Needs Google Ads?
             </h2>
-            <div className="grid lg:grid-cols-2 items-center mt-10">
+            <div className="grid lg:grid-cols-2 items-center mt-10 gap-4">
               <div className="w-full">
-                <div className="relative max-w-2xl mx-auto aspect-[4/5]">
+                <div className="relative w-full mx-auto aspect-[4/4.8]">
                   <Image
                     src={Manwithlaptop}
                     alt="circular-social"
@@ -186,7 +186,7 @@ function page() {
               </div>
 
               <div>
-                <p className="lg:text-xl text-lg lg:text-start text-center mt-8">
+                <p className="lg:text-lg text-base lg:text-start text-center">
                   At Fielmente, the top hospitality Google Ads agency in India,
                   we amplify your brand’s visibility and drive targeted traffic.
                   Our powerful Google Ads services fuel your business growth by
@@ -205,11 +205,11 @@ function page() {
           {/* Success Stories and Clientele - Experience the Power of Google Ads**** */}
           <div className="lg:grid grid-cols-2 gap-6 items-center flex flex-col-reverse mt-5">
             <div className="flex flex-col gap-8 ">
-              <h2 className="lg:text-4xl text-3xl lg:text-start text-center">
+              <h2 className="lg:text-3xl text-2xl lg:text-start text-center">
                 Success Stories and Clientele - Experience the Power of Google
                 Ads
               </h2>
-              <p className="text-white lg:text-xl text-lg lg:text-start text-center">
+              <p className="text-white lg:text-lg text-base lg:text-start text-center">
                 At Fielmente, we pride ourselves on success stories that
                 showcase the unparalleled power of Google Ads. Our clientele has
                 experienced extraordinary results, with increased brand
@@ -224,7 +224,7 @@ function page() {
               <div className="flex lg:justify-start justify-center">
                 <Link
                   href={"/"}
-                  className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                  className="bg-white px-8 hover:bg-black hover:text-white shadow-2xl shadow-gray-primary font-medium py-3 rounded-full text-black text-lg"
                 >
                   Get Started
                 </Link>
@@ -247,7 +247,7 @@ function page() {
             <h2 className="text-center lg:text-4xl text-3xl font-bold">
               Explore Our Comprehensive Digital Marketing Services
             </h2>
-            <p className="text-center lg:text-xl text-lg mt-6">
+            <p className="text-center lg:text-lg text-lg mt-6">
               Expand Your Horizons: Discover the Full Range of Digital Marketing
               Solutions We Offer for your Hospitality Business.
             </p>
@@ -256,7 +256,7 @@ function page() {
       </div>
 
       {/* Expert Consultation - Unlocking Your Advertising Potential */}
-      <div className="py-12 bg-[#15151D]">
+      <div className="py-12 bg-[#15151D] text-white">
         <Container>
           <div className="grid md:grid-cols-5 gap-10 items-center ">
             <div className="md:col-span-2 w-full flex md:justify-end">
@@ -271,11 +271,11 @@ function page() {
             </div>
             <div className="md:col-span-3 flex flex-col gap-8">
               <div className="max-w-[700px] ">
-                <h2 className="lg:text-4xl text-[2rem] text-center lg:text-start font-bold">
+                <h2 className="lg:text-3xl text-xl text-center lg:text-start font-bold">
                   Expert Consultation - Unlocking Your Advertising Potential
                 </h2>
 
-                <p className="text-white lg:text-xl text-[1.5rem] lg:text-start text-center mt-5">
+                <p className="text-white lg:text-lg text-base lg:text-start text-center mt-5">
                   Unleash Your Business’s Full Potential: Get a Website Audit
                   and Expert Advice from Our Seasoned Google Ads Professionals
                 </p>
@@ -287,7 +287,7 @@ function page() {
                     width={250}
                     height={55}
                   />
-                  <p className="text-lg lg:text-start text-center">
+                  <p className="text-base lg:text-start text-center">
                     Fielmente: Hospitality Google Ads Agency Trusted by many
                     brands around the globe
                   </p>
@@ -296,7 +296,7 @@ function page() {
                 <div className="flex mt-5 lg:justify-start justify-center">
                   <Link
                     href={"/"}
-                    className="bg-white px-12 font-medium py-5 rounded-full text-black text-xl"
+                    className="bg-white px-8 font-medium py-3 rounded-full text-black text-base"
                   >
                     Connect With Our Experts
                   </Link>
@@ -328,13 +328,13 @@ const Card = ({ title, subtitle, icon, link }: any) => {
       <div className="flex justify-center">
         <Image src={icon} alt="icon" width={85} />
       </div>
-      <h2 className="text-4xl text-center font-bold text-black">{title}</h2>
-      <p className="text-black text-xl text-center">{subtitle}</p>
+      <h2 className="text-3xl text-center font-bold text-black">{title}</h2>
+      <p className="text-black text-lg text-center">{subtitle}</p>
       <div>
         <div className="flex justify-center mt-5">
           <Link
             href={link}
-            className="bg-black px-12 font-medium py-4 rounded-2xl text-white text-xl"
+            className="bg-black px-9 font-medium py-3 rounded-2xl text-white text-lg"
           >
             Know More
           </Link>
@@ -346,20 +346,20 @@ const Card = ({ title, subtitle, icon, link }: any) => {
 
 const CardTwo = ({ title, subtitle, image }: any) => {
   return (
-    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-start shadow-xl lg:flex-row flex-col ">
+    <div className="bg-[#333742] px-4 py-10 rounded-[3rem] flex gap-6 items-center shadow-xl lg:flex-row flex-col ">
       <div className="relative max-w-28 w-full aspect-[4/3] lg:mx-0 mx-auto">
         <Image
           src={image}
           alt="images"
           fill
-          className="object-contain rounded-3xl"
+          className="object-cover rounded-3xl"
         />
       </div>
       <div>
-        <h2 className="text-xl font-bold text-white lg:text-start text-center">
+        <h2 className="text-lg font-bold text-white lg:text-start text-center">
           {title}
         </h2>
-        <p className="text-white text-lg mt-2 lg:text-start text-center">
+        <p className="text-white text-base mt-2 lg:text-start text-center">
           {subtitle}
         </p>
       </div>

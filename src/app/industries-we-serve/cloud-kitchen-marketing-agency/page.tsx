@@ -10,7 +10,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import keyword from "../../../../public/images/keywords.webp";
 import SocialCircle from "../../../../public/images/social-circle.webp";
 import Backgrond from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
-import Form from "@/app/about/components/Form";
+
 
 import Track from "../../../../public/images/trackandoptimize.webp";
 import Enhanced from "../../../../public/images/inhancevisiblity.webp";

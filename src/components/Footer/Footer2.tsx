@@ -1,110 +1,162 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../../public/images/footer-fielmente.webp";
+import { usePathname } from "next/navigation";
 
 function Footer2() {
-  return (
-    <footer className="bg-gray-100 py-8">
-      <div className="max-width">
-        <div className="flex flex-col gap-8">
-          <h2 className="text-center text-gray-primary text-4xl">Find Us On</h2>
-          <div className="grid grid-cols-4 gap-8 lg:ps-0 ps-3">
-            <Link
-              href={
-                "https://www.instagram.com/fielmente_marketing_agency?igshid=MzMyNGUyNmU2YQ%3D%3D"
-              }
-              target="_blank"
-              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
-            >
-              Instagram
-            </Link>
-            <Link
-              href={
-                "https://www.facebook.com/fielmentebusiness?mibextid=ViGcVu"
-              }
-              target="_blank"
-              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
-            >
-              Facebook
-            </Link>
-            <Link
-              href={
-                "https://twitter.com/i/flow/login?redirect_after_login=%2Ffieladvisors"
-              }
-              target="_blank"
-              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
-            >
-              Twitter
-            </Link>
-            <Link
-              href={"https://www.linkedin.com/company/fielmente/"}
-              target="_blank"
-              className="text-blue-dark sm:text-4xl text-2xl font-semibold md:text-center"
-            >
-              LinkedIn
-            </Link>
-          </div>
-          <p className="text-gray-primary sm:text-xl text-lg md:text-center text-justify">
-            Hotel Marketing Agency | Restaurant Marketing Agency | Hotel
-            Marketing Company | Hotel Digital Marketing | Hotel Website
-            Development | Hotel Social Media Management | Restaurant Marketing
-            Agency in India | Restaurant Digital Marketing
-          </p>
-        </div>
+  const pathname = usePathname();
+  const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
 
-        <div className="grid lg:grid-cols-3 gap-16 md:mt-32 mt-12">
-          <div className="md:col-span-2 flex flex-col md:gap-20 gap-8 ">
-            <Link href={"/"} className="flex items-center justify-center lg:justify-start">
-              <Image src={Logo} alt="fielmente-logo" />
-            </Link>
-            <Link
-              href={"https://maps.app.goo.gl/hHjjUZHsAJbqQojZ6"}
-              target="_blank"
-              className="text-gray-primary sm:text-xl text-lg md:w-[60%]"
-            >
-              Office Address – Level 2, Augusta Point, Golf Course Rd, Parsvnath
-              Exotica, Sarswati Kunj II, DLF Phase 5, Sector 53, Gurugram,
-              Haryana 122002
-            </Link>
-          </div>
-          <div className="md:col-span-1 flex flex-col gap-10">
-            <div className="flex flex-col gap-6">
-              <h2 className="text-blue-dark text-3xl font-bold">
-                Let’s Stay Connected
+  const [email, setEmail] = useState("");
+
+  const handleNewsletter = async () => {
+    const data = {
+      // Domain: "abhijeet",
+      Domain: "fielmente",
+      email: email,
+    };
+    try {
+      const response = await fetch(host, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    setEmail("");
+  };
+
+  interface linkTypeProps {
+    title: string;
+    href: string;
+  }
+
+  const socialLink: linkTypeProps[] = [
+    {
+      title: "Instagram",
+      href: "https://www.instagram.com/fielmente_hospitality/?hl=en",
+    },
+    {
+      title: "Facebook",
+      href: "https://www.facebook.com/fielmentebusiness?mibextid=ViGcVu",
+    },
+    {
+      title: "Twitter",
+      href: "https://x.com/fieladvisors?lang=en",
+    },
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/company/fielmente/",
+    },
+  ];
+  return (
+    <>
+      {pathname === "/thank-you" ? (
+        ""
+      ) : (
+        <footer className="bg-gray-100 pt-8 pb-4">
+          <div className="max-width">
+            <div className="flex flex-col gap-8">
+              <h2 className="text-center text-gray-primary text-3xl ">
+                Find Us On
               </h2>
-              <div className="w-full bg-white rounded-md flex items-center py-4 px-5 border">
-                <input
-                  type="text"
-                  placeholder="Your Email"
-                  className="w-full outline-none bg-transparent text-lg text-black"
-                />
-                <button className="text-orange-primary font-medium text-lg capitalize hover:text-blue-dark duration-150">
-                  send
-                </button>
+              <div className="grid lg:grid-cols-4 grid-cols-2 items-center justify-center lg:gap-8 gap-2">
+                {socialLink.map((link, index) => (
+                  <Link
+                    href={link.href}
+                    key={index}
+                    target="_blank"
+                    className="text-blue-dark lg:text-[2rem]/[2.5rem] text-base font-semibold md:text-center text-center"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
               </div>
+              <p className="text-gray-primary sm:text-xl text-lg text-center">
+                Hotel Marketing Agency | Restaurant Marketing Agency | Hotel
+                Marketing Company | Hotel Digital Marketing | Hotel Website
+                Development | Hotel Social Media Management | Restaurant
+                Marketing Agency in India | Restaurant Digital Marketing
+              </p>
             </div>
 
-            <div className="flex flex-col gap-6">
-              <h2 className="text-blue-dark text-3xl font-bold">
-                To Know More
-              </h2>
-              <div className="w-full flex md:flex-row flex-col md:gap-16 md:items-center text-gray-primary sm:text-xl text-lg">
-                <Link href={"tel:+919501868775"}>+91 9501868775</Link>
-                <Link href={"mailto:sachin@fielmente.com"}>
-                  sachin@fielmente.com
+            <div className="grid lg:grid-cols-2 gap-16 mt-12">
+              <div className="flex flex-col md:gap-20 gap-8 ">
+                <Link
+                  href={"/"}
+                  className="flex items-center justify-center lg:justify-start"
+                >
+                  <Image src={Logo} alt="fielmente-logo" />
+                </Link>
+                <Link
+                  // href={"https://maps.app.goo.gl/hHjjUZHsAJbqQojZ6"}
+                  href={"#"}
+                  // target="_blank"
+                  className="text-gray-primary sm:text-xl text-lg md:w-[60%]"
+                >
+                  {/* <b>Office Address</b> – Level 2, Augusta Point, Golf Course
+                  Rd, Parsvnath Exotica, Sarswati Kunj II, DLF Phase 5, Sector
+                  53, Gurugram, Haryana 122002
+                  <br />
+                  <br /> */}
+                  <b>Office Address</b> – Raheja Platinum, Road, off Andheri -
+                  Kurla Road, Sag Baug, Marol, Andheri East, Mumbai, Maharashtra
+                  400059
                 </Link>
               </div>
+              <div className="flex flex-col  gap-5 lg:ms-20">
+                <div className="flex flex-col gap-6">
+                  <h2 className="text-blue-dark lg:text-2xl text-[1.7rem] font-bold">
+                    Let’s Stay Connected
+                  </h2>
+                  <div className="w-full bg-white rounded-md flex items-center py-3 px-4 border">
+                    <input
+                      type="text"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Your Email"
+                      className="w-full outline-none bg-transparent text-base text-black"
+                    />
+                    <button
+                      onClick={handleNewsletter}
+                      className="text-orange-primary font-medium text-base capitalize hover:text-blue-dark duration-150"
+                    >
+                      send
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-6 ">
+                  <h2 className="text-blue-dark max-md:text-center text-3xl font-bold">
+                    To Know More
+                  </h2>
+                  <div className="w-full flex md:flex-row flex-col gap-8 max-md:gap-3 max-md:items-center text-gray-primary text-lg">
+                    <Link href={"tel:+919501868775"}>+91 9501868775</Link>
+                    <Link href={"mailto:sachin@fielmente.com"}>
+                      sachin@fielmente.com
+                    </Link>
+                  </div>
+                  <div className="flex gap-2 max-md:justify-center text-blue-dark text-xl">
+                    <b>Duabi</b> | <b>Canada</b> | <b>USA</b> | <b>UK</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex md:flex-row flex-col max-md:items-center gap-4 text-gray-primary justify-between text-xl max-md:mt-5 mt-10">
+              <Link href={"/"}>Privacy Policy</Link>
+              <Link href={"/terms-and-conditions/"}>Terms of Us</Link>
             </div>
           </div>
-        </div>
-
-        <div className="flex gap-16 text-gray-primary justify-between text-xl mt-10">
-          <Link href={"/"}>Privacy Policy</Link>
-          <Link href={"/terms-and-conditions/"}>Terms of Us</Link>
-        </div>
-      </div>
-    </footer>
+        </footer>
+      )}
+    </>
   );
 }
 

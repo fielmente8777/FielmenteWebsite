@@ -46,15 +46,14 @@ const ContainerCard: React.FC<{
       <div
         className={`${
           index % 2 === 0 ? "order-last" : "order-first"
-        } col-span-1 lg:mb-0 mb-6 lg:block hidden`}
+        } col-span-1 lg:block hidden`}
       >
-        <div className="relative max-w-[350px] max-h-[320px] h-full w-full aspect-[7/6.5]">
+        <div className="relative w-full aspect-[4/4]">
           <Image
             src={src}
             alt={alt}
             fill
-            className="object-cover"
-            sizes="(100vw, 100vh)"
+            className="object-contain"
           />
         </div>
       </div>
@@ -63,14 +62,14 @@ const ContainerCard: React.FC<{
           index % 2 === 0 ? "order-first" : "order-last"
         } col-span-2 flex flex-col gap-9`}
       >
-        <h2 className="lg:text-5xl text-3xl lg:text-start text-center font-extrabold text-black">
+        <h2 className="lg:text-3xl text-xl lg:text-start text-center font-extrabold text-black">
           {title}
         </h2>
-        <p className="text-lg text-[#737373] text-justify">{subtitle}</p>
+        <p className="text-base text-[#737373] text-justify">{subtitle}</p>
         <div className="h-max w-full flex justify-center lg:justify-start">
           <Link
             href={link}
-            className="border-[3px] border-orange-primary text-orange-primary lg:text-lg text-[1.2rem] font-semibold py-6 lg:px-10 px-7 rounded-full hover:bg-black transition-all duration-300 flex gap-4 items-center justify-center w-max"
+            className="border-[3px] border-orange-primary text-orange-primary lg:text-lg text-sm font-semibold py-3 px-5 rounded-full hover:bg-black transition-all duration-300 flex gap-2 items-center justify-center w-max"
           >
             <Image src={arrow} alt="arrow" width={15} height={10} />
             {btnName}

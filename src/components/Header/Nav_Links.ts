@@ -1,7 +1,7 @@
 export const Nav_Links = [
   {
     linkName: "About",
-    src: "/about",
+    src: "/about-fielmente-best-hospitality-marketing-agency",
   },
   {
     linkName: "Industry we serve",
@@ -72,6 +72,10 @@ export const Nav_Links = [
         src: "/hospitality-marketing-services/google-ads-agency/",
       },
     ],
+  },
+  {
+    linkName: "blogs",
+    src: "/blogs",
   },
   {
     linkName: "contact us",

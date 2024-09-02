@@ -930,7 +930,7 @@ export const blog: blogtype[] = [
         also are India’s leading hospitality digital marketing
         agency. would love to help you achieve your business
         goals.
-        <a href="/contact/">
+        <a href="/contact">
         Contact us!
         </a>
       </p>
@@ -2400,7 +2400,7 @@ export const blog: blogtype[] = [
       </p>
     </div>
     <br />
-    <a href="/contact/" className="text-d-none">
+    <a href="/contact" className="text-d-none">
     Start something
     </a>
   </div>`,
@@ -2484,7 +2484,7 @@ export const blog: blogtype[] = [
   <p><b>Let’s work together</b></p>
   <p>Get a free consultation and let us know your restaurant and hotel business idea to turn it into an amazing digital
     asset.</p>
-  <a href="/contact/">Start something</a>`,
+  <a href="/contact">Start something</a>`,
   },
   {
     url: Img8,

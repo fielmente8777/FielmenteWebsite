@@ -29,12 +29,12 @@ export interface CommonHeroPros {
 function CommonHero({ direction, data }: CommonHeroPros) {
   return (
     <section>
-      <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
+      <h2 className="text-black text-center lg:text-4xl text-2xl font-bold">
         {data.title}
       </h2>
-      <div className="grid lg:grid-cols-5 gap-8 items-center md:mt-20 mt-10">
+      <div className="grid lg:grid-cols-5 gap-8 items-center mt-10">
         <div
-          className={`lg:col-span-2 col-span-1 w-full flex ${
+          className={`lg:col-span-2 col-span-1 w-full flex relative aspect-[4/6] ${
             direction
               ? "lg:justify-end justify-center"
               : "lg:justify-start justify-center"
@@ -43,12 +43,13 @@ function CommonHero({ direction, data }: CommonHeroPros) {
           <Image
             src={data.image.src}
             alt={data.image.alt}
-            className="object-cover"
+            fill
+            className="object-cover rounded-2xl"
           />
         </div>
         <div className={`lg:col-span-3 col-span-1 ${direction && "order-1"}`}>
-          <p className="text-black sm:text-xl text-lg lg:text-start text-center">{data.subtitle}</p>
-          <div className="mt-16">
+          <p className="text-black sm:text-lg text-base lg:text-start text-center">{data.subtitle}</p>
+          <div className="mt-4">
             <Accordin Data={data.faq} />
           </div>
         </div>
@@ -77,8 +78,8 @@ export const AccordinContent = ({
       className="cursor-pointer"
       onClick={() => setOpenAccordin(!openAccordin)}
     >
-      <h2 className="text-lg font-bold text-black border-b border-b-gray-300 py-4 flex gap-2 items-center">
-        <span>{openAccordin ? "-" : "+"}</span>
+      <h2 className="text-lg font-bold text-black border-b border-b-gray-300 py-2 flex gap-2 items-center">
+        <span className="text-xl font-bold cursor-pointer">{openAccordin ? "-" : "+"}</span>
         {question}
       </h2>
       <div

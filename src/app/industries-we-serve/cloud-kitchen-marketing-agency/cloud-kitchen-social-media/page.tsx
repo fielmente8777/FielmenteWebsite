@@ -13,6 +13,8 @@ import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
 
 import type { Metadata } from "next";
+import WantToJoin from "../../components/want-to-join";
+import Mobiles from "../../components/mobiles";
 
 export const metadata: Metadata = {
   title: "Best Cloud Kitchen Social Media Agency in India- Fielmente",
@@ -188,18 +190,18 @@ const CardDetails = [
 function page() {
   return (
     <div>
-      <div className="lg:py-20 py-10 bg-gradient">
+      <div className="lg:py-16 py-10 bg-gradient">
         <div className="max-width">
           <section>
-            <div className="grid lg:grid-cols-2 gap-5 lg:mt-20">
+            <div className="grid lg:grid-cols-2 gap-5 lg:mt-5">
               <div>
-                <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl tracking-[0.3rem] lg:text-start text-center">
+                <h2 className="text-[#2CBCA5] font-bold uppercase text-xl tracking-[0.3rem] lg:text-start text-center">
                   CLOUD KITCHEN SOCIAL MEDIA MARKETING
                 </h2>
-                <h2 className="md:text-6xl text-3xl text-black font-semibold md:mt-20 mt-5 lg:text-start text-center">
+                <h2 className="md:text-5xl/[3.5rem] tracking-wider text-3xl text-black font-semibold md:mt-10 mt-5 lg:text-start text-center">
                   Make online presence With more impactful creatives.
                 </h2>
-                <p className="text-gray-primary text-xl md:mt-20 mt-5 lg:text-start text-center">
+                <p className="text-gray-primary text-xl md:mt-10 mt-5 lg:text-start text-center">
                   Enhance Your Online Presence with Compelling Restaurant Social
                   Media Posts or Campaigns. Our Expert Social Media Management
                   Team Delivers Engaging Creatives for Effective Audience
@@ -221,7 +223,7 @@ function page() {
         </div>
       </div>
 
-      <div className="lg:py-20 py-10">
+      <div className="">
         <div className="max-width">
           <div className="w-full h-[0.1rem] bg-gray-300"></div>
         </div>
@@ -242,7 +244,7 @@ function page() {
                 </div>
               </div>
               <div className="lg:col-span-3">
-                <h2 className="text-black md:text-[4.8rem] md:leading-[6rem] text-3xl font-semibold">
+                <h2 className="text-black md:text-[3rem] md:leading-[3.8rem] text-3xl font-semibold">
                   Unlock the Benefits with The Power of Social Media Presence
                   for Your Restaurant.
                 </h2>
@@ -263,28 +265,28 @@ function page() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-8 mt-20 border-b border-b-gray-300 lg:pb-16">
+            <div className="grid sm:grid-cols-3 gap-8 mt-8 border-b border-b-gray-300 pb-10">
               <div className="flex flex-col gap-2">
-                <h2 className="text-6xl font-normal text-black text-center">
+                <h2 className="sm:text-5xl text-3xl font-normal text-black text-center">
                   3K+
                 </h2>
-                <p className="text-lg font-medium text-gray-primary text-center">
+                <p className="text-base font-medium text-gray-primary text-center">
                   COMPLETED PROJECTS
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-6xl font-normal text-black text-center">
+                <h2 className="sm:text-5xl text-3xl font-normal text-black text-center">
                   89%
                 </h2>
-                <p className="text-lg font-medium text-gray-primary text-center">
+                <p className="text-base font-medium text-gray-primary text-center">
                   SATISFACTION RATE
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <h2 className="text-6xl font-normal text-black text-center">
+                <h2 className="sm:text-5xl text-3xl font-normal text-black text-center">
                   15
                 </h2>
-                <p className="text-lg font-medium text-gray-primary text-center">
+                <p className="text-base font-medium text-gray-primary text-center">
                   YEARS OF EXPERIENCE
                 </p>
               </div>
@@ -309,13 +311,13 @@ function page() {
 
             <div className="mt-20 lg:grid grid-cols-2 gap-20 items-center">
               <div className=" bg-[#2CBCA5] p-16 rounded-xl">
-                <h2 className="sm:text-5xl text-3xl text-black font-semibold lg:text-start text-center">
+                <h2 className="sm:text-4xl text-3xl text-black font-semibold lg:text-start text-center">
                   Accelerate Your Restaurant’s Growth with Social Media.
                 </h2>
                 <div className="flex mt-10 lg:justify-start justify-center">
                   <Link
                     href={"/contact"}
-                    className="bg-[#262C2E] px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
+                    className="bg-[#262C2E] text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
                   >
                     Contact us
                   </Link>
@@ -351,68 +353,13 @@ function page() {
 
       <div>
         <div className="max-width">
-          <section>
-            <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-10">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src={Donner}
-                  alt="donner"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src={Donner}
-                  alt="donner"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src={Donner}
-                  alt="donner"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src={Donner}
-                  alt="donner"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </section>
+          <Mobiles />
         </div>
       </div>
 
-      <div className="md:py-20 py-10 bg-black">
+      <div className="md:py-0 py-10 bg-black text-white">
         <div className="max-width">
-          <section className="grid lg:grid-cols-2 items-center">
-            <div className="lg:p-20 mb-6">
-              <h2 className="lg:text-5xl text-3xl font-bold lg:text-start text-center">
-                Want to join?
-              </h2>
-              <p className="lg:text-xl text-lg lg:text-start text-center text-gray-primary mt-6">
-                Find a team of digital marketers you can rely on. Every day, we
-                build trust through communication, transparency, and results.
-              </p>
-            </div>
-            <div className="lg:p-20">
-              <div className="flex justify-center">
-                <Link
-                  href={"/contact"}
-                  className="bg-[#2CBCA5] px-12 py-4 rounded-xl text-xl hover:bg-white hover:text-black duration-300"
-                >
-                  Contact us
-                </Link>
-              </div>
-            </div>
-          </section>
+          <WantToJoin />
         </div>
       </div>
 
@@ -435,15 +382,15 @@ function page() {
 
 const GrowthCard = ({ title, subtitle, image }: any) => {
   return (
-    <div className="flex flex-col gap-8 bg-white p-10 shadow-md rounded-xl">
+    <div className="flex flex-col gap-8 bg-white px-7 py-8 shadow-md rounded-xl">
       <Image
         src={image.src}
         alt="Keyword"
         width={65}
         className="object-contain"
       />
-      <h2 className="text-black sm:text-4xl text-3xl font-medium">{title}</h2>
-      <p className="sm:text-xl text-lg text-gray-primary">{subtitle}</p>
+      <h2 className="text-black text-xl font-semibold">{title}</h2>
+      <p className="sm:text-lg text-base text-gray-primary">{subtitle}</p>
     </div>
   );
 };

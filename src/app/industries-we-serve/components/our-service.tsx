@@ -5,10 +5,10 @@ import Man from "../../../../public/images/coats-hanging-rack-with-fur-collar-th
 function OurService() {
   return (
     <section>
-      <h2 className="md:text-5xl text-4xl text-center font-bold">
+      <h2 className="md:text-4xl text-2xl text-center font-bold">
         Our Services
       </h2>
-      <p className="text-center sm:text-xl text-lg mt-6">
+      <p className="text-center sm:text-lg text-base mt-6">
         Wanna taste the ultimate hospitality success? Rocket your hotel’s
         visibility with our expert SEO, captivating website development, social
         media magic, targeted Google Ads, and influencer prowess. Industries we
@@ -16,35 +16,35 @@ function OurService() {
       </p>
 
       <div className="grid lg:grid-cols-2 items-center gap-20 mt-20">
-        <div className="flex flex-col gap-10">
-          <h2 className="md:text-5xl text-3xl font-bold lg:text-start text-center">
+        <div className="flex flex-col gap-8">
+          <h2 className="md:text-4xl/[3rem] text-2xl font-bold lg:text-start text-center">
             Our Expertise : Your Tremendous Business Growth Awaits
           </h2>
-          <p className="sm:text-xl text-gray-primary text-lg lg:text-start text-center">
+          <p className="sm:text-lg text-gray-primary text-base lg:text-start text-center">
             Click the true potential of your business as thriving destinations
             with our unmatched hospitality digital marketing solutions.
           </p>
-          <p className="sm:text-xl text-gray-primary text-lg lg:text-start text-center">
+          <p className="sm:text-lg text-gray-primary text-base lg:text-start text-center">
             Tantalize taste buds and elevate your business’s success with
             Fielmente – The premier Hospitality marketing agency in the
             industries we serve!
           </p>
-          <div className="flex justify-around mt-12">
+          <div className="flex justify-around gap-2 items-center lg:mt-12">
             <div>
               <h3 className="md:text-4xl text-xl font-bold text-center text-cream-primary">
                 150 +
               </h3>
-              <p className="md:text-lg font-bold">BUSINESS PARTNERS</p>
+              <p className="text-base max-md:text-sm  text-center font-bold">BUSINESS PARTNERS</p>
             </div>
             <div>
               <h3 className="md:text-4xl text-xl font-bold text-center text-cream-primary">
                 72%
               </h3>
-              <p className="md:text-lg font-bold">BUSINESS GROWTH</p>
+              <p className="text-base max-md:text-sm text-center font-bold">BUSINESS GROWTH</p>
             </div>
           </div>
         </div>
-        <div className="max-w-[500px] w-full mx-auto relative aspect-[4/2.5]">
+        <div className="w-full mx-auto relative aspect-[4/2.5]">
           <Image
             src={Man}
             alt="man"

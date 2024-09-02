@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Manwithdocuments from "../../../public/images/briefing-staff-hotel-restaurant-1.png";
 import Link from "next/link";
-import Form from "../about/components/Form";
+import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
 import GoogleAds1 from "../../../public/images/smileman.webp";
 import GoogleAds2 from "../../../public/images/pizaparty.webp";
 import GoogleAds3 from "../../../public/images/manwithipad.webp";
@@ -114,7 +114,7 @@ function page() {
       {/* Boost Your Business with Fielmente, India's top Hospitality Marketing Services! */}
       <div className="lg:py-20 py-9 bg-gradient">
         <div className="max-width">
-          <div className="grid lg:grid-cols-2 gap-5 lg:mt-20 mt-6">
+          <div className="grid lg:grid-cols-2 gap-5 mt-12">
             <div>
               <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
                 OUR HOSPITALITY MARKETING SERVICES
@@ -136,12 +136,12 @@ function page() {
               </p>
             </div>
             <div className="">
-              <div className="relative max-w-[500px] mx-auto aspect-[4/4]">
+              <div className="relative w-full mx-auto aspect-[4/2.5]">
                 <Image
                   src={Manwithdocuments}
                   alt="mobile"
                   fill
-                  className="object-contain"
+                  className="object-contain "
                 />
               </div>
             </div>
@@ -155,7 +155,7 @@ function page() {
           <h2 className="text-black text-center lg:text-4xl text-3xl font-bold">
             What We Offer
           </h2>
-          <p className="text-black text-center lg:text-xl text-lg mt-10">
+          <p className="text-black text-center lg:text-lg text-base mt-10">
             Want to embrace the Digital Frontier? Boost your hospitality
             business with our cutting-edge Hospitality Marketing Services and
             Hospitality Digital Marketing Services. Conquer the online realm,
@@ -167,18 +167,18 @@ function page() {
       </div>
 
       {/* Industries We Serve:  */}
-      <div className="lg:py-20 py-9">
+      <div className="lg:py-12 py-9">
         <div className="max-width grid lg:grid-cols-2 gap-10">
-          <div className="relative w-full aspect-[4/2.4]">
+          <div className="relative w-full aspect-[4/3.1]">
             <Image
               src={Manger}
               alt="man-with-documents"
               fill
-              className="object-cover rounded-3xl"
+              className="object-contain rounded-3xl"
             />
           </div>
           <div className="">
-            <h2 className="lg:text-5xl text-3xl lg:text-start text-center text-black font-bold">
+            <h2 className="lg:text-4xl text-2xl lg:text-start text-center text-black font-bold">
               Industries We Serve:
             </h2>
             {/* <div className="text-black sm:text-3xl text-xl font-bold text-center mt-5 flex gap-6 justify-center">
@@ -186,10 +186,10 @@ function page() {
               <p>Restaurants Cloud</p>
               <p>Kitchens</p>
             </div> */}
-            <div className="grid lg:grid-cols-4 grid-cols-2 gap-10 mt-10">
+            <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 mt-10">
               {cardDt.map((item, index) => (
                 <div
-                  className="flex flex-col lg:gap-4 gap-2 rounded-3xl items-center justify-center lg:p-9 p-5 shadow-lg bg-[#E8FFF9]"
+                  className="flex flex-col lg:gap-4 gap-2 rounded-3xl items-center justify-center lg:p-6 p-5 shadow-lg bg-[#E8FFF9]"
                   key={index}
                 >
                   <div className="relative w-24 h-24 aspect-[4/4]">
@@ -200,13 +200,13 @@ function page() {
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="text-black font-bold text-[1.2rem]">
+                  <h3 className="text-black font-bold w-max text-[1rem]">
                     {item.title}
                   </h3>
                 </div>
               ))}
             </div>
-            <p className="lg:text-xl text-lg text-center lg:text-start text-black mt-10">
+            <p className="lg:text-lg text-base text-center lg:text-start text-black mt-10">
               Fielmente is a place, where we excel in revolutionizing your
               business! As the finest hospitality marketing agency in India, we
               exclusively cater to hotels, cloud kitchens, and restaurants.
@@ -220,12 +220,12 @@ function page() {
       </div>
 
       {/* Why do You need to Go Online?*/}
-      <div className="lg:py-20 py-9">
+      <div className="lg:py-12 py-9">
         <div className="max-width">
-          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
+          <h2 className="text-black text-center lg:text-4xl text-2xl font-bold">
             Why do You need to Go Online?
           </h2>
-          <p className="text-black text-center text-lg lg:text-xl mt-10">
+          <p className="text-black text-center text-base lg:text-lg mt-10">
             Unwrap your business’s true potential and reach new heights with the
             irresistible allure of online presence with Fielmente’s cutting-edge
             hospitality marketing services!
@@ -252,11 +252,11 @@ function page() {
       {/* Are you ready to unlock the full potential  */}
       <div className="lg:py-20 py-9">
         <div className="max-width">
-          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
+          <h2 className="text-black text-center lg:text-4xl text-2xl font-bold">
             Are you ready to unlock the full potential of your business’s online
             presence with our Hospitality Marketing Services?
           </h2>
-          <p className="text-black text-center text-lg lg:text-xl mt-10">
+          <p className="text-black text-center text-base lg:text-lg mt-10">
             Hospitality Marketing Services? Go online and take your hospitality
             business to new heights! With the leading hospitality consultants in
             India and the best hospitality marketing agency, today.
@@ -264,7 +264,7 @@ function page() {
           <div className="flex justify-center mt-12">
             <Link
               href={"/contact"}
-              className="bg-black px-20 py-5 border border-black text-xl rounded-xl hover:bg-transparent hover:text-black"
+              className="bg-black px-10 py-3 border text-white border-black text-xl rounded-xl hover:bg-transparent hover:text-black"
             >
               Contact us
             </Link>
@@ -275,10 +275,10 @@ function page() {
       {/* Why Choose Us?  */}
       <div className="lg:py-20 py-10">
         <div className="max-width">
-          <h2 className="text-black text-center lg:text-5xl text-3xl font-bold">
+          <h2 className="text-black text-center lg:text-4xl text-3xl font-bold">
             Why Choose Us?
           </h2>
-          <p className="text-black text-center lg:text-xl text-lg mt-10">
+          <p className="text-black text-center lg:text-lg text-base mt-10">
             Your business’s success is with Fielmente, your ultimate hospitality
             consultant, offering tailored and result-driven hospitality
             marketing services in India, crafted precisely for your needs!
@@ -290,9 +290,9 @@ function page() {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 py-16 mt-20">
+          <div className="grid lg:grid-cols-4 grid-cols-2 gap-8 py-6 mt-20">
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+              <h2 className="lg:text-5xl text-2xl font-bold text-black text-center">
                 3K+
               </h2>
               <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
@@ -300,7 +300,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+              <h2 className="lg:text-5xl text-2xl font-bold text-black text-center">
                 89%
               </h2>
               <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
@@ -308,7 +308,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+              <h2 className="lg:text-5xl text-2xl font-bold text-black text-center">
                 15
               </h2>
               <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
@@ -316,7 +316,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="lg:text-6xl text-3xl font-bold text-black text-center">
+              <h2 className="lg:text-5xl text-2xl font-bold text-black text-center">
                 15
               </h2>
               <p className="lg:text-lg text-base font-medium text-gray-primary text-center">
@@ -378,7 +378,7 @@ function page() {
           <div className="flex justify-center mt-12">
             <Link
               href={"/contact"}
-              className="bg-[#2CBCA5] px-20 py-5 border  text-xl rounded-xl hover:bg-transparent hover:text-black"
+              className="bg-[#2CBCA5] px-10 py-3 border  text-xl rounded-xl hover:bg-transparent hover:text-black"
             >
               Contact us
             </Link>
@@ -419,8 +419,8 @@ const ChooseUSCard = ({ title, subtitle, image }: any) => {
         <Image src={image} alt="" fill className="object-cover" />
       </div>
       <div className="flex flex-col gap-4 mt-4">
-        <h2 className="text-center text-3xl text-black">{title}</h2>
-        <p className="text-center text-lg text-black">{subtitle}</p>
+        <h2 className="text-center text-2xl font-medium text-black">{title}</h2>
+        <p className="text-center text-base text-black">{subtitle}</p>
       </div>
     </div>
   );

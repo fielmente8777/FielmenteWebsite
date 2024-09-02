@@ -11,22 +11,51 @@ const Form = () => {
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
   const [formRes, setFormRes] = useState(false);
-
+  const [errorMessage, setErrorMessage] = useState("");
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const router = useRouter();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value) && value.length <= 10) {
+      setUserPhone(value);
+      setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
+    }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setUserEmail(value);
+    setEmailErrorMessage(
+      !emailRegex.test(value) ? "Please enter a valid email address" : ""
+    );
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormRes(true);
+
+    if (userPhone.length !== 10) {
+      setErrorMessage("Phone number must be exactly 10 digits.");
+      setFormRes(false);
+      return;
+    }
+
+    if (!emailRegex.test(userEmail)) {
+      setEmailErrorMessage("Please enter a valid email address.");
+      setFormRes(false);
+      return;
+    }
+
     try {
       const { data } = await axios.post(
         `https://nexon.eazotel.com/eazotel/addcontacts`,
         {
-          // Domain: "abhijeet", // Replace with your actual domain value
-          Domain: "fielmente", // Replace with your actual domain value
+          Domain: "fielmente",
           email: userEmail,
           Name: userName,
           Contact: userPhone,
-          // Subject: userMessage,
           Description: userMessage,
         },
         {
@@ -35,21 +64,21 @@ const Form = () => {
           },
         }
       );
+
       if (data.Status) {
-        setFormRes(true);
         setUserName("");
         setUserEmail("");
         setUserMessage("");
         setUserPhone("");
         setFormRes(false);
-        // alert("message sended");
-        router.push("/thank-you");
+        router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
       } else {
         setFormRes(false);
-        alert("somethin wrong!");
+        alert("Something went wrong!");
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      setFormRes(false);
     }
   };
 
@@ -68,13 +97,11 @@ const Form = () => {
     {
       tag: "input",
       icon: <FillPhone />,
-      type: "number",
+      type: "text",
       name: "phone",
       placeholder: "Your Phone*",
       value: userPhone,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserPhone(e.target.value);
-      },
+      onChange: handlePhoneChange,
     },
     {
       tag: "input",
@@ -83,15 +110,13 @@ const Form = () => {
       name: "email",
       placeholder: "Your Email*",
       value: userEmail,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserEmail(e.target.value);
-      },
+      onChange: handleEmailChange,
     },
     {
       tag: "textarea",
       icon: <FillMessage />,
       type: "text",
-      name: "",
+      name: "message",
       placeholder: "Your Message*",
       value: userMessage,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,6 +124,7 @@ const Form = () => {
       },
     },
   ];
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -132,6 +158,12 @@ const Form = () => {
                 "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
             })}
           </div>
+          {data.name === "phone" && errorMessage && (
+            <p className="text-sm text-red-500 mt-2">{errorMessage}</p>
+          )}
+          {data.name === "email" && emailErrorMessage && (
+            <p className="text-sm text-red-500 mt-2">{emailErrorMessage}</p>
+          )}
         </div>
       ))}
 

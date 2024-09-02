@@ -33,7 +33,7 @@ const NeedSeo: React.FC<DataType> = ({
   return (
     <Section>
       <Container>
-        <div className="lg:grid grid-cols-3 gap-5">
+        <div className="lg:grid grid-cols-3 gap-5 flex flex-col-reverse">
           <div className="col-span-2">
             <h2 className="lg:text-[2.875rem]/[3.25rem] text-3xl text-blue-dark">
               {title}
@@ -42,7 +42,7 @@ const NeedSeo: React.FC<DataType> = ({
             <p className="lg:text-lg text-base text-[#5F5E5E] mt-6 lg:tracking-wider">
               {subtitle}
             </p>
-            <div className={`lg:grid grid-cols-2 gap-9 mt-14`}>
+            <div className={`grid grid-cols-2 max-md:grid-cols-1 gap-9 mt-14`}>
               {card.map((item, index) => (
                 <div className="grid grid-cols-3 items-center" key={index}>
                   <div className="col-span-1 flex items-center me-12">
@@ -59,7 +59,7 @@ const NeedSeo: React.FC<DataType> = ({
                       </div>
                     )}
                   </div>
-                  <div className="flex flex-col gap-1 col-span-2 -ms-12">
+                  <div className="flex flex-col gap-1 col-span-2 lg:-ms-12">
                     <h3 className="text-xl text-blue-dark font-semibold">{item.title}</h3>
                     <p className="text-lg text-[#5F5E5E]">{item.subtitle}</p>
                   </div>

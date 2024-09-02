@@ -9,12 +9,12 @@ const NumberComponent = ({ data }: dataTypeProps) => {
   return (
     <Section>
       <Container>
-        <div className="bg-blue-dark py-7 px-10 rounded-3xl flex items-center justify-between w-full h-full">
+        <div className="bg-blue-dark py-7 px-10 rounded-3xl flex max-md:flex-col items-center justify-between w-full h-full">
           {data.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center w-full justify-center text-white ${
-                index !== data.length - 1 && "border-e border-orange-primary"
+              className={`flex flex-col gap-3 items-center w-full justify-center text-white ${
+                index !== data.length - 1 && "lg:border-e border-orange-primary"
               }`}
             >
               <h2 className="text-[2.2rem]/[3.5rem]">{item.title}</h2>

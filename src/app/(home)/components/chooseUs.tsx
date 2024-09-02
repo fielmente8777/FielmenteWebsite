@@ -13,13 +13,13 @@ const ChooseUs: React.FC = () => {
   return (
     <Section>
       <Container>
-        <h2 className="lg:text-8xl text-3xl text-center text-black font-bold">
+        <h2 className="lg:text-5xl text-2xl text-center text-black font-bold">
           Why Choose Us?
         </h2>
-        <p className="lg:text-4xl text-2xl text-center text-black font-bold mt-6 lg:tracking-wider">
+        <p className="lg:text-3xl text-xl text-center text-black font-bold mt-6 lg:tracking-wider">
           Force of 20+ Hospitality Marketing Experts
         </p>
-        <div className="lg:grid grid-cols-3 gap-9 py-14 max-w-[1100px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 max-md:gap-4 gap-9 lg:py-14 py-7 max-w-[1100px] mx-auto">
           {ChooseUsData.map((item, index) => (
             <ChooseUsCard
               key={index}
@@ -34,7 +34,7 @@ const ChooseUs: React.FC = () => {
       <Container>
         <article className="max-w-[1100px] mx-auto">
           {data.map((item, index) => (
-            <p className="lg:text-[1.9rem]/[4rem] text-lg  lg:text-justify text-center font-medium mb-6 text-black " key={index}>
+            <p className="lg:text-[1.3rem]/[2.2rem] text-lg  lg:text-justify text-center font-medium mb-6 text-black " key={index}>
               {item}
             </p>
           ))}
@@ -54,12 +54,12 @@ export interface ChooseCardProsData {
 
 export const ChooseUsCard = ({ title, subtitle, Icon }: ChooseCardProsData) => {
   return (
-    <div className="flex flex-col gap-2 shadow-md hover:shadow-none rounded-xl p-9">
+    <div className="flex flex-col gap-2 shadow-md hover:shadow-none rounded-xl p-6">
       <div className="flex items-center justify-center">{Icon}</div>
-      <h2 className="font-medium lg:min-h-[60px] text-blue-dark text-3xl text-center capitalize">
+      <h2 className="font-medium lg:min-h-[60px] text-blue-dark text-2xl text-center capitalize">
         {title}
       </h2>
-      <p className="text-lg text-[#797979]  text-center">{subtitle}</p>
+      <p className="text-base text-[#797979]  text-center">{subtitle}</p>
     </div>
   );
 };

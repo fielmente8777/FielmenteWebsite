@@ -48,7 +48,7 @@ const Needsdata = {
     },
     {
       image: {
-        src: "/icon/Build-trust.png",
+        src: "/icon/Build-Trust.png",
       },
       title: "Build Trust",
     },
@@ -58,7 +58,7 @@ const Needsdata = {
     },
     {
       image: {
-        src: "/icon/Showcase-your-hotel.png",
+        src: "/icon/Showcase-Your-Hotel.png",
       },
       title: "Showcase Your Hotel",
     },

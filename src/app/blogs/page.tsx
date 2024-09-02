@@ -5,22 +5,16 @@ import Test from "../../../public/images/Bookingman.webp";
 import { blogData } from "../../utils/blogdata";
 import { Metadata } from "next";
 
-export async function generateStaticParams() {
-  return [
-    { params: {} },
-  ];
-}
-
 export const metadata: Metadata = {
-  title: "Blogs fielmente",
-  description: "",
+  title: "Blogs - Fielmente",
+  description: "Another milestone in Fielmente’s journey 8 Marketing Strategies for Food &amp; Beverage Industry to Plan in 2022 How SEO helps to boost restaurant business Top 3 Food &amp; Beverage Business Pitches on Shark Tank India Restaurant Marketing in the MetaVerse – Web 3.0 Facebook Twitter LinkedIn Blogs Fielmente",
 };
 
 export default function Home() {
   return (
     <section>
-      <div className="py-20">
-        <div className="flex justify-center gap-4 text-2xl text-black">
+      <div className="py-8">
+        <div className="flex justify-center gap-4 text-xl text-black">
           <Link href={"/"} className="text-blue-500">
             Home »
           </Link>
@@ -28,12 +22,12 @@ export default function Home() {
             Blogs »
           </Link>
         </div>
-        <h2 className="text-black text-6xl font-semibold text-center mt-4">
+        <h2 className="text-black text-4xl font-semibold text-center mt-4">
           Blog
         </h2>
       </div>
 
-      <div className="lg:grid grid-cols-3 gap-14 max-width py-20">
+      <div className="lg:grid grid-cols-3 gap-10 max-width py-6">
         {blogData.map((item, index) => (
           <BlogCard
             key={index}
@@ -60,7 +54,7 @@ const BlogCard = ({
   link: string;
 }) => {
   return (
-    <div className="rounded-2xl shadow-md group lg:mb-0 mb-5 hover:shadow-2xl">
+    <div className="rounded-2xl shadow-xl group lg:mb-0 mb-5 hover:shadow-lg">
       {src && (
         <div className="relative w-full aspect-[4/2.5] overflow-hidden rounded-2xl">
           <Link href={link}>
@@ -73,12 +67,12 @@ const BlogCard = ({
           </Link>
         </div>
       )}
-      <div className="p-10 flex justify-center flex-col items-center">
-        <Link href={link} className="text-black text-2xl font-bold text-center">
+      <div className="px-10 py-4 flex justify-center flex-col items-center">
+        <Link href={link} className="text-black text-lg font-bold text-center">
           {title}
         </Link>
         <div className="flex justify-center mt-5">
-          <Link href={link} className="text-xl text-[#28209F] font-bold">
+          <Link href={link} className="text-lg text-[#28209F] font-bold">
             READ MORE »
           </Link>
         </div>

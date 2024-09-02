@@ -17,7 +17,7 @@ const Worked: React.FC = () => {
   return (
     <Section>
       <Container>
-        <h2 className="lg:text-8xl text-3xl text-center text-black font-bold">
+        <h2 className="lg:text-5xl text-2xl text-center text-black font-bold">
           Worked with Best Hospitality Brands
         </h2>
         <div className="mt-16">
@@ -52,7 +52,7 @@ const Worked: React.FC = () => {
                 <SwiperSlide key={index} className="py-4">
                   <Link
                     href={"/"}
-                    className="relative w-full lg:aspect-[4/3.4] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[15rem] rounded-md flex justify-center items-center"
+                    className="relative w-full lg:aspect-[4/3.4] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[8rem] rounded-md flex justify-center items-center"
                   >
                     <Image
                       src={item.src}

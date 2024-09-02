@@ -14,12 +14,12 @@ const DynamicBlog: React.FC<DynamicBlogProps> = ({ blog }) => {
     return <div>Blog not found</div>;
   }
   return (
-    <section className="pt-9">
+    <section className="pt-7">
       <div className="max-width">
         <div className="lg:grid grid-cols-4 gap-8">
           <article className="col-span-3">
-            <div className="mb-10">
-              <h1 className="text-lg font-bold text-black lg:text-center">
+            <div className="mb-3">
+              <h1 className="text-base font-bold text-black lg:text-center">
                 <Link href="/" className="text-blue-500">
                   Home »
                 </Link>{" "}

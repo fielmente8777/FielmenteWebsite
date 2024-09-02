@@ -30,7 +30,7 @@ const NavLinksMobile = ({ linkName, src, subLinks, setIsOpen }: any) => {
       <div className="flex items-center gap-2">
         <Link
           href={`${src}`}
-          className="text-3xl"
+          className="text-xl capitalize"
           onClick={() => setIsOpen(false)}
         >
           {linkName}
@@ -43,7 +43,7 @@ const NavLinksMobile = ({ linkName, src, subLinks, setIsOpen }: any) => {
       </div>
       {subLinks && (
         <ul
-          className="flex flex-col gap-2"
+          className="flex flex-col"
           style={{
             maxHeight: open ? "1200px" : "0px",
             overflow: "hidden",
@@ -63,10 +63,10 @@ const NestedSubMenu = ({ linkName, src, subLinks, setIsOpen }: any) => {
   const [open, setOpen] = useState(false);
   return (
     <li>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 py-2">
         <Link
           href={`${src}`}
-          className="text-xl ml-3"
+          className="text-base ml-2"
           onClick={() => setIsOpen(false)}
         >
           {linkName}{" "}
@@ -86,10 +86,10 @@ const NestedSubMenu = ({ linkName, src, subLinks, setIsOpen }: any) => {
           }}
         >
           {subLinks.map((nestedSubLink: any, nestedSubIndex: number) => (
-            <li key={nestedSubIndex} className="px-5">
+            <li key={nestedSubIndex} className="px-5 py-2">
               <Link
                 href={nestedSubLink.src}
-                className="text-lg"
+                className="text-[.95rem]"
                 onClick={() => setIsOpen(false)}
               >
                 {nestedSubLink.linkName}

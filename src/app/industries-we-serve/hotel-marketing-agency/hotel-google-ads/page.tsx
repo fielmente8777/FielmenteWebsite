@@ -183,10 +183,10 @@ function page() {
               <h2 className="text-[#2CBCA5] font-bold uppercase text-2xl">
                 HOTEL GOOGLE ADS
               </h2>
-              <h2 className="md:text-5xl md:!leading-[6.5rem] text-3xl text-black font-medium md:mt-20 mt-5">
+              <h2 className="md:text-5xl tracking-wider md:leading-[4rem] text-3xl text-black font-medium md:mt-10 mt-5">
                 Excel at Google Ads with India’s Leading Hotel Marketing Agency.
               </h2>
-              <p className="text-gray-primary text-xl md:mt-20 mt-5">
+              <p className="text-gray-primary text-xl md:mt-10 mt-5">
                 Drive Revenue with Hotel Google Ads. With the Expertise of
                 Fielmente- One of the best Hotel Marketing Companies in India to
                 Maximize Your Online Visibility and Generate High-Conversion
@@ -207,7 +207,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      <div >
         <div className="max-width">
           <div className="w-full h-[0.1rem] bg-gray-300"></div>
         </div>
@@ -227,7 +227,7 @@ function page() {
 
             <div className="lg:col-span-3 flex flex-col gap-10">
               <div className="flex flex-col gap-5">
-                <h2 className="lg:text-5xl text-3xl lg:w-[80%] text-center text-black font-bold">
+                <h2 className="lg:text-5xl text-3xl lg:w-[80%] max-md:text-center text-black font-bold">
                   What We Offer: Paid Ads for Hotel
                 </h2>
                 <div>
@@ -252,7 +252,7 @@ function page() {
 
           <div className="grid sm:grid-cols-3 gap-8 mt-32 border-b border-b-gray-300 pb-16">
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-black text-center">
+              <h2 className="text-4xl font-normal text-black text-center">
                 3K+
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
@@ -260,7 +260,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-black text-center">
+              <h2 className="text-4xl font-normal text-black text-center">
                 89%
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
@@ -268,7 +268,7 @@ function page() {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <h2 className="text-6xl font-normal text-black text-center">
+              <h2 className="text-4xl font-normal text-black text-center">
                 15
               </h2>
               <p className="text-lg font-medium text-gray-primary text-center">
@@ -324,7 +324,7 @@ function page() {
 
       <WeAreDef />
 
-      <div className="md:py-20 py-10 bg-black">
+      <div className="md:py-12 py-10 bg-black text-white">
         <div className="max-width">
           <WantToJoin />
         </div>

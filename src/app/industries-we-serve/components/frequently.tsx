@@ -73,11 +73,11 @@ const Faq = [
 function Frequently() {
   return (
     <section>
-      <h2 className="lg:text-5xl text-3xl font-bold text-black lg:text-start text-center">
+      <h2 className="lg:text-4xl text-3xl font-bold text-black lg:text-start text-center">
         Frequently Asked Questions
       </h2>
 
-      <div className="mt-10 flex flex-col gap-10">
+      <div className="mt-8 flex flex-col gap-8">
         {Faq.map((item, index) => (
           <Accordin {...item} key={index} />
         ))}

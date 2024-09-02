@@ -73,7 +73,7 @@ function AccordinSection() {
         How can we help you right now?
       </h2>
 
-      <div className="md:mt-24 mt-8 max-w-[1080px] mx-auto">
+      <div className="md:mt-20 mt-8 max-w-[1080px] mx-auto">
         <p className="text-gray-primary text-lg text-center">
           In order to make sure your website is user friendly and optimized for
           Google’s algorithm, our on-site optimization experts clean up the code
@@ -95,7 +95,7 @@ export const Accordin = ({ Data }: { Data: AccordingDataPropsTypes[] }) => {
   };
 
   return (
-    <div className="grid md:grid-cols-2 md:gap-16 gap-6">
+    <div className="grid md:grid-cols-2 md:gap-10 gap-6">
       {Data.map((item, index) => (
         <AccordinContent
           {...item}

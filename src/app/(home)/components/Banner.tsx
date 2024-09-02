@@ -5,18 +5,20 @@ import img1 from "../../../../public/images/img1.png";
 import img2 from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
 import img3 from "../../../../public/images/img2.png";
 
-const Banner : React.FC = () => {
+const Banner: React.FC = () => {
   return (
     <Section>
       <Container>
-        <div className="lg:pb-20">
-          <h1 className="lg:text-[4.5rem]/[5rem] text-[2.6rem] text-black font-bold py-10 text-center bg-contain w-full h-full bg-center bg-no-repeat bg-[url('/images/uih7.webp')]">
-            Hospitality <br className="lg:block hidden" /> Marketing Agency
-          </h1>
-          <p className="text-[#111] lg:text-[1.38rem]/[2rem] text-2xl text-center mt-6">
-            India’s Leading Hotel & Restaurant Marketing Agency with over 10+
-            Years of Experience
-          </p>
+        <div className="lg:pb-20 ">
+          <div className="bg-contain w-full h-full bg-center bg-no-repeat bg-[url('/images/uih7.webp')]">
+            <h1 className="lg:text-[4.5rem]/[5.5rem] bg-imgclass text-2xl text-black font-bold lg:py-10 text-center ">
+              Hospitality <br className="lg:block hidden" /> Marketing Agency
+            </h1>
+            <p className="text-[#111] lg:text-[1.38rem]/[2rem] text-lg text-center mt-3 lg:mt-6">
+              India’s Leading Hotel & Restaurant Marketing Agency with over 10+
+              Years of Experience
+            </p>
+          </div>
         </div>
         <div className="max-w-[1140px] mx-auto">
           <div className="grid grid-cols-3 gap-4 mt-10 lg:mt-0 ">
@@ -32,7 +34,7 @@ const Banner : React.FC = () => {
                   alt={item.alt}
                   width={item.width}
                   height={item.height}
-                  className="rounded-3xl"
+                  className="rounded-2xl"
                 />
               </div>
             ))}
