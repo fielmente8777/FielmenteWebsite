@@ -34,11 +34,11 @@ export const Nav_Links = [
     ],
   },
   {
-    linkName: "Hotel-Marketing",
+    linkName: "Hotel Marketing",
     src: "/industries-we-serve/hotel-marketing-agency",
     subLinks: [
       {
-        linkName: "Hotel Socail Media",
+        linkName: "Hotel Social Media",
         src: "/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
       },
       {
@@ -60,15 +60,15 @@ export const Nav_Links = [
     src: "/hospitality-marketing-services/",
     subLinks: [
       {
-        linkName: " Socail Media Marketing",
+        linkName: " Social Media Marketing",
         src: "/hospitality-marketing-services/social-media-marketing-agency/",
       },
       {
-        linkName: "Search Engine Oprimization (SEO)",
+        linkName: "Search Engine Optimization (SEO)",
         src: "/hospitality-marketing-services/seo-agency/",
       },
       {
-        linkName: "Paid Ad Campagins",
+        linkName: "Paid Ad Campaigns",
         src: "/hospitality-marketing-services/google-ads-agency/",
       },
     ],

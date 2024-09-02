@@ -7,9 +7,20 @@ import { usePathname } from "next/navigation";
 
 function Footer2() {
   const pathname = usePathname();
-  const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
 
   const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    setErrorMessage(
+      !emailRegex.test(value) ? "Please enter a valid email address" : ""
+    );
+  };
 
   const handleNewsletter = async () => {
     const data = {
@@ -119,7 +130,7 @@ function Footer2() {
                     <input
                       type="text"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={handleEmailChange}
                       placeholder="Your Email"
                       className="w-full outline-none bg-transparent text-base text-black"
                     />
@@ -130,6 +141,10 @@ function Footer2() {
                       send
                     </button>
                   </div>
+
+                  {errorMessage && (
+                    <p className="text-red-500 text-sm">{errorMessage}</p>
+                  )}
                 </div>
 
                 <div className="flex flex-col gap-6 ">
