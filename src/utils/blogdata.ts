@@ -52,7 +52,7 @@ export const blog: blogtype[] = [
     // addimg: add,
     isShow: false,
     title: "How to Digitally Market your Hostel with Fielmente",
-    link: "how-to-digitally-market-your-hostel-with-fielmente-2/",
+    link: "how-to-digitally-market-your-hostel-with-fielmente-2",
     data: `
   <div>
     <p>
@@ -201,7 +201,7 @@ export const blog: blogtype[] = [
     url: Img2,
     isShow: true,
     title: "How to Reply to Google Business Profile and Facebook Feedback",
-    link: "respond-to-facebook-google-reviews/",
+    link: "respond-to-facebook-google-reviews",
     data: `
   <div>
     <p>
@@ -992,7 +992,7 @@ export const blog: blogtype[] = [
     url: Img3,
     isShow: true,
     title: "Why do you need Fielmente Hospitality Marketing Agency?",
-    link: "hospitality-consultants-in-india/",
+    link: "hospitality-consultants-in-india",
     data: `
   <div>
     <p>
@@ -1445,7 +1445,7 @@ export const blog: blogtype[] = [
     isShow: true,
     title:
       "How to start Cloud Kitchen in India – Ultimate Guide to open the Cloud Kitchen",
-    link: "how-to-start-cloud-kitchen-in-india-ultimate-guide-to-open-the-cloud-kitchen/",
+    link: "how-to-start-cloud-kitchen-in-india-ultimate-guide-to-open-the-cloud-kitchen",
     data: `<div>
     <p>
       <strong>
@@ -2055,7 +2055,7 @@ export const blog: blogtype[] = [
     url: Img5,
     isShow: true,
     title: "HTML or WordPress: Which one is Best for Your hotel/restaurant?",
-    link: "html-or-wordpress-which-one-is-best-for-your-hotel-restaurant-2/",
+    link: "html-or-wordpress-which-one-is-best-for-your-hotel-restaurant-2",
     data: `<div>
     <p>
       A website is a must if you own a restaurant and want to
@@ -2220,7 +2220,7 @@ export const blog: blogtype[] = [
     url: Img6,
     isShow: true,
     title: "A Complete Step-by-Step Process to Create a Brand Guide For Hotels",
-    link: "a-complete-process-to-create-a-brand-guide-for-hotels/",
+    link: "a-complete-process-to-create-a-brand-guide-for-hotels",
     data: `<div>
     <div>
       <h2>What is a Brand Guide?</h2>
@@ -2409,7 +2409,7 @@ export const blog: blogtype[] = [
     url: Img7,
     isShow: true,
     title: "6 Creative Ways to Market Your Hotel on a Shoestring Budget",
-    link: "6-creative-ways-to-market-your-hotel-on-a-shoestring-budget-2/",
+    link: "6-creative-ways-to-market-your-hotel-on-a-shoestring-budget-2",
     data: `
   
   <p>As digital marketing is shifting rapidly, your hotel must use the best marketing concepts to drive new
@@ -2491,7 +2491,7 @@ export const blog: blogtype[] = [
     isShow: true,
     title:
       "8 Marketing Strategies for Food & Beverage Industry to Plan in 2022",
-    link: "8-marketing-strategies-for-food-beverage-industry-to-plan-in-2022/",
+    link: "8-marketing-strategies-for-food-beverage-industry-to-plan-in-2022",
     data: `<p>This article is designed for any manager in the Food and Beverage Industry who wants to grow their business by
     executing a successful marketing strategy. This quick guide will help you plan your marketing strategy for 2022.</p>
   <br />
@@ -2572,7 +2572,7 @@ export const blog: blogtype[] = [
     url: Img9,
     isShow: true,
     title: "Another milestone in Fielmente’s journey",
-    link: "another-milestone-in-fielmente-s-journey/",
+    link: "another-milestone-in-fielmente-s-journey",
     addimg: certificate,
     data: `
   <div>
@@ -2604,7 +2604,7 @@ export const blog: blogtype[] = [
     url: Img10,
     isShow: true,
     title: "Top 3 Food & Beverage Business Pitches on Shark Tank India",
-    link: "top-3-food-beverage-business-pitches-on-shark-tank-india/",
+    link: "top-3-food-beverage-business-pitches-on-shark-tank-india",
     data: `
   <div>
     <h2>Overview</h2>
@@ -2692,7 +2692,7 @@ export const blog: blogtype[] = [
     url: Img11,
     isShow: true,
     title: "How SEO helps to boost restaurant business",
-    link: "how-can-seo-help-a-local-restaurant-to-build-their-brand/",
+    link: "how-can-seo-help-a-local-restaurant-to-build-their-brand",
     data: `
   <p>Businesses are always on the lookout for new strategies they can use to get ahead of the competition. Search engine
     optimization, commonly abbreviated as SEO, is one of those strategies that can be used by small businesses to create a
@@ -2764,7 +2764,7 @@ export const blog: blogtype[] = [
     url: Img12,
     isShow: true,
     title: "6 Steps To Do Performance Marketing For Restaurants",
-    link: "steps-to-do-performance-marketing-for-restaurants/",
+    link: "steps-to-do-performance-marketing-for-restaurants",
     data: `
   <div>
     <p>Being a restaurant owner is exciting, challenging, and requires lots of work. Can you see yourself, lunch rush
@@ -2865,7 +2865,7 @@ export const blog: blogtype[] = [
     url: Img13,
     isShow: true,
     title: "Restaurant Marketing in the MetaVerse – Web 3.0",
-    link: "restaurant-marketing-in-the-metaverse/",
+    link: "restaurant-marketing-in-the-metaverse",
     data: `
   <div>
     <p>Unless you have been living under a rock, the name MetaVerse might sound a bit familiar to you. Everyone everywhere
@@ -2926,7 +2926,7 @@ export const blog: blogtype[] = [
     url: Img14,
     isShow: true,
     title: "7 Restaurant Marketing Strategies in India to Follow for Your Business",
-    link: "restaurant-marketing-strategies-in-india/",
+    link: "restaurant-marketing-strategies-in-india",
     data: `<div>
     <p>Marketing in the restaurant industry is challenging. There are so many different jobs to do, so many aspects of
       customer service, and so many ways to do things wrong.</p>
@@ -3005,7 +3005,7 @@ export const blog: blogtype[] = [
     url: Img15,
     isShow: false,
     title: "Project on The Asian Wok",
-    link: "project-on-the-asian-wok/",
+    link: "project-on-the-asian-wok",
     data: `
       
       <div>
@@ -3061,7 +3061,7 @@ export const blog: blogtype[] = [
     url: Img16,
     isShow: true,
     title: "Tips for Engagement on Social Media of Cloud Kitchen",
-    link: "tips-for-engagement-on-social-media-of-cloud-kitchen/",
+    link: "tips-for-engagement-on-social-media-of-cloud-kitchen",
     data: `
   <div>
     <h2>Strategies:</h2>
@@ -3222,7 +3222,7 @@ export const blog: blogtype[] = [
     isShow: true,
     title:
       "Cloud Kitchen Consulting Services: 6 Reasons Why You Need Fielmente for It",
-    link: "cloud-kitchen-consulting-services/",
+    link: "cloud-kitchen-consulting-services",
     data: `
   <div>
     <p>The whole world is getting tech-savvy, so why don’t your food? The Cloud kitchen concept is one of the best ideas
@@ -3328,7 +3328,7 @@ export const blog: blogtype[] = [
     url: Img18,
     isShow: false,
     title: "Congratulations Team Punjabi Chic Inn, Jodhpur",
-    link: "congratulations-team-punjabi-chic-inn-jodhpur/",
+    link: "congratulations-team-punjabi-chic-inn-jodhpur",
     data: `<div>
     <p>The One and only Restaurant Guru concluded its annual survey for the year 2021. It reviewed hundreds of restaurants
       around Jodhpur and finally listed “the Best Restaurants” in which our restaurant got the 8th Rank in Jodhpur!!
@@ -3411,7 +3411,7 @@ export const blog: blogtype[] = [
     url: Img19,
     isShow: false,
     title: "Which POS is best for Cloud Kitchen?",
-    link: "which-pos-is-best-for-cloud-kitchen/",
+    link: "which-pos-is-best-for-cloud-kitchen",
     data: `
   <div>
     <p>The concept of a cloud kitchen is booming in India, especially during the ongoing pandemic, when takeaway has
@@ -3463,7 +3463,7 @@ export const blog: blogtype[] = [
     // url: Img19,
     isShow: true,
     title: "Improved Hotel Business Solutions for the New Normal",
-    link: "strategies-for-hotel-business/",
+    link: "strategies-for-hotel-business",
     data: `
   <div>
     <p>The pandemic caught us off guard as it hit our hospitality and tourism industry so hard that international tourist
@@ -3773,7 +3773,7 @@ export const blog: blogtype[] = [
     url: Img6,
     isShow: false,
     title: "How to Digitally Market your Hostel with Fielmente",
-    link: "how-to-digitally-market-your-hostel-with-fielmente/",
+    link: "how-to-digitally-market-your-hostel-with-fielmente",
     data: `
   <div>
     <p>Hostel Owners handle quite delicate issues. Being a sensitive job, it becomes relatively difficult to market such

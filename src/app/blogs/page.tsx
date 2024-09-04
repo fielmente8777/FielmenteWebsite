@@ -57,7 +57,7 @@ const BlogCard = ({
     <div className="rounded-2xl shadow-xl group lg:mb-0 mb-5 hover:shadow-lg">
       {src && (
         <div className="relative w-full aspect-[4/2.5] overflow-hidden rounded-2xl">
-          <Link href={link}>
+          <Link href={`/${link}/`}>
             <Image
               src={src}
               alt={alt}
@@ -68,11 +68,11 @@ const BlogCard = ({
         </div>
       )}
       <div className="px-10 py-4 flex justify-center flex-col items-center">
-        <Link href={link} className="text-black text-lg font-bold text-center">
+        <Link href={`/${link}/`} className="text-black text-lg font-bold text-center">
           {title}
         </Link>
         <div className="flex justify-center mt-5">
-          <Link href={link} className="text-lg text-[#28209F] font-bold">
+          <Link href={`/${link}/`} className="text-lg text-[#28209F] font-bold">
             READ MORE »
           </Link>
         </div>
