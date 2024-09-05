@@ -1,18 +1,19 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Girl from "../../../../public/images/Girl.jpg";
-import CircularSocial from "../../../../public/images/social-circle.webp";
-import Girlwithsocial from "../../../../public/images/Grilwithsocial.webp";
-import Twowomenmeet from "../../../../public/images/Twowomenmeet.webp";
+import Girl from "../../../public/images/Girl.jpg";
+import CircularSocial from "../../../public/images/social-circle.webp";
+import Girlwithsocial from "../../../public/images/Grilwithsocial.webp";
+import Twowomenmeet from "../../../public/images/Twowomenmeet.webp";
 
-import TrustyBrand from "../../../../public/images/hsdgvc.webp";
+import TrustyBrand from "../../../public/images/hsdgvc.webp";
 
 
-import Smm10 from "../../../../public/images/SMM-10.webp";
-import Smm13 from "../../../../public/images/SMM-13.webp";
-import Smm14 from "../../../../public/images/SMM-14-1.webp";
-import Smm08 from "../../../../public/images/SMM-08.webp";
+import Smm10 from "../../../public/images/SMM-10.webp";
+import Smm13 from "../../../public/images/SMM-13.webp";
+import Smm14 from "../../../public/images/SMM-14-1.webp";
+import Smm08 from "../../../public/images/SMM-08.webp";
 
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";

@@ -273,12 +273,12 @@ const Card = ({ title, subtitle, link }: any) => {
 const CardTwo = ({ title, subtitle, image }: any) => {
   return (
     <div className="bg-[#333742] py-4 px-6 rounded-[3rem] flex gap-6 items-start lg:flex-row flex-col">
-      <div className="relative max-w-[7rem] h-[7rem] w-full aspect-[4/4] lg:mx-0 mx-auto">
+      <div className="relative max-w-28 w-full aspect-[4/3.5] lg:mx-0 mx-auto">
         <Image
           src={image}
           alt="images"
           fill
-          className="object-cover rounded-3xl"
+          className="object-contain rounded-3xl"
         />
       </div>
       <div>

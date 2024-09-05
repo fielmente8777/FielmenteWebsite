@@ -154,6 +154,8 @@ const Form = () => {
               value: data.value,
               onChange: data.onChange,
               placeholder: data.placeholder,
+              required: true,
+              rows: data.tag === "textarea" ? 3 : undefined,
               className:
                 "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
             })}

@@ -19,7 +19,7 @@ const Header2 = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <>
-      {pathname === "/thank-you" ? (
+      {pathname === "/thank-you/" ? (
         ""
       ) : (
         <header>
