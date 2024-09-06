@@ -90,7 +90,7 @@ export const ServiceCard = ({ title, Icon }: OurServiceProsData) => {
         <div className="group-hover:scale-110 group-hover:-translate-y-1 transition duration-300 ease-in-out">
           {Icon}
         </div>
-        <h2 className="md:text-xl text-lg text-blue-dark text-center font-bold capitalize ">
+        <h2 className="md:text-xl text-base text-blue-dark text-center font-bold capitalize ">
           {title}
         </h2>
       </div>

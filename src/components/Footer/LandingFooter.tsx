@@ -56,9 +56,9 @@ const LandingFooter = () => {
           </Link>
         </div>
         <div className="w-full h-[1px] bg-orange-primary mt-4" />
-        <div className="flex justify-center items-center gap-2 mt-2 py-4">
+        <div className="flex max-md:flex-col justify-center items-center gap-2 mt-2 py-4">
           <p className="text-blue-dark text-lg">&copy;2024 Fielmente</p>
-          <span className="text-orange-primary text-lg font-bold">|</span>
+          <span className="text-orange-primary max-md:hidden text-lg font-bold">|</span>
           <p className="text-blue-dark text-lg"> All Rights Reserved</p>
           {/* <span className="text-orange-primary text-lg font-bold">|</span> */}
           {/* <Link href={"/landingpage"} className="text-blue-dark text-lg">Landing</Link> */}

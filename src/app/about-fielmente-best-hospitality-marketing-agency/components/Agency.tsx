@@ -28,24 +28,24 @@ function Agency() {
             experts who make sure about your business growth and take care about
             your Hospitality venture online reputation.
           </p>
-          <p className="text-black sm:text-lg text-base text-justify leading-[3rem]">
+          <p className="text-black sm:text-lg text-base text-justify ">
             Our strategic consulting services craft tailored marketing
             strategies to boost bookings, build your brand, and expand your
             reach, elevating your hospitality business with results-driven,
             creative marketing.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 max-md:justify-between">
             <Link
               href={"https://www.linkedin.com/in/sachinkapoor95/"}
               target="_blank"
-              className="bg-black sm:text-base text-sm rounded-md text-white px-6 py-3 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
+              className="bg-black sm:text-base text-sm rounded-md text-white lg:px-6 px-5 py-3 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
             >
               Linked Profile
             </Link>
             <Link
               href={"https://www.instagram.com/sachinkapoorrr/"}
               target="_blank"
-              className="bg-black sm:text-base text-sm rounded-md text-white px-6 py-3 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
+              className="bg-black sm:text-base text-sm rounded-md text-white lg:px-6 px-5 py-3 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
             >
               Instagram Profile
             </Link>

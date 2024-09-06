@@ -8,9 +8,9 @@ import Link from "next/link";
 function Hero() {
   return (
     <section>
-      <div className="grid lg:grid-cols-2 gap-10">
+      <div className="lg:grid grid-cols-2 flex flex-col gap-10">
         <div className="mt-6">
-          <h2 className="text-black sm:text-3xl text-2xl font-bold">
+          <h2 className="text-black sm:text-3xl text-xl font-bold">
             INNOVATIVE HOSPITALITY MARKETING SOLUTIONS IN INDIA
           </h2>
           <p className="text-lg text-black mt-5">
@@ -32,7 +32,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-10 lg:mt-0 md:mt-12 mt-8">
+      <div className="lg:grid grid-cols-2 flex flex-col-reverse gap-10 lg:mt-0 md:mt-12 mt-8">
         <div className="relative w-full aspect-[4/3]">
           <Image
             src={Approach}
@@ -42,7 +42,7 @@ function Hero() {
           />
         </div>
         <div className="md:mt-16">
-          <h2 className="text-black sm:text-3xl text-2xl font-bold">
+          <h2 className="text-black sm:text-3xl text-xl font-bold">
             PIONEERING HOTEL & RESTAURANT MARKETING COMPANY IN INDIA
           </h2>
           <p className="text-lg text-black mt-5">
@@ -54,7 +54,7 @@ function Hero() {
             magic, spreading the word far and wide across all social media
             platforms. Let’s create an unforgettable digital journey together!
           </p>
-          <div className="flex justify-center">
+          <div className="flex max-md:hidden justify-center">
             <Link
               href={"/contact"}
               className="bg-black text-white font-bold text-lg px-6 py-3 rounded-md mt-10 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
@@ -63,6 +63,14 @@ function Hero() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="max-md:flex hidden justify-center">
+        <Link
+          href={"/contact"}
+          className="bg-black text-white font-bold text-lg px-6 py-3 rounded-md mt-10 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
+        >
+          Contact us
+        </Link>
       </div>
     </section>
   );

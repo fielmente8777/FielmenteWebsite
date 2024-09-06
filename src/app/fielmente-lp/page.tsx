@@ -74,9 +74,9 @@ export default function Home() {
       {/* Looking for Best Hotel***** */}
       <Section className="bg-white lg:py-10">
         <Container>
-          <div className=" text-white bg-blue-dark px-20 lg:py-16 py-10 grid md:grid-cols-5 gap-8 items-center rounded-3xl lg:mx-28">
+          <div className=" text-white bg-blue-dark px-20 max-md:px-7 lg:py-16 py-10 grid md:grid-cols-5 gap-8 items-center rounded-3xl lg:mx-28">
             <div className="md:col-span-4 lg:text-start text-center">
-              <h2 className="md:text-4xl/[3rem] text-3xl">
+              <h2 className="md:text-4xl/[3rem] text-[1.79rem]">
                 Looking for the India’s Best Hotel Marketing{" "}
                 <span className="text-orange-primary">Agency?</span>
               </h2>
