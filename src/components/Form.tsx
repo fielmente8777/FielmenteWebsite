@@ -4,21 +4,23 @@ import { useRouter } from "next/navigation";
 import { FillMail, FillMessage, FillPhone, FillUser } from "@/utils/icons";
 import axios from "axios";
 import React, { useState } from "react";
+import { countries } from "@/utils/countryCode";
 
 const Form = () => {
+  const router = useRouter();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
   const [formRes, setFormRes] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState("");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d*$/.test(value) && value.length <= 10) {
+    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    if (value.length <= 10) {
       setUserPhone(value);
       setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
     }
@@ -38,13 +40,11 @@ const Form = () => {
 
     if (userPhone.length !== 10) {
       setErrorMessage("Phone number must be exactly 10 digits.");
-      setFormRes(false);
       return;
     }
 
     if (!emailRegex.test(userEmail)) {
       setEmailErrorMessage("Please enter a valid email address.");
-      setFormRes(false);
       return;
     }
 
@@ -52,10 +52,11 @@ const Form = () => {
       const { data } = await axios.post(
         `https://nexon.eazotel.com/eazotel/addcontacts`,
         {
-          Domain: "fielmente",
+          // Domain: "fielmente",
+          Domain: "abhijeet",
           email: userEmail,
           Name: userName,
-          Contact: userPhone,
+          Contact: `${countryCode}${userPhone}`,
           Description: userMessage,
         },
         {
@@ -66,19 +67,20 @@ const Form = () => {
       );
 
       if (data.Status) {
+        setFormRes(true);
         setUserName("");
         setUserEmail("");
         setUserMessage("");
         setUserPhone("");
+        setCountryCode("+91"); // Reset country code
         setFormRes(false);
-        router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
+        router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
         setFormRes(false);
         alert("Something went wrong!");
       }
     } catch (error) {
-      console.error(error);
-      setFormRes(false);
+      console.log(error);
     }
   };
 
@@ -89,19 +91,49 @@ const Form = () => {
       type: "text",
       name: "name",
       placeholder: "Your Name*",
+      required: true,
       value: userName,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserName(e.target.value);
       },
     },
     {
-      tag: "input",
+      tag: "div", // Use div to wrap select and input for phone number
       icon: <FillPhone />,
-      type: "text",
       name: "phone",
       placeholder: "Your Phone*",
-      value: userPhone,
-      onChange: handlePhoneChange,
+      required: true,
+      content: (
+        <div className="flex gap-2 text-base">
+          <select
+            id="countryCode"
+            name="countryCode"
+            value={countryCode}
+            onChange={(e) => setCountryCode(e.target.value)}
+            className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
+          >
+            {countries.map((country, index) => (
+              <option
+                key={index}
+                value={country.code}
+                className="text-black bg-gray-100"
+              >
+                {`${country.code}`}
+              </option>
+            ))}
+          </select>
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            max={"9999999999"}
+            placeholder="Your Phone*"
+            value={userPhone}
+            onChange={handlePhoneChange}
+            className="flex-1 bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
+          />
+        </div>
+      ),
     },
     {
       tag: "input",
@@ -109,6 +141,7 @@ const Form = () => {
       type: "email",
       name: "email",
       placeholder: "Your Email*",
+      required: true,
       value: userEmail,
       onChange: handleEmailChange,
     },
@@ -116,8 +149,9 @@ const Form = () => {
       tag: "textarea",
       icon: <FillMessage />,
       type: "text",
-      name: "message",
+      name: "",
       placeholder: "Your Message*",
+      required: true,
       value: userMessage,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserMessage(e.target.value);
@@ -147,18 +181,22 @@ const Form = () => {
             >
               {data.icon}
             </label>
-            {React.createElement(data.tag, {
-              id: data.name,
-              type: data.type,
-              name: data.name,
-              value: data.value,
-              onChange: data.onChange,
-              placeholder: data.placeholder,
-              required: true,
-              rows: data.tag === "textarea" ? 3 : undefined,
-              className:
-                "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
-            })}
+            {data.tag === "div"
+              ? data.content
+              : React.createElement(data.tag, {
+                  id: data.name,
+                  type: data.type,
+                  name: data.name,
+                  value: data.value,
+                  onChange: data.onChange,
+                  placeholder: data.placeholder,
+                  required: data.required,
+                  autoComplete: "off",
+                  spellCheck: "false",
+                  rows: data.tag === "textarea" ? 3 : undefined,
+                  className:
+                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
+                })}
           </div>
           {data.name === "phone" && errorMessage && (
             <p className="text-sm text-red-500 mt-2">{errorMessage}</p>

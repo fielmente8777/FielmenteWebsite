@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Contact from "../../../../public/images/Contact.webp";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { countries } from "@/utils/countryCode";
 
 function ConnectWithUs() {
   const [userName, setUserName] = useState("");
@@ -11,6 +12,7 @@ function ConnectWithUs() {
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
   const [formRes, setFormRes] = useState(false);
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
 
   const [openPopup, setOpenPopup] = useState(false);
   const [popupMsg, setPopupMsg] = useState("");
@@ -23,8 +25,8 @@ function ConnectWithUs() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d*$/.test(value) && value.length <= 10) {
+    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    if (value.length <= 10) {
       setUserPhone(value);
       setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
     }
@@ -46,25 +48,26 @@ function ConnectWithUs() {
       const data = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "fielmente", // Replace with your actual domain value
+          // Domain: "fielmente",
+          Domain: "abhijeet", // Replace with your actual domain value
           email: userEmail,
           Name: userName,
-          Contact: userPhone,
+          Contact: `${countryCode}${userPhone}`,
           // Subject: userMessage,
           Description: userMessage,
         }
       );
       if (data.status) {
         setLoader(false);
-        setPopupMsg("You information has been Received");
+        // setPopupMsg("You information has been Received");
         router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
-
         setOpenPopup(true);
         // console.log(data.Status);
         setFormRes(true);
         setUserName("");
         setUserEmail("");
         setUserMessage("");
+        setCountryCode("+91");
         setUserPhone("");
       } else {
         setLoader(false);
@@ -79,7 +82,6 @@ function ConnectWithUs() {
       alert("Something went wrong!");
     }
   };
-
   const onClose = () => {
     setOpenPopup(!openPopup);
   };
@@ -145,13 +147,49 @@ function ConnectWithUs() {
                 <label htmlFor="number" className="text-lg text-blue-dark">
                   Contact Number
                 </label>
-                <input
+                {/* <input
                   type="text"
                   id="number"
                   value={userPhone}
                   onChange={handlePhoneChange}
                   className="outline-none text-lg px-3 py-3 border border-gray-300 text-blue-dark rounded-2xl"
-                />
+                /> */}
+                <div className="w-full">
+                  <div className="flex gap-2 text-base">
+                    <select
+                      id="countryCode"
+                      name="countryCode"
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      className="w-auto px-1 py-3  rounded-xl text-[#333333] focus:outline-none"
+                    >
+                      {countries.map((country, index) => (
+                        <option
+                          key={index}
+                          value={country.code}
+                          className="text-black bg-gray-100"
+                        >
+                          {`${country.code}`}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="number"
+                      id="phone"
+                      name="phone"
+                      max={"9999999999"}
+                      placeholder="Your Phone*"
+                      value={userPhone}
+                      onChange={handlePhoneChange}
+                      className="w-full rounded-xl px-2 py-3  placeholder:text-black-primary text-black no-spinner focus:outline-none"
+                    />
+                  </div>
+                  {errorMessage && (
+                    <p className="text-sm text-red-500 mt-2 lg:ps-5">
+                      {errorMessage}
+                    </p>
+                  )}
+                </div>
                 {errorMessage && (
                   <p className="text-sm text-red-500 mt-2 lg:ps-5">
                     {errorMessage}

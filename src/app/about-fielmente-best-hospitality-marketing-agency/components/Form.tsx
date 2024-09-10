@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import Map from "../../../../public/images/wordmap.webp";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { countries } from "@/utils/countryCode";
 function Form({ title, color }: { title: string; color?: string }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
   const [formRes, setFormRes] = useState(false);
+  const [countryCode, setCountryCode] = useState("+91"); // Default country code
 
   const [openPopup, setOpenPopup] = useState(false);
   const [popupMsg, setPopupMsg] = useState("");
@@ -23,8 +25,8 @@ function Form({ title, color }: { title: string; color?: string }) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    if (/^\d*$/.test(value) && value.length <= 10) {
+    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    if (value.length <= 10) {
       setUserPhone(value);
       setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
     }
@@ -47,11 +49,11 @@ function Form({ title, color }: { title: string; color?: string }) {
       const data = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "fielmente",
-          // Domain: "abhijeet", // Replace with your actual domain value
+          // Domain: "fielmente",
+          Domain: "abhijeet", // Replace with your actual domain value
           email: userEmail,
           Name: userName,
-          Contact: userPhone,
+          Contact: `${countryCode}${userPhone}`,
           // Subject: userMessage,
           Description: userMessage,
         }
@@ -66,6 +68,7 @@ function Form({ title, color }: { title: string; color?: string }) {
         setUserName("");
         setUserEmail("");
         setUserMessage("");
+        setCountryCode("+91");
         setUserPhone("");
       } else {
         setLoader(false);
@@ -114,20 +117,46 @@ function Form({ title, color }: { title: string; color?: string }) {
               className="w-full outline-none px-5 py-3 text-black text-base rounded-xl"
             />
             {emailErrorMessage && (
-              <p className="text-sm text-red-500 mt-2 lg:ps-5">{emailErrorMessage}</p>
+              <p className="text-sm text-red-500 mt-2 lg:ps-5">
+                {emailErrorMessage}
+              </p>
             )}
           </div>
-          <div className="flex lg:flex-row flex-col items-center gap-5">
+          <div className="flex lg:flex-row flex-col items-center gap-3">
             <div className="w-full">
-              <input
-                type="number"
-                placeholder="Mobile Number"
-                value={userPhone}
-                onChange={handlePhoneChange}
-                className="w-full no-spinner outline-none px-5 py-3 text-black text-base rounded-xl"
-              />
+              <div className="flex gap-2 text-base">
+                <select
+                  id="countryCode"
+                  name="countryCode"
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  className="w-auto px-1 py-3  rounded-xl text-[#333333] focus:outline-none"
+                >
+                  {countries.map((country, index) => (
+                    <option
+                      key={index}
+                      value={country.code}
+                      className="text-black bg-gray-100"
+                    >
+                      {`${country.code}`}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  max={"9999999999"}
+                  placeholder="Your Phone*"
+                  value={userPhone}
+                  onChange={handlePhoneChange}
+                  className="w-full rounded-xl px-2 py-3  placeholder:text-black-primary text-black no-spinner focus:outline-none"
+                />
+              </div>
               {errorMessage && (
-                <p className="text-sm text-red-500 mt-2 lg:ps-5">{errorMessage}</p>
+                <p className="text-sm text-red-500 mt-2 lg:ps-5">
+                  {errorMessage}
+                </p>
               )}
             </div>
             <input
@@ -138,7 +167,7 @@ function Form({ title, color }: { title: string; color?: string }) {
           </div>
           <div>
             <textarea
-              rows={2}
+              rows={3}
               placeholder="Message"
               value={userMessage}
               onChange={(e) => setUserMessage(e.target.value)}

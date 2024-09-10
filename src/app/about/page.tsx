@@ -1,9 +1,9 @@
 import React from "react";
-import Agency from "./components/Agency";
-import Hero from "./components/Hero";
-import Milestones from "./components/Milestones";
-import MakeUsUnique from "./components/MakeUsUnique";
-import Form from "./components/Form";
+import Agency from "../about-fielmente-best-hospitality-marketing-agency/components/Agency";
+import Hero from "../about-fielmente-best-hospitality-marketing-agency/components/Hero";
+import Milestones from "../about-fielmente-best-hospitality-marketing-agency/components/Milestones";
+import MakeUsUnique from "../about-fielmente-best-hospitality-marketing-agency/components/MakeUsUnique";
+import Form from "../about-fielmente-best-hospitality-marketing-agency/components/Form";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

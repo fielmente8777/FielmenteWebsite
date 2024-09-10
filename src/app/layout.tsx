@@ -14,6 +14,20 @@ export const metadata: Metadata = {
   title: "Fielmente - India's Leading Hospitality Marketing Agency",
   description:
     "We're the best hospitality marketing agency in India serving hotels, resorts restaurants, and cloud kitchens for more than 10 years.",
+  keywords: "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
+  openGraph: {
+    title: "Fielmente - India's Leading Hospitality Marketing Agency",
+    description:
+      "We're the best hospitality marketing agency in India serving hotels, resorts restaurants, and cloud kitchens for more than 10 years.",
+    url: "https://fielmente.com/",
+    siteName: "Fielmente",
+    images: [
+      {
+        url: "https://fielmente.com/images/Fielmente-og.png",
+        width: 1200,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -55,15 +69,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `,
           }}
         />
-        {/* <Script id="clarity-script" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "n572fc8txn");
-          `}
-        </Script> */}
 
         {/* <!-- Clarity tracking code for Fielmente new 06 09 2024--> */}
         <Script
@@ -71,10 +76,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "nyx0zythdc");`,
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/" + i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "o0h0ldtiip");`,
           }}
         />
 
