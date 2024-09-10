@@ -52,8 +52,8 @@ const Form = () => {
       const { data } = await axios.post(
         `https://nexon.eazotel.com/eazotel/addcontacts`,
         {
-          // Domain: "fielmente",
-          Domain: "abhijeet",
+          Domain: "fielmente",
+          // Domain: "abhijeet",
           email: userEmail,
           Name: userName,
           Contact: `${countryCode}${userPhone}`,
@@ -130,7 +130,7 @@ const Form = () => {
             placeholder="Your Phone*"
             value={userPhone}
             onChange={handlePhoneChange}
-            className="flex-1 bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
+            className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
           />
         </div>
       ),

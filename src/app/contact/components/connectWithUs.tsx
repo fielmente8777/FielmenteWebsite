@@ -48,8 +48,8 @@ function ConnectWithUs() {
       const data = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          // Domain: "fielmente",
-          Domain: "abhijeet", // Replace with your actual domain value
+          Domain: "fielmente",
+          // Domain: "abhijeet", // Replace with your actual domain value
           email: userEmail,
           Name: userName,
           Contact: `${countryCode}${userPhone}`,

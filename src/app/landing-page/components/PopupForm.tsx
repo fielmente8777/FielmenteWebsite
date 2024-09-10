@@ -4,13 +4,14 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import popupimg from "../../../../public/images/popup_img.webp";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-
+import { countries } from "@/utils/countryCode";
 const PopupForm = () => {
   const router = useRouter();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
   const [errorMessage, setErrorMessage] = useState("");
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const [formRes, setFormRes] = useState(false);
@@ -28,7 +29,7 @@ const PopupForm = () => {
     intervalIdRef.current = setInterval(() => {
       setShowModal(true);
       document.body.style.overflow = "hidden";
-    }, 30000);
+    }, 5000);
 
     // Cleanup the interval when the component unmounts or modal is closed
     return () => {
@@ -80,23 +81,17 @@ const PopupForm = () => {
       const data = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
+          // Domain: "abhijeet", // Replace with your actual domain value
           Domain: "fielmente", // Replace with your actual domain value
           email: userEmail,
           Name: userName,
-          Contact: userPhone,
+          Contact: `${countryCode} ${userPhone}`,
           Description: userMessage,
         }
       );
-
       if (data.status) {
         setLoader(false);
-        // Clear the form fields
-        setUserName("");
-        setUserEmail("");
-        setUserPhone("");
-        setUserMessage("");
-        // Redirect to thank-you page with the user's name
-        router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
+        router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
         setPopupMsg("Something went wrong!");
         setOpenPopup(true);
@@ -110,27 +105,31 @@ const PopupForm = () => {
     }
   };
 
-  const formFields = [
+  interface data_Type {
+    type: string;
+    placeholder: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  }
+
+  const form: data_Type[] = [
     {
       type: "text",
       placeholder: "Full Name",
       value: userName,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setUserName(e.target.value),
+      onChange: (e) => setUserName(e.target.value),
     },
     {
       type: "email",
       placeholder: "Email",
       value: userEmail,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setUserEmail(e.target.value),
+      onChange: (e) => setUserEmail(e.target.value),
     },
     {
       type: "number",
       placeholder: "Phone",
       value: userPhone,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setUserPhone(e.target.value),
+      onChange: (e) => setUserPhone(e.target.value),
     },
   ];
 
@@ -155,36 +154,51 @@ const PopupForm = () => {
                   priority
                 />
               </div>
-              <form
-                className="flex flex-col gap-3 w-full px-1"
-                onSubmit={submit}
-              >
-                {formFields.map((field, index) => (
-                  <>
-                    <div
-                      className="p-2 border border-sky-400 rounded-md"
-                      key={index}
-                    >
-                      <input
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        value={field.value}
-                        onChange={field.onChange}
-                        // required
-                        className="w-full no-spinner rounded-lg outline-none focus:outline-none text-sm text-slate-800 placeholder:text-slate-500"
-                      />
-                    </div>
-                    {field.type === "number" && errorMessage && (
+              <form className="flex flex-col gap-3 w-full " onSubmit={submit}>
+                {form.map((item, index) => (
+                  <div
+                    className="p-2 border border-sky-400 rounded-md flex gap-2 items-center"
+                    key={index}
+                  >
+                    {item.type === "number" && (
+                      <select
+                        id="countryCode"
+                        name="countryCode"
+                        value={countryCode}
+                        onChange={(e) => setCountryCode(e.target.value)}
+                        className="w-auto bg-transparent text-sm py-1 items-center rounded-lg text-[#333333] focus:outline-none"
+                      >
+                        {countries.map((country, index) => (
+                          <option
+                            key={index}
+                            value={country.code}
+                            className="text-black bg-gray-100"
+                          >
+                            {`${country.code}`}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                    <input
+                      type={item.type}
+                      placeholder={item.placeholder}
+                      value={item.value}
+                      onChange={item.onChange}
+                      max={item.type === "number" ? "9999999999" : undefined}
+                      required
+                      className="w-full no-spinner rounded-lg outline-none focus:outline-none text-sm text-slate-800 placeholder:text-slate-500"
+                    />
+                    {item.type === "number" && errorMessage && (
                       <p className="text-sm text-red-500 mt-2">
                         {errorMessage}
                       </p>
                     )}
-                    {field.type === "email" && emailErrorMessage && (
+                    {item.type === "email" && emailErrorMessage && (
                       <p className="text-sm text-red-500 mt-2">
                         {emailErrorMessage}
                       </p>
                     )}
-                  </>
+                  </div>
                 ))}
                 <div className="p-2 border border-sky-400 rounded-md">
                   <textarea
@@ -208,7 +222,7 @@ const PopupForm = () => {
         </section>
       )}
       {openPopup && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed top-0 left-0 w-full h-full bg-blue-dark bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-4 rounded">
             <p>{popupMsg}</p>
             <button
