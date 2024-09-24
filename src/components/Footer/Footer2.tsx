@@ -108,14 +108,17 @@ function Footer2() {
                 // target="_blank"
                 className="text-gray-primary sm:text-xl text-lg md:w-[60%]"
               >
-                <b>Office Address</b> – Level 2, Augusta Point, Golf Course Rd,
+                {/* <b>Office Address</b> – Level 2, Augusta Point, Golf Course Rd,
                 Parsvnath Exotica, Sarswati Kunj II, DLF Phase 5, Sector 53,
                 Gurugram, Haryana 122002
                 <br />
                 <br />
                 <b>Office Address</b> – Raheja Platinum, Road, off Andheri -
                 Kurla Road, Sag Baug, Marol, Andheri East, Mumbai, Maharashtra
-                400059
+                400059 */}
+                <br />
+                <b>Office Address</b> – Suncity Success Tower, Golf Course Ext
+                Rd, Sector 65, Gurugram, Haryana 122005
               </Link>
             </div>
             <div className="flex flex-col  gap-5 lg:ms-20">
@@ -155,7 +158,7 @@ function Footer2() {
                   </Link>
                 </div>
                 <div className="flex gap-2 max-md:justify-center text-blue-dark text-xl">
-                  <b>Duabi</b> | <b>Canada</b> | <b>USA</b> | <b>UK</b>
+                  <b>Dubai</b> | <b>Canada</b> | <b>USA</b> | <b>UK</b>
                 </div>
               </div>
             </div>

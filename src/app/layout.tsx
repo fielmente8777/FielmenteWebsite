@@ -133,6 +133,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Footer />
         <Call />
         <Whatsapp />
+        <script src="//code.tidio.co/vqp6nexgcvuyk9zdnqsekfjwt1mlfw1x.js" async></script>
       </body>
     </html>
   );

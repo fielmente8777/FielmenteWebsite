@@ -31,7 +31,7 @@ const LandingFooter = () => {
             Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram,
             Haryana 122005
           </p>
-          <p className="text-blue-dark text-base text-center flex justify-center lg:w-max">
+          {/* <p className="text-blue-dark text-base text-center flex justify-center lg:w-max">
             <span
             className="-ml-2 lg:-ml-0"
             >
@@ -39,7 +39,7 @@ const LandingFooter = () => {
             </span>
             Raheja Platinum, Road, off Andheri - Kurla Road, Sag Baug, Marol,
             Andheri East, Mumbai, Maharashtra 400059
-          </p>
+          </p> */}
           <Link
             href={`mailto:sachin@fielmente.com`}
             className="text-lg text-blue-dark flex items-center gap-2"
