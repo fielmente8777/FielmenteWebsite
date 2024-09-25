@@ -29,7 +29,7 @@ const PopupForm = () => {
     intervalIdRef.current = setInterval(() => {
       setShowModal(true);
       document.body.style.overflow = "hidden";
-    }, 5000);
+    }, 60000);
 
     // Cleanup the interval when the component unmounts or modal is closed
     return () => {
@@ -166,13 +166,15 @@ const PopupForm = () => {
                         name="countryCode"
                         value={countryCode}
                         onChange={(e) => setCountryCode(e.target.value)}
-                        className="w-auto bg-transparent text-sm py-1 items-center rounded-lg text-[#333333] focus:outline-none"
+                        className="bg-transparent text-sm py-1 flex items-center rounded-lg text-[#333333] focus:outline-none"
+                        required
+                        style={{ inlineSize: `${countryCode.length + 3}ch` }}
                       >
                         {countries.map((country, index) => (
                           <option
                             key={index}
                             value={country.code}
-                            className="text-black bg-gray-100"
+                            className="text-black bg-gray-100 p-0"
                           >
                             {`${country.code}`}
                           </option>

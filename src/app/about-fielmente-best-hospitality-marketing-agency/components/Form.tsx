@@ -130,13 +130,14 @@ function Form({ title, color }: { title: string; color?: string }) {
                   name="countryCode"
                   value={countryCode}
                   onChange={(e) => setCountryCode(e.target.value)}
-                  className="w-auto px-1 py-3  rounded-xl text-[#333333] focus:outline-none"
+                  className="py-3 w-auto flex items-center rounded-xl text-[#333333] focus:outline-none"
+                  style={{ inlineSize: `${countryCode.length + 2}ch` }}
                 >
                   {countries.map((country, index) => (
                     <option
                       key={index}
                       value={country.code}
-                      className="text-black bg-gray-100"
+                      className="text-black p-0 bg-gray-100"
                     >
                       {`${country.code}`}
                     </option>

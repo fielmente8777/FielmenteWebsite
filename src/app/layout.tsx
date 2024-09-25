@@ -14,13 +14,32 @@ export const metadata: Metadata = {
   title: "Fielmente - India's Leading Hospitality Marketing Agency",
   description:
     "We're the best hospitality marketing agency in India serving hotels, resorts restaurants, and cloud kitchens for more than 10 years.",
-  keywords: "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
+  keywords:
+    "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
+  alternates: {
+    canonical: "https://fielmente.com/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  authors: [{ name: "Fielmente", url: "https://fielmente.com/" }],
   openGraph: {
     title: "Fielmente - India's Leading Hospitality Marketing Agency",
     description:
       "We're the best hospitality marketing agency in India serving hotels, resorts restaurants, and cloud kitchens for more than 10 years.",
     url: "https://fielmente.com/",
     siteName: "Fielmente",
+    locale: "en_IN",
+    type: "website",
+
     images: [
       {
         url: "https://fielmente.com/images/Fielmente-og.png",
@@ -133,7 +152,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Footer />
         <Call />
         <Whatsapp />
-        <script src="//code.tidio.co/vqp6nexgcvuyk9zdnqsekfjwt1mlfw1x.js" async></script>
+        <script
+          src="//code.tidio.co/vqp6nexgcvuyk9zdnqsekfjwt1mlfw1x.js"
+          async
+        ></script>
       </body>
     </html>
   );
