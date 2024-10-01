@@ -7,6 +7,7 @@ import aboutus from "../../../public/images/man-with-coffee-newspaper-walking-ci
 import img3 from "../../../public/images/img2.png";
 
 import type { Metadata } from "next";
+import { PopupForm } from "../landing-page/components";
 
 export const metadata: Metadata = {
   title: "Hotel PR Services: Building Brand Image and Increasing Visibility",
@@ -281,6 +282,7 @@ function page() {
           </div>
         </div>
       </div>
+      <PopupForm />
     </section>
   );
 }

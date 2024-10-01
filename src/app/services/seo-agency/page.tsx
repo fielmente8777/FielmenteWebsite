@@ -32,6 +32,7 @@ import Section from "@/components/Section";
 import Container from "@/components/Container";
 
 import type { Metadata } from "next";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality SEO Agency - Fielmente",
@@ -399,6 +400,7 @@ function page() {
           <Form title={"Looking to discuss with us?"} color={"black"} />
         </div>
       </div>
+      <PopupForm />
     </section>
   );
 }

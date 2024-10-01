@@ -22,6 +22,7 @@ import { Accordin } from "../../components/common-hero";
 import WeAreDef from "./components/WeAreDef";
 
 import type { Metadata } from "next";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "Hotel SEO Agency India | Best Hotel SEO Services- Fielmente",
@@ -352,6 +353,7 @@ function page() {
           </section>
         </div>
       </div>
+      <PopupForm />
     </section>
   );
 }

@@ -45,6 +45,7 @@ import {
   Showcase,
 } from "../../../utils/icons";
 import type { Metadata } from "next";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "Best Cloud Kitchen Marketing Agency in India- Fielmente",
@@ -444,6 +445,7 @@ function page() {
       <OurClient />
       <Presence {...presenceData} />
       <ConsultationForm />
+      <PopupForm />
     </section>
   );
 }

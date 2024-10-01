@@ -15,6 +15,7 @@ import { Accordin } from "../../components/common-hero";
 import type { Metadata } from "next";
 import WantToJoin from "../../components/want-to-join";
 import Mobiles from "../../components/mobiles";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "Best Cloud Kitchen Social Media Agency in India- Fielmente",
@@ -376,6 +377,7 @@ function page() {
           </section>
         </div>
       </div>
+      <PopupForm />
     </div>
   );
 }

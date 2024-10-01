@@ -22,6 +22,7 @@ import Container from "@/components/Container";
 
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality Google Ads Agency - Fielmente",
@@ -318,6 +319,7 @@ function page() {
           <Form title={"Looking to discuss with us?"} color={"black"} />
         </div>
       </div>
+      <PopupForm />
     </section>
   );
 }

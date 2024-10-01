@@ -12,6 +12,7 @@ import Hoursglass from "../../../../../public/images/hourglass.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
 
 import type { Metadata } from "next";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "Best Restaurant Social Media Marketing Agency - Fielmente",
@@ -168,6 +169,7 @@ function page() {
           <Frequently />
         </div>
       </div>
+      <PopupForm />
     </div>
   );
 }

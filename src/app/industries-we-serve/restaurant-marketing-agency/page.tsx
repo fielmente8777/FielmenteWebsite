@@ -25,6 +25,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { PopupForm } from "@/app/landing-page/components";
 
 export const metadata: Metadata = {
   title: "Restaurant Marketing Agency India | Restuarant Marketing Company",
@@ -286,6 +287,7 @@ function page() {
       <OurClient />
       <Presence {...presenceData} />
       <ConsultationForm />
+      <PopupForm />
     </section>
   );
 }

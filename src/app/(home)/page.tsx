@@ -9,6 +9,7 @@ import {
 } from "./components";
 import Section from "@/components/Section";
 import Form from "../about-fielmente-best-hospitality-marketing-agency/components/Form";
+import { PopupForm } from "../landing-page/components";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <Form title="Schedule a meeting with our marketing consultant" />
         </Container>
       </Section>
+      <PopupForm />
     </main>
   );
 }

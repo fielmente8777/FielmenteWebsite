@@ -4,6 +4,7 @@ import Test from "../../../public/images/Bookingman.webp";
 // import { blogCardData } from "../blogCard";
 import { blogData } from "../../utils/blogdata";
 import { Metadata } from "next";
+import { PopupForm } from "../landing-page/components";
 
 export const metadata: Metadata = {
   title: "Blogs - Fielmente",
@@ -77,6 +78,7 @@ const BlogCard = ({
           </Link>
         </div>
       </div>
+      <PopupForm />
     </div>
   );
 };

@@ -28,6 +28,7 @@ import {
 } from "@/utils/icons";
 import type { Metadata } from "next";
 import { Needs, NeedSeo } from "../industries-we-serve/components";
+import { PopupForm } from "../landing-page/components";
 
 export const metadata: Metadata = {
   title: "Best Cloud Kitchen Marketing Agency in India- Fielmente",
@@ -427,6 +428,7 @@ function page() {
       <OurClient />
       <Presence {...presenceData} />
       <ConsultationForm />
+      <PopupForm />
     </section>
   );
 }

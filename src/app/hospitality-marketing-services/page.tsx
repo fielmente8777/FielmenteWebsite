@@ -24,6 +24,7 @@ import Restaurants from "../../../public/images/restaurants.png";
 import kitchens from "../../../public/images/kitchen.png";
 
 import type { Metadata } from "next";
+import { PopupForm } from "../landing-page/components";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality Marketing Services - Fielmente",
@@ -398,6 +399,7 @@ function page() {
           <Form title={"Looking to discuss with us?"} />
         </div>
       </div>
+      <PopupForm />
     </section>
   );
 }

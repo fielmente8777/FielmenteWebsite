@@ -5,6 +5,7 @@ import Milestones from "./components/Milestones";
 import MakeUsUnique from "./components/MakeUsUnique";
 import Form from "./components/Form";
 import type { Metadata } from "next";
+import { PopupForm } from "../landing-page/components";
 
 export const metadata: Metadata = {
   title: "Fielmente Agency | Best Hospitality Marketing Consultants in India",
@@ -46,6 +47,7 @@ function About() {
           <Form title={"Get a free audit report"} />
         </div>
       </div>
+      <PopupForm />
     </div>
   );
 }

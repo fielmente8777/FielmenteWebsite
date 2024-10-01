@@ -1,4 +1,5 @@
 import { blogData } from "../../utils/blogdata";
+import { PopupForm } from "../landing-page/components";
 import DynamicBlog from "./components/DynamicBlog";
 
 
@@ -39,6 +40,7 @@ const Page = ({ params }: Params) => {
   return (
     <main style={{background: "radial-gradient(circle, rgba(228,242,238,1) 0%, rgba(235,245,238,1) 100%)"}}>
       <DynamicBlog blog={data} />
+      <PopupForm />
     </main>
   );
 };
