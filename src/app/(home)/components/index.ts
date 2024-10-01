@@ -1,7 +1,7 @@
 import Worked from './Worked';
 import Banner from './Banner';
 import Strategise from './Strategise';
-import ChooseUs from './ChooseUS';
+import ChooseUs from './chooseUs';
 import CardSection from './CardSection';
 
 
