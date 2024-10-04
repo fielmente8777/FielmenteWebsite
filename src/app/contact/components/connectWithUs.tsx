@@ -45,19 +45,28 @@ function ConnectWithUs() {
 
     try {
       setLoader(true);
-      const data = await axios.post(
-        "https://nexon.eazotel.com/eazotel/addcontacts",
+      const { data } = await axios.post(
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/mfxRiQ3c#generic-webhook`,
         {
-          Domain: "fielmente",
-          // Domain: "abhijeet", // Replace with your actual domain value
+          // Domain: "fielmente",
+          // Domain: "abhijeet",
+          // email: userEmail,
+          // Name: userName,
+          // Contact: `${countryCode}${userPhone}`,
+          // Description: userMessage,
           email: userEmail,
-          Name: userName,
-          Contact: `${countryCode}${userPhone}`,
-          // Subject: userMessage,
-          Description: userMessage,
+          name: userName,
+          phone: `${countryCode}${userPhone}`,
+          message: userMessage,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
-      if (data.status) {
+      if (data.success) {
         setLoader(false);
         // setPopupMsg("You information has been Received");
         router.push(`/thank-you?name=${encodeURIComponent(userName)}`);

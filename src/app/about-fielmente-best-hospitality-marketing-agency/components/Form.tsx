@@ -46,19 +46,28 @@ function Form({ title, color }: { title: string; color?: string }) {
 
     try {
       setLoader(true);
-      const data = await axios.post(
-        "https://nexon.eazotel.com/eazotel/addcontacts",
+      const { data } = await axios.post(
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/mfxRiQ3c#generic-webhook`,
         {
           // Domain: "fielmente",
-          Domain: "abhijeet", // Replace with your actual domain value
+          // Domain: "abhijeet",
+          // email: userEmail,
+          // Name: userName,
+          // Contact: `${countryCode}${userPhone}`,
+          // Description: userMessage,
           email: userEmail,
-          Name: userName,
-          Contact: `${countryCode}${userPhone}`,
-          // Subject: userMessage,
-          Description: userMessage,
+          name: userName,
+          phone: `${countryCode}${userPhone}`,
+          message: userMessage,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
-      if (data.status) {
+      if (data.success) {
         setLoader(false);
         // setPopupMsg("You information has been Received");
         router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
@@ -179,11 +188,10 @@ function Form({ title, color }: { title: string; color?: string }) {
           <div className="">
             <button
               type="submit"
-              className={`w-full py-3 rounded-full text-base text-white font-bold border ${
-                color
+              className={`w-full py-3 rounded-full text-base text-white font-bold border ${color
                   ? "bg-black hover:bg-[#F26633] hover:text-white border-black"
                   : "bg-[#F26633] hover:bg-white hover:text-[#F26633] border-[#F26633]"
-              }`}
+                }`}
             >
               Submit
             </button>
