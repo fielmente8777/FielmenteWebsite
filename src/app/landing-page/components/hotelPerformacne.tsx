@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay } from 'swiper/modules';
+import { Autoplay } from "swiper/modules";
 import Link from "next/link";
 import React from "react";
 import SectionHeading from "./SectionHeading";
@@ -20,8 +20,10 @@ export interface HotelPerformacePropsData {
 }
 
 const SectionHeadingDetails = {
-  title: "Let us handle your Hotel Performance Marketing and see your",
-  span: " property grow 5X",
+  title: "Let us handle your Hotel Hotel & Resort Marketing and grow your",
+  span: " occupancy rate by 5X",
+  // title: "Let us handle your Hotel Performance Marketing and see your",
+  // span: " property grow 5X",
   Color: true,
 };
 
@@ -70,7 +72,7 @@ function HotelPerformacne() {
           ))}
         </div>
       </div>
-      <div className='lg:hidden block py-8'>
+      <div className="lg:hidden block py-8">
         <div>
           <Swiper
             modules={[Autoplay]}
@@ -93,7 +95,6 @@ function HotelPerformacne() {
             }}
             className="mySwiper"
           >
-
             {HotelPerormaceData.map((item, index) => (
               <SwiperSlide key={index}>
                 <HotelPerfomaceCard {...item} index={index} />
