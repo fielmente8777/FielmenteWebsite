@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import LandingHeader from "./landingHeader";
+import LandingHeader from "./LandingHeader";
 import Header2 from "./header2";
 import React from "react";
 
