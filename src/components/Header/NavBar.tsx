@@ -1,7 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
-import landingHeader from "./landingHeader";
+import LandingHeader from "./LandingHeader";
 import Header2 from "./header2";
+import React from "react";
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -9,7 +10,7 @@ const NavBar = () => {
   let HeaderComponent = null;
 
   if (pathname === "/landing-page/" || pathname === "/fielmente-lp/") {
-    HeaderComponent = landingHeader;
+    HeaderComponent = LandingHeader;
   } else if (pathname === "/thank-you/") {
     HeaderComponent = null;
   } else {

@@ -5,7 +5,7 @@ import {
   OutlineMailIcon,
   OutlinePhoneIcon,
   OutLineLocationIcon,
-} from "../Header/landingHeader";
+} from "../Header/LandingHeader";
 
 const LandingFooter = () => {
     return (
