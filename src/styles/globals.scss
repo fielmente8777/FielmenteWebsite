@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
@@ -40,7 +40,7 @@ body {
 
 body {
   &::-webkit-scrollbar {
-    width: 0.5rem;
+    inline-size: 0.5rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -68,8 +68,8 @@ body {
 }
 
 .max-width {
-  max-width: 1280px;
-  width: 100%;
+  max-inline-size: 1280px;
+  inline-size: 100%;
   margin-inline: auto;
 
   @media (width<=1280px) {
@@ -85,7 +85,7 @@ body {
 }
 
 .blog-d-container ol {
-  // padding-left: 1.8rem;
+  // padding-inline-start: 1.8rem;
   list-style-position: inside;
   list-style-type: decimal;
 }
@@ -156,7 +156,7 @@ body {
   font-style: normal;
 }
 .blog-d-container ul {
-  // padding-left: 1.8rem;
+  // padding-inline-start: 1.8rem;
   list-style-position: inside;
   list-style-type: disc;
   font-size: 1.125rem;
@@ -177,8 +177,8 @@ body {
 .blog-d-container {
   div {
     img {
-      max-width: 100%;
-      width: max-content;
+      max-inline-size: 100%;
+      inline-size: max-content;
       display: block;
       margin: 1rem 0;
       border-radius: 1rem;
@@ -212,23 +212,23 @@ body {
 
 .pagination {
   .swiper-pagination-bullet {
-    background-color: #FFFFFF;
-    width: 0.5rem;
-    height: 0.5rem;
+    background-color: #ffffff;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
     opacity: 1;
     border-radius: 50%;
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #F26633;
-    width: 1rem;
-    height: 0.5rem;
+    background-color: #f26633;
+    inline-size: 1rem;
+    block-size: 0.5rem;
     border-radius: 0.5rem;
   }
 }
 
-.bg-imgclass{
-  background-image: url('/icon/Background.png');
+.bg-imgclass {
+  background-image: url("/icon/Background.png");
   background-size: 41.5rem;
   background-repeat: no-repeat;
   background-position: 48.5% 50%;
@@ -240,17 +240,72 @@ body {
 
 .bullets-Portfolio {
   .swiper-pagination-bullet {
-      border: none;
-      background-color: #ffffff;
-      width: .5rem;
-      height: .5rem;
-      opacity: 1;
+    border: none;
+    background-color: #ffffff;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    opacity: 1;
   }
 
   .swiper-pagination-bullet-active {
-      background-color: #F26633;
-      width: 1rem;
-      height: .5rem;
-      border-radius: .5rem;
+    background-color: #f26633;
+    inline-size: 1rem;
+    block-size: 0.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.page_date {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: start;
+    padding-block: 0.8rem;
+    @media (width<=768px) {
+      font-size: 1.89rem;
+      line-height: 2.5rem;
+    }
+  }
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: justify;
+    color: #1d1d1d;
+    padding-block: 0.5rem;
+  }
+  p {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #1d1d1d;
+    padding-block: 0.5rem;
+    @media (width<=768px) {
+      font-size: 1rem;
+      line-height: 1.8rem;
+    }
+  }
+  ul {
+    padding-inline-start: 2.5rem;
+    padding-block: 0.5rem;
+    @media (width<=768px) {
+      padding-inline-start: 1.5rem;
+    }
+    li {
+      list-style: disc;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+      font-style: normal;
+      color: #1d1d1d;
+      @media (width<=768px) {
+        font-size: 1rem;
+        line-height: 1.8rem;
+      }
+    }
   }
 }

@@ -165,7 +165,7 @@ function Footer2() {
           </div>
 
           <div className="flex md:flex-row flex-col max-md:items-center gap-4 text-gray-primary justify-between text-xl max-md:mt-5 mt-10">
-            <Link href={"/"}>Privacy Policy</Link>
+            <Link href={"/privacy-policy"}>Privacy Policy</Link>
             <Link href={"/terms-and-conditions/"}>Terms & Conditions</Link>
           </div>
         </div>
