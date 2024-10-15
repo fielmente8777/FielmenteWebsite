@@ -30,7 +30,7 @@ const PopupForm = () => {
     intervalIdRef.current = setInterval(() => {
       setShowModal(true);
       document.body.style.overflow = "hidden";
-    }, 60000);
+    }, 30000);
 
     // Cleanup the interval when the component unmounts or modal is closed
     return () => {
