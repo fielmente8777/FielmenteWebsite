@@ -12,7 +12,8 @@ import { Autoplay } from "swiper/modules";
 import SectionHeading from "./SectionHeading";
 import Link from "next/link";
 import { title } from "process";
-import React from "react";
+import React, { useState } from "react";
+import PopupForm from "./PopupForm";
 
 export interface OurServiceProsData {
   title: string;
@@ -27,6 +28,7 @@ const SectionHeadingDetails = {
 };
 
 function OurServices() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div>
       <SectionHeading {...SectionHeadingDetails} />
@@ -72,13 +74,16 @@ function OurServices() {
       </div>
 
       <div className="flex justify-center lg:mt-16 mt-4">
-        <Link
-          href={"#contact"}
+        <button
+          onClick={() => setShowModal(true)}
           className="bg-orange-primary text-white font-bold border border-orange-primary hover:bg-transparent px-8 py-3 rounded-md text-lg active:scale-90 duration-300  "
         >
           Contact Us
-        </Link>
+        </button>
       </div>
+      {showModal && (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
     </div>
   );
 }

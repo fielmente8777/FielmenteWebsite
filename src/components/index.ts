@@ -7,5 +7,6 @@ import Presence from "./Presence";
 import OurClient from "./OurClient";
 import ConsultationForm from "./ConsultationForm";
 import Form from "./Form";
+import LazyLoadedMap from './LazyLoadedMap';
 
-export { Section, Container, NumberComponent, Card, GotEnquiry, Presence, OurClient, Form, ConsultationForm };
+export { Section, Container, LazyLoadedMap, NumberComponent, Card, GotEnquiry, Presence, OurClient, Form, ConsultationForm };

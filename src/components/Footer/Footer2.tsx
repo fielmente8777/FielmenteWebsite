@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "../../../public/images/footer-fielmente.webp";
 import { usePathname } from "next/navigation";
+import { PopupForm } from "@/app/landing-page/components";
 
 function Footer2() {
   const pathname = usePathname();
@@ -66,6 +67,9 @@ function Footer2() {
       href: "https://www.linkedin.com/company/fielmente/",
     },
   ];
+
+  const currentYear = new Date().getFullYear();
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <footer className="bg-gray-100 pt-8 pb-4">
@@ -170,6 +174,9 @@ function Footer2() {
           </div>
         </div>
       </footer>
+      {pathname === "/contact/" || pathname === "/contact-us/" ? null : (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
     </>
   );
 }

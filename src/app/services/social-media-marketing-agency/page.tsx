@@ -248,7 +248,7 @@ function page() {
           <Form title={"Looking to discuss with us?"} color={"black"} />
         </div>
       </div>
-      <PopupForm />
+      
     </section>
   );
 }

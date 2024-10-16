@@ -10,8 +10,9 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay } from "swiper/modules";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./SectionHeading";
+import PopupForm from "./PopupForm";
 
 export interface HotelPerformacePropsData {
   title: string;
@@ -61,6 +62,8 @@ const HotelPerormaceData = [
 ];
 
 function HotelPerformacne() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div>
       <SectionHeading {...SectionHeadingDetails} />
@@ -104,13 +107,17 @@ function HotelPerformacne() {
         </div>
       </div>
       <div className="flex justify-center mt-16 max-md:mt-6">
-        <Link
-          href={"#contact"}
+        <button
+          onClick={() => setShowModal(true)}
           className="bg-orange-primary text-white font-bold px-8 py-3 rounded-md text-lg border border-orange-primary hover:bg-transparent hover:text-blue-dark duration-300"
         >
           Contact Us
-        </Link>
+        </button>
       </div>
+
+      {showModal && (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
     </div>
   );
 }

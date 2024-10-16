@@ -23,10 +23,14 @@ import Client22 from "../../public/images/wabi-sabi.jpg";
 import Client23 from "../../public/images/ebc.jpg";
 import Client24 from "../../public/images/Riviera.jpg";
 import Client25 from "../../public/images/footerspicelogo.png";
+import Client26 from "../../public/images/chefkenzo.png";
+import Client27 from "../../public/images/eracamp.png";
+import Client28 from "../../public/images/Grandview_resort.jpg";
+import Client29 from "../../public/images/minimalist.png";
 import { StaticImageData } from "next/image";
 
 export interface ClientData {
-  src: string| StaticImageData;
+  src: string | StaticImageData;
   alt: string;
 }
 
@@ -137,4 +141,20 @@ export const ClientImages: ClientData[] = [
     src: Client25,
     alt: "Client25",
   },
+  {
+    src: Client26,
+    alt: "Client26",
+  },
+  {
+    src: Client27,
+    alt: "Client27",
+  },
+  {
+    src: Client28,
+    alt: "Client28",
+  },
+  // {
+  //   src: Client29,
+  //   alt: "Client29",
+  // }
 ];

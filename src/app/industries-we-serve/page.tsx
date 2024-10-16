@@ -219,7 +219,6 @@ function page() {
           <Form title={"Looking to discuss with us?"} />
         </div>
       </div>
-      <PopupForm />
     </section>
   );
 }

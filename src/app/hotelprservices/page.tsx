@@ -282,7 +282,6 @@ function page() {
           </div>
         </div>
       </div>
-      <PopupForm />
     </section>
   );
 }

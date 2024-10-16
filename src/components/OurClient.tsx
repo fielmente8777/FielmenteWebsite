@@ -19,11 +19,11 @@ const OurClient = () => {
     <Section>
       <div className="bg-[#110D3C] py-10">
         <Container>
-            <div className="">
-                <h2 className="text-white text-4xl text-center">
-                  Our <b className="text-orange-primary">Clients</b>
-                </h2>
-            </div>
+          <div className="">
+            <h2 className="text-white text-4xl text-center">
+              Our <b className="text-orange-primary">Clients</b>
+            </h2>
+          </div>
           <div className="mt-10">
             <div>
               <Swiper
@@ -62,7 +62,20 @@ const OurClient = () => {
                         src={item.src}
                         alt={`${item.alt}`}
                         fill
-                        className="object-contain rounded-md p-3"
+                        className={`${
+                          index == 25 ||
+                          index == 26 ||
+                          index == 19 ||
+                          index == 1 ||
+                          index == 2 ||
+                          index == 4 ||
+                          index == 5 ||
+                          index == 7 ||
+                          index == 9 ||
+                          index == 11
+                            ? "object-cover"
+                            : "object-contain"
+                        } w-full h-full rounded-md p-3`}
                         style={{
                           backgroundColor: `${
                             index == 23
@@ -79,6 +92,10 @@ const OurClient = () => {
                               ? "#F7F7F7"
                               : index == 20
                               ? "#f7f7f7"
+                              : index == 25
+                              ? "#E6E6E6"
+                              : index == 26
+                              ? "#F3F3f3"
                               : "white"
                           }`,
                         }}

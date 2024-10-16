@@ -287,7 +287,7 @@ function page() {
       <OurClient />
       <Presence {...presenceData} />
       <ConsultationForm />
-      <PopupForm />
+      
     </section>
   );
 }

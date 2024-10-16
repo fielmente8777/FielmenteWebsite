@@ -6,7 +6,14 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { countries } from "@/utils/countryCode";
 import React from "react";
-const PopupForm = () => {
+import { Form } from "@/components";
+const PopupForm = ({
+  setShowModal,
+  showModal,
+}: {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
+}) => {
   const router = useRouter();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -19,7 +26,6 @@ const PopupForm = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const [popupMsg, setPopupMsg] = useState("");
   const [loader, setLoader] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   // useRef to store intervalId
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
@@ -38,7 +44,7 @@ const PopupForm = () => {
         clearInterval(intervalIdRef.current);
       }
     };
-  }, []);
+  }, [setShowModal]);
 
   const closeModal = useCallback(() => {
     setShowModal(false);
@@ -49,7 +55,7 @@ const PopupForm = () => {
       clearInterval(intervalIdRef.current);
       intervalIdRef.current = null; // Reset the ref
     }
-  }, []);
+  }, [setShowModal]);
 
   const validateInputs = () => {
     let isValid = true;
@@ -149,14 +155,14 @@ const PopupForm = () => {
       {showModal && (
         <section className="fixed z-50 w-full h-screen bg-black bg-opacity-70 top-0 left-0">
           <article className="flex justify-center items-center h-full">
-            <div className="flex flex-col gap-3 max-w-[310px] w-full border shadow-2xl p-4 relative rounded-md bg-white">
+            <div className="flex flex-col gap-3 max-w-[400px] w-full border shadow-2xl p-4 relative rounded-md bg-white">
               <button
                 onClick={closeModal}
                 className="absolute top-[-15px] right-[-15px] w-8 h-8 flex justify-center items-center text-lg rounded-full bg-red-500 hover:bg-red-600 text-white"
               >
                 X
               </button>
-              <div className="relative w-full h-[270px] aspect-[4/4]">
+              {/* <div className="relative w-full h-[270px] aspect-[4/4]">
                 <Image
                   src={popupimg}
                   alt="Hospitality Marketing"
@@ -229,7 +235,8 @@ const PopupForm = () => {
                     {loader ? "Submitting..." : "Submit"}
                   </button>
                 </div>
-              </form>
+              </form> */}
+              <Form />
             </div>
           </article>
         </section>

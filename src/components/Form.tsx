@@ -170,7 +170,7 @@ const Form = () => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 max-md:px-4 p-6 max-md:mt-6 text-base rounded-lg lg:max-w-[24.875rem] w-full bg-[#F5F5F5]"
     >
-      <h2 className="text-xl lg:text-[1.8rem]/[2.5rem] font-normal text-blue-primary">
+      <h2 className="text-xl lg:text-[1.8rem]/[2.5rem] font-normal text-blue-dark">
         Get A <b className="capitalize">FREE</b> Consultation!
       </h2>
       {/* <p className="text-gray-primary max-md:text-sm">

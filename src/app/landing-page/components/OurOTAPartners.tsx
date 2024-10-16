@@ -21,7 +21,7 @@ import { Container, Section } from "@/components";
 const OurOTAPartners = () => {
 
   const SectionHeadingDetails = {
-    title: "Our OTA",
+    title: "Our ",
     span: "Partners",
     Color: true,
   };

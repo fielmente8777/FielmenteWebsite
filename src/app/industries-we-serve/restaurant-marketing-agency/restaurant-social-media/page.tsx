@@ -169,7 +169,7 @@ function page() {
           <Frequently />
         </div>
       </div>
-      <PopupForm />
+      
     </div>
   );
 }

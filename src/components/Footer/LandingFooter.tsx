@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.webp";
@@ -6,10 +7,14 @@ import {
   OutlinePhoneIcon,
   OutLineLocationIcon,
 } from "../Header/LandingHeader";
+import { useState } from "react";
+import { PopupForm } from "@/app/landing-page/components";
 
 const LandingFooter = () => {
-    return (
-        <footer className="lg:pt-12 pt-9 bg-gray-secondary">
+  const currentYear = new Date().getFullYear();
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <footer className="lg:pt-12 pt-9 bg-gray-secondary">
       <div className="max-width">
         <div className="flex justify-center">
           <Image
@@ -57,15 +62,20 @@ const LandingFooter = () => {
         </div>
         <div className="w-full h-[1px] bg-orange-primary mt-4" />
         <div className="flex max-md:flex-col justify-center items-center gap-2 mt-2 py-4">
-          <p className="text-blue-dark text-lg">&copy;2024 Fielmente</p>
-          <span className="text-orange-primary max-md:hidden text-lg font-bold">|</span>
+          <p className="text-blue-dark text-lg">
+            &copy; {currentYear} Fielmente
+          </p>
+          <span className="text-orange-primary max-md:hidden text-lg font-bold">
+            |
+          </span>
           <p className="text-blue-dark text-lg"> All Rights Reserved</p>
           {/* <span className="text-orange-primary text-lg font-bold">|</span> */}
           {/* <Link href={"/landingpage"} className="text-blue-dark text-lg">Landing</Link> */}
         </div>
       </div>
+      <PopupForm setShowModal={setShowModal} showModal={showModal} />
     </footer>
-    );
-}
+  );
+};
 
 export default LandingFooter;

@@ -78,7 +78,6 @@ const BlogCard = ({
           </Link>
         </div>
       </div>
-      <PopupForm />
     </div>
   );
 };

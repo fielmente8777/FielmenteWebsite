@@ -9,6 +9,7 @@ import Contact4 from "../../../public/images/Contact4.webp";
 import Logo from "../../../public/images/logo.webp";
 
 import type { Metadata } from "next";
+import Location from "../contact/components/Location";
 
 export const metadata: Metadata = {
   title: "Contact Fielmente - Fielmente",
@@ -31,9 +32,9 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10 bg-gradient">
-        <div className="max-width grid lg:grid-cols-3 gap-6">
-          <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
+      <div className="bg-gradient">
+        <div className="max-width">
+          {/* <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4]">
             <Image src={Contact2} alt="Contact_2" className="object-cover" />
           </div>
           <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4] lg:block hidden">
@@ -45,7 +46,8 @@ function page() {
           </div>
           <div className="relative lg:max-w-[400px] max-w-[280px] lg:mx-0 mx-auto aspect-[4/4] lg:block hidden">
             <Image src={Contact4} alt="Contact_2" className="object-cover" />
-          </div>
+          </div> */}
+          <Location src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14037.471511571006!2d77.06942785084031!3d28.408154453301705!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d22692a4e3faf%3A0xeb5a2617558c5e55!2sSuncity%20Success%20Tower!5e0!3m2!1sen!2sin!4v1729057863255!5m2!1sen!2sin" />
         </div>
       </div>
 

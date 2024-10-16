@@ -5,6 +5,8 @@ import Map from "../../../../public/images/wordmap.webp";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { countries } from "@/utils/countryCode";
+
+import { Form as ContactForm } from "../../../components";
 function Form({ title, color }: { title: string; color?: string }) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -98,11 +100,11 @@ function Form({ title, color }: { title: string; color?: string }) {
   };
 
   return (
-    <div className="grid lg:grid-cols-2 items-center gap-8">
+    <div className="grid lg:grid-cols-2 items-center  gap-8">
       <div className="relative max-w-full aspect-[4/3]">
-        <Image src={Map} alt="word-map" fill className="object-contain" />
+        <Image src={Map} alt="world-map" fill className="object-contain" />
       </div>
-      <form
+      {/* <form
         className="w-full bg-[#F5F5F5] px-6 py-8 rounded-3xl"
         onSubmit={handleSubmit}
       >
@@ -197,7 +199,10 @@ function Form({ title, color }: { title: string; color?: string }) {
             </button>
           </div>
         </div>
-      </form>
+      </form> */}
+      <div className="flex justify-end max-md:justify-center">
+        <ContactForm />
+      </div>
     </div>
   );
 }

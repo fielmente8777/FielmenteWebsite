@@ -24,7 +24,6 @@ export default function Home() {
           <Form title="Schedule a meeting with our marketing consultant" />
         </Container>
       </Section>
-      <PopupForm />
     </main>
   );
 }
