@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Image, { StaticImageData } from "next/image";
-import img1 from "../../../../public/images/img1.png";
+import img1 from "../../../../public/images/img1.webp";
 import img2 from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
-import img3 from "../../../../public/images/img2.png";
+import img3 from "../../../../public/images/img2.webp";
 
 const Banner: React.FC = () => {
   return (

@@ -155,10 +155,10 @@ const PopupForm = ({
       {showModal && (
         <section className="fixed z-50 w-full h-screen bg-black bg-opacity-70 top-0 left-0">
           <article className="flex justify-center items-center h-full">
-            <div className="flex flex-col gap-3 max-w-[400px] w-full border shadow-2xl p-4 relative rounded-md bg-white">
+            <div className="flex flex-col gap-3 max-w-[400px] w-full shadow-2xl p-4 relative rounded-md">
               <button
                 onClick={closeModal}
-                className="absolute top-[-15px] right-[-15px] w-8 h-8 flex justify-center items-center text-lg rounded-full bg-red-500 hover:bg-red-600 text-white"
+                className="absolute top-[22px] lg:top-0 right-[3px] w-8 h-8 flex justify-center items-center text-lg rounded-full bg-red-500 hover:bg-red-600 text-white"
               >
                 X
               </button>

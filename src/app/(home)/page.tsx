@@ -19,9 +19,10 @@ export default function Home() {
       <Worked />
       <ChooseUs />
       <CardSection />
-      <Section className="bg-blue-dark">
+      <Section className="bg-blue-dark max-w-[1540px] mx-auto">
         <Container>
-          <Form title="Schedule a meeting with our marketing consultant" />
+          <Form title="Request for" boldText="Proposal" />
+          {/* <Form title="Schedule a meeting with our marketing consultant" /> */}
         </Container>
       </Section>
     </main>
