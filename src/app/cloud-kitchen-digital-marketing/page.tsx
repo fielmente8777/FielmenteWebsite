@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 
 import BoostVisibility from "../../../public/images/boostvisiblity.webp";
-import CustomerFeedback from "../../../public/images/cusomerfeedback.webp";
+// import CustomerFeedback from "../../../public/images/cusomerfeedback.webp";
 import Showcasemenu from "../../../public/images/showcasemenu.webp";
 import Customertrust from "../../../public/images/customertrust.webp";
 import Onlineordering from "../../../public/images/onlineordering.webp";
@@ -20,15 +20,16 @@ import {
   ConsultationForm,
 } from "@/components";
 import {
-  EnhancedCustomerService,
-  DirectBookings,
-  ShowcaseMenu,
-  HighlightOffers,
-  Showcase,
+  BrandIdentity,
+  CustomerFeedback,
+  CustomerTrust,
+  MenuPresentation,
+
 } from "@/utils/icons";
 import type { Metadata } from "next";
-import { Needs, NeedSeo } from "../industries-we-serve/components";
-import { PopupForm } from "../landing-page/components";
+import ConsultationForm2 from "@/components/ConsultationForm2";
+import NeedSeo2 from "../industries-we-serve/components/NeedSeo2";
+import Needs2 from "../industries-we-serve/components/Needs2";
 
 export const metadata: Metadata = {
   title: "Best Cloud Kitchen Marketing Agency in India- Fielmente",
@@ -192,138 +193,56 @@ const data = [
 ];
 
 const Needsdata = {
-  title: "Why do Your Restaurants need",
+  title: "Why do Your Cloud Kitchen need a ",
   span: "Website?",
   subtitle:
-    "In today’s digital age, having a strong online presence is crucial for restaurants to thrive. Fielmente, the leading restaurant marketing agency in India, understands the importance of restaurant marketing and the role it plays in attracting and engaging potential customers.",
-  label: "Book a consultation",
+    "Building an online brand organically is a laborious yet rewarding process. Establishing an attractive Food Aggregator Optimization, an effective marketing plan and social media platforms help you to grow by 10X",
+  label: "Book A Free Consultation",
   href: "#consultation",
   card: [
     {
-      image: {
-        src: "/icon/Search-Engine-Visibility.png",
-      },
+      icon: <CustomerFeedback />,
       title: "Customer Feedback",
     },
     {
-      icon: <ShowcaseMenu />,
-      title: "Menu Presentation",
+      icon: <BrandIdentity />,
+      title: "Brand Identity",
     },
     {
-      icon: <DirectBookings />,
-      title: "SEO",
-    },
-    {
-      image: {
-        src: "/icon/Online-Reservation.png",
-      },
+      icon: <CustomerTrust />,
       title: "Customer Trust",
     },
     {
-      icon: <EnhancedCustomerService />,
-      title: "Online Ordering",
-    },
-    {
-      icon: <HighlightOffers />,
-      title: "Brand Identity",
+      icon: <MenuPresentation />,
+      title: "Menu Presentation",
     },
   ],
 };
 
 const needs2Data = {
-  title: "Why do Your Cloud Kitchen Needs",
+  title: "Why do Your Cloud Kitchen Needs ",
   span: "Influencer Marketing?",
-  subtitle:
-    "The power of influencer marketing in driving customer interest and boosting your restaurant’s success is increasing. Let Fielmente, help you harness the influence of trusted social media personalities to expand your reach.",
 
-  card: [
-    {
-      title: "Trusted Recommendation",
-      subtitle:
-        "Harness the power of influencers trusted recommendations to showcase your restaurant’s unique offerings and drive customer interest.",
-    },
-    {
-      title: "Expand Reach",
-      subtitle:
-        "Reach a wider audience by leveraging the influencer’s dedicated following, increasing brand exposure, and attracting new customers.",
-    },
-    {
-      title: "Engaging Content",
-      subtitle:
-        "Collaborate with influencers to create engaging and authentic content that showcases your restaurant’s ambiance, cuisine, and dining experience.",
-    },
-    {
-      title: "Unique Experiences",
-      subtitle:
-        "Offer exclusive experiences or tastings to influencers, allowing them to share their firsthand experience with their audience and create a buzz around your restaurant.",
-    },
-    {
-      title: "Targeted Campaigns",
-      subtitle:
-        "Partner with influencers who match your restaurant's target audience to ensure your message reaches people most likely to be interested in dining at your establishment.",
-    },
-    {
-      title: "Increased Reservations",
-      subtitle:
-        "Influencer marketing can drive bookings and reservations, as followers are inspired to visit your restaurant based on the influencers’ recommendations.",
-    },
-  ],
+  subtitle:
+    "The impact of influencer marketing on generating customer interest and enhancing your cloud kitchen's success is growing. Let Fielmente help you leverage trusted influencers' recommendations to showcase your cloud kitchen's unique offerings and drive customer interest. By expanding your reach through engaging content, we can help you increase online ordering and create exclusive experiences or tastings for influencers. This allows them to share their firsthand experiences with their audience and generate buzz around your cloud kitchen.",
+  img: {
+    src: "/images/qwqw.png",
+  },
+  order: true,
+  label: "Get In Touch",
+  href: "/contact",
 };
 
 const needSeoData = {
-  title: "Why Does Your Restaurant Need ",
+  title: "Why Does Your Cloud Kitchen Need ",
   span: "SEO?",
   subtitle:
-    "As digitalization is approaching at a faster pace, restaurant marketing is essential for attracting customers and standing out from the competition. Let our restaurant marketing agency help you optimize your online presence.",
+    "As digitalization accelerates, effective marketing for cloud kitchens becomes crucial for attracting customers and differentiating yourself from the competition. Our cloud kitchen marketing agency can help you achieve cost-effectiveness in your campaigns while driving targeted traffic to your brand. We’ll work with you to outrank competitors and enhance your online presence through strategic management of online reviews and reputation. Let us assist you in elevating your business in this dynamic market.",
   img: {
-    src: "/images/social-circle.webp",
+    src: "/images/wqe.png",
   },
-  label: "Contact Us",
+  label: "Get In Touch",
   href: "/contact",
-  card: [
-    {
-      image: {
-        src: "/icon/Boost_Visibility.png",
-      },
-      title: "Cost-Effectiveness",
-      subtitle: "SEO is a cost-effective strategy that offers a high ROI.",
-    },
-    {
-      image: {
-        src: "/icon/Targeted_Traffic.png",
-      },
-      title: "Targeted Traffic",
-      subtitle: "Attract quality, relevant traffic to your website.",
-    },
-    {
-      image: {
-        src: "/icon/Local_SEO.png",
-      },
-      title: "Local SEO",
-      subtitle: "Improve website usability and guest satisfaction.",
-    },
-    {
-      icon: <Showcase />,
-      title: "Cost Effective Marketing",
-      subtitle: "Our SEO will help you surpass competitors in search results.",
-    },
-    {
-      image: {
-        src: "/icon/Drive-Reservations.png",
-      },
-      title: "Mobile Optimization",
-      subtitle:
-        "Optimize your site for mobile to ensure a smooth, user-friendly experience for smartphone orders.",
-    },
-    {
-      image: {
-        src: "/icon/Online_Reviews.png",
-      },
-      title: "Online Reviews & Reputation Management",
-      subtitle:
-        "Monitor and respond to customer reviews, ensuring a positive online reputation that builds trust and encourages more orders.",
-    },
-  ],
 };
 
 const presenceData = {
@@ -345,26 +264,40 @@ function page() {
   return (
     <section>
       {/* India’s Best Cloud Kitchen Marketing Agency   */}
-      <Section>
+      <Section className="bg-blue-dark text-white">
         <Container>
           <div className="grid lg:grid-cols-2 gap-6 items-center">
             <div className="flex flex-col gap-7">
-              <h1 className="text-[#737373] text-base md:text-lg  font-semibold border-l-4 border-orange-primary pl-4 ">
+              {/* <h1 className="text-[#737373] text-base md:text-lg  font-semibold border-l-4 border-orange-primary pl-4 ">
                 Leading Restaurant Marketing Company
-              </h1>
-              <h2 className="text-black md:text-5xl/[3.2rem] text-3xl font-normal">
-                Best Restaurant Marketing Agency in{" "}
+              </h1> */}
+              <h1 className="md:text-5xl/[3.2rem] text-3xl font-normal">
+                The Best Cloud Kitchen Marketing Agency in{" "}
                 <strong className="text-orange-primary">India.</strong>
-              </h2>
-              <p className="text-gray-500 text-lg">
-                We at Fielmente create ROI-driven social media campaigns and
-                content for your for your restaurant business. 
+              </h1>
+              <p className="text-lg">
+                {/* We at Fielmente create ROI-driven social media campaigns and
+                content for your for your restaurant business.  */}
+                Struggling to achieve your cloud kitchen’s order goals?
+                Fielmente, the leading cloud kitchen marketing agency in India,
+                has the solution! With our expert services, we’ll boost your
+                sales and empower your managers and teams to reach their desired
+                goals.
               </p>
-              <p className="text-gray-500 text-lg">
-                The restaurant business is constantly changing and evolving but
+              <p className="text-lg">
+                {/* The restaurant business is constantly changing and evolving but
                 one thing that has remained the same over the last few years are
-                diners turn to the internet to help them choose where to eat.
+                diners turn to the internet to help them choose where to eat. */}
+                Ready to see your cloud kitchen thrive like never before?
               </p>
+              <div>
+                <Link
+                  href="/contact"
+                  className="bg-orange-primary text-white py-3 px-6 border border-blue-dark rounded-lg text-lg font-semibold hover:bg-white hover:text-black duration-700 transition box_shadow"
+                >
+                  Get In Touch Now
+                </Link>
+              </div>
             </div>
 
             <div className="relative w-full aspect-[4/2.9]">
@@ -372,7 +305,7 @@ function page() {
                 src="/images/Grilwithchart.webp"
                 alt="young-waiter"
                 fill
-                className="object-cover rounded-lg -z-10"
+                className="object-cover rounded-lg z-0"
               />
             </div>
           </div>
@@ -380,83 +313,67 @@ function page() {
       </Section>
       <Section>
         <Container>
-          <div className="lg:grid grid-cols-3 gap-6 flex flex-col-reverse flex-1">
-            <div className="relative w-full aspect-[4/3.7]">
+          <div className="">
+            {/* <div className="lg:grid grid-cols-3 gap-6 flex flex-col-reverse flex-1"> */}
+            {/* <div className="relative w-full aspect-[4/3.7]">
               <Image
                 src="/images/Marketloud.webp"
                 alt="book-now-moible-pic"
                 fill
                 className="object-cover rounded-md imgrotate"
               />
-            </div>
-            <div className="flex flex-col gap-6 col-span-2">
-              <h2 className="text-[#737373] text-base md:text-lg  font-semibold border-l-4 border-orange-primary pl-4 ">
+            </div> */}
+            <div className="flex flex-col gap-6 items-center col-span-2">
+              {/* <h2 className="text-[#737373] text-base md:text-lg  font-semibold border-l-4 border-orange-primary pl-4 ">
                 How our Cloud Kitchen Marketing Agency help you to grow
-              </h2>
-              <h3 className="text-black md:text-[2.775rem]/[3.2rem] text-3xl font-normal">
-                You Focus on Cooking & We{" "}
-                <b className="text-orange-primary">Grow</b> Your Cloud Kitchen
-                Business Through Our{" "}
+              </h2> */}
+              <h2 className="text-black text-center max-w-[1100px] w-full md:text-[2.775rem]/[3.2rem] text-3xl font-normal">
+                You Focus on Cooking & We Grow Your Cloud Kitchen Business
+                Through Our{" "}
                 <strong className="text-orange-primary">
                   Marketing Strategy.
                 </strong>
-              </h3>
-              <p className="text-gray-500 text-lg">
+              </h2>
+              <p className="text-gray-500 text-lg text-center lg:px-16">
                 Join forces with Fielmente, India’s premier cloud kitchen
                 marketing agency. Maximize online orders, boost sales, and
                 unleash your business’s full potential. Our expert strategies
                 will supercharge your revenue and optimize operations for
                 seamless growth.
               </p>
-              <div className="flex justify-center">
+              {/* <div className="flex justify-center">
                 <Link
                   href="/contact"
                   className="bg-blue-dark text-white py-3 px-6 border border-blue-dark rounded-lg text-lg font-semibold hover:bg-white hover:text-black duration-700 transition box_shadow"
                 >
                   Contact Us
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </Container>
       </Section>
       <NumberComponent data={data} />
-      <Needs {...Needsdata} maxw={true} textCenter={true} card1={true} />
-      <NeedSeo {...needSeoData} />
-      <Needs {...needs2Data} />
-      <GotEnquiry {...gotEnquiryData} />
+      <Needs2 {...Needsdata} />
+      <NeedSeo2 {...needSeoData} />
+      <NeedSeo2 {...needs2Data} />
+      {/* <GotEnquiry {...gotEnquiryData} /> */}
+      <Section className="lg:py-16">
+        <Container>
+          <h2 className="text-black text-center max-w-[1100px] w-full md:text-[2.775rem]/[3.2rem] text-3xl font-normal mx-auto">
+            Harness the Power of Social Media Marketing to Elevate Your{" "}
+            <strong className="text-orange-primary">
+              Cloud Kitchen Presence.
+            </strong>
+          </h2>
+        </Container>
+      </Section>
       <OurClient />
-      <Presence {...presenceData} />
-      <ConsultationForm />
+      {/* <Presence {...presenceData} /> */}
+      <ConsultationForm2 />
     </section>
   );
 }
-
-const Card = ({ title, subtitle, image }: any) => {
-  return (
-    <div className="bg-[#E8FFF9] rounded-2xl p-6 shadow-md">
-      <div className="flex justify-center">
-        <Image src={image.src} alt="boost-visibility" width={140} />
-      </div>
-
-      <h2 className="text-3xl font-semibold text-black text-center">{title}</h2>
-      <p className="text-gray-primary text-lg text-center mt-4">{subtitle}</p>
-    </div>
-  );
-};
-
-const InfluencerCard = ({ title, subtitle, icon }: any) => {
-  return (
-    <div className="p-5 rounded-xl bg-[#F6D27C]">
-      <div className="flex items-center gap-3">
-        {icon}
-        <h2 className="text-2xl text-black font-semibold">{title}</h2>
-      </div>
-
-      <p className="text-black text-sm mt-4">{subtitle}</p>
-    </div>
-  );
-};
 
 const Trust = () => {
   return (
@@ -475,55 +392,5 @@ const Trust = () => {
     </svg>
   );
 };
-
-const PerformaceCard = ({ title, subtitle, image }: any) => {
-  return (
-    <div className="bg-white p-6 rounded-xl flex flex-col gap-6">
-      <div>
-        <Image src={image.src} alt={image.alt} width={60} />
-      </div>
-      <h2 className="text-black text-3xl font-bold">{title}</h2>
-      <p className="text-blue-dark text-lg">{subtitle}</p>
-    </div>
-  );
-};
-
-const InfluencerCardDetails = [
-  {
-    title: "Trusted Recommendation",
-    subtitle:
-      "Harness the power of influencers’ trusted recommendations to showcase your restaurant’s unique offerings and drive customer interest. ",
-    icon: <Trust />,
-  },
-
-  {
-    title: "Expand Reach",
-    subtitle: `Tap into the influencer’s dedicated following, extending your brand’s reach to a wider audience of potential customers.`,
-    icon: <Trust />,
-  },
-  {
-    title: "Engaging Content",
-    subtitle: `Collaborate with influencers to create engaging and authentic content that showcases your restaurant’s ambiance, cuisine, and dining experience.`,
-    icon: <Trust />,
-  },
-  {
-    title: "Social Proof",
-    subtitle:
-      "Benefit from the social proof generated by influencers’ positive experiences and endorsements, building trust and encouraging more customers to order from your cloud kitchen.",
-    icon: <Trust />,
-  },
-  {
-    title: "Unique Experiences",
-    subtitle:
-      "Offer exclusive tastings or experiences to influencers, allowing them to share their firsthand experiences and generate excitement around your cloud kitchen.",
-    icon: <Trust />,
-  },
-  {
-    title: "Increased Orders",
-    subtitle:
-      "Influencer marketing can drive a surge in orders as followers are inspired to try your cloud kitchen’s offerings based on the influencers’ recommendations.",
-    icon: <Trust />,
-  },
-];
 
 export default page;

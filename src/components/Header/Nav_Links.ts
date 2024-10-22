@@ -49,10 +49,10 @@ export const Nav_Links = [
         linkName: "Hotel SEO",
         src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
       },
-      {
-        linkName: "Hotel PR Services",
-        src: "/hotelprservices",
-      },
+      // {
+      //   linkName: "Hotel PR Services",
+      //   src: "/hotelprservices",
+      // },
     ],
   },
   {
