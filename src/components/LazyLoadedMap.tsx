@@ -1,3 +1,4 @@
+"use client";
 // components/LazyLoadedMap.jsx
 import dynamic from "next/dynamic";
 
