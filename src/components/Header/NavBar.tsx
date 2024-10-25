@@ -9,7 +9,7 @@ const NavBar = () => {
 
   let HeaderComponent = null;
 
-  if (pathname === "/landing-page/" || pathname === "/fielmente-lp/") {
+  if (pathname === "/landing-page/" || pathname === "/fielmente-lp/" || pathname === "/resort/" || pathname === "/hospitality/") {
     HeaderComponent = LandingHeader;
   } else if (pathname === "/thank-you/") {
     HeaderComponent = null;

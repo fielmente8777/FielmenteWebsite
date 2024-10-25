@@ -13,6 +13,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import SectionHeading from "./SectionHeading";
 import PopupForm from "./PopupForm";
+import { usePathname } from "next/navigation";
 
 export interface HotelPerformacePropsData {
   title: string;
@@ -20,13 +21,7 @@ export interface HotelPerformacePropsData {
   index?: number;
 }
 
-const SectionHeadingDetails = {
-  title: "Let us handle your Hotel Hotel & Resort Marketing and grow your",
-  span: " occupancy rate by 5X",
-  // title: "Let us handle your Hotel Performance Marketing and see your",
-  // span: " property grow 5X",
-  Color: true,
-};
+
 
 const HotelPerormaceData = [
   {
@@ -63,6 +58,19 @@ const HotelPerormaceData = [
 
 function HotelPerformacne() {
   const [showModal, setShowModal] = useState(false);
+  const pathName = usePathname();
+
+  const SectionHeadingDetails = {
+    title: `Let us handle your ${pathName === "/resort/"
+              ? "Resort"
+              : pathName === "/hospitality/"
+              ? "Hospitality"
+              : "Hotel"} Marketing and grow your`,
+    span: " occupancy rate by 5X",
+    // title: "Let us handle your Hotel Performance Marketing and see your",
+    // span: " property grow 5X",
+    Color: true,
+  };
 
   return (
     <div>
