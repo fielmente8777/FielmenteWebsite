@@ -75,13 +75,13 @@ const Card = ({
       <div className="flex flex-col gap-5 py-8 px-7">
         <div className="flex gap-4 items-center justify-betwee">
           <div className="flex gap-4 items-center">
-            <Image
+            {/* <Image
               src={src}
               alt={alt}
               width={90}
               height={90}
               className="rounded-full border-8 border-white"
-            />
+            /> */}
             <div className="flex flex-col gap-1">
               <h3 className="text-black font-bold text-xl">{title}</h3>
               <span className="text-sm">CEO</span>
