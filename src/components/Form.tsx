@@ -117,6 +117,7 @@ const Form = () => {
             onChange={(e) => setCountryCode(e.target.value)}
             className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
             style={{ inlineSize: `${countryCode.length + 2}ch` }}
+            aria-label="Country Code"
           >
             {countries.map((country, index) => (
               <option
@@ -190,19 +191,19 @@ const Form = () => {
             {data.tag === "div"
               ? data.content
               : React.createElement(data.tag, {
-                id: data.name,
-                type: data.type,
-                name: data.name,
-                value: data.value,
-                onChange: data.onChange,
-                placeholder: data.placeholder,
-                required: data.required,
-                autoComplete: "off",
-                spellCheck: "false",
-                rows: data.tag === "textarea" ? 3 : undefined,
-                className:
-                  "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
-              })}
+                  id: data.name,
+                  type: data.type,
+                  name: data.name,
+                  value: data.value,
+                  onChange: data.onChange,
+                  placeholder: data.placeholder,
+                  required: data.required,
+                  autoComplete: "off",
+                  spellCheck: "false",
+                  rows: data.tag === "textarea" ? 3 : undefined,
+                  className:
+                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
+                })}
           </div>
           {data.name === "phone" && errorMessage && (
             <p className="text-sm text-red-500 mt-2">{errorMessage}</p>

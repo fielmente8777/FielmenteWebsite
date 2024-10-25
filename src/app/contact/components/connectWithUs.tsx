@@ -172,6 +172,7 @@ function ConnectWithUs() {
                       onChange={(e) => setCountryCode(e.target.value)}
                       className="w-auto py-3  rounded-xl text-[#333333] focus:outline-none"
                       style={{ inlineSize: `${countryCode.length + 2}ch` }}
+                      aria-label="Select Country Code"
                     >
                       {countries.map((country, index) => (
                         <option

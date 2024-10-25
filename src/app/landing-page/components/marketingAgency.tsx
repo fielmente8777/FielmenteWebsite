@@ -2,16 +2,24 @@
 import axios from "axios";
 import React, { useState } from "react";
 import SubmitPopup from "./SubmitPopup";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Form } from "@/components";
 
 function MarketingAgency() {
+  const pathName = usePathname();
+
   return (
     <section className="grid lg:grid-cols-2 gap-10">
       {/* Left Content**** */}
       <div className="flex flex-col justify-center gap-6 text-white">
-        <h2 className="md:text-6xl text-3xl w-[100%] font-medium  lg:pe-[4rem]">
-          Work with the India’s Best Hotel Marketing {" "}
+        <h2 className="md:text-6xl/[4rem] text-3xl w-[100%] font-medium  lg:pe-[4rem]">
+          Work with the India’s Best{" "}
+          {pathName === "/resort/"
+            ? "Resort"
+            : pathName === "/hospitality/"
+            ? "Hospitality"
+            : "Hotel"}{" "}
+          Marketing{" "}
           <span className="text-orange-primary font-bold">Agency.</span>
         </h2>
         <p className="text-lg">
@@ -41,8 +49,6 @@ function MarketingAgency() {
     </section>
   );
 }
-
-
 
 export const GoogleIcon = () => {
   return (

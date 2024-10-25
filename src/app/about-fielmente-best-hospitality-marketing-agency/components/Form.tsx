@@ -203,6 +203,7 @@ function Form({
                     onChange={(e) => setCountryCode(e.target.value)}
                     className="py-3 w-auto flex items-center rounded-lg text-[#333333] focus:outline-none"
                     style={{ inlineSize: `${countryCode.length + 2}ch` }}
+                    aria-label="Country code"
                   >
                     {countries.map((country, index) => (
                       <option
