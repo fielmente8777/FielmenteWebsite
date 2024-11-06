@@ -9,6 +9,7 @@ import OurOTAPartners from "./OurOTAPartners";
 import WhyUs from "./WhyUs";
 import ContactUsCard from "./ContactUsCard";
 import OurClientNew from "./OurClientNew";
+import MIleStonesNew from "./MIleStonesNew";
 
 const PageComponents = () => {
   return (
@@ -21,9 +22,7 @@ const PageComponents = () => {
       </div>
 
       {/* MileStones ****** */}
-      <div className="bg-white max-width lg:py-20 py-10">
-        <MileStones />
-      </div>
+      <MIleStonesNew />
 
       {/* Services***** */}
       <div className="bg-blue-dark text-white lg:py-20 py-10">

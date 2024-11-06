@@ -12,11 +12,13 @@ import { Autoplay } from "swiper/modules";
 import React from "react";
 import { WebSiteDevelopmentIcon } from "./ourServices";
 import SectionHeading from "./SectionHeading";
+import Image, { StaticImageData } from "next/image";
 
 export interface ChooseCardProsData {
   title: string;
   subtitle: string;
-  Icon: React.ReactNode;
+  // Icon: React.ReactNode | string | StaticImageData;
+  Icon: string;
 }
 
 const SectionHeadingDetails = {
@@ -34,7 +36,17 @@ const SectionHeadingDetails = {
 function ChooseUs() {
   return (
     <div>
-      <SectionHeading {...SectionHeadingDetails} />
+      {/* <SectionHeading {...SectionHeadingDetails} /> */}
+      <div className="flex flex-col gap-5">
+        <h2 className="text-center md:text-4xl text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
+          {SectionHeadingDetails.title}
+        </h2>
+        <p className="text-lg max-md:text-base text-blue-dark text-center lg:w-[70%] mx-auto">
+          Force of{" "}
+          <b className="text-orange-primary">20+ Hospitality Marketing</b>{" "}
+          Experts
+        </p>
+      </div>
       <div className="lg:block hidden">
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-16 mt-16">
           {ChooseUsData.map((item, index) => (
@@ -81,7 +93,7 @@ export const ChooseUsCard = ({ title, subtitle, Icon }: ChooseCardProsData) => {
   return (
     <div className="flex flex-col justify-start gap-3 border border-blue-dark rounded-sm shadow-2xl p-6">
       <div className="flex items-center justify-center lg:justify-start">
-        {Icon}
+        <Image src={Icon} alt={title} width={96} height={96} />
       </div>
       <h2 className="text-blue-dark text-[1.8rem]/[2.5rem] max-md:text-xl capitalize lg:text-start text-center">
         {title}
@@ -256,37 +268,44 @@ const ChooseUsData = [
     title: `Expertise in Hospitality`,
     subtitle:
       "With a decade of experience in the hospitality industry, we are the perfect partner to market your hotel, resort, villa & restaurant.",
-    Icon: <ExpertiseIcon />,
+    Icon: "/icon/ExpertiseinHospitality.gif",
+    // Icon: <ExpertiseIcon />,
   },
   {
     title: "Strategic Social Media Marketing",
     subtitle:
       "Our proven strategy of hotel social media management boost your brand’s exposure engage your target audience and gives you more bookings.",
-    Icon: <SocialMediaMarketing />,
+    // Icon: <SocialMediaMarketing />,
+    Icon: "/icon/StrategicSocial MediaMarketing.gif",
   },
   {
     title: "Optimized for Search Engines",
     subtitle:
       "Maximise your hotel’s google visibility and increase organic traffic through search engine optimisation and increase more queries.",
-    Icon: <Optimized />,
-  },
-  {
-    title: "Effective Hotel Performance Marketing",
-    subtitle:
-      "Get the best results with our impactful campaigns that bring in targeted visitors and maximize your return on investment.",
-    Icon: <HotelPerformance />,
-  },
-  {
-    title: "Customized Hospitality Marketing Solutions",
-    subtitle:
-      "A compelling reason for you to choose us is our commitment to providing tailored and customized marketing solutions.",
-    Icon: <MarketSolution />,
+    // Icon: <Optimized />,
+    Icon: "/icon/optseo.gif",
   },
   {
     title: "Exceptional Hospitality Website Development",
     subtitle:
       "Our website development expertise provides an outstanding user experience from design to functionality.",
-    Icon: <WebSiteDevelopmentIcon width={60} height={60} />,
+    // Icon: <WebSiteDevelopmentIcon width={60} height={60} />,
+    Icon: "/icon/ExceptionalHospitality.gif",
+  },
+
+  {
+    title: "Customized Hospitality Marketing Solutions",
+    subtitle:
+      "A compelling reason for you to choose us is our commitment to providing tailored and customized marketing solutions.",
+    // Icon: <MarketSolution />,
+    Icon: "/icon/CustomizedHospitality.gif",
+  },
+  {
+    title: "Effective Hotel Performance Marketing",
+    subtitle:
+      "Get the best results with our impactful campaigns that bring in targeted visitors and maximize your return on investment.",
+    // Icon: <HotelPerformance />,
+    Icon: "/icon/graph.gif",
   },
 ];
 
