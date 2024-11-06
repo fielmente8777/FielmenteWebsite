@@ -8,6 +8,7 @@ import OurClients from "./ourClients";
 import OurOTAPartners from "./OurOTAPartners";
 import WhyUs from "./WhyUs";
 import ContactUsCard from "./ContactUsCard";
+import OurClientNew from "./OurClientNew";
 
 const PageComponents = () => {
   return (
@@ -20,7 +21,7 @@ const PageComponents = () => {
       </div>
 
       {/* MileStones ****** */}
-      <div className="max-w-[900px] mx-auto lg:py-20 py-10">
+      <div className="bg-white max-width lg:py-20 py-10">
         <MileStones />
       </div>
 
@@ -46,9 +47,9 @@ const PageComponents = () => {
       </Section>
 
       {/* Our Clients**** */}
-      <div className="bg-blue-dark text-white lg:py-20 py-10">
+      <div className="bg-white lg:py-20 py-10">
         <div className="lg:max-w-[1280px] max-w-full mx-auto px-[1.5rem]">
-          <OurClients SHeading={true} />
+          <OurClientNew />
         </div>
       </div>
       <OurOTAPartners />

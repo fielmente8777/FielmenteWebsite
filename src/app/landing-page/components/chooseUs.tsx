@@ -79,7 +79,7 @@ function ChooseUs() {
 
 export const ChooseUsCard = ({ title, subtitle, Icon }: ChooseCardProsData) => {
   return (
-    <div className="flex flex-col justify-start gap-3 ">
+    <div className="flex flex-col justify-start gap-3 border border-blue-dark rounded-sm shadow-2xl p-6">
       <div className="flex items-center justify-center lg:justify-start">
         {Icon}
       </div>

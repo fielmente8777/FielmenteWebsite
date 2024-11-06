@@ -8,5 +8,6 @@ import WhyUs from "./WhyUs";
 import OurOTAPartners from "./OurOTAPartners";
 import PopupForm from "./PopupForm";
 import ContactUsCard from './ContactUsCard';
+import OurClientNew from './OurClientNew';
 
-export { MarketingAgency, MileStones, OurServices, ChooseUs, HotelPerformacne, OurClients, WhyUs, OurOTAPartners, PopupForm, ContactUsCard }
+export { MarketingAgency, OurClientNew, MileStones, OurServices, ChooseUs, HotelPerformacne, OurClients, WhyUs, OurOTAPartners, PopupForm, ContactUsCard }

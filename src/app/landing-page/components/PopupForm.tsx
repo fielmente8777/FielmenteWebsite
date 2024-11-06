@@ -36,7 +36,7 @@ const PopupForm = ({
     intervalIdRef.current = setInterval(() => {
       setShowModal(true);
       document.body.style.overflow = "hidden";
-    }, 30000);
+    }, 10000);
 
     // Cleanup the interval when the component unmounts or modal is closed
     return () => {
@@ -108,7 +108,8 @@ const PopupForm = ({
       );
       if (data.success) {
         setLoader(false);
-        router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
+        router.push(`/thank-you/`);
+        // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
         setPopupMsg("Something went wrong!");
         setOpenPopup(true);

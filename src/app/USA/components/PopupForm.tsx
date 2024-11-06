@@ -109,7 +109,8 @@ const PopupForm = ({
       );
       if (data.success) {
         setLoader(false);
-        router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
+        router.push(`/thank-you/`);
+        // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
         setPopupMsg("Something went wrong!");
         setOpenPopup(true);

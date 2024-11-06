@@ -4,15 +4,23 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const ThankUPopUp = () => {
-  const [name, setName] = useState("Guest"); // Default value
+  // const [name, setName] = useState("Guest"); // Default value
   const router = useRouter();
 
+  // useEffect(() => {
+  //   const params = new URLSearchParams(window.location.search);
+  //   const nameParam = params.get("name");
+  //   if (nameParam) {
+  //     setName(nameParam);
+  //   }
+  // }, []);
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const nameParam = params.get("name");
-    if (nameParam) {
-      setName(nameParam);
-    }
+    // Google Ads Conversion Tracking
+    const script = document.createElement('script');
+    script.innerHTML = `
+       gtag('event', 'conversion', {'send_to': 'AW-10860806708/6GvFCPKGytgZELSE67oo'});
+    `;
+    document.head.appendChild(script);
   }, []);
 
   const link = [
@@ -49,7 +57,7 @@ const ThankUPopUp = () => {
               <h1 className="text-[28px]/[38px]  lg:text-4xl font-medium text-[#4486C5] mb-4">
                 Leave it with us
                 <br />
-                {name}
+                {/* {name} */}
               </h1>
               <p className="text-[18px] lg:text-[24px] text-white/80 mb-8 leading-12 text-start">
                 We&apos;ve got your request and we&apos;ll get

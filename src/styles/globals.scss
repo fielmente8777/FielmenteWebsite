@@ -254,6 +254,23 @@ body {
     border-radius: 0.5rem;
   }
 }
+.client-pagination {
+  .swiper-pagination-bullet {
+    background-color: #ffffff;
+    inline-size: 0.7rem;
+    block-size: 0.7rem;
+    opacity: 1;
+    border-radius: 50%;
+    border: 1px solid #f26633;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #f26633;
+    inline-size: 0.7rem;
+    block-size: 0.7rem;
+    border-radius: 0.5rem;
+  }
+}
 
 .page_date {
   h1 {
