@@ -10,6 +10,7 @@ import WhyUs from "./WhyUs";
 import ContactUsCard from "./ContactUsCard";
 import OurClientNew from "./OurClientNew";
 import MIleStonesNew from "./MIleStonesNew";
+import ContactUsCardNew from "./ContactUsCardNew";
 
 const PageComponents = () => {
   return (
@@ -63,7 +64,7 @@ const PageComponents = () => {
       </div>
 
       {/* Looking for Best Hotel***** */}
-      <ContactUsCard />
+      <ContactUsCardNew />
       <ConsultationForm />
     </main>
   );
