@@ -62,7 +62,6 @@ export default function RootLayout({
           content="vKQyk75wG0kfB4x60GCRAmVeErtPS9rgcM9-YNRAvLw"
         />
 
-
         {/* <!-- Clarity tracking code for Fielmente new 06 09 2024--> */}
         <Script
           id="clarity-script"
@@ -76,7 +75,6 @@ export default function RootLayout({
           }}
         />
 
-
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -89,6 +87,14 @@ export default function RootLayout({
   gtag('config', 'G-PVZG7NGGMG');`,
           }}
         ></Script>
+
+        <Script
+          id="google-conversion-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `gtag('event', 'conversion', {'send_to': 'AW-10860806708/6GvFCPKGytgZELSE67oo'});`,
+          }}
+        />
 
         <Script
           id="google-tag-manager"
@@ -112,11 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </head>
       <body className={inter.className} cz-shortcut-listen="true">
-        <noscript>
-
-
-
-        </noscript>
+        <noscript></noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Header /> */}
         <NavBar />
@@ -125,9 +127,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Call />
         <Whatsapp />
         <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM">
-          </iframe>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM"></iframe>
         </noscript>
         <script
           src="//code.tidio.co/vqp6nexgcvuyk9zdnqsekfjwt1mlfw1x.js"

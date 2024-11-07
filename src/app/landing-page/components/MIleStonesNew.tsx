@@ -37,6 +37,13 @@ const MIleStonesNew = () => {
   ];
   return (
     <Section className="bg-white lg:py-20 py-10">
+      <div className="mb-16">
+        <h2 className="text-center md:text-4xl/[2.8rem] text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
+          Transforming hotels & restaurants into thriving destinations with our
+          expert{" "}
+          <b>Hospitality Marketing Solutions & Hotel Marketing Agency.</b>
+        </h2>
+      </div>
       <Container>
         <div className="border border-[#F2B203] w-full px-10 py-4 lg:grid hidden grid-cols-4">
           {data.map((item, index) => (
@@ -53,10 +60,10 @@ const MIleStonesNew = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-4 justify-center">
-                <h3 className="text-blue-dark text-4xl font-semibold">
+                <h3 className="text-blue-dark text-2xl font-semibold">
                   {item.number}
                 </h3>
-                <p className="text-blue-dark text-lg">{item.title}</p>
+                <p className="text-blue-dark text-base">{item.title}</p>
               </div>
             </div>
           ))}

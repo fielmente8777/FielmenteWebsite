@@ -18,10 +18,47 @@ import {
   FillTwitter,
   Google,
 } from "@/utils/icons";
+import Section from "../Section";
 
 const LandingFooter = () => {
   const currentYear = new Date().getFullYear();
   const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    setErrorMessage(
+      !emailRegex.test(value) ? "Please enter a valid email address" : ""
+    );
+  };
+
+  const handleNewsletter = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const data = {
+      // Domain: "abhijeet",
+      Domain: "fielmente",
+      email: email,
+    };
+    try {
+      const response = await fetch(host, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+    setName("");
+    setEmail("");
+  };
   const aboutLinks = [
     "Home",
     "About Fielmente",
@@ -46,12 +83,15 @@ const LandingFooter = () => {
     },
     {
       title: "contact",
+      link: "#contactForm",
     },
     {
       title: "free consultation",
+      link: "#contactForm",
     },
     {
       title: "schedule a demo",
+      link: "#contactForm",
     },
   ];
 
@@ -74,151 +114,181 @@ const LandingFooter = () => {
     },
   ];
   return (
-    <footer className="lg:pt-20 pt-10 lg:pb-16 pb-12 bg-blue-dark bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]">
-      <Container>
-        <div className="flex flex-col items-start gap-10">
-          <div className="h-[5.625rem] relative aspect-[4/1.95]">
-            <Image src={Logo} alt="logo" fill className="object-contain" />
-          </div>
-          <div className="grid w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
-            {/* About */}
-            <div>
-              <h2 className="text-3xl text-orange-primary font-bold mb-4">
-                About
-              </h2>
-              <ul className="flex flex-col gap-4">
-                {aboutLinks.map((item, index) => (
-                  <li
-                    className="text-base text-[#787878] capitalize"
-                    key={index}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+    <footer className="pb-12 bg-blue-dark max-w-[1540px] mx-auto mt-10 lg:mt-20">
+      <section
+        className="lg:py-11 bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]"
+        style={{ backgroundSize: "100% 95%" }}
+      >
+        <Container>
+          <div className="flex flex-col items-start gap-8">
+            <div className="h-[5.625rem] relative aspect-[4/1.95]">
+              <Image src={Logo} alt="logo" fill className="object-contain" />
             </div>
+            <div className="grid w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+              {/* About */}
+              <div>
+                <h2 className="text-3xl text-orange-primary font-bold mb-4">
+                  About
+                </h2>
+                <ul className="flex flex-col gap-4">
+                  {aboutLinks.map((item, index) => (
+                    <li
+                      className="text-base text-[#787878] capitalize"
+                      key={index}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            {/* Services */}
-            <div>
-              <h2 className="text-3xl text-orange-primary font-bold mb-4">
-                Services
-              </h2>
-              <ul className="flex flex-col gap-4">
-                {services.map((item, index) => (
-                  <li
-                    className="text-base text-[#787878] capitalize"
-                    key={index}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              {/* Services */}
+              <div>
+                <h2 className="text-3xl text-orange-primary font-bold mb-4">
+                  Services
+                </h2>
+                <ul className="flex flex-col gap-4">
+                  {services.map((item, index) => (
+                    <li
+                      className="text-base text-[#787878] capitalize"
+                      key={index}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Contact */}
+              <div>
+                <h2 className="text-xl text-orange-primary font-bold mb-4">
+                  Get in Touch
+                </h2>
+                <ul className="flex flex-col gap-4">
+                  {contactLinks.map((item, index) => (
+                    <li
+                      className="text-base text-[#787878] capitalize"
+                      key={index}
+                    >
+                      {item.link ? (
+                        <Link href={item.link}>{item.title}</Link>
+                      ) : (
+                        <p>{item.title}</p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Newsletter */}
+              <div>
+                <h2 className="text-3xl text-orange-primary font-bold mb-4">
+                  Newsletter
+                </h2>
+                <div className="flex flex-col gap-4">
+                  <form className="flex flex-col gap-4 text-[#3B3B3B]">
+                    <input
+                      className="w-full bg-[#F1F1F1] rounded-sm p-3"
+                      type="text"
+                      placeholder="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <input
+                      className="w-full bg-[#F1F1F1] rounded-sm p-3"
+                      type="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={handleEmailChange}
+                    />
+                    <button
+                      className="bg-orange-primary text-white rounded-sm hover:bg-white hover:text-orange-primary border border-solid border-orange-primary py-3 w-full flex items-center justify-center font-medium"
+                      onClick={handleNewsletter}
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                  <p className="text-sm text-[#787878]">
+                    By submitting this form you are confirming that you have
+                    read and agree to Fielmente 
+                    <span className="text-[#F2B203]">Terms</span> & 
+                    <span className="text-[#F2B203]">Privacy Policy</span>.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            {/* Contact */}
-            <div>
-              <h2 className="text-xl text-orange-primary font-bold mb-4">
-                Get in Touch
-              </h2>
-              <ul className="flex flex-col gap-4">
-                {contactLinks.map((item, index) => (
-                  <li
-                    className="text-base text-[#787878] capitalize"
-                    key={index}
-                  >
-                    {item.link ? (
-                      <Link href={item.link}>{item.title}</Link>
-                    ) : (
-                      <p>{item.title}</p>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Newsletter */}
-            <div>
-              <h2 className="text-3xl text-orange-primary font-bold mb-4">
-                Newsletter
-              </h2>
+            <div className="flex max-md:flex-col gap-6 lg:items-center justify-between w-full lg:mt-4">
+              <div className="flex items-center gap-5">
+                <div className="">
+                  <TrustPiolet />
+                </div>
+                <div className="">
+                  <Google />
+                </div>
+              </div>
               <div className="flex flex-col gap-4">
-                <form className="flex flex-col gap-4 text-[#3B3B3B]">
-                  <input
-                    className="w-full bg-[#F1F1F1] rounded-sm p-3"
-                    type="text"
-                    placeholder="Name"
-                  />
-                  <input
-                    className="w-full bg-[#F1F1F1] rounded-sm p-3"
-                    type="email"
-                    placeholder="Email"
-                  />
-                  <button
-                    className="bg-orange-primary text-white rounded-sm py-3 w-full flex items-center justify-center font-medium"
-                    onClick={() => setShowModal(true)}
-                  >
-                    Subscribe
-                  </button>
-                </form>
-                <p className="text-sm text-[#787878]">
-                  By submitting this form you are confirming that you have read
-                  and agree to Fielmente 
-                  <span className="text-[#F2B203]">Terms</span> & 
-                  <span className="text-[#F2B203]">Privacy Policy</span>.
-                </p>
+                <h3 className="text-xl font-semibold text-orange-primary">
+                  Follow Us:
+                </h3>
+                <ul className="flex  items-center gap-4">
+                  {socialLinks.map((item, index) => (
+                    <li key={index} className="max-md:p-2 lg:pe-2 lg:py-2">
+                      {/* <span href={item.link} target="_blank" rel="noreferrer"> */}
+                      {item.icon} <span className="sr-only">icon</span>
+                      {/* </span> */}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
-          <div className="flex max-md:flex-col gap-6 lg:items-center justify-between w-full lg:mt-10">
-            <div className="flex items-center gap-5">
-              <div className="">
-                <TrustPiolet />
-              </div>
-              <div className="">
-                <Google />
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h3 className="text-xl font-semibold text-orange-primary">
-                Follow Us:
-              </h3>
-              <ul className="flex  items-center gap-4">
-                {socialLinks.map((item, index) => (
-                  <li key={index} className="p-2">
-                    {/* <span href={item.link} target="_blank" rel="noreferrer"> */}
-                    {item.icon} <span className="sr-only">icon</span>
-                    {/* </span> */}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="h-[1px] w-full bg-[#3B3B3B]"></div>
-          <div className="flex max-md:flex-col items-center gap-3 justify-between w-full">
-            <p className="text-sm text-[#787878] max-md:text-center">
-              © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
-              Reserved
-            </p>
-            <div className="flex items-center gap-4">
-              <Link
-                href={"/"}
-                className="text-sm text-[#787878] hover:text-white"
-              >
-                Terms
-              </Link>
-              <Link
-                href={"/"}
-                className="text-sm text-[#787878] hover:text-white"
-              >
-                Privacy Policy
-              </Link>
-            </div>
+        </Container>
+      </section>
+
+      <Container>
+        <div className="h-[1px] w-full bg-[#3B3B3B] mb-10"></div>
+        <div className="flex max-md:flex-col items-center gap-3 justify-between w-full">
+          <p className="text-sm text-[#787878] max-md:text-center">
+            © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
+            Reserved
+          </p>
+          <div className="flex items-center gap-4">
+            <span
+              // href={"/"}
+              className="text-sm text-[#787878] "
+            >
+              Terms
+            </span>
+            <span
+              // href={"/"}
+              className="text-sm text-[#787878] "
+            >
+              Privacy Policy
+            </span>
           </div>
         </div>
       </Container>
+
       <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      <Icon />
     </footer>
   );
 };
 
 export default LandingFooter;
+
+export const Icon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="8"
+    height="6"
+    viewBox="0 0 8 6"
+    fill="none"
+  >
+    <path
+      d="M0.473633 2.93675C0.473633 4.33318 2.07932 5.3528 4.10293 5.15331C6.12655 4.95382 7.79823 3.77904 7.84222 2.3826C7.88621 0.986169 6.25852 -0.0556163 4.2349 0.16604C2.21129 0.387697 0.517624 1.51814 0.473633 2.93675Z"
+      fill="black"
+      fillOpacity="0.8"
+    />
+  </svg>
+);

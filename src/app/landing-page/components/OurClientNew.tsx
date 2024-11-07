@@ -63,7 +63,7 @@ const OurClientNew = () => {
                 },
               },
             }}
-            className="border border-[#F2B203] !p-4 shadow-inner"
+            className="border border-[#F2B203] !p-6 shadow-inner"
           >
             {ClientImages.map((item, index) => (
               <SwiperSlide key={index} className="p-4">

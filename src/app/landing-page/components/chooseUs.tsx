@@ -48,7 +48,7 @@ function ChooseUs() {
         </p>
       </div>
       <div className="lg:block hidden">
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-16 mt-16">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 mt-16">
           {ChooseUsData.map((item, index) => (
             <ChooseUsCard {...item} key={index} />
           ))}
@@ -98,7 +98,7 @@ export const ChooseUsCard = ({ title, subtitle, Icon }: ChooseCardProsData) => {
       <h2 className="text-blue-dark text-[1.8rem]/[2.5rem] max-md:text-xl capitalize lg:text-start text-center">
         {title}
       </h2>
-      <p className="text-lg text-[#797979] lg:text-justify text-center">
+      <p className="text-lg text-[#797979] lg:text-start text-center">
         {subtitle}
       </p>
     </div>
