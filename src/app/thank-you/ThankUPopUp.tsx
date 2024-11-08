@@ -26,15 +26,15 @@ const ThankUPopUp = () => {
   const link = [
     {
       label: "What we do",
-      link: "#",
+      link: "/hospitality-marketing-services",
     },
     {
       label: "Who we are",
-      link: "#",
+      link: "/about-fielmente-best-hospitality-marketing-agency",
     },
     {
       label: "Insights",
-      link: "#",
+      link: "/#testimonials",
     },
   ];
 

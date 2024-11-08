@@ -15,7 +15,7 @@ const ConsultationForm = () => {
   return (
     <Section className="bg-blue-dark md:py-10">
       <Container>
-        <div className="lg:grid grid-cols-3 gap-6">
+        <div className="lg:grid grid-cols-3 gap-6" id="testimonials">
           <div className="col-span-2">
             <div className="text-white text-3xl">
               <h2>

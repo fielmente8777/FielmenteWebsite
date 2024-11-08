@@ -19,46 +19,106 @@ import {
   Google,
 } from "@/utils/icons";
 import Section from "../Section";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const LandingFooter = () => {
+  const router = useRouter();
   const currentYear = new Date().getFullYear();
   const [showModal, setShowModal] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPhone, setUserPhone] = useState("");
+  const [openPopup, setOpenPopup] = useState(false);
+  const [popupMsg, setPopupMsg] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [formRes, setFormRes] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  // const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
 
-  const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    if (value.length <= 10) {
+      setUserPhone(value);
+      setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
+    }
+  };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setEmail(value);
-    setErrorMessage(
+    setUserEmail(value);
+    setEmailErrorMessage(
       !emailRegex.test(value) ? "Please enter a valid email address" : ""
     );
   };
 
-  const handleNewsletter = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = {
-      // Domain: "abhijeet",
-      Domain: "fielmente",
-      email: email,
-    };
+    setFormRes(true);
+
     try {
-      const response = await fetch(host, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      setLoader(true);
+      const { data } = await axios.post(
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/mfxRiQ3c#generic-webhook`,
+        {
+          email: userEmail,
+          name: userName,
+          phone: `${userPhone}`,
         },
-        body: JSON.stringify(data),
-      });
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (data.success) {
+        setLoader(false);
+        // // setPopupMsg("You information has been Received");
+        router.push(`/thank-you/`);
+        setOpenPopup(true);
+        // console.log(data.Status);
+        setFormRes(true);
+        setUserName("");
+        setUserEmail("");
+        setUserPhone("");
+      } else {
+        setLoader(false);
+        setPopupMsg("Something went wrong!");
+        setOpenPopup(false);
+        setFormRes(false);
+      }
     } catch (error) {
-      console.log(error);
+      setLoader(false);
+      console.error("Error submitting form:", error);
+      setFormRes(false);
+      alert("Something went wrong!");
     }
-    setName("");
-    setEmail("");
   };
+  // const handleNewsletter = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const data = {
+  //     // Domain: "abhijeet",
+  //     Domain: "fielmente",
+  //     email: email,
+  //   };
+  //   try {
+  //     const response = await fetch(host, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   setName("");
+  //   setEmail("");
+  // };
   const aboutLinks = [
     "Home",
     "About Fielmente",
@@ -116,7 +176,7 @@ const LandingFooter = () => {
   return (
     <footer className="pb-12 bg-blue-dark max-w-[1540px] mx-auto mt-10 lg:mt-20">
       <section
-        className="lg:py-11 bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]"
+        className="lg:py-11 max-md:pt-10 bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]"
         style={{ backgroundSize: "100% 95%" }}
       >
         <Container>
@@ -186,24 +246,31 @@ const LandingFooter = () => {
                   Newsletter
                 </h2>
                 <div className="flex flex-col gap-4">
-                  <form className="flex flex-col gap-4 text-[#3B3B3B]">
+                  <form className="flex flex-col gap-4 text-[#3B3B3B]" onSubmit={handleSubmit}>
                     <input
                       className="w-full bg-[#F1F1F1] rounded-sm p-3"
                       type="text"
                       placeholder="Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      value={userName}
+                      onChange={(e) => setUserName(e.target.value)}
                     />
                     <input
                       className="w-full bg-[#F1F1F1] rounded-sm p-3"
                       type="email"
                       placeholder="Email"
-                      value={email}
+                      value={userEmail}
                       onChange={handleEmailChange}
+                    />
+                    <input
+                      className="w-full bg-[#F1F1F1] rounded-sm p-3 no-spinners"
+                      type="number"
+                      placeholder="Phone Number"
+                      value={userPhone}
+                      onChange={handlePhoneChange}
                     />
                     <button
                       className="bg-orange-primary text-white rounded-sm hover:bg-white hover:text-orange-primary border border-solid border-orange-primary py-3 w-full flex items-center justify-center font-medium"
-                      onClick={handleNewsletter}
+                      type="submit"
                     >
                       Subscribe
                     </button>
@@ -247,12 +314,12 @@ const LandingFooter = () => {
 
       <Container>
         <div className="h-[1px] w-full bg-[#3B3B3B] mb-10"></div>
-        <div className="flex max-md:flex-col items-center gap-3 justify-between w-full">
+        <div className="flex items-center gap-3 justify-center w-full">
           <p className="text-sm text-[#787878] max-md:text-center">
             © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
             Reserved
           </p>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <span
               // href={"/"}
               className="text-sm text-[#787878] "
@@ -265,7 +332,7 @@ const LandingFooter = () => {
             >
               Privacy Policy
             </span>
-          </div>
+          </div> */}
         </div>
       </Container>
 

@@ -11,12 +11,14 @@ import "swiper/css/navigation";
 import { Autoplay } from "swiper/modules";
 import { Container, Section } from "@/components";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 interface Props {
   icon: string;
   number: string;
   title: string;
 }
 const MIleStonesNew = () => {
+  const pathName = usePathname();
   const data: Props[] = [
     {
       icon: "/icon/hotelassociated.gif",
@@ -39,8 +41,15 @@ const MIleStonesNew = () => {
     <Section className="bg-white lg:py-20 py-10">
       <div className="mb-16">
         <h2 className="text-center md:text-4xl/[2.8rem] text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
-          Transforming hotels & restaurants into thriving destinations with our
-          expert{" "}
+          Transforming{" "}
+          {pathName === "/resort/"
+            ? "Resort"
+            : pathName === "/hospitality/"
+            ? "Hospitality"
+            : pathName === "/hotel/"
+            ? "Hotel"
+            : "hotel, resort & restaurants"}{" "}
+          into thriving destinations with our expert{" "}
           <b>Hospitality Marketing Solutions & Hotel Marketing Agency.</b>
         </h2>
       </div>

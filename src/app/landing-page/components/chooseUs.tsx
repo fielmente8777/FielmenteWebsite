@@ -41,7 +41,7 @@ function ChooseUs() {
         <h2 className="text-center md:text-4xl text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
           {SectionHeadingDetails.title}
         </h2>
-        <p className="text-lg max-md:text-base text-blue-dark text-center lg:w-[70%] mx-auto">
+        <p className="text-2xl max-md:text-xl text-blue-dark text-center lg:w-[70%] mx-auto">
           Force of{" "}
           <b className="text-orange-primary">20+ Hospitality Marketing</b>{" "}
           Experts
@@ -91,9 +91,9 @@ function ChooseUs() {
 
 export const ChooseUsCard = ({ title, subtitle, Icon }: ChooseCardProsData) => {
   return (
-    <div className="flex flex-col justify-start gap-3 border border-blue-dark rounded-sm shadow-2xl p-6">
-      <div className="flex items-center justify-center lg:justify-start">
-        <Image src={Icon} alt={title} width={96} height={96} />
+    <div className="flex flex-col justify-start bg-white group lg:hover:-translate-y-1 lg:hover:scale-x-105 transition duration-300 ease-in-out gap-3 border border-blue-dark rounded-sm shadow-2xl p-6">
+      <div className="flex items-center justify-center  ease-in-out lg:justify-start">
+        <Image src={Icon} alt={title} width={96} height={96} className="lg:group-hover:-translate-y-2 lg:group-hover:scale-110 transition duration-300" />
       </div>
       <h2 className="text-blue-dark text-[1.8rem]/[2.5rem] max-md:text-xl capitalize lg:text-start text-center">
         {title}

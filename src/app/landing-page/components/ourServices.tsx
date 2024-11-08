@@ -378,15 +378,15 @@ const ServicesDesktop = [
     Icon: <SocailMediaManageMent width={60} height={60} />,
   },
   {
-    title: "Google My Business",
+    title: "Local SEO",
     Icon: <GoogleBusiness width={60} height={60} />,
   },
   {
-    title: "Customized Marketing",
+    title: "Marketing Automation",
     Icon: <CustomizedMarket width={60} height={60} />,
   },
   {
-    title: "OTA Management",
+    title: "OTA Listing",
     Icon: <DriveDirectBookin width={58} height={56} />,
   },
 ];

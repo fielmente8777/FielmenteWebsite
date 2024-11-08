@@ -31,8 +31,9 @@ const OurClientNew = () => {
           <Swiper
             modules={[Autoplay, Grid, Pagination]}
             slidesPerView={1}
+            spaceBetween={20}
             grid={{
-              rows: 2,
+              rows: 1,
             }}
             pagination={{
               type: "bullets",
@@ -63,7 +64,7 @@ const OurClientNew = () => {
                 },
               },
             }}
-            className="border border-[#F2B203] !p-6 shadow-inner"
+            className="border border-[#F2B203] lg:!p-6 !p-5 shadow-inner"
           >
             {ClientImages.map((item, index) => (
               <SwiperSlide key={index} className="p-4">
@@ -121,7 +122,7 @@ const OurClientNew = () => {
             ))}
           </Swiper>
 
-          <div className="client-pagination mt-8 flex justify-center items-center gap-1"></div>
+          <div className="client-pagination mt-8 lg:flex hidden justify-center items-center gap-1"></div>
         </div>
       </div>
     </div>
