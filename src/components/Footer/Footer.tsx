@@ -8,7 +8,7 @@ const Footer = () => {
 
   let FooterComponent = null;
 
-  if (pathName === "/landing-page/" || pathName === "/fielmente-lp/") {
+  if (pathName === "/landing-page/" || pathName === "/resort/" || pathName === "/hospitality/") {
     FooterComponent = LandingFooter;
   } else if (pathName === "/thank-you/") {
     FooterComponent = null;

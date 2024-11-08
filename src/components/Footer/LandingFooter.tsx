@@ -337,25 +337,10 @@ const LandingFooter = () => {
       </Container>
 
       <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      <Icon />
+      
     </footer>
   );
 };
 
 export default LandingFooter;
 
-export const Icon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="8"
-    height="6"
-    viewBox="0 0 8 6"
-    fill="none"
-  >
-    <path
-      d="M0.473633 2.93675C0.473633 4.33318 2.07932 5.3528 4.10293 5.15331C6.12655 4.95382 7.79823 3.77904 7.84222 2.3826C7.88621 0.986169 6.25852 -0.0556163 4.2349 0.16604C2.21129 0.387697 0.517624 1.51814 0.473633 2.93675Z"
-      fill="black"
-      fillOpacity="0.8"
-    />
-  </svg>
-);

@@ -40,17 +40,27 @@ const MIleStonesNew = () => {
   return (
     <Section className="bg-white lg:py-20 py-10">
       <div className="mb-16">
-        <h2 className="text-center md:text-4xl/[2.8rem] text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
+        <h2 className="text-center md:text-4xl/[2.8rem] text-blue-dark text-[1.2rem]/[2rem] last-word md:w-[85%] mx-auto">
           Transforming{" "}
           {pathName === "/resort/"
             ? "Resort"
             : pathName === "/hospitality/"
             ? "Hospitality"
-            : pathName === "/hotel/"
+            : pathName === "/landing-page/"
             ? "Hotel"
             : "hotel, resort & restaurants"}{" "}
-          into thriving destinations with our expert{" "}
-          <b>Hospitality Marketing Solutions & Hotel Marketing Agency.</b>
+          into thriving destinations with our expert {" "}
+          <b>
+            Hospitality Marketing Solutions &{" "}
+            {pathName === "/resort/"
+              ? "Resort"
+              : pathName === "/hospitality/"
+              ? "Hospitality"
+              : pathName === "/landing-page/"
+              ? "Hotel"
+              : "hotel, resort & restaurants"}{" "}
+            Marketing Agency.
+          </b>
         </h2>
       </div>
       <Container>

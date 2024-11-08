@@ -28,7 +28,7 @@ function SectionHeading({
       )}
       {description && (
         <p
-          className={`text-lg max-md:text-base text-center lg:w-[70%] mx-auto ${
+          className={`text-2xl max-md:text-base text-center lg:w-[70%] mx-auto ${
             Color && "text-[#797979]"
           }`}
         >
