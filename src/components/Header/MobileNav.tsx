@@ -4,6 +4,7 @@ import { Nav_Links } from "./Nav_Links";
 import Link from "next/link";
 
 import { TiArrowSortedDown } from "react-icons/ti";
+import { OutlineDrpopdown } from "@/utils/icons";
 
 function MobileNav({ isOpen, setIsOpen }: any) {
   return (
@@ -36,8 +37,13 @@ const NavLinksMobile = ({ linkName, src, subLinks, setIsOpen }: any) => {
           {linkName}
         </Link>
         {subLinks && (
-          <span className="cursor-pointer" onClick={() => setOpen(!open)}>
-            <TiArrowSortedDown size={16} />
+          <span
+            className={`cursor-pointer transition duration-500 ${
+              open ? "rotate-180" : "rotate-0"
+            } `}
+            onClick={() => setOpen(!open)}
+          >
+            <OutlineDrpopdown />
           </span>
         )}
       </div>
@@ -72,8 +78,13 @@ const NestedSubMenu = ({ linkName, src, subLinks, setIsOpen }: any) => {
           {linkName}{" "}
         </Link>
         {subLinks && (
-          <span className="cursor-pointer" onClick={() => setOpen(!open)}>
-            <TiArrowSortedDown />
+          <span
+            className={`cursor-pointer transition duration-500 ${
+              open ? "rotate-180" : "rotate-0"
+            } `}
+            onClick={() => setOpen(!open)}
+          >
+            <OutlineDrpopdown />
           </span>
         )}
       </div>

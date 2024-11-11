@@ -73,12 +73,12 @@ export const Nav_Links = [
       },
     ],
   },
-  {
-    linkName: "blogs",
-    src: "/blogs",
-  },
-  {
-    linkName: "contact us",
-    src: "/contact",
-  },
+  // {
+  //   linkName: "blogs",
+  //   src: "/blogs",
+  // },
+  // {
+  //   linkName: "contact us",
+  //   src: "/contact",
+  // },
 ];
