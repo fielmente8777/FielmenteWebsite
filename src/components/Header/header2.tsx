@@ -12,6 +12,7 @@ import MobileNav from "./MobileNav";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import { OutlineDrpopdown } from "@/utils/icons";
 
 const Header2 = () => {
   const pathname = usePathname();
@@ -50,7 +51,11 @@ const Header2 = () => {
                         className="flex items-center gap-2"
                       >
                         {Links.linkName}{" "}
-                        {Links.subLinks && <TiArrowSortedDown />}
+                        {Links.subLinks && (
+                          <button className="dropdown-1">
+                            <OutlineDrpopdown />
+                          </button>
+                        )}
                       </Link>
                       {Links.subLinks && (
                         <ul className="sub-links-container">
@@ -62,7 +67,11 @@ const Header2 = () => {
                                   className="flex items-center gap-2"
                                 >
                                   {SubLinks.linkName}{" "}
-                                  {SubLinks.subLinks && <TiArrowSortedDown />}
+                                  {SubLinks.subLinks && (
+                                    <button className="dropdown-2">
+                                      <OutlineDrpopdown />
+                                    </button>
+                                  )}
                                 </Link>
                                 {SubLinks.subLinks && (
                                   <ul className="child-sub-links-container z-20">
@@ -90,23 +99,23 @@ const Header2 = () => {
                     </div>
 
                     {/* For Right Border***** */}
-                    {Index >= 0 && Index < Nav_Links.length - 1 && (
+                    {/* {Index >= 0 && Index < Nav_Links.length - 1 && (
                       <div className="w-[0.14rem] h-6 bg-black"></div>
-                    )}
+                    )} */}
                   </div>
                 );
               })}
+              <div>
+                <Link
+                  href={"tel:+919501868775"}
+                  className="flex contact-container items-center gap-1 border border-blue-dark rounded-md bg-blue-dark px-4 py-2 text-white"
+                >
+                  <OutLineCall /> +919501868775
+                </Link>
+              </div>
             </div>
 
             {/* Contact Container***** */}
-            <div>
-              <Link
-                href={"tel:+919501868775"}
-                className="flex contact-container items-center gap-1 border border-blue-dark rounded-md bg-blue-dark px-4 py-2 text-white"
-              >
-                <OutLineCall /> +919501868775
-              </Link>
-            </div>
 
             {/* Hamburger Menu **** */}
             <div className="xl:hidden z-50">
@@ -132,7 +141,7 @@ const Header2 = () => {
           </nav>
 
           {/* Bottom underline******* */}
-          <hr className="bg-white h-[0.18rem] w-[95%] mx-auto" />
+          {/* <hr className="bg-white h-[0.18rem] w-[95%] mx-auto" /> */}
 
           {/* Mobile nav-bar***** */}
           <MobileNav setIsOpen={setIsNavOpen} isOpen={isNavOpen} />
