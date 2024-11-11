@@ -14,14 +14,14 @@ const ThankUPopUp = () => {
   //     setName(nameParam);
   //   }
   // }, []);
-  useEffect(() => {
-    // Google Ads Conversion Tracking
-    const script = document.createElement('script');
-    script.innerHTML = `
-       gtag('event', 'conversion', {'send_to': 'AW-10860806708/6GvFCPKGytgZELSE67oo'});
-    `;
-    document.head.appendChild(script);
-  }, []);
+  // useEffect(() => {
+  //   // Google Ads Conversion Tracking
+  //   const script = document.createElement('script');
+  //   script.innerHTML = `
+  //      gtag('event', 'conversion', {'send_to': 'AW-10860806708/6GvFCPKGytgZELSE67oo'});
+  //   `;
+  //   document.head.appendChild(script);
+  // }, []);
 
   const link = [
     {

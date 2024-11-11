@@ -88,13 +88,13 @@ export default function RootLayout({
           }}
         ></Script>
 
-        <Script
+        {/* <Script
           id="google-conversion-tracking"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `gtag('event', 'conversion', {'send_to': 'AW-10860806708/6GvFCPKGytgZELSE67oo'});`,
           }}
-        />
+        /> */}
 
         <Script
           id="google-tag-manager"
