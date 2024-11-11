@@ -4,12 +4,15 @@ import Image, { StaticImageData } from "next/image";
 import img1 from "../../../../public/images/img1.webp";
 import img2 from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
 import img3 from "../../../../public/images/img2.webp";
+import BannerImage from "../../../../public/images/growth_16045969 1.png"
+import Link from "next/link";
 
 const Banner: React.FC = () => {
   return (
-    <Section>
-      <Container>
-        <div className="lg:pb-20 ">
+    <div className="bg-white">
+      <Section>
+        <Container>
+          {/* <div className="lg:pb-20 ">
           <div className="bg-contain w-full h-full bg-center bg-no-repeat bg-[url('/images/uih7.webp')]">
             <h1 className="lg:text-[4.5rem]/[5.5rem] bg-imgclass text-2xl text-black font-bold lg:py-10 text-center ">
               Hospitality <br className="lg:block hidden" /> Marketing Agency
@@ -39,9 +42,25 @@ const Banner: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-      </Container>
-    </Section>
+        </div> */}
+
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 py-10">
+            <div className="flex flex-col justify-center gap-8">
+              <h1 className="text-2xl md:text-5xl font-semibold text-[#110D3C]">India’s Leading Hospitality Marketing <span className="text-[#F26633]">Agency</span></h1>
+              <p className="text-gray-primary text-2xl">India’s Leading Hotel, Resort & Restaurant Marketing Agency with over 10+ Years of Experience</p>
+              <div>
+                <Link href="#contactForm" className="border border-[#F26633] py-3 px-4 text-[#F26633] hover:bg-[#F26633] hover:text-white transition-all duration-200">Book Demo</Link>
+              </div>
+            </div>
+            <div className="flex justify-center items-center">
+              <Image src={BannerImage} alt="banner" />
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </div>
+
   );
 };
 

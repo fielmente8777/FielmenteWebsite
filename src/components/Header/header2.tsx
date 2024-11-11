@@ -105,12 +105,21 @@ const Header2 = () => {
                   </div>
                 );
               })}
-              <div>
+              {/* <div>
                 <Link
                   href={"tel:+919501868775"}
                   className="flex contact-container items-center gap-1 border border-blue-dark rounded-md bg-blue-dark px-4 py-2 text-white"
                 >
                   <OutLineCall /> +919501868775
+                </Link>
+              </div> */}
+              <div>
+                <Link
+                  href={"tel:+919501868775"}
+                  className="flex items-center gap-1 bg-[#F26633]  px-4 py-3 text-white"
+                >
+                  {/* <OutLineCall /> */}
+                  Free Consultation
                 </Link>
               </div>
             </div>
