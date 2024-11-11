@@ -62,10 +62,10 @@ function HotelPerformacne() {
 
   const SectionHeadingDetails = {
     title: `Let us handle your ${pathName === "/resort/"
-              ? "Resort"
-              : pathName === "/hospitality/"
-              ? "Hospitality"
-              : "Hotel"} Marketing and grow your`,
+      ? "Resort"
+      : pathName === "/hospitality/"
+        ? "Hospitality"
+        : "Hotel"} Marketing and grow your`,
     span: " occupancy rate by 5X",
     // title: "Let us handle your Hotel Performance Marketing and see your",
     // span: " property grow 5X",
@@ -77,7 +77,7 @@ function HotelPerformacne() {
       <SectionHeading {...SectionHeadingDetails} />
 
       <div className="lg:block hidden">
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-16 mt-16">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-16 mt-16 ">
           {HotelPerormaceData.map((item, index) => (
             <HotelPerfomaceCard {...item} index={index} key={index} />
           ))}

@@ -2,11 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/landingPage/logo2.png";
-import {
-  OutlineMailIcon,
-  OutlinePhoneIcon,
-  OutLineLocationIcon,
-} from "../Header/LandingHeader";
+// import {
+//   OutlineMailIcon,
+//   OutlinePhoneIcon,
+//   OutLineLocationIcon,
+// } from "../Header/LandingHeader";
 import { useState } from "react";
 import { PopupForm } from "@/app/landing-page/components";
 import Container from "../Container";
@@ -18,7 +18,7 @@ import {
   FillTwitter,
   Google,
 } from "@/utils/icons";
-import Section from "../Section";
+// import Section from "../Section";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -125,7 +125,7 @@ const Footer2 = () => {
       link: "/",
     },
     {
-      title: "about Fielmente",
+      title: "about us",
       link: "/about-fielmente-best-hospitality-marketing-agency",
     },
     {
@@ -186,23 +186,27 @@ const Footer2 = () => {
   ];
   const contactLinks = [
     {
-      title: "call: +91 95018 68777",
+      title: "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+      link: "https://maps.app.goo.gl/6skWVHbH8e92D1Gi7",
+    },
+    {
+      title: "Call: +91 95018 68777",
       link: "tel:+919501868775",
     },
     {
-      title: "Mail: Sachin@fielmente.com",
+      title: "Email: sachin@fielmente.com",
       link: "mailto:sachin@fielmente.com",
     },
     {
-      title: "contact",
+      title: "Contact",
       link: "/contact",
     },
     {
-      title: "free consultation",
+      title: "Free consultation",
       link: "#contactForm",
     },
     {
-      title: "schedule a demo",
+      title: "Schedule a demo",
       link: "#contactForm",
     },
   ];
@@ -210,7 +214,7 @@ const Footer2 = () => {
   const socialLinks = [
     {
       icon: <FillFacebook />,
-      link: "https://www.facebook.com/fielmentebusiness?mibextid=ViGcVu",
+      link: "https://www.facebook.com/Fielmentemarketing/",
     },
     {
       icon: <FillTwitter />,
@@ -218,11 +222,11 @@ const Footer2 = () => {
     },
     {
       icon: <FillLinkedin />,
-      link: "https://www.linkedin.com/company/fielmente",
+      link: "https://www.linkedin.com/company/fielmente/",
     },
     {
       icon: <FillInstagram />,
-      link: "https://www.instagram.com/fielmente_hospitality/?hl=en",
+      link: "https://www.instagram.com/fielmente_hospitality/",
     },
   ];
 
@@ -282,7 +286,7 @@ const Footer2 = () => {
                 <ul className="flex flex-col gap-4">
                   {contactLinks.map((item, index) => (
                     <li
-                      className="text-base text-[#787878] capitalize"
+                      className="text-base text-[#787878]"
                       key={index}
                     >
                       {item.link ? (
@@ -306,21 +310,21 @@ const Footer2 = () => {
                     onSubmit={handleSubmit}
                   >
                     <input
-                      className="w-full bg-[#F1F1F1] rounded-sm p-3"
+                      className="w-full bg-[#F1F1F1] rounded-sm p-3 outline-none"
                       type="text"
                       placeholder="Name"
                       value={userName}
                       onChange={(e) => setUserName(e.target.value)}
                     />
                     <input
-                      className="w-full bg-[#F1F1F1] rounded-sm p-3"
+                      className="w-full bg-[#F1F1F1] rounded-sm p-3 outline-none"
                       type="email"
-                      placeholder="Email"
+                      placeholder="Email Id"
                       value={userEmail}
                       onChange={handleEmailChange}
                     />
                     <input
-                      className="w-full bg-[#F1F1F1] rounded-sm p-3 no-spinners"
+                      className="w-full bg-[#F1F1F1] rounded-sm p-3 no-spinners outline-none"
                       type="number"
                       placeholder="Phone Number"
                       value={userPhone}
@@ -335,9 +339,9 @@ const Footer2 = () => {
                   </form>
                   <p className="text-sm text-[#787878]">
                     By submitting this form you are confirming that you have
-                    read and agree to Fielmente 
-                    <span className="text-[#F2B203]">Terms</span> & 
-                    <span className="text-[#F2B203]">Privacy Policy</span>.
+                    read and agree to Fielmente
+                    <span className="text-[#F2B203]">{" "}Terms</span> &
+                    <span className="text-[#F2B203]">{" "}Privacy Policy</span>.
                   </p>
                 </div>
               </div>
@@ -378,14 +382,15 @@ const Footer2 = () => {
             Reserved
           </p>
           <div className="flex items-center gap-4">
+
+            <Link href={"/privacy-policy"} className="text-sm text-[#787878] ">
+              Privacy Policy
+            </Link>
             <Link
               href={"/terms-and-conditions"}
               className="text-sm text-[#787878] "
             >
               Terms
-            </Link>
-            <Link href={"/privacy-policy"} className="text-sm text-[#787878] ">
-              Privacy Policy
             </Link>
           </div>
         </div>

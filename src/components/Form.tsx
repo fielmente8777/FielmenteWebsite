@@ -135,7 +135,7 @@ const Form = () => {
             id="phone"
             name="phone"
             max={"9999999999"}
-            placeholder="Your Phone*"
+            placeholder="Your Phone Number*"
             value={userPhone}
             onChange={handlePhoneChange}
             className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
@@ -148,7 +148,7 @@ const Form = () => {
       icon: <FillMail />,
       type: "email",
       name: "email",
-      placeholder: "Your Email*",
+      placeholder: "Your Email Id*",
       required: true,
       value: userEmail,
       onChange: handleEmailChange,
@@ -192,19 +192,19 @@ const Form = () => {
             {data.tag === "div"
               ? data.content
               : React.createElement(data.tag, {
-                  id: data.name,
-                  type: data.type,
-                  name: data.name,
-                  value: data.value,
-                  onChange: data.onChange,
-                  placeholder: data.placeholder,
-                  required: data.required,
-                  autoComplete: "off",
-                  spellCheck: "false",
-                  rows: data.tag === "textarea" ? 3 : undefined,
-                  className:
-                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
-                })}
+                id: data.name,
+                type: data.type,
+                name: data.name,
+                value: data.value,
+                onChange: data.onChange,
+                placeholder: data.placeholder,
+                required: data.required,
+                autoComplete: "off",
+                spellCheck: "false",
+                rows: data.tag === "textarea" ? 3 : undefined,
+                className:
+                  "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
+              })}
           </div>
           {data.name === "phone" && errorMessage && (
             <p className="text-sm text-red-500 mt-2">{errorMessage}</p>

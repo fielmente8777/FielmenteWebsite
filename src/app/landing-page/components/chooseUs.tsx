@@ -43,7 +43,7 @@ function ChooseUs() {
         </h2>
         <p className="text-2xl max-md:text-xl text-blue-dark text-center lg:w-[70%] mx-auto">
           Force of{" "}
-          <b className="text-orange-primary">20+ Hospitality Marketing</b>{" "}
+          <b className="text-orange-primary">50+ Hospitality Marketing</b>{" "}
           Experts
         </p>
       </div>

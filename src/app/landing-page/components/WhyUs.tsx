@@ -112,7 +112,7 @@ const WhyUs: React.FC = () => {
             <SwiperSlide key={index} className="py-5">
               <div className="flex items-center justify-center">
                 {/* {index > 0 && ( */}
-                  <div className="hidden lg:block  w-px bg-[#F26633] h-[270px] -ms-2 me-16" />
+                <div className="hidden lg:block  w-px bg-[#F26633] h-[270px] -ms-2 me-16" />
                 {/* )} */}
                 <FeatureCard {...feature} />
               </div>
@@ -120,7 +120,7 @@ const WhyUs: React.FC = () => {
           ))}
         </Swiper>
 
-        <div className="flex justify-center items-center gap-0 press lg:mt-11">
+        <div className="flex justify-center items-center gap-0 press">
           <button className="bullets-Portfolio"></button>
         </div>
       </div>

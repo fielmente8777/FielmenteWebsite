@@ -46,23 +46,13 @@ export default function Home() {
         <Container>
           <ChooseUs />
           <div className="mt-14">
+            <WhyUs />
+          </div>
+          <div className="mt-14">
             <HotelPerformacne />
           </div>
         </Container>
-        <div className="mt-14">
-          <Container>
-            <article className="max-w-[1100px] mx-auto">
-              {data.map((item, index) => (
-                <p
-                  className="lg:text-[1.3rem]/[2.2rem] text-lg  lg:text-justify text-center font-medium mb-6 text-black "
-                  key={index}
-                >
-                  {item}
-                </p>
-              ))}
-            </article>
-          </Container>
-        </div>
+
       </Section>
       <Section>
         <Container>
@@ -71,11 +61,11 @@ export default function Home() {
       </Section>
       <OurOTAPartners />
 
-      <Section>
+      {/* <Section>
         <Container>
-          <WhyUs />
+          
         </Container>
-      </Section>
+      </Section> */}
       <CardSection />
       {/* <Section className="bg-blue-dark max-w-[1540px] mx-auto">
         <Container>
@@ -83,6 +73,21 @@ export default function Home() {
       {/* <Form title="Schedule a meeting with our marketing consultant" /> */}
       {/* </Container>
       </Section> */}
+      <div className="mt-14">
+        <Container>
+          <article className="max-w-[1100px] mx-auto">
+            {data.map((item, index) => (
+              <p
+                // className="lg:text-[1.1rem]/[2.2rem] text-lg  lg:text-justify text-center  mb-6 text-black "
+                className="text-[18px] text-[#797979]  lg:text-justify text-center  mb-6"
+                key={index}
+              >
+                {item}
+              </p>
+            ))}
+          </article>
+        </Container>
+      </div>
       <ContactUsCardNew />
       <ConsultationForm />
     </main>

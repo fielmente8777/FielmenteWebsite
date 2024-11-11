@@ -39,7 +39,7 @@ const MIleStonesNew = () => {
   ];
   return (
     <Section className="bg-white lg:py-20 py-10">
-      <div className="mb-16">
+      {/* <div className="mb-16">
         <h2 className="text-center md:text-4xl/[2.8rem] text-blue-dark text-[1.2rem]/[2rem] last-word md:w-[85%] mx-auto">
           Transforming{" "}
           {pathName === "/resort/"
@@ -62,7 +62,7 @@ const MIleStonesNew = () => {
             Marketing Agency.
           </b>
         </h2>
-      </div>
+      </div> */}
       <Container>
         <div className="border border-[#F2B203] w-full px-10 py-4 lg:grid hidden grid-cols-4">
           {data.map((item, index) => (
