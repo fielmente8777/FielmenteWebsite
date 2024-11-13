@@ -108,7 +108,7 @@ const BlogesSection = () => {
                   className="w-full border border-gray-400 py-2 px-4 col-span-2 outline-none"
                 />
                 <button
-                  className="w-full bg-[#F5F5F5] border border-orange-primary hover:bg-orange-primary hover:text-white text-orange-primary py-2 px-6"
+                  className="w-full bg-[#F5F5F5] active:scale-95 border border-orange-primary hover:bg-orange-primary hover:text-white text-orange-primary py-2 px-6"
                   onClick={handleSearch}
                 >
                   Search
@@ -162,7 +162,7 @@ const BlogesSection = () => {
                       <span className="text-red-500 text-sm">{emailError}</span>
                     )}
                     <button
-                      className="bg-orange-primary text-white rounded-sm hover:bg-white hover:text-orange-primary border border-solid border-orange-primary py-3 w-full flex items-center justify-center font-medium"
+                      className="bg-orange-primary active:scale-95 text-white rounded-sm hover:bg-white hover:text-orange-primary border border-solid border-orange-primary py-3 w-full flex items-center justify-center font-medium"
                       type="submit"
                       disabled={loading}
                     >
