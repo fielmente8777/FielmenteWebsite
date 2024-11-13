@@ -23,7 +23,7 @@ const ContactUsCardNew = () => {
             </div>
           </div>
           <div className="lg:text-start text-center flex flex-col max-md:items-center gap-4">
-            <h2 className="lg:text-4xl text-2xl">
+            <h2 className="lg:text-4xl text-2xl helv">
               Ready to kick off your growth journey with India’s Best <br />{" "}
               <b className="text-orange-primary">
                 {pathName === "/resort/"
@@ -38,7 +38,7 @@ const ContactUsCardNew = () => {
 
             <button
               onClick={() => setShowModal(true)}
-              className="bg-orange-primary w-fit text-white hover:text-orange-primary px-6 py-3 flex items-center justify-center font-bold rounded-md text-lg border border-orange-primary hover:bg-transparent duration-300"
+              className="bg-orange-primary w-fit poppins text-white hover:text-orange-primary px-6 py-3 flex items-center justify-center font-bold rounded-md text-lg border border-orange-primary hover:bg-transparent duration-300"
             >
               Get a free consultation now!
             </button>

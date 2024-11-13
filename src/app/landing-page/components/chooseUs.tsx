@@ -40,10 +40,10 @@ function ChooseUs() {
     <div>
       {/* <SectionHeading {...SectionHeadingDetails} /> */}
       <div className="flex flex-col gap-5">
-        <h2 className="text-center md:text-4xl text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
+        <h2 className="text-center md:text-4xl helv text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
           {SectionHeadingDetails.title}
         </h2>
-        <p className="text-2xl max-md:text-xl text-blue-dark text-center lg:w-[70%] mx-auto">
+        <p className="text-2xl max-md:text-xl helv text-blue-dark text-center lg:w-[70%] mx-auto">
           Force of{" "}
           <b className="text-orange-primary">50+ {pathName === "/resort/"
             ? "Resort"
@@ -103,10 +103,10 @@ export const ChooseUsCard = ({ title, subtitle, Icon }: ChooseCardProsData) => {
       <div className="flex items-center justify-center  ease-in-out lg:justify-start">
         <Image src={Icon} alt={title} width={96} height={96} className="lg:group-hover:-translate-y-2 lg:group-hover:scale-110 transition duration-300" />
       </div>
-      <h2 className="text-blue-dark text-[1.8rem]/[2.5rem] max-md:text-xl capitalize lg:text-start text-center">
+      <h2 className="text-blue-dark helv text-[1.8rem]/[2.5rem] max-md:text-xl capitalize lg:text-start text-center">
         {title}
       </h2>
-      <p className="text-lg text-[#797979] lg:text-start text-center">
+      <p className="text-lg poppins text-[#797979] lg:text-start text-center">
         {subtitle}
       </p>
     </div>

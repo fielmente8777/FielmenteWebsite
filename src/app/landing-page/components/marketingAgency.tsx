@@ -12,7 +12,7 @@ function MarketingAgency() {
     <section className="grid lg:grid-cols-2 gap-10">
       {/* Left Content**** */}
       <div className="flex flex-col justify-center gap-6 text-white">
-        <h2 className="md:text-6xl/[4rem] text-3xl w-[100%] font-medium  lg:pe-[4rem]">
+        <h2 className="md:text-6xl/[4rem] text-3xl w-[100%] font-medium lg:pe-[4rem]">
           Work with the India’s Best{" "}
           {pathName === "/resort/"
             ? "Resort"
