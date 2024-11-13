@@ -39,7 +39,7 @@ import bg3img1 from "../../public/images/blog/Fielmente-Hospitality-Marketing-Ag
 export interface blogtype {
   url?: StaticImageData | string;
   addimg?: StaticImageData;
-
+  description?: string;
   title: string;
   link: string;
   data: string;
@@ -53,6 +53,7 @@ export const blog: blogtype[] = [
     isShow: false,
     title: "How to Digitally Market your Hostel with Fielmente",
     link: "how-to-digitally-market-your-hostel-with-fielmente-2",
+
     data: `
   <div>
     <p>
@@ -202,6 +203,12 @@ export const blog: blogtype[] = [
     isShow: true,
     title: "How to Reply to Google Business Profile and Facebook Feedback",
     link: "respond-to-facebook-google-reviews",
+    description: `In recent times, opinions and reviews have become crucial
+      for most businesses of all sizes. Consumers read reviews
+      to decide if that particular business or store is worth
+      their time and money. Most of us rely on the reviews;
+      hence, they are pivotal for your business and to respond
+      and reply to them is very crucial.`,
     data: `
   <div>
     <p>
@@ -993,6 +1000,13 @@ export const blog: blogtype[] = [
     isShow: true,
     title: "Why do you need Fielmente Hospitality Marketing Agency?",
     link: "hospitality-consultants-in-india",
+    description: `A hospitality digital marketing agency brings its clients
+      revenue with its tailored hospitality marketing solutions.
+      This helps the hotel to be more visible to its potential
+      guests. According to revenue-hub.com, 97% of millennials
+      share photos on social media while they travel! That
+      number would only grow as more and more people are
+      starting to use the internet.`,
     data: `
   <div>
     <p>
@@ -1446,6 +1460,8 @@ export const blog: blogtype[] = [
     title:
       "How to start Cloud Kitchen in India – Ultimate Guide to open the Cloud Kitchen",
     link: "how-to-start-cloud-kitchen-in-india-ultimate-guide-to-open-the-cloud-kitchen",
+    description: `Here’s what happens exactly in a cloud kitchen model: Orders come in, meals are cooked, packed, and then whisked immediately to their delivery locations by the assigned fleet.
+Why does this work? Because you’re cutting costs on front-of-house activities and concentrating on your food. With the availability of third-party services and the growing comfort of mobile ordering, this model seems just right to experiment with.`,
     data: `<div>
     <p>
       <strong>

@@ -52,7 +52,6 @@ export default function Home() {
             <HotelPerformacne />
           </div>
         </Container>
-
       </Section>
       <Section>
         <Container>
@@ -90,6 +89,7 @@ export default function Home() {
       </div>
       <ContactUsCardNew />
       <ConsultationForm />
+      <div className="mt-10 lg:mt-20"></div>
     </main>
   );
 }

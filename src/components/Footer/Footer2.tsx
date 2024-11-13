@@ -231,7 +231,7 @@ const Footer2 = () => {
   ];
 
   return (
-    <footer className="pb-6 bg-blue-dark max-w-[1540px] mx-auto mt-10 lg:mt-20">
+    <footer className="pb-6 bg-blue-dark max-w-[1540px] mx-auto ">
       <section
         className="lg:py-11 max-md:pt-10 bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]"
         style={{ backgroundSize: "100% 95%" }}

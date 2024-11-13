@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import img1 from "../../../../public/images/img1.webp";
 import img2 from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
 import img3 from "../../../../public/images/img2.webp";
-import BannerImage from "../../../../public/images/growth_16045969 1.png"
+import BannerImage from "../../../../public/icon/growth.gif";
 import Link from "next/link";
 
 const Banner: React.FC = () => {
@@ -45,7 +45,7 @@ const Banner: React.FC = () => {
         </div> */}
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20">
             <div className="flex flex-col justify-center gap-8">
               <h1 className="text-2xl md:text-5xl font-semibold text-[#110D3C]">India’s Leading Hospitality Marketing <span className="text-[#F26633]">Agency</span></h1>
               <p className="text-gray-primary text-2xl">India’s Leading Hotel, Resort & Restaurant Marketing Agency with over 10+ Years of Experience</p>
@@ -54,7 +54,7 @@ const Banner: React.FC = () => {
               </div>
             </div>
             <div className="flex justify-center items-center">
-              <Image src={BannerImage} alt="banner" />
+              <Image src={BannerImage} alt="banner" width={400} height={400} />
             </div>
           </div>
         </Container>
