@@ -23,11 +23,7 @@ const ContactUsCardNew = () => {
             </div>
           </div>
           <div className="lg:text-start text-center flex flex-col max-md:items-center gap-4">
-<<<<<<< HEAD
-            <h2 className="lg:text-4xl text-2xl helv">
-=======
             <h2 className="lg:text-4xl text-2xl text-[#110D3C]">
->>>>>>> 06020fe6177c6bdbb5292f33100ac0a2302e90cc
               Ready to kick off your growth journey with India’s Best <br />{" "}
               <b className="text-orange-primary">
                 {pathName === "/resort/"
