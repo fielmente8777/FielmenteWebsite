@@ -2,11 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/landingPage/logo2.png";
-import {
-  OutlineMailIcon,
-  OutlinePhoneIcon,
-  OutLineLocationIcon,
-} from "../Header/LandingHeader";
 import { useState } from "react";
 import { PopupForm } from "@/app/landing-page/components";
 import Container from "../Container";
@@ -277,8 +272,8 @@ const LandingFooter = () => {
                   </form>
                   <p className="text-sm text-[#787878]">
                     By submitting this form you are confirming that you have
-                    read and agree to Fielmente 
-                    <span className="text-[#F2B203]">Terms</span> & 
+                    read and agree to Fielmente
+                    <span className="text-[#F2B203]">Terms</span> &
                     <span className="text-[#F2B203]">Privacy Policy</span>.
                   </p>
                 </div>
@@ -337,7 +332,7 @@ const LandingFooter = () => {
       </Container>
 
       <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      
+
     </footer>
   );
 };

@@ -1,8 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
-import LandingHeader from "./LandingHeader";
 import Header2 from "./header2";
 import React from "react";
+import LandingHeader from "./landingHeader";
 
 const NavBar = () => {
   const pathname = usePathname();
