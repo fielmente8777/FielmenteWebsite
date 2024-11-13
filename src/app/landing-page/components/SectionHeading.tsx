@@ -19,18 +19,16 @@ function SectionHeading({
     <div className="flex flex-col gap-5">
       {title && (
         <h2
-          className={`text-center md:text-4xl text-[1.4rem]/[2rem] last-word ${
-            Color && "text-black"
-          } md:w-[85%] mx-auto`}
+          className={`text-center md:text-4xl text-[1.4rem]/[2rem] last-word ${Color && "text-[#110D3C]"
+            } md:w-[85%] mx-auto`}
         >
           {title} <span className="text-orange-primary font-bold">{span}</span>
         </h2>
       )}
       {description && (
         <p
-          className={`text-2xl max-md:text-base text-center lg:w-[70%] mx-auto ${
-            Color && "text-[#797979]"
-          }`}
+          className={`text-2xl max-md:text-base text-center lg:w-[70%] mx-auto ${Color && "text-[#797979]"
+            }`}
         >
           {description}
         </p>

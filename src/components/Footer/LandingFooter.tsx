@@ -121,17 +121,17 @@ const LandingFooter = () => {
       link: "#",
     },
     {
-      title: "About Fielmente",
+      title: "About Us",
       link: "#",
     },
     {
       title: "reviews",
       link: "#reviews",
     },
-    {
-      title: "Blogs",
-      link: "#",
-    },
+    // {
+    //   title: "Blogs",
+    //   link: "#",
+    // },
     {
       title: "case studies",
       link: "#",
