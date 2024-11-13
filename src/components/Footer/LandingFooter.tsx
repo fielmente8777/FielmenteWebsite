@@ -2,11 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/landingPage/logo2.png";
-import {
-  OutlineMailIcon,
-  OutlinePhoneIcon,
-  OutLineLocationIcon,
-} from "../Header/LandingHeader";
 import { useState } from "react";
 import { PopupForm } from "@/app/landing-page/components";
 import Container from "../Container";
@@ -126,17 +121,17 @@ const LandingFooter = () => {
       link: "#",
     },
     {
-      title: "About Fielmente",
+      title: "About Us",
       link: "#",
     },
     {
       title: "reviews",
       link: "#reviews",
     },
-    {
-      title: "Blogs",
-      link: "#",
-    },
+    // {
+    //   title: "Blogs",
+    //   link: "#",
+    // },
     {
       title: "case studies",
       link: "#",
