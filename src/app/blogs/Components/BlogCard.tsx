@@ -31,7 +31,7 @@ export const BlogCard = ({
         </div>
       )}
       <div className="flex justify-start flex-col items-start gap-4 mt-5">
-        <Link href={`/${link}/`} className={`${index === 0 ? "text-4xl" : "text-xl"} text-blue-dark  font-semibold`}>
+        <Link href={`/${link}/`} className={`${index === 0 ? "lg:text-4xl text-xl" : "text-xl"} text-blue-dark  font-semibold`}>
           {title}
         </Link>
         <p className="text-[#787878] text-base">{description}</p>

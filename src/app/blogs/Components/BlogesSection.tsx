@@ -73,7 +73,7 @@ const BlogesSection = () => {
     <Section>
       <Container>
         {/* Blog Grid */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-4 max-md:gap-y-4">
           {/* Blog Posts */}
           <div className="lg:grid grid-cols-2 gap-6 col-span-2">
             {filteredPosts
@@ -81,7 +81,7 @@ const BlogesSection = () => {
               .map((item, index) => (
                 <div
                   key={index}
-                  className={`${index === 0 ? "col-span-2" : ""}`}
+                  className={`${index === 0 ? "lg:col-span-2" : ""}`}
                 >
                   <BlogCard
                     src={item.url}
@@ -93,11 +93,21 @@ const BlogesSection = () => {
                   />
                 </div>
               ))}
+
+            {/* Show More Button */}
+            <div className="py-10 flex lg:hidden justify-center">
+              <button
+                className="bg-[#F5F5F5] border border-orange-primary hover:bg-orange-primary hover:text-white text-orange-primary py-2 px-6"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "Show Less" : "Show More Blogs"}
+              </button>
+            </div>
           </div>
 
           {/* Sidebar */}
           <div>
-            <div className="flex flex-col gap-8 sticky top-3">
+            <div className="flex flex-col gap-8 lg:sticky lg:top-3">
               {/* Search Bar */}
               <div className="grid grid-cols-3 items-center">
                 <input
@@ -117,7 +127,7 @@ const BlogesSection = () => {
 
               {/* Newsletter Subscription */}
               <div className="w-full border border-blue-dark flex flex-col">
-                <div className="relative w-full aspect-[4/2.1]">
+                <div className="relative w-full aspect-[4/3] lg:aspect-[4/2.1]">
                   <Image
                     src="/formbg.png"
                     alt="form background"
@@ -199,7 +209,7 @@ const BlogesSection = () => {
         </div>
 
         {/* Show More Button */}
-        <div className="py-10 flex justify-center">
+        <div className="py-10 lg:flex hidden justify-center">
           <button
             className="bg-[#F5F5F5] border border-orange-primary hover:bg-orange-primary hover:text-white text-orange-primary py-2 px-6"
             onClick={() => setShowMore(!showMore)}
