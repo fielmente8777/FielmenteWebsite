@@ -23,7 +23,13 @@ const MIleStonesNew = () => {
     {
       icon: "/icon/hotelassociated.gif",
       number: "100+",
-      title: "HOTELS ASSOCIATED",
+      title: `${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "Hospitality"} ASSOCIATED`,
     },
     {
       icon: "/icon/restaurantass.gif",
@@ -82,7 +88,7 @@ const MIleStonesNew = () => {
                 <h3 className="text-blue-dark text-2xl font-semibold">
                   {item.number}
                 </h3>
-                <p className="text-blue-dark text-base">{item.title}</p>
+                <p className="text-blue-dark text-base uppercase">{item.title}</p>
               </div>
             </div>
           ))}
@@ -125,7 +131,7 @@ const MIleStonesNew = () => {
                     <h3 className="text-blue-dark text-4xl font-semibold">
                       {item.number}
                     </h3>
-                    <p className="text-blue-dark text-base">{item.title}</p>
+                    <p className="text-blue-dark text-base uppercase">{item.title}</p>
                   </div>
                 </div>
               </SwiperSlide>

@@ -13,6 +13,7 @@ import React from "react";
 import { WebSiteDevelopmentIcon } from "./ourServices";
 import SectionHeading from "./SectionHeading";
 import Image, { StaticImageData } from "next/image";
+import { usePathname } from "next/navigation";
 
 export interface ChooseCardProsData {
   title: string;
@@ -34,6 +35,7 @@ const SectionHeadingDetails = {
 // Force of 20+ Hospitality Marketing Experts
 
 function ChooseUs() {
+  const pathName = usePathname();
   return (
     <div>
       {/* <SectionHeading {...SectionHeadingDetails} /> */}
@@ -43,7 +45,13 @@ function ChooseUs() {
         </h2>
         <p className="text-2xl max-md:text-xl text-blue-dark text-center lg:w-[70%] mx-auto">
           Force of{" "}
-          <b className="text-orange-primary">50+ Hospitality Marketing</b>{" "}
+          <b className="text-orange-primary">50+ {pathName === "/resort/"
+            ? "Resort"
+            : pathName === "/hospitality/"
+              ? "Hospitality"
+              : pathName === "/landing-page/"
+                ? "Hotel"
+                : "Hospitality"} Marketing</b>{" "}
           Experts
         </p>
       </div>

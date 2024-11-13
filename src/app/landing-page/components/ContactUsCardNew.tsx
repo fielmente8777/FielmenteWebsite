@@ -26,7 +26,13 @@ const ContactUsCardNew = () => {
             <h2 className="lg:text-4xl text-2xl">
               Ready to kick off your growth journey with India’s Best <br />{" "}
               <b className="text-orange-primary">
-                Hospitality Marketing Agency?
+                {pathName === "/resort/"
+                  ? "Resort"
+                  : pathName === "/hospitality/"
+                    ? "Hospitality"
+                    : pathName === "/landing-page/"
+                      ? "Hotel"
+                      : "Hospitality"} Marketing Agency?
               </b>
             </h2>
 
