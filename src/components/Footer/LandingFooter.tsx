@@ -20,9 +20,10 @@ import {
 } from "@/utils/icons";
 import Section from "../Section";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const LandingFooter = () => {
+  const pathName = usePathname();
   const router = useRouter();
   const currentYear = new Date().getFullYear();
   const [showModal, setShowModal] = useState(false);
@@ -120,21 +121,48 @@ const LandingFooter = () => {
   //   setEmail("");
   // };
   const aboutLinks = [
-    "Home",
-    "About Fielmente",
-    "reviews",
-    "Blogs",
-    "case studies",
+    {
+      title: "Home",
+      link: "#",
+    },
+    {
+      title: "About Fielmente",
+      link: "#",
+    },
+    {
+      title: "reviews",
+      link: "#reviews",
+    },
+    {
+      title: "Blogs",
+      link: "#",
+    },
+    {
+      title: "case studies",
+      link: "#",
+    },
   ];
   const services = [
-    "Website Development",
-    "Social Media Marketing",
-    "Search Engine Optimization",
-    "Paid ad campaigns",
+    {
+      title: "Website Development",
+      link: "#services",
+    },
+    {
+      title: "Social Media Marketing",
+      link: "#services",
+    },
+    {
+      title: "Search Engine Optimization",
+      link: "#services",
+    },
+    {
+      title: "Paid ad campaigns",
+      link: "#services",
+    },
   ];
   const contactLinks = [
     {
-      title: "call: +91 95018 68777",
+      title: "Call: +91 95018 68777",
       link: "tel:+919501868775",
     },
     {
@@ -142,15 +170,15 @@ const LandingFooter = () => {
       link: "mailto:sachin@fielmente.com",
     },
     {
-      title: "contact",
+      title: "Contact",
       link: "#contactForm",
     },
     {
-      title: "free consultation",
+      title: "Free Consultation",
       link: "#contactForm",
     },
     {
-      title: "schedule a demo",
+      title: "Schedule A Demo",
       link: "#contactForm",
     },
   ];
@@ -196,7 +224,7 @@ const LandingFooter = () => {
                       className="text-base text-[#787878] capitalize"
                       key={index}
                     >
-                      {item}
+                      <Link href={item.link}>{item.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -213,7 +241,7 @@ const LandingFooter = () => {
                       className="text-base text-[#787878] capitalize"
                       key={index}
                     >
-                      {item}
+                      <Link href={item.link}>{item.title}</Link>
                     </li>
                   ))}
                 </ul>
@@ -227,7 +255,7 @@ const LandingFooter = () => {
                 <ul className="flex flex-col gap-4">
                   {contactLinks.map((item, index) => (
                     <li
-                      className="text-base text-[#787878] capitalize"
+                      className="text-base text-[#787878] "
                       key={index}
                     >
                       {item.link ? (
@@ -277,8 +305,8 @@ const LandingFooter = () => {
                   </form>
                   <p className="text-sm text-[#787878]">
                     By submitting this form you are confirming that you have
-                    read and agree to Fielmente 
-                    <span className="text-[#F2B203]">Terms</span> & 
+                    read and agree to Fielmente
+                    <span className="text-[#F2B203]">Terms</span> &
                     <span className="text-[#F2B203]">Privacy Policy</span>.
                   </p>
                 </div>
@@ -316,7 +344,13 @@ const LandingFooter = () => {
         <div className="h-[1px] w-full bg-[#3B3B3B] mb-10"></div>
         <div className="flex items-center gap-3 justify-center w-full">
           <p className="text-sm text-[#787878] max-md:text-center">
-            © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
+            © {currentYear} Fielmente  {pathName === "/resort/"
+              ? "Resort"
+              : pathName === "/hospitality/"
+                ? "Hospitality"
+                : pathName === "/landing-page/"
+                  ? "Hotel"
+                  : "hotel, resort & restaurants"} Marketing Agency. All Rights
             Reserved
           </p>
           {/* <div className="flex items-center gap-4">
@@ -337,7 +371,7 @@ const LandingFooter = () => {
       </Container>
 
       <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      
+
     </footer>
   );
 };

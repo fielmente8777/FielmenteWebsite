@@ -26,7 +26,7 @@ const PageComponents = () => {
       <MIleStonesNew />
 
       {/* Services***** */}
-      <div className="bg-blue-dark text-white lg:py-20 py-10">
+      <div className="bg-blue-dark text-white lg:py-20 py-10" id="services">
         <div className="max-width">
           <OurServices />
         </div>
@@ -65,7 +65,9 @@ const PageComponents = () => {
 
       {/* Looking for Best Hotel***** */}
       <ContactUsCardNew />
-      <ConsultationForm />
+      <div id="reviews">
+        <ConsultationForm />
+      </div>
     </main>
   );
 };

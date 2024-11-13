@@ -17,13 +17,19 @@ function MarketingAgency() {
           {pathName === "/resort/"
             ? "Resort"
             : pathName === "/hospitality/"
-            ? "Hospitality"
-            : "Hotel"}{" "}
+              ? "Hospitality"
+              : "Hotel"}{" "}
           Marketing{" "}
           <span className="text-orange-primary font-bold">Agency.</span>
         </h2>
         <p className="text-lg">
-          Transforming hotels & restaurants into thriving destinations with our
+          Transforming {pathName === "/resort/"
+            ? "Resort"
+            : pathName === "/hospitality/"
+              ? "Hospitality"
+              : pathName === "/landing-page/"
+                ? "Hotel"
+                : "Hospitality"} into thriving destinations with our
           expert hospitality marketing solutions.
         </p>
         <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">

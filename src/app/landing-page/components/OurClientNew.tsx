@@ -17,13 +17,21 @@ import { Autoplay, Grid, Pagination } from "swiper/modules";
 import SectionHeading from "./SectionHeading";
 import React from "react";
 import { ClientImages } from "@/utils/client";
+import { usePathname } from "next/navigation";
 const OurClientNew = () => {
+  const pathName = usePathname();
   return (
     <div>
       <div>
         <h2 className="lg:text-4xl text-2xl font-normal text-blue-dark text-center">
           Worked with the Best <br />{" "}
-          <b className="text-orange-primary">Hospitality Brands</b>
+          <b className="text-orange-primary">{pathName === "/resort/"
+            ? "Resort"
+            : pathName === "/hospitality/"
+              ? "Hospitality"
+              : pathName === "/landing-page/"
+                ? "Hotel"
+                : "Hospitality"} Brands</b>
         </h2>
       </div>
       <div className="mt-16">
@@ -72,23 +80,22 @@ const OurClientNew = () => {
                   href={"/"}
                   className="relative w-full lg:aspect-[4/3.4] aspect-[4/4] h-[8rem] flex justify-center items-center duration-300 cursor-pointer hover:shadow-xl shadow-2xl hover:shadow-white/35 hover:scale-[1.04] rounded-tl-[1.875rem] rounded-br-[1.875rem] overflow-hidden"
                   style={{
-                    backgroundColor: `${
-                      index == 23
+                    backgroundColor: `${index == 23
                         ? "#22413f"
                         : index == 22
-                        ? "#F7F7F7"
-                        : index == 9
-                        ? "#FF6C26"
-                        : index == 16
-                        ? "#F7F7F7"
-                        : index == 21 || index == 0
-                        ? "#1e1e1e"
-                        : index == 18
-                        ? "#F7F7F7"
-                        : index == 20
-                        ? "#f7f7f7"
-                        : "white"
-                    }`,
+                          ? "#F7F7F7"
+                          : index == 9
+                            ? "#FF6C26"
+                            : index == 16
+                              ? "#F7F7F7"
+                              : index == 21 || index == 0
+                                ? "#1e1e1e"
+                                : index == 18
+                                  ? "#F7F7F7"
+                                  : index == 20
+                                    ? "#f7f7f7"
+                                    : "white"
+                      }`,
                   }}
                 >
                   <Image
@@ -98,23 +105,22 @@ const OurClientNew = () => {
                     height={100}
                     className="object-contain w-full h-full p-3 "
                     style={{
-                      backgroundColor: `${
-                        index == 23
+                      backgroundColor: `${index == 23
                           ? "#22413f"
                           : index == 22
-                          ? "#F7F7F7"
-                          : index == 9
-                          ? "#FF6C26"
-                          : index == 16
-                          ? "#F7F7F7"
-                          : index == 21 || index == 0
-                          ? "#1e1e1e"
-                          : index == 18
-                          ? "#F7F7F7"
-                          : index == 20
-                          ? "#f7f7f7"
-                          : "white"
-                      }`,
+                            ? "#F7F7F7"
+                            : index == 9
+                              ? "#FF6C26"
+                              : index == 16
+                                ? "#F7F7F7"
+                                : index == 21 || index == 0
+                                  ? "#1e1e1e"
+                                  : index == 18
+                                    ? "#F7F7F7"
+                                    : index == 20
+                                      ? "#f7f7f7"
+                                      : "white"
+                        }`,
                     }}
                   />
                 </Link>
