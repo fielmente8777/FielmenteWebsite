@@ -29,7 +29,7 @@ const MIleStonesNew = () => {
           ? "Hospitality"
           : pathName === "/landing-page/"
             ? "Hotel"
-            : "Hospitality"} ASSOCIATED`,
+            : "Hotel"} ASSOCIATED`,
     },
     {
       icon: "/icon/restaurantass.gif",
