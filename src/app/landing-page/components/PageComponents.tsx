@@ -14,7 +14,7 @@ import ContactUsCardNew from "./ContactUsCardNew";
 
 const PageComponents = () => {
   return (
-    <main>
+    <main className="">
       {/* Market Agency***** */}
       <div className="bg-blue-dark py-10">
         <div className="max-width">

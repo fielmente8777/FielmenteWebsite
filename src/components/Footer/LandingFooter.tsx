@@ -197,7 +197,7 @@ const LandingFooter = () => {
     },
   ];
   return (
-    <footer className="pb-12 bg-blue-dark max-w-[1540px] mx-auto mt-10 lg:mt-20">
+    <footer className="pb-12 bg-blue-dark max-w-[1540px] mx-auto mt-10 lg:mt-20 poppins">
       <section
         className="lg:py-11 max-md:pt-10 bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]"
         style={{ backgroundSize: "100% 95%" }}
@@ -210,7 +210,7 @@ const LandingFooter = () => {
             <div className="grid w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
               {/* About */}
               <div>
-                <h2 className="text-3xl text-orange-primary font-bold mb-4">
+                <h2 className="text-3xl text-orange-primary font-bold mb-4 helv">
                   About
                 </h2>
                 <ul className="flex flex-col gap-4">
@@ -227,7 +227,7 @@ const LandingFooter = () => {
 
               {/* Services */}
               <div>
-                <h2 className="text-3xl text-orange-primary font-bold mb-4">
+                <h2 className="text-3xl text-orange-primary font-bold helv mb-4">
                   Services
                 </h2>
                 <ul className="flex flex-col gap-4">
@@ -265,7 +265,7 @@ const LandingFooter = () => {
 
               {/* Newsletter */}
               <div>
-                <h2 className="text-3xl text-orange-primary font-bold mb-4">
+                <h2 className="text-3xl text-orange-primary helv font-bold mb-4">
                   Newsletter
                 </h2>
                 <div className="flex flex-col gap-4">
@@ -301,7 +301,7 @@ const LandingFooter = () => {
                   <p className="text-sm text-[#787878]">
                     By submitting this form you are confirming that you have
                     read and agree to Fielmente
-                    <span className="text-[#F2B203]">Terms</span> &
+                    <span className="text-[#F2B203]">Terms</span> &{" "}
                     <span className="text-[#F2B203]">Privacy Policy</span>.
                   </p>
                 </div>
@@ -317,7 +317,7 @@ const LandingFooter = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-4">
-                <h3 className="text-xl font-semibold text-orange-primary">
+                <h3 className="text-xl font-semibold helv text-orange-primary">
                   Follow Us:
                 </h3>
                 <ul className="flex  items-center gap-4">

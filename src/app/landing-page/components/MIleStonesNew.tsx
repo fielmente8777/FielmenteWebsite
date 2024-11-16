@@ -29,7 +29,7 @@ const MIleStonesNew = () => {
           ? "Hospitality"
           : pathName === "/landing-page/"
             ? "Hotel"
-            : "Hospitality"} ASSOCIATED`,
+            : "Hotel"} ASSOCIATED`,
     },
     {
       icon: "/icon/restaurantass.gif",
@@ -44,7 +44,7 @@ const MIleStonesNew = () => {
     },
   ];
   return (
-    <Section className="bg-white lg:py-20 py-10">
+    <Section className="bg-white poppins lg:py-20 py-10">
       {/* <div className="mb-16">
         <h2 className="text-center md:text-4xl/[2.8rem] text-blue-dark text-[1.2rem]/[2rem] last-word md:w-[85%] mx-auto">
           Transforming{" "}
@@ -85,10 +85,10 @@ const MIleStonesNew = () => {
                 />
               </div>
               <div className="flex flex-col items-center gap-4 justify-center">
-                <h3 className="text-blue-dark text-2xl font-semibold">
+                <h3 className="text-blue-dark text-2xl font-semibold helv">
                   {item.number}
                 </h3>
-                <p className="text-blue-dark text-base uppercase">{item.title}</p>
+                <p className="text-blue-dark text-base uppercase ">{item.title}</p>
               </div>
             </div>
           ))}

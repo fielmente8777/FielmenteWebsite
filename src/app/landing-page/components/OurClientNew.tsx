@@ -23,7 +23,7 @@ const OurClientNew = () => {
   return (
     <div>
       <div>
-        <h2 className="lg:text-4xl text-2xl font-normal text-blue-dark text-center">
+        <h2 className="lg:text-4xl text-2xl font-normal helv text-blue-dark text-center">
           Worked with the Best <br />{" "}
           <b className="text-orange-primary">{pathName === "/resort/"
             ? "Resort"

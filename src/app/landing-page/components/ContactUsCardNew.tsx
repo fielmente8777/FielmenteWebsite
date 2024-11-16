@@ -38,7 +38,7 @@ const ContactUsCardNew = () => {
 
             <button
               onClick={() => setShowModal(true)}
-              className="bg-orange-primary w-fit text-white hover:text-orange-primary px-6 py-3 flex items-center justify-center font-bold rounded-md text-lg border border-orange-primary hover:bg-transparent duration-300"
+              className="bg-orange-primary w-fit poppins text-white hover:text-orange-primary px-6 py-3 flex items-center justify-center font-bold rounded-md text-lg border border-orange-primary hover:bg-transparent duration-300"
             >
               Get a free consultation now!
             </button>
