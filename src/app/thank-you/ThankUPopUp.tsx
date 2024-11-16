@@ -42,11 +42,7 @@ const ThankUPopUp = () => {
     router.push("/");
   };
 
-  useEffect(() => {
-    console.log("rendere")
-  }, []);
 
-  console.clear();
   return (
     <section>
       <div className="max-w-[1900px] mx-auto">

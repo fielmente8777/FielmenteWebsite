@@ -79,7 +79,8 @@ const Form = () => {
         setUserPhone("");
         setCountryCode("+91"); // Reset country code
         setFormRes(false);
-        router.push(`/thank-you/`);
+        // router.push(`/thank-you/`);
+        window.open("/thank-you/", "_blank");
         // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
         setFormRes(false);
