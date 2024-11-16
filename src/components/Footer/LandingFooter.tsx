@@ -244,7 +244,7 @@ const LandingFooter = () => {
 
               {/* Contact */}
               <div>
-                <h2 className="text-xl text-orange-primary font-bold mb-4">
+                <h2 className="text-3xl text-orange-primary font-bold mb-4">
                   Get in Touch
                 </h2>
                 <ul className="flex flex-col gap-4">

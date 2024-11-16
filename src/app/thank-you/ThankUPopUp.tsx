@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -42,6 +42,11 @@ const ThankUPopUp = () => {
     router.push("/");
   };
 
+  useEffect(() => {
+    console.log("rendere")
+  }, []);
+
+  console.clear();
   return (
     <section>
       <div className="max-w-[1900px] mx-auto">
