@@ -9,7 +9,7 @@ const LandingHeader = () => {
   return (
     <header className="py-3">
       <nav className="max-width flex justify-between">
-        <div className="relative max-w-[164px] w-full lg:aspect-[4/1.3] aspect-[4/1.7]">
+        <div className="relative h-[65px] aspect-[4/1.9]">
           <Image
             src={Logo}
             alt="alt"

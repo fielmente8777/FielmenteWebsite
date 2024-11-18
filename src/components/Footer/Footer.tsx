@@ -10,8 +10,8 @@ const Footer = () => {
 
   if (pathName === "/landing-page/" || pathName === "/resort/" || pathName === "/hospitality/") {
     FooterComponent = LandingFooter;
-  } else if (pathName === "/thank-you/") {
-    FooterComponent = null;
+  // } else if (pathName === "/thank-you/") {
+  //   FooterComponent = null;
   } else {
     FooterComponent = Footer2;
   }

@@ -20,9 +20,10 @@ import {
 } from "@/utils/icons";
 // import Section from "../Section";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Footer2 = () => {
+  const pathname = usePathname();
   const router = useRouter();
   const currentYear = new Date().getFullYear();
   const [showModal, setShowModal] = useState(false);
@@ -396,7 +397,7 @@ const Footer2 = () => {
         </div>
       </Container>
 
-      <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      {pathname !== "/thank-you/" && < PopupForm setShowModal={setShowModal} showModal={showModal} />}
     </footer>
   );
 };

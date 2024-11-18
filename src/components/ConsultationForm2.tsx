@@ -10,7 +10,7 @@ const ConsultationForm2 = () => {
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:relative">
             <div>
               <h2 className="text-white lg:text-4xl/snug text-2xl">
-                Are You Looking for the Best Cloud Kitchen Marketing
+                Are You Looking for the Best Cloud Kitchen Marketing{" "}
                 <b className="text-orange-primary">Agency?</b>
               </h2>
               <p className="text-white lg:text-xl text-base  mt-4">

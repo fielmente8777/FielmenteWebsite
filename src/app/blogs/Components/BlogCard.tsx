@@ -25,7 +25,7 @@ export const BlogCard = ({
               src={src}
               alt={alt}
               fill
-              className="object-cover group-hover:scale-110 transition duration-300"
+              className="object-resize group-hover:scale-110 transition duration-300"
             />
           </Link>
         </div>

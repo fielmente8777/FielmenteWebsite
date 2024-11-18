@@ -365,7 +365,7 @@ const LandingFooter = () => {
         </div>
       </Container>
 
-      <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      {pathName !== "/thank-you/" && < PopupForm setShowModal={setShowModal} showModal={showModal} />}
 
     </footer>
   );

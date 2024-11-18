@@ -2,17 +2,17 @@
 import { usePathname } from "next/navigation";
 import Header2 from "./header2";
 import React from "react";
-import LandingHeader from "./landingHeader";
+import LandingHeader from "./LandingHeader";
 
 const NavBar = () => {
   const pathname = usePathname();
 
   let HeaderComponent = null;
 
-  if (pathname === "/landing-page/" || pathname === "/fielmente-lp/" || pathname === "/resort/" || pathname === "/hospitality/") {
+  if (pathname === "/landing-page/" || pathname === "/fielmente-lp/" || pathname === "/resort/" || pathname === "/hospitality/" || pathname === "/thank-you/") {
     HeaderComponent = LandingHeader;
-  } else if (pathname === "/thank-you/") {
-    HeaderComponent = null;
+    // } else if (pathname === "/thank-you/") {
+    //   HeaderComponent = null;
   } else {
     HeaderComponent = Header2;
   }

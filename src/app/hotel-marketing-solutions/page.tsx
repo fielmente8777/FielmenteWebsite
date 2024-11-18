@@ -205,7 +205,7 @@ function page() {
       <Needs {...needs2Data} />
       <GotEnquiry {...gotEnquiryData} />
       <OurClient />
-      <Presence {...presenceData} />
+      {/* <Presence {...presenceData} /> */}
       <ConsultationForm />
     </section>
   );

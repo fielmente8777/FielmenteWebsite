@@ -286,7 +286,7 @@ function page() {
         </div>
       </div>
 
-      <div className="md:py-20 py-10">
+      {/* <div className="md:py-20 py-10">
         <div className="grid lg:grid-cols-4">
           <div className="relative w-full aspect-[4/4.5]">
             <Image
@@ -321,7 +321,7 @@ function page() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <WeAreDef />
 

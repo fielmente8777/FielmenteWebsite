@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const ThankUPopUp = () => {
   // const [name, setName] = useState("Guest"); // Default value
@@ -46,15 +47,15 @@ const ThankUPopUp = () => {
   return (
     <section>
       <div className="max-w-[1900px] mx-auto">
-        <div className="relative w-full h-[80vh] lg:h-screen aspect-[16/9] bg-[#01000E]">
-          {/* <Image
-            src={src}
+        <div className="relative w-full h-[80vh] lg:h-screen aspect-[16/9] ">
+          <Image
+            src="/images/thank-u.webp"
             alt="hospitality marketing"
             fill
             className="object-cover"
-          /> */}
-          <div className="absolute flex flex-col lg:items-start px-5 md:p-24 lg:justify-start gap-8 justify-center h-full w-full">
-            <div className="flex flex-col lg:items-start lg:justify-start justify-center">
+          />
+          <div className="absolute flex flex-col lg:items-start px-5 md:p-24 lg:justify-start gap-8 justify-center h-full w-full bg-black/20">
+            <div className="flex flex-col max-width lg:items-start lg:justify-start justify-center">
               <h1 className="text-[28px]/[38px]  lg:text-4xl font-medium text-[#4486C5] mb-4">
                 Leave it with us
                 <br />
@@ -72,7 +73,7 @@ const ThankUPopUp = () => {
                 Back to website
               </button>
             </div>
-            <div className="flex flex-col lg:items-start lg:justify-start gap-8 justify-center">
+            <div className="flex flex-col max-width lg:items-start lg:justify-start gap-8 justify-center">
               <Link
                 href="https://fielmente.com"
                 target="_blank"
