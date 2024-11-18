@@ -86,7 +86,8 @@ function Form({
       if (data.success) {
         setLoader(false);
         // setPopupMsg("You information has been Received");
-        router.push(`/thank-you/`);
+        // router.push(`/thank-you/`);
+        window.open("/thank-you/", "_blank");
         // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
         setOpenPopup(true);
         // console.log(data.Status);

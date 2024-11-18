@@ -70,7 +70,8 @@ const RecentBlogs = () => {
         setUserMessage("");
         setUserPhone("");
         setFormRes(false);
-        router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
+        // router.push(`/thank-you?name=${encodeURIComponent(userName)}`);
+        window.open("/thank-you/", "_blank");
       } else {
         setFormRes(false);
         alert("Something went wrong!");

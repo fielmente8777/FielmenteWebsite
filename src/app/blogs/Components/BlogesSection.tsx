@@ -57,7 +57,8 @@ const BlogesSection = () => {
       if (response.data.success) {
         setUserName("");
         setUserEmail("");
-        router.push("/thank-you/");
+        // router.push("/thank-you/");
+        window.open("/thank-you/", "_blank");
       } else {
         alert("Something went wrong!");
       }
