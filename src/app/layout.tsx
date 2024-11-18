@@ -164,10 +164,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM"></iframe>
         </noscript>
-        <script
+        {/* <script
           src="//code.tidio.co/vqp6nexgcvuyk9zdnqsekfjwt1mlfw1x.js"
           async
-        ></script>
+        ></script> */}
       </body>
     </html>
   );
