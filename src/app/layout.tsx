@@ -96,6 +96,41 @@ export default function RootLayout({
           }}
         /> */}
 
+        {/* LeadBooster Configuration Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.pipedriveLeadboosterConfig = {
+                base: 'leadbooster-chat.pipedrive.com',
+                companyId: 13896258,
+                playbookUuid: 'b2bcf4e2-ea94-4382-857f-5ccde99a8618',
+                version: 2
+              };
+              (function () {
+                var w = window;
+                if (w.LeadBooster) {
+                  console.warn('LeadBooster already exists');
+                } else {
+                  w.LeadBooster = {
+                    q: [],
+                    on: function (n, h) {
+                      this.q.push({ t: 'o', n: n, h: h });
+                    },
+                    trigger: function (n) {
+                      this.q.push({ t: 't', n: n });
+                    },
+                  };
+                }
+              })();
+            `,
+          }}
+        />
+        {/* LeadBooster Loader Script */}
+        <script
+          src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
+          async
+        ></script>
+
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
