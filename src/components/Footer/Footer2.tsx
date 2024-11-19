@@ -378,9 +378,9 @@ const Footer2 = () => {
       <Container>
         <div className="h-[1px] w-full bg-[#3B3B3B] mb-10"></div>
         <div className="flex max-md:flex-col items-center gap-3 justify-between w-full">
-          <p className="text-sm text-[#787878] max-md:text-center">
+          <p className="text-sm text-[#787878] max-md:text-center flex items-center justify-center gap-3">
             © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
-            Reserved
+            Reserved {" "} | <Link target="_blank" href="https://usa.fielmente.com/">USA</Link> | <Link target="_blank" href="https://dubai.fielmente.com/">Dubai</Link>
           </p>
           <div className="flex items-center gap-4">
 

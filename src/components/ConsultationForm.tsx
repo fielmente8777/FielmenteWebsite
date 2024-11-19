@@ -10,42 +10,70 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import Form from "./Form";
 import Image, { StaticImageData } from "next/image";
+import { usePathname } from "next/navigation";
 
 const ConsultationForm = () => {
+  const pathName = usePathname();
   return (
-    <Section className="bg-blue-dark md:py-10">
+    <Section className="bg-blue-dark md:py-10" id={pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? "" : "reviews"}>
       <Container>
-        <div className="lg:grid grid-cols-3 gap-6" id="testimonials">
+        <div className="lg:grid grid-cols-3 gap-6 items-center" id="testimonials">
           <div className="col-span-2">
-            <div className="text-white text-3xl">
-              <h2>
-                Client{" "}
-                <b className="text-orange-primary lg:block inline">
-                  Testimonials
-                </b>
-              </h2>
-            </div>
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              spaceBetween={15}
-              slidesPerView={1}
-              loop={true}
-              speed={900}
-              autoplay={{
-                delay: 4000,
-              }}
-              pagination={{
-                clickable: true,
-                el: ".pagination",
-              }}
-              className="mySwiper"
-            >
-              {data.map((item, index) => (
-                <SwiperSlide key={index} className="py-4">
-                  <Card {...item} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? (
+              <div>
+                <h2 className="text-white lg:text-4xl/snug text-2xl">
+                  Are You Looking for the Best {pathName === "/resort/"
+                    ? "Resort"
+                    : pathName === "/hospitality/"
+                      ? "Hospitality"
+                      : pathName === "/landing-page/"
+                        ? "Hotel"
+                        : null} Marketing{" "}
+                  <b className="text-orange-primary">Agency?</b>
+                </h2>
+                <p className="text-white lg:text-xl text-base  mt-4">
+                  For effective {pathName === "/resort/"
+                    ? "Resort"
+                    : pathName === "/hospitality/"
+                      ? "Hospitality"
+                      : pathName === "/landing-page/"
+                        ? "Hotel"
+                        : null} marketing that stands out, fill out
+                  the form to get in touch with us today! Let’s elevate your brand
+                  together!
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="text-white text-3xl">
+                  <h2>
+                    Client{" "}
+                    <b className="text-orange-primary lg:block inline">
+                      Testimonials
+                    </b>
+                  </h2>
+                </div>
+                <Swiper
+                  modules={[Pagination, Autoplay]}
+                  spaceBetween={15}
+                  slidesPerView={1}
+                  loop={true}
+                  speed={900}
+                  autoplay={{
+                    delay: 4000,
+                  }}
+                  pagination={{
+                    clickable: true,
+                    el: ".pagination",
+                  }}
+                  className="mySwiper"
+                >
+                  {data.map((item, index) => (
+                    <SwiperSlide key={index} className="py-4">
+                      <Card {...item} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper></>)}
             <div className="pagination mt-10 flex justify-center items-center gap-1"></div>
           </div>
           <div className="" id="contactForm">

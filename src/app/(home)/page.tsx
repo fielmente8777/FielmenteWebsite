@@ -35,11 +35,7 @@ export default function Home() {
       <Banner />
       <MIleStonesNew />
       <Strategise />
-      <div className="bg-blue-dark text-white lg:py-20 py-10">
-        <div className="max-width">
-          <OurServices />
-        </div>
-      </div>
+     
       {/* <Worked />
       <ChooseUs /> */}
       <Section>
@@ -65,6 +61,11 @@ export default function Home() {
           
         </Container>
       </Section> */}
+       <div className="bg-blue-dark text-white lg:py-20 py-10">
+        <div className="max-width">
+          <OurServices />
+        </div>
+      </div>
       <CardSection />
       {/* <Section className="bg-blue-dark max-w-[1540px] mx-auto">
         <Container>

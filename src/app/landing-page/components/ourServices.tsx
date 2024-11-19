@@ -14,20 +14,30 @@ import Link from "next/link";
 import { title } from "process";
 import React, { useState } from "react";
 import PopupForm from "./PopupForm";
+import { usePathname } from "next/navigation";
 
 export interface OurServiceProsData {
   title: string;
   Icon: React.ReactNode;
 }
 
-const SectionHeadingDetails = {
-  title: "Our",
-  span: "Services",
-  description:
-    "We specialize in marketing service for hotels, resorts, restaurants, cloud kitchens, hostels, and cafes to drive your business growth and success.",
-};
 
 function OurServices() {
+
+
+  const pathName = usePathname();
+  const SectionHeadingDetails = {
+    title: "Our",
+    span: "Services",
+    description:
+      `We specialize in marketing service for ${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "hotels, resorts, restaurants, cloud kitchens, hostels, and cafes"}  to drive your business growth and success.`,
+  };
   const [showModal, setShowModal] = useState(false);
   return (
     <div>

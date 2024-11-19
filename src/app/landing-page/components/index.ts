@@ -9,5 +9,6 @@ import OurOTAPartners from "./OurOTAPartners";
 import PopupForm from "./PopupForm";
 import ContactUsCard from './ContactUsCard';
 import OurClientNew from './OurClientNew';
+import Riview from './Riview';
 
-export { MarketingAgency, OurClientNew, MileStones, OurServices, ChooseUs, HotelPerformacne, OurClients, WhyUs, OurOTAPartners, PopupForm, ContactUsCard }
+export { MarketingAgency, OurClientNew, Riview, MileStones, OurServices, ChooseUs, HotelPerformacne, OurClients, WhyUs, OurOTAPartners, PopupForm, ContactUsCard }

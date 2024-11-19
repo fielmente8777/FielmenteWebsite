@@ -11,6 +11,7 @@ import ContactUsCard from "./ContactUsCard";
 import OurClientNew from "./OurClientNew";
 import MIleStonesNew from "./MIleStonesNew";
 import ContactUsCardNew from "./ContactUsCardNew";
+import Riview from "./Riview";
 
 const PageComponents = () => {
   return (
@@ -65,6 +66,9 @@ const PageComponents = () => {
 
       {/* Looking for Best Hotel***** */}
       <ContactUsCardNew />
+      <div className="bg-white">
+        <Riview />
+      </div>
       <div id="reviews">
         <ConsultationForm />
       </div>

@@ -1,9 +1,10 @@
-const Section: React.FC<{ className?: string; children: React.ReactNode }> = ({
+const Section: React.FC<{ className?: string; children: React.ReactNode; id?: string }> = ({
   children,
-  className,
+  className = "",
+  id = "",
 }) => {
   return (
-    <section className={`${className ? className : "md:py-10"} py-12`}>
+    <section className={`${className ? className : "md:py-10"} py-12`} id={id}>
       {children}
     </section>
   );
