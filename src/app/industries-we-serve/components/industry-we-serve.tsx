@@ -20,11 +20,11 @@ function IndustryWeServe() {
         </Link>
       </div>
 
-      <div className="lg:grid grid-cols-3 gap-8 md:mt-16 mt-10">
+      {/* <div className="lg:grid grid-cols-3 gap-8 md:mt-16 mt-10">
         <div className="h-5 bg-white border rounded-xl border-gray-300"></div>
         <div className="h-5 bg-white border rounded-xl border-gray-300 lg:mt-10 mt-8"></div>
         <div className="h-5 bg-white border rounded-xl border-gray-300 lg:mt-20 mt-8"></div>
-      </div>
+      </div> */}
     </div>
   );
 }

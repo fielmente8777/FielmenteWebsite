@@ -13,9 +13,12 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import { OutlineDrpopdown } from "@/utils/icons";
+import { PopupForm } from "@/app/landing-page/components";
 
 const Header2 = () => {
   const pathname = usePathname();
+  const [showModal, setShowModal] = useState(false);
+
 
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
@@ -114,13 +117,14 @@ const Header2 = () => {
                 </Link>
               </div> */}
               <div>
-                <Link
-                  href={"tel:+919501868775"}
-                  className="flex items-center gap-1 bg-[#F26633]  px-4 py-3 text-white"
+                <button
+                  // href={"tel:+919501868775"}
+                  onClick={() => setShowModal(true)}
+                  className="flex items-center gap-1 bg-[#F26633] hover:bg-white hover:text-[#F26633] hover:scale-95 hover:shadow-lg transition ease-in-out duration-300 active:scale-100 border border-[#F26633]  px-4 py-3 text-white"
                 >
                   {/* <OutLineCall /> */}
                   Free Consultation
-                </Link>
+                </button>
               </div>
             </div>
 
@@ -155,6 +159,9 @@ const Header2 = () => {
           {/* Mobile nav-bar***** */}
           <MobileNav setIsOpen={setIsNavOpen} isOpen={isNavOpen} />
         </header>
+      )}
+      {showModal && (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
       )}
     </>
   );

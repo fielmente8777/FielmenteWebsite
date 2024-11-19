@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import Header2 from "./header2";
 import React from "react";
-import LandingHeader from "./landingHeader";
+import LandingHeader from "./LandingHeader";
 
 const NavBar = () => {
   const pathname = usePathname();

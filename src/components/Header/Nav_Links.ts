@@ -1,6 +1,6 @@
 export const Nav_Links = [
   {
-    linkName: "About",
+    linkName: "About Us",
     src: "/about-fielmente-best-hospitality-marketing-agency",
   },
   {
