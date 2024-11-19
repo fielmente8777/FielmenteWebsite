@@ -96,6 +96,41 @@ export default function RootLayout({
           }}
         /> */}
 
+        {/* LeadBooster Configuration Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.pipedriveLeadboosterConfig = {
+                base: 'leadbooster-chat.pipedrive.com',
+                companyId: 13896258,
+                playbookUuid: 'b2bcf4e2-ea94-4382-857f-5ccde99a8618',
+                version: 2
+              };
+              (function () {
+                var w = window;
+                if (w.LeadBooster) {
+                  console.warn('LeadBooster already exists');
+                } else {
+                  w.LeadBooster = {
+                    q: [],
+                    on: function (n, h) {
+                      this.q.push({ t: 'o', n: n, h: h });
+                    },
+                    trigger: function (n) {
+                      this.q.push({ t: 't', n: n });
+                    },
+                  };
+                }
+              })();
+            `,
+          }}
+        />
+        {/* LeadBooster Loader Script */}
+        <script
+          src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
+          async
+        ></script>
+
         <Script
           id="google-tag-manager"
           strategy="afterInteractive"
@@ -112,7 +147,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lAxoEaKvDMW4OYGd'); 
+              (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce(‘https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js’); })(document,‘script’); })(‘bElvO73o52V7ZMqj’);
             `,
           }}
         />
@@ -129,10 +164,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM"></iframe>
         </noscript>
-        <script
+        {/* <script
           src="//code.tidio.co/vqp6nexgcvuyk9zdnqsekfjwt1mlfw1x.js"
           async
-        ></script>
+        ></script> */}
       </body>
     </html>
   );
