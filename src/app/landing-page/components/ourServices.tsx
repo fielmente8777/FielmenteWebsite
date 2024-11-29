@@ -26,8 +26,17 @@ function OurServices() {
 
 
   const pathName = usePathname();
+
+
   const SectionHeadingDetails = {
-    title: "Our",
+    title: `${pathName === "/resort/"
+        ? "Resort Marketing"
+        : pathName === "/hospitality/"
+          ? "Hospitality Marketing"
+          : pathName === "/landing-page/"
+            ? "Hotel Marketing"
+            : "Our"}`,
+  
     span: "Services",
     description:
       `We specialize in marketing service for ${pathName === "/resort/"

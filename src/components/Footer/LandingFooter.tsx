@@ -157,11 +157,11 @@ const LandingFooter = () => {
   ];
   const contactLinks = [
     {
-      title: "Call: +91 95018 68777",
+      title: "Call: +91 95018 68775",
       link: "tel:+919501868775",
     },
     {
-      title: "Mail: Sachin@fielmente.com",
+      title: "Mail: sachin@fielmente.com",
       link: "mailto:sachin@fielmente.com",
     },
     {
@@ -204,9 +204,9 @@ const LandingFooter = () => {
       >
         <Container>
           <div className="flex flex-col items-start gap-8">
-            <div className="h-[5.625rem] relative aspect-[4/1.95]">
+            {/* <div className="h-[5.625rem] relative aspect-[4/1.95]">
               <Image src={Logo} alt="logo" fill className="object-contain" />
-            </div>
+            </div> */}
             <div className="grid w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
               {/* About */}
               <div>
@@ -316,20 +316,20 @@ const LandingFooter = () => {
                   <Google />
                 </div>
               </div>
-              <div className="flex flex-col gap-4">
+              {/* <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-semibold helv text-orange-primary">
                   Follow Us:
                 </h3>
                 <ul className="flex  items-center gap-4">
                   {socialLinks.map((item, index) => (
                     <li key={index} className="max-md:p-2 lg:pe-2 lg:py-2">
-                      {/* <span href={item.link} target="_blank" rel="noreferrer"> */}
+                      <span href={item.link} target="_blank" rel="noreferrer">
                       {item.icon} <span className="sr-only">icon</span>
-                      {/* </span> */}
+                      </span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </Container>

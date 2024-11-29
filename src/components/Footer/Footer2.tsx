@@ -191,7 +191,7 @@ const Footer2 = () => {
       link: "https://maps.app.goo.gl/6skWVHbH8e92D1Gi7",
     },
     {
-      title: "Call: +91 95018 68777",
+      title: "Call: +91 95018 68775",
       link: "tel:+919501868775",
     },
     {

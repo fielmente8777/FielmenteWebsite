@@ -66,9 +66,9 @@ const PageComponents = () => {
 
       {/* Looking for Best Hotel***** */}
       <ContactUsCardNew />
-      <div className="bg-white">
+      {/* <div className="bg-white">
         <Riview />
-      </div>
+      </div> */}
       <div id="reviews">
         <ConsultationForm />
       </div>

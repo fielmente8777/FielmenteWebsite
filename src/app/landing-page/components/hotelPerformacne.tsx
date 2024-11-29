@@ -65,7 +65,7 @@ function HotelPerformacne() {
       ? "Resort"
       : pathName === "/hospitality/"
         ? "Hospitality"
-        : "Hotel"} Marketing and grow your`,
+        : "Hotel"} Marketing Services and grow your`,
     span: " occupancy rate by 5X",
     // title: "Let us handle your Hotel Performance Marketing and see your",
     // span: " property grow 5X",

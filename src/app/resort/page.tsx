@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import PageComponents from "../landing-page/components/PageComponents";
 
 export const metadata: Metadata = {
-  title: "Fielmente : Hotel Marketing Agency in India",
+  title: "Fielmente : Resort Marketing Agency in India",
   description:
-    "Best marketing agency in India for hotels, resorts and restaurant",
+    "Best marketing agency in India for Resorts, resorts and restaurant",
   keywords:
-    "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
+    "Resort Marketing Agency, Resort marketing service, Resort marketing consultant ,Resort solutions,Resort business services,Resort support, Resort growth,Resort marketing strategy,Resort marketing planning,Resort marketing plan,Resort marketing services,Resort marketing consultant,Resort marketing agency",
   alternates: {
-    canonical: "https://fielmente.com/fielmente-lp/",
+    canonical: "https://fielmente.com/resort/",
   },
   robots: {
     index: true,
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   authors: [{ name: "Fielmente", url: "https://fielmente.com/resort/" }],
   openGraph: {
-    title: "Fielmente : Hotel Marketing Agency in India",
+    title: "Fielmente : Resort Marketing Agency in India",
     description:
-      "Best marketing agency in India for hotels, resorts and restaurant",
+      "Best marketing agency in India for Resorts, resorts and restaurant",
     url: "https://fielmente.com/resort/",
     siteName: "Fielmente",
     locale: "en_IN",

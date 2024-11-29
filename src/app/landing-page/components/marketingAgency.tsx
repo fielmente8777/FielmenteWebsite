@@ -30,7 +30,13 @@ function MarketingAgency() {
               : pathName === "/landing-page/"
                 ? "Hotel"
                 : "Hospitality"} into thriving destinations with our
-          expert hospitality marketing solutions.
+          expert {pathName === "/resort/"
+            ? "Resort"
+            : pathName === "/hospitality/"
+              ? "hospitality"
+              : pathName === "/landing-page/"
+                ? "hotel"
+                : "hospitality"}  marketing solutions.
         </p>
         <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">
           <p className="text-lg flex items-center gap-5">

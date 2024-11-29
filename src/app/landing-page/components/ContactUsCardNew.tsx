@@ -24,7 +24,7 @@ const ContactUsCardNew = () => {
           </div>
           <div className="lg:text-start text-center flex flex-col max-md:items-center gap-4">
             <h2 className="lg:text-4xl text-2xl text-[#110D3C]">
-              Ready to kick off your growth journey with India’s Best <br />{" "}
+              Ready to kick off your growth journey with {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? "" : "India’s"} Best <br />{" "}
               <b className="text-orange-primary">
                 {pathName === "/resort/"
                   ? "Resort"
@@ -32,7 +32,7 @@ const ContactUsCardNew = () => {
                     ? "Hospitality"
                     : pathName === "/landing-page/"
                       ? "Hotel"
-                      : "Hospitality"} Marketing Agency?
+                      : "Hospitality"} Marketing Agency {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? "in India" : "?"}
               </b>
             </h2>
 

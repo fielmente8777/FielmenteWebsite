@@ -36,6 +36,100 @@ const SectionHeadingDetails = {
 
 function ChooseUs() {
   const pathName = usePathname();
+  const ChooseUsData = [
+    {
+      title: `Expertise in ${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "Hospitality"} `,
+      subtitle:
+        `With a decade of experience in the ${pathName === "/resort/"
+          ? "Resort"
+          : pathName === "/hospitality/"
+            ? "Hospitality"
+            : pathName === "/landing-page/"
+              ? "Hotel"
+              : "Hospitality"} industry, we are the perfect partner to market your hotel, resort, villa & restaurant.`,
+      Icon: "/icon/ExpertiseinHospitality.gif",
+      // Icon: <ExpertiseIcon />,
+    },
+    {
+      title: `Strategic Social Media Marketing for ${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "Hospitality"} `,
+      subtitle:
+        `Our proven strategy of ${pathName === "/resort/"
+          ? "Resort"
+          : pathName === "/hospitality/"
+            ? "Hospitality"
+            : pathName === "/landing-page/"
+              ? "Hotel"
+              : "Hospitality"} social media management boost your brand’s exposure engage your target audience and gives you more bookings.`,
+      // Icon: <SocialMediaMarketing />,
+      Icon: "/icon/StrategicSocial MediaMarketing.gif",
+    },
+    {
+      title: "Optimized for Search Engines",
+      subtitle:
+        `Maximise your ${pathName === "/resort/"
+          ? "Resort"
+          : pathName === "/hospitality/"
+            ? "Hospitality"
+            : pathName === "/landing-page/"
+              ? "Hotel"
+              : "Hospitality"}'s google visibility and increase organic traffic through search engine optimisation and increase more queries.`,
+      // Icon: <Optimized />,
+      Icon: "/icon/optseo.gif",
+    },
+    {
+      title: `Exceptional ${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "Hospitality"} Website Development`,
+      subtitle:
+        "Our website development expertise provides an outstanding user experience from design to functionality.",
+      // Icon: <WebSiteDevelopmentIcon width={60} height={60} />,
+      Icon: "/icon/ExceptionalHospitality.gif",
+    },
+
+    {
+      title: `Customized ${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "Hospitality"} Marketing Solutions`,
+      subtitle:
+        "A compelling reason for you to choose us is our commitment to providing tailored and customized marketing solutions.",
+      // Icon: <MarketSolution />,
+      Icon: "/icon/CustomizedHospitality.gif",
+    },
+    {
+      title: `Effective ${pathName === "/resort/"
+        ? "Resort"
+        : pathName === "/hospitality/"
+          ? "Hospitality"
+          : pathName === "/landing-page/"
+            ? "Hotel"
+            : "Hospitality"} Performance Marketing`,
+      subtitle:
+        "Get the best results with our impactful campaigns that bring in targeted visitors and maximize your return on investment.",
+      // Icon: <HotelPerformance />,
+      Icon: "/icon/graph.gif",
+    },
+  ];
+
   return (
     <div>
       {/* <SectionHeading {...SectionHeadingDetails} /> */}
@@ -271,50 +365,5 @@ export const MarketSolution = () => {
   );
 };
 
-const ChooseUsData = [
-  {
-    title: `Expertise in Hospitality`,
-    subtitle:
-      "With a decade of experience in the hospitality industry, we are the perfect partner to market your hotel, resort, villa & restaurant.",
-    Icon: "/icon/ExpertiseinHospitality.gif",
-    // Icon: <ExpertiseIcon />,
-  },
-  {
-    title: "Strategic Social Media Marketing",
-    subtitle:
-      "Our proven strategy of hotel social media management boost your brand’s exposure engage your target audience and gives you more bookings.",
-    // Icon: <SocialMediaMarketing />,
-    Icon: "/icon/StrategicSocial MediaMarketing.gif",
-  },
-  {
-    title: "Optimized for Search Engines",
-    subtitle:
-      "Maximise your hotel’s google visibility and increase organic traffic through search engine optimisation and increase more queries.",
-    // Icon: <Optimized />,
-    Icon: "/icon/optseo.gif",
-  },
-  {
-    title: "Exceptional Hospitality Website Development",
-    subtitle:
-      "Our website development expertise provides an outstanding user experience from design to functionality.",
-    // Icon: <WebSiteDevelopmentIcon width={60} height={60} />,
-    Icon: "/icon/ExceptionalHospitality.gif",
-  },
-
-  {
-    title: "Customized Hospitality Marketing Solutions",
-    subtitle:
-      "A compelling reason for you to choose us is our commitment to providing tailored and customized marketing solutions.",
-    // Icon: <MarketSolution />,
-    Icon: "/icon/CustomizedHospitality.gif",
-  },
-  {
-    title: "Effective Hotel Performance Marketing",
-    subtitle:
-      "Get the best results with our impactful campaigns that bring in targeted visitors and maximize your return on investment.",
-    // Icon: <HotelPerformance />,
-    Icon: "/icon/graph.gif",
-  },
-];
 
 export default ChooseUs;

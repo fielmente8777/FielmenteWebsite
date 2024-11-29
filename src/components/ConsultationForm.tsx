@@ -19,7 +19,7 @@ const ConsultationForm = () => {
       <Container>
         <div className="lg:grid grid-cols-3 gap-6 items-center" id="testimonials">
           <div className="col-span-2">
-            {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? (
+            {/* {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? (
               <div>
                 <h2 className="text-white lg:text-4xl/snug text-2xl">
                   Are You Looking for the Best {pathName === "/resort/"
@@ -29,7 +29,7 @@ const ConsultationForm = () => {
                       : pathName === "/landing-page/"
                         ? "Hotel"
                         : null} Marketing{" "}
-                  <b className="text-orange-primary">Agency?</b>
+                  <b className="text-orange-primary">Company {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? "in India" : "?"}</b>
                 </h2>
                 <p className="text-white lg:text-xl text-base  mt-4">
                   For effective {pathName === "/resort/"
@@ -44,7 +44,7 @@ const ConsultationForm = () => {
                 </p>
               </div>
             ) : (
-              <>
+              <> */}
                 <div className="text-white text-3xl">
                   <h2>
                     Client{" "}
@@ -73,7 +73,8 @@ const ConsultationForm = () => {
                       <Card {...item} />
                     </SwiperSlide>
                   ))}
-                </Swiper></>)}
+                </Swiper>
+                {/* </>)} */}
             <div className="pagination mt-10 flex justify-center items-center gap-1"></div>
           </div>
           <div className="" id="contactForm">
