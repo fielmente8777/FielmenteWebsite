@@ -130,18 +130,18 @@ export default function RootLayout({
           src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
           async
         ></script> */}
-        <Script id="zoho-init" strategy="afterInteractive">
+        {/* <Script id="zoho-init" strategy="afterInteractive">
         {`
           window.$zoho=window.$zoho || {};
           $zoho.salesiq = $zoho.salesiq || { ready: function() {} };
         `}
-      </Script>
-      <Script
+      </Script> */}
+      {/* <Script
         id="zsiqscript"
         src="https://salesiq.zohopublic.in/widget?wc=siq3e552165893c13042e1d199f6774a60161bf7e2d236cee20afeec12690605bbe60e273bf1bbc69d76802e696c96db5df"
         strategy="afterInteractive"
         defer
-      />
+      /> */}
 
         <Script
           id="google-tag-manager"
