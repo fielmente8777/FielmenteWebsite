@@ -57,8 +57,8 @@ const OurOTAPartners = () => {
         >
           {OtaImages.map((item, index) => (
             <SwiperSlide key={index} className="p-2">
-              <Link
-                href={"/"}
+              <div
+                // href={"/"}
                 className="relative w-full lg:aspect-[3/1.5] aspect-[4/4] h-[7rem] rounded-xl flex justify-center items-center hover:shadow-lg shadow-slate-300 transition "
               >
                 <Image
@@ -70,7 +70,7 @@ const OurOTAPartners = () => {
                   priority={true}
                   className="object-contain w-full h-full rounded-md p-3 bg-white"
                 />
-              </Link>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

@@ -134,7 +134,7 @@ function ChooseUs() {
     <div>
       {/* <SectionHeading {...SectionHeadingDetails} /> */}
       <div className="flex flex-col gap-5">
-        <h2 className="text-center md:text-4xl helv text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
+        <h2 className="text-center md:text-4xl helv font-semibold text-blue-dark text-[1.4rem]/[2rem] last-word md:w-[85%] mx-auto">
           {SectionHeadingDetails.title}
         </h2>
         <p className="text-2xl max-md:text-xl helv text-blue-dark text-center lg:w-[70%] mx-auto">

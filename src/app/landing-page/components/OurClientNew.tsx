@@ -50,11 +50,11 @@ const OurClientNew = () => {
             }}
             // loop={true}
             speed={900}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
+            // autoplay={{
+            //   delay: 4000,
+            //   disableOnInteraction: false,
+            //   pauseOnMouseEnter: true,
+            // }}
             breakpoints={{
               768: {
                 slidesPerView: 4,
@@ -76,11 +76,39 @@ const OurClientNew = () => {
           >
             {ClientImages.map((item, index) => (
               <SwiperSlide key={index} className="p-4">
-                <Link
-                  href={"/"}
-                  className="relative w-full lg:aspect-[4/3.4] aspect-[4/4] h-[8rem] flex justify-center items-center duration-300 cursor-pointer hover:shadow-xl shadow-2xl hover:shadow-white/35 hover:scale-[1.04] rounded-tl-[1.875rem] rounded-br-[1.875rem] overflow-hidden"
+                <div
+                  // href={"/"}
+                  className="relative w-full lg:aspect-[4/3.4] aspect-[4/4] h-[8rem] flex justify-center items-center duration-300  hover:shadow-xl shadow-2xl hover:shadow-white/35 hover:scale-[1.04] rounded-tl-[1.875rem] rounded-br-[1.875rem] overflow-hidden"
                   style={{
                     backgroundColor: `${index == 23
+                      ? "#22413f"
+                      : index == 22
+                        ? "#F7F7F7"
+                        : index == 9
+                          ? "#FF6C26"
+                          : index == 16
+                            ? "#F7F7F7"
+                            : index == 21 || index == 0
+                              ? "#1e1e1e"
+                              : index == 25
+                                ? "#e6e6e6"
+                                : index == 18
+                                  ? "#F7F7F7"
+                                  : index == 25
+                                    ? "#f7f7f7"
+                                    : "white"
+                      }`,
+                  }}
+                >
+                  {/* {index} */}
+                  <Image
+                    src={item.src}
+                    alt={`${item.alt}`}
+                    width={100}
+                    height={100}
+                    className={`${index == 4 || index == 5 || index == 9 || index == 11 || index == 19 ? "object-cover" : "object-contain"} w-full h-full p-3 `}
+                    style={{
+                      backgroundColor: `${index == 23
                         ? "#22413f"
                         : index == 22
                           ? "#F7F7F7"
@@ -90,31 +118,10 @@ const OurClientNew = () => {
                               ? "#F7F7F7"
                               : index == 21 || index == 0
                                 ? "#1e1e1e"
-                                : index == 18
-                                  ? "#F7F7F7"
-                                  : index == 20
-                                    ? "#f7f7f7"
-                                    : "white"
-                      }`,
-                  }}
-                >
-                  <Image
-                    src={item.src}
-                    alt={`${item.alt}`}
-                    width={100}
-                    height={100}
-                    className="object-contain w-full h-full p-3 "
-                    style={{
-                      backgroundColor: `${index == 23
-                          ? "#22413f"
-                          : index == 22
-                            ? "#F7F7F7"
-                            : index == 9
-                              ? "#FF6C26"
-                              : index == 16
-                                ? "#F7F7F7"
-                                : index == 21 || index == 0
-                                  ? "#1e1e1e"
+                                : index == 25 
+                                  ? "#e6e6e6"
+                                  : index == 26
+                                    ? "#f3f3f3"
                                   : index == 18
                                     ? "#F7F7F7"
                                     : index == 20
@@ -123,7 +130,7 @@ const OurClientNew = () => {
                         }`,
                     }}
                   />
-                </Link>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
