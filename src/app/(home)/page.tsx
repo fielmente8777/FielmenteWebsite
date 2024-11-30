@@ -19,7 +19,7 @@ import {
   WhyUs,
 } from "../landing-page/components";
 import { ConsultationForm } from "@/components";
-import ChooseUs from "../landing-page/components/chooseUs";
+import ChooseUs from "../landing-page/components/chooseUs.tsx";
 import ContactUsCardNew from "../landing-page/components/ContactUsCardNew";
 import MIleStonesNew from "../landing-page/components/MIleStonesNew";
 

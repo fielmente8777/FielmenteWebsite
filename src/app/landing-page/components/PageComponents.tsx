@@ -1,10 +1,10 @@
 import { ConsultationForm, Section } from "@/components";
-import ChooseUs from "./chooseUs";
+import ChooseUs from "./chooseUsOld";
 import MarketingAgency from "./marketingAgency";
 import MileStones from "./mileStones";
 import OurServices from "./ourServices";
 import HotelPerformacne from "./hotelPerformacne";
-import OurClients from "./ourClients";
+import { OurClient } from "@/components";
 import OurOTAPartners from "./OurOTAPartners";
 import WhyUs from "./WhyUs";
 import ContactUsCard from "./ContactUsCard";
@@ -24,7 +24,11 @@ const PageComponents = () => {
       </div>
 
       {/* MileStones ****** */}
-      <MIleStonesNew />
+      {/* <MIleStonesNew /> */}
+
+      <div className="max-w-[900px] mx-auto lg:py-20 py-10">
+        <MileStones />
+      </div>
 
       {/* Services***** */}
       <div className="bg-blue-dark text-white lg:py-20 py-10" id="services">
@@ -48,9 +52,9 @@ const PageComponents = () => {
       </Section>
 
       {/* Our Clients**** */}
-      <div className="bg-white lg:py-20 py-10">
+      <div className="bg-blue-dark lg:py-20 py-10">
         <div className="lg:max-w-[1280px] max-w-full mx-auto px-[1.5rem]">
-          <OurClientNew />
+          <OurClient />
         </div>
       </div>
       <OurOTAPartners />
@@ -65,7 +69,9 @@ const PageComponents = () => {
       </div>
 
       {/* Looking for Best Hotel***** */}
-      <ContactUsCardNew />
+      {/* <ContactUsCardNew /> */}
+
+      <ContactUsCard />
       {/* <div className="bg-white">
         <Riview />
       </div> */}

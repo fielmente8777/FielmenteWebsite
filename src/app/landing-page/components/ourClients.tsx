@@ -101,8 +101,7 @@ function OurClients({
                     alt={`${item.alt}`}
                     width={100}
                     height={100}
-                    className="object-contain w-full h-full rounded-md p-3 "
-                 
+                    className={`${index == 4 || index == 5 || index == 9 || index == 11 || index == 19 ? "object-cover" : "object-contain"} w-full h-full p-3 `}
                     style={{
                       backgroundColor: `${index == 23
                         ? "#22413f"
@@ -114,11 +113,15 @@ function OurClients({
                               ? "#F7F7F7"
                               : index == 21 || index == 0
                                 ? "#1e1e1e"
-                                : index == 18
-                                  ? "#F7F7F7"
-                                  : index == 20
-                                    ? "#f7f7f7"
-                                    : "white"
+                                : index == 25
+                                  ? "#e6e6e6"
+                                  : index == 26
+                                    ? "#f3f3f3"
+                                    : index == 18
+                                      ? "#F7F7F7"
+                                      : index == 20
+                                        ? "#f7f7f7"
+                                        : "white"
                         }`,
                     }}
                   />
