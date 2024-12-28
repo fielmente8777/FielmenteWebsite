@@ -153,17 +153,16 @@ const PopupForm = ({
 
   return (
     <>
-      {showModal && (
-        <section className="fixed z-50 w-full h-screen bg-black bg-opacity-70 top-0 left-0">
-          <article className="flex justify-center items-center h-full">
-            <div className="flex flex-col gap-3 max-w-[400px] w-full shadow-2xl p-4 relative rounded-md">
-              <button
-                onClick={closeModal}
-                className="absolute top-[22px] lg:top-0 right-[3px] w-8 h-8 flex justify-center items-center text-lg rounded-full bg-red-500 hover:bg-red-600 text-white"
-              >
-                X
-              </button>
-              {/* <div className="relative w-full h-[270px] aspect-[4/4]">
+      <section className={`fixed inset-0 z-[999] bg-black bg-opacity-50 duration-700 ease-in-out transition-all ${showModal ? "block" : "hidden"}`}>
+        <article className="flex justify-center items-center h-full">
+          <div className="flex flex-col gap-3 max-w-[400px] w-full shadow-2xl p-4 relative rounded-md">
+            <button
+              onClick={closeModal}
+              className="absolute top-[22px] lg:top-0 right-[3px] w-8 h-8 flex justify-center items-center text-lg rounded-full bg-red-500 hover:bg-red-600 text-white"
+            >
+              X
+            </button>
+            {/* <div className="relative w-full h-[270px] aspect-[4/4]">
                 <Image
                   src={popupimg}
                   alt="Hospitality Marketing"
@@ -237,11 +236,11 @@ const PopupForm = ({
                   </button>
                 </div>
               </form> */}
-              <Form />
-            </div>
-          </article>
-        </section>
-      )}
+            <Form />
+          </div>
+        </article>
+      </section>
+
       {openPopup && (
         <div className="fixed top-0 left-0 w-full h-full bg-blue-dark bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-4 rounded">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.scss";
 import Link from "next/link";
 import { Nav_Links } from "./Nav_Links";
@@ -19,8 +19,70 @@ const Header2 = () => {
   const pathname = usePathname();
   const [showModal, setShowModal] = useState(false);
 
-
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const [hasShownPopup, setHasShownPopup] = useState(false); // Prevent multiple triggers
+
+  useEffect(() => {
+    // Detect mouse movement near the top for desktop
+    const handleMouseMove = (e: MouseEvent) => {
+      if (e.clientY < 50 && !hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Detect touch and scroll behavior for mobile/tablet
+    const handleTouchOrScroll = () => {
+      if (!hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Detect visibility change
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden" && !hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Handle back button press
+    const handleBackButton = () => {
+      if (!hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Add a fake history state to detect back button
+    const addFakeHistoryState = () => {
+      history.pushState({}, "", window.location.href);
+    };
+
+    // Add event listeners
+    window.addEventListener("mousemove", handleMouseMove); // For desktop
+    window.addEventListener("scroll", handleTouchOrScroll, { passive: true }); // For mobile/tablet scroll
+    window.addEventListener("touchmove", handleTouchOrScroll, { passive: true }); // For mobile/tablet touch
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("popstate", handleBackButton);
+
+    // Add fake history state
+    addFakeHistoryState();
+
+    // Cleanup listeners
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleTouchOrScroll);
+      window.removeEventListener("touchmove", handleTouchOrScroll);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, [hasShownPopup]);
+
+  
+
   return (
     <>
       {pathname === "/thank-you/" ? (
@@ -32,6 +94,11 @@ const Header2 = () => {
             <Link
               href={"/"}
               className="relative w-[160px] aspect-[2/.8] flex items-center justify-center"
+              aria-label="fielmente-logo"
+              onClick={() => {
+                setIsNavOpen(false);
+                setShowModal(true);
+              }}
             >
               <Image
                 src={Logo}

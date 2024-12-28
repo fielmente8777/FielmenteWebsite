@@ -2,14 +2,82 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.webp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { PopupForm } from "@/app/landing-page/components";
 
 const LandingHeader = () => {
   const [hover, setHover] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const [hasShownPopup, setHasShownPopup] = useState(false); // Prevent multiple triggers
+
+  useEffect(() => {
+    // Detect mouse movement near the top for desktop
+    const handleMouseMove = (e: MouseEvent) => {
+      if (e.clientY < 50 && !hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Detect touch and scroll behavior for mobile/tablet
+    const handleTouchOrScroll = () => {
+      if (!hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Detect visibility change
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden" && !hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Handle back button press
+    const handleBackButton = () => {
+      if (!hasShownPopup) {
+        setShowModal(true);
+        setHasShownPopup(true);
+      }
+    };
+
+    // Add a fake history state to detect back button
+    const addFakeHistoryState = () => {
+      history.pushState({}, "", window.location.href);
+    };
+
+    // Add event listeners
+    window.addEventListener("mousemove", handleMouseMove); // For desktop
+    window.addEventListener("scroll", handleTouchOrScroll, { passive: true }); // For mobile/tablet scroll
+    window.addEventListener("touchmove", handleTouchOrScroll, {
+      passive: true,
+    }); // For mobile/tablet touch
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("popstate", handleBackButton);
+
+    // Add fake history state
+    addFakeHistoryState();
+
+    // Cleanup listeners
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleTouchOrScroll);
+      window.removeEventListener("touchmove", handleTouchOrScroll);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, [hasShownPopup]);
+
   return (
     <header className="py-3">
       <nav className="max-width flex justify-between">
-        <div className="relative h-[65px] aspect-[4/1.9]">
+        <button
+          onClick={() => setShowModal(true)}
+          className="relative h-[65px] aspect-[4/1.9]"
+        >
           <Image
             src={Logo}
             alt="alt"
@@ -17,7 +85,7 @@ const LandingHeader = () => {
             fill
             className="object-contain"
           />
-        </div>
+        </button>
 
         {/* desktop view */}
         <div className="hidden lg:flex gap-6 items-center">
@@ -54,6 +122,9 @@ const LandingHeader = () => {
           </Link>
         </div>
       </nav>
+      {showModal && (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
     </header>
   );
 };
