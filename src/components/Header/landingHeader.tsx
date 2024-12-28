@@ -4,14 +4,17 @@ import Image from "next/image";
 import Logo from "../../../public/images/logo.webp";
 import { useEffect, useState } from "react";
 import { PopupForm } from "@/app/landing-page/components";
+import { usePathname } from "next/navigation";
 
 const LandingHeader = () => {
+  const pathName = usePathname();
   const [hover, setHover] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const [hasShownPopup, setHasShownPopup] = useState(false); // Prevent multiple triggers
 
   useEffect(() => {
+    if (pathName === "/thank-you/") return;
     // Detect mouse movement near the top for desktop
     const handleMouseMove = (e: MouseEvent) => {
       if (e.clientY < 50 && !hasShownPopup) {
@@ -69,13 +72,15 @@ const LandingHeader = () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("popstate", handleBackButton);
     };
-  }, [hasShownPopup]);
+  }, [hasShownPopup, pathName]);
 
   return (
     <header className="py-3">
       <nav className="max-width flex justify-between">
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            if (pathName !== "/thank-you/") setShowModal(true);
+          }}
           className="relative h-[65px] aspect-[4/1.9]"
         >
           <Image
