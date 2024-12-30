@@ -13,10 +13,11 @@ export async function generateStaticParams() {
 }
 // Generate static paths based on blog links
 interface Params {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export async function generateMetadata({ params }: Params) {
+export async function generateMetadata(props: Params) {
+  const params = await props.params;
   const data = blogData.find((item) => item.link === params.slug);
   if (!data) {
     return {
@@ -30,7 +31,8 @@ export async function generateMetadata({ params }: Params) {
 }
 // Fetch blog data based on slug
 
-const Page = ({ params }: Params) => {
+const Page = async (props: Params) => {
+  const params = await props.params;
   const data = blogData.find((item) => item.link === params.slug);
   // console.log(data);
   if (!data) {
