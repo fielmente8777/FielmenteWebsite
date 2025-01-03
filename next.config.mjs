@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  swcMinify: true,
+  // swcMinify: true,
   reactStrictMode: true,
 };
 

@@ -61,7 +61,8 @@ const OurClient = () => {
                       src={item.src}
                       alt={`${item.alt}`}
                       fill
-                      className={`${index == 25 ||
+                      className={`${
+                        index == 25 ||
                         index == 26 ||
                         index == 19 ||
                         index == 1 ||
@@ -71,31 +72,36 @@ const OurClient = () => {
                         index == 7 ||
                         index == 9 ||
                         index == 11 ||
-                        index == 19
-                        ? "object-cover"
-                        : "object-contain"
-                        } w-full h-full rounded-md p-3`}
+                        index == 19 ||
+                        index == 27 ||
+                        index == 29 ||
+                        index == 35
+                          ? "object-cover"
+                          : "object-contain"
+                      } w-full h-full rounded-md p-3`}
                       style={{
-                        backgroundColor: `${index == 23
-                          ? "#22413f"
-                          : index == 22
-                            ? "#F7F7F7"
-                            : index == 9
-                              ? "#FF6C26"
-                              : index == 16
-                                ? "#F7F7F7"
+                        backgroundColor: `${
+                          index == 23
+                            ? "#22413f"
+                            : index == 22 ||
+                                index == 16 ||
+                                index == 18 ||
+                                index == 20
+                              ? "#F7F7F7"
+                              : index == 9
+                                ? "#FF6C26"
                                 : index == 21 || index == 0
                                   ? "#1e1e1e"
-                                  : index == 18
-                                    ? "#F7F7F7"
-                                    : index == 20
-                                      ? "#f7f7f7"
-                                      : index == 25
-                                        ? "#E6E6E6"
-                                        : index == 26
-                                          ? "#F3F3f3"
+                                  : index == 25
+                                    ? "#e6e6e6"
+                                    : index == 26
+                                      ? "#f3f3f3"
+                                      : index == 34 || index == 35 || index == 28
+                                        ? "#000000"
+                                        : index == 31
+                                          ? "#a7d062"
                                           : "white"
-                          }`,
+                        }`,
                       }}
                     />
                   </div>

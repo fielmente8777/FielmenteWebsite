@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import Client1 from "../../public/images/ALLURE-NAINITAL-LOGO.png";
 import Client2 from "../../public/images/Client2.png";
 import Client3 from "../../public/images/Client3.png";
@@ -26,8 +27,15 @@ import Client25 from "../../public/images/footerspicelogo.png";
 import Client26 from "../../public/images/chefkenzo.png";
 import Client27 from "../../public/images/eracamp.png";
 import Client28 from "../../public/images/Grandview_resort.jpg";
-import Client29 from "../../public/images/minimalist.png";
-import { StaticImageData } from "next/image";
+import Client29 from "../../public/clientsLogo/468F.png";
+import Client30 from "../../public/clientsLogo/Aaoji.png";
+import Client31 from "../../public/clientsLogo/STERNWHEELER.jpg";
+import Client32 from "../../public/clientsLogo/Season-suites.png";
+import Client33 from "../../public/clientsLogo/emeraldtrail.png";
+import Client34 from "../../public/clientsLogo/kiyostay.png";
+import Client35 from "../../public/clientsLogo/lakehill.png";
+import Client36 from "../../public/clientsLogo/maati.png";
+import Client37 from "../../public/clientsLogo/sprav.jpg";
 
 export interface ClientData {
   src: string | StaticImageData;
@@ -153,8 +161,40 @@ export const ClientImages: ClientData[] = [
     src: Client28,
     alt: "Client28",
   },
-  // {
-  //   src: Client29,
-  //   alt: "Client29",
-  // }
+  {
+    src: Client29,
+    alt: "Client29",
+  },
+  {
+    src: Client30,
+    alt: "Client30",
+  },
+  {
+    src: Client31,
+    alt: "Client31",
+  },
+  {
+    src: Client32,
+    alt: "Client32",
+  },
+  {
+    src: Client33,
+    alt: "Client33",
+  },
+  {
+    src: Client34,
+    alt: "Client34",
+  },
+  {
+    src: Client35,
+    alt: "Client35",
+  },
+  {
+    src: Client36,
+    alt: "Client36",
+  },
+  {
+    src: Client37,
+    alt: "Client37",
+  },
 ];

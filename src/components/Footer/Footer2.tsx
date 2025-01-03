@@ -187,7 +187,8 @@ const Footer2 = () => {
   ];
   const contactLinks = [
     {
-      title: "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+      title:
+        "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
       link: "https://maps.app.goo.gl/6skWVHbH8e92D1Gi7",
     },
     {
@@ -286,10 +287,7 @@ const Footer2 = () => {
                 </h2>
                 <ul className="flex flex-col gap-4">
                   {contactLinks.map((item, index) => (
-                    <li
-                      className="text-base text-[#787878]"
-                      key={index}
-                    >
+                    <li className="text-base text-[#787878]" key={index}>
                       {item.link ? (
                         <Link href={item.link}>{item.title}</Link>
                       ) : (
@@ -341,8 +339,8 @@ const Footer2 = () => {
                   <p className="text-sm text-[#787878]">
                     By submitting this form you are confirming that you have
                     read and agree to Fielmente
-                    <span className="text-[#F2B203]">{" "}Terms</span> &
-                    <span className="text-[#F2B203]">{" "}Privacy Policy</span>.
+                    <span className="text-[#F2B203]"> Terms</span> &
+                    <span className="text-[#F2B203]"> Privacy Policy</span>.
                   </p>
                 </div>
               </div>
@@ -378,12 +376,20 @@ const Footer2 = () => {
       <Container>
         <div className="h-[1px] w-full bg-[#3B3B3B] mb-10"></div>
         <div className="flex max-md:flex-col items-center gap-3 justify-between w-full">
-          <p className="text-sm text-[#787878] max-md:text-center flex items-center justify-center gap-3">
+          <p className="text-sm text-[#787878] max-md:text-center flex max-md:flex-col items-center justify-center gap-1">
             © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
-            Reserved {" "} | <Link target="_blank" href="https://usa.fielmente.com/">USA</Link> | <Link target="_blank" href="https://dubai.fielmente.com/">Dubai</Link>
+            Reserved |{" "}
+            <span className="">
+              <Link target="_blank" href="https://usa.fielmente.com/">
+                USA
+              </Link>{" "}
+              |{" "}
+              <Link target="_blank" href="https://dubai.fielmente.com/">
+                Dubai
+              </Link>
+            </span>
           </p>
           <div className="flex items-center gap-4">
-
             <Link href={"/privacy-policy"} className="text-sm text-[#787878] ">
               Privacy Policy
             </Link>
@@ -397,7 +403,9 @@ const Footer2 = () => {
         </div>
       </Container>
 
-      {pathname !== "/thank-you/" && < PopupForm setShowModal={setShowModal} showModal={showModal} />}
+      {pathname !== "/thank-you/" && (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
     </footer>
   );
 };
