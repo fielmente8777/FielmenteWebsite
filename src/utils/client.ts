@@ -36,6 +36,7 @@ import Client34 from "../../public/clientsLogo/kiyostay.png";
 import Client35 from "../../public/clientsLogo/lakehill.png";
 import Client36 from "../../public/clientsLogo/maati.png";
 import Client37 from "../../public/clientsLogo/sprav.jpg";
+import Client38 from "../../public/clientsLogo/Park Cafe.png";
 
 export interface ClientData {
   src: string | StaticImageData;
@@ -196,5 +197,9 @@ export const ClientImages: ClientData[] = [
   {
     src: Client37,
     alt: "Client37",
+  },
+  {
+    src: Client38,
+    alt: "Client38",
   },
 ];
