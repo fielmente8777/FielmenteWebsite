@@ -1,10 +1,15 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 function Whatsapp() {
+  const pathname = usePathname();
   return (
-    <div className="fixed bottom-24 lg:left-10 left-4 z-20 cursor-pointer">
+    <div
+      className={`fixed   z-20 cursor-pointer ${pathname === "/landing-page/" || pathname === "/hospitality/" || pathname === "/resort/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-24"}`}
+    >
       <Link
         href="https://wa.me/919501868775?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency"
         target="_blank"

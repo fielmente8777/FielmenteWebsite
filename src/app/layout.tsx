@@ -7,6 +7,7 @@ import Call from "@/components/Call";
 import Whatsapp from "@/components/WhatsApp";
 import NavBar from "@/components/Header/NavBar";
 import Script from "next/script";
+import Salesiq from "@/components/zohochatbot/Salesiq";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -130,17 +131,7 @@ export default function RootLayout({
           src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
           async
         ></script> */}
-        <Script id="zoho-init" strategy="afterInteractive">
-          {`
-        window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}
-        `}
-        </Script>
-        <Script
-          id="zsiqscript"
-          src="https://salesiq.zohopublic.in/widget?wc=siq1a53c0a073d244118c9a52feae425ec200f5a91c3949296330c5edf2c3a6e668"
-          strategy="afterInteractive"
-          defer
-        />
+        <Salesiq />
 
         <Script
           id="google-tag-manager"
