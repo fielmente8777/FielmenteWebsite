@@ -21,16 +21,14 @@ export interface OurServiceProsData {
   Icon: React.ReactNode;
 }
 
-
 function OurServices() {
-
-
   const pathName = usePathname();
   const SectionHeadingDetails = {
     title: "Our",
     span: "Services",
     description:
-      "We specialize in marketing service for hotels, resorts, restaurants, cloud kitchens, hostels, and cafes to drive your business growth and success.",
+      // "We specialize in marketing service for hotels, resorts, restaurants, cloud kitchens, hostels, and cafes to drive your business growth and success.",
+      "We specialize in marketing company for hotels, marketing company for resorts, marketing company for restaurants, marketing company for cloud kitchens, marketing company for hostels, and marketing company for cafes to drive your business growth and success.",
   };
 
   // const SectionHeadingDetails = {

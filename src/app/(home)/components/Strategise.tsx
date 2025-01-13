@@ -6,6 +6,12 @@ import strategise from "../../../../public/images/img1.png";
 import execute from "../../../../public/images/aerial-view-barista-book-1024x1024.webp";
 
 const Strategise: React.FC = () => {
+  const data = [
+    "Transforming hotels & restaurants into thriving destinations with our expert hospitality marketing solutions and Hotel Marketing Agency.",
+    "We believe that your stories are worth telling and we design compelling ways to showcase your brand. You might be wondering what makes us stand out from the rest.? Well, we are all-rounders. From social media marketing to search engine optimization and paid campaigns, these are just a few of the services to name.",
+    "Since 2020, we have completed 120 projects with a 95% satisfaction rate. But! This is just a start. We, the best restaurant marketing agency in India, personalised strategies, to build trust and drive immense growth to the success of your hotel and restaurant.",
+    "As a leading marketing company for hotels and marketing company for resorts, we specialize in creating impactful campaigns to attract guests. Our expertise as a marketing agency for resorts ensures a personalized approach for your brand. Recognized as a top hotel digital marketing agency and hotel digital marketing company, we deliver measurable results through cutting-edge strategies. Choose Fielmente as your digital marketing agency for hotels and digital marketing company for hotels to transform your hospitality business with proven success and innovation.",
+  ];
   return (
     <Section className="bg-[#0F110F] text-white lg:py-24">
       <Container>
@@ -13,7 +19,7 @@ const Strategise: React.FC = () => {
           <h2 className="lg:text-4xl text-3xl font-bold text-center">
             This is our Behind the Scene
           </h2>
-          <p className="text-[#BCBCBC] lg:text-[1.125rem]/[2.1375rem] max-w-[43rem] text-2xl text-center mt-6 max-w-5xl mx-auto">
+          <p className="text-[#BCBCBC] lg:text-[1.125rem]/[2.1375rem] text-2xl text-center mt-6 max-w-5xl mx-auto">
             These are the foundation of our hospitality marketing agency&apos;s
             approach, aimed at making your hospitality business thrive, leading
             to success
@@ -33,16 +39,25 @@ const Strategise: React.FC = () => {
         </div>
       </Container>
       <Container>
-        <article className="lg:py-20 py-6">
+        <article className="lg:py-14 py-6">
           <h2 className="lg:text-4xl text-2xl font-bold text-center lg:text-start">
             Work with India’s Best Hotel Marketing Agency
           </h2>
-          <p className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start">
+          {data.map((item, index) => (
+            <p
+              className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start"
+              key={index}
+            >
+              {item}
+            </p>
+          ))}
+          {/* <p className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start">
             Transforming hotels & restaurants into thriving destinations with
             our expert hospitality marketing solutions and Hotel Marketing
             Agency.
-          </p>
-          <p className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start">
+            
+          </p> */}
+          {/* <p className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start">
             We believe that your stories are worth telling and we design
             compelling ways to showcase your brand. You might be wondering what
             makes us stand out from the rest.? Well, we are all-rounders. From
@@ -54,7 +69,7 @@ const Strategise: React.FC = () => {
             rate. But! This is just a start. We, the best restaurant marketing
             agency in India, personalised strategies, to build trust and drive
             immense growth to the success of your hotel and restaurant.
-          </p>
+          </p> */}
         </article>
       </Container>
     </Section>
@@ -79,10 +94,17 @@ export const Card: React.FC<{
         <h3 className="lg:text-3xl text-2xl font-bold text-black text-center lg:text-start">
           {title}
         </h3>
-        <p className="text-black max-md:text-center  lg:text-[1.125rem]/[1.9rem] mt-2">{subtitle}</p>
+        <p className="text-black max-md:text-center  lg:text-[1.125rem]/[1.9rem] mt-2">
+          {subtitle}
+        </p>
       </div>
       <div className="relative w-full aspect-[1/1] overflow-hidden rounded-3xl">
-        <Image src={src} alt={alt} fill className="object-contain rounded-3xl" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-contain rounded-3xl"
+        />
       </div>
     </div>
   );

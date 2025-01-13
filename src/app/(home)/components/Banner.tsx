@@ -44,13 +44,25 @@ const Banner: React.FC = () => {
           </div>
         </div> */}
 
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-20">
             <div className="flex flex-col justify-center gap-8">
-              <h1 className="text-2xl md:text-5xl font-semibold text-[#110D3C]">India’s Leading Hospitality Marketing <span className="text-[#F26633]">Agency</span></h1>
-              <p className="text-gray-primary text-2xl">India’s Leading Hotel, Resort & Restaurant Marketing Agency with over 10+ Years of Experience</p>
+              <h1 className="text-2xl md:text-5xl font-semibold text-[#110D3C]">
+                India’s Leading Hospitality Marketing{" "}
+                <span className="text-[#F26633]">Agency</span>
+              </h1>
+              <p className="text-gray-primary text-2xl">
+                India’s Leading digital marketing agency for Hotels, Resort &
+                Restaurant with over 10+ Years of Experience. We are best at
+                resort and restaurant marketing agency.
+              </p>
+              {/* <p className="text-gray-primary text-2xl">India’s Leading Hotel, Resort & Restaurant Marketing Agency with over 10+ Years of Experience</p> */}
               <div>
-                <Link href="#contactForm" className="border border-[#F26633] py-3 px-4 text-[#F26633] hover:bg-[#F26633] hover:text-white transition-all duration-200">Book Demo</Link>
+                <Link
+                  href="#contactForm"
+                  className="border border-[#F26633] py-3 px-4 text-[#F26633] hover:bg-[#F26633] hover:text-white transition-all duration-200"
+                >
+                  Book Demo
+                </Link>
               </div>
             </div>
             <div className="flex justify-center items-center">
@@ -60,7 +72,6 @@ const Banner: React.FC = () => {
         </Container>
       </Section>
     </div>
-
   );
 };
 

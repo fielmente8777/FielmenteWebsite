@@ -28,6 +28,7 @@ export default function Home() {
     "Choose Fielmente - Hospitality Marketing Agency, Hotel Marketing Agency , and Restaurant marketing agency as your partner and get benefitted from our industry expertise and results-driven focus to take your hotel or restaurant to new heights of success in the digital realm. Welcome to Fielmente, a top-notch hotel marketing agency in India.",
     "Your stories are worth telling and we design compelling ways to showcase your brand. You might be wondering what makes us stand out from the rest. Well, we are all-rounders. From hotel social media marketing to hotel search engine optimisation and hotel paid campaigns, these are just a few of the services to name of this ingenious restaurant marketing company. With a team of highly qualified individuals, who come from different domains of life, we assure you maximum brand visibility with a remarkable return on investment.",
     "Since 2020, we have completed almost 120 hotel marketing projects in 4 countries with a 95% satisfaction rate. But! This is just a start. We, the best restaurant marketing agency in India, personalize strategies, build trust, and drive immense growth to the success of your hotel and restaurant.",
+    "As a premier Hotel Marketing Company in India, we offer tailored solutions for increased visibility and bookings. Partner with the best marketing company for hotels, including cutting-edge services from a top digital marketing company for hotels!",
   ];
 
   return (
@@ -35,7 +36,7 @@ export default function Home() {
       <Banner />
       <MIleStonesNew />
       <Strategise />
-     
+
       {/* <Worked />
       <ChooseUs /> */}
       <Section>
@@ -61,7 +62,7 @@ export default function Home() {
           
         </Container>
       </Section> */}
-       <div className="bg-blue-dark text-white lg:py-20 py-10">
+      <div className="bg-blue-dark text-white lg:py-20 py-10">
         <div className="max-width">
           <OurServices />
         </div>

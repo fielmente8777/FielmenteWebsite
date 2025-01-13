@@ -49,12 +49,7 @@ const ContainerCard: React.FC<{
         } col-span-1 lg:block hidden`}
       >
         <div className="relative w-full aspect-[4/4]">
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className="object-contain"
-          />
+          <Image src={src} alt={alt} fill className="object-contain" />
         </div>
       </div>
       <div
@@ -122,7 +117,7 @@ const data: CardSectionProps[] = [
     alt: "web development",
     title: "Hotel Website Development",
     subtitle:
-      "Are you in need of a website that effectively represents your brand and drives results? Look no further! Our Marketing Agency offers top-notch hotel website development services that will take your online presence to the next level.",
+      "Are you in need of a website that effectively represents your brand and drives results? Look no further! Our digital marketing company for hotels offers top-notch hotel website development services that will take your online presence to the next level.",
     link: "/contact",
     btnName: "Schedule a Demo",
   },
