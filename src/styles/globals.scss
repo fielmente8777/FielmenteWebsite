@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "Helvetica";
   src: url("/fonts/Helvetica.woff") format("woff");
@@ -18,7 +17,7 @@
 .poppins {
   font-family: "Poppins", sans-serif;
 }
-.helv{
+.helv {
   font-family: "Helvetica", sans-serif;
 }
 :root {
@@ -286,7 +285,6 @@ body {
   }
 }
 
-
 .page_date {
   h1 {
     font-size: 2.25rem;
@@ -347,4 +345,17 @@ body {
   strong {
     color: #f26633;
   }
+}
+
+// dubai page
+.bg-banner {
+  background-image: url("/BG3.png");
+  background-repeat: no-repeat;
+  background-size: 100% 45%;
+  background-position: top;
+}
+.bg-banner2 {
+  background-image: url("/BG3.png");
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
 }

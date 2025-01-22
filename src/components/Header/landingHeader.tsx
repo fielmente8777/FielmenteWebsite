@@ -5,7 +5,7 @@ import Logo from "../../../public/images/logo.webp";
 import { useEffect, useState } from "react";
 import { PopupForm } from "@/app/landing-page/components";
 import { usePathname } from "next/navigation";
-import { OutLineCall } from "@/utils/icons";
+import { OutLineCall, OutLineEmail } from "@/utils/icons";
 
 const LandingHeader = () => {
   const pathName = usePathname();
@@ -101,12 +101,17 @@ const LandingHeader = () => {
             href={`mailto:sachin@fielmente.com`}
             className="text-lg flex items-center gap-2 text-blue-dark"
           >
-            <OutlineMailIcon />
+            <span className="sr-only">email icon</span>
+            <span
+              className={`${pathName === "/dubai-restaurant/" ? "text-blue-dark" : "text-orange-primary"}`}
+            >
+              <OutLineEmail />
+            </span>
             sachin@fielmente.com
           </Link>
           <Link
             href={"tel:+919501868775 "}
-            className="flex items-center hover:text-white hover:bg-orange-500 text-orange-500 text-lg border border-orange-primary rounded-lg md:px-5 px-3 md:py-3 "
+            className={`flex items-center ${pathName === "/dubai-restaurant/" ? "hover:text-orange-primary bg-orange-primary hover:bg-white text-white" : "hover:text-white hover:bg-orange-500 text-orange-500"} text-lg border border-orange-primary rounded-lg md:px-5 px-3 md:py-3`}
           >
             {" "}
             <span className="sr-only">call icon</span>

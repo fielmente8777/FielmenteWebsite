@@ -2,7 +2,7 @@ import { Container, Form2, Section } from "@/components";
 
 const Banner = () => {
   return (
-    <Section className="banner">
+    <Section className="bg-banner" >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="col-span-1 lg:col-span-2 flex flex-col justify-center gap-4 w-full max-w-[47rem] lg:pe-12">

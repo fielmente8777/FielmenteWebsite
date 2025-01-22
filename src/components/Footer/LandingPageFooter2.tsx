@@ -29,7 +29,7 @@ const LandingPageFooter2 = () => {
     ],
   };
   return (
-    <Section>
+    <Section className="bg-banner2 bg-right-bottom">
       <Container>
         <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-4">
           <div className="flex flex-col gap-6">
