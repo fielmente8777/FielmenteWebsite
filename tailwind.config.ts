@@ -26,6 +26,7 @@ const config: Config = {
         gray: {
           primary: "#797979",
           secondary: "#F5F5F5",
+          tertiary: "#787878",
         },
       },
       

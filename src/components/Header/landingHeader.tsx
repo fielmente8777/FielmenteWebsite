@@ -5,10 +5,10 @@ import Logo from "../../../public/images/logo.webp";
 import { useEffect, useState } from "react";
 import { PopupForm } from "@/app/landing-page/components";
 import { usePathname } from "next/navigation";
+import { OutLineCall } from "@/utils/icons";
 
 const LandingHeader = () => {
   const pathName = usePathname();
-  const [hover, setHover] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   // const [hasShownPopup, setHasShownPopup] = useState(false); // Prevent multiple triggers
@@ -75,7 +75,10 @@ const LandingHeader = () => {
   // }, [hasShownPopup, pathName]);
 
   return (
-    <header className="py-3">
+    <header
+      className="py-3 relative"
+      style={{ boxShadow: " 0px 7px 29px 0px rgba(100, 100, 111, 0.20)" }}
+    >
       <nav className="max-width flex justify-between">
         <button
           onClick={() => {
@@ -103,17 +106,11 @@ const LandingHeader = () => {
           </Link>
           <Link
             href={"tel:+919501868775 "}
-            className="flex items-center hover:text-white hover:bg-orange-500 text-orange-500 text-lg border border-[var(--primary-orange)] rounded-lg md:px-5 px-3 md:py-3 "
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
+            className="flex items-center hover:text-white hover:bg-orange-500 text-orange-500 text-lg border border-orange-primary rounded-lg md:px-5 px-3 md:py-3 "
           >
             {" "}
             <span className="sr-only">call icon</span>
-            <OutlinePhoneIcon
-              width={25}
-              height={25}
-              color={hover ? "white" : "#F26633"}
-            />{" "}
+            <OutLineCall />
             Call Us
           </Link>
         </div>
