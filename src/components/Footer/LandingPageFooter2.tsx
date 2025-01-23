@@ -1,48 +1,82 @@
+"use client";
 import Link from "next/link";
 import Container from "../Container";
 import Section from "../Section";
 import { OutLineLocationIcon } from "../Header/LandingHeader";
 import { OutLineCall, OutLineEmail } from "@/utils/icons";
 import Form2 from "../Form2";
+import { usePathname } from "next/navigation";
 
 const LandingPageFooter2 = () => {
-  const data = {
-    title: "Contact Details",
-    description:
-      "Dubai’s leading marketing company manages everything from SEO to social media, bringing more customers to your restaurant.",
-    items: [
-      {
-        href: "",
-        label: "SIT Tower, Dubai Silicon Oasis, Dubai - United Arab Emirates",
-        icon: <OutLineLocationIcon />,
-      },
-      {
-        href: "tel:+91 95018 68775",
-        label: "+91 95018 68775",
-        icon: <OutLineCall />,
-      },
-      {
-        href: "mailto:sachin@fielmente.com",
-        label: "sachin@fielmente.com",
-        icon: <OutLineEmail />,
-      },
-    ],
-  };
+  const pathName = usePathname();
+
+  let data;
+
+  if (pathName === "/restaurant/") {
+    data = {
+      title: "Reach and Attract More Customers",
+      subTitle: "Increase Local Awareness",
+      description:
+        "We make your restaurant the top local talk with just 15 minutes of your time each month. India’s leading marketing company handles everything from SEO to social media, driving more customers your way.",
+      items: [
+        {
+          href: "",
+          label:
+            "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+          icon: <OutLineLocationIcon />,
+        },
+        {
+          href: "tel:+91 95018 68775",
+          label: "+91 95018 68775",
+          icon: <OutLineCall />,
+        },
+        {
+          href: "mailto:sachin@fielmente.com",
+          label: "sachin@fielmente.com",
+          icon: <OutLineEmail />,
+        },
+      ],
+    };
+  } else {
+    data = {
+      title: "Contact Details",
+      description:
+        "Dubai’s leading marketing company manages everything from SEO to social media, bringing more customers to your restaurant.",
+      items: [
+        {
+          href: "",
+          label: "SIT Tower, Dubai Silicon Oasis, Dubai - United Arab Emirates",
+          icon: <OutLineLocationIcon />,
+        },
+        {
+          href: "tel:+91 95018 68775",
+          label: "+91 95018 68775",
+          icon: <OutLineCall />,
+        },
+        {
+          href: "mailto:sachin@fielmente.com",
+          label: "sachin@fielmente.com",
+          icon: <OutLineEmail />,
+        },
+      ],
+    };
+  }
   return (
     <Section className="bg-banner2 bg-right-bottom">
       <Container>
         <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-4">
-          <div className="flex flex-col gap-6">
-            <h2 className="text-blue-dark lg:text-4xl text-2xl">
+          <div className="flex flex-col gap-4">
+            {data.subTitle && <p className="lg:text-2xl text-base text-blue-dark helv">{data.subTitle}</p>}
+            <h2 className="text-blue-dark lg:text-4xl text-2xl helv">
               {data.title}
             </h2>
-            <p className="text-gray-tertiary">{data.description}</p>
+            <p className="text-gray-tertiary poppins">{data.description}</p>
             <ul className="flex flex-col gap-5">
               {data.items.map((item, index) => (
-                <li key={index} className="flex items-center gap-2">
+                <li key={index} >
                   <Link
                     href={item.href}
-                    className="flex items-center gap-2 text-[#3B3B3B]"
+                    className="flex  gap-2 text-[#3B3B3B] helv"
                   >
                     <span className="text-orange-primary">
                       <span className="sr-only">{item.label}</span>

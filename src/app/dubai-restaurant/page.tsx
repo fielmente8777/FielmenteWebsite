@@ -5,17 +5,18 @@ import {
   WhyChooseUs,
   OurClients,
   Testimonial,
-} from "./components";
+} from "@/restaurant-lp-components";
+import { dubaiRestaurantLandingPageData } from "@/utils/restaurantLandingPageData";
 
 const page = () => {
   return (
-    <main className="bg-white">
-      <Banner />
-      <ImageSection />
-      <OurServices />
-      <WhyChooseUs />
-      <OurClients />
-      <Testimonial />
+    <main className="bg-white poppins">
+      <Banner {...dubaiRestaurantLandingPageData.banner} />
+      <ImageSection images={dubaiRestaurantLandingPageData.images}/>
+      <OurServices {...dubaiRestaurantLandingPageData.services}/>
+      <WhyChooseUs {...dubaiRestaurantLandingPageData.whyChooseUs}/>
+      <OurClients {...dubaiRestaurantLandingPageData.ourClients}/>
+      <Testimonial {...dubaiRestaurantLandingPageData.testimonial}/>
     </main>
   );
 };

@@ -12,54 +12,39 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
+import { PopupForm } from "@/app/landing-page/components";
+import { useState } from "react";
 
-const OurServices = () => {
-  const data = {
-    title: "Boost Your Restaurant's Success with",
-    subTitle: "Our Expert Marketing Services",
-    items: [
-      { title: "Website", bold: "Development", icon: <WebsiteDevelopment /> },
-      {
-        title: "Performance",
-        bold: "Marketing",
-        icon: <PerformanceMarketing />,
-      },
-      {
-        title: "Search Engine",
-        bold: "Optimization",
-        icon: <SearchEngineOptimization />,
-      },
-      {
-        title: "Sales & Marketing",
-        bold: "Automation",
-        icon: <SalesAndMarketingAutomation />,
-      },
-      {
-        title: "Social Media",
-        bold: "Management",
-        icon: <SocialMediaManagement />,
-      },
-      {
-        title: "Food Aggregators",
-        bold: "Optimisation",
-        icon: <FoodAggregatorsOptimisation />,
-      },
-    ],
-  };
+interface OurServicesProps {
+  title: string;
+  subTitle: string;
+  items: {
+    title: string;
+    bold: string;
+    icon: JSX.Element;
+  }[];
+}
+
+const OurServices: React.FC<OurServicesProps> = ({
+  title,
+  subTitle,
+  items,
+}) => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <Section>
       <div className="bg-blue-dark text-white lg:py-20 py-12">
         <Container>
           <div className="flex flex-col gap-4">
-            <h2 className="lg:text-2xl text-xl text-center">
-              {data.title}
+            <h2 className="lg:text-2xl text-xl text-center helv">
+              {title}
               <br />
               <b className="text-orange-primary lg:text-4xl text-2xl">
-                {data.subTitle}
+                {subTitle}
               </b>
             </h2>
             <div className="lg:grid hidden grid-cols-6 gap-4 mt-10">
-              {data.items.map((item, index) => (
+              {items.map((item, index) => (
                 <Card
                   key={index}
                   title={item.title}
@@ -91,7 +76,7 @@ const OurServices = () => {
                 }}
                 className=""
               >
-                {data.items.map((item, index) => (
+                {items.map((item, index) => (
                   <SwiperSlide key={index}>
                     <Card
                       title={item.title}
@@ -102,9 +87,17 @@ const OurServices = () => {
                 ))}
               </Swiper>
             </div>
+            <div className="mt-8 flex justify-center">
+              <button
+              onClick={() => setShowModal(true)}
+               className="bg-orange-primary text-white py-4 px-8 rounded-sm hover:bg-white hover:text-blue-dark active:scale-95 hover:scale-105 transition-all duration-300">
+                Contact Us
+              </button>
+            </div>
           </div>
         </Container>
       </div>
+      {showModal && <PopupForm showModal={showModal} setShowModal={setShowModal} />}
     </Section>
   );
 };
@@ -124,7 +117,7 @@ export const Card = ({
     <div className="flex flex-col gap-4 items-center bg-white p-4 rounded-lg">
       <span className="">{icon}</span>
       <div>
-        <h3 className="text-lg text-center text-blue-dark">
+        <h3 className="text-lg text-center text-blue-dark helv">
           {title}
           <br /> <b>{bold}</b>
         </h3>

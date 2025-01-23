@@ -154,7 +154,7 @@ const PopupForm = ({
   return (
     <>
       <section className={`fixed inset-0 z-[999] bg-black bg-opacity-50 duration-700 ease-in-out transition-all ${showModal ? "block" : "hidden"}`}>
-        <article className="flex justify-center items-center h-full">
+        <article className={`${showModal ? "flex justify-center items-center h-full scale-100 opacity-100" : "h-0 scale-0 opacity-0"} transition-all duration-700 ease-in-out`}>
           <div className="flex flex-col gap-3 max-w-[400px] w-full shadow-2xl p-4 relative rounded-md">
             <button
               onClick={closeModal}

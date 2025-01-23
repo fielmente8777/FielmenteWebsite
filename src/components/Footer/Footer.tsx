@@ -18,7 +18,7 @@ const Footer = () => {
     FooterComponent = LandingFooter;
     // } else if (pathName === "/thank-you/") {
     //   FooterComponent = null;
-  } else if (pathName === "/dubai-restaurant/") {
+  } else if (pathName === "/dubai-restaurant/" || pathName === "/restaurant/") {
     FooterComponent = LandingPageFooter2;
   } else {
     FooterComponent = Footer2;
