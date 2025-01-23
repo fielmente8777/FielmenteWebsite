@@ -178,7 +178,7 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 max-md:px-4 p-6 max-md:mt-6 text-base rounded-lg lg:max-w-[24.875rem] w-full bg-blue-dark text-white"
     >
-      <h2 className="text-xl lg:text-[1.8rem]/[2.5rem] font-normal text-center helv">
+      <h2 className="text-xl lg:text-[1.7rem]/[2.5rem] tracking-wider font-normal text-center helv">
         {title}
         <br />
         <strong>{bold}</strong>

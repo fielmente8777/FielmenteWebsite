@@ -36,10 +36,10 @@ const OurServices: React.FC<OurServicesProps> = ({
       <div className="bg-blue-dark text-white lg:py-20 py-12">
         <Container>
           <div className="flex flex-col gap-4">
-            <h2 className="lg:text-2xl text-xl text-center helv">
+            <h2 className="lg:text-2xl text-lg text-center helv">
               {title}
               <br />
-              <b className="text-orange-primary lg:text-4xl text-2xl">
+              <b className="text-orange-primary lg:text-4xl text-xl">
                 {subTitle}
               </b>
             </h2>
@@ -53,7 +53,7 @@ const OurServices: React.FC<OurServicesProps> = ({
                 />
               ))}
             </div>
-            <div className="lg:hidden block mt-8">
+            <div className="lg:hidden block mt-4">
               <Swiper
                 modules={[Autoplay]}
                 autoplay={{ delay: 3000 }}

@@ -17,20 +17,23 @@ const OurClients: React.FC<OurClientsProps> = ({ title, bold, items }) => {
     <Section>
       <Container>
         <div className="flex flex-col gap-8">
-          <h2 className="text-3xl text-center text-blue-dark helv">
+          <h2 className="lg:text-3xl text-lg tracking-wider text-center text-blue-dark helv">
             {title} <b className="text-orange-primary">{bold}</b>
           </h2>
           <div className="lg:grid hidden grid-cols-6 gap-4">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="flex justify-center items-center relative aspect-[4/2.5] w-full shadow-xl"
+                className="flex justify-center items-center relative aspect-[4/2.5] w-full rounded-md"
+                style={{
+                  boxShadow: "0px 7px 29px 0px rgba(100, 100, 111, 0.20)",
+                }}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  className="object-contain"
+                  className={`${index === 2 || index === 4 || index === 5 ? "object-cover" : "object-contain"} px-2 py-3`}
                 />
               </div>
             ))}
@@ -62,13 +65,13 @@ const OurClients: React.FC<OurClientsProps> = ({ title, bold, items }) => {
                 <SwiperSlide key={index} className="p-2">
                   <div
                     key={index}
-                    className="flex justify-center items-center relative aspect-[4/2.5] w-full shadow-xl"
+                    className="flex justify-center items-center relative lg:aspect-[4/2.5] aspect-[4/2] w-full shadow-xl p-2"
                   >
                     <Image
                       src={item.src}
                       alt={item.alt}
                       fill
-                      className="object-contain"
+                      className={`${index === 2 || index === 4 || index === 5 ? "object-cover" : "object-contain"} px-2 py-3`}
                     />
                   </div>
                 </SwiperSlide>

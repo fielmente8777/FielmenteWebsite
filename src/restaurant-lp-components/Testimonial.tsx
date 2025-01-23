@@ -18,9 +18,9 @@ const Testimonial: React.FC<TestimonialProps> = ({ title, items }) => {
     // className="bg-[url('/bg1.png')] bg-opacity-20 bg-[100%,10%] bg-center bg-no-repeat"
     >
       <Container>
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center lg:gap-12 gap-6">
           <h2
-            className="lg:text-4xl text-2xl capitalize text-center text-blue-dark helv"
+            className="lg:text-4xl text-lg tracking-wider capitalize text-center text-blue-dark helv"
             dangerouslySetInnerHTML={{ __html: title }}
           ></h2>
           <div className="block w-full">
@@ -51,7 +51,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ title, items }) => {
                   className="border border-[#ECC4B6] shadow-xl p-4 bg-white"
                 >
                   <div className="flex flex-col items-center gap-3">
-                    <h3 className="text-center text-2xl text-blue-dark helv">
+                    <h3 className="text-center text-xl text-blue-dark helv">
                       {item.name}
                     </h3>
                     <span className="flex items-center gap-1">
@@ -61,7 +61,7 @@ const Testimonial: React.FC<TestimonialProps> = ({ title, items }) => {
                       <Star />
                       <Star />
                     </span>
-                    <p className="text-center text-[#3B3B3B] text-lg">
+                    <p className="text-center text-[#3B3B3B] text-base">
                       {item.designation}
                     </p>
                   </div>
