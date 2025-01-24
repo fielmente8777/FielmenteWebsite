@@ -220,7 +220,7 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
       ))}
 
       <button
-        className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-2 rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary"
+        className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-3 rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary"
         type="submit"
       >
         {formRes ? (

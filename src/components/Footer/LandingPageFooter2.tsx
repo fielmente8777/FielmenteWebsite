@@ -67,7 +67,7 @@ const LandingPageFooter2 = () => {
         <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-4">
           <div className="flex flex-col gap-4">
             {data.subTitle && <p className="lg:text-2xl text-base text-blue-dark helv">{data.subTitle}</p>}
-            <h2 className="text-blue-dark lg:text-4xl text-2xl helv font-medium">
+            <h2 className="text-blue-dark lg:text-4xl text-2xl helv font-semibold">
               {data.title}
             </h2>
             <p className="text-gray-tertiary poppins">{data.description}</p>

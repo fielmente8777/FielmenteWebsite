@@ -397,7 +397,7 @@ const Footer2 = () => {
               href={"/terms-and-conditions"}
               className="text-sm text-[#787878] "
             >
-              Terms
+              Terms & Conditions
             </Link>
           </div>
         </div>
