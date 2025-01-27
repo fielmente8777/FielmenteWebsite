@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import {
   OutLineCall,
@@ -13,11 +13,18 @@ import { countries } from "@/utils/countryCode";
 
 const Form2 = ({ title, bold }: { title: string; bold: string }) => {
   const router = useRouter();
+  const pathName = usePathname();
+  let code;
+  if (pathName === "/dubai-restaurant/") {
+    code = "+971";
+  } else {
+    code = "+91";
+  }
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
   const [userPhone, setUserPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("+91"); // Default country code
+  const [countryCode, setCountryCode] = useState(code); // Default country code
   const [formRes, setFormRes] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -56,6 +63,7 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
     try {
       const { data } = await axios.post(
         // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook`,//test
         `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
           // Domain: "fielmente",
