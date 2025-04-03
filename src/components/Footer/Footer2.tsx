@@ -386,7 +386,9 @@ const Footer2 = () => {
               |{" "}
               <Link target="_blank" href="https://dubai.fielmente.com/">
                 Dubai
-              </Link>
+              </Link>{" "}
+              |{" "}
+              UK
             </span>
           </p>
           <div className="flex items-center gap-4">
