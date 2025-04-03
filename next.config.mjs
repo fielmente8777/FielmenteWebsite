@@ -1,12 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+   /* config options here */
+  // output: "export",
   images: {
-    unoptimized: true,
+    // unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "eazotel-client-webp-image.s3.ap-south-1.amazonaws.com",
+      },
+    ],
+    dangerouslyAllowSVG: true,
   },
   trailingSlash: true,
-  // swcMinify: true,
-  // reactStrictMode: true,
 };
 
 export default nextConfig;
