@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 
 function Whatsapp() {
   const pathname = usePathname();
+  const ukno = "+447438375533";
+  const indNo = "+919501868775";
   return (
     <>
       {pathname !== "/landing-page/" &&
@@ -15,7 +17,7 @@ function Whatsapp() {
             className={`fixed   z-20 cursor-pointer ${pathname === "/landing-page/" || pathname === "/hospitality/" || pathname === "/resort/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-24"}`}
           >
             <Link
-              href="https://wa.me/919501868775?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency"
+              href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
               target="_blank"
               rel="noreferrer"
               className="w-12 h-12 rounded-full flex shadow-2xl items-center justify-center bg-green-500 hover:bg-green-600 transition-all hover:shadow-2xl"

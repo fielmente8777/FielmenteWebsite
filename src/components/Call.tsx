@@ -6,6 +6,8 @@ import { IoCall } from "react-icons/io5";
 
 function Call() {
   const pathname = usePathname();
+  const ukno = "+44 7438375533";
+  const indNo = "+919501868775";
   return (
     <>
       {pathname !== "/landing-page/" &&
@@ -13,7 +15,7 @@ function Call() {
         pathname !== "/hospitality/" && (
           <div className="fixed bottom-10 lg:left-10  left-4 z-20 cursor-pointer">
             <Link
-              href="tel:+919501868775"
+              href={`tel:${pathname === "/UK/" ? ukno : indNo}`}
               target="_blank"
               rel="noreferrer"
               className="w-12 h-12 rounded-full flex items-center justify-center bg-blue-700 hover:bg-blue-800 hover:shadow-2xl transition-all"

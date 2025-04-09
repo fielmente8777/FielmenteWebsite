@@ -17,6 +17,9 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
   let code;
   if (pathName === "/dubai-restaurant/") {
     code = "+971";
+  }
+  if (pathName === "/UK/") {
+    code = "+44";
   } else {
     code = "+91";
   }

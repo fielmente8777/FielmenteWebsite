@@ -1,20 +1,21 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/logo.webp";
-import { OutLineLocationIcon, OutlineMailIcon, OutlinePhoneIcon } from "../Header/LandingHeader";
+import {
+  OutLineLocationIcon,
+  OutlineMailIcon,
+  OutlinePhoneIcon,
+} from "../Header/LandingHeader";
 import { PopupForm } from "@/app/landing-page/components";
 import { useState } from "react";
-
+import { usePathname } from "next/navigation";
 
 const LandingFooter = () => {
-  // const pathName = usePathname();
+  const pathName = usePathname();
   // const router = useRouter();
   const currentYear = new Date().getFullYear();
   const [showModal, setShowModal] = useState(false);
-
-
-
-
 
   return (
     <footer className="lg:pt-12 pt-9 bg-gray-secondary">
@@ -36,8 +37,8 @@ const LandingFooter = () => {
             </span>
             {/* Level 2, Augusta Point, Golf Course Rd, Parsvnath Exotica, Sarswati
                         Kunj II, DLF Phase 5,<br className="hidden lg:block" /> Sector 53, Gurugram, Haryana 122002 */}
-            Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana
-            122005
+            Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram,
+            Haryana 122005
           </p>
           {/* <p className="text-blue-dark text-base text-center flex justify-center lg:w-max">
             <span
@@ -55,17 +56,29 @@ const LandingFooter = () => {
             <OutlineMailIcon />
             sachin@fielmente.com
           </Link>
-          <Link
-            href={"tel:+919501868775"}
-            className="flex items-center text-blue-dark text-lg "
-          >
-            <OutlinePhoneIcon width={30} height={40} />
-            +919501868775
-          </Link>
+          {pathName !== "/UK/" ? (
+            <Link
+              href={"tel:+919501868775"}
+              className="flex items-center text-blue-dark text-lg "
+            >
+              <OutlinePhoneIcon width={30} height={40} />
+              +919501868775
+            </Link>
+          ) : (
+            <Link
+              href={"tel:+44 7438375533"}
+              className="flex items-center text-blue-dark text-lg "
+            >
+              <OutlinePhoneIcon width={30} height={40} />
+              +44 7438375533
+            </Link>
+          )}
         </div>
         <div className="w-full h-[1px] bg-orange-primary mt-4" />
         <div className="flex max-md:flex-col justify-center items-center gap-2 mt-2 py-4">
-          <p className="text-blue-dark text-lg">&copy; {currentYear} Fielmente</p>
+          <p className="text-blue-dark text-lg">
+            &copy; {currentYear} Fielmente
+          </p>
           <span className="text-orange-primary max-md:hidden text-lg font-bold">
             |
           </span>
@@ -76,9 +89,7 @@ const LandingFooter = () => {
       </div>
       <PopupForm setShowModal={setShowModal} showModal={showModal} />
     </footer>
-
   );
 };
 
 export default LandingFooter;
-

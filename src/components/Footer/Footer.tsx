@@ -18,7 +18,11 @@ const Footer = () => {
     FooterComponent = LandingFooter;
     // } else if (pathName === "/thank-you/") {
     //   FooterComponent = null;
-  } else if (pathName === "/dubai-restaurant/" || pathName === "/restaurant/") {
+  } else if (
+    pathName === "/dubai-restaurant/" ||
+    pathName === "/restaurant/" ||
+    pathName === "/UK/"
+  ) {
     FooterComponent = LandingPageFooter2;
   } else {
     FooterComponent = Footer2;

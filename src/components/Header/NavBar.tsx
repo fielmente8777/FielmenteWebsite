@@ -16,7 +16,8 @@ const NavBar = () => {
     pathname === "/hospitality/" ||
     pathname === "/thank-you/" ||
     pathname === "/dubai-restaurant/" ||
-    pathname === "/restaurant/"
+    pathname === "/restaurant/"||
+    pathname === "/UK/"
   ) {
     HeaderComponent = LandingHeader;
     // } else if (pathname === "/thank-you/") {
