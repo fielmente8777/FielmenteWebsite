@@ -12,17 +12,15 @@ const LandingPageFooter2 = () => {
 
   let data;
 
-  if (pathName === "/restaurant/") {
+  if (pathName === "/dubai-restaurant/") {
     data = {
-      title: "Reach and Attract More Customers",
-      subTitle: "Increase Local Awareness",
+      title: "Contact Details",
       description:
-        "We make your restaurant the top local talk with just 15 minutes of your time each month. India’s leading marketing company handles everything from SEO to social media, driving more customers your way.",
+        "Dubai’s leading marketing company manages everything from SEO to social media, bringing more customers to your restaurant.",
       items: [
         {
           href: "",
-          label:
-            "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+          label: "SIT Tower, Dubai Silicon Oasis, Dubai - United Arab Emirates",
           icon: <OutLineLocationIcon />,
         },
         {
@@ -38,7 +36,7 @@ const LandingPageFooter2 = () => {
       ],
     };
   }
-  if (pathName === "/UK/") {
+  else if (pathName === "/UK/") {
     data = {
       title: "Reach and Attract More Customers",
       subTitle: "Increase Local Awareness",
@@ -65,13 +63,15 @@ const LandingPageFooter2 = () => {
     };
   } else {
     data = {
-      title: "Contact Details",
+      title: "Reach and Attract More Customers",
+      subTitle: "Increase Local Awareness",
       description:
-        "Dubai’s leading marketing company manages everything from SEO to social media, bringing more customers to your restaurant.",
+        "We make your restaurant the top local talk with just 15 minutes of your time each month. India’s leading marketing company handles everything from SEO to social media, driving more customers your way.",
       items: [
         {
           href: "",
-          label: "SIT Tower, Dubai Silicon Oasis, Dubai - United Arab Emirates",
+          label:
+            "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
           icon: <OutLineLocationIcon />,
         },
         {
