@@ -10,11 +10,11 @@ function Whatsapp() {
   const indNo = "+919501868775";
   return (
     <>
-      {pathname !== "/landing-page/" &&
+      {/* {pathname !== "/landing-page/" &&
         pathname !== "/resort/" &&
-        pathname !== "/hospitality/" && (
+        pathname !== "/hospitality/" && ( */}
           <div
-            className={`fixed   z-20 cursor-pointer ${pathname === "/landing-page/" || pathname === "/hospitality/" || pathname === "/resort/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-24"}`}
+            className={`fixed   z-20 cursor-pointer ${pathname === "/landing-page/" || pathname === "/hospitality/" || pathname === "/resort/" ? "lg:right-10 right-4 bottom-10" : "lg:right-10 right-4 bottom-10"}`}
           >
             <Link
               href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
@@ -26,7 +26,7 @@ function Whatsapp() {
               <FaWhatsapp size={29} color="white" />
             </Link>
           </div>
-        )}
+        {/* )} */}
     </>
   );
 }
