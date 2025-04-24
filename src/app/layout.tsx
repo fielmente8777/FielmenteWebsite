@@ -8,6 +8,7 @@ import Whatsapp from "@/components/WhatsApp";
 import NavBar from "@/components/Header/NavBar";
 import Script from "next/script";
 import Salesiq from "@/components/zohochatbot/Salesiq";
+import RenderChatBot from "@/components/chatbot/RenderChatBot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -87,7 +88,7 @@ export default function RootLayout({
 
   gtag('config', 'G-PVZG7NGGMG');`,
           }}
-        ></Script>
+        />
 
         {/* <Script
           id="google-conversion-tracking"
@@ -146,7 +147,7 @@ export default function RootLayout({
           src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
           async
         ></script> */}
-        <Salesiq />
+        {/* <Salesiq /> */}
 
         <Script
           id="google-tag-manager"
@@ -169,10 +170,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
+
       <body className={inter.className} suppressHydrationWarning={true}>
         <noscript></noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Header /> */}
+        <RenderChatBot />
         <NavBar />
         {children}
         <Footer />
