@@ -42,12 +42,14 @@ const ChatWindow = ({
   theme,
   finalMessage,
 }: ChatWindowProps) => {
+  const [currentStep, setCurrentStep] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string | string[]>>({});
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false); // questions shown
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [chat, setChat] = useState<ChatMessage[]>([]);
+  const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [selectedOptions, setSelectedOptions] = useState<
     Record<
       string,
@@ -59,6 +61,23 @@ const ChatWindow = ({
   >({});
 
   const chatEndRef = useRef<HTMLDivElement | null>(null);
+
+  // check date validation
+  const isValidDate = (dateStr: string) => {
+    const [day, month, year] = dateStr.split("-").map(Number);
+    if (!day || !month || !year || year.toString().length !== 4) return false;
+    const date = new Date(year, month - 1, day);
+    return (
+      date.getFullYear() === year &&
+      date.getMonth() === month - 1 &&
+      date.getDate() === day
+    );
+  };
+
+  const toDate = (dateStr: string) => {
+    const [day, month, year] = dateStr.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     setInput(e.target.value);
@@ -85,10 +104,52 @@ const ChatWindow = ({
     const key = currentFlow.key || `q${currentIndex}`;
     const answer = input;
 
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (key.toLocaleLowerCase() === "check-in") {
+      if (!isValidDate(input)) {
+        addBotMessage(
+          "❌ Invalid check-in date. Format should be DD-MM-YYYY.",
+          key
+        );
+        return;
+      }
+
+      const checkInDate = toDate(input);
+      setCheckInDate(checkInDate);
+
+      if (key.toLocaleLowerCase() === "check-in" && checkInDate < today) {
+        addBotMessage("❌ Check-in date cannot be in the past.", key);
+        return;
+      }
+    }
+
+    if (key.toLocaleLowerCase() === "check-out") {
+      if (!isValidDate(input)) {
+        addBotMessage(
+          "❌ Invalid check-out date. Format should be DD-MM-YYYY.",
+          key
+        );
+        return;
+      }
+
+      const checkOutDate = toDate(input);
+
+      if (
+        key.toLocaleLowerCase() === "check-out" &&
+        checkOutDate <= checkInDate!
+      ) {
+        addBotMessage("❌ Check-out date must be after check-in date.", key);
+        return;
+      }
+    }
+
     // Step 1: Show user's message
     setChat((prev) => [...prev, { sender: "user", text: answer, key }]);
     setAnswers((prev) => ({ ...prev, [key]: answer }));
     setInput("");
+    setCurrentStep((prev) => prev + 1);
     // Step 2: Show typing... then bot message
     setIsTyping(true);
 
@@ -112,7 +173,7 @@ const ChatWindow = ({
       } else {
         // End of questions
         setShowFinalMessage(true);
-        onSubmit && onSubmit({ ...answers, [key]: answer });
+        if (onSubmit) onSubmit({ ...answers, [key]: answer });
       }
     }, 1000);
   };
@@ -214,7 +275,6 @@ const ChatWindow = ({
     });
 
     setAnswers((prev) => ({ ...prev, [key]: selectedOptions[key].value }));
-
     setIsTyping(true);
 
     setTimeout(() => {
@@ -236,10 +296,14 @@ const ChatWindow = ({
         ]);
       } else {
         setShowFinalMessage(true);
-        onSubmit &&
+        if (onSubmit)
           onSubmit({ ...answers, [key]: selectedOptions[key]?.value });
       }
     }, 1000);
+  };
+
+  const addBotMessage = (text: string, key: string) => {
+    setChat((prev) => [...prev, { sender: "bot", text, key }]);
   };
 
   // useEffect for set inital message
@@ -262,10 +326,10 @@ const ChatWindow = ({
   }, [chat, isTyping]);
 
   return (
-    <div className="bg-white sm:rounded-2xl shadow-2xl flex flex-col sm:h-[80dvh] scroll sm:w-[375px] h-[100vh] overflow-hidden">
+    <div className="sm:rounded-2xl shadow-2xl sm:h-[80dvh] flex flex-col h-full scroll sm:w-[375px]">
       {/* Header */}
       <div
-        className="p-4 flex justify-between items-center "
+        className="p-4 flex justify-between items-center sm:rounded-t-xl"
         style={{
           background: theme || "#FD5C01",
           color: "white",
@@ -320,9 +384,8 @@ const ChatWindow = ({
           </button>
         </div>
       </div>
-
       {/* Messages area */}
-      <div className="flex flex-col p-4 gap-2 flex-grow overflow-auto scroll-hidden">
+      <div className="flex-1 flex-grow bg-gray-50 flex flex-col p-4 gap-2 overflow-auto scroll-hidden">
         <p className="text-sm rounded-lg text-[#474747]">{title}</p>
 
         <div
@@ -445,40 +508,43 @@ const ChatWindow = ({
 
         <div ref={chatEndRef} />
       </div>
-
+      {/* input field form */}
       {currentIndex < messageFlows.length && (
         <form
           onSubmit={handleSubmit}
-          className="p-3 border-t bg-gray-50 flex items-center gap-2"
+          className="p-1 border-t bg-gray-50 w-full sm:px-0 px-4 py-3 flex items-center sm:rounded-b-xl"
         >
-          <input
-            type={messageFlows[currentIndex]?.type}
-            value={input}
-            onChange={handleChange}
-            placeholder="Type your answer..."
-            className="flex-grow rounded-md px-3 py-2 text-sm outline-none"
-            disabled={
-              messageFlows.length === chat.length - messageFlows?.length ||
-              !!messageFlows[currentIndex].options
-            }
-            required
-          />
-          <button
-            type="submit"
-            // style={{
-            //   background: theme || "#C2185B",
-            // }}
-            disabled={!!messageFlows[currentIndex].options}
-            className=" flex justify-center items-center"
-          >
-            <span className="inline-block duration-200">
-              <IoIosSend
-                size={24}
-                color={theme || "C2185B"}
-                opacity={`${messageFlows?.length === chat?.length - messageFlows?.length ? "0.4" : "1"}`}
-              />
-            </span>
-          </button>
+          <div className="flex items-center gap-2 w-full border sm:border-none border-gray-600 sm:rounded-none rounded-full px-2">
+            <input
+              type={messageFlows[currentIndex]?.type}
+              value={input}
+              onChange={handleChange}
+              placeholder="Type your answer..."
+              className="w-full h-full flex-grow rounded-md px-3 py-4 text-sm outline-none bg-transparent"
+              disabled={
+                !!messageFlows[currentIndex].options ||
+                messageFlows.length === currentStep
+              }
+              required
+            />
+
+            <button
+              type="submit"
+              // style={{
+              //   background: theme || "#C2185B",
+              // }}
+              disabled={!!messageFlows[currentIndex].options}
+              className=" flex justify-center items-center"
+            >
+              <span className="inline-block duration-200">
+                <IoIosSend
+                  size={24}
+                  color={theme || "C2185B"}
+                  opacity={`${messageFlows?.length === currentStep ? "0.4" : "1"}`}
+                />
+              </span>
+            </button>
+          </div>
         </form>
       )}
     </div>

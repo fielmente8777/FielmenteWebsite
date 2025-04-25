@@ -34,9 +34,10 @@ const ChatbotWidget = ({
   finalMessage,
   title,
   logo,
-  theme,
+  theme = "#7D684D",
 }: ChatbotWidgetProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
@@ -57,29 +58,64 @@ const ChatbotWidget = ({
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    console.log(isOpen);
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setInnerWidth(window.innerWidth);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      if (isOpen) {
+        if (innerWidth && innerWidth < 640) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      } else {
+        document.body.style.overflow = "auto";
+      }
+      // Clean up the event listener on unmount
+      // return () => {
+      //   window.removeEventListener("resize", handleResize);
+      // };
+    }
+
+    // return () => {
+    //   document.body.style.overflow = "auto";
+    // };
+  }, [isOpen, innerWidth]);
+
   return (
-    <div className="fixed sm:bottom-4 md:right-4 sm:right-2 right-0 z-50 sm:w-fit w-full sm:h-fit">
-      <div
-        className={`w-full h-full ${
-          isOpen
-            ? "transition-all duration-500 translate-y-0 block"
-            : "translate-y-full opacity-0 hidden"
-        }`}
-      >
-        <ChatWindow
-          messages={messages}
-          messageFlows={messageFlows}
-          onClose={toggleChat}
-          onSubmit={hanldeSubmit}
-          title={title}
-          logo={logo}
-          theme={theme}
-          finalMessage={finalMessage}
-        />
-      </div>
+    <div>
+      {isOpen && (
+        <div
+          className={`fixed sm:bottom-4 md:right-4 sm:right-2 right-0 z-[99999999] sm:w-fit w-full sm:h-fit h-dvh`}
+        >
+          <div
+            className={`w-full h-full ${
+              isOpen
+                ? "transition-all duration-500 translate-y-0 block"
+                : "translate-y-full opacity-0 hidden"
+            }`}
+          >
+            <ChatWindow
+              messages={messages}
+              messageFlows={messageFlows}
+              onClose={toggleChat}
+              onSubmit={hanldeSubmit}
+              title={title}
+              logo={logo}
+              theme={theme}
+              finalMessage={finalMessage}
+            />
+          </div>
+        </div>
+      )}
 
       {!isOpen && (
-        <div className="px-2 fixed bottom-6 right-4">
+        <div className="px-2 fixed bottom-6 right-4 z-[99999]">
           <ChatbotButton onClick={toggleChat} theme={theme} />
         </div>
       )}

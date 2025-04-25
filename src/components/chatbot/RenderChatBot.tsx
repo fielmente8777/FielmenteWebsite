@@ -11,7 +11,7 @@ export interface FormData {
 }
 
 const RenderChatBot = () => {
-  const welcomeMessage = "Welcome to Eazotel! How can I help you today?";
+  const welcomeMessage = "Welcome to Fielmente! How can I help you today?";
   const thankYouMessage = `Thank you so much for filling up the details, one of our representative will speak to you as soon as possible!`;
 
   const messageFlows = [
