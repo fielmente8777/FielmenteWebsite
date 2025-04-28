@@ -76,10 +76,6 @@ const ChatbotWidget = ({
       } else {
         document.body.style.overflow = "auto";
       }
-      // Clean up the event listener on unmount
-      // return () => {
-      //   window.removeEventListener("resize", handleResize);
-      // };
     }
   }, [isOpen, innerWidth]);
 

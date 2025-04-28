@@ -2,6 +2,7 @@
 import React from "react";
 import ChatbotWidget from "./ChatbotWidget";
 import axios from "axios";
+import { usePathname } from "next/navigation";
 
 export interface FormData {
   name: string;
@@ -11,6 +12,7 @@ export interface FormData {
 }
 
 const RenderChatBot = () => {
+  const pathName = usePathname();
   const welcomeMessage = "Welcome to Fielmente! How can I help you today?";
   const thankYouMessage = `Thank you so much for filling up the details, one of our representative will speak to you as soon as possible!`;
 
@@ -108,16 +110,23 @@ const RenderChatBot = () => {
 
   return (
     <div>
-      <ChatbotWidget
-        onSubmit={handleSumbit}
-        messages={welcomeMessage}
-        finalMessage={thankYouMessage}
-        messageFlows={messageFlows}
-        title="Fielmente"
-        theme={"#0A081E"}
-        openInterval={2000}
-        logo={"/favicon-32x32.png"}
-      />
+      {pathName !== "/landing-page/" &&
+        pathName !== "/resort/" &&
+        pathName !== "/hospitality/" &&
+        pathName !== "/UK/" &&
+        pathName !== "/USA/" &&
+        pathName !== "/dubai-restaurant/" && (
+          <ChatbotWidget
+            onSubmit={handleSumbit}
+            messages={welcomeMessage}
+            finalMessage={thankYouMessage}
+            messageFlows={messageFlows}
+            title="Fielmente"
+            theme={"#0A081E"}
+            openInterval={2000}
+            logo={"/favicon-32x32.png"}
+          />
+        )}
     </div>
   );
 };
