@@ -37,7 +37,7 @@ const ChatbotWidget = ({
   theme = "#7D684D",
 }: ChatbotWidgetProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [innerWidth, setInnerWidth] = useState<number>(window.innerWidth);
+  const [innerWidth, setInnerWidth] = useState<number | null>(null);
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
@@ -59,8 +59,8 @@ const ChatbotWidget = ({
   }, []);
 
   useEffect(() => {
-    console.log(isOpen);
     if (typeof window !== "undefined") {
+      setInnerWidth(window.innerWidth);
       const handleResize = () => {
         setInnerWidth(window.innerWidth);
       };
@@ -76,15 +76,7 @@ const ChatbotWidget = ({
       } else {
         document.body.style.overflow = "auto";
       }
-      // Clean up the event listener on unmount
-      // return () => {
-      //   window.removeEventListener("resize", handleResize);
-      // };
     }
-
-    // return () => {
-    //   document.body.style.overflow = "auto";
-    // };
   }, [isOpen, innerWidth]);
 
   return (
