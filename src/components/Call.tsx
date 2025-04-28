@@ -10,9 +10,9 @@ function Call() {
   const indNo = "+919501868775";
   return (
     <>
-      {pathname !== "/landing-page/" &&
+      {/* {pathname !== "/landing-page/" &&
         pathname !== "/resort/" &&
-        pathname !== "/hospitality/" && (
+        pathname !== "/hospitality/" && ( */}
           <div className="fixed bottom-10 lg:left-10  left-4 z-20 cursor-pointer">
             <Link
               href={`tel:${pathname === "/UK/" ? ukno : indNo}`}
@@ -24,7 +24,7 @@ function Call() {
               <span className="sr-only">what&apos;s app</span>
             </Link>
           </div>
-        )}
+        {/* )} */}
     </>
   );
 }
