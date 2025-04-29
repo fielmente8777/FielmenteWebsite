@@ -147,7 +147,7 @@ export default function RootLayout({
           src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
           async
         ></script> */}
-        {/* <Salesiq /> */}
+        <Salesiq />
 
         <Script
           id="google-tag-manager"
@@ -175,7 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <noscript></noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Header /> */}
-        <RenderChatBot />
+        {/* <RenderChatBot /> */}
         <NavBar />
         {children}
         <Footer />
