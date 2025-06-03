@@ -12,6 +12,7 @@ import OurClientNew from "./OurClientNew";
 import MIleStonesNew from "./MIleStonesNew";
 import ContactUsCardNew from "./ContactUsCardNew";
 import Riview from "./Riview";
+import CountryFlags from "./CountryFlags";
 
 const PageComponents = () => {
   return (
@@ -43,6 +44,8 @@ const PageComponents = () => {
           <ChooseUs />
         </div>
       </Section>
+
+      <CountryFlags />
 
       {/* Hotel Performance***** */}
       <Section>

@@ -9,6 +9,7 @@ import ConsultationForm from "./ConsultationForm";
 import Form from "./Form";
 import LazyLoadedMap from "./LazyLoadedMap";
 import Form2 from "./Form2";
+import SwiperCarousel from "./SwiperCarousel";
 
 export {
   Section,
@@ -22,4 +23,5 @@ export {
   Form,
   Form2,
   ConsultationForm,
+  SwiperCarousel,
 };
