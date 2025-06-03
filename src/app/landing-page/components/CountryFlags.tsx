@@ -39,7 +39,7 @@ const CountryFlags = () => {
     },
   ];
   return (
-    <Section className="bg-gradient-to-r from-[#110D3C] to-[#2E23A2] md:py-16">
+    <Section className="bg-gradient-to-r from-[#110D3C] to-[#2E23A2] md:py-20">
       <Container>
         <div className="grid md:grid-cols-2 grid-cols-1 md:divide-x md:divide-[#838383] max-md:gap-6">
           <div className="flex flex-col gap-4 md:pe-14 max-w-md w-full">
@@ -90,7 +90,7 @@ const CountryFlags = () => {
                 </div>
               )}
             />
-            <div className="pagination-Portfolio flex justify-center gap-2 relative md:-bottom-8 max-md:mt-8"></div>
+            <div className="pagination-Portfolio flex justify-center gap-2 relative md:-bottom-9 max-md:mt-8"></div>
           </div>
         </div>
       </Container>
