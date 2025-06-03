@@ -90,7 +90,7 @@ const CountryFlags = () => {
                 </div>
               )}
             />
-            <div className="pagination-Portfolio flex justify-center gap-2 relative md:-bottom-9 max-md:mt-8"></div>
+            <div className="pagination-Portfolio flex justify-center gap-2 mt-8"></div>
           </div>
         </div>
       </Container>
