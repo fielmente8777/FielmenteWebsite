@@ -14,7 +14,7 @@ function Whatsapp() {
         pathname !== "/resort/" &&
         pathname !== "/hospitality/" && ( */}
           <div
-            className={`fixed   z-20 cursor-pointer ${pathname === "/landing-page/" || pathname === "/hospitality/" || pathname === "/resort/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-28"}`}
+            className={`fixed   z-20 cursor-pointer ${pathname === "/USA/" || pathname === "/restaurant/" || pathname === "/UK/" || pathname === "/dubai-restaurant/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-28"}`}
           >
             <Link
               href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}

@@ -5,12 +5,15 @@ const Salesiq = () => {
   const pathname = usePathname();
   return (
     <>
-      {pathname !== "/landing-page/" &&
-        pathname !== "/resort/" &&
-        pathname !== "/hospitality/" &&
+      {
+      // pathname !== "/landing-page/" &&
+        // pathname !== "/resort/" &&
+        // pathname !== "/hospitality/" &&
         pathname !== "/UK/" &&
         pathname !== "/USA/" &&
-        pathname !== "/dubai-restaurant/" && (
+        pathname !== "/dubai-restaurant/" && 
+        pathname !== "/restaurant/" && 
+        (
           <>
             <Script id="zoho-init" strategy="afterInteractive">
               {`
