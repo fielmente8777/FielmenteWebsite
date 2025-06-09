@@ -83,8 +83,7 @@ const OurClientNew = () => {
                   // href={"/"}
                   className="relative w-full lg:aspect-[4/3.4] aspect-[4/4] h-[8rem] flex justify-center items-center duration-300  hover:shadow-xl shadow-2xl hover:shadow-white/35 hover:scale-[1.04] rounded-tl-[1.875rem] rounded-br-[1.875rem] overflow-hidden"
                   style={{
-                    backgroundColor: `${
-                      index == 23
+                    backgroundColor: `${index == 23
                         ? "#22413f"
                         : index == 22
                           ? "#F7F7F7"
@@ -101,7 +100,7 @@ const OurClientNew = () => {
                                     : index == 25
                                       ? "#f7f000"
                                       : "white"
-                    }`,
+                      }`,
                   }}
                 >
                   {/* {index} */}
@@ -110,15 +109,14 @@ const OurClientNew = () => {
                     alt={`${item.alt}`}
                     width={100}
                     height={100}
-                    className={`${index == 4 || index == 5 || index == 9 || index == 11 || index == 19 || index == 27 || index == 29 ||  index == 35 ? "object-cover" : "object-contain"} w-full h-full p-3 `}
+                    className={`${index == 4 || index == 5 || index == 9 || index == 11 || index == 19 || index == 27 || index == 29 || index == 35 ? "object-cover" : "object-contain"} w-full h-full p-3 `}
                     style={{
-                      backgroundColor: `${
-                        index == 23
+                      backgroundColor: `${index == 23
                           ? "#22413f"
                           : index == 22 ||
-                              index == 16 ||
-                              index == 18 ||
-                              index == 20
+                            index == 16 ||
+                            index == 18 ||
+                            index == 20
                             ? "#F7F7F7"
                             : index == 9
                               ? "#FF6C26"
@@ -128,12 +126,12 @@ const OurClientNew = () => {
                                   ? "#e6e6e6"
                                   : index == 26
                                     ? "#f3f3f3"
-                                    : index == 34 || index == 35 || index == 28
+                                    : index == 34 || index == 35 || index == 28 || index == 38
                                       ? "#000000"
                                       : index == 31
                                         ? "#a7d062"
                                         : "white"
-                      }`,
+                        }`,
                     }}
                   />
                 </div>

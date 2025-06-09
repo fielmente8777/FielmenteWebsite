@@ -11,7 +11,7 @@ const NavBar = () => {
 
   if (
     pathname === "/landing-page/" ||
-    pathname === "/fielmente-lp/" ||
+    // pathname === "/fielmente-lp/" ||
     pathname === "/resort/" ||
     pathname === "/hospitality/" ||
     pathname === "/thank-you/" ||
