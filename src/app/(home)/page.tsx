@@ -22,6 +22,7 @@ import { ConsultationForm } from "@/components";
 import ChooseUs from "../landing-page/components/chooseUs";
 import ContactUsCardNew from "../landing-page/components/ContactUsCardNew";
 import MIleStonesNew from "../landing-page/components/MIleStonesNew";
+import CountryFlags from "../landing-page/components/CountryFlags";
 
 export default function Home() {
   const data = [
@@ -45,7 +46,13 @@ export default function Home() {
           <div className="mt-14">
             <WhyUs />
           </div>
-          <div className="mt-14">
+        </Container>
+      </Section>
+
+      <CountryFlags />
+      <Section>
+        <Container>
+          <div>
             <HotelPerformacne />
           </div>
         </Container>
