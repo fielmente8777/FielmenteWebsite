@@ -111,8 +111,8 @@ function OurClients({
                               index == 18 ||
                               index == 20
                             ? "#F7F7F7"
-                            : index == 9
-                              ? "#FF6C26"
+                            // : index == 9
+                            //   ? "#FF6C26"
                               : index == 21 || index == 0
                                 ? "#1e1e1e"
                                 : index == 25

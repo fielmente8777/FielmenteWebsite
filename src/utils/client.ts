@@ -5,10 +5,10 @@ import Client3 from "../../public/images/Client3.png";
 import Client4 from "../../public/images/BG-logo.jpg";
 import Client5 from "../../public/images/BURKEY-BLACK-LOGO-01.png";
 import Client6 from "../../public/images/Client6.png";
-import Client7 from "../../public/images/D&G-logo-03-1.png";
+// import Client7 from "../../public/images/D&G-logo-03-1.png";
 import Client8 from "../../public/images/DOUBLE-TREE-LOGO-01.png";
 import Client9 from "../../public/images/Dunagiri-Logo-Square.png";
-import Client10 from "../../public/images/HUMRAHI-TRAVELS-LOGO.jpg";
+// import Client10 from "../../public/images/HUMRAHI-TRAVELS-LOGO.jpg";
 import Client11 from "../../public/images/Hyatt-regency-logo.jpg";
 import Client12 from "../../public/images/JW-Mariott-logo.png";
 import Client13 from "../../public/images/Novotel-Logo.png";
@@ -84,10 +84,10 @@ export const ClientImages: ClientData[] = [
     src: Client6,
     alt: "Client6",
   },
-  {
-    src: Client7,
-    alt: "Client7",
-  },
+  // {
+  //   src: Client7,
+  //   alt: "Client7",
+  // },
   {
     src: Client8,
     alt: "Client8",
@@ -96,10 +96,10 @@ export const ClientImages: ClientData[] = [
     src: Client9,
     alt: "Client9",
   },
-  {
-    src: Client10,
-    alt: "Client10",
-  },
+  // {
+  //   src: Client10,
+  //   alt: "Client10",
+  // },
   {
     src: Client11,
     alt: "Client11",

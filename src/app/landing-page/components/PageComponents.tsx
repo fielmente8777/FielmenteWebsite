@@ -45,14 +45,13 @@ const PageComponents = () => {
         </div>
       </Section>
 
-      <CountryFlags />
-
       {/* Hotel Performance***** */}
       <Section>
         <div className="max-width">
           <HotelPerformacne />
         </div>
       </Section>
+
 
       {/* Our Clients**** */}
       <div className="bg-blue-dark lg:py-20 py-10">
@@ -61,7 +60,7 @@ const PageComponents = () => {
         </div>
       </div>
       <OurOTAPartners />
-
+      <CountryFlags />
       <div className="bg-gray-secondary lg:py-20 py-10">
         <div className="lg:max-w-[1280px] max-w-full mx-auto px-[1.5rem]">
           {/* Here the component will come */}

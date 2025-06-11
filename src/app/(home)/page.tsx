@@ -49,7 +49,6 @@ export default function Home() {
         </Container>
       </Section>
 
-      <CountryFlags />
       <Section>
         <Container>
           <div>
@@ -57,12 +56,15 @@ export default function Home() {
           </div>
         </Container>
       </Section>
+
+      
       <Section>
         <Container>
           <OurClientNew />
         </Container>
       </Section>
       <OurOTAPartners />
+      <CountryFlags />
 
       {/* <Section>
         <Container>
@@ -81,7 +83,7 @@ export default function Home() {
       {/* <Form title="Schedule a meeting with our marketing consultant" /> */}
       {/* </Container>
       </Section> */}
-      <div className="mt-14">
+      {/* <div className="mt-14">
         <Container>
           <article className="max-w-[1100px] mx-auto">
             {data.map((item, index) => (
@@ -95,7 +97,7 @@ export default function Home() {
             ))}
           </article>
         </Container>
-      </div>
+      </div> */}
       <ContactUsCardNew />
       <ConsultationForm />
       <div className="mt-10 lg:mt-20"></div>

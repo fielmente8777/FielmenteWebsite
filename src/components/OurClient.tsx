@@ -57,13 +57,14 @@ const OurClient = () => {
                     // href={"/"}
                     className="relative w-full lg:aspect-[4/2.5] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[9rem] rounded-md flex justify-center items-center"
                   >
+                    {/* <span className="absolute top-0 right-0 z-10 text-white">{index}</span> */}
                     <Image
                       src={item.src}
                       alt={`${item.alt}`}
                       fill
                       className={`${
                         index == 25 ||
-                        index == 26 ||
+                        // index == 26 ||
                         index == 19 ||
                         index == 1 ||
                         index == 2 ||
@@ -71,7 +72,7 @@ const OurClient = () => {
                         index == 5 ||
                         index == 7 ||
                         index == 9 ||
-                        index == 11 ||
+                        // index == 11 ||
                         index == 19 ||
                         index == 27 ||
                         index == 29 ||
@@ -79,30 +80,31 @@ const OurClient = () => {
                           ? "object-cover"
                           : "object-contain"
                       } w-full h-full rounded-md p-3`}
-                      style={{
-                        backgroundColor: `${
-                          index == 23
-                            ? "#22413f"
-                            : index == 22 ||
-                                index == 16 ||
-                                index == 18 ||
-                                index == 20
-                              ? "#F7F7F7"
-                              : index == 9
-                                ? "#FF6C26"
-                                : index == 21 || index == 0
-                                  ? "#1e1e1e"
-                                  : index == 25
-                                    ? "#e6e6e6"
-                                    : index == 26
-                                      ? "#f3f3f3"
-                                      : index == 34 || index == 35 || index == 28
-                                        ? "#000000"
-                                        : index == 31
-                                          ? "#a7d062"
-                                          : "white"
+                       style={{
+                      backgroundColor: `${index == 23
+                          ? "#e6e6e6"
+                          : index == 22 ||
+                            index == 16 ||
+                            index == 18 ||
+                            index == 20
+                            ? "#F7F7F7"
+                            : index == 21
+                              ? "#21413e"
+                              : index == 19 || index == 0
+                                ? "#1e1e1e"
+                                : index == 24
+                                  ? "#f3f3f3"
+                                  : index == 26 
+                                    ? "#000000"
+                                    : index == 32 || index == 33 || index == 28 || index == 34 || index == 36
+                                      ? "#000000"
+                                      : index == 41
+                                        ? "#007a39"
+                                      : index == 29 
+                                        ? "#a7d062"
+                                        : "white"
                         }`,
-                      }}
+                    }}
                     />
                   </div>
                 </SwiperSlide>

@@ -284,20 +284,21 @@ body {
     border-radius: 0.5rem;
   }
 }
+.com {
+  .pagination-Portfolio {
+    .swiper-pagination-bullet {
+      background-color: #ffffff;
+      inline-size: 0.7rem;
+      block-size: 0.7rem;
+      opacity: 1;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
 
-.pagination-Portfolio {
-  .swiper-pagination-bullet {
-    background-color: #ffffff;
-    inline-size: 0.7rem;
-    block-size: 0.7rem;
-    opacity: 1;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .swiper-pagination-bullet-active {
-    width: 2rem;
-    border-radius: 0.5rem;
+    .swiper-pagination-bullet-active {
+      width: 2rem;
+      border-radius: 0.5rem;
+    }
   }
 }
 
