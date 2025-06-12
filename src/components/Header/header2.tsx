@@ -191,7 +191,7 @@ const Header2 = () => {
                 <button
                   // href={"tel:+919501868775"}
                   onClick={() => setShowModal(true)}
-                  className="flex items-center gap-1 bg-[#F26633] hover:bg-white hover:text-[#F26633] hover:scale-95 hover:shadow-lg transition ease-in-out duration-300 active:scale-100 border border-[#F26633]  px-4 py-3 text-white"
+                  className="flex items-center gap-1 bg-[#F26633] hover:bg-white hover:text-[#F26633] hover:scale-95 hover:shadow-lg transition ease-in-out duration-300 active:scale-100 border border-[#F26633]  px-4 py-3 text-white rounded-[8px]"
                 >
                   {/* <OutLineCall /> */}
                   Free Consultation

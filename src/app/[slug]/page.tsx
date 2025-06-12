@@ -40,7 +40,7 @@ const Page = async (props: Params) => {
   }
 
   return (
-    <main style={{background: "radial-gradient(circle, rgba(228,242,238,1) 0%, rgba(235,245,238,1) 100%)"}}>
+    <main >
       <DynamicBlog blog={data} />
     </main>
   );

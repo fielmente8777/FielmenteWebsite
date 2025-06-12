@@ -2072,6 +2072,8 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "HTML or WordPress: Which one is Best for Your hotel/restaurant?",
     link: "html-or-wordpress-which-one-is-best-for-your-hotel-restaurant-2",
+    description:
+      "A website is a must if you own a restaurant and want to create a digital identity for your business. A website is important to interact with customers and attract potential customers through the website. Therefore, the website for any restaurant needs to be interactive. However, there are so many different website platforms that it becomes difficult to choose a feature-rich platform that provides you with all the features. One of the two most popular platforms for a restaurant website is HTML and WordPress, and people are usually confused between the two. Both types of websites have their advantage, but which is best for a restaurant? Let’s find out.",
     data: `<div>
     <p>
       A website is a must if you own a restaurant and want to
@@ -2237,6 +2239,15 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "A Complete Step-by-Step Process to Create a Brand Guide For Hotels",
     link: "a-complete-process-to-create-a-brand-guide-for-hotels",
+    description:`A one-page document highlighting the creative assets of
+        a brand, like a logo, design, colour, typography, and
+        brand philosophy to make customers aware and educated
+        about the brand and at the same time, a branding guide
+        for hotels strikes an emotional connection with them. It
+        serves as a manual of guidelines a hotel brand is based
+        on to ensure that it creates a brand perception of the
+        business, in this case, a hotel in the eyes of the
+        customers.`,
     data: `<div>
     <div>
       <h2>What is a Brand Guide?</h2>
@@ -2426,6 +2437,10 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "6 Creative Ways to Market Your Hotel on a Shoestring Budget",
     link: "6-creative-ways-to-market-your-hotel-on-a-shoestring-budget-2",
+    description:`As digital marketing is shifting rapidly, your hotel must use the best marketing concepts to drive new
+    business. Online marketing through SEO, content, social media, paid campaigns, chatbots, and reputation management
+    could greatly impact your hotel business. Oh, wait! Your website’s user experience is also important. But, don’t
+    worry, Fielmente is here.`,
     data: `
   
   <p>As digital marketing is shifting rapidly, your hotel must use the best marketing concepts to drive new
@@ -2508,6 +2523,8 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     title:
       "8 Marketing Strategies for Food & Beverage Industry to Plan in 2022",
     link: "8-marketing-strategies-for-food-beverage-industry-to-plan-in-2022",
+    description:`This article is designed for any manager in the Food and Beverage Industry who wants to grow their business by
+    executing a successful marketing strategy. This quick guide will help you plan your marketing strategy for 2022.`,
     data: `<p>This article is designed for any manager in the Food and Beverage Industry who wants to grow their business by
     executing a successful marketing strategy. This quick guide will help you plan your marketing strategy for 2022.</p>
   <br />
@@ -2589,6 +2606,10 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "Another milestone in Fielmente’s journey",
     link: "another-milestone-in-fielmente-s-journey",
+    description:`It’s been a year since we dared to act. Fielmente launched in 2020 to create a difference in the hospitality
+      industry. We are a hospitality marketing that has always believed in the strength of creative ideas along with
+      technology. Our goal is to help passionate brands unlock their full potential with this belief. So far we have been
+      successful in helping out more than 50 brands by offering our 6 exclusive services and guidance.`,
     addimg: certificate,
     data: `
   <div>
@@ -2621,6 +2642,10 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "Top 3 Food & Beverage Business Pitches on Shark Tank India",
     link: "top-3-food-beverage-business-pitches-on-shark-tank-india",
+    description:`Are you too hooked on Shark Tank India just like most of us? We knew it and we don’t blame you. The show is the
+      perfect blend of educational and entertaining. It showcases some of India’s most innovative business ideas and today
+      we are going to share with you our top three favorite pitches for a food and beverage business venture. We will
+      mention a few components for our choices which will be the idea, the deal, and the “selling point/points”.`,
     data: `
   <div>
     <h2>Overview</h2>
@@ -2652,7 +2677,6 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     </ul>
   </div>
   <br />
-  <br />
   <div>
     <h2><a href="https://skippi.in/">2. Skippi Pops</a></h2>
     <img src="/images/blog/Shark-Tank-2.png" alt="hero">
@@ -2675,7 +2699,6 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     </ul>
   </div>
   <br />
-  <br />
   <div>
     <h2><a href="https://bluepinefoods.com/">3. Blue Pine Industries</a></h2>
     <p>Click to Follow Momo Mami –<a
@@ -2696,7 +2719,6 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     </ul>
   </div>
   <br />
-  <br />
   <div>
     <h2>Conclusion</h2>
     <p>Well, these were just some success stories of Shark Tank India. To market your hospitality business in an effective
@@ -2709,6 +2731,7 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "How SEO helps to boost restaurant business",
     link: "how-can-seo-help-a-local-restaurant-to-build-their-brand",
+    description:"Businesses are always on the lookout for new strategies they can use to get ahead of the competition. Search engine optimization, commonly abbreviated as SEO, is one of those strategies that can be used by small businesses to create a name for themselves online. If you’re not sure how SEO for local restaurants could be helpful, here are just a few of the ways that SEO for restaurants could help build your brand.",
     data: `
   <p>Businesses are always on the lookout for new strategies they can use to get ahead of the competition. Search engine
     optimization, commonly abbreviated as SEO, is one of those strategies that can be used by small businesses to create a
@@ -2781,6 +2804,7 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "6 Steps To Do Performance Marketing For Restaurants",
     link: "steps-to-do-performance-marketing-for-restaurants",
+    description:"Being a restaurant owner is exciting, challenging, and requires lots of work. Can you see yourself, lunch rush accompanying you as usual, with all the food orders coming in? Or are you looking to take on the challenge of performance marketing? The chances are high that if you have even thought about launching a new concept or selling your restaurant’s services to different venues, performance marketing is one of the ways.",
     data: `
   <div>
     <p>Being a restaurant owner is exciting, challenging, and requires lots of work. Can you see yourself, lunch rush
@@ -2882,6 +2906,7 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "Restaurant Marketing in the MetaVerse – Web 3.0",
     link: "restaurant-marketing-in-the-metaverse",
+    description:"Unless you have been living under a rock, the name MetaVerse might sound a bit familiar to you. Everyone everywhere is talking about it. There have been discussions and debates around this topic. But what really is MetaVerse?",
     data: `
   <div>
     <p>Unless you have been living under a rock, the name MetaVerse might sound a bit familiar to you. Everyone everywhere
@@ -2941,8 +2966,10 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   {
     url: Img14,
     isShow: true,
-    title: "7 Restaurant Marketing Strategies in India to Follow for Your Business",
+    title:
+      "7 Restaurant Marketing Strategies in India to Follow for Your Business",
     link: "restaurant-marketing-strategies-in-india",
+    description:"Marketing in the restaurant industry is challenging. There are so many different jobs to do, so many aspects of customer service, and so many ways to do things wrong.",
     data: `<div>
     <p>Marketing in the restaurant industry is challenging. There are so many different jobs to do, so many aspects of
       customer service, and so many ways to do things wrong.</p>
@@ -3078,6 +3105,7 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title: "Tips for Engagement on Social Media of Cloud Kitchen",
     link: "tips-for-engagement-on-social-media-of-cloud-kitchen",
+    description:"This may help you to be more active in the marketing field and up-to-date.",
     data: `
   <div>
     <h2>Strategies:</h2>
@@ -3238,6 +3266,7 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: true,
     title:
       "Cloud Kitchen Consulting Services: 6 Reasons Why You Need Fielmente for It",
+      description:"The whole world is getting tech-savvy, so why don’t your food? The Cloud kitchen concept is one of the best ideas that this virtual Internet world has given us. You may know it by other names like ghost kitchen, dark kitchen, and virtual kitchen, but they all are the need of the hour. Everything is switching into an online world so why don’t restaurants? Cloud Kitchen allows you to enjoy restaurant-like food at your doorsteps. You must have heard about a popular saying,",
     link: "cloud-kitchen-consulting-services",
     data: `
   <div>
@@ -3428,6 +3457,7 @@ Why does this work? Because you’re cutting costs on front-of-house activities
     isShow: false,
     title: "Which POS is best for Cloud Kitchen?",
     link: "which-pos-is-best-for-cloud-kitchen",
+    description:"The concept of a cloud kitchen is booming in India, especially during the ongoing pandemic, when takeaway has become the most preferred choice of customers. However, managing a cloud kitchen has always been baffling, fortunately, there are POS solutions.",
     data: `
   <div>
     <p>The concept of a cloud kitchen is booming in India, especially during the ongoing pandemic, when takeaway has
@@ -3476,10 +3506,11 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   `,
   },
   {
-    // url: Img19,
+    url: "/images/blog/last-2nd-bg.png",
     isShow: true,
     title: "Improved Hotel Business Solutions for the New Normal",
     link: "strategies-for-hotel-business",
+    description:"The pandemic caught us off guard as it hit our hospitality and tourism industry so hard that international tourist arrivals dropped to -72.2% in 2020 and many talented employees had to lose their jobs. And in 2023 as we are nearing the end of the year we see how in the aftermath of COVID-19, our industry is adjusting to the new normal.",
     data: `
   <div>
     <p>The pandemic caught us off guard as it hit our hospitality and tourism industry so hard that international tourist
@@ -3875,4 +3906,4 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   },
 ];
 
-export const blogData = blog.filter((item) => item.isShow === true); 
+export const blogData = blog.filter((item) => item.isShow === true);

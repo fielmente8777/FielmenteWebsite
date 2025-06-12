@@ -17,33 +17,34 @@ export const BlogCard = ({
   index?: number;
 }) => {
   return (
-    <div className="rounded-sm group lg:mb-0 mb-5 hover:shadow-lg p-4 border border-gray-400">
+    <Link
+      href={`/${link}/`}
+      className="rounded-[8px] overflow-hidden group lg:mb-0 mb-5 shadow-lg "
+    >
       {src && (
         <div className="relative w-full aspect-[4/2.5] overflow-hidden rounded-sm">
-          <Link href={`/${link}/`}>
+          <div>
             <Image
               src={src}
               alt={alt}
               fill
               className="object-resize group-hover:scale-110 transition duration-300"
             />
-          </Link>
+          </div>
         </div>
       )}
-      <div className="flex justify-start flex-col items-start gap-4 mt-5">
-        <Link href={`/${link}/`} className={`${index === 0 ? "lg:text-4xl text-xl" : "text-xl"} text-blue-dark  font-semibold`}>
-          {title}
-        </Link>
-        <p className="text-[#787878] text-base">{description}</p>
-        <div className="flex justify-center mt-2">
+      <div className="px-4 py-6 flex justify-start flex-col items-start gap-4 mt-5">
+        <h4 className={`text-2xl text-blue-dark line-clamp-2`}>{title}...</h4>
+        <p className="text-[#787878] text-base md:text-[18px] line-clamp-4">{description}...</p>
+        {/* <div className="flex justify-center mt-2">
           <Link
             href={`/${link}/`}
             className="text-base text-white bg-orange-primary border border-orange-primary hover:bg-white hover:text-orange-primary  px-4 py-2 font-normal"
           >
             READ MORE
           </Link>
-        </div>
+        </div> */}
       </div>
-    </div>
+    </Link>
   );
 };

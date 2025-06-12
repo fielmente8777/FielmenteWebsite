@@ -463,11 +463,70 @@ export const OutlineDrpopdown = () => (
   >
     <path
       d="M12.4198 0.451988L13.4798 1.51299L7.70277 7.29199C7.6102 7.38514 7.50012 7.45907 7.37887 7.50952C7.25762 7.55997 7.12759 7.58594 6.99627 7.58594C6.86494 7.58594 6.73491 7.55997 6.61366 7.50952C6.49241 7.45907 6.38233 7.38514 6.28977 7.29199L0.509766 1.51299L1.56977 0.452987L6.99477 5.87699L12.4198 0.451988Z"
-      fill="#F26633"
+      fill="currentColor"
     />
   </svg>
 );
 
+export const CircleCallIcon = ({...props}) => (
+  <svg
+      width={40}
+      height={41}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <circle cx={20} cy={20.5} r={19.5} stroke="#D7D7D7" />
+      <g clipPath="url(#clip0_1384_6934)">
+        <mask
+          id="a"
+          style={{
+            maskType: "luminance"
+          }}
+          maskUnits="userSpaceOnUse"
+          x={10}
+          y={10}
+          width={21}
+          height={22}
+        >
+          <path d="M30.67 10.5H10v20.67h20.67V10.5z" fill="#fff" />
+        </mask>
+        <g mask="url(#a)">
+          <mask
+            id="b"
+            style={{
+              maskType: "luminance"
+            }}
+            maskUnits="userSpaceOnUse"
+            x={7}
+            y={8}
+            width={27}
+            height={27}
+          >
+            <path d="M7.334 8.167h26.667v26.667H7.334V8.167z" fill="#fff" />
+          </mask>
+          <g
+            mask="url(#b)"
+            stroke="#fff"
+            strokeMiterlimit={22.926}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M17.44 20.618a18.994 18.994 0 003.112 3.112 2.692 2.692 0 003.587-.21l.33-.328c.97-.97 2.558-.97 3.529 0l1.31 1.31c2.363 2.363-1.426 5.55-2.94 5.78-2.992.987-7.527-.649-11.18-4.3-3.65-3.652-5.287-8.187-4.3-11.18.23-1.513 3.417-5.303 5.781-2.939l1.31 1.31c.97.97.97 2.558 0 3.529l-.33.329a2.692 2.692 0 00-.208 3.587zM22.807 14.611a4.824 4.824 0 013.743 3.714M20.38 12.155a7.327 7.327 0 018.638 8.624" />
+          </g>
+        </g>
+      </g>
+      <defs>
+        <clipPath id="clip0_1384_6934">
+          <path
+            fill="#fff"
+            transform="translate(10 10.5)"
+            d="M0 0H20.67V20.67H0z"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+)
 export const FillInstagram = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

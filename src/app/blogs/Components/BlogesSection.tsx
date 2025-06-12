@@ -71,13 +71,25 @@ const BlogesSection = () => {
   };
 
   return (
-    <Section>
+    <Section className="mt-12">
       <Container>
         {/* Blog Grid */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-4 max-md:gap-y-4">
-          {/* Blog Posts */}
-          <div className="lg:grid grid-cols-2 gap-6 col-span-2">
-            {filteredPosts
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-6 md:gap-y-10 gap-y-4">
+          {blogData.map((item, index) => (
+            <BlogCard
+              key={index}
+              src={item.url}
+              alt={item.title}
+              title={item.title}
+              link={item.link}
+              description={item.description}
+              index={index}
+            />
+          ))}
+        </div>
+        {/* Blog Posts */}
+        {/* <div className="lg:grid grid-cols-2 gap-6 col-span-2"> */}
+        {/* {filteredPosts
               .slice(0, showMore ? filteredPosts.length : 3)
               .map((item, index) => (
                 <div
@@ -93,24 +105,24 @@ const BlogesSection = () => {
                     index={index}
                   />
                 </div>
-              ))}
+              ))} */}
 
-            {/* Show More Button */}
-            <div className="py-10 flex lg:hidden justify-center">
+        {/* Show More Button */}
+        {/* <div className="py-10 flex lg:hidden justify-center">
               <button
                 className="bg-[#F5F5F5] border border-orange-primary hover:bg-orange-primary hover:text-white text-orange-primary py-2 px-6"
                 onClick={() => setShowMore(!showMore)}
               >
                 {showMore ? "Show Less" : "Show More Blogs"}
               </button>
-            </div>
-          </div>
+            </div> */}
+        {/* </div>  */}
 
-          {/* Sidebar */}
-          <div>
-            <div className="flex flex-col gap-8 lg:sticky lg:top-3">
-              {/* Search Bar */}
-              <div className="grid grid-cols-3 items-center">
+        {/* Sidebar */}
+        {/* <div>
+            <div className="flex flex-col gap-8 lg:sticky lg:top-3"> */}
+        {/* Search Bar */}
+        {/* <div className="grid grid-cols-3 items-center">
                 <input
                   type="text"
                   placeholder="Search all posts..."
@@ -124,10 +136,10 @@ const BlogesSection = () => {
                 >
                   Search
                 </button>
-              </div>
+              </div> */}
 
-              {/* Newsletter Subscription */}
-              <div className="w-full border border-blue-dark flex flex-col">
+        {/* Newsletter Subscription */}
+        {/* <div className="w-full border border-blue-dark flex flex-col">
                 <div className="relative w-full aspect-[4/3] lg:aspect-[4/2.1]">
                   <Image
                     src="/formbg.png"
@@ -187,10 +199,10 @@ const BlogesSection = () => {
                     <span className="text-[#F2B203]"> Privacy Policy</span>.
                   </p>
                 </div>
-              </div>
+              </div> */}
 
-              {/* Recent Posts */}
-              <aside className="w-full">
+        {/* Recent Posts */}
+        {/* <aside className="w-full">
                 <h2 className="text-2xl font-bold capitalize text-blue-dark mb-3">
                   Recent Posts
                 </h2>
@@ -204,20 +216,20 @@ const BlogesSection = () => {
                     </Link>
                   </div>
                 ))}
-              </aside>
-            </div>
+              </aside> */}
+        {/* </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Show More Button */}
-        <div className="py-10 lg:flex hidden justify-center">
+        {/* <div className="py-10 lg:flex hidden justify-center">
           <button
             className="bg-[#F5F5F5] border border-orange-primary hover:bg-orange-primary hover:text-white text-orange-primary py-2 px-6"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "Show Less" : "Show More Blogs"}
           </button>
-        </div>
+        </div> */}
       </Container>
     </Section>
   );
