@@ -54,10 +54,8 @@ const PageComponents = () => {
 
 
       {/* Our Clients**** */}
-      <div className="bg-blue-dark lg:py-20 py-10">
-        <div className="lg:max-w-[1280px] max-w-full mx-auto px-[1.5rem]">
+      <div className=" lg:py-20 py-10">
           <OurClient />
-        </div>
       </div>
       <OurOTAPartners />
       <CountryFlags />
