@@ -112,9 +112,9 @@ function page() {
 
     </Container>
 
-    <Location src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14037.471511571006!2d77.06942785084031!3d28.408154453301705!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d22692a4e3faf%3A0xeb5a2617558c5e55!2sSuncity%20Success%20Tower!5e0!3m2!1sen!2sin!4v1729057863255!5m2!1sen!2sin" />
+    {/* <Location src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14037.471511571006!2d77.06942785084031!3d28.408154453301705!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d22692a4e3faf%3A0xeb5a2617558c5e55!2sSuncity%20Success%20Tower!5e0!3m2!1sen!2sin!4v1729057863255!5m2!1sen!2sin" /> */}
 
-
+     <Location src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.0230526306536!2d77.4147236!3d28.500481699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce7a8e05384bd%3A0x25763c0573c3a472!2sCoworking%20Space%20In%20Noida%20Expressway%20%7C%20alt.f%20Sector%20142%20Noida!5e1!3m2!1sen!2sin!4v1749802787280!5m2!1sen!2sin" />
 
 
 
