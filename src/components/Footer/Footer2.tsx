@@ -188,8 +188,10 @@ const Footer2 = () => {
   const contactLinks = [
     {
       title:
-        "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
-      link: "https://maps.app.goo.gl/6skWVHbH8e92D1Gi7",
+        "Fielmente hospitality, Second Floor, ALTF Coworking, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
+        // "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+      link: "https://maps.app.goo.gl/xaNHF5Ut48tSB69Y8?g_st=aw",
+      // link: "https://maps.app.goo.gl/6skWVHbH8e92D1Gi7",
     },
     {
       title: "Call: +91 95018 68775",

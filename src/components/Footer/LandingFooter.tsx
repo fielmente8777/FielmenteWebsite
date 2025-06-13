@@ -37,8 +37,9 @@ const LandingFooter = () => {
             </span>
             {/* Level 2, Augusta Point, Golf Course Rd, Parsvnath Exotica, Sarswati
                         Kunj II, DLF Phase 5,<br className="hidden lg:block" /> Sector 53, Gurugram, Haryana 122002 */}
-            Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram,
-            Haryana 122005
+            {/* Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram,
+            Haryana 122005 */}
+            Fielmente hospitality, Second Floor, ALTF Coworking, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304
           </p>
           {/* <p className="text-blue-dark text-base text-center flex justify-center lg:w-max">
             <span

@@ -71,7 +71,8 @@ const LandingPageFooter2 = () => {
         {
           href: "",
           label:
-            "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+            "Fielmente hospitality, Second Floor, ALTF Coworking, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
+            // "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
           icon: <OutLineLocationIcon />,
         },
         {
