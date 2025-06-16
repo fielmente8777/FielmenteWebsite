@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .poppins {
   font-family: "Poppins", sans-serif;
 }
@@ -139,13 +143,12 @@ body {
     color: #000000;
   }
 
-
   h2,
   h3,
   h4 {
     font-weight: 600;
     font-style: normal;
-   color: #000000;
+    color: #000000;
     font-size: 1.5rem;
     line-height: 2rem;
     text-align: start;
@@ -154,14 +157,13 @@ body {
       line-height: 1.5rem;
     }
   }
-  
 
   p {
     font-weight: 400;
     font-style: normal;
     font-size: 1.125rem;
     line-height: 1.8rem;
-    color: #6F6F6F;
+    color: #6f6f6f;
     // text-align: justify;
     padding: 0.5rem 0;
   }
@@ -331,6 +333,12 @@ body {
       }
     }
   }
+}
+
+.box_shadow2 {
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
 }
 
 // usa page

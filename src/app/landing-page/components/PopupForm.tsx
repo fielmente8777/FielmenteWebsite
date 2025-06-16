@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { countries } from "@/utils/countryCode";
 import React from "react";
 import { Form } from "@/components";
+import { OutlineClose } from "@/utils/icons";
+import PopUpForm from "@/components/Forms/PopUpForm";
 const PopupForm = ({
   setShowModal,
   showModal,
@@ -14,23 +16,12 @@ const PopupForm = ({
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   showModal: boolean;
 }) => {
-  const router = useRouter();
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userMessage, setUserMessage] = useState("");
-  const [userPhone, setUserPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("+91");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [formRes, setFormRes] = useState(false);
   const [openPopup, setOpenPopup] = useState(false);
   const [popupMsg, setPopupMsg] = useState("");
-  const [loader, setLoader] = useState(false);
 
   // useRef to store intervalId
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   useEffect(() => {
     intervalIdRef.current = setInterval(() => {
@@ -57,186 +48,33 @@ const PopupForm = ({
     }
   }, [setShowModal]);
 
-  const validateInputs = () => {
-    let isValid = true;
-    setErrorMessage("");
-    setEmailErrorMessage("");
 
-    if (userPhone.length !== 10) {
-      setErrorMessage("Phone number must be exactly 10 digits.");
-      isValid = false;
-    }
 
-    if (!emailRegex.test(userEmail)) {
-      setEmailErrorMessage("Please enter a valid email address.");
-      isValid = false;
-    }
-
-    return isValid;
-  };
-
-  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!validateInputs()) {
-      return;
-    }
-
-    setLoader(true);
-
-    try {
-      const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
-        {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
-          email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (data.success) {
-        setLoader(false);
-        router.push(`/thank-you/`);
-        // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
-      } else {
-        setPopupMsg("Something went wrong!");
-        setOpenPopup(true);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setPopupMsg("Something went wrong!");
-      setOpenPopup(true);
-    } finally {
-      setLoader(false);
-    }
-  };
-
-  interface data_Type {
-    type: string;
-    placeholder: string;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  }
-
-  const form: data_Type[] = [
-    {
-      type: "text",
-      placeholder: "Full Name",
-      value: userName,
-      onChange: (e) => setUserName(e.target.value),
-    },
-    {
-      type: "email",
-      placeholder: "Email",
-      value: userEmail,
-      onChange: (e) => setUserEmail(e.target.value),
-    },
-    {
-      type: "number",
-      placeholder: "Phone",
-      value: userPhone,
-      onChange: (e) => setUserPhone(e.target.value),
-    },
-  ];
+  
 
   return (
     <>
       <section className={`fixed inset-0 z-[999] bg-black bg-opacity-50 duration-700 ease-in-out transition-all ${showModal ? "block" : "hidden"}`}>
-        <article className={`${showModal ? "flex justify-center items-center h-full scale-100 opacity-100" : "h-0 scale-0 opacity-0"} transition-all duration-700 ease-in-out`}>
-          <div className="flex flex-col gap-3 max-w-[400px] w-full shadow-2xl p-4 relative rounded-md">
+        <article className={`${showModal ? "flex justify-center items-center h-full scale-100 opacity-100 max-md:px-4" : "h-0 scale-0 opacity-0"} transition-all duration-700 ease-in-out`}>
+          <div className="flex max-w-3xl w-full shadow-2xl relative rounded-lg overflow-hidden bg-white">
+          {/* <div className="flex flex-col gap-3 max-w-[400px] w-full shadow-2xl p-4 relative rounded-md"> */}
             <button
               onClick={closeModal}
-              className="absolute top-[22px] lg:top-0 right-[3px] w-8 h-8 flex justify-center items-center text-lg rounded-full bg-red-500 hover:bg-red-600 text-white"
+              className="absolute top-1 right-1 w-8 h-8 flex justify-center items-center text-lg rounded-full text-orange-primary bg-white z-10 transition-all duration-300"
             >
-              X
+              <OutlineClose />
             </button>
-            {/* <div className="relative w-full h-[270px] aspect-[4/4]">
-                <Image
-                  src={popupimg}
-                  alt="Hospitality Marketing"
-                  fill
-                  className="object-cover rounded-lg"
-                  priority
-                />
-              </div>
-              <form className="flex flex-col gap-3 w-full " onSubmit={submit}>
-                {form.map((item, index) => (
-                  <div
-                    className="p-2 border border-sky-400 rounded-md flex gap-2 items-center"
-                    key={index}
-                  >
-                    {item.type === "number" && (
-                      <select
-                        id="countryCode"
-                        name="countryCode"
-                        value={countryCode}
-                        onChange={(e) => setCountryCode(e.target.value)}
-                        className="bg-transparent text-sm py-1 flex items-center rounded-lg text-[#333333] focus:outline-none"
-                        required
-                        style={{ inlineSize: `${countryCode.length + 3}ch` }}
-                      >
-                        {countries.map((country, index) => (
-                          <option
-                            key={index}
-                            value={country.code}
-                            className="text-black bg-gray-100 p-0"
-                          >
-                            {`${country.code}`}
-                          </option>
-                        ))}
-                      </select>
-                    )}
-                    <input
-                      type={item.type}
-                      placeholder={item.placeholder}
-                      value={item.value}
-                      onChange={item.onChange}
-                      max={item.type === "number" ? "9999999999" : undefined}
-                      required
-                      className="w-full no-spinner rounded-lg outline-none focus:outline-none text-sm text-slate-800 placeholder:text-slate-500"
-                    />
-                    {item.type === "number" && errorMessage && (
-                      <p className="text-sm text-red-500 mt-2">
-                        {errorMessage}
-                      </p>
-                    )}
-                    {item.type === "email" && emailErrorMessage && (
-                      <p className="text-sm text-red-500 mt-2">
-                        {emailErrorMessage}
-                      </p>
-                    )}
-                  </div>
-                ))}
-                <div className="p-2 border border-sky-400 rounded-md">
-                  <textarea
-                    placeholder="Message"
-                    value={userMessage}
-                    onChange={(e) => setUserMessage(e.target.value)}
-                    className="w-full outline-none rounded-lg focus:outline-none text-sm resize-none text-slate-800 placeholder:text-slate-500"
-                  ></textarea>
-                </div>
-                <div>
-                  <button
-                    type="submit"
-                    className="bg-blue-dark text-white hover:bg-sky-900 transition w-full py-3 flex-auto flex justify-center items-center text-sm rounded-lg"
-                  >
-                    {loader ? "Submitting..." : "Submit"}
-                  </button>
-                </div>
-              </form> */}
-            <Form />
+            <div className="relative w-full md:aspect-[4/4] max-md:hidden">
+              <Image
+                src={"/popup1.jpg"}
+                alt="Hospitality Marketing"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            <PopUpForm />
           </div>
         </article>
       </section>
