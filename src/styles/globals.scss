@@ -27,8 +27,8 @@
   --black: #1d1d1d;
   --shadow: 0px 0px 20px rgb(153, 152, 152);
   --primary-orange: #f26633;
-  --gradient: linear-gradient(120deg, #e5f2ef, #e4f2ee, #fffaee) --gradient-second:
-    linear-gradient(120deg, #e5f2ef, #e4f2ee, #ffffff);
+  --gradient: linear-gradient(120deg, #e5f2ef, #e4f2ee, #fffaee)
+    --gradient-second: linear-gradient(120deg, #e5f2ef, #e4f2ee, #ffffff);
 }
 @layer utilities {
   .text-balance {
@@ -139,13 +139,12 @@ body {
     color: #000000;
   }
 
-
   h2,
   h3,
   h4 {
     font-weight: 600;
     font-style: normal;
-   color: #000000;
+    color: #000000;
     font-size: 1.5rem;
     line-height: 2rem;
     text-align: start;
@@ -154,14 +153,13 @@ body {
       line-height: 1.5rem;
     }
   }
-  
 
   p {
     font-weight: 400;
     font-style: normal;
     font-size: 1.125rem;
     line-height: 1.8rem;
-    color: #6F6F6F;
+    color: #6f6f6f;
     // text-align: justify;
     padding: 0.5rem 0;
   }
@@ -351,4 +349,55 @@ body {
   background-image: url("/BG3.png");
   background-repeat: no-repeat;
   background-size: 100% 50%;
+}
+
+.scroller {
+  // max-width: 1400px;
+  // margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroller_inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  padding-block: 1rem;
+}
+
+.scroller[data-animated="true"] .scroller_inner {
+  width: max-content;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, normal) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: normal;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 80s;
+}
+
+.scroller[data-speed="medium"] {
+  --_animation-duration: 40s;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-40%);
+  }
 }

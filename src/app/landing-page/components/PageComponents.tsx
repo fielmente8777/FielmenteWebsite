@@ -52,10 +52,9 @@ const PageComponents = () => {
         </div>
       </Section>
 
-
       {/* Our Clients**** */}
       <div className=" lg:py-20 py-10">
-          <OurClient />
+        <OurClient />
       </div>
       <OurOTAPartners />
       <CountryFlags />

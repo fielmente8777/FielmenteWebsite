@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import PageComponents from "../landing-page/components/PageComponents";
+import LandingPage1 from "@/components/landing-pages/LandingPage1/LandingPage1";
 
 export const metadata: Metadata = {
   title: "Fielmente : Hospitality Marketing Agency in India",
@@ -43,7 +44,8 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <PageComponents />
+      {/* <PageComponents /> */}
+      <LandingPage1 />
     </>
   );
 };
