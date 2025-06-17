@@ -4,6 +4,7 @@ import { pageData } from "./data";
 import OurPartners from "./components/OurPartners";
 import IndustryWeServe from "./components/IndustryWeServe";
 import OurServices from "./components/OurServices";
+import ChooseUs from "./components/ChooseUs";
 
 const LandingPage1 = () => {
   return (
@@ -12,6 +13,7 @@ const LandingPage1 = () => {
       <OurPartners {...pageData?.ourPartners} />
       <IndustryWeServe {...pageData?.industryWeServe} />
       <OurServices {...pageData?.ourService} />
+      <ChooseUs {...pageData?.ChooseUs} />
     </div>
   );
 };

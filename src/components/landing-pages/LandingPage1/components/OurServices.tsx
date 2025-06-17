@@ -15,7 +15,7 @@ interface OurServicesProps {
     label: string;
     href: string;
   };
-  items: { title: string; subTitle: string; icon: React.ReactNode }[];
+  items: { title: string; subTitle: string; icon: React.ReactNode, subIconTitle?: string }[];
 }
 
 const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
