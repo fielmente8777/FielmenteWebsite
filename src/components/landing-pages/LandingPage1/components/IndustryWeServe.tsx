@@ -26,7 +26,7 @@ const IndustryWeServe = ({
 }: IndustryWeServeProps) => {
   return (
     <Section>
-      <div className="max-w-5xl mx-auto text-center space-y-3">
+      <div className="max-w-5xl mx-auto text-center space-y-3 poppins">
         <h2 className="bg-[#FFE7DE] text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
           {title}
         </h2>
@@ -54,7 +54,7 @@ const IndustryWeServe = ({
         )}
       </div>
 
-      <div className="max-w-2xl mx-auto mt-12 text-center space-y-12">
+      <div className="max-w-2xl mx-auto mt-12 text-center space-y-12 poppins">
         <p className="text-gray-primary">{description}</p>
         <Link
           className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"

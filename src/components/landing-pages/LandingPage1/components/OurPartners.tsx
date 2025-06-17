@@ -1,5 +1,6 @@
 "use client";
 import Container from "@/components/Container";
+import Section from "@/components/Section";
 import Image from "next/image";
 import React, { useEffect } from "react";
 interface OurPartnersProps {
@@ -31,24 +32,34 @@ const OurPartners = ({ images }: OurPartnersProps) => {
   }, []);
 
   return (
-    <Container>
-      <div className="scroller py-24" data-direction="left">
-        <div className="tag-list scroller_inner text-white">
-          {images?.map((slider, index) => (
-            <div key={index} className="w-full">
-              <div className="relative w-48 aspect-[3/1.06]">
-                <Image
-                  src={slider?.src}
-                  alt={slider?.alt}
-                  className="object-contain"
-                  fill
-                />
-              </div>
+    <Section>
+      {/* upper line gradient */}
+      <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[1px] w-full" />
+      <Container>
+        <div className="py-14 space-y-8">
+          <div className="scroller" data-direction="left">
+            {/* main content  */}
+            <div className="tag-list scroller_inner text-white">
+              {images?.map((slider, index) => (
+                <div key={index} className="w-full">
+                  <div className="relative w-48 aspect-[3/1.06]">
+                    <Image
+                      src={slider?.src}
+                      alt={slider?.alt}
+                      className="object-contain"
+                      fill
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+
+      {/* lower line gradient */}
+      <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[1px] w-full" />
+    </Section>
   );
 };
 

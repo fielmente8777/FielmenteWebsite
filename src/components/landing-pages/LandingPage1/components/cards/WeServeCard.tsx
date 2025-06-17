@@ -17,7 +17,7 @@ const IndustryWeServeCard: React.FC<IndustryWeServeProps["items"][0]> = ({
 
       <div className="absolute inset-0 flex items-center justify-center  gap-6 md:px-12 px-10">
         <div>
-          <h2 className="text-white text-center font-semibold playfair text-2xl tracking-wide">
+          <h2 className="text-white text-center font-semibold playfair text-2xl tracking-wide poppins">
             {title}
           </h2>
         </div>

@@ -18,7 +18,7 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
     <Section className="!p-0">
       <div className="bg-blue-dark w-full py-14 flex items-center justify-center">
         <Container>
-          <div className="grid lg:grid-cols-12 gap-0 text-white items-center">
+          <div className="grid lg:grid-cols-12 gap-0 text-white items-center poppins">
             <div className="lg:col-span-8 space-y-8 pr-28">
               <h2 className="md:text-6xl/tight text-3xl font-semibold">
                 {title}

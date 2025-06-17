@@ -15,19 +15,24 @@ interface OurServicesProps {
     label: string;
     href: string;
   };
-  items: { title: string; subTitle: string; icon: React.ReactNode, subIconTitle?: string }[];
+  items: {
+    title: string;
+    subTitle: string;
+    icon: React.ReactNode;
+    subIconTitle?: string;
+  }[];
 }
 
 const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
   return (
     <Section className="bg-blue-dark">
       <Container>
-        <div className="max-w-5xl mx-auto text-center space-y-8">
+        <div className="max-w-5xl mx-auto text-center space-y-8 poppins">
           <h2 className="bg-[#FFE7DE] text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
             {title}
           </h2>
 
-          <h3 className="md:text-5xl leading-[16rem] font-medium text-white">
+          <h3 className="md:text-5xl/[4rem] font-medium text-white">
             {subTitle}
           </h3>
         </div>
@@ -37,7 +42,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
             <SwiperCarousel
               data={items}
               modules={[Autoplay]}
-              autoplay={{ delay: 3000 }}
+              autoplay={{ delay: 12000 }}
               slidesPerView={1}
               spaceBetween={0}
               loop={true}
@@ -53,7 +58,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           )}
         </div>
 
-        <div className="max-w-2xl mx-auto mt-12 text-center space-y-12">
+        <div className="max-w-2xl mx-auto mt-12 text-center space-y-12 poppins">
           <Link
             className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"
             href={`${button?.href}`}
