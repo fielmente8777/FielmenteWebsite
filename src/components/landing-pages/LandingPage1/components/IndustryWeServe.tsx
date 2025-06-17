@@ -35,7 +35,7 @@ const IndustryWeServe = ({
         <h3 className="md:text-5xl font-medium text-blue-dark">{subTitle}</h3>
       </div>
 
-      <div className="w-full bg-blue-dark p-2 mt-12">
+      <div className="w-full bg-blue-dark p-3 mt-12">
         {items && items?.length > 0 && (
           <SwiperCarousel
             data={items}
@@ -60,7 +60,7 @@ const IndustryWeServe = ({
         <p className="text-gray-primary">{description}</p>
         <button
           onClick={() => setShowModal(true)}
-          className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"
+          className="inline-block bg-orange-primary font-medium p text-white text-lg/[24px] py-4 px-6 rounded-md"
           // href={button?.href}
         >
           {button?.label}

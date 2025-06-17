@@ -26,6 +26,8 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
 
               <h3 className="text-lg md:text-start text-center">{subTitle}</h3>
 
+              <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" />
+
               <div className="flex items-center justify-between">
                 {items?.map((item, index) => (
                   <div key={index} className="space-y-2">

@@ -186,7 +186,7 @@ const footerData = {
     {
       label:
         "Ground Floor, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
-      href: "https://maps.app.goo.gl/eTNaDpDjnw2AwGFV9",
+      href: "https://maps.app.goo.gl/eMCniBLG98NSEtzn9",
       icon: <AddressIcon />,
     },
   ],

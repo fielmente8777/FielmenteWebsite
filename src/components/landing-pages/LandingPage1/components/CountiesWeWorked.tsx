@@ -22,7 +22,7 @@ const CountiesWeWorked = ({
   return (
     <Section>
       <div className="grid lg:grid-cols-12 grid-cols-1 items-center gap-1">
-        <div className="lg:col-span-4 col-span-1 md:rounded-r-xl rounded-b-3xl bg-orange-primary md:p-16 p-8 space-y-4 poppins">
+        <div className="lg:col-span-4 col-span-1 lg:rounded-r-xl md:rounded-none rounded-b-3xl bg-orange-primary md:p-16 p-8 space-y-4 poppins">
           <h2 className="w-fit bg-[#FFE7DE] text-blue-dark px-2 rounded-full">
             {title}
           </h2>

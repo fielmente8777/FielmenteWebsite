@@ -117,8 +117,8 @@ const HospitalityLandingBannerForm = () => {
             name="countryCode"
             value={countryCode}
             onChange={(e) => setCountryCode(e.target.value)}
-            className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
-            style={{ inlineSize: `${countryCode.length + 2}ch` }}
+            className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none text-lg"
+            style={{ inlineSize: `${countryCode.length + 6}ch` }}
             aria-label="Country Code"
           >
             {countries.map((country, index) => (
@@ -127,10 +127,11 @@ const HospitalityLandingBannerForm = () => {
                 value={country.code}
                 className="text-black bg-gray-100"
               >
-                {`${country.code}`}
+                {`${country.code} ${country?.name}`}
               </option>
             ))}
           </select>
+
           <input
             type="number"
             id="phone"
@@ -139,7 +140,7 @@ const HospitalityLandingBannerForm = () => {
             placeholder="Your Phone Number*"
             value={userPhone}
             onChange={handlePhoneChange}
-            className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
+            className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none text-lg"
           />
         </div>
       ),
@@ -171,7 +172,7 @@ const HospitalityLandingBannerForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 max-md:px-4 p-6 max-md:mt-6 text-base rounded-lg w-full bg-[#F5F5F5]"
+      className="flex flex-col gap-2 max-md:px-4 py-6 px-4 max-md:mt-6 text-base rounded-lg w-full bg-[#F5F5F5]"
     >
       <h2 className="md:text-2xl text-lg text-blue-dark poppins font-semibold">
         Get A FREE Consultation!
@@ -204,7 +205,7 @@ const HospitalityLandingBannerForm = () => {
                   spellCheck: "false",
                   rows: data.tag === "textarea" ? 3 : undefined,
                   className:
-                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
+                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary text-lg/[26px]",
                 })}
           </div>
           {data.name === "phone" && errorMessage && (
@@ -216,7 +217,7 @@ const HospitalityLandingBannerForm = () => {
         </div>
       ))}
 
-      <button className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-3  font-semibold rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary">
+      <button className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-3  font-medium rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary text-lg/[24px] poppins">
         {formRes ? "Loading...." : "Submit Now"}
       </button>
     </form>

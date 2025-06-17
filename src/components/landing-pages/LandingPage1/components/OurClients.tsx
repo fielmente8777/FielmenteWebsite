@@ -28,7 +28,7 @@ const OurClients = ({ items, subTitle, title }: OurClientProps) => {
 
       <div className="mt-10">
         {/* upper line gradient */}
-        <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[1px] w-full" />
+        <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full" />
 
         <Container>
           <div className="scroller py-6" data-direction="left">
@@ -50,7 +50,7 @@ const OurClients = ({ items, subTitle, title }: OurClientProps) => {
         </Container>
 
         {/* lower line gradient */}
-        <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[1px] w-full" />
+        <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full" />
       </div>
     </Section>
   );

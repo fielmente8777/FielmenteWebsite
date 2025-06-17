@@ -13,8 +13,23 @@ function Whatsapp() {
       {/* {pathname !== "/landing-page/" &&
         pathname !== "/resort/" &&
         pathname !== "/hospitality/" && ( */}
-          <div
-            className={`fixed   z-20 cursor-pointer ${pathname === "/USA/" || pathname === "/restaurant/" || pathname === "/UK/" || pathname === "/dubai-restaurant/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-28"}`}
+
+      <div
+        className={`fixed   z-20 cursor-pointer lg:left-10 left-4 bottom-28`}
+      >
+        <Link
+          href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
+          target="_blank"
+          rel="noreferrer"
+          className="w-12 h-12 rounded-full flex shadow-2xl items-center justify-center bg-green-500 hover:bg-green-600 transition-all hover:shadow-2xl"
+          aria-label="WhatsApp"
+        >
+          <FaWhatsapp size={29} color="white" />
+        </Link>
+      </div>
+
+      {/* <div
+            className={`fixed   z-20 cursor-pointer ${pathname === "/USA/" || pathname === "/ /" || pathname === "/UK/" || pathname === "/dubai-restaurant/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-28"}`}
           >
             <Link
               href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
@@ -25,8 +40,8 @@ function Whatsapp() {
             >
               <FaWhatsapp size={29} color="white" />
             </Link>
-          </div>
-        {/* )} */}
+          </div> */}
+      {/* )} */}
     </>
   );
 }

@@ -64,6 +64,10 @@ export const pageData = {
         src: "/partnersimages/airbnb.png",
         alt: "airbnb-logo",
       },
+      {
+        src: "/partnersimages/meta.png",
+        alt: "meta-logo",
+      },
     ],
   },
 

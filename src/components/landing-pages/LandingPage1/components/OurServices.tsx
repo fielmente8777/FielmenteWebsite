@@ -27,7 +27,7 @@ interface OurServicesProps {
 
 const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
   return (
-    <Section className="bg-blue-dark">
+    <Section className="bg-blue-dark md:mt-24">
       <Container>
         <div className="max-w-5xl mx-auto text-center space-y-8 poppins">
           <h2 className="bg-[#FFE7DE] text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
@@ -73,21 +73,21 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           )}
 
           <div>
-            <div className="rotate-180 cursor-pointer button-prev absolute top-1/2 -translate-y-1/2 left-2 z-50">
+            <div className="rotate-180 cursor-pointer button-prev absolute top-1/2 -translate-y-[80%] left-2 z-50">
               <RightIcon />
             </div>
 
-            <div className="cursor-pointer button-next absolute right-2 top-1/2 -translate-y-1/2 z-50">
+            <div className="cursor-pointer button-next absolute right-2 top-1/2 -translate-y-[80%] z-50">
               <RightIcon />
             </div>
           </div>
 
-          <div className="pagination-ourservice flex justify-center gap-2 mt-10"></div>
+          <div className="pagination-ourservice flex justify-center gap-[3px] mt-10"></div>
         </div>
 
         <div className="max-w-2xl mx-auto md:mt-12 mt-6 text-center space-y-12 poppins">
           <Link
-            className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"
+            className="inline-block bg-orange-primary font-medium p text-white text-lg/[24px] py-4 px-6 rounded-md"
             href={`${button?.href}`}
           >
             {button?.label}
