@@ -1,10 +1,11 @@
 "use client";
 import Section from "@/components/Section";
 import SwiperCarousel from "@/components/SwiperCarousel";
-import React from "react";
+import React, { useState } from "react";
 import { Autoplay } from "swiper/modules";
 import IndustryWeServeCard from "./cards/WeServeCard";
 import Link from "next/link";
+import { PopupForm } from "@/app/landing-page/components";
 
 export interface IndustryWeServeProps {
   title: string;
@@ -24,6 +25,7 @@ const IndustryWeServe = ({
   button,
   items,
 }: IndustryWeServeProps) => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <Section>
       <div className="max-w-5xl mx-auto text-center space-y-3 poppins">
@@ -56,13 +58,18 @@ const IndustryWeServe = ({
 
       <div className="max-w-2xl mx-auto mt-12 text-center space-y-12 poppins">
         <p className="text-gray-primary">{description}</p>
-        <Link
+        <button
+          onClick={() => setShowModal(true)}
           className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"
-          href={button?.href}
+          // href={button?.href}
         >
           {button?.label}
-        </Link>
+        </button>
       </div>
+
+      {showModal && (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
     </Section>
   );
 };

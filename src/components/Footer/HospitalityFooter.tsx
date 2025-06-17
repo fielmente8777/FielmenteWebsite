@@ -165,7 +165,7 @@ const footerData = {
     },
     {
       name: "Linkedin",
-      url: "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQESwBQcVb9GYAAAAZd82ffIzIjvIqZdM5dMjXfxC1xmFuHrUD6HCfLV60S_d1nMQjjBfFaoT1R2_W2ouO9ZWIpvQdQpGMTMTb4p29Iv679f8fzmkut57amOBkzhR8zTj7KsCVo=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Ffielmente%2F",
+      url: "https://www.linkedin.com/company/fielmente/",
       icon: <LinkedIn />,
     },
     {
@@ -179,14 +179,14 @@ const footerData = {
     {
       label:
         "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
-      href: "",
+      href: "https://maps.app.goo.gl/eTNaDpDjnw2AwGFV9",
       icon: <AddressIcon />,
     },
 
     {
       label:
         "Ground Floor, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
-      href: "",
+      href: "https://maps.app.goo.gl/eTNaDpDjnw2AwGFV9",
       icon: <AddressIcon />,
     },
   ],
@@ -211,10 +211,10 @@ const HospitalityFooter = () => {
     <footer>
       <Section className="bg-blue-dark !p-0 !pt-14">
         <Container>
-          <div className="grid grid-cols-3">
+          <div className="grid lg:grid-cols-3 lg:gap-0 gap-6">
             <div className="space-y-8">
               {/* logo  */}
-              <div className="flex items-center gap-2">
+              <div className="flex md:justify-start justify-center items-center gap-2">
                 <div className="relative w-5 h-10">
                   <Image
                     src={"/footer-fielmente-logo.png"}
@@ -229,8 +229,10 @@ const HospitalityFooter = () => {
 
               {/* follow us  */}
               <div>
-                <h2 className="text-white text-2xl font-semibold">Follow Us</h2>
-                <div className="flex items-center gap-4 mt-4">
+                <h2 className="text-white text-2xl md:text-start text-center font-semibold">
+                  Follow Us
+                </h2>
+                <div className="flex md:justify-start justify-center items-center gap-4 mt-4">
                   {footerData?.followUs?.map((item, index) => (
                     <Link target="_blank" href={item?.url} key={index}>
                       {item?.icon}
@@ -246,6 +248,7 @@ const HospitalityFooter = () => {
               <div className="space-y-5 mt-6 text-white">
                 {footerData?.offices?.map((item, index) => (
                   <Link
+                    target="_blank"
                     href={item?.href}
                     key={index}
                     className="flex items-center gap-3"
@@ -257,7 +260,7 @@ const HospitalityFooter = () => {
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex lg:justify-center">
               <div>
                 <h2 className="text-white text-2xl font-semibold">
                   Contact Us
@@ -284,8 +287,8 @@ const HospitalityFooter = () => {
           <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" />
 
           <div className="flex justify-center items-center gap-4 text-white">
-            <p>Copyright © 2025 Fielmente Hospitality Marketing Agency</p>
-            <ul className="list-disc list-inside">
+            <p className="text-center">© 2025 Fielmente</p>
+            <ul className="list-disc list-inside text-center">
               <li>All Rights Reserved</li>
             </ul>
           </div>

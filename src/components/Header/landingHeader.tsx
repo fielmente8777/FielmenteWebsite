@@ -109,15 +109,17 @@ const LandingHeader = () => {
             </span>
             sachin@fielmente.com
           </Link>
-          {/* <Link
-            href={"tel:+919501868775 "}
-            className={`flex items-center ${pathName === "/dubai-restaurant/" || pathName === "/restaurant/" ? "hover:text-orange-primary bg-orange-primary hover:bg-white text-white" : "hover:text-white hover:bg-orange-500 text-orange-500"} text-lg border border-orange-primary rounded-lg md:px-5 px-3 md:py-3`}
-          >
-            {" "}
-            <span className="sr-only">call icon</span>
-            <OutLineCall />
-            Call Us
-          </Link> */}
+
+          {pathName === "/hospitality/" && (
+            <Link
+              href={"tel:+919501868775 "}
+              className={`flex items-center border border-orange-primary px-4 py-2  font-medium rounded-md text-orange-primary`}
+            >
+              <span className="sr-only">call icon</span>
+              <OutLineCall />
+              +91 95018 68775
+            </Link>
+          )}
         </div>
 
         {/* mobile view */}

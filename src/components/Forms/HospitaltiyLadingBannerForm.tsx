@@ -97,7 +97,7 @@ const HospitalityLandingBannerForm = () => {
       //   icon: <FillUser />,
       type: "text",
       name: "name",
-      placeholder: "Your Name*",
+      placeholder: "Your full name*",
       required: true,
       value: userName,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,7 +108,7 @@ const HospitalityLandingBannerForm = () => {
       tag: "div", // Use div to wrap select and input for phone number
       //   icon: <FillPhone />,
       name: "phone",
-      placeholder: "Your Phone*",
+      placeholder: "Mobile number*",
       required: true,
       content: (
         <div className="flex gap-2 text-base">
@@ -159,7 +159,7 @@ const HospitalityLandingBannerForm = () => {
       //   icon: <FillMessage />,
       type: "text",
       name: "",
-      placeholder: "Your Message*",
+      placeholder: "What services you are looking for?*",
       required: true,
       value: userMessage,
       onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -173,7 +173,7 @@ const HospitalityLandingBannerForm = () => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 max-md:px-4 p-6 max-md:mt-6 text-base rounded-lg w-full bg-[#F5F5F5]"
     >
-      <h2 className="md:text-2xl text-lg font-normal text-blue-dark poppins font-semibold">
+      <h2 className="md:text-2xl text-lg text-blue-dark poppins font-semibold">
         Get A FREE Consultation!
       </h2>
       {/* <p className="text-gray-primary max-md:text-sm">
@@ -217,7 +217,7 @@ const HospitalityLandingBannerForm = () => {
       ))}
 
       <button className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-3  font-semibold rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary">
-        {formRes ? "Loading...." : "Submit"}
+        {formRes ? "Loading...." : "Submit Now"}
       </button>
     </form>
   );

@@ -1,4 +1,18 @@
 import {
+  AI,
+  BE,
+  Chatbot,
+  EWM,
+  GMB,
+  HMA,
+  IM,
+  MA,
+  OLM,
+  PM,
+  SEO,
+  SSM,
+} from "@/utils/HospitalityLandingPageIcons/Icons";
+import {
   BestServ,
   PerformanceMarketing,
   Professional,
@@ -11,7 +25,7 @@ import {
 export const pageData = {
   heroBanner: {
     title: `Elevate Your Hospitality Business!`,
-    subTitle: `Drive more bookings and increase revenue with our specialized marketing strategies for Hotels, Resorts, Homestays and Airbnb’s..`,
+    subTitle: `Drive more bookings and increase revenue with our specialized marketing strategies for Hotels, Resorts, Airbnb’s and more.`,
     items: [
       {
         title: `500+`,
@@ -138,60 +152,66 @@ export const pageData = {
       {
         title: `Search Engine Optimization`,
         subTitle: `Boost your website's visibility and drive traffic with expert SEO services.`,
-        icon: <SearchEngineOptimization />,
+        icon: <SEO />,
       },
       {
         title: `Performance Marketing`,
         subTitle: `Maximize ROI with Performance Marketing with measurable results.`,
-        icon: <PerformanceMarketing />,
+        icon: <PM />,
       },
       {
         title: `Social Media Management`,
-        subTitle: `Custom built websites to elevate your brand’s online presence.`,
-        icon: <SocialMediaManagement />,
+        subTitle: `Enhance your social media presence with expert social media management.`,
+        icon: <SSM />,
       },
       {
         title: `Email & Whatsapp Marketing`,
+        subTitle: `Reach your audience instantly and personally, with impact.`,
+        icon: <EWM />,
+      },
+
+      {
+        title: `Booking Engine`,
         subTitle: `Simplify reservations and maximize conversions effortlessly and securely.`,
-        icon: <WebsiteDevelopment />,
+        icon: <BE />,
       },
       {
         title: `Ai Driven Hotel Marketing`,
         subTitle: `Next-gen marketing solutions for modern hoteliers worldwide..`,
-        icon: <WebsiteDevelopment />,
+        icon: <AI />,
       },
 
       {
         title: `Influencer marketing`,
         subTitle: `Boost Brand Awareness with Powerful Influencer Campaigns.`,
-        icon: <WebsiteDevelopment />,
+        icon: <IM />,
       },
 
       {
         title: `Marketing Automation`,
         subTitle: `Powerful automation for smarter marketing results and growth.`,
-        icon: <WebsiteDevelopment />,
+        icon: <MA />,
       },
 
       {
         title: `Hotel Google & Meta ads`,
         subTitle: `Drive direct bookings with high-impact ad campaigns effortlessly and efficiently.`,
-        icon: <WebsiteDevelopment />,
+        icon: <HMA />,
       },
       {
         title: `Google My Business`,
         subTitle: `Enhance your online presence and get discovered fast by customers.`,
-        icon: <WebsiteDevelopment />,
+        icon: <GMB />,
       },
       {
         title: `OTA Lisiting & Management`,
         subTitle: `Boost visibility & revenue through smarter OTA management.`,
-        icon: <WebsiteDevelopment />,
+        icon: <OLM />,
       },
       {
-        title: `AI Chatbot`,
+        title: `Chatbot`,
         subTitle: `Streamline campaigns, nurture leads, and boost conversions.`,
-        icon: <WebsiteDevelopment />,
+        icon: <Chatbot />,
       },
     ],
   },

@@ -27,16 +27,16 @@ const ChooseUs = ({ title, subTitle, description, items }: ChopseUsProps) => {
             {title}
           </h2>
           <div className="flex flex-col gap-1">
-            <h3 className="md:text-5xl leading-[16rem] font-medium text-[#110D3C]">
+            <h3 className="md:text-5xl text-3xl font-medium text-[#110D3C]">
               AI-Driven Innovations for the
             </h3>
-            <h3 className="md:text-5xl leading-[16rem] font-bold text-[#110D3C]">
+            <h3 className="md:text-5xl text-3xl font-bold text-[#110D3C]">
               Hospitality Industry
             </h3>
           </div>
         </div>
 
-        <div className="w-full  p-2 mt-12 grid grid-cols-3 gap-5">
+        <div className="w-full p-2 mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, index) => (
             <OurServiceCard key={index} {...item} />
           ))}

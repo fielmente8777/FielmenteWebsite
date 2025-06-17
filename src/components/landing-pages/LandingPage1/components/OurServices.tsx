@@ -2,10 +2,12 @@
 import Section from "@/components/Section";
 import SwiperCarousel from "@/components/SwiperCarousel";
 import Link from "next/link";
-import React from "react";
-import { Autoplay } from "swiper/modules";
+import React, { useState } from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { OurServiceCard } from "./cards/OurServiceCard";
 import Container from "@/components/Container";
+import { RightIcon } from "@/utils/HospitalityLandingPageIcons/Icons";
+import { PopupForm } from "@/app/landing-page/components";
 
 interface OurServicesProps {
   title: string;
@@ -37,28 +39,53 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           </h3>
         </div>
 
-        <div className="w-full  p-2 mt-12">
+        <div className="w-full p-2 mt-12 com relative">
           {items && items?.length > 0 && (
             <SwiperCarousel
               data={items}
-              modules={[Autoplay]}
+              modules={[Autoplay, Pagination, Navigation]}
               autoplay={{ delay: 12000 }}
               slidesPerView={1}
               spaceBetween={0}
               loop={true}
               breakpoints={{
                 768: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+
+                1024: {
                   slidesPerView: 4,
                   spaceBetween: 20,
                 },
+              }}
+              pagination={{
+                clickable: true,
+                el: ".pagination-ourservice",
+              }}
+              navigation={{
+                nextEl: ".button-next",
+                prevEl: ".button-prev",
               }}
               className="w-full"
               renderSlide={(card) => <OurServiceCard {...card} />}
             />
           )}
+
+          <div>
+            <div className="rotate-180 cursor-pointer button-prev absolute top-1/2 -translate-y-1/2 left-2 z-50">
+              <RightIcon />
+            </div>
+
+            <div className="cursor-pointer button-next absolute right-2 top-1/2 -translate-y-1/2 z-50">
+              <RightIcon />
+            </div>
+          </div>
+
+          <div className="pagination-ourservice flex justify-center gap-2 mt-10"></div>
         </div>
 
-        <div className="max-w-2xl mx-auto mt-12 text-center space-y-12 poppins">
+        <div className="max-w-2xl mx-auto md:mt-12 mt-6 text-center space-y-12 poppins">
           <Link
             className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"
             href={`${button?.href}`}

@@ -278,6 +278,21 @@ body {
       border-radius: 0.5rem;
     }
   }
+  .pagination-ourservice {
+    .swiper-pagination-bullet {
+      background-color: #ffffffa5;
+      inline-size: 0.5rem;
+      block-size: 0.5rem;
+      opacity: 1;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .swiper-pagination-bullet-active {
+      width: 2rem;
+      border-radius: 0.5rem;
+    }
+  }
 }
 
 .page_date {

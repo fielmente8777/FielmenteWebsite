@@ -21,7 +21,7 @@ const OurClients = ({ items, subTitle, title }: OurClientProps) => {
           {title}
         </h2>
 
-        <h3 className="md:text-5xl font-medium text-blue-dark poppins">
+        <h3 className="md:text-5xl text-3xl font-medium text-blue-dark poppins">
           {subTitle}
         </h3>
       </div>
