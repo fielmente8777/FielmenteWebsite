@@ -39,7 +39,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           </h3>
         </div>
 
-        <div className="w-full p-2 mt-12 com relative"> 
+        <div className="w-full p-2 mt-12 com relative">
           {items && items?.length > 0 && (
             <SwiperCarousel
               data={items}
@@ -47,7 +47,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
               autoplay={{ delay: 12000 }}
               slidesPerView={1}
               spaceBetween={0}
-              loop={true}
+              // loop={true}
               breakpoints={{
                 768: {
                   slidesPerView: 3,
@@ -73,11 +73,11 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           )}
 
           <div>
-            <div className="rotate-180 cursor-pointer button-prev absolute top-1/2 -translate-y-[80%] left-2 z-50">
+            <div className="disabled:hidden rotate-180 cursor-pointer button-prev absolute top-1/2 -translate-y-[100%] -left-5 z-50">
               <RightIcon />
             </div>
 
-            <div className="cursor-pointer button-next absolute right-2 top-1/2 -translate-y-[80%] z-50">
+            <div className="cursor-pointer button-next absolute -right-5 top-1/2 -translate-y-[100%] z-50">
               <RightIcon />
             </div>
           </div>
