@@ -27,7 +27,7 @@ interface OurServicesProps {
 
 const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
   return (
-    <Section className="bg-blue-dark md:mt-24">
+    <Section className="bg-blue-dark">
       <Container>
         <div className="max-w-5xl mx-auto text-center space-y-8 poppins">
           <h2 className="bg-[#FFE7DE] text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
@@ -39,7 +39,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           </h3>
         </div>
 
-        <div className="w-full p-2 mt-12 com relative">
+        <div className="w-full p-2 mt-12 com relative"> 
           {items && items?.length > 0 && (
             <SwiperCarousel
               data={items}
