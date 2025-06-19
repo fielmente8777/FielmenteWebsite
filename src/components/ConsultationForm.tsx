@@ -15,9 +15,21 @@ import { usePathname } from "next/navigation";
 const ConsultationForm = () => {
   const pathName = usePathname();
   return (
-    <Section className="bg-blue-dark md:py-10" id={pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? "" : "reviews"}>
+    <Section
+      className="bg-blue-dark md:py-10"
+      id={
+        pathName === "/resort/" ||
+        pathName === "/hospitality/" ||
+        pathName === "/landing-page/"
+          ? ""
+          : "reviews"
+      }
+    >
       <Container>
-        <div className="lg:grid grid-cols-3 gap-6 items-center" id="testimonials">
+        <div
+          className="lg:grid grid-cols-3 gap-6 items-center"
+          id="testimonials"
+        >
           <div className="col-span-2">
             {/* {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? (
               <div>
@@ -45,36 +57,36 @@ const ConsultationForm = () => {
               </div>
             ) : (
               <> */}
-                <div className="text-white text-3xl">
-                  <h2>
-                    Client{" "}
-                    <b className="text-orange-primary lg:block inline">
-                      Testimonials
-                    </b>
-                  </h2>
-                </div>
-                <Swiper
-                  modules={[Pagination, Autoplay]}
-                  spaceBetween={15}
-                  slidesPerView={1}
-                  loop={true}
-                  speed={900}
-                  autoplay={{
-                    delay: 4000,
-                  }}
-                  pagination={{
-                    clickable: true,
-                    el: ".pagination",
-                  }}
-                  className="mySwiper"
-                >
-                  {data.map((item, index) => (
-                    <SwiperSlide key={index} className="py-4">
-                      <Card {...item} />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                {/* </>)} */}
+            <div className="text-white text-3xl">
+              <h2>
+                Client{" "}
+                <b className="text-orange-primary lg:block inline">
+                  Testimonials
+                </b>
+              </h2>
+            </div>
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              spaceBetween={15}
+              slidesPerView={1}
+              loop={true}
+              speed={900}
+              autoplay={{
+                delay: 4000,
+              }}
+              pagination={{
+                clickable: true,
+                el: ".pagination",
+              }}
+              className="mySwiper"
+            >
+              {data.map((item, index) => (
+                <SwiperSlide key={index} className="py-4">
+                  <Card {...item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            {/* </>)} */}
             <div className="pagination mt-10 flex justify-center items-center gap-1"></div>
           </div>
           <div className="" id="contactForm">
@@ -165,10 +177,10 @@ The ease of use, intuitive design and feature rich tools are absolutely top tier
     title: "Abhishek Mishra",
     subtitle: `Amazing organisation & love to recommend 100%.`,
   },
-  {
-    title: "Jaya Lakshminarayanan",
-    subtitle: `Thank you, Rajiv and team. It has been a great 3 days workshop. Though I thought it would be stressful when I started this, it was fun and interactive. I clearly understood where I stood and our business stood. From there to which direction I need to go and what strategies are needed so that the business is on the right track towards success.`,
-  },
+  // {
+  //   title: "Jaya Lakshminarayanan",
+  //   subtitle: `Thank you, Rajiv and team. It has been a great 3 days workshop. Though I thought it would be stressful when I started this, it was fun and interactive. I clearly understood where I stood and our business stood. From there to which direction I need to go and what strategies are needed so that the business is on the right track towards success.`,
+  // },
   {
     title: "Naveen kumar Sanga",
     subtitle: `I have been working with FIELMENTE HOSPITALITY for only a few short time ,however not only have they been handling my all social media optimization, SEO for me , my website response has given me great marketing advice which has made a difference in my onlion conversions,they implemented abandoned brand marketing strategies for me which saw an immediate response in additional conversion.i was very happy thus for ,that i felt comfortable to have them redesign my SMM which is a huge improvement`,

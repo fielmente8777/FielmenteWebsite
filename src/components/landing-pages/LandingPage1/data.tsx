@@ -81,21 +81,21 @@ export const pageData = {
     },
     items: [
       {
-        title: `HOTELS`,
+        title: `HOTEL`,
         image: {
           src: `/weserve/hotel.png`,
           alt: `hotel-image`,
         },
       },
       {
-        title: `RESORTS`,
+        title: `RESORT`,
         image: {
           src: `/weserve/Resort.png`,
           alt: `resort-image`,
         },
       },
       {
-        title: `HOME STAYS`,
+        title: `HOME STAY`,
         image: {
           src: `/weserve/homestay.png`,
           alt: `hotel-image`,
@@ -109,7 +109,7 @@ export const pageData = {
         },
       },
       {
-        title: `VILLAS`,
+        title: `VILLA`,
         image: {
           src: `/weserve/villas.png`,
           alt: `hotel-image`,
