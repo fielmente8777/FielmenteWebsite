@@ -300,7 +300,7 @@ export const pageData = {
         },
       },
       {
-        title: `HOTELS`,
+        title: `NEPAL`,
         image: {
           src: `/flags/nepal.png`,
           alt: `nepal-flag`,
