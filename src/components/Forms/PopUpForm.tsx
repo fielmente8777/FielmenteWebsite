@@ -155,7 +155,7 @@ const PopUpForm = () => {
                                 }}
                                 className="w-max pr-2 h-full flex items-center justify-between gap-2"
                             >
-                                <span className="uppercase text-start text-blue-dark md:text-lg font-medium">
+                                <span className="text-start text-blue-dark md:text-lg">
                                     {countryCode}
                                 </span>
                                 <OutlineDrpopdown
