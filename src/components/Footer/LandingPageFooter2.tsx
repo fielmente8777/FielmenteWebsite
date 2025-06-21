@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Container from "../Container";
 import Section from "../Section";
-import { OutLineLocationIcon } from "../Header/LandingHeader";
+import { OutLineLocationIcon } from "../Header/landingHeader";
 import { OutLineCall, OutLineEmail } from "@/utils/icons";
 import Form2 from "../Form2";
 import { usePathname } from "next/navigation";
@@ -35,8 +35,7 @@ const LandingPageFooter2 = () => {
         },
       ],
     };
-  }
-  else if (pathName === "/UK/") {
+  } else if (pathName === "/UK/") {
     data = {
       title: "Reach and Attract More Customers",
       subTitle: "Increase Local Awareness",
@@ -72,7 +71,7 @@ const LandingPageFooter2 = () => {
           href: "",
           label:
             "Fielmente hospitality, Second Floor, ALTF Coworking, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
-            // "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
+          // "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
           icon: <OutLineLocationIcon />,
         },
         {

@@ -57,7 +57,6 @@ export default function Home() {
         </Container>
       </Section>
 
-      
       <Section>
         <Container>
           <OurClientNew />
@@ -72,9 +71,9 @@ export default function Home() {
         </Container>
       </Section> */}
       <div className="bg-blue-dark text-white lg:py-20 py-10">
-        <div className="max-width">
+        {/* <div className="max-width">
           <OurServices />
-        </div>
+        </div> */}
       </div>
       <CardSection />
       {/* <Section className="bg-blue-dark max-w-[1540px] mx-auto">

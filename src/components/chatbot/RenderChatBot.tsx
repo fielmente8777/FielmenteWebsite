@@ -102,7 +102,9 @@ const RenderChatBot = () => {
           },
         }
       );
-      console.log(data);
+      if (data?.Status) {
+        window.open("thank-you", "_blank");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -110,7 +112,7 @@ const RenderChatBot = () => {
 
   return (
     <div>
-      {pathName !== "/landing-page/" &&
+      {/* {pathName !== "/landing-page/" &&
         pathName !== "/resort/" &&
         pathName !== "/hospitality/" &&
         pathName !== "/UK/" &&
@@ -126,7 +128,17 @@ const RenderChatBot = () => {
             openInterval={2000}
             logo={"/favicon-32x32.png"}
           />
-        )}
+        )} */}
+      <ChatbotWidget
+        onSubmit={handleSumbit}
+        messages={welcomeMessage}
+        finalMessage={thankYouMessage}
+        messageFlows={messageFlows}
+        title="Fielmente"
+        theme={"#0A081E"}
+        openInterval={2000}
+        logo={"/favicon-32x32.png"}
+      />
     </div>
   );
 };
