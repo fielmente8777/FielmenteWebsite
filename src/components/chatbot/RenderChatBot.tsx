@@ -112,12 +112,13 @@ const RenderChatBot = () => {
 
   return (
     <div>
-      {/* {pathName !== "/landing-page/" &&
+      {pathName !== "/landing-page/" &&
         pathName !== "/resort/" &&
         pathName !== "/hospitality/" &&
-        pathName !== "/UK/" &&
-        pathName !== "/USA/" &&
-        pathName !== "/dubai-restaurant/" && (
+        // pathName !== "/UK/" &&
+        // pathName !== "/USA/" &&
+        // pathName !== "/dubai-restaurant/" && 
+        (
           <ChatbotWidget
             onSubmit={handleSumbit}
             messages={welcomeMessage}
@@ -128,8 +129,8 @@ const RenderChatBot = () => {
             openInterval={2000}
             logo={"/favicon-32x32.png"}
           />
-        )} */}
-      <ChatbotWidget
+        )}
+      {/* <ChatbotWidget
         onSubmit={handleSumbit}
         messages={welcomeMessage}
         finalMessage={thankYouMessage}
@@ -138,7 +139,7 @@ const RenderChatBot = () => {
         theme={"#0A081E"}
         openInterval={2000}
         logo={"/favicon-32x32.png"}
-      />
+      /> */}
     </div>
   );
 };

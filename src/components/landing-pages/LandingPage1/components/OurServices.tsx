@@ -85,14 +85,14 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           <div className="pagination-ourservice flex justify-center gap-[3px] mt-10"></div>
         </div>
 
-        <div className="max-w-2xl mx-auto md:mt-12 mt-6 text-center space-y-12 poppins">
+        {/* <div className="max-w-2xl mx-auto md:mt-12 mt-6 text-center space-y-12 poppins">
           <Link
             className="inline-block bg-orange-primary font-medium p text-white text-lg/[24px] py-4 px-6 rounded-md"
             href={`${button?.href}`}
           >
             {button?.label}
           </Link>
-        </div>
+        </div> */}
       </Container>
     </Section>
   );

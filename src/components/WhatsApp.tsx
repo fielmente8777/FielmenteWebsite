@@ -8,14 +8,16 @@ function Whatsapp() {
   const pathname = usePathname();
   const ukno = "+447438375533";
   const indNo = "+919501868775";
+
+  const pathNameInclude1 = ["/resort/", "/hospitality/", "/landing-page/"];
+  const pathNameInclude2 = ["/UK/", "/USA/", "/dubai-restaurant/"];
+
+  console.log(pathname);
   return (
     <>
-      {/* {pathname !== "/landing-page/" &&
-        pathname !== "/resort/" &&
-        pathname !== "/hospitality/" && ( */}
-
+    
       <div
-        className={`fixed   z-20 cursor-pointer lg:left-10 left-4 bottom-28`}
+        className={`fixed z-20 cursor-pointer ${!pathNameInclude1.includes(pathname) ?  "lg:left-10 left-4 bottom-28" : "lg:right-10 right-4 bottom-10"}`}
       >
         <Link
           href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
@@ -27,21 +29,6 @@ function Whatsapp() {
           <FaWhatsapp size={29} color="white" />
         </Link>
       </div>
-
-      {/* <div
-            className={`fixed   z-20 cursor-pointer ${pathname === "/USA/" || pathname === "/ /" || pathname === "/UK/" || pathname === "/dubai-restaurant/" ? "lg:right-10 right-4 bottom-10" : "lg:left-10 left-4 bottom-28"}`}
-          >
-            <Link
-              href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
-              target="_blank"
-              rel="noreferrer"
-              className="w-12 h-12 rounded-full flex shadow-2xl items-center justify-center bg-green-500 hover:bg-green-600 transition-all hover:shadow-2xl"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp size={29} color="white" />
-            </Link>
-          </div> */}
-      {/* )} */}
     </>
   );
 }
