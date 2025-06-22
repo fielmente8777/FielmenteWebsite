@@ -128,6 +128,7 @@ const RenderChatBot = () => {
             theme={"#0A081E"}
             openInterval={2000}
             logo={"/favicon-32x32.png"}
+          
           />
         )}
       {/* <ChatbotWidget

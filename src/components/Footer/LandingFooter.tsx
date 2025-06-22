@@ -13,9 +13,8 @@ import { usePathname } from "next/navigation";
 
 const LandingFooter = () => {
   const pathName = usePathname();
-  // const router = useRouter();
   const currentYear = new Date().getFullYear();
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <footer className="lg:pt-12 pt-9 bg-gray-secondary">
@@ -89,7 +88,7 @@ const LandingFooter = () => {
           {/* <Link href={"/landingpage"} className="text-blue-dark text-lg">Landing</Link> */}
         </div>
       </div>
-      {/* <PopupForm setShowModal={setShowModal} showModal={showModal} /> */}
+      <PopupForm setShowModal={setShowModal} showModal={showModal} />
     </footer>
   );
 };
