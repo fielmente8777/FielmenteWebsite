@@ -50,7 +50,7 @@ const IndustryWeServe = ({
                 spaceBetween: 0,
               },
             }}
-            className="w-full"
+            className="w-full !divide-x !divide-white"
             renderSlide={(card) => <IndustryWeServeCard {...card} />}
           />
         )}
@@ -67,9 +67,7 @@ const IndustryWeServe = ({
         </button>
       </div>
 
-      {showModal && (
         <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      )}
     </Section>
   );
 };

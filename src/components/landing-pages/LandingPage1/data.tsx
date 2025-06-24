@@ -24,7 +24,8 @@ import {
 
 export const pageData = {
   heroBanner: {
-    title: `Elevate Your Hospitality Business!`,
+    title: `India's Leading Hotel Marketing Agency`,
+    // title: `Elevate Your Hospitality Business!`,
     subTitle: `Drive more bookings and increase revenue with our specialized marketing strategies for Hotels, Resorts, Airbnb’s and more.`,
     items: [
       {

@@ -16,6 +16,44 @@ export const metadata: Metadata = {
   title: "Fielmente - India's Leading Hospitality Marketing Agency",
   description:
     "We're the best hospitality marketing agency in India serving hotels, resorts restaurants, and cloud kitchens for more than 10 years.",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon/favicon-32x32.png",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon/favicon-16x16.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      url: "/favicon/apple-touch-icon.png",
+    },
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      url: "/favicon/icon.svg", 
+    },
+    {
+      rel: "manifest",
+      url: "/favicon/site.webmanifest",
+    },
+    {
+      rel: "mask-icon",
+      color: "#5bbad5",
+      url: "/favicon/icon.svg", 
+    },
+    {
+      rel: "shortcut icon",
+      url: "/favicon/favicon.ico",
+    },
+  ],
+
   keywords:
     "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
   alternates: {
@@ -41,7 +79,6 @@ export const metadata: Metadata = {
     siteName: "Fielmente",
     locale: "en_IN",
     type: "website",
-
     images: [
       {
         url: "https://fielmente.com/images/Fielmente-og.png",
