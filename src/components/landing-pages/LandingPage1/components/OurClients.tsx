@@ -39,7 +39,7 @@ const OurClients = ({ items, subTitle, title }: OurClientProps) => {
   // }, []);
 
   return (
-    <Section className="bg-white">
+    <Section className="">
       <div className="max-w-5xl mx-auto text-center space-y-3">
         <h2 className="bg-[#FFE7DE] text-blue-dark text-sm rounded-full px-4 w-fit mx-auto py-2 poppins">
           {title}

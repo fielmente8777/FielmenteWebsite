@@ -329,5 +329,9 @@ export const ClientImages: ClientData[] = [
   {
     src: "/clientsLogo/outer-ring.png",
     alt: "Client64",
+  },
+  {
+    src: "/clientsLogo/luxuryvibes.jpg",
+    alt: "Client65",
   }
 ];

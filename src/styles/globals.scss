@@ -431,9 +431,9 @@ body {
 }
 
 .demo {
-  // .swiper{
-  //   pointer-events: none;
-  // }
+  .swiper{
+    pointer-events: none;
+  }
   .swiper-wrapper {
     transition-timing-function: linear !important;
   }
