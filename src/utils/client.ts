@@ -51,6 +51,7 @@ import Client48 from "../../public/clientsLogo/minimalist.png";
 export interface ClientData {
   src: string | StaticImageData;
   alt: string;
+  className?: string;
 }
 
 export interface ChooseCardProsData {
@@ -63,10 +64,12 @@ export const ClientImages: ClientData[] = [
   {
     src: Client1,
     alt: "Client1",
+    className: "#000000",
   },
   {
     src: Client2,
     alt: "Client2",
+    className: "#ffffff",
   },
   {
     src: Client3,
@@ -159,6 +162,7 @@ export const ClientImages: ClientData[] = [
   {
     src: Client25,
     alt: "Client25",
+    className: "#21413e",
   },
   {
     src: Client26,
@@ -179,6 +183,7 @@ export const ClientImages: ClientData[] = [
   {
     src: Client30,
     alt: "Client30",
+    className: "#000000",
   },
   {
     src: Client31,
@@ -199,18 +204,22 @@ export const ClientImages: ClientData[] = [
   {
     src: Client35,
     alt: "Client35",
+    
   },
   {
     src: Client36,
     alt: "Client36",
+    className: "#000000",
   },
   {
     src: Client37,
     alt: "Client37",
+    className: "#000000",
   },
   {
     src: Client38,
     alt: "Client38",
+    className: "#ffffff",
   },
   {
     src: Client39,
@@ -219,6 +228,7 @@ export const ClientImages: ClientData[] = [
   {
     src: Client40,
     alt: "Client40",
+    className: "#000000",
   },
   {
     src: Client41,
@@ -235,6 +245,7 @@ export const ClientImages: ClientData[] = [
   {
     src: Client44,
     alt: "Client44",
+    className: "#fff",
   },
   {
     src: Client45,
@@ -251,5 +262,72 @@ export const ClientImages: ClientData[] = [
   {
     src: Client48,
     alt: "Client48",
+    className: "#ffffffbe",
   },
+  {
+    src: "/clientsLogo/magnolia.png",
+    alt: "Client49",
+    className: "#000000",
+  },
+  {
+    src: "/clientsLogo/white-ridge.png",
+    alt: "Client50",
+  },
+  {
+    src: "/clientsLogo/avr.jpg",
+    alt: "Client51",
+    className: "#ffffff",
+  },
+  {
+    src: "/clientsLogo/tulipInn.png",
+    alt: "Client52",
+  },
+  {
+    src: "/clientsLogo/Hotel-Green-Castle.jpg",
+    alt: "Client53",
+  },
+  {
+    src: "/clientsLogo/aqua-dunhinda.jpg",
+    alt: "Client54",
+  },
+  {
+    src: "/clientsLogo/shreeiyengar.png",
+    alt: "Client55",
+  },
+  {
+    src: "/clientsLogo/kamalfarms.png",
+    alt: "Client56",
+  },
+  {
+    src: "/clientsLogo/petal-panyaram.png",
+    alt: "Client57",
+  },
+  {
+    src: "/clientsLogo/7Mile.png",
+    alt: "Client58",
+  },
+  {
+    src: "/clientsLogo/The-Jharna.png",
+    alt: "Client59",
+  },
+  {
+    src: "/clientsLogo/chocolate-room.png",
+    alt: "Client60",
+  },
+  {
+    src: "/clientsLogo/kumaon-bliss.jpg",
+    alt: "Client61",
+  },
+  {
+    src: "/clientsLogo/white-ridge.png",
+    alt: "Client62",
+  },
+  {
+    src: "/clientsLogo/tailgaters.png",
+    alt: "Client63",
+  },
+  {
+    src: "/clientsLogo/outer-ring.png",
+    alt: "Client64",
+  }
 ];

@@ -17,14 +17,21 @@ import SectionHeading from "./SectionHeadings/SectionHeading";
 import { usePathname } from "next/navigation";
 const OurClient = () => {
   const pathName = usePathname();
-  const text = pathName === "/hospitality/" ? "Hospitality" : pathName === "/resort/" ? "Resorts" : "Hotels";
+  const text =
+    pathName === "/hospitality/"
+      ? "Hospitality"
+      : pathName === "/resort/"
+        ? "Resorts"
+        : "Hotels";
   return (
     <Section className="max-w-[1540px] mx-auto w-full !pt-4">
       <Container>
         <div className="mb-8">
           <h2 className="text-blue-dark text-4xl/[3rem] font-semibold text-center">
             You&apos;re in good company <br />
-            <span className="text-orange-primary">Trusted by 500+ happy {text}</span>
+            <span className="text-orange-primary">
+              Trusted by 500+ happy {text}
+            </span>
           </h2>
         </div>
       </Container>
@@ -88,8 +95,9 @@ const OurClient = () => {
                             : "object-contain"
                         } w-full h-full rounded-md p-3`}
                         style={{
-                          backgroundColor: `${
-                            index == 23
+                          backgroundColor: item.className
+                            ? item.className
+                            : index == 23
                               ? "#e6e6e6"
                               : index == 22 ||
                                   index == 16 ||
@@ -114,8 +122,7 @@ const OurClient = () => {
                                             ? "#007a39"
                                             : index == 29
                                               ? "#a7d062"
-                                              : "white"
-                          }`,
+                                              : "white",
                         }}
                       />
                     </div>

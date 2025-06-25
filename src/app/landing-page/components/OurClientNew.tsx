@@ -112,29 +112,34 @@ const OurClientNew = () => {
                     height={100}
                     className={`${index == 4 || index == 5 || index == 9  || index == 19 || index == 27 || index == 29 || index == 35 ? "object-cover" : "object-contain"} w-full h-full p-3 `}
                     style={{
-                      backgroundColor: `${index == 23
-                          ? "#e6e6e6"
-                          : index == 22 ||
-                            index == 16 ||
-                            index == 18 ||
-                            index == 20
-                            ? "#F7F7F7"
-                            : index == 21
-                              ? "#21413e"
-                              : index == 19 || index == 0
-                                ? "#1e1e1e"
-                                : index == 24
-                                  ? "#f3f3f3"
-                                  : index == 26 
-                                    ? "#000000"
-                                    : index == 32 || index == 33 || index == 28 || index == 34 || index == 36
-                                      ? "#000000"
-                                      : index == 41
-                                        ? "#007a39"
-                                      : index == 29 
-                                        ? "#a7d062"
-                                        : "white"
-                        }`,
+                      backgroundColor: item.className
+                        ? item.className
+                        : index == 23
+                        ? "#e6e6e6"
+                        : index == 22 ||
+                          index == 16 ||
+                          index == 18 ||
+                          index == 20
+                        ? "#F7F7F7"
+                        : index == 21
+                        ? "#21413e"
+                        : index == 19 || index == 0
+                        ? "#1e1e1e"
+                        : index == 24
+                        ? "#f3f3f3"
+                        : index == 26
+                        ? "#000000"
+                        : index == 32 ||
+                          index == 33 ||
+                          index == 28 ||
+                          index == 34 ||
+                          index == 36
+                        ? "#000000"
+                        : index == 41
+                        ? "#007a39"
+                        : index == 29
+                        ? "#a7d062"
+                        : "white"
                     }}
                   />
                 </div>

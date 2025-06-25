@@ -1,3 +1,4 @@
+import { ClientImages } from "@/utils/client";
 import {
   AI,
   BE,
@@ -313,32 +314,33 @@ export const pageData = {
   OurClient: {
     title: "OUR CLIENTS",
     subTitle: "Brands That Trust Us",
-    items: [
-      {
-        src: "/ourclient/3.png",
-        alt: "image",
-      },
-      {
-        src: "/ourclient/4.png",
-        alt: "image",
-      },
-      {
-        src: "/ourclient/5.png",
-        alt: "image",
-      },
-      {
-        src: "/ourclient/1.png",
-        alt: "image",
-      },
-      {
-        src: "/ourclient/6.png",
-        alt: "image",
-      },
-      {
-        src: "/ourclient/7.png",
-        alt: "image",
-      },
-    ],
+    // items: [
+    //   {
+    //     src: "/ourclient/3.png",
+    //     alt: "image",
+    //   },
+    //   {
+    //     src: "/ourclient/4.png",
+    //     alt: "image",
+    //   },
+    //   {
+    //     src: "/ourclient/5.png",
+    //     alt: "image",
+    //   },
+    //   {
+    //     src: "/ourclient/1.png",
+    //     alt: "image",
+    //   },
+    //   {
+    //     src: "/ourclient/6.png",
+    //     alt: "image",
+    //   },
+    //   {
+    //     src: "/ourclient/7.png",
+    //     alt: "image",
+    //   },
+    // ],
+    items: ClientImages,
   },
 
   // brand: {

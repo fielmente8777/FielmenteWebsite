@@ -1,21 +1,45 @@
+"use client";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
-import Image from "next/image";
+import SwiperCarousel from "@/components/SwiperCarousel";
+import Image, { StaticImageData } from "next/image";
 
 import React from "react";
+import { Autoplay, FreeMode } from "swiper/modules";
 
 interface OurClientProps {
   title?: string;
   subTitle?: string;
   items?: {
-    src: string;
+    src: string | StaticImageData;
     alt: string;
+    className?: string;
   }[];
 }
 
 const OurClients = ({ items, subTitle, title }: OurClientProps) => {
+  // useEffect(() => {
+  //   const scrollers = document.querySelectorAll(".scroller");
+
+  //   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  //     scrollers.forEach((scroller) => {
+  //       scroller.setAttribute("data-animated", "true");
+
+  //       const scrollerInner = scroller.querySelector(".scroller_inner");
+  //       if (!scrollerInner) return;
+
+  //       const scrollerInnerChildren = Array.from(scrollerInner.children);
+  //       scrollerInnerChildren.forEach((child) => {
+  //         const clone = child.cloneNode(true) as HTMLElement;
+  //         clone.setAttribute("aria-hidden", "true");
+  //         scrollerInner.appendChild(clone);
+  //       });
+  //     });
+  //   }
+  // }, []);
+
   return (
-    <Section>
+    <Section className="bg-white">
       <div className="max-w-5xl mx-auto text-center space-y-3">
         <h2 className="bg-[#FFE7DE] text-blue-dark text-sm rounded-full px-4 w-fit mx-auto py-2 poppins">
           {title}
@@ -26,26 +50,47 @@ const OurClients = ({ items, subTitle, title }: OurClientProps) => {
         </h3>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 space-y-4 bg-white">
         {/* upper line gradient */}
         <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full" />
 
         <Container>
-          <div className="scroller py-6" data-direction="left">
-            <div className="tag-list scroller_inner text-white">
-              {items?.map((slider, index) => (
-                <div key={index} className="w-full">
-                  <div className="relative w-48 aspect-[3/2]">
-                    <Image
-                      src={slider?.src}
-                      alt={slider?.alt}
-                      className="object-contain"
-                      fill
-                    />
-                  </div>
+          <div className="demo">
+            <SwiperCarousel
+              data={items || []}
+              speed={5000}
+              loop={true}
+              modules={[Autoplay, FreeMode]}
+              freeMode={true}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+              }}
+              slidesPerView={2}
+              spaceBetween={24}
+              breakpoints={{
+                768: {
+                  slidesPerView: 6,
+                  spaceBetween: 24,
+                },
+              }}
+              renderSlide={(item, index) => (
+                <div key={index} className="w-full relative aspect-[4/2.5]">
+                  <Image
+                    src={item?.src}
+                    alt={item?.alt}
+                    className="object-contain p-2 rounded-lg"
+                    sizes="100%"
+                    style={{ backgroundColor: item?.className }}
+                    fill
+                  />
+                  {/* <div className="absolute inset-0 z-50 text-black  text-xl font-bold flex items-center justify-center ">
+                      {item?.alt}
+                    </div> */}
                 </div>
-              ))}
-            </div>
+              )}
+            />
           </div>
         </Container>
 

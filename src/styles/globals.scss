@@ -31,8 +31,8 @@
   --black: #1d1d1d;
   --shadow: 0px 0px 20px rgb(153, 152, 152);
   --primary-orange: #f26633;
-  --gradient: linear-gradient(120deg, #e5f2ef, #e4f2ee, #fffaee)
-    --gradient-second: linear-gradient(120deg, #e5f2ef, #e4f2ee, #ffffff);
+  --gradient: linear-gradient(120deg, #e5f2ef, #e4f2ee, #fffaee) --gradient-second:
+    linear-gradient(120deg, #e5f2ef, #e4f2ee, #ffffff);
 }
 @layer utilities {
   .text-balance {
@@ -394,8 +394,10 @@ body {
 
 .scroller[data-animated="true"] .scroller_inner {
   width: max-content;
-  animation: scroll var(--_animation-duration, 40s)
-    var(--_animation-direction, normal) linear infinite;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, normal) linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 .scroller[data-direction="right"] {
@@ -425,5 +427,14 @@ body {
 
   100% {
     transform: translateX(-40%);
+  }
+}
+
+.demo {
+  // .swiper{
+  //   pointer-events: none;
+  // }
+  .swiper-wrapper {
+    transition-timing-function: linear !important;
   }
 }
