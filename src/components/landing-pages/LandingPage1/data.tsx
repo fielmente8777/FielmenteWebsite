@@ -14,13 +14,24 @@ import {
   SSM,
 } from "@/utils/HospitalityLandingPageIcons/Icons";
 import {
+  AiChatbotIcon,
+  AIConciergeDeskIcon,
+  AiFrontDeskIcon,
+  AiReservationDeskIcon,
   BestServ,
+  BookingEngine,
+  CMS,
+  CRM,
+  EmailMarketingIcon,
+  PaymentGatewayIcon,
   PerformanceMarketing,
   Professional,
   SearchEngineOptimization,
   SocialMediaManagement,
   Support,
+  WebsiteBuilderIcon,
   WebsiteDevelopment,
+  WhatsAppMarketingIcon,
 } from "@/utils/icons";
 
 export const pageData = {
@@ -247,7 +258,68 @@ export const pageData = {
       },
     ],
   },
-
+  nextGenProducts: {
+    title: `OUR PRODUCTS`,
+    subTitle: `Next-Gen Products Tailored for Hospitality`,
+    description: `Discover next-gen solutions crafted specifically for the dynamic world of hospitality. Explore our range of products to enhance guest satisfaction, boost efficiency, and future-proof your operations.`,
+    items: [
+      {
+        title: `CMS`,
+        subTitle: `Streamline your content with a powerful content management system.`,
+        icon: <CMS />,
+      },
+      {
+        title: `Booking Engine`,
+        subTitle: `Seamless Booking Engine for a Better overall guest experience`,
+        icon: <BookingEngine />,
+      },
+      {
+        title: `Ai Reservation Desk`,
+        subTitle: `AI-Powered Reservations That Enhance Guest Experience.`,
+        icon: <AiReservationDeskIcon />,
+      },
+      {
+        title: `Payment Gateway`,
+        subTitle: `Integrated Payment Gateway for smooth checkout experiences.`,
+        icon: <PaymentGatewayIcon />,
+      },
+      {
+        title: `Email Marketing`,
+        subTitle: `Automated, personalized, and highly effective Email Marketing.`,
+        icon: <EmailMarketingIcon />,
+      },
+      {
+        title: `Ai Front Desk`,
+        subTitle: `Efficient, friendly, and always available – your AI Front Desk.`,
+        icon: <AiFrontDeskIcon />,
+      },
+      {
+        title: `WhatsApp Marketing`,
+        subTitle: `Engage, promote, and convert with WhatsApp Marketing.`,
+        icon: <WhatsAppMarketingIcon />,
+      },
+      {
+        title: `Website Builder`,
+        subTitle: `Your all-in-one website builder for a seamless online presence.`,
+        icon: <WebsiteBuilderIcon />,
+      },
+      {
+        title: `Ai Chatbot`,
+        subTitle: `Automate interactions seamlessly with an AI Chatbot.`,
+        icon: <AiChatbotIcon />,
+      },
+      {
+        title: `CRM`,
+        subTitle: `Customer relationship management designed to grow your business.`,
+        icon: <CRM />,
+      },
+      {
+        title: `AI Concierge Desk`,
+        subTitle: `Instant, Intelligent Support to Elevate Every Guest Interaction.`,
+        icon: <AIConciergeDeskIcon />,
+      },
+    ]
+  },
   countiesWeWorked: {
     title: `COUNTRIES WE WORKED`,
     subTitle: `Delivering AI-Driven Hotel Marketing Solutions Since 2020`,
@@ -314,32 +386,6 @@ export const pageData = {
   OurClient: {
     title: "OUR CLIENTS",
     subTitle: "Brands That Trust Us",
-    // items: [
-    //   {
-    //     src: "/ourclient/3.png",
-    //     alt: "image",
-    //   },
-    //   {
-    //     src: "/ourclient/4.png",
-    //     alt: "image",
-    //   },
-    //   {
-    //     src: "/ourclient/5.png",
-    //     alt: "image",
-    //   },
-    //   {
-    //     src: "/ourclient/1.png",
-    //     alt: "image",
-    //   },
-    //   {
-    //     src: "/ourclient/6.png",
-    //     alt: "image",
-    //   },
-    //   {
-    //     src: "/ourclient/7.png",
-    //     alt: "image",
-    //   },
-    // ],
     items: ClientImages,
   },
 

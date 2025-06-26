@@ -7,6 +7,7 @@ import OurServices from "./components/OurServices";
 import ChooseUs from "./components/ChooseUs";
 import CountiesWeWorked from "./components/CountiesWeWorked";
 import OurClients from "./components/OurClients";
+import OurProduct from "./components/OurProduct";
 
 const LandingPage1 = () => {
   return (
@@ -15,6 +16,7 @@ const LandingPage1 = () => {
       <OurPartners {...pageData?.ourPartners} />
       <IndustryWeServe {...pageData?.industryWeServe} />
       <OurServices {...pageData?.ourService} />
+      <OurProduct {...pageData?.nextGenProducts} />
       <ChooseUs {...pageData?.ChooseUs} />
       <CountiesWeWorked {...pageData?.countiesWeWorked} />
       <OurClients {...pageData?.OurClient} />

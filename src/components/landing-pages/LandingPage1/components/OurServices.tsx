@@ -82,7 +82,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
             </div>
           </div>
 
-          <div className="pagination-ourservice flex justify-center gap-[3px] mt-10"></div>
+          <div className="pagination-ourservice flex justify-center gap-2 mt-10"></div>
         </div>
 
         {/* <div className="max-w-2xl mx-auto md:mt-12 mt-6 text-center space-y-12 poppins">
