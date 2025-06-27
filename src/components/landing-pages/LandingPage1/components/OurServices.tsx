@@ -44,7 +44,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
             <SwiperCarousel
               data={items}
               modules={[Autoplay, Pagination, Navigation]}
-              autoplay={{ delay: 12000 }}
+              // autoplay={{ delay: 12000 }}
               slidesPerView={1}
               spaceBetween={0}
               // loop={true}
@@ -77,12 +77,12 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
               <RightIcon />
             </div>
 
-            <div className="cursor-pointer button-next absolute -right-5 top-1/2 -translate-y-[100%] z-50">
+            <div className="disabled:hidden cursor-pointer button-next absolute -right-5 top-1/2 -translate-y-[100%] z-50">
               <RightIcon />
             </div>
           </div>
 
-          <div className="pagination-ourservice flex justify-center gap-2 mt-10"></div>
+          <div className="pagination-ourservice flex justify-center mt-10"></div>
         </div>
 
         {/* <div className="max-w-2xl mx-auto md:mt-12 mt-6 text-center space-y-12 poppins">

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Section from "../Section";
 import Container from "../Container";
-import { it } from "node:test";
+// import { it } from "node:test";
 import Link from "next/link";
 import Image from "next/image";
-import { PopupForm } from "@/app/landing-page/components";
+// import { PopupForm } from "@/app/landing-page/components";
 
 const PhoneIcon = () => {
   return (
@@ -207,7 +207,7 @@ const footerData = {
   ],
 };
 const HospitalityFooter = () => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   return (
     <footer>
       <Section className="bg-blue-dark !p-0 !pt-14">
@@ -295,7 +295,7 @@ const HospitalityFooter = () => {
           </div>
         </div>
       </Section>
-      <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      {/* <PopupForm setShowModal={setShowModal} showModal={showModal} /> */}
     </footer>
   );
 };

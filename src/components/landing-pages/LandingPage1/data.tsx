@@ -193,7 +193,7 @@ export const pageData = {
         icon: <BE />,
       },
       {
-        title: `Ai Driven Hotel Marketing`,
+        title: `AI Driven Hotel Marketing`,
         subTitle: `Next-gen marketing solutions for modern hoteliers worldwide..`,
         icon: <AI />,
       },
@@ -274,7 +274,7 @@ export const pageData = {
         icon: <BookingEngine />,
       },
       {
-        title: `Ai Reservation Desk`,
+        title: `AI Reservation Desk`,
         subTitle: `AI-Powered Reservations That Enhance Guest Experience.`,
         icon: <AiReservationDeskIcon />,
       },
@@ -289,7 +289,7 @@ export const pageData = {
         icon: <EmailMarketingIcon />,
       },
       {
-        title: `Ai Front Desk`,
+        title: `AI Front Desk`,
         subTitle: `Efficient, friendly, and always available – your AI Front Desk.`,
         icon: <AiFrontDeskIcon />,
       },
@@ -304,7 +304,12 @@ export const pageData = {
         icon: <WebsiteBuilderIcon />,
       },
       {
-        title: `Ai Chatbot`,
+        title: `AI Concierge Desk`,
+        subTitle: `Instant, Intelligent Support to Elevate Every Guest Interaction.`,
+        icon: <AIConciergeDeskIcon />,
+      },
+      {
+        title: `AI Chatbot`,
         subTitle: `Automate interactions seamlessly with an AI Chatbot.`,
         icon: <AiChatbotIcon />,
       },
@@ -313,12 +318,7 @@ export const pageData = {
         subTitle: `Customer relationship management designed to grow your business.`,
         icon: <CRM />,
       },
-      {
-        title: `AI Concierge Desk`,
-        subTitle: `Instant, Intelligent Support to Elevate Every Guest Interaction.`,
-        icon: <AIConciergeDeskIcon />,
-      },
-    ]
+    ],
   },
   countiesWeWorked: {
     title: `COUNTRIES WE WORKED`,

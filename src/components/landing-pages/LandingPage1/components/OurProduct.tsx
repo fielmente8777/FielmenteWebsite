@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import Section from "@/components/Section";
 import SwiperCarousel from "@/components/SwiperCarousel";
 import ProductCard from "./cards/ProductCard";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { RightIcon } from "@/utils/HospitalityLandingPageIcons/Icons";
 
 export interface OurProductsProps {
@@ -24,7 +24,7 @@ const OurProduct: React.FC<OurProductsProps> = ({
   items,
 }) => {
   return (
-    <Section className="relative">
+    <Section className="relative bg-[#F9FAFB">
       <Container>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
           <div className="max-w-xl w-full mx-auto space-y-2 poppins">
@@ -43,10 +43,14 @@ const OurProduct: React.FC<OurProductsProps> = ({
         <div className="bg-blue-dark w-full p-5 md:p-8 rounded-3xl mt-8 md:mt-14 relative">
           <SwiperCarousel
             data={items}
-            modules={[Navigation]}
+            modules={[Navigation, Pagination]}
             navigation={{
               nextEl: ".btn-next",
               prevEl: ".btn-prev",
+            }}
+            pagination={{
+              el: ".product-pagination",
+              clickable: true,
             }}
             slidesPerView={1}
             spaceBetween={24}
@@ -65,8 +69,9 @@ const OurProduct: React.FC<OurProductsProps> = ({
             <RightIcon />
           </button>
         </div>
+        <div className="product-pagination flex items-center justify-center mt-4 md:mt-6"></div>
       </Container>
-      <div className="bg-[#F26633] w-full h-[2px] top-[66.5%] z-[-1] absolute"/>
+      <div className="bg-[##F5F5F5] border-b-2 border-[#F26633] w-full md:h-[63%] max-md:hidden top-0 left-0 z-[-1] absolute" />
     </Section>
   );
 };
