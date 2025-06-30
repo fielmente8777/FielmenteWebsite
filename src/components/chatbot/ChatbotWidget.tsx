@@ -50,13 +50,13 @@ const ChatbotWidget = ({
     }
   };
 
-  // useEffect(() => {
-  //   const interval = setTimeout(() => {
-  //     setIsOpen(true);
-  //   }, openInterval || 3000);
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setIsOpen(true);
+    }, openInterval || 15000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
