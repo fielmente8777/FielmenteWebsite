@@ -127,7 +127,7 @@ const RenderChatBot = () => {
             title="Fielmente"
             theme={"#0A081E"}
             openInterval={2000}
-            logo={"/favicon-32x32.png"}
+            logo={"/favicon/favicon-32x32.png"}
           
           />
         )}
