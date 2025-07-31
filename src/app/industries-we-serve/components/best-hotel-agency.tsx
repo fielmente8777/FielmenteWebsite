@@ -1,9 +1,11 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import BookNowPhone from "../../../../public/images/hotel-receptionist-check.png";
 import Image from "next/image";
+import DataContext from "@/contextApi/DataContext";
 
 function BestHotelAgency() {
+  const {setIsOpenPopupForm} = useContext(DataContext);
   return (
     <section>
       <div className="lg:grid grid-cols-2 gap-6 flex flex-col-reverse flex-1">
@@ -33,12 +35,12 @@ function BestHotelAgency() {
             drives full occupancy and generates more revenue.
           </p>
           <div className="flex lg:justify-start justify-center">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => setIsOpenPopupForm(true)}
               className="bg-blue-dark text-white py-3 px-6 border border-blue-dark rounded-lg text-lg font-semibold hover:bg-white hover:text-black duration-700 transition box_shadow"
             >
               Contact Us
-            </Link>
+            </button>
           </div>
         </div>
       </div>

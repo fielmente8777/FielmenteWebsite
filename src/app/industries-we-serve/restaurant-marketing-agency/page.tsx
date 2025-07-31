@@ -1,14 +1,7 @@
 import React from "react";
-import BestRestauratMarket from "../components/best-restaurnat-market";
-import LookingForRestaurant from "../components/looking-for-restaurant";
-import TakeYourFbVenture from "../components/take-your-fb-venture";
-import RestaurantSeo from "../components/restaurant-seo";
-import InfluencerMarketing from "../components/influencer-marketing";
-import { Accordin } from "../components/common-hero";
 import {
   NumberComponent,
   GotEnquiry,
-  Presence,
   Section,
   Container,
   OurClient,
@@ -25,7 +18,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { PopupForm } from "@/app/landing-page/components";
+import ContactUs from "./ContactUs";
 
 export const metadata: Metadata = {
   title: "Restaurant Marketing Agency India | Restuarant Marketing Company",
@@ -267,12 +260,7 @@ function page() {
                 transformation like never before!
               </p>
               <div className="flex lg:justify-start justify-center">
-                <Link
-                  href="/contact"
-                  className="bg-blue-dark text-white py-3 px-6 border border-blue-dark rounded-lg text-lg font-semibold hover:bg-white hover:text-black duration-700 transition box_shadow"
-                >
-                  Contact Us
-                </Link>
+                <ContactUs />
               </div>
             </div>
           </div>

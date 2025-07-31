@@ -1,40 +1,18 @@
 import Image from "next/image";
-import React, { useState } from "react";
-import Food from "../../../../public/images/people-taking-photos-food-1536x1024.webp";
-import Girlwithchart from "../../../../public/images/Grilwithchart.webp";
-import Girlwithcook from "../../../../public/images/Girlwithcook.webp";
-import Marketloud from "../../../../public/images/Marketloud.webp";
+import React from "react";
 
-import Link from "next/link";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import keyword from "../../../../public/images/keywords.webp";
-import SocialCircle from "../../../../public/images/social-circle.webp";
-import Backgrond from "../../../../public/images/young-women-planning-summer-vacation-trip-searching-information-booking-hotel-laptop-travel-concept-1536x1024.webp";
-
-
-import Track from "../../../../public/images/trackandoptimize.webp";
-import Enhanced from "../../../../public/images/inhancevisiblity.webp";
-import Target from "../../../../public/images/targetingadvertised.webp";
-import Costeffective from "../../../../public/images/costeffective.webp";
-import Outperform from "../../../../public/images/outperform.webp";
-import Local from "../../../../public/images/localtargeting.webp";
 
 import BoostVisibility from "../../../../public/images/boostvisiblity.webp";
-import CustomerFeedbackI from "../../../../public/images/cusomerfeedback.webp";
 import Showcasemenu from "../../../../public/images/showcasemenu.webp";
 import Customertrust from "../../../../public/images/customertrust.webp";
 import Onlineordering from "../../../../public/images/onlineordering.webp";
 import Brandidentify from "../../../../public/images/brandidentify.webp";
-import { Accordin } from "../components/common-hero";
 
 import {
   NumberComponent,
-  GotEnquiry,
-  Presence,
   Section,
   Container,
   OurClient,
-  ConsultationForm,
 } from "@/components";
 import {
   BrandIdentity,
@@ -46,6 +24,7 @@ import {
 import type { Metadata } from "next";
 import ConsultationForm2 from "@/components/ConsultationForm2";
 import { Needs2, NeedSeo2 } from "../components";
+import GetInTouchButton from "../components/GetInTouchButton";
 
 
 export const metadata: Metadata = {
@@ -308,12 +287,13 @@ function page() {
                 Ready to see your cloud kitchen thrive like never before?
               </p>
               <div>
-                <Link
+                {/* <Link
                   href="/contact"
                   className="bg-orange-primary text-white py-3 px-6 border border-blue-dark rounded-lg text-lg font-semibold hover:bg-white hover:text-black duration-700 transition box_shadow"
                 >
                   Get In Touch Now
-                </Link>
+                </Link> */}
+                <GetInTouchButton />
               </div>
             </div>
 

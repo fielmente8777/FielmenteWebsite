@@ -1,7 +1,8 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 
 import Image from "next/image";
+import DataContext from "@/contextApi/DataContext";
 
 function CaptivateAndConnect({
   title,
@@ -10,6 +11,7 @@ function CaptivateAndConnect({
   rightContent,
   items,
 }: any) {
+  const { setIsOpenPopupForm } = useContext(DataContext);
   return (
     <section>
       <div className="flex flex-col gap-5 max-w-[900px] mx-auto">
@@ -27,12 +29,12 @@ function CaptivateAndConnect({
             {leftContent?.title}
           </h2>
           <div className="flex mt-10 lg:justify-start justify-center">
-            <Link
-              href={"/contact"}
+            <button
+              onClick={() => setIsOpenPopupForm(true)}
               className="bg-[#262C2E] text-white px-10 py-3 rounded-lg sm:text-lg text-base font-semibold hover:bg-black duration-200"
             >
               Contact us
-            </Link>
+            </button>
           </div>
         </div>
 

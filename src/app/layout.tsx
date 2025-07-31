@@ -9,6 +9,8 @@ import NavBar from "@/components/Header/NavBar";
 import Script from "next/script";
 import Salesiq from "@/components/zohochatbot/Salesiq";
 import RenderChatBot from "@/components/chatbot/RenderChatBot";
+import { DataProvider } from "@/contextApi/DataContext";
+import PopupFormNew from "@/components/PopupFormNew";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     {
       rel: "icon",
       type: "image/svg+xml",
-      url: "/favicon/icon.svg", 
+      url: "/favicon/icon.svg",
     },
     {
       rel: "manifest",
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     {
       rel: "mask-icon",
       color: "#5bbad5",
-      url: "/favicon/icon.svg", 
+      url: "/favicon/icon.svg",
     },
     {
       rel: "shortcut icon",
@@ -214,12 +216,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body className={inter.className} suppressHydrationWarning={true}>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Header /> */}
-        <RenderChatBot />
-        <NavBar />
-        {children}
-        <Footer />
-        <Call />
-        <Whatsapp />
+        <DataProvider>
+          <RenderChatBot />
+          <NavBar />
+          {children}
+          <Footer />
+          <Call />
+          <Whatsapp />
+          <PopupFormNew />
+        </DataProvider>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM"></iframe>
         </noscript>

@@ -1,7 +1,10 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import DataContext from "@/contextApi/DataContext";
+import React, { useContext } from "react";
 
 function IndustryWeServe() {
+  const { setIsOpenPopupForm } = useContext(DataContext);
+
   return (
     <div>
       <div className="flex flex-col md:gap-8 gap-4 items-center">
@@ -12,12 +15,12 @@ function IndustryWeServe() {
           Hospitality Marketing Agency with over 10+ Years of Experience in the
           industries we serve
         </p>
-        <Link
-          href={"/contact"}
+        <button
+          onClick={() => setIsOpenPopupForm(true)}
           className="bg-black border border-black text-white sm:text-lg text-base font-semibold py-4 px-8 rounded-2xl hover:bg-transparent hover:text-black transition-all duration-300 mt-8"
         >
           Get Free Consultation
-        </Link>
+        </button>
       </div>
 
       {/* <div className="lg:grid grid-cols-3 gap-8 md:mt-16 mt-10">

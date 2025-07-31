@@ -7,11 +7,6 @@ import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import WantToJoin from "../../components/want-to-join";
 
-import Hotelseo1 from "../../../../../public/images/HOTEL-SEO-02.webp";
-import Hotelseo2 from "../../../../../public/images/HOTEL-SEO-03.webp";
-import Hotelseo3 from "../../../../../public/images/HOTEL-SEO-04.webp";
-import Hotelseo4 from "../../../../../public/images/HOTEL-SEO-05.webp";
-
 import CaptivateAndConnect from "../../components/captivate-and-connect";
 
 import Keyword from "../../../../../public/images/keywords.webp";
@@ -22,7 +17,7 @@ import { Accordin } from "../../components/common-hero";
 import WeAreDef from "./components/WeAreDef";
 
 import type { Metadata } from "next";
-import { PopupForm } from "@/app/landing-page/components";
+import Contactus from "../hotel-google-ads/Contactus";
 
 export const metadata: Metadata = {
   title: "Hotel SEO Agency India | Best Hotel SEO Services- Fielmente",
@@ -250,12 +245,13 @@ function page() {
               </div>
 
               <div className="flex">
-                <Link
+                {/* <Link
                   href={"/contact"}
                   className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
                 >
                   Contact us <AiOutlineArrowRight />
-                </Link>
+                </Link> */}
+                <Contactus />
               </div>
             </div>
           </div>

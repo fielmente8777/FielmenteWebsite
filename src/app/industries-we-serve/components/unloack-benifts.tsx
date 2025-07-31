@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+import React, { useContext } from "react";
 import SocialCircle from "../../../../public/images/social-circle.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import DataContext from "@/contextApi/DataContext";
 
 function UnloackBenifts() {
+  const { setIsOpenPopupForm } = useContext(DataContext);
   return (
     <section>
       <div className="grid lg:grid-cols-5">
@@ -30,12 +33,12 @@ function UnloackBenifts() {
           </p>
 
           <div className="flex lg:justify-start justify-center">
-            <Link
-              href={"/contact"}
+            <button
+              onClick={() => setIsOpenPopupForm(true)}
               className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium mt-10 pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
             >
               Contact us <AiOutlineArrowRight />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

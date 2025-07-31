@@ -29,7 +29,7 @@ const PopupForm = ({
         setShowModal(true);
         setHasShown(true);
         document.body.style.overflow = "hidden";
-      }, 30000); // Show after 30 seconds
+      }, 40000); // Show after 30 seconds
     }
 
     return () => {

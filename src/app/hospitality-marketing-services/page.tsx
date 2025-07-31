@@ -25,6 +25,8 @@ import kitchens from "../../../public/images/kitchen.png";
 
 import type { Metadata } from "next";
 import { PopupForm } from "../landing-page/components";
+import Contactbtn1 from "./contactbtn/Contactbtn1";
+import Contactbtn2 from "./contactbtn/Contactbtn2";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality Marketing Services - Fielmente",
@@ -263,12 +265,13 @@ function page() {
             India and the best hospitality marketing agency, today.
           </p>
           <div className="flex justify-center mt-12">
-            <Link
+            {/* <Link
               href={"/contact"}
               className="bg-black px-10 py-3 border text-white border-black text-xl rounded-xl hover:bg-transparent hover:text-black"
             >
               Contact us
-            </Link>
+            </Link> */}
+            <Contactbtn1 />
           </div>
         </div>
       </div>
@@ -377,12 +380,13 @@ function page() {
             hospitality marketing service that set us apart in the industry.
           </p>
           <div className="flex justify-center mt-12">
-            <Link
+            {/* <Link
               href={"/contact"}
               className="bg-[#2CBCA5] px-10 py-3 border  text-xl rounded-xl hover:bg-transparent hover:text-black"
             >
               Contact us
-            </Link>
+            </Link> */}
+            <Contactbtn2 />
           </div>
         </div>
       </div>

@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
 import Container from "./Container";
 import Section from "./Section";
 import Image from "next/image";
+import { useContext } from "react";
+import DataContext from "@/contextApi/DataContext";
 
 interface data_type {
   title: string;
@@ -16,6 +19,7 @@ const GotEnquiry: React.FC<data_type> = ({
   span,
   subTitle,
 }) => {
+  const { setIsOpenPopupForm } = useContext(DataContext);
   return (
     <Section>
       <Container>
@@ -36,8 +40,9 @@ const GotEnquiry: React.FC<data_type> = ({
             </p>
           </div>
           <div className="flex justify-center items-center py-6 lg:py-7 lg:mt-2">
-            <Link
-              href="/contact-us"
+            <button
+              // href="/contact-us"
+              onClick={() => setIsOpenPopupForm(true)}
               className="bg-transparent px-6 hover:bg-white font-medium py-3 rounded-full text-orange-primary border-2 border-orange-primary lg:text-xl text-lg flex gap-2 items-center"
             >
               Get in touch
@@ -47,7 +52,7 @@ const GotEnquiry: React.FC<data_type> = ({
                 width={20}
                 height={20}
               />
-            </Link>
+            </button>
           </div>
         </div>
       </Container>

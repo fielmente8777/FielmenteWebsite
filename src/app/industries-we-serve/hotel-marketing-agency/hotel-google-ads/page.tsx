@@ -23,6 +23,7 @@ import WeAreDef from "../hotel-seo/components/WeAreDef";
 
 import type { Metadata } from "next";
 import { PopupForm } from "@/app/landing-page/components";
+import Contactus from "./Contactus";
 
 export const metadata: Metadata = {
   title: "India's Leading Hotel Google Ads Agency - Fielmente",
@@ -241,12 +242,13 @@ function page() {
               </div>
 
               <div className="flex">
-                <Link
+                {/* <Link
                   href={"/contact"}
                   className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
                 >
                   Contact us <AiOutlineArrowRight />
-                </Link>
+                </Link> */}
+                <Contactus />
               </div>
             </div>
           </div>

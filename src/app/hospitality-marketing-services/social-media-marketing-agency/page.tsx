@@ -17,6 +17,7 @@ import Smm08 from "../../../../public/images/SMM-08.webp";
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
 import { PopupForm } from "@/app/landing-page/components";
+import ContactBtn3 from "../contactbtn/ContactBtn3";
 
 export const metadata: Metadata = {
   title: "India's Best Hospitality Social Media Marketing Agency - Fielmente",
@@ -91,13 +92,14 @@ function page() {
               </p>
 
               <div className="flex lg:justify-start justify-center">
-                <Link
+                {/* <Link
                   href={"/"}
                   className="bg-white px-12 font-medium py-3 shadow-2xl shadow-gray-500 rounded-full text-black lg:text-xl text-lg
                   hover:bg-black hover:text-white transition-all duration-300"
                 >
                   Know More
-                </Link>
+                </Link> */}
+                <ContactBtn3 text="Know More" />
               </div>
             </div>
             <div className="w-full flex justify-center items-center">
@@ -166,12 +168,13 @@ function page() {
               </p>
 
               <div className="flex lg:justify-start justify-center">
-                <Link
+                {/* <Link
                   href={"/"}
                   className="bg-white px-8 font-medium py-3 shadow-2xl shadow-gray-500 hover:bg-black hover:text-white rounded-full text-black lg:text-xl text-lg"
                 >
                   Get Started
-                </Link>
+                </Link> */}
+                <ContactBtn3 text="Get Started" />
               </div>
             </div>
             <div className="w-full flex md:justify-end">
@@ -224,12 +227,13 @@ function page() {
                 </div>
 
                 <div className="flex mt-5 lg:justify-start justify-center">
-                  <Link
+                  {/* <Link
                     href={"/"}
                     className="bg-white px-8 font-medium py-3 shadow-2xl shadow-gray-500 hover:bg-black hover:text-white rounded-full text-black lg:text-xl text-lg"
                   >
                     Get Started
-                  </Link>
+                  </Link> */}
+                  <ContactBtn3 text="Get Started" />
                 </div>
 
                 <p className="text-lg text-center mt-10">

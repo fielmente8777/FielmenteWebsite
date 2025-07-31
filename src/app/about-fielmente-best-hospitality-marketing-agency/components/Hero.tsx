@@ -1,11 +1,14 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 
 import Whoweare from "../../../../public/images/WHO-ARE-WE.webp";
 import Approach from "../../../../public/images/APPROACH-US.webp";
 import Link from "next/link";
+import DataContext from "@/contextApi/DataContext";
 
 function Hero() {
+  const { setIsOpenPopupForm } = useContext(DataContext);
   return (
     <section>
       <div className="lg:grid grid-cols-2 flex flex-col gap-10">
@@ -55,22 +58,24 @@ function Hero() {
             platforms. Let’s create an unforgettable digital journey together!
           </p>
           <div className="flex max-md:hidden justify-center">
-            <Link
-              href={"/contact"}
+            <button
+              onClick={() => setIsOpenPopupForm(true)}
+              // href={"/contact"}
               className="bg-black text-white font-bold text-lg px-6 py-3 rounded-md mt-10 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
             >
               Contact us
-            </Link>
+            </button>
           </div>
         </div>
       </div>
       <div className="max-md:flex hidden justify-center">
-        <Link
-          href={"/contact"}
+        <button
+          onClick={() => setIsOpenPopupForm(true)}
+          // href={"/contact"}
           className="bg-black text-white font-bold text-lg px-6 py-3 rounded-md mt-10 border border-black hover:bg-transparent hover:text-blue-dark duration-300"
         >
           Contact us
-        </Link>
+        </button>
       </div>
     </section>
   );

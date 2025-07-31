@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Image, { StaticImageData } from "next/image";
@@ -7,6 +8,8 @@ import SearchEngine from "../../../../public/images/Asset-2seo-1.webp";
 import RestaurantPaid from "../../../../public/images/Asset-1pc-1.webp";
 import WebsiteDevelopment from "../../../../public/images/Website-development-illsutration-2.webp";
 import arrow from "../../../../public/images/Symbol.png";
+import { useContext } from "react";
+import DataContext from "@/contextApi/DataContext";
 const CardSection: React.FC = () => {
   return (
     <Section>
@@ -41,6 +44,7 @@ const ContainerCard: React.FC<{
   btnName: string;
   index: number;
 }> = ({ src, alt, title, subtitle, link, btnName, index }) => {
+  const { setIsOpenPopupForm } = useContext(DataContext);
   return (
     <article className="lg:grid grid-cols-3 gap-8 p-10 shadow-2xl justify-center items-center mb-10 rounded-3xl">
       <div
@@ -62,13 +66,20 @@ const ContainerCard: React.FC<{
         </h2>
         <p className="text-base text-[#737373] text-justify">{subtitle}</p>
         <div className="h-max w-full flex justify-center lg:justify-start">
-          <Link
-            href={link}
-            className="border-[3px] border-orange-primary text-orange-primary lg:text-lg text-sm font-semibold py-3 px-5 rounded-full hover:bg-black transition-all duration-300 flex gap-2 items-center justify-center w-max"
-          >
-            <Image src={arrow} alt="arrow" width={15} height={10} />
-            {btnName}
-          </Link>
+          {link ? (
+            <Link
+              href={link}
+              className="border-[3px] border-orange-primary text-orange-primary lg:text-lg text-sm font-semibold py-3 px-5 rounded-full hover:bg-black transition-all duration-300 flex gap-2 items-center justify-center w-max"
+            >
+              <Image src={arrow} alt="arrow" width={15} height={10} />
+              {btnName}
+            </Link>
+          ) : (
+            <button onClick={() => setIsOpenPopupForm(true)} className="border-[3px] border-orange-primary text-orange-primary lg:text-lg text-sm font-semibold py-3 px-5 rounded-full hover:bg-black transition-all duration-300 flex gap-2 items-center justify-center w-max">
+              <Image src={arrow} alt="arrow" width={15} height={10} />
+              {btnName}
+            </button>
+          )}
         </div>
       </div>
     </article>
@@ -118,7 +129,7 @@ const data: CardSectionProps[] = [
     title: "Hotel Website Development",
     subtitle:
       "Are you in need of a website that effectively represents your brand and drives results? Look no further! Our digital marketing company for hotels offers top-notch hotel website development services that will take your online presence to the next level.",
-    link: "/contact",
+    link: "",
     btnName: "Schedule a Demo",
   },
 ];

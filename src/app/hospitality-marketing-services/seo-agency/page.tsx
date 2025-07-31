@@ -33,6 +33,7 @@ import Container from "@/components/Container";
 
 import type { Metadata } from "next";
 import { PopupForm } from "@/app/landing-page/components";
+import ContactBtn3 from "../contactbtn/ContactBtn3";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality SEO Agency - Fielmente",
@@ -146,12 +147,13 @@ function page() {
               </p>
 
               <div className="flex lg:justify-start justify-center">
-                <Link
+                {/* <Link
                   href={"/"}
                   className="bg-white px-9 shadow-2xl hover:bg-black hover:text-white shadow-gray-400 font-medium py-3 rounded-full text-black lg:text-base text-base"
                 >
                   Know More
-                </Link>
+                </Link> */}
+                <ContactBtn3 text="Know More" />
               </div>
             </div>
             <div className="w-full">
@@ -270,12 +272,13 @@ function page() {
               </p>
 
               <div className="flex lg:justify-start justify-center">
-                <Link
+                {/* <Link
                   href={"/"}
                   className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-base text-base"
                 >
                   Get Started
-                </Link>
+                </Link> */}
+                <ContactBtn3 text={"Get Started"} />
               </div>
             </div>
             <div className="w-full flex md:justify-end">
@@ -320,12 +323,14 @@ function page() {
               Agency
             </p>
             <div className="flex justify-center mt-16">
-              <Link
+              {/* <Link
                 href={"/"}
                 className="bg-white px-16 py-5 rounded-full lg:text-base text-base font-semibold duration-300 text-black"
               >
                 Get Started
-              </Link>
+              </Link> */}
+                <ContactBtn3 text={"Get Started"} />
+
             </div>
             <p className="mt-32 text-center lg:text-4xl text-3xl font-semibold">
               Amplify Your Impact with Our Comprehensive Digital Marketing
@@ -376,12 +381,13 @@ function page() {
                 </div>
 
                 <div className="flex mt-5 lg:justify-start justify-center">
-                  <Link
+                  {/* <Link
                     href={"/"}
                     className="bg-white px-12 font-medium py-5 rounded-full text-black lg:text-base text-base"
                   >
                     Get Started
-                  </Link>
+                  </Link> */}
+                  <ContactBtn3 text={"Get Started"} />
                 </div>
 
                 <p className="text-base text-center mt-10">

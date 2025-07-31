@@ -23,6 +23,7 @@ import Container from "@/components/Container";
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
 import { PopupForm } from "@/app/landing-page/components";
+import ContactBtn3 from "../contactbtn/ContactBtn3";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality Google Ads Agency - Fielmente",
@@ -106,12 +107,13 @@ function page() {
               </p>
 
               <div className="flex lg:justify-start justify-center">
-                <Link
+                {/* <Link
                   href={"/"}
                   className="bg-white px-8 font-medium py-3 hover:bg-black hover:text-white shadow-2xl shadow-gray-primary rounded-full text-black text-lg"
                 >
                   Know More
-                </Link>
+                </Link> */}
+                <ContactBtn3 text="Know More" />
               </div>
             </div>
             <div className="w-full flex items-center lg:justify-end justify-center">
@@ -223,12 +225,13 @@ function page() {
               </p>
 
               <div className="flex lg:justify-start justify-center">
-                <Link
+                {/* <Link
                   href={"/"}
                   className="bg-white px-8 hover:bg-black hover:text-white shadow-2xl shadow-gray-primary font-medium py-3 rounded-full text-black text-lg"
                 >
                   Get Started
-                </Link>
+                </Link> */}
+                <ContactBtn3 text="Get Started" />
               </div>
             </div>
             <div className="w-full flex md:justify-end">
@@ -295,12 +298,13 @@ function page() {
                 </div>
 
                 <div className="flex mt-5 lg:justify-start justify-center">
-                  <Link
+                  {/* <Link
                     href={"/"}
                     className="bg-white px-8 font-medium py-3 rounded-full text-black text-base"
                   >
                     Connect With Our Experts
-                  </Link>
+                  </Link> */}
+                  <ContactBtn3 text="Connect With Our Experts" />
                 </div>
 
                 <p className="text-lg text-center mt-10">

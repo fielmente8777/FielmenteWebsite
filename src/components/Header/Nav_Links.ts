@@ -77,8 +77,8 @@ export const Nav_Links = [
   //   linkName: "blogs",
   //   src: "/blogs",
   // },
-  {
-    linkName: "contact us",
-    src: "/contact",
-  },
+  // {
+  //   linkName: "contact us",
+  //   src: "/contact",
+  // },
 ];

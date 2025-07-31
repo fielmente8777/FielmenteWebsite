@@ -1,7 +1,8 @@
-import { Card, Container, Section } from "@/components";
-import Card2 from "@/components/Card2";
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+"use client";
+import { Container, Section } from "@/components";
+import DataContext from "@/contextApi/DataContext";
+import { StaticImageData } from "next/image";
+import { useContext } from "react";
 
 export interface DataType {
   title: string;
@@ -30,6 +31,7 @@ const Needs2: React.FC<DataType> = ({
   card1,
   textCenter = false,
 }) => {
+  const {setIsOpenPopupForm} = useContext(DataContext);
   return (
     <Section>
       <Container>
@@ -55,12 +57,12 @@ const Needs2: React.FC<DataType> = ({
         </div>
         {label && (
           <div className="flex justify-center mt-10">
-            <Link
-              href={href || "#"}
+            <button
+              onClick={() => setIsOpenPopupForm(true)}
               className="bg-orange-primary px-[0.95rem] font-medium py-[.5rem] rounded-xl text-white text-xl shadow-sm shadow-orange-primary hover:bg-transparent border border-orange-primary hover:text-blue-dark transition-all duration-300"
             >
               {label}
-            </Link>
+            </button>
           </div>
         )}
       </Container>

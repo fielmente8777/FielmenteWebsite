@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import Mobile from "../../../../../public/images/online-mobile.webp";
 import Link from "next/link";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -16,6 +16,8 @@ import type { Metadata } from "next";
 import WantToJoin from "../../components/want-to-join";
 import Mobiles from "../../components/mobiles";
 import { PopupForm } from "@/app/landing-page/components";
+import Contactus from "./Contactus";
+import ContactBtn from "./ContactBtn";
 
 export const metadata: Metadata = {
   title: "Best Cloud Kitchen Social Media Agency in India- Fielmente",
@@ -256,12 +258,13 @@ function page() {
                 </p>
 
                 <div className="flex lg:justify-start justify-center">
-                  <Link
+                  {/* <Link
                     href={"/contact"}
                     className="border-b-2 border-b-[#6664E4] text-black text-xl font-medium mt-10 pb-1 hover:text-[#6664E4] duration-300 flex items-center gap-2"
                   >
                     Contact us <AiOutlineArrowRight />
-                  </Link>
+                  </Link> */}
+                  <Contactus />
                 </div>
               </div>
             </div>
@@ -316,12 +319,13 @@ function page() {
                   Accelerate Your Restaurant’s Growth with Social Media.
                 </h2>
                 <div className="flex mt-10 lg:justify-start justify-center">
-                  <Link
+                  {/* <Link
                     href={"/contact"}
                     className="bg-[#262C2E] text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-black duration-200"
                   >
                     Contact us
-                  </Link>
+                  </Link> */}
+                  <ContactBtn />
                 </div>
               </div>
               <div className="flex flex-col gap-8 max-w-[500px] p-6">

@@ -1,7 +1,9 @@
-import Link from "next/link";
-import React from "react";
+"use client";
+import DataContext from "@/contextApi/DataContext";
+import React, { useContext } from "react";
 
 function WantToJoin() {
+  const { setIsOpenPopupForm } = useContext(DataContext);
   return (
     <section className="grid lg:grid-cols-2 items-center">
       <div className="lg:p-20">
@@ -13,12 +15,12 @@ function WantToJoin() {
       </div>
       <div className="lg:p-20">
         <div className="flex justify-center mt-8">
-          <Link
-            href={"/contact"}
+          <button
+            onClick={() => setIsOpenPopupForm(true)}
             className="bg-[#2CBCA5] px-10 py-3 rounded-xl sm:text-xl text-lg hover:bg-white hover:text-black duration-300"
           >
             Contact us
-          </Link>
+          </button>
         </div>
       </div>
     </section>
