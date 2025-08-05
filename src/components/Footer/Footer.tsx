@@ -26,6 +26,10 @@ const Footer = () => {
   } else {
     FooterComponent = Footer2;
   }
+
+   if (pathName === "/thank-you/") {
+    return null;
+  }
   return <>{FooterComponent && <FooterComponent />}</>;
 };
 

@@ -26,6 +26,10 @@ const NavBar = () => {
     HeaderComponent = Header2;
   }
 
+   if (pathname === "/thank-you/") {
+    return null;
+  }
+
   return <>{HeaderComponent && <HeaderComponent />}</>;
 };
 

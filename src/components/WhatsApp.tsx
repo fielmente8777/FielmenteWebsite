@@ -12,7 +12,9 @@ function Whatsapp() {
   const pathNameInclude1 = ["/resort/", "/hospitality/", "/landing-page/"];
   const pathNameInclude2 = ["/UK/", "/USA/", "/dubai-restaurant/"];
 
-  console.log(pathname);
+   if (pathname === "/thank-you/") {
+    return null;
+  }
   return (
     <>
     

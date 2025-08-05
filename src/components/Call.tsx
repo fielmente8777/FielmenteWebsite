@@ -8,6 +8,10 @@ function Call() {
   const pathname = usePathname();
   const ukno = "+44 7438375533";
   const indNo = "+919501868775";
+
+  if (pathname === "/thank-you/") {
+    return null;
+  }
   return (
     <>
       {/* {pathname !== "/landing-page/" &&
