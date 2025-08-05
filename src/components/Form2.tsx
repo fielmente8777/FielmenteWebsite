@@ -65,20 +65,23 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
 
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
         // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook`,//test
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          // Domain: "fielmente",
+          Domain: "fielmente",
           // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          Description: userMessage,
+          // email: userEmail,
+          // name: userName,
+          // phone: `${countryCode}${userPhone}`,
+          // message: userMessage,
+          Remark: "",
+          Subject: null,
+          created_from: "website",
         },
         {
           headers: {

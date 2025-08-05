@@ -40,7 +40,7 @@ const PopupFormNew = () => {
             </button>
             <div className="relative w-full md:aspect-[4/4] max-md:hidden">
               <Image
-                src={"/popup1.jpg"}
+                src={"/popup2.jpg"}
                 alt="Hospitality Marketing"
                 fill
                 className="object-cover"
