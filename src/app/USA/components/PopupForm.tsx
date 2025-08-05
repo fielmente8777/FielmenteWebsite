@@ -110,7 +110,7 @@ const PopupForm = ({
           },
         }
       );
-      if (data.success) {
+      if (data?.Status) {
         setLoader(false);
         router.push(`/thank-you/`);
         // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);

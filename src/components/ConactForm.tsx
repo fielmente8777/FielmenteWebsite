@@ -77,7 +77,7 @@ const ContactForm = () => {
         }
       );
 
-      if (data.success) {
+      if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");

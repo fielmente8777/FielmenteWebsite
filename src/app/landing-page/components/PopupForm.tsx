@@ -1,12 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState, useCallback, useRef } from "react";
-import popupimg from "../../../../public/images/popup_img.webp";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import { countries } from "@/utils/countryCode";
 import React from "react";
-import { Form } from "@/components";
 import { OutlineClose } from "@/utils/icons";
 import PopUpForm from "@/components/Forms/PopUpForm";
 
@@ -69,7 +64,7 @@ const PopupForm = ({
             </button>
             <div className="relative w-full md:aspect-[4/4] max-md:hidden">
               <Image
-                src={"/popup1.jpg"}
+                src={"/popup2.jpg"}
                 alt="Hospitality Marketing"
                 fill
                 className="object-cover"

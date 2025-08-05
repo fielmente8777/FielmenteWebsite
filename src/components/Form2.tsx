@@ -90,7 +90,7 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
         }
       );
 
-      if (data.success) {
+      if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");

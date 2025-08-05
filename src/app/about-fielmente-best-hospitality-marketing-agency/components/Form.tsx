@@ -87,7 +87,7 @@ function Form({
           },
         }
       );
-      if (data.success) {
+      if (data?.Status) {
         setLoader(false);
         // setPopupMsg("You information has been Received");
         // router.push(`/thank-you/`);
