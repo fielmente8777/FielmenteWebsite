@@ -122,10 +122,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-  gtag('config', 'G-PVZG7NGGMG');`,
+            gtag('config', 'G-PVZG7NGGMG');`,
           }}
         />
 
@@ -146,9 +146,9 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5H2JL2ZPTS');`,
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5H2JL2ZPTS');`,
           }}
         />
 
@@ -186,7 +186,7 @@ export default function RootLayout({
           src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
           async
         ></script> */}
-        {/* <Salesiq /> */}
+        <Salesiq />
 
         <Script
           id="google-tag-manager"
@@ -194,10 +194,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WQ5LPRNM');
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WQ5LPRNM');
             `,
           }}
         />
@@ -217,7 +217,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Header /> */}
         <DataProvider>
-          <RenderChatBot />
+          {/* <RenderChatBot /> */}
           <NavBar />
           {children}
           <Footer />

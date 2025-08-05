@@ -17,7 +17,8 @@ function Whatsapp() {
     <>
     
       <div
-        className={`fixed z-20 cursor-pointer ${!pathNameInclude1.includes(pathname) ?  "lg:left-10 left-4 bottom-28" : "lg:right-10 right-4 bottom-10"}`}
+        className={`fixed z-20 cursor-pointer lg:left-10 left-4 bottom-28`}
+        // className={`fixed z-20 cursor-pointer ${!pathNameInclude1.includes(pathname) ?  "lg:left-10 left-4 bottom-28" : "lg:right-10 right-4 bottom-10"}`}
       >
         <Link
           href={`https://wa.me/${pathname === "/UK/" ? ukno : indNo}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}

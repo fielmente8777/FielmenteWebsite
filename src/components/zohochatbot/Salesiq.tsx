@@ -9,10 +9,10 @@ const Salesiq = () => {
       // pathname !== "/landing-page/" &&
         // pathname !== "/resort/" &&
         // pathname !== "/hospitality/" &&
-        pathname !== "/UK/" &&
-        pathname !== "/USA/" &&
-        pathname !== "/dubai-restaurant/" && 
-        pathname !== "/restaurant/" && 
+        // pathname !== "/UK/" &&
+        // pathname !== "/USA/" &&
+        // pathname !== "/dubai-restaurant/" && 
+        // pathname !== "/restaurant/" && 
         (
           <>
             <Script id="zoho-init" strategy="afterInteractive">
