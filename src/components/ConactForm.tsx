@@ -52,23 +52,23 @@ const ContactForm = () => {
     try {
       console.log(brandName, userName, userPhone, userEmail, userMessage);
       const { data } = await axios.post(
-        `https://nexon.eazotel.com/eazotel/addcontacts`,
-        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          Domain: "fielmente",
+          // Domain: "fielmente",
           // Domain: "abhijeet",
-          email: userEmail,
-          Name: userName,
-          Contact: `${countryCode}${userPhone} `,
-          Description: `Brand Name: ${brandName}, Message: ${userMessage}`,
-          // name: userName,
           // email: userEmail,
-          // phone: `${countryCode}${userPhone}`,
-          // brandName: brandName,
-          // message: userMessage,
-          Remark: "",
-          Subject: null,
-          created_from: "website",
+          // Name: userName,
+          // Contact: `${countryCode}${userPhone} `,
+          // Description: `Brand Name: ${brandName}, Message: ${userMessage}`,
+          name: userName,
+          email: userEmail,
+          phone: `${countryCode}${userPhone}`,
+          brandName: brandName,
+          message: userMessage,
+          // Remark: "",
+          // Subject: null,
+          // created_from: "website",
         },
         {
           headers: {
@@ -76,8 +76,8 @@ const ContactForm = () => {
           },
         }
       );
-
-      if (data?.Status) {
+      if (data.success) {
+      // if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");

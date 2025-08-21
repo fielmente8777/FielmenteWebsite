@@ -202,7 +202,7 @@ export default function RootLayout({
           }}
         />
 
-        <Script src="https://cdn-in.pagesense.io/js/60034673689/951315c77e9d4021b7f24a6ebc690257.js" />
+        {/* <Script src="https://cdn-in.pagesense.io/js/60034673689/951315c77e9d4021b7f24a6ebc690257.js" /> */}
 
         <script
           dangerouslySetInnerHTML={{

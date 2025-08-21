@@ -50,22 +50,23 @@ const Form = () => {
 
     try {
       const { data } = await axios.post(
-        `https://nexon.eazotel.com/eazotel/addcontacts`,
-        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook`, //test
+        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          Domain: "fielmente",
+          // Domain: "fielmente",
           // Domain: "abhijeet",
-          email: userEmail,
-          Name: userName,
-          Contact: `${countryCode}${userPhone}`,
-          Description: userMessage,
           // email: userEmail,
-          // name: userName,
-          // phone: `${countryCode}${userPhone}`,
-          // message: userMessage,
-          Remark: "",
-          Subject: null,
-          created_from: "website",
+          // Name: userName,
+          // Contact: `${countryCode}${userPhone}`,
+          // Description: userMessage,
+          email: userEmail,
+          name: userName,
+          phone: `${countryCode}${userPhone}`,
+          message: userMessage,
+          // Remark: "",
+          // Subject: null,
+          // created_from: "website",
         },
         {
           headers: {
@@ -73,8 +74,8 @@ const Form = () => {
           },
         }
       );
-
-      if (data?.Status) {
+      if (data.success) {
+        // if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");
@@ -82,7 +83,6 @@ const Form = () => {
         setUserPhone("");
         setCountryCode("+91"); // Reset country code
         setFormRes(false);
-        // router.push(`/thank-you/`);
         window.open("/thank-you/", "_blank");
         // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
@@ -196,19 +196,19 @@ const Form = () => {
             {data.tag === "div"
               ? data.content
               : React.createElement(data.tag, {
-                id: data.name,
-                type: data.type,
-                name: data.name,
-                value: data.value,
-                onChange: data.onChange,
-                placeholder: data.placeholder,
-                required: data.required,
-                autoComplete: "off",
-                spellCheck: "false",
-                rows: data.tag === "textarea" ? 3 : undefined,
-                className:
-                  "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
-              })}
+                  id: data.name,
+                  type: data.type,
+                  name: data.name,
+                  value: data.value,
+                  onChange: data.onChange,
+                  placeholder: data.placeholder,
+                  required: data.required,
+                  autoComplete: "off",
+                  spellCheck: "false",
+                  rows: data.tag === "textarea" ? 3 : undefined,
+                  className:
+                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
+                })}
           </div>
           {data.name === "phone" && errorMessage && (
             <p className="text-sm text-red-500 mt-2">{errorMessage}</p>
