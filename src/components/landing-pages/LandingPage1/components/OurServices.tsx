@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { OurServiceCard } from "./cards/OurServiceCard";
 import Container from "@/components/Container";
-import { RightIcon } from "@/utils/HospitalityLandingPageIcons/Icons";
+import { NextBtnIcon, RightIcon } from "@/utils/HospitalityLandingPageIcons/Icons";
 import { PopupForm } from "@/app/landing-page/components";
 
 interface OurServicesProps {
@@ -34,7 +34,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
             {title}
           </h2>
 
-          <h3 className="md:text-5xl/[4rem] font-medium text-white">
+          <h3 className="md:text-5xl/[4rem] text-2xl font-medium text-white">
             {subTitle}
           </h3>
         </div>
@@ -46,7 +46,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
               modules={[Autoplay, Pagination, Navigation]}
               // autoplay={{ delay: 12000 }}
               slidesPerView={1}
-              spaceBetween={0}
+              spaceBetween={24}
               // loop={true}
               breakpoints={{
                 768: {
@@ -73,12 +73,12 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
           )}
 
           <div>
-            <div className="disabled:hidden rotate-180 cursor-pointer button-prev absolute top-1/2 -translate-y-[100%] -left-5 z-50">
-              <RightIcon />
+            <div className="disabled:hidden rotate-180 cursor-pointer button-prev bg-white flex items-center justify-center rounded-full md:w-12 w-10 shadow-xl  md:-left-5 -left-[14px] aspect-square absolute top-1/2 -translate-y-[100%] z-50">
+              <NextBtnIcon />
             </div>
 
-            <div className="disabled:hidden cursor-pointer button-next absolute -right-5 top-1/2 -translate-y-[100%] z-50">
-              <RightIcon />
+            <div className="disabled:hidden cursor-pointer button-next absolute bg-white flex items-center justify-center rounded-full md:w-12 w-10 shadow-xl  md:-right-5 -right-[14px] aspect-square top-1/2 -translate-y-[100%] z-50">
+              <NextBtnIcon />
             </div>
           </div>
 

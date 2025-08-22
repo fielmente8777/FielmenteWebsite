@@ -32,31 +32,31 @@ const IndustryWeServe = ({
         <h2 className="bg-[#FFE7DE] text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
           {title}
         </h2>
-        <h3 className="md:text-5xl font-medium text-blue-dark">{subTitle}</h3>
+        <h3 className="md:text-5xl text-2xl font-medium text-blue-dark">{subTitle}</h3>
       </div>
 
-      <div className="w-full bg-blue-dark p-3 mt-12">
+      <div className="w-full bg-blue-dark py-4 mt-12">
         {items && items?.length > 0 && (
           <SwiperCarousel
             data={items}
             modules={[Autoplay]}
             autoplay={{ delay: 3000 }}
             slidesPerView={1}
-            spaceBetween={0}
+            spaceBetween={1}
             loop={true}
             breakpoints={{
               768: {
                 slidesPerView: 4,
-                spaceBetween: 0,
+                spaceBetween: 2,
               },
             }}
-            className="w-full !divide-x !divide-white"
+            className="w-full"
             renderSlide={(card) => <IndustryWeServeCard {...card} />}
           />
         )}
       </div>
 
-      <div className="max-w-2xl mx-auto mt-12 text-center space-y-12 poppins">
+      <div className="md:max-w-2xl w-full max-md:px-4 mx-auto mt-12 text-center space-y-12 poppins">
         <p className="text-gray-primary">{description}</p>
         <button
           onClick={() => setShowModal(true)}

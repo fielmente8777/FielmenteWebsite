@@ -1376,31 +1376,19 @@ export const OLM = () => {
         stroke="#F26633"
         strokeMiterlimit="10"
       />
-      <path
-        d="M7.5293 20.7058H11.294"
-        stroke="#F26633"
-        strokeMiterlimit="10"
-      />
+      <path d="M7.5293 20.7058H11.294" stroke="#F26633" strokeMiterlimit="10" />
       <path
         d="M62.1174 32H16.9409V39.5294H62.1174V32Z"
         stroke="#F26633"
         strokeMiterlimit="10"
       />
-      <path
-        d="M7.5293 35.7646H11.294"
-        stroke="#F26633"
-        strokeMiterlimit="10"
-      />
+      <path d="M7.5293 35.7646H11.294" stroke="#F26633" strokeMiterlimit="10" />
       <path
         d="M62.1174 47.0588H16.9409V54.5883H62.1174V47.0588Z"
         stroke="#F26633"
         strokeMiterlimit="10"
       />
-      <path
-        d="M7.5293 50.8235H11.294"
-        stroke="#F26633"
-        strokeMiterlimit="10"
-      />
+      <path d="M7.5293 50.8235H11.294" stroke="#F26633" strokeMiterlimit="10" />
       <path
         d="M9.41162 9.41174V1.88232"
         stroke="#F26633"
@@ -1631,3 +1619,18 @@ export const RightIcon = () => {
     </svg>
   );
 };
+
+export const NextBtnIcon = ({ ...props }) => (
+  <svg
+    width={8}
+    height={16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M1.025 16L0 14.824 5.95 8 0 1.176 1.025 0 8 8l-6.975 8z"
+      fill="#110D3C"
+    />
+  </svg>
+);

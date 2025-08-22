@@ -4,7 +4,10 @@ import Section from "@/components/Section";
 import SwiperCarousel from "@/components/SwiperCarousel";
 import ProductCard from "./cards/ProductCard";
 import { Navigation, Pagination } from "swiper/modules";
-import { RightIcon } from "@/utils/HospitalityLandingPageIcons/Icons";
+import {
+  NextBtnIcon,
+  RightIcon,
+} from "@/utils/HospitalityLandingPageIcons/Icons";
 
 export interface OurProductsProps {
   title: string;
@@ -32,7 +35,7 @@ const OurProduct: React.FC<OurProductsProps> = ({
               {title}
             </h2>
 
-            <h3 className="md:text-5xl/[4rem] text-blue-dark font-medium">
+            <h3 className="md:text-5xl/[4rem] text-2xl text-blue-dark font-medium">
               {subTitle}
             </h3>
           </div>
@@ -40,7 +43,7 @@ const OurProduct: React.FC<OurProductsProps> = ({
             <p className="text-[#363636] text-lg montserrat">{description}</p>
           </div>
         </div>
-        <div className="bg-blue-dark w-full p-5 md:p-8 rounded-3xl mt-8 md:mt-14 relative">
+        <div className="bg-blue-dark w-full p-9 md:p-8 rounded-3xl mt-8 md:mt-14 relative">
           <SwiperCarousel
             data={items}
             modules={[Navigation, Pagination]}
@@ -62,12 +65,13 @@ const OurProduct: React.FC<OurProductsProps> = ({
             }}
             renderSlide={(item) => <ProductCard {...item} />}
           />
-          <button className="absolute md:right-0 right-[-22px] top-[40%] z-10 btn-next disabled:hidden ">
-            <RightIcon />
-          </button>
-          <button className="absolute md:left-0 left-[-22px] top-[39%] z-10 rotate-180 btn-prev disabled:hidden ">
-            <RightIcon />
-          </button>
+          <div className="disabled:hidden rotate-180 cursor-pointer btn-prev bg-white flex items-center justify-center rounded-full md:w-12 w-10 shadow-xl  md:-left-5 -left-[14px] aspect-square absolute top-1/2 -translate-y-[100%] z-50">
+            <NextBtnIcon />
+          </div>
+
+          <div className="disabled:hidden cursor-pointer btn-next absolute bg-white flex items-center justify-center rounded-full md:w-12 w-10 shadow-xl  md:-right-5 -right-[14px] aspect-square top-1/2 -translate-y-[100%] z-50">
+            <NextBtnIcon />
+          </div>
         </div>
         <div className="product-pagination flex items-center justify-center mt-4 md:mt-6"></div>
       </Container>

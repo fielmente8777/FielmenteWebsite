@@ -13,7 +13,7 @@ export const OurServiceCard = ({
 }: ChooseCardProsData) => {
   return (
     <div
-      className={`flex flex-col gap-4 shadow-md hover:shadow-none rounded-xl p-6 min-h-72 bg-white poppins ${subIconTitle && `border-[0.5px] border-orange-primary`}`}
+      className={`flex w-full flex-col gap-4 shadow-md hover:shadow-none rounded-xl p-6 min-h-72 bg-white poppins ${subIconTitle && `border-[0.5px] border-orange-primary`}`}
     >
       <div className="flex items-center">{icon}</div>
       {subIconTitle && (

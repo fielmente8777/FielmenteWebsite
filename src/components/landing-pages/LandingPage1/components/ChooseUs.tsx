@@ -1,7 +1,10 @@
+"use client";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import React from "react";
 import { OurServiceCard } from "./cards/OurServiceCard";
+import SwiperCarousel from "@/components/SwiperCarousel";
+import { Autoplay } from "swiper/modules";
 
 interface ChopseUsProps {
   title: string;
@@ -36,20 +39,26 @@ const ChooseUs = ({ title, subTitle, description, items }: ChopseUsProps) => {
           </div>
         </div>
 
-        <div className="w-full p-2 mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* <div className="w-full p-2 mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, index) => (
             <OurServiceCard key={index} {...item} />
           ))}
+        </div> */}
+        <div className="w-full md:p-2 md:mt-14 mt-6">
+          <SwiperCarousel
+            data={items}
+            slidesPerView={1}
+            spaceBetween={24}
+            breakpoints={{
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Autoplay]}
+            renderSlide={(item) => <OurServiceCard {...item} />}
+          />
         </div>
-
-        {/* <div className="max-w-2xl mx-auto mt-12 text-center space-y-12">
-                    <Link
-                        className="inline-block bg-orange-primary text-white px-4 py-2 rounded-md"
-                        href={`${button?.href}`}
-                    >
-                        {button?.label}
-                    </Link>
-                </div> */}
       </Container>
     </Section>
   );
