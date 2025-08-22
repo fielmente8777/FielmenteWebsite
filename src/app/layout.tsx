@@ -106,7 +106,7 @@ export default function RootLayout({
         {/* <!-- Clarity tracking code for Fielmente new 06 09 2024--> */}
         <Script
           id="clarity-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -118,7 +118,7 @@ export default function RootLayout({
 
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -131,7 +131,7 @@ export default function RootLayout({
 
         {/* <Script
           id="google-conversion-tracking"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `gtag('event', 'conversion', {'send_to': 'AW-10860806708/6GvFCPKGytgZELSE67oo'});`,
           }}
@@ -139,11 +139,12 @@ export default function RootLayout({
 
         <Script
           async
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-5H2JL2ZPTS"
         ></Script>
         <Script
           id="gtag-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -153,7 +154,9 @@ export default function RootLayout({
         />
 
         {/* LeadBooster Configuration Script */}
-        <script
+        <Script
+        id=""
+        strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.pipedriveLeadboosterConfig = {
@@ -185,12 +188,12 @@ export default function RootLayout({
         {/* <script
           src="https://leadbooster-chat.pipedrive.com/assets/loader.js"
           async
-        ></script> */}
+        ></cript> */}
         <Salesiq />
 
         <Script
           id="google-tag-manager"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -204,7 +207,9 @@ export default function RootLayout({
 
         {/* <Script src="https://cdn-in.pagesense.io/js/60034673689/951315c77e9d4021b7f24a6ebc690257.js" /> */}
 
-        <script
+        <Script
+        id=""
+        strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce(‘https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js’); })(document,‘script’); })(‘bElvO73o52V7ZMqj’);

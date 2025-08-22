@@ -121,7 +121,7 @@ const WhyUs: React.FC = () => {
         </Swiper>
 
         <div className="flex justify-center items-center gap-0 press">
-          <button className="bullets-Portfolio"></button>
+          <div className="bullets-Portfolio"></div>
         </div>
       </div>
 
