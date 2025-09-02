@@ -36,7 +36,7 @@
     "src/app/landing-page/components/chooseUs.tsx",
     "src/components/Footer/Footer2.tsx",
     "src/components/Footer/[LandingFooter.tsx]"
-  ],
+, "src/app/(home)/components/[chooseUs.tsx]"  ],
   "exclude": [
     "node_modules"
   ]

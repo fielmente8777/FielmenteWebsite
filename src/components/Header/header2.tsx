@@ -1,98 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import "./Header.scss";
-import Link from "next/link";
-import { Nav_Links } from "./Nav_Links";
 import Image from "next/image";
+import Link from "next/link";
+import { useContext, useState } from "react";
 import Logo from "../../../public/images/logo.webp";
-import { TiArrowSortedDown } from "react-icons/ti";
+import "./Header.scss";
 
-import { FaPhone } from "react-icons/fa6";
-import MobileNav from "./MobileNav";
+import { PopupForm } from "@/app/landing-page/components";
+import { OutlineDrpopdown } from "@/utils/icons";
+import { usePathname } from "next/navigation";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-import { usePathname } from "next/navigation";
-import { OutlineDrpopdown } from "@/utils/icons";
-import { PopupForm } from "@/app/landing-page/components";
+import MobileNav from "./MobileNav";
+import { Nav_Links } from "./Nav_Links";
+import DataContext from "@/contextApi/DataContext";
 
 const Header2 = () => {
   const pathname = usePathname();
   const [showModal, setShowModal] = useState(false);
 
   const [isNavOpen, setIsNavOpen] = useState(false);
-
- // const [hasShownPopup, setHasShownPopup] = useState(false); // Prevent multiple triggers
-
-  // useEffect(() => {
-  //   if (pathName === "/thank-you/") return;
-  //   // Detect mouse movement near the top for desktop
-  //   const handleMouseMove = (e: MouseEvent) => {
-  //     if (e.clientY < 50 && !hasShownPopup) {
-  //       setShowModal(true);
-  //       setHasShownPopup(true);
-  //     }
-  //   };
-
-  //   // Detect touch and scroll behavior for mobile/tablet
-  //   const handleTouchOrScroll = () => {
-  //     if (!hasShownPopup) {
-  //       setShowModal(true);
-  //       setHasShownPopup(true);
-  //     }
-  //   };
-
-  //   // Detect visibility change
-  //   const handleVisibilityChange = () => {
-  //     if (document.visibilityState === "hidden" && !hasShownPopup) {
-  //       setShowModal(true);
-  //       setHasShownPopup(true);
-  //     }
-  //   };
-
-  //   // Handle back button press
-  //   const handleBackButton = () => {
-  //     if (!hasShownPopup) {
-  //       setShowModal(true);
-  //       setHasShownPopup(true);
-  //     }
-  //   };
-
-  //   // Add a fake history state to detect back button
-  //   const addFakeHistoryState = () => {
-  //     history.pushState({}, "", window.location.href);
-  //   };
-
-  //   // Add event listeners
-  //   window.addEventListener("mousemove", handleMouseMove); // For desktop
-  //   window.addEventListener("scroll", handleTouchOrScroll, { passive: true }); // For mobile/tablet scroll
-  //   window.addEventListener("touchmove", handleTouchOrScroll, {
-  //     passive: true,
-  //   }); // For mobile/tablet touch
-  //   document.addEventListener("visibilitychange", handleVisibilityChange);
-  //   window.addEventListener("popstate", handleBackButton);
-
-  //   // Add fake history state
-  //   addFakeHistoryState();
-
-  //   // Cleanup listeners
-  //   return () => {
-  //     window.removeEventListener("mousemove", handleMouseMove);
-  //     window.removeEventListener("scroll", handleTouchOrScroll);
-  //     window.removeEventListener("touchmove", handleTouchOrScroll);
-  //     document.removeEventListener("visibilitychange", handleVisibilityChange);
-  //     window.removeEventListener("popstate", handleBackButton);
-  //   };
-  // }, [hasShownPopup, pathName]);
-
-
-  
+  const { setIsOpenPopupForm } = useContext(DataContext);
 
   return (
     <>
       {pathname === "/thank-you/" ? (
         ""
       ) : (
-        <header>
+        <header className="fixed top-0 left-0 w-full z-[9999]">
           <nav className="max-width nav-bar-container">
             {/* Logo Container***** */}
             <Link
@@ -113,94 +47,84 @@ const Header2 = () => {
                 sizes="100px"
               />
             </Link>
-
-            {/* Links Container******** */}
-            <div className="links-container">
-              {Nav_Links.map((Links, Index) => {
+            <ul className="lg:flex hidden item-center gap-10">
+              {Nav_Links.map((link, index) => {
+                // const id = index + 1;
                 return (
-                  <div key={Index} className="flex items-center gap-6">
-                    <div className="links">
-                      <Link
-                        href={Links.src}
-                        className="flex items-center gap-2"
-                      >
-                        {Links.linkName}{" "}
-                        {Links.subLinks && (
-                          <button className="dropdown-1">
-                            <OutlineDrpopdown />
-                          </button>
-                        )}
-                      </Link>
-                      {Links.subLinks && (
-                        <ul className="sub-links-container">
-                          {Links.subLinks.map((SubLinks, Index) => {
-                            return (
-                              <li key={Index} className="sub-links">
+                  <li key={index} className="relative nav">
+                    <Link
+                      href={link.src ? link.src : "#"}
+                      className="relative text-nowrap py-2 capitalize flex items-center gap-1 text-dark"
+                    >
+                      {link.linkName}
+                      <span className="span-border"></span>
+                      {link.subLinks && (
+                        <span className="icon duration-300 transition-all ease-in-out">
+                          <OutlineDrpopdown />
+                        </span>
+                      )}
+                    </Link>
+                    {link.subLinks && (
+                      <span className="nav-1">
+                        {link.subLinks.map((subLink, index) => {
+                          return (
+                            <>
+                              <span
+                                className="relative group nav-2"
+                                key={index + 1}
+                              >
                                 <Link
-                                  href={SubLinks.src}
-                                  className="flex items-center gap-2"
+                                  href={subLink.src ? subLink.src : "#"}
+                                  className={`w-full text-nowrap py-2 px-4 flex items-center gap-1 group capitalize text-dark ${pathname === subLink.src ? "bg-primary !text-white" : ""}`}
                                 >
-                                  {SubLinks.linkName}{" "}
-                                  {SubLinks.subLinks && (
-                                    <button className="dropdown-2">
+                                  {subLink.linkName}
+                                  {subLink.subLinks && (
+                                    <span className="group-hover:rotate-90 -rotate-90 duration-300 transition-all ease-in-out">
                                       <OutlineDrpopdown />
-                                    </button>
+                                    </span>
                                   )}
                                 </Link>
-                                {SubLinks.subLinks && (
-                                  <ul className="child-sub-links-container z-20">
-                                    {SubLinks.subLinks.map(
-                                      (SubLinks, Index) => {
+                                {subLink.subLinks && (
+                                  <span className="nav-link">
+                                    {subLink.subLinks?.map(
+                                      (nestedSubLink, nestedIndex) => {
                                         return (
-                                          <li key={Index} className="sub-links">
+                                          <span
+                                            className=""
+                                            key={nestedIndex + 2}
+                                          >
                                             <Link
-                                              href={SubLinks.src}
-                                              className="z-20"
+                                              href={
+                                                nestedSubLink.src
+                                                  ? nestedSubLink.src
+                                                  : "#"
+                                              }
+                                              className={`w-full text-nowrap py-2 px-4 flex items-center text-light gap-1 group capitalize hover:bg-gray-200 ${pathname === nestedSubLink.src ? "bg-primary !text-white" : ""}`}
                                             >
-                                              {SubLinks.linkName}
+                                              {nestedSubLink.linkName}
                                             </Link>
-                                          </li>
+                                          </span>
                                         );
                                       }
                                     )}
-                                  </ul>
+                                  </span>
                                 )}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      )}
-                    </div>
-
-                    {/* For Right Border***** */}
-                    {/* {Index >= 0 && Index < Nav_Links.length - 1 && (
-                      <div className="w-[0.14rem] h-6 bg-black"></div>
-                    )} */}
-                  </div>
+                              </span>
+                            </>
+                          );
+                        })}
+                      </span>
+                    )}
+                  </li>
                 );
               })}
-              {/* <div>
-                <Link
-                  href={"tel:+919501868775"}
-                  className="flex contact-container items-center gap-1 border border-blue-dark rounded-md bg-blue-dark px-4 py-2 text-white"
-                >
-                  <OutLineCall /> +919501868775
-                </Link>
-              </div> */}
-              <div>
-                <button
-                  // href={"tel:+919501868775"}
-                  onClick={() => setShowModal(true)}
-                  className="flex items-center gap-1 bg-[#F26633] hover:bg-white hover:text-[#F26633] hover:scale-95 hover:shadow-lg transition ease-in-out duration-300 active:scale-100 border border-[#F26633]  px-4 py-3 text-white rounded-[8px]"
-                >
-                  {/* <OutLineCall /> */}
-                  Free Consultation
-                </button>
-              </div>
-            </div>
-
-            {/* Contact Container***** */}
-
+            </ul>
+            <button
+              onClick={() => setIsOpenPopupForm(true)}
+              className="inline-flex max-lg:hidden items-center justify-center px-8 py-4 tracking-wide text-secondary border border-secondary rounded-lg hover:text-white hover:bg-secondary duration-300 ease-in-out active:scale-95"
+            >
+              Schedule Call
+            </button>
             {/* Hamburger Menu **** */}
             <div className="xl:hidden z-50">
               {isNavOpen ? (
@@ -234,10 +158,9 @@ const Header2 = () => {
       {showModal && (
         <PopupForm setShowModal={setShowModal} showModal={showModal} />
       )}
+      <div className="md:mt-16 mt-24"></div>
     </>
   );
 };
 
 export default Header2;
-
-

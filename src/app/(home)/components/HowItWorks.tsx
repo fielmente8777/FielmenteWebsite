@@ -1,0 +1,34 @@
+import { howItWorksPropsType } from "@/@types/@types";
+import { HowItWorksCard } from "@/components/cards";
+import { SectionWithContainer } from "@/components/sectionComponants";
+import { SectionHeadingDesc } from "@/components/typography";
+
+const HowItWorks: React.FC<howItWorksPropsType> = ({
+  title,
+  subTitle,
+  description,
+  cards,
+}) => {
+  return (
+    <SectionWithContainer sectionClassName="relative after:content-[''] after:inset-0 after:absolute after:bg-[#f5f5f5] after:z-[-2]">
+      <div className="md:space-y-14 space-y-8">
+        <div className="max-w-3xl mx-auto w-full">
+          <SectionHeadingDesc
+            title={title}
+            subTitle={subTitle}
+            description={description[0]}
+            subTitleColor="secondary"
+            textcenter
+          />
+        </div>
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 work_bg_class">
+          {cards.map((card, index) => (
+            <HowItWorksCard key={index} {...card} />
+          ))}
+        </div>
+      </div>
+    </SectionWithContainer>
+  );
+};
+
+export default HowItWorks;

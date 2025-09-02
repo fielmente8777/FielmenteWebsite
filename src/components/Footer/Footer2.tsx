@@ -1,417 +1,118 @@
-"use client";
 import Link from "next/link";
+import { footerData, policyLinks } from "./footerData";
 import Image from "next/image";
-import Logo from "../../../public/images/landingPage/logo2.png";
-// import {
-//   OutlineMailIcon,
-//   OutlinePhoneIcon,
-//   OutLineLocationIcon,
-// } from "../Header/LandingHeader";
-import { useState } from "react";
-import { PopupForm } from "@/app/landing-page/components";
-import Container from "../Container";
-import { TrustPiolet } from "../../app/landing-page/components/marketingAgency";
-import {
-  FillFacebook,
-  FillInstagram,
-  FillLinkedin,
-  FillTwitter,
-  Google,
-} from "@/utils/icons";
-// import Section from "../Section";
-import axios from "axios";
-import { usePathname, useRouter } from "next/navigation";
+import { Container } from "../sectionComponants";
 
 const Footer2 = () => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const currentYear = new Date().getFullYear();
-  const [showModal, setShowModal] = useState(false);
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPhone, setUserPhone] = useState("");
-  const [openPopup, setOpenPopup] = useState(false);
-  const [popupMsg, setPopupMsg] = useState("");
-  const [loader, setLoader] = useState(false);
-  const [formRes, setFormRes] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  // const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
-
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
-    if (value.length <= 10) {
-      setUserPhone(value);
-      setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
-    }
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setUserEmail(value);
-    setEmailErrorMessage(
-      !emailRegex.test(value) ? "Please enter a valid email address" : ""
-    );
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormRes(true);
-
-    try {
-      setLoader(true);
-      const { data } = await axios.post(
-        `https://nexon.eazotel.com/eazotel/addcontacts`,
-        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
-        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/mfxRiQ3c#generic-webhook`,
-        {
-          email: userEmail,
-          name: userName,
-          phone: `${userPhone}`,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (data?.Status) {
-        setLoader(false);
-        // // setPopupMsg("You information has been Received");
-        router.push(`/thank-you/`);
-        setOpenPopup(true);
-        // console.log(data.Status);
-        setFormRes(true);
-        setUserName("");
-        setUserEmail("");
-        setUserPhone("");
-      } else {
-        setLoader(false);
-        setPopupMsg("Something went wrong!");
-        setOpenPopup(false);
-        setFormRes(false);
-      }
-    } catch (error) {
-      setLoader(false);
-      console.error("Error submitting form:", error);
-      setFormRes(false);
-      alert("Something went wrong!");
-    }
-  };
-  // const handleNewsletter = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const data = {
-  //     // Domain: "abhijeet",
-  //     Domain: "fielmente",
-  //     email: email,
-  //   };
-  //   try {
-  //     const response = await fetch(host, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(data),
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   setName("");
-  //   setEmail("");
-  // };
-  const aboutLinks = [
-    {
-      title: "home",
-      link: "/",
-    },
-    {
-      title: "about us",
-      link: "/about-fielmente-best-hospitality-marketing-agency",
-    },
-    {
-      title: "reviews",
-      link: "/#testimonials",
-    },
-    {
-      title: "blogs",
-      link: "/blogs",
-    },
-    {
-      title: "case studies",
-      link: "#",
-    },
-  ];
-  const services = [
-    {
-      title: "Hotel Marketing",
-      link: "/industries-we-serve/hotel-marketing-agency",
-    },
-    {
-      title: "Hotel Social Media",
-      link: "/industries-we-serve/hotel-marketing-agency/hotel-social-media",
-    },
-    {
-      title: "Hotel Ads",
-      link: "/industries-we-serve/hotel-marketing-agency/hotel-seo",
-    },
-    {
-      title: "Restaurant Marketing",
-      link: "/industries-we-serve/restaurant-marketing-agency",
-    },
-    {
-      title: "Restaurant Social Media",
-      link: "/industries-we-serve/restaurant-marketing-agency/restaurant-social-media",
-    },
-    {
-      title: "Cloud Kitchen Marketing",
-      link: "/industries-we-serve/cloud-kitchen-marketing-agency",
-    },
-    {
-      title: "Cloud Kitchen Social Media",
-      link: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media",
-    },
-
-    {
-      title: "Social Media Marketing",
-      link: "/hospitality-marketing-services/social-media-marketing-agency",
-    },
-    {
-      title: "Search Engine Optimization (SEO)",
-      link: "/hospitality-marketing-services/seo-agency",
-    },
-    {
-      title: "Paid Ad Campaigns",
-      link: "/hospitality-marketing-services/google-ads-agency",
-    },
-  ];
-  const contactLinks = [
-    {
-      title:
-        "Fielmente hospitality, Second Floor, ALTF Coworking, Plot No. 21 & 21A, Sector 142, Noida, Uttar Pradesh 201304",
-        // "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
-      link: "https://maps.app.goo.gl/xaNHF5Ut48tSB69Y8?g_st=aw",
-      // link: "https://maps.app.goo.gl/6skWVHbH8e92D1Gi7",
-    },
-    {
-      title: "Call: +91 95018 68775",
-      link: "tel:+919501868775",
-    },
-    {
-      title: "Email: sachin@fielmente.com",
-      link: "mailto:sachin@fielmente.com",
-    },
-    {
-      title: "Contact",
-      link: "/contact",
-    },
-    {
-      title: "Free consultation",
-      link: "#contactForm",
-    },
-    {
-      title: "Schedule a demo",
-      link: "#contactForm",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: <FillFacebook />,
-      link: "https://www.facebook.com/Fielmentemarketing/",
-    },
-    {
-      icon: <FillTwitter />,
-      link: "https://x.com/fieladvisors?lang=en",
-    },
-    {
-      icon: <FillLinkedin />,
-      link: "https://www.linkedin.com/company/fielmente/",
-    },
-    {
-      icon: <FillInstagram />,
-      link: "https://www.instagram.com/fielmente_hospitality/",
-    },
-  ];
-
+const currentYear = new Date().getFullYear();
   return (
-    <footer className="pb-6 bg-blue-dark max-w-[1540px] mx-auto ">
-      <section
-        className="lg:py-11 max-md:pt-10 bg-no-repeat bg-cover bg-center bg-[url('/images/footer-bg.webp')]"
-        style={{ backgroundSize: "100% 95%" }}
-      >
-        <Container>
-          <div className="flex flex-col items-start gap-8">
-            <div className="h-[5.625rem] relative aspect-[4/1.95]">
-              <Image src={Logo} alt="logo" fill className="object-contain" />
-            </div>
-            <div className="grid w-full lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
-              {/* About */}
-              <div>
-                <h2 className="text-3xl text-orange-primary font-bold mb-4">
-                  About
-                </h2>
-                <ul className="flex flex-col gap-4">
-                  {aboutLinks.map((item, index) => (
-                    <li
-                      className="text-base text-[#787878] capitalize"
-                      key={index}
-                    >
-                      <Link href={item.link}>{item.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Services */}
-              <div>
-                <h2 className="text-3xl text-orange-primary font-bold mb-4">
-                  Services
-                </h2>
-                <ul className="flex flex-col gap-4">
-                  {services.map((item, index) => (
-                    <li
-                      className="text-base text-[#787878] capitalize"
-                      key={index}
-                    >
-                      <Link href={item.link ? item.link : "/"}>
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <h2 className="text-xl text-orange-primary font-bold mb-4">
-                  Get in Touch
-                </h2>
-                <ul className="flex flex-col gap-4">
-                  {contactLinks.map((item, index) => (
-                    <li className="text-base text-[#787878]" key={index}>
-                      {item.link ? (
-                        <Link href={item.link}>{item.title}</Link>
-                      ) : (
-                        <p>{item.title}</p>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Newsletter */}
-              <div>
-                <h2 className="text-3xl text-orange-primary font-bold mb-4">
-                  Newsletter
-                </h2>
-                <div className="flex flex-col gap-4">
-                  <form
-                    className="flex flex-col gap-4 text-[#3B3B3B]"
-                    onSubmit={handleSubmit}
-                  >
-                    <input
-                      className="w-full bg-[#F1F1F1] rounded-sm p-3 outline-none"
-                      type="text"
-                      placeholder="Name"
-                      value={userName}
-                      onChange={(e) => setUserName(e.target.value)}
-                    />
-                    <input
-                      className="w-full bg-[#F1F1F1] rounded-sm p-3 outline-none"
-                      type="email"
-                      placeholder="Email Id"
-                      value={userEmail}
-                      onChange={handleEmailChange}
-                    />
-                    <input
-                      className="w-full bg-[#F1F1F1] rounded-sm p-3 no-spinners outline-none"
-                      type="number"
-                      placeholder="Phone Number"
-                      value={userPhone}
-                      onChange={handlePhoneChange}
-                    />
-                    <button
-                      className="bg-orange-primary text-white rounded-sm hover:bg-white hover:text-orange-primary border border-solid border-orange-primary py-3 w-full flex items-center justify-center font-medium"
-                      type="submit"
-                    >
-                      Subscribe
-                    </button>
-                  </form>
-                  <p className="text-sm text-[#787878]">
-                    By submitting this form you are confirming that you have
-                    read and agree to Fielmente
-                    <span className="text-[#F2B203]"> Terms</span> &
-                    <span className="text-[#F2B203]"> Privacy Policy</span>.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex max-md:flex-col gap-6 lg:items-center justify-between w-full lg:mt-4">
-              <div className="flex items-center gap-5">
-                <div className="">
-                  <TrustPiolet />
-                </div>
-                <div className="">
-                  <Google />
-                </div>
-              </div>
-              <div className="flex flex-col gap-4">
-                <h3 className="text-xl font-semibold text-orange-primary">
-                  Follow Us:
-                </h3>
-                <ul className="flex  items-center gap-4">
-                  {socialLinks.map((item, index) => (
-                    <li key={index} className="max-md:p-2 lg:pe-2 lg:py-2">
-                      <Link href={item.link} target="_blank" rel="noreferrer">
-                        {item.icon} <span className="sr-only">icon</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <Container>
-        <div className="h-[1px] w-full bg-[#3B3B3B] mb-10"></div>
-        <div className="flex max-md:flex-col items-center gap-3 justify-between w-full">
-          <p className="text-sm text-[#787878] max-md:text-center flex max-md:flex-col items-center justify-center gap-1">
-            © {currentYear} Fielmente Hospitality Marketing Agency. All Rights
-            Reserved |{" "}
-            <span className="">
-              <Link target="_blank" href="https://usa.fielmente.com/">
-                USA
-              </Link>{" "}
-              |{" "}
-              <Link target="_blank" href="https://dubai.fielmente.com/">
-                Dubai
-              </Link>{" "}
-              |{" "}
-              UK
-            </span>
-          </p>
-          <div className="flex items-center gap-4">
-            <Link href={"/privacy-policy"} className="text-sm text-[#787878] ">
-              Privacy Policy
-            </Link>
+    <footer className="max_screen_width relative after:bg-primary after:bg-cover after:bg-no-repeat after:bg-center after:w-full after:h-full after:absolute after:inset-0 after:z-[-2]">
+      <Container className="md:py-[7.5rem] py-8 relative after:absolute md:after:inset-0 max-md:after:top-6 max-md:after:left-4 max-md:after:w-[90%] after:bg-[url('/map.png')] after:bg-contain after:bg-no-repeat after:opacity-5 md:after:bg-center after:w-full after:h-full after:z-[-1]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-14">
+          <div className="flex flex-col gap-6">
             <Link
-              href={"/terms-and-conditions"}
-              className="text-sm text-[#787878] "
+              href="/"
+              className="relative w-full max-w-[179px]  aspect-[4/1.46]"
             >
-              Terms & Conditions
+              <Image
+                src={footerData.logo}
+                alt="fielment logo"
+                fill
+                className="object-cover"
+                priority
+                loading="eager"
+                sizes="100vw"
+              />
             </Link>
+            <p className="text-white md:text-xl">{footerData.description}</p>
+            {footerData.linksData.slice(0, 1).map((item, index) => (
+              <div className="flex flex-col gap-2 md:mt-4" key={index}>
+                <h3 className="text-secondary sm_font_s font-medium">
+                  {item.title}
+                </h3>
+                <ul className="flex items-center gap-7">
+                  {item.listOfLinks.map((link, index) => (
+                    <li key={index} className="flex items-center">
+                      <Link
+                        href={link.href}
+                        target="_blank"
+                        className="flex items-center justify-center hover:bg-secondary text-secondary hover:text-white bg-white rounded-lg w-10 h-10 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 shadow-4d"
+                      >
+                        <span className="sr-only">{link.label}</span>
+                        {link.icon}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          {footerData.linksData.slice(1, 3).map((item, index) => (
+            <div className="flex flex-col md:gap-6 gap-4" key={index}>
+              <h3 className="text-secondary sm_font_s font-medium">
+                {item.title}
+              </h3>
+              <ul className="flex flex-col md:gap-5 gap-4">
+                {item.listOfLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-white hover:text-secondary transition-all duration-300 ease-in-out  md:text-xl"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <div className="space-y-10">
+            {footerData.linksData.slice(3).map((item, index) => (
+              <div className="flex flex-col gap-4" key={index}>
+                <h3 className="text-secondary sm_font_s font-medium">
+                  {item.title}
+                </h3>
+                <ul className="flex flex-col gap-6">
+                  {item.listOfLinks.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        href={link.href}
+                        className="text-white hover:text-secondary flex gap-2 transition-all duration-300 ease-in-out md:text-xl"
+                      >
+                        {link.icon && <span className="mt-1">{link.icon}</span>}
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
-
-      {pathname !== "/thank-you/" && (
-        <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      )}
+      <div className="border-t border-white max-md:pb-6">
+        <Container>
+          <div className="flex max-md:flex-col items-center justify-between">
+            <p className="text-white text-center py-4">
+              © {currentYear} Fielmente Hospitality Marketing Agency
+            </p>
+            <ul className="flex items-center gap-6">
+              {policyLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-white hover:text-secondary flex gap-2 transition-all duration-300 ease-in-out "
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </div>
     </footer>
   );
-};
+}
 
 export default Footer2;

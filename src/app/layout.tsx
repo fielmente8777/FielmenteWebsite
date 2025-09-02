@@ -1,16 +1,15 @@
+import Call from "@/components/Call";
+import Footer from "@/components/Footer/Footer";
+import NavBar from "@/components/Header/NavBar";
+import PopupFormNew from "@/components/PopupFormNew";
+import Whatsapp from "@/components/WhatsApp";
+import Salesiq from "@/components/zohochatbot/Salesiq";
+import { DataProvider } from "@/contextApi/DataContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.scss";
-import Footer from "@/components/Footer/Footer";
-import Header2 from "@/components/Header/header2";
-import Call from "@/components/Call";
-import Whatsapp from "@/components/WhatsApp";
-import NavBar from "@/components/Header/NavBar";
 import Script from "next/script";
-import Salesiq from "@/components/zohochatbot/Salesiq";
-import RenderChatBot from "@/components/chatbot/RenderChatBot";
-import { DataProvider } from "@/contextApi/DataContext";
-import PopupFormNew from "@/components/PopupFormNew";
+import "../styles/globals.scss";
+import "./newstyle.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -224,6 +223,7 @@ export default function RootLayout({
         <DataProvider>
           {/* <RenderChatBot /> */}
           <NavBar />
+          
           {children}
           <Footer />
           <Call />
