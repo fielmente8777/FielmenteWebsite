@@ -5,18 +5,16 @@ import { useContext, useState } from "react";
 import Logo from "../../../public/images/logo.webp";
 import "./Header.scss";
 
-import { PopupForm } from "@/app/landing-page/components";
+import DataContext from "@/contextApi/DataContext";
 import { OutlineDrpopdown } from "@/utils/icons";
 import { usePathname } from "next/navigation";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import MobileNav from "./MobileNav";
 import { Nav_Links } from "./Nav_Links";
-import DataContext from "@/contextApi/DataContext";
 
 const Header2 = () => {
   const pathname = usePathname();
-  const [showModal, setShowModal] = useState(false);
 
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { setIsOpenPopupForm } = useContext(DataContext);
@@ -35,7 +33,7 @@ const Header2 = () => {
               aria-label="fielmente-logo"
               onClick={() => {
                 setIsNavOpen(false);
-                setShowModal(true);
+                setIsOpenPopupForm(true);
               }}
             >
               <Image
@@ -155,9 +153,7 @@ const Header2 = () => {
           <MobileNav setIsOpen={setIsNavOpen} isOpen={isNavOpen} />
         </header>
       )}
-      {showModal && (
-        <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      )}
+     
       <div className="md:mt-16 mt-24"></div>
     </>
   );

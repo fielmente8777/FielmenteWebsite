@@ -7,6 +7,7 @@ import { useContext } from "react";
 import Form from "@/components/Forms/Form";
 import { Container, Section } from "../sectionComponants";
 import { Headings } from "../typography";
+import { FillLocationIcon } from "../../utils/newIcons";
 
 const Banner: React.FC<BannerPropsType> = ({
   title,
@@ -43,9 +44,31 @@ const Banner: React.FC<BannerPropsType> = ({
         <Container className="bg2">
           <div className="flex flex-col gap-8 bg3 pointer-events-none">
             <div className="flex flex-col md:gap-8 xl:gap-2">
+              <div className="flex items-center justify-center md:text-2xl text-white divide-x divide-white">
+                <span className="px-4 flex items-center gap-1">
+                  <span className="text-orange-primary">
+                    <FillLocationIcon />
+                  </span>
+                  <span className="fade-text">
+                    {"GURGAON".split("").map((char, i) => (
+                      <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                        {char}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+                <span className="px-4 fade-text">
+                  {"PUNE".split("").map((char, i) => (
+                    <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                      {char}
+                    </span>
+                  ))}
+                </span>
+              </div>
+
               <Headings
                 level={1}
-                className="text-white text-center x_lg_font_s xl:leading-2"
+                className="text-white text-center max-md:!text-xl x_lg_font_s xl:leading-2 mt-4"
                 heading={title}
               />
 

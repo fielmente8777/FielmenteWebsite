@@ -363,14 +363,16 @@ button {
 
 .bg2 {
     &::after {
-        top: -1.98rem;
-        left: 16.5%;
+        top: 2.8rem;
+        left: 15.2rem;
         width: 68.9px;
         height: 9.94px;
         background-image: url("/home/vector6.png");
         @media (max-width: 768px) {
-            top: -1.98rem;
-            left: 4%;
+            top: 2.2rem;
+            left: 2.8rem;
+            width: 40px;
+            height: 6px
         }
     }
     &::before {
@@ -476,4 +478,26 @@ button {
     @media (max-width: 768px) {
         box-shadow: 0 7px 29px rgba(100, 100, 111, 0.2);
     }
+}
+
+
+.fade-text {
+  display: inline-block;
+
+  span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeIn 0.5s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
