@@ -1,18 +1,13 @@
-import { ConsultationForm, Section } from "@/components";
+import { ConsultationForm, OurClient, Section } from "@/components";
 import ChooseUs from "./chooseUsOld";
+import ContactUsCard from "./ContactUsCard";
+import CountryFlags from "./CountryFlags";
+import HotelPerformacne from "./hotelPerformacne";
 import MarketingAgency from "./marketingAgency";
 import MileStones from "./mileStones";
-import OurServices from "./ourServices";
-import HotelPerformacne from "./hotelPerformacne";
-import { OurClient } from "@/components";
 import OurOTAPartners from "./OurOTAPartners";
+import OurServices from "./ourServices";
 import WhyUs from "./WhyUs";
-import ContactUsCard from "./ContactUsCard";
-import OurClientNew from "./OurClientNew";
-import MIleStonesNew from "./MIleStonesNew";
-import ContactUsCardNew from "./ContactUsCardNew";
-import Riview from "./Riview";
-import CountryFlags from "./CountryFlags";
 
 const PageComponents = () => {
   return (

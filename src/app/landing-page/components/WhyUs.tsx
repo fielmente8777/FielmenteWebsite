@@ -120,9 +120,7 @@ const WhyUs: React.FC = () => {
           ))}
         </Swiper>
 
-        <div className="flex justify-center items-center gap-0 press">
-          <div className="bullets-Portfolio"></div>
-        </div>
+        <div className="flex justify-center bullets-Portfolio items-center gap-0 press"></div>
       </div>
 
       {/* <Pagination /> */}

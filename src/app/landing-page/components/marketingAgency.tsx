@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import SubmitPopup from "./SubmitPopup";
 import { useRouter, usePathname } from "next/navigation";
 import { Form } from "@/components";
+import { FillLocationIcon } from "@/utils/newIcons";
 
 function MarketingAgency() {
   const pathName = usePathname();
@@ -12,6 +13,28 @@ function MarketingAgency() {
     <section className="grid lg:grid-cols-2 gap-10">
       {/* Left Content**** */}
       <div className="flex flex-col justify-center gap-6 text-white">
+        {/* location */}
+        <div className="flex items-center md:text-2xl text-white divide-x divide-white">
+          <span className="pr-4 flex items-center gap-1">
+            <span className="text-orange-primary">
+              <FillLocationIcon />
+            </span>
+            <span className="fade-text">
+              {"GURGAON".split("").map((char, i) => (
+                <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                  {char}
+                </span>
+              ))}
+            </span>
+          </span>
+          <span className="px-4 fade-text">
+            {"PUNE".split("").map((char, i) => (
+              <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                {char}
+              </span>
+            ))}
+          </span>
+        </div>
         <h2 className="md:text-6xl/[4rem] text-3xl w-[100%] font-medium lg:pe-[4rem]">
           Work with the India’s Best{" "}
           {pathName === "/resort/"
@@ -23,22 +46,25 @@ function MarketingAgency() {
           <span className="text-orange-primary font-bold">Agency.</span>
         </h2>
         <p className="text-lg">
-          Transforming {pathName === "/resort/"
+          Transforming{" "}
+          {pathName === "/resort/"
             ? "Resort"
             : pathName === "/hospitality/"
               ? "Hospitality"
               : pathName === "/landing-page/"
                 ? "Hotel"
-                : "Hospitality"} into thriving destinations with our
-          expert {pathName === "/resort/"
+                : "Hospitality"}{" "}
+          into thriving destinations with our expert{" "}
+          {pathName === "/resort/"
             ? "Resort"
             : pathName === "/hospitality/"
               ? "hospitality"
               : pathName === "/landing-page/"
                 ? "hotel"
-                : "hospitality"}  marketing solutions.
+                : "hospitality"}{" "}
+          marketing solutions.
         </p>
-        <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">
+        {/* <div className="flex md:flex-row flex-col md:items-center md:gap-8 gap-3">
           <p className="text-lg flex items-center gap-5">
             Best Reviews on :{" "}
             <span className="lg:block hidden">
@@ -51,7 +77,7 @@ function MarketingAgency() {
             </span>
             <TrustPiolet />
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Right Consulation Form**** */}

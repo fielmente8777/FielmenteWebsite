@@ -1,18 +1,4 @@
 import type { Metadata } from "next";
-import { ConsultationForm, Section } from "@/components";
-import {
-  ChooseUs,
-  ContactUsCard,
-  HotelPerformacne,
-  MarketingAgency,
-  MileStones,
-  OurClients,
-  OurOTAPartners,
-  OurServices,
-  PopupForm,
-  WhyUs,
-} from "./components";
-import Link from "next/link";
 import PageComponents from "./components/PageComponents";
 
 export const metadata: Metadata = {
