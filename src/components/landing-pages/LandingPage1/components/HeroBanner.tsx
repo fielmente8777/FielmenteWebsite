@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import Form from "@/components/Form";
 import HospitalityLandingBannerForm from "@/components/Forms/HospitaltiyLadingBannerForm";
 import Section from "@/components/Section";
+import { FillLocationIcon } from "@/utils/newIcons";
 import React from "react";
 
 interface HeroBannerProps {
@@ -20,15 +21,37 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
         <Container>
           <div className="grid lg:grid-cols-12 lg:gap-0 gap-6 text-white items-center poppins">
             <div className="lg:col-span-8 col-span-1 space-y-8 lg:pr-28">
+               {/* location */}
+                      <div className="flex items-center md:text-2xl text-white divide-x divide-white">
+                        <span className="pr-4 flex items-center gap-1">
+                          <span className="text-orange-primary">
+                            <FillLocationIcon />
+                          </span>
+                          <span className="fade-text">
+                            {"GURGAON".split("").map((char, i) => (
+                              <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                                {char}
+                              </span>
+                            ))}
+                          </span>
+                        </span>
+                        <span className="px-4 fade-text">
+                          {"PUNE".split("").map((char, i) => (
+                            <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                              {char}
+                            </span>
+                          ))}
+                        </span>
+                      </div>
               <h2 className="md:text-6xl/tight text-3xl font-semibold md:text-start text-center">
                 {title}
               </h2>
 
               <h3 className="text-lg md:text-start text-center">{subTitle}</h3>
 
-              <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" />
+              {/* <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" /> */}
 
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 {items?.map((item, index) => (
                   <div key={index} className="space-y-2">
                     <h4 className="text-center text-orange-primary md:text-3xl text-2xl font-bold">
@@ -37,7 +60,7 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
                     <p className="text-sm text-center">{item.subTitle}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             <div className="lg:col-span-4 w-full">

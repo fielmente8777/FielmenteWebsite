@@ -32,7 +32,7 @@ import Section from "@/components/Section";
 import Container from "@/components/Container";
 
 import type { Metadata } from "next";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality SEO Agency - Fielmente",

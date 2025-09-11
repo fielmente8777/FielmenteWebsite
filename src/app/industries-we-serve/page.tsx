@@ -11,7 +11,7 @@ import OurService from "./components/our-service";
 
 import type { Metadata } from "next";
 import Form from "../about-fielmente-best-hospitality-marketing-agency/components/Form";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "Fielmente Marketing Agency - Industries We Serve | Contact Now",

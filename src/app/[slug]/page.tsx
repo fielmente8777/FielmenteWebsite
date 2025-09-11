@@ -1,5 +1,4 @@
 import { blogData } from "../../utils/blogdata";
-import { PopupForm } from "../landing-page/components";
 import DynamicBlog from "./components/DynamicBlog";
 
 

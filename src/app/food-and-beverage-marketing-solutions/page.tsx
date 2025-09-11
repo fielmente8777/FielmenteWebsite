@@ -19,7 +19,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Needs, NeedSeo } from "../industries-we-serve/components";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "Restaurant Marketing Agency India | Restuarant Marketing Company",

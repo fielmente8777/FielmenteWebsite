@@ -4,7 +4,7 @@ import Container from "../Container";
 // import { it } from "node:test";
 import Link from "next/link";
 import Image from "next/image";
-// import { PopupForm } from "@/app/landing-page/components";
+// import { PopupForm } from "@/app/hospitality/components";
 
 const PhoneIcon = () => {
   return (

@@ -18,11 +18,13 @@ import {
   AIConciergeDeskIcon,
   AiFrontDeskIcon,
   AiReservationDeskIcon,
+  AiVoiceAgent,
   BestServ,
   BookingEngine,
   CMS,
   CRM,
   EmailMarketingIcon,
+  LocalSeoIcon,
   PaymentGatewayIcon,
   PerformanceMarketing,
   Professional,
@@ -135,20 +137,20 @@ export const pageData = {
           alt: `hotel-image`,
         },
       },
-      {
-        title: `CAFE`,
-        image: {
-          src: `/weserve/cafe.png`,
-          alt: `hotel-image`,
-        },
-      },
-      {
-        title: `RESTAURANT`,
-        image: {
-          src: `/weserve/resturant.png`,
-          alt: `hotel-image`,
-        },
-      },
+      // {
+      //   title: `CAFE`,
+      //   image: {
+      //     src: `/weserve/cafe.png`,
+      //     alt: `hotel-image`,
+      //   },
+      // },
+      // {
+      //   title: `RESTAURANT`,
+      //   image: {
+      //     src: `/weserve/resturant.png`,
+      //     alt: `hotel-image`,
+      //   },
+      // },
     ],
   },
 
@@ -181,11 +183,7 @@ export const pageData = {
         subTitle: `Enhance your social media presence with expert social media management.`,
         icon: <SSM />,
       },
-      {
-        title: `Email & Whatsapp Marketing`,
-        subTitle: `Reach your audience instantly and personally, with impact.`,
-        icon: <EWM />,
-      },
+      
 
       {
         title: `Booking Engine`,
@@ -312,6 +310,16 @@ export const pageData = {
         title: `AI Chatbot`,
         subTitle: `Automate interactions seamlessly with an AI Chatbot.`,
         icon: <AiChatbotIcon />,
+      },
+      {
+        title: `AI Voice Agent`,
+        subTitle: `Automated, intelligent, and customer-friendly AI Voice Agent`,
+        icon: <AiVoiceAgent />,
+      },
+      {
+        title: `Local SEO`,
+        subTitle: `Optimized, targeted, and revenue-driven Local SEO solutions`,
+        icon: <LocalSeoIcon />,
       },
       {
         title: `CRM`,

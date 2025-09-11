@@ -22,7 +22,7 @@ import Container from "@/components/Container";
 
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 
 export const metadata: Metadata = {
   title: "India's Leading Hospitality Google Ads Agency - Fielmente",

@@ -7,9 +7,9 @@ import {
   OutlineMailIcon,
   OutlinePhoneIcon,
 } from "../Header/landingHeader";
-import { PopupForm } from "@/app/landing-page/components";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { PopupForm } from "@/app/hospitality/components";
 
 const LandingFooter = () => {
   const pathName = usePathname();

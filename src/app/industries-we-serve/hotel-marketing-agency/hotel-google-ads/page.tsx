@@ -22,7 +22,7 @@ import { Accordin } from "../../components/common-hero";
 import WeAreDef from "../hotel-seo/components/WeAreDef";
 
 import type { Metadata } from "next";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 import Contactus from "./Contactus";
 
 export const metadata: Metadata = {

@@ -5,7 +5,7 @@ import Milestones from "./components/Milestones";
 import MakeUsUnique from "./components/MakeUsUnique";
 import Form from "./components/Form";
 import type { Metadata } from "next";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 import { GotEnquiry } from "@/components";
 
 export const metadata: Metadata = {

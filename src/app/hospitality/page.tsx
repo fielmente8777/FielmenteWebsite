@@ -1,15 +1,14 @@
-import { Metadata } from "next";
-import PageComponents from "../landing-page/components/PageComponents";
-import LandingPage1 from "@/components/landing-pages/LandingPage1/LandingPage1";
+import type { Metadata } from "next";
+import PageComponents from "./components/PageComponents";
 
 export const metadata: Metadata = {
-  title: "Fielmente : Hospitality Marketing Agency in India",
+  title: "Fielmente : Hotel Marketing Agency in India",
   description:
-    "Best marketing agency in India for Hospitality, resorts and Hospitality",
+    "Best marketing agency in India for hotels, resorts and restaurant",
   keywords:
-    "Hospitality Marketing Agency, Hospitality marketing service, Hospitality marketing consultant ,Hospitality solutions,Hospitality business services,Hospitality support, hospitality growth,Hospitality marketing strategy,Hospitality marketing planning,Hospitality marketing plan,Hospitality marketing services,Hospitality marketing consultant,Hospitality marketing agency",
+    "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
   alternates: {
-    canonical: "https://fielmente.com/hospitality/",
+    canonical: "https://fielmente.com/landing-page/",
   },
   robots: {
     index: true,
@@ -22,32 +21,29 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  authors: [{ name: "Fielmente", url: "https://fielmente.com/hospitality/" }],
+  authors: [{ name: "Fielmente", url: "https://fielmente.com/landing-page/" }],
   openGraph: {
     title: "Fielmente : Hotel Marketing Agency in India",
     description:
       "Best marketing agency in India for hotels, resorts and restaurant",
-    url: "https://fielmente.com/hospitality/",
+    url: "https://fielmente.com/landing-page/",
     siteName: "Fielmente",
     locale: "en_IN",
     type: "website",
 
     images: [
       {
-        url: "https://fielmente.com/hospitality/images/Fielmente-og.png",
+        url: "https://fielmente.com/landing-page/images/Fielmente-og.png",
         width: 1200,
       },
     ],
   },
 };
 
-const page = () => {
+export default function Home() {
   return (
     <>
-      {/* <PageComponents /> */}
-      <LandingPage1 />
+    <PageComponents />
     </>
   );
-};
-
-export default page;
+}

@@ -1,11 +1,12 @@
 "use client";
 import Section from "@/components/Section";
 import SwiperCarousel from "@/components/SwiperCarousel";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Autoplay } from "swiper/modules";
 import IndustryWeServeCard from "./cards/WeServeCard";
 import Link from "next/link";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
+import DataContext from "@/contextApi/DataContext";
 
 export interface IndustryWeServeProps {
   title: string;
@@ -25,7 +26,7 @@ const IndustryWeServe = ({
   button,
   items,
 }: IndustryWeServeProps) => {
-  const [showModal, setShowModal] = useState(false);
+  const {setIsOpenPopupForm} = useContext(DataContext);
   return (
     <Section>
       <div className="max-w-5xl mx-auto text-center space-y-3 poppins">
@@ -50,7 +51,7 @@ const IndustryWeServe = ({
                 spaceBetween: 2,
               },
             }}
-            className="w-full"
+            className="w-full bg-white"
             renderSlide={(card) => <IndustryWeServeCard {...card} />}
           />
         )}
@@ -59,7 +60,7 @@ const IndustryWeServe = ({
       <div className="md:max-w-2xl w-full max-md:px-4 mx-auto mt-12 text-center space-y-12 poppins">
         <p className="text-gray-primary">{description}</p>
         <button
-          onClick={() => setShowModal(true)}
+          onClick={() => setIsOpenPopupForm(true)}
           className="inline-block bg-orange-primary font-medium p text-white text-lg/[24px] py-4 px-6 rounded-md"
           // href={button?.href}
         >
@@ -67,7 +68,7 @@ const IndustryWeServe = ({
         </button>
       </div>
 
-        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+        {/* <PopupForm setShowModal={setShowModal} showModal={showModal} /> */}
     </Section>
   );
 };

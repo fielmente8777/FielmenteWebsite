@@ -65,7 +65,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "../../../public/images/footer-fielmente.webp";
 import { usePathname } from "next/navigation";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 
 function Footer2() {
   const pathname = usePathname();

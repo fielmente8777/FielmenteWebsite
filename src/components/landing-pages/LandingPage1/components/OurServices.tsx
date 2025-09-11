@@ -7,7 +7,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { OurServiceCard } from "./cards/OurServiceCard";
 import Container from "@/components/Container";
 import { NextBtnIcon, RightIcon } from "@/utils/HospitalityLandingPageIcons/Icons";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 
 interface OurServicesProps {
   title: string;

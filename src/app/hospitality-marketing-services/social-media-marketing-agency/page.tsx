@@ -16,7 +16,7 @@ import Smm08 from "../../../../public/images/SMM-08.webp";
 
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 import ContactBtn3 from "../contactbtn/ContactBtn3";
 
 export const metadata: Metadata = {

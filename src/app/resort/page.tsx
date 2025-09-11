@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import PageComponents from "../landing-page/components/PageComponents";
+import PageComponents from "../hospitality/components/PageComponents";
 
 export const metadata: Metadata = {
   title: "Fielmente : Resort Marketing Agency in India",

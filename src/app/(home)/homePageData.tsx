@@ -46,7 +46,7 @@ export const homePageData = {
   },
   aboutCompanyData: {
     title: "About Company",
-    subTitle: `AI-Powered Hotel Marketing for <b>Smart Hospitality Growth!</b>`,
+    subTitle: `AI-Powered Hotel Marketing Agency for <b>Smart Hospitality Growth!</b>`,
     description: [
       "Transforming hospitality industry businesses into thriving destinations with expert, end-to-end marketing. From social media marketing to search engine optimization and paid campaigns, Fielmente crafts compelling brand stories that attract guests and drive growth.",
       "Collaborate with Fielmente! Let's change the landscape of Hospitality together!",
@@ -182,7 +182,7 @@ export const homePageData = {
   ],
   chooseUsData: {
     title: "Why Choose Us",
-    subTitle: `AI-Driven Innovations for the <b>Hospitality Industry</b>`,
+    subTitle: `AI-Driven Innovations for the <b>Hotel, Resort and Restaurants</b>`,
     cards: [
       {
         icon: <BestServicesIcon />,
@@ -233,7 +233,7 @@ export const homePageData = {
   countriesWeWorkedIn: {
     title: "COUNTRIES WE WORKED",
     subTitle:
-      "Delivering AI-Driven Hospitality Marketing <b>Solutions Globally Since 2020</b>",
+      "Delivering AI-Driven Hotel Marketing <b>Solutions Globally Since 2020</b>",
     imagesSrc: ["/home/country.png"],
   },
   maximizeGrowthData: {

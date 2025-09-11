@@ -1,38 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import Girl from "../../../../public/images/SEO-01-1.webp";
 import Girl2 from "../../../../public/images/SEO-12.webp";
 
 import Girlwithpen from "../../../../public/images/Girlwithpen.webp";
 
-import CircularSocial from "../../../../public/images/social-circle.webp";
 
 import TrustyBrand from "../../../../public/images/hsdgvc.webp";
 import Manwithlaptop from "../../../../public/images/manwithlaptop.jpg";
 import Wd from "../../../../public/images/WD-10.webp";
 
-import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp";
-import Searchengine from "../../../../public/images/SearchEngineOptimization-1024x588-1.webp";
 import Adwords from "../../../../public/images/adwords-and-search-engine-marketing.webp";
 import GoogleAdwords from "../../../../public/images/GoogleAdwordsTargeting-1024x588-1.webp";
+import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp";
+import Searchengine from "../../../../public/images/SearchEngineOptimization-1024x588-1.webp";
 
-import HotelAds from "../../../../public/images/HOTEL-MARKETING.webp";
 import CloudKitchenAds from "../../../../public/images/CLOUD-KITCHEN-MARKETING.webp";
+import HotelAds from "../../../../public/images/HOTEL-MARKETING.webp";
 import RestaurantAds from "../../../../public/images/RESTAURANT-MARKETING.webp";
 
-import GoogleAds11 from "../../../../public/images/SEO-11.webp";
-import GoogleAds15 from "../../../../public/images/SEO-15.webp";
-import GoogleAds10 from "../../../../public/images/SEO-10-1.webp";
-import GoogleAds14 from "../../../../public/images/SEO-14.webp";
 import GoogleAds06 from "../../../../public/images/SEO-06.webp";
+import GoogleAds10 from "../../../../public/images/SEO-10-1.webp";
+import GoogleAds11 from "../../../../public/images/SEO-11.webp";
+import GoogleAds14 from "../../../../public/images/SEO-14.webp";
+import GoogleAds15 from "../../../../public/images/SEO-15.webp";
 
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
-import Section from "@/components/Section";
 import Container from "@/components/Container";
+import Section from "@/components/Section";
 
 import type { Metadata } from "next";
-import { PopupForm } from "@/app/landing-page/components";
 import ContactBtn3 from "../contactbtn/ContactBtn3";
 
 export const metadata: Metadata = {

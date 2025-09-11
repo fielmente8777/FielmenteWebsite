@@ -9,10 +9,10 @@ import {
   WebSiteDevelopmentIcon2,
 } from "@/utils/icons";
 
-const ChooseUs: React.FC = () => {
+const ChooseUsold: React.FC = () => {
   return (
     <Section>
-      <Container>
+      {/* <Container>
         <h2 className="lg:text-5xl text-2xl text-center text-black font-bold">
           Why Choose Us?
         </h2>
@@ -29,7 +29,7 @@ const ChooseUs: React.FC = () => {
             />
           ))}
         </div>
-      </Container>
+      </Container> */}
 
       <Container>
         <article className="max-w-[1100px] mx-auto">
@@ -44,7 +44,7 @@ const ChooseUs: React.FC = () => {
   );
 };
 
-export default ChooseUs;
+export default ChooseUsold;
 
 export interface ChooseCardProsData {
   title: string;

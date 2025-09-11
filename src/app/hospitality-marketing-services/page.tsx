@@ -24,7 +24,7 @@ import Restaurants from "../../../public/images/restaurants.png";
 import kitchens from "../../../public/images/kitchen.png";
 
 import type { Metadata } from "next";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 import Contactbtn1 from "./contactbtn/Contactbtn1";
 import Contactbtn2 from "./contactbtn/Contactbtn2";
 

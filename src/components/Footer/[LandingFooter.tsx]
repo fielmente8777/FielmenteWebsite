@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/images/landingPage/logo2.png";
 import { useState } from "react";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 import Container from "../Container";
 import { TrustPiolet } from "../../app/landing-page/components/marketingAgency";
 import {

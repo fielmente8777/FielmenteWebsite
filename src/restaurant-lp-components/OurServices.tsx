@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 import { useState } from "react";
 
 interface OurServicesProps {
@@ -20,7 +20,7 @@ interface OurServicesProps {
   subTitle: string;
   items: {
     title: string;
-    bold: string;
+    bold?: string;
     icon: JSX.Element;
   }[];
 }
@@ -48,7 +48,7 @@ const OurServices: React.FC<OurServicesProps> = ({
                 <Card
                   key={index}
                   title={item.title}
-                  bold={item.bold}
+                  bold={item.bold || ""}
                   icon={item.icon}
                 />
               ))}
@@ -80,7 +80,7 @@ const OurServices: React.FC<OurServicesProps> = ({
                   <SwiperSlide key={index}>
                     <Card
                       title={item.title}
-                      bold={item.bold}
+                      bold={item.bold || ""}
                       icon={item.icon}
                     />
                   </SwiperSlide>

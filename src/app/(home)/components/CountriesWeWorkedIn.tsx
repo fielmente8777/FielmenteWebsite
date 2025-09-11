@@ -16,7 +16,7 @@ const CountriesWeWorkedIn: React.FC<CountriesWeWorkedInPropsType> = ({
           title={title}
           subTitle={subTitle}
           mdTextCenter
-          wrapperClassName="max-w-5xl mx-auto text-color max-md:px-4"
+          wrapperClassName="max-w-4xl mx-auto text-color max-md:px-4"
         />
         <div className="relative w-full md:aspect-[4/2] aspect-[4/2]">
           <Image

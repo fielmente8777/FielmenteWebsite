@@ -1,13 +1,12 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import Shakinghand from "../../../../public/images/Shakinghand.webp";
 import Girlmeet from "../../../../public/images/Girlmeet.webp";
+import Shakinghand from "../../../../public/images/Shakinghand.webp";
 
 import GoogleAds from "../../../../public/images/GOOGLE-ADS-03-1.webp";
 
-import HotelAds from "../../../../public/images/HOTEL-MARKETING.webp";
 import CloudKitchenAds from "../../../../public/images/CLOUD-KITCHEN-MARKETING.webp";
+import HotelAds from "../../../../public/images/HOTEL-MARKETING.webp";
 import RestaurantAds from "../../../../public/images/RESTAURANT-MARKETING.webp";
 
 import GoogleAds08 from "../../../../public/images/GOOGLE-ADS-08.webp";
@@ -20,9 +19,8 @@ import Monthly from "../../../../public/images/monthly-remport-1-1024x588-1.webp
 
 import Container from "@/components/Container";
 
-import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
-import { PopupForm } from "@/app/landing-page/components";
+import type { Metadata } from "next";
 import ContactBtn3 from "../contactbtn/ContactBtn3";
 
 export const metadata: Metadata = {

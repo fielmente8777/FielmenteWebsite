@@ -14,7 +14,7 @@ const Strategise: React.FC = () => {
   ];
   return (
     <Section className="bg-[#0F110F] text-white lg:py-24">
-      <Container>
+      {/* <Container>
         <article>
           <h2 className="lg:text-4xl text-3xl font-bold text-center">
             This is our Behind the Scene
@@ -37,7 +37,7 @@ const Strategise: React.FC = () => {
             />
           ))}
         </div>
-      </Container>
+      </Container> */}
       <Container>
         <article className="lg:py-14 py-6">
           <h2 className="lg:text-4xl text-2xl font-bold text-center lg:text-start">

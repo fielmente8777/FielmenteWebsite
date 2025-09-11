@@ -6,7 +6,7 @@ import { Needs, NeedSeo } from "../industries-we-serve/components";
 import { EnhancedCustomerService, DirectBookings } from "../../utils/icons";
 
 import type { Metadata } from "next";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "Best Hotel Marketing Company in India - Fielmente",

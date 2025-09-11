@@ -17,7 +17,7 @@ import Smm08 from "../../../public/images/SMM-08.webp";
 
 import type { Metadata } from "next";
 import Form from "@/app/about-fielmente-best-hospitality-marketing-agency/components/Form";
-import { PopupForm } from "../landing-page/components";
+import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "India's Best Hospitality Social Media Marketing Agency - Fielmente",

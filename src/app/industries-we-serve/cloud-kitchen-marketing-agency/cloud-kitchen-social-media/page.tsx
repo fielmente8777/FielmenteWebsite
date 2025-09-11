@@ -15,7 +15,7 @@ import { Accordin } from "../../components/common-hero";
 import type { Metadata } from "next";
 import WantToJoin from "../../components/want-to-join";
 import Mobiles from "../../components/mobiles";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 import Contactus from "./Contactus";
 import ContactBtn from "./ContactBtn";
 

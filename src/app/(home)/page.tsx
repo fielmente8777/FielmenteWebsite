@@ -14,10 +14,15 @@ import {
   OurWork,
   ServicesTitles,
   ServingHospitality,
+  Strategise,
   Testimonials,
 } from "./components";
 import { AddsCard } from "@/components/cards";
 import { homePageData } from "./homePageData";
+import OurServices from "@/components/landing-pages/LandingPage1/components/OurServices";
+import OurProduct from "@/components/landing-pages/LandingPage1/components/OurProduct";
+import { pageData } from "@/components/landing-pages/LandingPage1/data";
+import ChooseUsold from "./components/ChooseUsold";
 
 export default function Home() {
   return (
@@ -26,14 +31,18 @@ export default function Home() {
 
       <MarketingPartners {...homePageData.marketingPartnersData} />
       <AboutCompany {...homePageData.aboutCompanyData} />
-        <ServingHospitality {...homePageData.servingHospitalityData} />
-      <AIPoweredServices {...homePageData.servicesData} />
+      <ServingHospitality {...homePageData.servingHospitalityData} />
+      {/* <AIPoweredServices {...homePageData.servicesData} /> */}
+      {/* new landing page code */}
+      <OurServices {...pageData?.ourService} /> 
+      <OurProduct {...pageData?.nextGenProducts} />
       <HowItWorks {...homePageData.howItWorksData} />
       <Milestone milestone={homePageData.milestone} />
       <ChooseUs {...homePageData.chooseUsData} />
       <CountriesWeWorkedIn {...homePageData.countriesWeWorkedIn} />
       <ServicesTitles title={homePageData.servicesTitles} />
       <OurWork {...homePageData.ourWork} />
+      
       <MaximizeGrowth {...homePageData.maximizeGrowthData} />
       <Section
         defaultPadding={false}
@@ -44,7 +53,9 @@ export default function Home() {
       </Section>
       <AddsCard {...homePageData.addscardsData} />
       <ServicesTitles title={homePageData.servicesTitles} />
-      <Faqs {...homePageData.faqsData} />
+      {/* <Faqs {...homePageData.faqsData} /> */}
+      <ChooseUsold />
+      <Strategise/>
     </main>
   );
 }

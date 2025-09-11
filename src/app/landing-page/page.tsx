@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import PageComponents from "./components/PageComponents";
+import LandingPage1 from "@/components/landing-pages/LandingPage1/LandingPage1";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fielmente : Hotel Marketing Agency in India",
+  title: "Fielmente : Hospitality Marketing Agency in India",
   description:
-    "Best marketing agency in India for hotels, resorts and restaurant",
+    "Best marketing agency in India for Hospitality, resorts and Hospitality",
   keywords:
-    "Fielmente, Hotel Marketing Agency, Cloud Kitchen Marketing Agency, Resort Marketing Agency",
+    "Hospitality Marketing Agency, Hospitality marketing service, Hospitality marketing consultant ,Hospitality solutions,Hospitality business services,Hospitality support, hospitality growth,Hospitality marketing strategy,Hospitality marketing planning,Hospitality marketing plan,Hospitality marketing services,Hospitality marketing consultant,Hospitality marketing agency",
   alternates: {
-    canonical: "https://fielmente.com/landing-page/",
+    canonical: "https://fielmente.com/hospitality/",
   },
   robots: {
     index: true,
@@ -21,29 +21,32 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  authors: [{ name: "Fielmente", url: "https://fielmente.com/landing-page/" }],
+  authors: [{ name: "Fielmente", url: "https://fielmente.com/hospitality/" }],
   openGraph: {
     title: "Fielmente : Hotel Marketing Agency in India",
     description:
       "Best marketing agency in India for hotels, resorts and restaurant",
-    url: "https://fielmente.com/landing-page/",
+    url: "https://fielmente.com/hospitality/",
     siteName: "Fielmente",
     locale: "en_IN",
     type: "website",
 
     images: [
       {
-        url: "https://fielmente.com/landing-page/images/Fielmente-og.png",
+        url: "https://fielmente.com/hospitality/images/Fielmente-og.png",
         width: 1200,
       },
     ],
   },
 };
 
-export default function Home() {
+const page = () => {
   return (
     <>
-    <PageComponents />
+      {/* <PageComponents /> */}
+      <LandingPage1 />
     </>
   );
-}
+};
+
+export default page;

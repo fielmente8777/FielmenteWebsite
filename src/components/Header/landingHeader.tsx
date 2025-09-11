@@ -1,11 +1,11 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import Logo from "../../../public/images/logo.webp";
-import { useEffect, useState } from "react";
-import { PopupForm } from "@/app/landing-page/components";
-import { usePathname } from "next/navigation";
 import { OutLineCall, OutLineEmail } from "@/utils/icons";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import Logo from "../../../public/images/logo.webp";
+import { PopupForm } from "@/app/hospitality/components";
 
 const LandingHeader = () => {
   const pathName = usePathname();
@@ -110,7 +110,7 @@ const LandingHeader = () => {
             sachin@fielmente.com
           </Link>
 
-          {pathName === "/hospitality/" && (
+          {pathName === "/landing-page/" && (
             <Link
               href={"tel:+919501868775 "}
               className={`flex items-center border border-orange-primary px-4 py-2  font-medium rounded-md text-orange-primary`}

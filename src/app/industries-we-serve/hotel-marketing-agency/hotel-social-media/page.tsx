@@ -13,7 +13,7 @@ import Contentwriting from "../../../../../public/images/content-writing.webp";
 import { Accordin } from "../../components/common-hero";
 
 import type { Metadata } from "next";
-import { PopupForm } from "@/app/landing-page/components";
+import { PopupForm } from "@/app/hospitality/components";
 
 export const metadata: Metadata = {
   title: "Best Hotel Social Media Campaign | Hotel Social Media Management",
