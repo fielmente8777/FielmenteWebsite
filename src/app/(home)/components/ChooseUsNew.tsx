@@ -3,7 +3,7 @@ import { ChooseUsCard } from "@/components/cards";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeadingDesc } from "@/components/typography";
 
-const ChooseUs: React.FC<ChooseUsPropsType> = ({ title, subTitle, cards }) => {
+const ChooseUsNew: React.FC<ChooseUsPropsType> = ({ title, subTitle, cards }) => {
   return (
     <SectionWithContainer sectionClassName="md:relative md:before:content-[''] before:-right-2 overflow-hidden before:bottom-4 md:before:bg-[url('/home/waves.png')] before:bg-contain before:bg-no-repeat before:w-[153px] before:h-[30px] before:z-[-1] md:before:absolute ">
       <div className="md:space-y-14 space-y-8">
@@ -18,4 +18,4 @@ const ChooseUs: React.FC<ChooseUsPropsType> = ({ title, subTitle, cards }) => {
   );
 };
 
-export default ChooseUs;
+export default ChooseUsNew;

@@ -10,6 +10,20 @@ export const Nav_Links = [
       {
         linkName: "Hotel Marketing",
         src: "/industries-we-serve/hotel-marketing-agency",
+        subLinks: [
+          {
+            linkName: "Hotel Social Media",
+            src: "/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
+          },
+          {
+            linkName: "Hotel Ads",
+            src: "/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
+          },
+          {
+            linkName: "Hotel SEO",
+            src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
+          },
+        ],
       },
       {
         linkName: "Restaurant Marketing",
@@ -33,28 +47,28 @@ export const Nav_Links = [
       },
     ],
   },
-  {
-    linkName: "Hotel Marketing",
-    src: "/industries-we-serve/hotel-marketing-agency",
-    subLinks: [
-      {
-        linkName: "Hotel Social Media",
-        src: "/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
-      },
-      {
-        linkName: "Hotel Ads",
-        src: "/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
-      },
-      {
-        linkName: "Hotel SEO",
-        src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
-      },
-      // {
-      //   linkName: "Hotel PR Services",
-      //   src: "/hotelprservices",
-      // },
-    ],
-  },
+  // {
+  //   linkName: "Hotel Marketing",
+  //   src: "/industries-we-serve/hotel-marketing-agency",
+  //   subLinks: [
+  //     {
+  //       linkName: "Hotel Social Media",
+  //       src: "/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
+  //     },
+  //     {
+  //       linkName: "Hotel Ads",
+  //       src: "/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
+  //     },
+  //     {
+  //       linkName: "Hotel SEO",
+  //       src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
+  //     },
+  //     // {
+  //     //   linkName: "Hotel PR Services",
+  //     //   src: "/hotelprservices",
+  //     // },
+  //   ],
+  // },
   {
     linkName: "services",
     src: "/hospitality-marketing-services/",

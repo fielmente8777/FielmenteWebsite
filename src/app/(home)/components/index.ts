@@ -15,11 +15,11 @@ import Banner from './Banner';
 import Strategise from './Strategise';
 import Worked from './Worked';
 import CardSection from './CardSection';
-import ChooseUs from './ChooseUs';
+import ChooseUsNew from './ChooseUsNew';
 export {
   AboutCompany,
   AIPoweredServices,
-  ChooseUs,
+  ChooseUsNew,
   CountriesWeWorkedIn,
   Faqs,
   HowItWorks,

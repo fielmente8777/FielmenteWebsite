@@ -9,7 +9,7 @@ import {
   WebSiteDevelopmentIcon2,
 } from "@/utils/icons";
 
-const ChooseUsold: React.FC = () => {
+const ChooseUsOld: React.FC = () => {
   return (
     <Section>
       {/* <Container>
@@ -44,7 +44,7 @@ const ChooseUsold: React.FC = () => {
   );
 };
 
-export default ChooseUsold;
+export default ChooseUsOld;
 
 export interface ChooseCardProsData {
   title: string;
