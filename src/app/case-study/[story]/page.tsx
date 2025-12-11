@@ -1,0 +1,102 @@
+import { SectionWithContainer } from "@/components/sectionComponants";
+import { casStudyData } from "../caseData";
+import Link from "next/link";
+import { NextBtnIcon } from "../page";
+import Image from "next/image";
+
+export async function generateStaticParams() {
+  const path = casStudyData;
+
+  return path.map((post) => ({
+    story: post.slug,
+  }));
+}
+
+export async function generateMetadata() {
+  return {
+    title: `Case Study - Fielmente`,
+    description: `Case Study - Fielmente`,
+    alternates: {
+      canonical: "https://fielmente.com/case-study",
+      languages: {
+        "en-US": "https://fielmente.com/case-study",
+      },
+    },
+    openGraph: {
+      title: `Case Study - Fielmente`,
+      description: `Case Study - Fielmente`,
+    },
+  };
+}
+
+interface Params {
+  params: Promise<{ story: string }>;
+}
+
+export default async function Page(props: Params) {
+  const params = await props.params;
+  const data = casStudyData.find((item) => item.slug === params.story);
+
+  if (!data) {
+    return <div>Blog not found</div>;
+  }
+  return (
+    <main>
+      <SectionWithContainer
+        defaultPadding={false}
+        sectionClassName="pt-16 pb-8"
+      >
+        <div className="flex flex-wrap items-center uppercase">
+          <Link href="/" className="">
+            Home
+          </Link>
+          <span className="">
+            <NextBtnIcon />
+          </span>
+          <Link href="/case-study" className="text-nowrap">Case Study</Link>
+          <span className="">
+            <NextBtnIcon />
+          </span>
+          <span className="text-nowrap">{data.slug.replace(/\-/g, " ")}</span>
+        </div>
+      </SectionWithContainer>
+      <SectionWithContainer sectionClassName="relative after:content-[''] after:inset-0 after:absolute after:border-t after:border-orange-primary lg:after:rounded-t-[80px] after:rounded-t-[50px] after:z-[-2]">
+        <div className="flex flex-col gap-4 w-full">
+          <div className="max-w-[350px] w-full mx-auto relative aspect-[4/2]">
+            <Image
+              src={data?.img || ""}
+              alt={data?.title || ""}
+              fill
+              className={`${data.className ? data.className : "object-cover"} rounded-2xl`}
+            />
+          </div>
+          <h1 className="lg:text-[2.5rem]/[3.5rem] text-[1.5rem]/[2.5rem]">
+            {data?.title}
+          </h1>
+
+          {data?.data?.map((item, index) => (
+            <div className="flex flex-col gap-4" key={index}>
+              <h3 className="text-[1.75rem]/[2.5rem] text-orange-primary">{item.title}</h3>
+              {item?.description?.map((subItem, subIndex) => (
+                <p className="text-[1.25rem]/[1.5rem]" key={subIndex}>
+                  {subItem}
+                </p>
+              ))}
+              {item?.lists && (
+                <ul className="flex flex-col gap-2">
+                  {item?.lists?.map((subItem, subIndex) => (
+                    <li
+                      className="text-[1.125rem]/[1.5rem]"
+                      key={subIndex}
+                      dangerouslySetInnerHTML={{ __html: subItem }}
+                    />
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </SectionWithContainer>
+    </main>
+  );
+}

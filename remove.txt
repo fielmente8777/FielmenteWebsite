@@ -1,0 +1,409 @@
+<footer className="lg:pt-12 pt-9 bg-gray-secondary">
+  <div className="max-width">
+    <div className="flex justify-center">
+      <Image
+        src={Logo}
+        alt="fielmente-logo"
+        className="object-contain"
+        width={120}
+      />
+    </div>
+    <div className="flex flex-col gap-4 items-center mt-6 max-w-[700px] mx-auto">
+      <p className="text-blue-dark text-base text-center flex justify-center">
+        <span
+        // className="-ml-2 lg:-ml-0"
+        >
+          <OutLineLocationIcon />
+        </span>
+        {/* Level 2, Augusta Point, Golf Course Rd, Parsvnath Exotica, Sarswati
+                        Kunj II, DLF Phase 5,<br className="hidden lg:block" /> Sector 53, Gurugram, Haryana 122002 */}
+        Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana
+        122005
+      </p>
+      {/* <p className="text-blue-dark text-base text-center flex justify-center lg:w-max">
+            <span
+            className="-ml-2 lg:-ml-0"
+            >
+              <OutLineLocationIcon />
+            </span>
+            Raheja Platinum, Road, off Andheri - Kurla Road, Sag Baug, Marol,
+            Andheri East, Mumbai, Maharashtra 400059
+          </p> */}
+      <Link
+        href={`mailto:sachin@fielmente.com`}
+        className="text-lg text-blue-dark flex items-center gap-2"
+      >
+        <OutlineMailIcon />
+        sachin@fielmente.com
+      </Link>
+      <Link
+        href={"tel:+919501868775"}
+        className="flex items-center text-blue-dark text-lg "
+      >
+        <OutlinePhoneIcon width={30} height={40} />
+        +919501868775
+      </Link>
+    </div>
+    <div className="w-full h-[1px] bg-orange-primary mt-4" />
+    <div className="flex max-md:flex-col justify-center items-center gap-2 mt-2 py-4">
+      <p className="text-blue-dark text-lg">&copy; {currentYear} Fielmente</p>
+      <span className="text-orange-primary max-md:hidden text-lg font-bold">
+        |
+      </span>
+      <p className="text-blue-dark text-lg"> All Rights Reserved</p>
+      {/* <span className="text-orange-primary text-lg font-bold">|</span> */}
+      {/* <Link href={"/landingpage"} className="text-blue-dark text-lg">Landing</Link> */}
+    </div>
+  </div>
+  <PopupForm setShowModal={setShowModal} showModal={showModal} />
+</footer>;
+
+old footer
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import Logo from "../../../public/images/footer-fielmente.webp";
+import { usePathname } from "next/navigation";
+import { PopupForm } from "@/app/hospitality/components";
+
+function Footer2() {
+  const pathname = usePathname();
+
+  const [email, setEmail] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const host = "https://eazotel.eazotel.com/api/dashboard/editnewsletter";
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    setErrorMessage(
+      !emailRegex.test(value) ? "Please enter a valid email address" : ""
+    );
+  };
+
+  const handleNewsletter = async () => {
+    const data = {
+      // Domain: "abhijeet",
+      Domain: "fielmente",
+      email: email,
+    };
+    try {
+      const response = await fetch(host, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    setEmail("");
+  };
+
+  interface linkTypeProps {
+    title: string;
+    href: string;
+  }
+
+  const socialLink: linkTypeProps[] = [
+    {
+      title: "Instagram",
+      href: "https://www.instagram.com/fielmente_hospitality/?hl=en",
+    },
+    {
+      title: "Facebook",
+      href: "https://www.facebook.com/fielmentebusiness?mibextid=ViGcVu",
+    },
+    {
+      title: "Twitter",
+      href: "https://x.com/fieladvisors?lang=en",
+    },
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/company/fielmente/",
+    },
+  ];
+
+  const currentYear = new Date().getFullYear();
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
+      <footer className="bg-gray-100 pt-8 pb-4">
+        <div className="max-width">
+          <div className="flex flex-col gap-8">
+            <h2 className="text-center text-gray-primary text-3xl ">
+              Find Us On
+            </h2>
+            <div className="grid lg:grid-cols-4 grid-cols-2 items-center justify-center lg:gap-8 gap-2">
+              {socialLink.map((link, index) => (
+                <Link
+                  href={link.href}
+                  key={index}
+                  target="_blank"
+                  className="text-blue-dark lg:text-[2rem]/[2.5rem] text-base font-semibold md:text-center text-center"
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+            <p className="text-gray-primary sm:text-xl text-lg text-center">
+              Hotel Marketing Agency | Restaurant Marketing Agency | Hotel
+              Marketing Company | Hotel Digital Marketing | Hotel Website
+              Development | Hotel Social Media Management | Restaurant Marketing
+              Agency in India | Restaurant Digital Marketing
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 mt-12">
+            <div className="flex flex-col md:gap-20 gap-8 ">
+              <Link
+                href={"/"}
+                className="flex items-center justify-center lg:justify-start"
+              >
+                <Image src={Logo} alt="fielmente-logo" />
+              </Link>
+              <Link
+                // href={"https://maps.app.goo.gl/hHjjUZHsAJbqQojZ6"}
+                href={"#"}
+                // target="_blank"
+                className="text-gray-primary sm:text-xl text-lg md:w-[60%]"
+              >
+                {/* <b>Office Address</b> – Level 2, Augusta Point, Golf Course Rd,
+                Parsvnath Exotica, Sarswati Kunj II, DLF Phase 5, Sector 53,
+                Gurugram, Haryana 122002
+                <br />
+                <br />
+                <b>Office Address</b> – Raheja Platinum, Road, off Andheri -
+                Kurla Road, Sag Baug, Marol, Andheri East, Mumbai, Maharashtra
+                400059 */}
+                <br />
+                <b>Office Address</b> – Suncity Success Tower, Golf Course Ext
+                Rd, Sector 65, Gurugram, Haryana 122005
+              </Link>
+            </div>
+            <div className="flex flex-col  gap-5 lg:ms-20">
+              <div className="flex flex-col gap-6">
+                <h2 className="text-blue-dark lg:text-2xl text-[1.7rem] font-bold">
+                  Let’s Stay Connected
+                </h2>
+                <div className="w-full bg-white rounded-md flex items-center py-3 px-4 border">
+                  <input
+                    type="text"
+                    value={email}
+                    onChange={handleEmailChange}
+                    placeholder="Your Email"
+                    className="w-full outline-none bg-transparent text-base text-black"
+                  />
+                  <button
+                    onClick={handleNewsletter}
+                    className="text-orange-primary font-medium text-base capitalize hover:text-blue-dark duration-150"
+                  >
+                    send
+                  </button>
+                </div>
+
+                {errorMessage && (
+                  <p className="text-red-500 text-sm">{errorMessage}</p>
+                )}
+              </div>
+
+              <div className="flex flex-col gap-6 ">
+                <h2 className="text-blue-dark max-md:text-center text-3xl font-bold">
+                  To Know More
+                </h2>
+                <div className="w-full flex md:flex-row flex-col gap-8 max-md:gap-3 max-md:items-center text-gray-primary text-lg">
+                  <Link href={"tel:+919501868775"}>+91 9501868775</Link>
+                  <Link href={"mailto:sachin@fielmente.com"}>
+                    sachin@fielmente.com
+                  </Link>
+                </div>
+                <div className="flex gap-2 max-md:justify-center text-blue-dark text-xl">
+                  <b>Dubai</b> | <b>Canada</b> | <b>USA</b> | <b>UK</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex md:flex-row flex-col max-md:items-center gap-4 text-gray-primary justify-between text-xl max-md:mt-5 mt-10">
+            <Link href={"/privacy-policy"}>Privacy Policy</Link>
+            <Link href={"/terms-and-conditions/"}>Terms & Conditions</Link>
+          </div>
+        </div>
+      </footer>
+      {pathname === "/contact/" || pathname === "/contact-us/" ? null : (
+        <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      )}
+    </>
+  );
+}
+
+export default Footer2;
+
+
+
+
+"use client";
+import React, { useState } from "react";
+import "./Header.scss";
+import Link from "next/link";
+import { Nav_Links } from "./Nav_Links";
+import Image from "next/image";
+import Logo from "../../../public/images/logo.webp";
+import { TiArrowSortedDown } from "react-icons/ti";
+
+import { FaPhone } from "react-icons/fa6";
+import MobileNav from "./MobileNav";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
+import { usePathname } from "next/navigation";
+
+const Header2 = () => {
+  const pathname = usePathname();
+
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  return (
+    <>
+      {pathname === "/thank-you/" ? (
+        ""
+      ) : (
+        <header>
+          <nav className="max-width nav-bar-container">
+            {/* Logo Container***** */}
+            <Link
+              href={"/"}
+              className="relative w-[160px] aspect-[2/.8] flex items-center justify-center"
+            >
+              <Image
+                src={Logo}
+                alt="fielmente-logo"
+                priority={true}
+                fill
+                className="object-contain"
+                sizes="100px"
+              />
+            </Link>
+
+            {/* Links Container******** */}
+            <div className="links-container">
+              {Nav_Links.map((Links, Index) => {
+                return (
+                  <div key={Index} className="flex items-center gap-6">
+                    <div className="links">
+                      <Link
+                        href={Links.src}
+                        className="flex items-center gap-2"
+                      >
+                        {Links.linkName}{" "}
+                        {Links.subLinks && <TiArrowSortedDown />}
+                      </Link>
+                      {Links.subLinks && (
+                        <ul className="sub-links-container">
+                          {Links.subLinks.map((SubLinks, Index) => {
+                            return (
+                              <li key={Index} className="sub-links">
+                                <Link
+                                  href={SubLinks.src}
+                                  className="flex items-center gap-2"
+                                >
+                                  {SubLinks.linkName}{" "}
+                                  {SubLinks.subLinks && <TiArrowSortedDown />}
+                                </Link>
+                                {SubLinks.subLinks && (
+                                  <ul className="child-sub-links-container z-20">
+                                    {SubLinks.subLinks.map(
+                                      (SubLinks, Index) => {
+                                        return (
+                                          <li key={Index} className="sub-links">
+                                            <Link
+                                              href={SubLinks.src}
+                                              className="z-20"
+                                            >
+                                              {SubLinks.linkName}
+                                            </Link>
+                                          </li>
+                                        );
+                                      }
+                                    )}
+                                  </ul>
+                                )}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      )}
+                    </div>
+
+                    {/* For Right Border***** */}
+                    {Index >= 0 && Index < Nav_Links.length - 1 && (
+                      <div className="w-[0.14rem] h-6 bg-black"></div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Contact Container***** */}
+            <div>
+              <Link
+                href={"tel:+919501868775"}
+                className="flex contact-container items-center gap-1 border border-blue-dark rounded-md bg-blue-dark px-4 py-2 text-white"
+              >
+                <OutLineCall /> +919501868775
+              </Link>
+            </div>
+
+            {/* Hamburger Menu **** */}
+            <div className="xl:hidden z-50">
+              {isNavOpen ? (
+                <div className="text-white transition-transform duration-500 ease-in-out transform delay rotate-180 scale-150">
+                  <IoClose
+                    color="black"
+                    size={30}
+                    onClick={() => setIsNavOpen(false)}
+                  />
+                </div>
+              ) : (
+                <div className="transition-transform duration-500 ease-in-out transform rotate-0 scale-100">
+                  <HiMenuAlt3
+                    color="black"
+                    size={30}
+                    onClick={() => setIsNavOpen(true)}
+                  />
+                </div>
+              )}
+              {/* <AiOutlineMenu size={30} /> */}
+            </div>
+          </nav>
+
+          {/* Bottom underline******* */}
+          <hr className="bg-white h-[0.18rem] w-[95%] mx-auto" />
+
+          {/* Mobile nav-bar***** */}
+          <MobileNav setIsOpen={setIsNavOpen} isOpen={isNavOpen} />
+        </header>
+      )}
+    </>
+  );
+};
+
+export default Header2;
+
+export const OutLineCall = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="26"
+    height="27"
+    viewBox="0 0 26 27"
+    fill="none"
+  >
+    <path
+      d="M9.21191 3.22391L8.27981 3.50471C7.44986 3.755 6.70868 4.23717 6.14351 4.89446C5.57834 5.55176 5.21269 6.35683 5.08961 7.21491C4.70351 9.90331 5.56671 13.0467 7.64801 16.6516C9.72411 20.2474 12.0095 22.564 14.525 23.578C15.3333 23.9038 16.218 23.9906 17.0742 23.8281C17.9303 23.6656 18.7218 23.2607 19.3545 22.6615L20.0591 21.9933C20.5166 21.5603 20.8014 20.9759 20.8605 20.3487C20.9195 19.7215 20.7489 19.0942 20.3802 18.5834L18.6174 16.1394C18.3791 15.8095 18.0435 15.5624 17.6577 15.4327C17.2718 15.3031 16.8551 15.2975 16.4659 15.4166L13.7996 16.2317L13.7307 16.2447C13.4369 16.2876 12.7583 15.6519 11.9133 14.1881C11.0293 12.6567 10.8473 11.761 11.0904 11.5296L12.4463 10.2647C12.9416 9.80218 13.28 9.19638 13.414 8.53205C13.5481 7.86772 13.4711 7.17812 13.1938 6.55971L12.3332 4.64741C12.0744 4.07196 11.6152 3.61025 11.0412 3.34834C10.4671 3.08643 9.81614 3.04221 9.21191 3.22391ZM11.1502 5.18041L12.0082 7.09271C12.1747 7.46363 12.2211 7.87731 12.1409 8.2759C12.0608 8.67449 11.858 9.03804 11.561 9.31571L10.2012 10.5819C9.33021 11.4061 9.61881 12.8127 10.7888 14.8381C11.8886 16.7439 12.8922 17.6851 13.9712 17.5213L14.1324 17.4875L16.8468 16.6594C16.9766 16.6196 17.1155 16.6213 17.2442 16.6645C17.3729 16.7076 17.4849 16.7899 17.5644 16.8999L19.3272 19.3439C19.5118 19.5993 19.5973 19.913 19.5679 20.2268C19.5385 20.5405 19.3961 20.8329 19.1673 21.0495L18.4614 21.7177C18.0095 22.1454 17.4442 22.4344 16.8328 22.5504C16.2215 22.6663 15.5897 22.6042 15.0125 22.3716C12.8051 21.4824 10.7186 19.3673 8.77511 16.0016C6.82641 12.6281 6.03731 9.75901 6.37661 7.39951C6.46444 6.78647 6.7256 6.21129 7.12933 5.74168C7.53307 5.27208 8.06258 4.9276 8.65551 4.74881L9.58761 4.46801C9.88981 4.37721 10.2147 4.39941 10.5017 4.53049C10.7888 4.66157 11.0183 4.89257 11.1476 5.18041"
+      fill="#F26633"
+    />
+  </svg>
+);
