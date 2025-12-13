@@ -6,11 +6,11 @@ import { Autoplay, Pagination } from "swiper/modules";
 const CountryFlags = () => {
   const countries = [
     {
-      name: "dubai",
+      name: "UAE",
       flag: "/flags/dubai.png",
     },
     {
-      name: "uk",
+      name: "UK",
       flag: "/flags/uk.png",
     },
     {

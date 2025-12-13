@@ -71,7 +71,7 @@ const BlogesSection = () => {
   };
 
   return (
-    <Section className="mt-12">
+    <Section className="mt-12 bg-[#F7F5F1]">
       <Container>
         {/* Blog Grid */}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-6 md:gap-y-10 gap-y-4">

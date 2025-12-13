@@ -4,110 +4,115 @@ import { countries } from "@/utils/countryCode";
 import { OutlineMessage, OutlineUser } from "@/utils/icons";
 import { OutlineCallIcon, OutlineMail } from "@/utils/newIcons";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useCallback, useMemo, FormEvent, ChangeEvent } from "react";
+import CustomCaptchaForm from "./CaptchaForm";
+
+interface FormData {
+  userName: string;
+  userEmail: string;
+  userMessage: string;
+  userPhone: string;
+  countryCode: string;
+}
+
+interface ValidationErrors {
+  email?: string;
+  phone?: string;
+  captcha?: string;
+}
 
 const Form1 = ({ bgWhite = false }: { bgWhite?: boolean }) => {
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userMessage, setUserMessage] = useState("");
-  const [userPhone, setUserPhone] = useState("");
-  const [countryCode, setCountryCode] = useState("+91"); // Default country code
+  // Form state
+  const [formData, setFormData] = useState<FormData>({
+    userName: "",
+    userEmail: "",
+    userMessage: "",
+    userPhone: "",
+    countryCode: "+91",
+  });
+  
   const [formRes, setFormRes] = useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
+  const [captcha, setCaptcha] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
-    if (value.length <= 10) {
-      setUserPhone(value);
-      setErrorMessage(value.length < 10 ? "Please enter a valid number" : "");
+  // Constants
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // const FORM_API = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook"; // test
+  const FORM_API = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
+
+  // Validation functions
+  const validateEmail = useCallback((email: string): string => {
+    if (!email) return "Email is required";
+    if (!EMAIL_REGEX.test(email)) return "Please enter a valid email address";
+    return "";
+  }, []);
+
+  const validatePhone = useCallback((phone: string): string => {
+    if (!phone) return "Phone number is required";
+    if (phone.length !== 10) return "Phone number must be exactly 10 digits";
+    if (!/^\d+$/.test(phone)) return "Phone number must contain only digits";
+    return "";
+  }, []);
+
+  const validateCaptcha = useCallback((input: string, correct: string): string => {
+    if (!input) return "Captcha is required";
+    if (input !== correct) return "Captcha incorrect. Please try again.";
+    return "";
+  }, []);
+
+  // Event handlers
+  const handlePhoneChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setFormData(prev => ({ ...prev, userPhone: value }));
+    
+    if (value.length > 0) {
+      setValidationErrors(prev => ({
+        ...prev,
+        phone: validatePhone(value),
+      }));
     }
-  };
+  }, [validatePhone]);
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setUserEmail(value);
-    setEmailErrorMessage(
-      !emailRegex.test(value) ? "Please enter a valid email address" : ""
-    );
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormRes(true);
-
-    if (userPhone.length !== 10) {
-      setErrorMessage("Phone number must be exactly 10 digits.");
-      return;
+    setFormData(prev => ({ ...prev, userEmail: value }));
+    
+    if (value.length > 0) {
+      setValidationErrors(prev => ({
+        ...prev,
+        email: validateEmail(value),
+      }));
     }
+  }, [validateEmail]);
 
-    if (!emailRegex.test(userEmail)) {
-      setEmailErrorMessage("Please enter a valid email address.");
-      return;
+  const handleCaptchaInputChange = useCallback((value: string) => {
+    setCaptchaInput(value);
+    if (value.length > 0) {
+      setValidationErrors(prev => ({
+        ...prev,
+        captcha: validateCaptcha(value, captcha),
+      }));
     }
-    // const formTestApi =
-    //   "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook";
-    const formApi =
-      "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
-    try {
-      const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        formApi,
-        {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
-          email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  }, [captcha, validateCaptcha]);
 
-      if (data.success) {
-        setFormRes(true);
-        setUserName("");
-        setUserEmail("");
-        setUserMessage("");
-        setUserPhone("");
-        setCountryCode("+91"); // Reset country code
-        setFormRes(false);
-        // router.push(`/thank-you/`);
-        window.open("/thank-you/", "_blank");
-        // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
-      } else {
-        setFormRes(false);
-        alert("Something went wrong!");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const formData = [
+  // Memoized form configuration - Moved after handlers are defined
+  const formFields = useMemo(() => [
     {
-      tag: "input",
+      id: "name",
+      tag: "input" as const,
       type: "text",
       name: "name",
       icon: <OutlineUser />,
       placeholder: "Your Name*",
       required: true,
-      value: userName,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserName(e.target.value);
-      },
+      value: formData.userName,
+      onChange: (e: ChangeEvent<HTMLInputElement>) => 
+        setFormData(prev => ({ ...prev, userName: e.target.value })),
     },
     {
-      tag: "div", // Use div to wrap select and input for phone number
+      id: "phone",
+      tag: "div" as const,
       name: "phone",
       icon: <OutlineCallIcon />,
       placeholder: "Your Phone*",
@@ -117,19 +122,15 @@ const Form1 = ({ bgWhite = false }: { bgWhite?: boolean }) => {
           <select
             id="countryCode"
             name="countryCode"
-            value={countryCode}
-            onChange={(e) => setCountryCode(e.target.value)}
+            value={formData.countryCode}
+            onChange={(e) => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
             className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
-            style={{ inlineSize: `${countryCode.length + 2}ch` }}
+            style={{ inlineSize: `${formData.countryCode.length + 2}ch` }}
             aria-label="Country Code"
           >
             {countries.map((country, index) => (
-              <option
-                key={index}
-                value={country.code}
-                className="text-black bg-gray-100"
-              >
-                {`${country.code}`}
+              <option key={index} value={country.code} className="text-black bg-gray-100">
+                {country.code}
               </option>
             ))}
           </select>
@@ -137,9 +138,9 @@ const Form1 = ({ bgWhite = false }: { bgWhite?: boolean }) => {
             type="tel"
             id="phone"
             name="phone"
-            max={"9999999999"}
+            max="9999999999"
             placeholder="Your Phone Number*"
-            value={userPhone}
+            value={formData.userPhone}
             onChange={handlePhoneChange}
             className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
           />
@@ -147,85 +148,170 @@ const Form1 = ({ bgWhite = false }: { bgWhite?: boolean }) => {
       ),
     },
     {
-      tag: "input",
+      id: "email",
+      tag: "input" as const,
       type: "email",
       name: "email",
       icon: <OutlineMail />,
       placeholder: "Your Email Id*",
       required: true,
-      value: userEmail,
+      value: formData.userEmail,
       onChange: handleEmailChange,
     },
     {
-      tag: "textarea",
+      id: "message",
+      tag: "textarea" as const,
       type: "text",
-      name: "",
+      name: "message",
       icon: <OutlineMessage />,
       placeholder: "Your Message*",
       required: true,
-      value: userMessage,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUserMessage(e.target.value);
-      },
+      value: formData.userMessage,
+      onChange: (e: ChangeEvent<HTMLInputElement>) => 
+        setFormData(prev => ({ ...prev, userMessage: e.target.value })),
     },
-  ];
+  ], [formData, handlePhoneChange, handleEmailChange]);
+
+  // Form submission
+  const handleSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Validate all fields
+    const errors: ValidationErrors = {
+      email: validateEmail(formData.userEmail),
+      phone: validatePhone(formData.userPhone),
+      captcha: validateCaptcha(captchaInput, captcha),
+    };
+
+    setValidationErrors(errors);
+
+    // Check if any errors exist
+    if (Object.values(errors).some(error => error)) {
+      return;
+    }
+
+    setFormRes(true);
+
+    try {
+      const { data } = await axios.post(
+        FORM_API,
+        {
+          email: formData.userEmail,
+          name: formData.userName,
+          phone: `${formData.countryCode}${formData.userPhone}`,
+          message: formData.userMessage,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (data.success) {
+        // Reset form
+        setFormData({
+          userName: "",
+          userEmail: "",
+          userMessage: "",
+          userPhone: "",
+          countryCode: "+91",
+        });
+        setCaptchaInput("");
+        setValidationErrors({});
+        
+        // Open thank you page
+        window.open("/thank-you/", "_blank");
+      } else {
+        alert("Something went wrong! Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setFormRes(false);
+    }
+  }, [formData, captchaInput, captcha, validateEmail, validatePhone, validateCaptcha]);
+
+  // Styling classes
+  const containerClasses = `flex flex-col gap-6 max-md:px-4 p-6 max-md:mt-6 text-base rounded-[20px] w-full relative ${
+    bgWhite ? "bg-white" : "bg-primary"
+  }`;
+
+  const titleClasses = `text-xl md:text-3xl text-center font-semibold ${
+    !bgWhite ? "text-white" : "text-primary"
+  }`;
+
+  const descriptionClasses = `md:text-xl text-center ${
+    !bgWhite ? "text-white" : "text-primary"
+  }`;
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className={`flex flex-col gap-6 max-md:px-4 p-6 max-md:mt-6 text-base rounded-[20px] w-full relative ${bgWhite && bgWhite ? "bg-white" : "bg-primary"}`}
-    >
-      <h2
-        className={`text-xl  md:text-3xl text-center font-semibold ${!bgWhite && !bgWhite ? "text-white" : "text-primary"} `}
-      >
+    <form onSubmit={handleSubmit} className={containerClasses}>
+      <h2 className={titleClasses}>
         Get A FREE Consultation!
       </h2>
-      <p
-        className={`md:text-xl text-center ${!bgWhite && !bgWhite ? "text-white" : "text-primary"}`}
-      >
-        Let’s work on boosting your hotel’s profitability!
+      <p className={descriptionClasses}>
+        Let&apos;s work on boosting your hotel&apos;s profitability!
       </p>
+      
       <span className="absolute top-5 right-7">
-        <ChatIcon/>
+        {/* ChatIcon component should be imported if needed */}
+        {/* <ChatIcon /> */}
       </span>
 
-      {formData.map((data, index) => (
-        <div key={index} className="flex flex-col gap-1">
-          <div className="flex  gap-2 text-gray-primary p-4 border bg-white border-blue-primary rounded-[10px]">
+      {formFields.map((field) => (
+        <div key={field.id} className="flex flex-col gap-1">
+          <div className="flex gap-2 text-gray-primary p-4 border bg-white border-blue-primary rounded-[10px]">
             <label
-              htmlFor={data.name}
-              className={`${data.tag === "textarea" && "mt-1"}`}
+              htmlFor={field.name}
+              className={field.tag === "textarea" ? "mt-1" : ""}
             >
-              {data.icon}
+              {field.icon}
             </label>
-            {data.tag === "div"
-              ? data.content
-              : React.createElement(data.tag, {
-                  id: data.name,
-                  type: data.type,
-                  name: data.name,
-                  value: data.value,
-                  onChange: data.onChange,
-                  placeholder: data.placeholder,
-                  required: data.required,
-                  autoComplete: "off",
-                  spellCheck: "false",
-                  rows: data.tag === "textarea" ? 3 : undefined,
-                  className:
-                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-[12px] valid:outline-blue-primary invalid:outline-Saffron-primary",
-                })}
+            
+            {field.tag === "div" ? (
+              field.content
+            ) : (
+              React.createElement(field.tag, {
+                id: field.name,
+                type: field.type,
+                name: field.name,
+                value: field.value,
+                onChange: field.onChange,
+                placeholder: field.placeholder,
+                required: field.required,
+                autoComplete: "off",
+                spellCheck: "false",
+                rows: field.tag === "textarea" ? 3 : undefined,
+                className: "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-[12px] valid:outline-blue-primary invalid:outline-Saffron-primary",
+              })
+            )}
           </div>
-          {data.name === "phone" && errorMessage && (
-            <p className="text-sm text-red-500 mt-2">{errorMessage}</p>
-          )}
-          {data.name === "email" && emailErrorMessage && (
-            <p className="text-sm text-red-500 mt-2">{emailErrorMessage}</p>
+          
+          {validationErrors[field.name as keyof ValidationErrors] && (
+            <p className="text-sm text-red-500 mt-2">
+              {validationErrors[field.name as keyof ValidationErrors]}
+            </p>
           )}
         </div>
       ))}
-
-      <button className="w-full text-center bg-secondary text-white justify-center border-orange-primary text-md px-8 py-3  font-semibold rounded-full hover:bg-white hover:text-secondary duration-300 active:scale-75 hover:scale-[1.02] border">
-        {formRes ? "Loading...." : <span>Submit</span>}
+      
+      <CustomCaptchaForm
+        isOpen={true}
+        captcha={captcha}
+        setCaptcha={setCaptcha}
+        setCaptchaInput={handleCaptchaInputChange}
+        captchaInput={captchaInput}
+        error={validationErrors.captcha || ""}
+      />
+      
+      <button
+        type="submit"
+        disabled={formRes}
+        className="w-full text-center bg-secondary text-white justify-center border-orange-primary text-md px-8 py-3 font-semibold rounded-full hover:bg-white hover:text-secondary duration-300 active:scale-75 hover:scale-[1.02] border disabled:opacity-70 disabled:cursor-not-allowed"
+      >
+        {formRes ? "Loading..." : "Submit"}
       </button>
     </form>
   );

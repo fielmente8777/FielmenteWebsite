@@ -177,7 +177,7 @@ export const newPagedata = {
     cards: [
       {
         src: "/flags/dubai.png",
-        alt: "dubai",
+        alt: "UAE",
       },
       {
         src: "/flags/uk.png",
