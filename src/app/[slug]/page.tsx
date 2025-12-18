@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { blogData } from "../../utils/blogdata";
 import DynamicBlog from "./components/DynamicBlog";
 
@@ -6,11 +7,13 @@ export async function generateStaticParams() {
 
   return posts.map((post) => ({
     slug: post.link,
+    fallback: false,
   }));
 }
 // Generate static paths based on blog links
 interface Params {
   params: Promise<{ slug: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata(props: Params) {
@@ -44,7 +47,7 @@ const Page = async (props: Params) => {
   const data = blogData.find((item) => item.link === params.slug);
   // console.log(data);
   if (!data) {
-    return <div>Blog not found</div>;
+    notFound();
   }
 
   return (

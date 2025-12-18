@@ -1,16 +1,15 @@
 "use client";
+import DataContext from "@/contextApi/DataContext";
 import { OutLineCall, OutLineEmail } from "@/utils/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useContext } from "react";
 import Logo from "../../../public/images/logo.webp";
-import { PopupForm } from "@/app/hospitality/components";
 
 const LandingHeader = () => {
   const pathName = usePathname();
-  const [showModal, setShowModal] = useState(false);
-
+  const { setIsOpenPopupForm } = useContext(DataContext);
   // const [hasShownPopup, setHasShownPopup] = useState(false); // Prevent multiple triggers
 
   // useEffect(() => {
@@ -83,7 +82,7 @@ const LandingHeader = () => {
         <nav className="max-width flex justify-between">
           <button
             onClick={() => {
-              if (pathName !== "/thank-you/") setShowModal(true);
+              if (pathName !== "/thank-you/") setIsOpenPopupForm(true);
             }}
             className="relative h-[65px] aspect-[4/1.9]"
           >
@@ -132,9 +131,6 @@ const LandingHeader = () => {
             </Link>
           </div>
         </nav>
-        {showModal && (
-          <PopupForm setShowModal={setShowModal} showModal={showModal} />
-        )}
       </header>
       <div className="md:mt-16 mt-24"></div>
     </>

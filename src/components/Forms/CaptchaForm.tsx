@@ -42,7 +42,7 @@ const CustomCaptchaForm = ({
         <form className="space-y-4 w-full mx-auto px-4 py-3 border rounded bg-white">
           {/* CAPTCHA SECTION */}
           <div className="flex flex-col gap-2">
-            <label className="font-semibold text-sm text-clr1">
+            <label className="font-semibold text-sm text-blue-dark">
               Enter the verification code below
             </label>
 

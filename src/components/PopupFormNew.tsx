@@ -5,10 +5,23 @@ import React from "react";
 import { OutlineClose } from "@/utils/icons";
 import PopUpForm from "@/components/Forms/PopUpForm";
 import DataContext from "@/contextApi/DataContext";
+import { usePathname } from "next/navigation";
+import PopUpFormOld from "./Forms/PopUpFormOld";
 
 const PopupFormNew = () => {
   const { isOpenPopupForm, setIsOpenPopupForm } = useContext(DataContext);
+  const pathName = usePathname();
 
+  const paths = [
+    "/landing-page/",
+    "/resort/",
+    "/hospitality/",
+    "/dubai-restaurant/",
+    "/restaurant/",
+    "/UK/",
+    "/USA/",
+  ];
+  const shouldRender = paths.includes(pathName);
   useEffect(() => {
     if (isOpenPopupForm) {
       document.body.style.overflow = "hidden";
@@ -47,7 +60,7 @@ const PopupFormNew = () => {
                 priority
               />
             </div>
-            <PopUpForm />
+            {!shouldRender ? <PopUpForm /> : <PopUpFormOld />}
           </div>
         </article>
       </section>
