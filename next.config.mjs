@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
+
+// import NextBundleAnalyzer from '@next/bundle-analyzer';
+
+// const withBundleAnalyzer = NextBundleAnalyzer({
+//   enabled: process.env.ANALYZE === "true",
+// });
 const nextConfig = {
    /* config options here */
   output: "export",
@@ -16,7 +22,13 @@ const nextConfig = {
     // ],
     // dangerouslyAllowSVG: true,
   },
+  // reactStrictMode: true,
   trailingSlash: true,
+  compiler: {
+    removeConsole : true,
+  },
+  compress: true,
 };
 
+// export default withBundleAnalyzer(nextConfig);
 export default nextConfig;

@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     "Drive success with Fielmente, the top cloud kitchen social media agency in India. Elevate your brand with expert social media marketing.",
   alternates: {
     canonical:
-      "https://fielmente.com/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media",
+      "https://fielmente.com/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media/",
     languages: {
       "en-US":
-        "https://fielmente.com/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media",
+        "https://fielmente.com/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media/",
     },
   },
   openGraph: {

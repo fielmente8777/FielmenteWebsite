@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useContext } from "react";
+import { useContext } from "react";
 
-import Whoweare from "../../../../public/images/WHO-ARE-WE.webp";
-import Approach from "../../../../public/images/APPROACH-US.webp";
-import Link from "next/link";
 import DataContext from "@/contextApi/DataContext";
+import Approach from "../../../../public/images/APPROACH-US.webp";
+import Whoweare from "../../../../public/images/WHO-ARE-WE.webp";
 
 function Hero() {
   const { setIsOpenPopupForm } = useContext(DataContext);

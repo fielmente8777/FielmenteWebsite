@@ -1,20 +1,13 @@
 "use client";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay } from "swiper/modules";
 import { ClientImages } from "@/utils/client";
-import Link from "next/link";
 import Image from "next/image";
-import SectionHeading from "./SectionHeadings/SectionHeading";
 import { usePathname } from "next/navigation";
+import { Autoplay } from "swiper/modules";
+import SwiperCarousel from "./SwiperCarousel";
 const OurClient = () => {
   const pathName = usePathname();
   const text =
@@ -23,6 +16,11 @@ const OurClient = () => {
       : pathName === "/resort/"
         ? "Resorts"
         : "Hotels";
+
+  const objectCoverIndexes = [1, 2, 4, 5, 7, 9, 19, 25, 27, 29, 35];
+
+  
+
   return (
     <Section className="max-w-[1540px] mx-auto w-full !pt-4">
       <Container>
@@ -39,7 +37,8 @@ const OurClient = () => {
         <Container>
           <div className="mt-10">
             <div>
-              <Swiper
+              <SwiperCarousel
+                data={ClientImages}
                 modules={[Autoplay]}
                 spaceBetween={15}
                 slidesPerView={2}
@@ -63,34 +62,17 @@ const OurClient = () => {
                     spaceBetween: 10,
                   },
                 }}
-                className="mySwiper"
-              >
-                {ClientImages.map((item, index) => (
-                  <SwiperSlide key={index} className="py-4">
-                    <div
-                      // href={"/"}
-                      className="relative w-full lg:aspect-[4/2.5] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[9rem] rounded-md flex justify-center items-center"
-                    >
+                swiperSlideClassName="py-4 h-full"
+                renderSlide={(item, index?: number) => (
+                  <div className="">
+                    <div className="relative w-full lg:aspect-[4/2.5] hover:-translate-y-3 ease-in-out duration-300 transition shadow-md aspect-[4/4] h-[9rem] rounded-md flex justify-center items-center">
                       {/* <span className="absolute top-0 right-0 z-10 text-white">{index}</span> */}
                       <Image
                         src={item.src}
                         alt={`${item.alt}`}
                         fill
                         className={`${
-                          index == 25 ||
-                          // index == 26 ||
-                          index == 19 ||
-                          index == 1 ||
-                          index == 2 ||
-                          index == 4 ||
-                          index == 5 ||
-                          index == 7 ||
-                          index == 9 ||
-                          // index == 11 ||
-                          index == 19 ||
-                          index == 27 ||
-                          index == 29 ||
-                          index == 35
+                          objectCoverIndexes.includes(index || 0)
                             ? "object-cover"
                             : "object-contain"
                         } w-full h-full rounded-md p-3`}
@@ -126,9 +108,9 @@ const OurClient = () => {
                         }}
                       />
                     </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                  </div>
+                )}
+              />
             </div>
           </div>
         </Container>

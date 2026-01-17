@@ -27,9 +27,9 @@ export const metadata: Metadata = {
       "Drive hotel success with our leading hotel Google Ads agency in India. Maximize ROI with expertly managed campaigns. Partner with us now!",
   },
   alternates: {
-    canonical: "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads",
+    canonical: "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
     languages: {
-      "en-US": "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads",
+      "en-US": "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
     },
   }
 };

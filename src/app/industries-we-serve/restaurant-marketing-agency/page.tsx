@@ -24,6 +24,19 @@ export const metadata: Metadata = {
   title: "Restaurant Marketing Agency India | Restuarant Marketing Company",
   description:
     "Looking for your restaurant marketing success? Fielmente is the leading restaurant marketing agency in India and boosting your restaurant's digital presence. Contact us!",
+  alternates: {
+    canonical:
+      "https://fielmente.com/industries-we-serve/restaurant-marketing-agency/ ",
+    languages: {
+      "en-US":
+        "https://fielmente.com/industries-we-serve/restaurant-marketing-agency/ ",
+    },
+  },
+  openGraph: {
+    title: "Restaurant Marketing Agency India | Restuarant Marketing Company",
+    description:
+      "Looking for your restaurant marketing success? Fielmente is the leading restaurant marketing agency in India and boosting your restaurant's digital presence. Contact us!",
+  },
 };
 
 const data = [

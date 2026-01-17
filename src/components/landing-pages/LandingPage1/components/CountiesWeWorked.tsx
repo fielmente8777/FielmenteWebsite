@@ -61,7 +61,7 @@ const CountiesWeWorked = ({
                     />
                   </div>
 
-                  <h2 className="text-center mt-2 poppins">{item?.desc ? item?.desc : item?.title }</h2>
+                  {/* <h2 className="text-center mt-2 poppins">{item?.desc ? item?.desc : item?.title }</h2> */}
                 </div>
               </div>
             )}

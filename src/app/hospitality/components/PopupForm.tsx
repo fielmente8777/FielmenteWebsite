@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState, useCallback, useRef } from "react";
 import React from "react";
 import { OutlineClose } from "@/utils/icons";
-import PopUpForm from "@/components/Forms/PopUpForm";
+import PopUpFormOld from "@/components/Forms/PopUpFormOld";
 
 const PopupForm = ({
   setShowModal,
@@ -71,7 +71,7 @@ const PopupForm = ({
                 priority
               />
             </div>
-            <PopUpForm />
+            <PopUpFormOld />
           </div>
         </article>
       </section>

@@ -65,9 +65,10 @@ const ServingHospitality: React.FC<ServingHospitalityPropsType> = ({
           />
           <div className="pagination_serving flex justify-center mt-8"></div>
         </div>
-        <p className="text-light text-center md:text-xl w-full max-md:px-4 max-w-4xl mx-auto">
-          {description}
-        </p>
+        <p
+          className="text-light text-center md:text-xl w-full max-md:px-4 max-w-4xl mx-auto"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </Section>
   );

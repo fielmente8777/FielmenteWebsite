@@ -44,10 +44,10 @@ export interface blogtype {
   link: string;
   data: string;
   isShow: boolean;
-  meta?:{
+  meta?: {
     title?: string;
     description?: string;
-  }
+  };
 }
 
 export const blog: blogtype[] = [
@@ -55,11 +55,13 @@ export const blog: blogtype[] = [
     isShow: false,
     meta: {
       title: "BnBs in Noida Legalized | New Homestay Policy 2025",
-      description:"UP’s Homestay Policy 2025 legalizes BnBs in Noida, offering homeowners incentives, subsidies, and training to boost tourism and income opportunities."
+      description:
+        "UP’s Homestay Policy 2025 legalizes BnBs in Noida, offering homeowners incentives, subsidies, and training to boost tourism and income opportunities.",
     },
     title: "BnBs in Noida Set to Become Legal Under New Homestay Policy 2025",
     link: "bnbs-in-noida-set-to-become-legal-under-new-homestay-policy-2025",
-    description:"The hospitality landscape in Noida is about to witness a major shift. The Uttar Pradesh government has rolled out the Bed and Breakfast (BnB) and Homestay Policy 2025, bringing much-needed legitimacy and structure to guest accommodation facilities that have so far been operating informally.",
+    description:
+      "The hospitality landscape in Noida is about to witness a major shift. The Uttar Pradesh government has rolled out the Bed and Breakfast (BnB) and Homestay Policy 2025, bringing much-needed legitimacy and structure to guest accommodation facilities that have so far been operating informally.",
     data: `
 
 <p>The hospitality landscape in Noida is about to witness a major shift. The Uttar Pradesh government has rolled out the Bed and Breakfast (BnB) and Homestay Policy 2025, bringing much-needed legitimacy and structure to guest accommodation facilities that have so far been operating informally.</p>
@@ -118,15 +120,17 @@ This landmark move opens new doors for property owners, offering not just legali
   },
   {
     isShow: false,
-    meta:{
-      title:"Why U.S. Hotels Choose Fielmente Marketing India",
-      description:"Discover why U.S. hotels hire Fielmente, India’s hospitality marketing agency, for cost-effective digital strategies, global reach, and proven expertise."
+    meta: {
+      title: "Why U.S. Hotels Choose Fielmente Marketing India",
+      description:
+        "Discover why U.S. hotels hire Fielmente, India’s hospitality marketing agency, for cost-effective digital strategies, global reach, and proven expertise.",
     },
     url: "/high-angle.jpg",
     title:
       "Why Hotels in the USA Hire Fielmente Hospitality Marketing Agency in India",
     link: "why-hotels-in-the-usa-hire-fielmente-hospitality-marketing-agency-in-india",
-    description:"In today’s hyper-competitive hospitality landscape, hotels across the United States are seeking smarter, cost-effective, and results-driven ways to attract guests, increase bookings, and boost their digital presence. Surprisingly, many of these hotels are turning to Fielmente, a hospitality marketing agency based in India, to achieve their goals. But why would a U.S. hotel outsource such a critical function overseas? Let’s dive into the reasons.",
+    description:
+      "In today’s hyper-competitive hospitality landscape, hotels across the United States are seeking smarter, cost-effective, and results-driven ways to attract guests, increase bookings, and boost their digital presence. Surprisingly, many of these hotels are turning to Fielmente, a hospitality marketing agency based in India, to achieve their goals. But why would a U.S. hotel outsource such a critical function overseas? Let’s dive into the reasons.",
     data: `
     <p>In today’s hyper-competitive hospitality landscape, hotels across the United States are seeking smarter, cost-effective, and results-driven ways to attract guests, increase bookings, and boost their digital presence. Surprisingly, many of these hotels are turning to Fielmente, a hospitality marketing agency based in India, to achieve their goals. But why would a U.S. hotel outsource such a critical function overseas? Let’s dive into the reasons.</p>
 
@@ -2804,7 +2808,10 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   <div>
     <h2><a href="https://getawaydesserts.com/">1. Get A Whey</a></h2>
     <img src="/images/blog/Shark-Tank-1.png" alt="hero">
-    <a href="https://getawaydesserts.com/">https://www.instagram.com/getawhey/?hl=en</a>
+    <a href="https://www.instagram.com/getawhey/?hl=en" target="_blank" rel="noopener noreferrer">
+    @getawhey
+    </a>
+
     <p><b>Idea: Sugar-free ice cream</b></p>
     <p><b>Deal: ₹1 Crore for 15% equity</b></p>
   </div>
@@ -2825,7 +2832,9 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   <div>
     <h2><a href="https://skippi.in/">2. Skippi Pops</a></h2>
     <img src="/images/blog/Shark-Tank-2.png" alt="hero">
-    <a href="https://www.instagram.com/skippiicepops/?hl=en">https://www.instagram.com/skippiicepops/?hl=en</a>
+    <a href="https://www.instagram.com/skippiicepops/?hl=en" target="_blank" rel="noopener noreferrer">
+      @skippiice_pops
+    </a>
     <p><b>Idea: Ice Pops</b></p>
     <p><b>Deal: ₹1 crore for 15% equity</b></p>
   </div>
@@ -2847,7 +2856,8 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   <div>
     <h2><a href="https://bluepinefoods.com/">3. Blue Pine Industries</a></h2>
     <p>Click to Follow Momo Mami –<a
-        href="https://www.instagram.com/bluepine_foods/?hl=en">https://www.instagram.com/bluepine_foods/?hl=en</a></p>
+        href="https://www.instagram.com/bluepine_foods/?hl=en" target="_blank" rel="noopener noreferrer">
+        @bluepine_foods</a></p>
     <p><b>Idea: Frozen Momos</b></p>
     <p><b>Deal: ₹75 lakhs for 16% equity</b></p>
   </div>
@@ -3317,10 +3327,9 @@ Why does this work? Because you’re cutting costs on front-of-house activities
   <div>
     <h2>WhatsApp Marketing</h2>
     <p>The popular bulk message sender</p>
-    <a href="https://www.truelinesolution.com/bulk-whatsapp-marketing-software">Bulk WhatsApp Sender | 100% Safe Whatsapp
+    <a class="block" target="_blank" rel="noreferrer" href="https://www.truelinesolution.com/bulk-whatsapp-marketing-software">Bulk WhatsApp Sender | 100% Safe Whatsapp
       Marketing Software (truelinesolution.com)</a>
-    <a href="https://supportdigitalindia.in/business-whatsapp.php">SDI Business Whatsapp Sender| Bulk Whatsapp Marketing |
-      Whatsapp API (supportdigitalindia.in)</a>
+    
   
   </div>
   <br />
@@ -4060,3 +4069,9 @@ Why does this work? Because you’re cutting costs on front-of-house activities
 ];
 
 export const blogData = blog.filter((item) => item.isShow === true);
+
+
+
+// tips-for-engagement-on-social-media-of-cloud-kitchen
+// <a class="hidden" target="_blank" rel="noreferrer" href="https://supportdigitalindia.in/business-whatsapp.php">SDI Business Whatsapp Sender| Bulk Whatsapp Marketing |
+//       Whatsapp API (supportdigitalindia.in)</a>

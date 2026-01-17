@@ -4,6 +4,12 @@ import Link from "next/link";
 import { NextBtnIcon } from "../page";
 import Image from "next/image";
 
+
+interface Params {
+  params: Promise<{ story: string }>;
+}
+
+
 export async function generateStaticParams() {
   const path = casStudyData;
 
@@ -12,14 +18,16 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata() {
+export async function generateMetadata(props: Params) {
+  const params = await props.params;
+  const data = casStudyData.find((item) => item.slug === params.story);
   return {
     title: `Case Study - Fielmente`,
     description: `Case Study - Fielmente`,
     alternates: {
-      canonical: "https://fielmente.com/case-study",
+      canonical: `https://fielmente.com/case-study/${data?.slug}/`,
       languages: {
-        "en-US": "https://fielmente.com/case-study",
+        "en-US": `https://fielmente.com/case-study/${data?.slug}/`,
       },
     },
     openGraph: {
@@ -29,9 +37,7 @@ export async function generateMetadata() {
   };
 }
 
-interface Params {
-  params: Promise<{ story: string }>;
-}
+
 
 export default async function Page(props: Params) {
   const params = await props.params;
@@ -41,7 +47,7 @@ export default async function Page(props: Params) {
     return <div>Blog not found</div>;
   }
   return (
-    <main>
+    (<main>
       <SectionWithContainer
         defaultPadding={false}
         sectionClassName="pt-16 pb-8"
@@ -97,6 +103,6 @@ export default async function Page(props: Params) {
           ))}
         </div>
       </SectionWithContainer>
-    </main>
+    </main>)
   );
 }

@@ -1,22 +1,32 @@
 "use client";
+
 import { OurValuedClientsPropsType } from "@/@types/@types";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import SwiperCarousel from "@/components/SwiperCarousel";
 import { FillStarIcon } from "@/utils/newIcons";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Autoplay, FreeMode } from "swiper/modules";
 
 const OurValuedClients: React.FC<OurValuedClientsPropsType> = ({
   title,
   cards,
 }) => {
+  const pathname = usePathname();
+  const useLink = pathname === "/";
+
+  const Tag = useLink ? Link : "div";
+
   return (
     <SectionWithContainer>
       <div className="space-y-8 md:space-y-14">
+        {/* Heading */}
         <div className="w-full space-y-4">
           <h2 className="text-primary lg_font_s font-semibold text-center">
             {title}
           </h2>
+
           <ul className="flex items-center justify-center gap-2">
             {Array.from({ length: 5 }).map((_, index) => (
               <li key={index}>
@@ -25,14 +35,17 @@ const OurValuedClients: React.FC<OurValuedClientsPropsType> = ({
             ))}
           </ul>
         </div>
-        <div className="demo space-y-4 rounded-3xl box-shadow overflow-clip">
-          <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full max-w-[90rem] mx-auto" />
+
+        {/* Slider */}
+        <div className="space-y-4 rounded-3xl box-shadow overflow-hidden">
+          <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full max-w-[90rem] mx-auto demo" />
+
           <SwiperCarousel
-            data={cards || []}
+            data={cards ?? []}
             speed={5000}
-            loop={true}
+            loop
+            freeMode
             modules={[Autoplay, FreeMode]}
-            freeMode={true}
             autoplay={{
               delay: 0,
               disableOnInteraction: false,
@@ -46,22 +59,41 @@ const OurValuedClients: React.FC<OurValuedClientsPropsType> = ({
                 spaceBetween: 24,
               },
             }}
-            renderSlide={(item, index) => (
-              <div key={index} className="w-full relative aspect-[4/2.5]">
-                <Image
-                  src={item?.src}
-                  alt={item?.alt}
-                  className="object-contain p-2 rounded-lg"
-                  sizes="100%"
-                  style={{ backgroundColor: item?.className }}
-                  fill
-                />
-                {/* <div className="absolute inset-0 z-50 text-black  text-xl font-bold flex items-center justify-center ">
-                      {item?.alt}
-                    </div> */}
-              </div>
-            )}
+            renderSlide={(item, index) => {
+              if (useLink) {
+                return (
+                  <Link
+                    key={index}
+                    href={item.href || "#"} // ✅ guaranteed
+                    className="w-full relative aspect-[4/2.5] block"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt || "client logo"}
+                      fill
+                      sizes="100%"
+                      className="object-contain p-2 rounded-lg"
+                      style={{ backgroundColor: item.className }}
+                    />
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={index} className="w-full relative aspect-[4/2.5]">
+                  <Image
+                    src={item.src}
+                    alt={item.alt || "client logo"}
+                    fill
+                    sizes="100%"
+                    className="object-contain p-2 rounded-lg"
+                    style={{ backgroundColor: item.className }}
+                  />
+                </div>
+              );
+            }}
           />
+
           <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full max-w-[90rem] mx-auto" />
         </div>
       </div>

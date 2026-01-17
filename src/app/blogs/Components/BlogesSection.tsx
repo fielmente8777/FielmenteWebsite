@@ -2,12 +2,10 @@
 
 import { Container, Section } from "@/components";
 import { blogData } from "@/utils/blogdata";
-import { BlogCard } from "./BlogCard";
-import { useState } from "react";
-import Image from "next/image";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useState } from "react";
+import { BlogCard } from "./BlogCard";
 
 const BlogesSection = () => {
   const router = useRouter();
@@ -70,6 +68,7 @@ const BlogesSection = () => {
     }
   };
 
+  console.log(blogData.map((item) => item.link));
   return (
     <Section className="mt-12 bg-[#F7F5F1]">
       <Container>

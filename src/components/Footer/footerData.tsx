@@ -151,11 +151,11 @@ export const footerData: FooterLinksPropstype = {
           href: contacts.address_1_mapUrl,
           icon: <FillLocationIcon />,
         },
-        {
-          label: contacts.address_2,
-          href: contacts.address_2_mapUrl,
-          icon: <FillLocationIcon />,
-        },
+        // {
+        //   label: contacts.address_2,
+        //   href: contacts.address_2_mapUrl,
+        //   icon: <FillLocationIcon />,
+        // },
         {
           label: contacts.address_3,
           href: contacts.address_3_mapUrl,

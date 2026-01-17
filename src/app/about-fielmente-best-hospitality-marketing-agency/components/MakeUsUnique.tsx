@@ -1,12 +1,14 @@
 import Image from "next/image";
 import React from "react";
 
-import Hotel1 from "../../../../public/images/HOTEL-1.webp";
-import Hotel2 from "../../../../public/images/HOTEL-2.webp";
-import Hotel3 from "../../../../public/images/HOTEL-3.webp";
-import Hotel4 from "../../../../public/images/HOTEL-4.webp";
 
 function MakeUsUnique() {
+  const data = [
+    "/images/HOTEL-1.webp",
+    "/images/HOTEL-2.webp",
+    "/images/HOTEL-3.webp",
+    "/images/HOTEL-4.webp",
+  ]
   return (
     <div>
       <div className="max-w-[500px] mx-auto flex flex-col gap-5 px-6">
@@ -22,18 +24,14 @@ function MakeUsUnique() {
       </div>
 
       <div className="lg:grid grid-cols-4 mt-20">
-        <div className="relative w-full aspect-[4/4]">
+        {/* <div className="relative w-full aspect-[4/4]">
           <Image src={Hotel1} alt="hotel" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[4/4]">
-          <Image src={Hotel2} alt="hotel" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[4/4]">
-          <Image src={Hotel3} alt="hotel" fill className="object-cover" />
-        </div>
-        <div className="relative w-full aspect-[4/4]">
-          <Image src={Hotel4} alt="hotel" fill className="object-cover" />
-        </div>
+        </div> */}
+        {data.map((item, index) => (
+          <div key={index} className="relative w-full aspect-[4/4]">
+            <Image src={item} alt="hotel" fill className="object-cover" />
+          </div>
+        ))}
       </div>
     </div>
   );

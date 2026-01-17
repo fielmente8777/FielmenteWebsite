@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import HospitalityLandingBannerFormNew from "./HospitalityLandingBannerFormNew";
 import HospitalityLandingBannerFormOld from "./HospitalityLandingBannerFormOld";
+import HospitalityLandingBannerFormNew from "./HospitalityLandingBannerFormNew";
 
 const HospitalityLandingBannerForm = () => {
   const pathName = usePathname();
@@ -17,6 +17,7 @@ const HospitalityLandingBannerForm = () => {
   ];
   const shouldRender = paths.includes(pathName);
   return !shouldRender ? <HospitalityLandingBannerFormNew /> : <HospitalityLandingBannerFormOld />;
-}
+  // return <HospitalityLandingBannerFormNew />;
+};
 
 export default HospitalityLandingBannerForm;

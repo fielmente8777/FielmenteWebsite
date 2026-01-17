@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
 import Logo from "../../../public/images/logo.webp";
+import { contacts } from "../../../contact";
 
 const LandingHeader = () => {
   const pathName = usePathname();
@@ -112,19 +113,19 @@ const LandingHeader = () => {
 
             {pathName === "/landing-page/" && (
               <Link
-                href={"tel:+919501868775 "}
+                href={"tel:"+ contacts.phone_1}
                 className={`flex items-center border border-orange-primary px-4 py-2  font-medium rounded-md text-orange-primary`}
               >
                 <span className="sr-only">call icon</span>
                 <OutLineCall />
-                +91 95018 68775
+                {contacts.phone_1}
               </Link>
             )}
           </div>
 
           {/* mobile view */}
           <div className="lg:hidden flex items-center">
-            <Link href={"tel:+919501868775 "} className="flex items-center">
+            <Link href={"tel:"+ contacts.phone_1} className="flex items-center">
               {" "}
               <span className="sr-only">call icon</span>
               <OutlinePhoneIcon width={40} height={45} color={"#F26633"} />

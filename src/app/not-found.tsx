@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { useRouter } from "next/navigation";
 
-const Notfound = () => {
+export default function Notfound() {
   const router = useRouter();
 
   return (
@@ -28,4 +28,4 @@ const Notfound = () => {
   );
 };
 
-export default Notfound;
+

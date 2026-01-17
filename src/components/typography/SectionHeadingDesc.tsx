@@ -72,9 +72,8 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
           } ${smTextCenter ? "max-md:text-center" : ""} ${
             descriptionColor ? `text-${descriptionColor}` : "text-light"
           } md:text-lg text-base`}
-        >
-          {description}
-        </p>
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       )}
     </div>
   );

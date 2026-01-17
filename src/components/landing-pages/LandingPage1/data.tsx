@@ -163,7 +163,7 @@ export const pageData = {
 
   ourService: {
     title: `OUR SERVICES`,
-    subTitle: `Transforming Hospitality Brands with Expert Marketing Services`,
+    subTitle: `Transforming Hospitality Brands with Expert <a href="/" className="inter-link" >Hospitality Marketing Services</a>`,
     description: `Our expertise spans every corner of the hospitality industry, delivering tailored strategies that drive measurable results for your specific business type.`,
     button: {
       label: "Schedule a Call",

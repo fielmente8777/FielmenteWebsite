@@ -16,9 +16,9 @@ export const homePageData = {
   bannerData: {
     imgSrc: "/banner_11zon.jpg",
     title: "Fielmente - India’s Leading",
-    subTitle: `<span>Hospitality Marketing </span><i>Agency</i>`,
+    subTitle: `<a class="inter-link" href="/" ><span>Hospitality Marketing </span><i>Agency</i></a>`,
     description:
-      "Boost Your Online Presence, Drive More Bookings, and Grow Your Hospitality Business with AI-Driven Digital Strategies.",
+      "Boost Your Online Presence, Drive More Bookings, and Grow Your Hospitality Business with AI-Driven Digital Strategies through India’s best Hospitality Marketing Solutions.",
   },
   marketingPartnersData: {
     cards: [
@@ -102,7 +102,7 @@ export const homePageData = {
   servingHospitalityData: {
     title: "Diverse Solutions for a Wide Range of <b>Hospitality Industry</b>",
     description: [
-      "Choose Fielmente as your digital marketing partner to transform your hospitality business with assured success and innovation.",
+      "Choose Fielmente as your Hotel digital marketing partner to transform your hospitality business with assured success and innovation. We are the best of India <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency</a> and <a class='inter-link' href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Agency</a>.",
     ],
     cards: [
       {
@@ -186,20 +186,19 @@ export const homePageData = {
     title: "How It Works",
     subTitle: "Behind The Scene at Fielmente",
     description: [
-      "These are the foundation of our hospitality marketing agency's approach, aimed of successfully growing your hospitality business, leading to success.",
+      `These are the foundation of our <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing agency's</a> approach, aimed of successfully growing your hotel business, leading to success.`,
     ],
     cards: [
       {
         icon: <ConsultIcon />,
         title: "Consult",
-        description:
-          "We guide you through every step of your hospitality marketing journey, offering expert advice to increase your hotel occupancy and revenue. Our experts are dedicated to enhance your hotel and restaurant digital presence.",
+        description: `We guide you through every step of your <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing</a> journey, offering expert advice to increase your hotel occupancy and revenue. Our experts are dedicated to enhance your hotel and restaurant digital presence.`,
       },
       {
         icon: <StrategiseIcon />,
         title: "Strategise",
         description:
-          "We design data-driven, personalised digital marketing strategies for your hospitality business. Leveraging hospitality industry insights, consumer trends, and innovative approaches to create a roadmap.",
+          "We design data-driven, personalised digital marketing strategies for your hotel business. Leveraging hotel industry insights, consumer trends, and innovative approaches to create a roadmap.",
       },
       {
         icon: <ExecuteIcon />,
@@ -212,23 +211,80 @@ export const homePageData = {
   milestone: [
     {
       number: "95%",
-      title:"Client Retention",
+      title: "Client Retention",
       description: "Hotels & Resorts choose to stay with us",
     },
     {
       number: "500+",
-      title:"Properties Served",
+      title: "Properties Served",
       description: "From boutique homestays to luxury resorts",
     },
     {
       number: "1,000+",
-      title:"Campaigns Delivered",
+      title: "Campaigns Delivered",
       description: "Driving direct bookings & revenue growth",
     },
   ],
   chooseUsData: {
     title: "Why Choose Us",
-    subTitle: `AI-Driven Innovations for the <b>Hotel, Resort and Restaurants</b>`,
+    subTitle: `AI-Driven Marketing for the Your Hotel, Resort & Restaurant - Fielmente <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel</a> & <a class="inter-link" href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Agency</a> in India`,
+    description: [
+      `In today’s AI-driven digital landscape, hotels, restaurants, and resorts need more than traditional advertising. They need a <b>data-backed, AI-ready marketing strategy</b> that ensures visibility across Google, ChatGPT, Gemini, and future search platforms. <b>Fielmente</b> is a performance-focused <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency in India</a> that helps hospitality brands grow bookings, brand authority, and direct revenue through intelligent digital marketing solutions.`,
+      `As a full-service <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Company</a>, Fielmente understands the hospitality buyer journey from discovery to booking. We create marketing ecosystems that position your hotel, restaurant, or resort as the top recommendation across AI-powered searches and voice-based discovery platforms.`,
+    ],
+    contentData: [
+      {
+        heading:
+          "Leading Hotel Marketing Company in India for AI Search Visibility",
+        body: `Fielmente is a next-generation <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Company in India,</a> built for the era of conversational search and AI recommendations. These are search term where you search appear on AI searches:`,
+        points: [
+          "Best hotel marketing agency in India",
+          "Top hotel marketing company for luxury resorts",
+          "Who can grow hotel bookings digitally?",
+        ],
+        description:
+          `We optimize your digital presence using <strong>AI-friendly content structures,</strong> semantic SEO, local intent signals, and authority-driven branding ensuring your hotel ranks across both traditional and AI-generated results.`,
+      },
+      {
+        heading: "Result-Driven Restaurant Marketing Agency & Company",
+        body: `As a trusted <a class="inter-link" href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Agency in India,</a> Fielmente helps restaurants dominate local searches, AI food recommendations, and discovery platforms. Whether you’re a café, cloud kitchen, fine-dining brand, or restaurant chain, our solutions are tailored to your growth goals.<br/>
+        We also operate as a strategic <a class="inter-link" href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Company in India,</a> offering:`,
+        points: [
+          "Local SEO & Google Maps dominance",
+          "AI-optimized menu & brand content",
+          "Social media & influencer marketing",
+          "Performance ads for dine-in & delivery",
+          "Review management & reputation building",
+        ],
+        description:
+          "Our <a class='inter-link' href='/industries-we-serve/restaurant-marketing-agency/'>restaurant marketing agency</a> approach focuses on visibility where customers are actually searching especially on AI tools that influence dining decisions today.",
+      },
+      {
+        heading: "Resort Marketing Firm Focused on Premium Growth",
+        body: `Fielmente is a specialized <strong>Resort Marketing Firm in India</strong> working with luxury resorts, boutique stays, wellness retreats, and destination properties. We position resorts as premium experiences rather than just accommodations.<br>
+        As a trusted <strong>Resort Marketing Firm,</strong> our strategies include:`,
+        points: [
+          "High-intent SEO for resort bookings",
+          "Experience-based storytelling for AI discovery",
+          "Direct booking growth funnels",
+          "International traveler targeting",
+          "Brand authority building for luxury positioning",
+        ],
+      },
+      {
+        heading: "Why Fielmente is Built for AI, ChatGPT & Gemini Searches",
+        body: `Fielmente doesn’t just “do digital marketing.” We <b>engineer discoverability</b> for the future of search. Our marketing frameworks are designed to:`,
+        points: [
+          "Rank in AI answers, not just blue links",
+          "Be cited by conversational search engines",
+          "Build topical authority in hospitality marketing",
+          "Convert AI traffic into real bookings",
+        ],
+        description:
+          `If you’re looking for a <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency,</a> <a class="inter-link" href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Company </a> that understands how AI platforms influence customer decisions—<strong>Fielmente is your growth partner.`,
+      },
+    ],
+
     cards: [
       {
         icon: <BestServicesIcon />,
@@ -282,15 +338,13 @@ export const homePageData = {
   ],
   countriesWeWorkedIn: {
     title: "COUNTRIES WE WORKED",
-    subTitle:
-      "Delivering AI-Driven Hotel Marketing <b>Solutions Globally Since 2020</b>",
+    subTitle: `Delivering AI-Driven <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing</a> <b>Solutions Globally Since 2020</b>`,
     imagesSrc: ["/home/country.png"],
   },
   maximizeGrowthData: {
     // title: "MAXIMIZE YOUR HOTEL GROWTH",
     title: "Boost Occupancy & Reduce OTA Costs with Fielmente",
-    subTitle:
-      "Let us handle your Hotel Marketing Services &</br> <b>grow your occupancy rate by 5X</b>",
+    subTitle: `Let us handle your <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Services</a> &</br> <b>grow your occupancy rate by 5X</b>`,
     cards: [
       {
         icon: <DriveDirectBookingIcon />,
@@ -336,7 +390,7 @@ export const homePageData = {
   addscardsData: {
     title: "Elevate your <b>Hospitality Brand Today!</b>",
     description:
-      "Ready to transform your digital presence? Let's create magic together. Book our <b>Hospitality Marketing Services</b> now!",
+      "Ready to transform your digital presence? Let's create magic together. Book our <a class='inter-link' href='/'><b>Hospitality Marketing Services</b></a> now!",
     links: [
       {
         label: "Schedule Call",
@@ -349,9 +403,9 @@ export const homePageData = {
     cards: [
       {
         question:
-          "What makes Fielmente the best hospitality marketing agency in India?",
+          "What makes Fielmente the best <a class='inter-link' href='/'>hospitality marketing agency</a> in India?",
         answer:
-          "At Fielmente, we specialize in delivering tailored marketing solutions for hotels, resorts, and restaurants. Our expertise as a hospitality marketing agency in India comes from years of working with top properties and helping them grow through digital marketing, social media, SEO, and performance campaigns.",
+          "At Fielmente, we specialize in delivering tailored marketing solutions for hotels, resorts, and restaurants. Our expertise as a <a class='inter-link' href='/'>hospitality marketing agency</a> in India comes from years of working with top properties and helping them grow through digital marketing, social media, <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-seo/>SEO</a>, and performance campaigns.",
       },
       {
         question:
@@ -363,39 +417,36 @@ export const homePageData = {
         question:
           "How does a hospitality digital marketing agency help hotels and resorts?",
         answer:
-          "A hospitality digital marketing agency provides end-to-end online marketing services for hotels and resorts — including website optimization, hotel SEO services, paid advertising, and social media marketing for hotels. We ensure your brand stands out in search results and attracts the right audience.",
+          "A hospitality digital marketing agency provides end-to-end online marketing services for hotels and resorts — including website optimization, <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-seo/>hotel SEO services</a>, paid advertising, and <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-social-media/'>social media marketing for hotels</a>. We ensure your brand stands out in search results and attracts the right audience.",
       },
       {
-        question: "Do you offer hotel social media marketing services?",
+        question:
+          "Do you offer <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-social-media/'>hotel social media marketing</a> services?",
         answer:
-          "Yes! Fielmente is also a hotel social media agency helping brands build strong engagement across Instagram, Facebook, and LinkedIn. From creative content calendars to ad campaigns, our hotel social media marketing strategies are designed to boost visibility and increase direct bookings.",
+          "Yes! Fielmente is also a <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-social-media/'>hotel social media agency</a> helping brands build strong engagement across Instagram, Facebook, and LinkedIn. From creative content calendars to ad campaigns, our <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-social-media/'>hotel social media marketing</a> strategies are designed to boost visibility and increase direct bookings.",
       },
       {
         question:
           "What kind of hotel digital marketing services do you provide?",
-        answer:
-          "We provide a wide range of hotel digital marketing services, including: SEO services for hotels, paid advertising campaigns, content marketing, email automation, hotel digital marketing agency support for Google Ads & Meta Ads, and reputation management for hotels & resorts. Our goal as the best hotel marketing company in India is to increase direct bookings and reduce dependency on OTAs.",
+        answer: `We provide a wide range of hotel digital marketing services, including: SEO services for hotels, paid advertising campaigns, content marketing, email automation, hotel digital marketing agency support for Google Ads & Meta Ads, and reputation management for hotels & resorts. Our goal as the best <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing company</a> in India is to increase direct bookings and reduce dependency on OTAs.`,
       },
       {
         question: "Do you also work with resorts?",
-        answer:
-          "Absolutely! Fielmente is a resort marketing company with proven expertise in luxury and boutique resorts. Our team designs custom strategies as a resort digital marketing agency, ensuring you attract the right travelers through SEO, social media, and targeted ad campaigns.",
+        answer: `Absolutely! Fielmente is a resort marketing company with proven expertise in luxury and boutique resorts. Our team designs custom strategies as a resort digital marketing agency, ensuring you attract the right travelers through SEO, social media, and targeted ad campaigns.`,
       },
       {
-        question: "How do your hotel SEO services work?",
-        answer:
-          "Our SEO services for hotels include keyword optimization, local SEO (Google Maps, GMB), content creation, and link building. By working with a hotel digital marketing company in India like Fielmente, you ensure higher visibility on Google, more direct bookings, and reduced OTA costs.",
+        question:
+          "How do your <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/hotel-seo/>hotel SEO services</a> work?",
+        answer: `Our SEO services for hotels include keyword optimization, local SEO (Google Maps, GMB), content creation, and link building. By working with a hotel digital marketing company in India like Fielmente, you ensure higher visibility on Google, more direct bookings, and reduced OTA costs.`,
       },
       {
-        question: "Do you provide customized hotel marketing consultancy?",
+        question: `Do you provide customized <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing consultancy</a>?`,
         answer:
           "Yes, apart from being a hospitality marketing company, we also act as a hospitality marketing consultant. We audit your current marketing strategy and design customized solutions to improve your hotel’s online presence, sales funnel, and guest acquisition.",
       },
       {
-        question:
-          "What makes Fielmente different from other hotel marketing agencies?",
-        answer:
-          "Unlike generic marketing agencies for hotels, Fielmente works only in the hospitality sector. This niche focus makes us one of the top hotel marketing agencies in India, offering tailored strategies for hotels, resorts, and hospitality brands to maximize revenue.",
+        question: `What makes Fielmente different from other <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing agencies</a>?`,
+        answer: `Unlike generic marketing agencies for hotels, Fielmente works only in the hospitality sector. This niche focus makes us one of the top <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing agencies</a> in India, offering tailored strategies for hotels, resorts, and hospitality brands to maximize revenue.`,
       },
       {
         question: "How can I get started with Fielmente?",

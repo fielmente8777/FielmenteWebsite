@@ -1,18 +1,20 @@
-import Call from "@/components/Call";
 import Footer from "@/components/Footer/Footer";
 import NavBar from "@/components/Header/NavBar";
 import PopupFormNew from "@/components/PopupFormNew";
-import Whatsapp from "@/components/WhatsApp";
 import Salesiq from "@/components/zohochatbot/Salesiq";
 import { DataProvider } from "@/contextApi/DataContext";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
 import "../styles/globals.scss";
 import "./newstyle.scss";
 
 const inter = Inter({ subsets: ["latin"] });
-
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 export const metadata: Metadata = {
   title: "Fielmente - India's Leading Hospitality Marketing Agency",
   description:
@@ -218,7 +220,10 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={inter.className} suppressHydrationWarning={true}>
+      <body
+        className={`${inter.className} ${poppins.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
         {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <Header /> */}
         <DataProvider>
@@ -227,10 +232,9 @@ export default function RootLayout({
 
           {children}
           <Footer />
-          <Call />
-          <Whatsapp />
+          {/* <Call /> */}
+          {/* <Whatsapp /> */}
           <PopupFormNew />
-
         </DataProvider>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ5LPRNM"></iframe>

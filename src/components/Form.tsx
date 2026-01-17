@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import FormNew from "./FormNew";
 import FormOld from "./FormOld";
+import FormNew from "./FormNew";
 
 const Form = () => {
   const pathName = usePathname();
@@ -17,6 +17,7 @@ const Form = () => {
   ];
   const shouldRender = paths.includes(pathName);
   return !shouldRender ? <FormNew /> : <FormOld />;
+  // return <FormNew />;
 }
 
 export default Form;

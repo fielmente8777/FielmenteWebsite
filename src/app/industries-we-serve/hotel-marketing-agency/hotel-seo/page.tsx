@@ -1,15 +1,9 @@
 import Image from "next/image";
-import LineDesign from "../../../../../public/images/4tg4fc4.webp";
-import Bookingman from "../../../../../public/images/Bookingman.webp";
 
 import WantToJoin from "../../components/want-to-join";
 
 import CaptivateAndConnect from "../../components/captivate-and-connect";
 
-import Promote from "../../../../../public/images/3rf.webp";
-import Contentwriting from "../../../../../public/images/content-writing.webp";
-import Hoursglass from "../../../../../public/images/hourglass.webp";
-import Keyword from "../../../../../public/images/keywords.webp";
 import { Accordin } from "../../components/common-hero";
 import WeAreDef from "./components/WeAreDef";
 
@@ -20,17 +14,19 @@ export const metadata: Metadata = {
   title: "Hotel SEO Agency India | Best Hotel SEO Services- Fielmente",
   description:
     "Boost your hotel's organic online presence with Fielmente, the premier hotel SEO agency in India. Helping Local SEO for hotels to boost the booking.",
-    alternates: {
-      canonical: "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-seo",
-      languages: {
-        "en-US": "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-seo",
-      },
+  alternates: {
+    canonical:
+      "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-seo/",
+    languages: {
+      "en-US":
+        "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-seo/",
     },
-    openGraph: {
-      title: "Hotel SEO Agency India | Best Hotel SEO Services- Fielmente",
-      description:
-        "Boost your hotel's organic online presence with Fielmente, the premier hotel SEO agency in India. Helping Local SEO for hotels to boost the booking.",
-    }
+  },
+  openGraph: {
+    title: "Hotel SEO Agency India | Best Hotel SEO Services- Fielmente",
+    description:
+      "Boost your hotel's organic online presence with Fielmente, the premier hotel SEO agency in India. Helping Local SEO for hotels to boost the booking.",
+  },
 };
 const faq = [
   {
@@ -113,7 +109,7 @@ const capitavteAndConnectData = {
   },
   rightContent: {
     title: "Advantages of Local SEO for Your Hotel",
-    icon: Keyword,
+    icon: "/images/keywords.webp",
     subtitle: [
       "Increased online visibility for local searches.",
       "Targeted exposure to potential guests in your area.",
@@ -134,7 +130,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Looking to enhance your hotel’s online presence? Choose Fielmente. It ensures your hotel ranks high on search engines with the customized strategies.",
       image: {
-        src: Contentwriting,
+        src: "/images/content-writing.webp",
         alt: "Booking",
       },
     },
@@ -144,7 +140,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Fielmente- The Best Hotel SEO Agency gives customized Strategies and Expertise Designed for Hotels to Drive More Reservations and Increase Your Profits.",
       image: {
-        src: Promote,
+        src: "/images/3rf.webp",
         alt: "Booking",
       },
     },
@@ -153,7 +149,7 @@ const capitavteAndConnectData = {
       title: "Stay Competitive",
       subtitle: `Fielmente gives cutting-Edge Strategies. Empower Your Hotel to Outrank Competitors, Attract More Guests, and Achieve Lasting Success in the Digital Landscape.`,
       image: {
-        src: Hoursglass,
+        src: "/images/hourglass.webp",
         alt: "Booking",
       },
     },
@@ -163,7 +159,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Our Expert Strategies and Services Drive Qualified Visitors to Your Hotel Website. Boosting Visibility and Fueling Bookings for Unmatched Success in the Hospitality Industry.",
       image: {
-        src: Contentwriting,
+        src: "/images/content-writing.webp",
         alt: "Booking",
       },
     },
@@ -173,7 +169,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Fielmente provides the best strategies and Services. Boost your Website’s User Experience by ensuring Smooth Navigation, Fast Load Times, and Engaging Content for an Unforgettable Stay at Your Hotel.",
       image: {
-        src: Promote,
+        src: "/images/3rf.webp",
         alt: "Booking",
       },
     },
@@ -183,7 +179,7 @@ const capitavteAndConnectData = {
       subtitle:
         "Our Result-Driven Strategies and Services Deliver Maximum Return on Investment. Boost Your Online Presence, Driving Bookings, and Optimizing Marketing Budgets for Lasting Success.",
       image: {
-        src: Hoursglass,
+        src: "/images/hourglass.webp",
         alt: "Booking",
       },
     },
@@ -211,7 +207,7 @@ function page() {
             <div className="">
               <div className="relative max-w-[500px] mx-auto aspect-[4/3]">
                 <Image
-                  src={LineDesign}
+                  src={"/images/4tg4fc4.webp"}
                   alt="Line-design"
                   fill
                   className="object-contain"
@@ -233,7 +229,7 @@ function page() {
           <div className="grid lg:grid-cols-5 items-center gap-8">
             <div className="lg:col-span-2 md:max-w-[380px] relative aspect-[4/4.6]">
               <Image
-                src={Bookingman}
+                src={"/images/Bookingman.webp"}
                 alt="booking-man"
                 fill
                 className="object-cover rounded-xl"
@@ -298,43 +294,6 @@ function page() {
           <CaptivateAndConnect {...capitavteAndConnectData} />
         </div>
       </div>
-{/* 
-      <div className="md:py-20 py-10">
-        <div className="grid lg:grid-cols-4 grid-cols-1">
-          <div className="relative w-full aspect-[4/4.5]">
-            <Image
-              src={Hotelseo1}
-              alt="google-ads"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="relative w-full aspect-[4/4.5]">
-            <Image
-              src={Hotelseo2}
-              alt="google-ads"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="relative w-full aspect-[4/4.5]">
-            <Image
-              src={Hotelseo3}
-              alt="google-ads"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="relative w-full aspect-[4/4.5]">
-            <Image
-              src={Hotelseo4}
-              alt="google-ads"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </div> */}
 
       <WeAreDef />
 

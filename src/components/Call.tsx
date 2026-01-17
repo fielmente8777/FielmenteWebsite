@@ -3,11 +3,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { IoCall } from "react-icons/io5";
+import { contacts } from "../../contact";
 
 function Call() {
   const pathname = usePathname();
   const ukno = "+44 7438375533";
-  const indNo = "+919501868775";
+  const indNo = contacts.phone_1;
+  // const indNo = "+919501868775";
 
   if (pathname === "/thank-you/") {
     return null;

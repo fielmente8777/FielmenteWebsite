@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   description:
     "About Fielmente, the expert F&amp;B and hospitality marketing consultant. Unveil our transformative expertise &amp; experience in your businesses",
   alternates: {
-    canonical: "https://fielmente.com/about-fielmente-best-hospitality-marketing-agency",
+    canonical: "https://fielmente.com/about-fielmente-best-hospitality-marketing-agency/",
     languages: {
-      "en-US": "https://fielmente.com/about-fielmente-best-hospitality-marketing-agency",
+      "en-US": "https://fielmente.com/about-fielmente-best-hospitality-marketing-agency/",
     },
   },
   openGraph: {

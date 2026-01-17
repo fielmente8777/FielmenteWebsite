@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords:
     "Hospitality Marketing Agency, Hospitality marketing service, Hospitality marketing consultant ,Hospitality solutions,Hospitality business services,Hospitality support, hospitality growth,Hospitality marketing strategy,Hospitality marketing planning,Hospitality marketing plan,Hospitality marketing services,Hospitality marketing consultant,Hospitality marketing agency",
   alternates: {
-    canonical: "https://fielmente.com/hospitality/",
+    canonical: "https://fielmente.com/landing-page/",
   },
   robots: {
     index: true,

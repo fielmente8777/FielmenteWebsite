@@ -14,7 +14,7 @@ function MarketingAgency() {
       {/* Left Content**** */}
       <div className="flex flex-col justify-center gap-6 text-white">
         {/* location */}
-        <div className="flex items-center md:text-2xl text-white divide-x divide-white">
+        {/* <div className="flex items-center md:text-2xl text-white divide-x divide-white">
           <span className="pr-4 flex items-center gap-1">
             <span className="text-orange-primary">
               <FillLocationIcon />
@@ -34,7 +34,7 @@ function MarketingAgency() {
               </span>
             ))}
           </span>
-        </div>
+        </div> */}
         <h2 className="md:text-6xl/[4rem] text-3xl w-[100%] font-medium lg:pe-[4rem]">
           Work with the India’s Best{" "}
           {pathName === "/resort/"

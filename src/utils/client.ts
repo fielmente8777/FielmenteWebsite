@@ -1,58 +1,13 @@
-import { StaticImageData } from "next/image";
-import Client1 from "../../public/images/ALLURE-NAINITAL-LOGO.png";
-import Client2 from "../../public/images/Client2.png";
-import Client3 from "../../public/images/Client3.png";
-import Client4 from "../../public/images/BG-logo.jpg";
-import Client5 from "../../public/images/BURKEY-BLACK-LOGO-01.png";
-import Client6 from "../../public/images/Client6.png";
 // import Client7 from "../../public/images/D&G-logo-03-1.png";
-import Client8 from "../../public/images/DOUBLE-TREE-LOGO-01.png";
-import Client9 from "../../public/images/Dunagiri-Logo-Square.png";
 // import Client10 from "../../public/images/HUMRAHI-TRAVELS-LOGO.jpg";
-import Client11 from "../../public/images/Hyatt-regency-logo.jpg";
-import Client12 from "../../public/images/JW-Mariott-logo.png";
-import Client13 from "../../public/images/Novotel-Logo.png";
-import Client14 from "../../public/images/Radisson-Logo.png";
-import Client15 from "../../public/images/Ramada-Logo.jpg";
-import Client16 from "../../public/images/Taj-hotel-logo.png";
 // import Client17 from "../../../public/images/The_Park_Hotels.jpg";
-import Client18 from "../../public/images/peace@peak.jpg";
-import Client19 from "../../public/images/logo_uv-removebg-preview-e1701685619775.webp";
-import Client20 from "../../public/images/bunker-house.jpg";
-import Client21 from "../../public/images/Red-Rock-villa.jpg";
-import Client22 from "../../public/images/wabi-sabi.jpg";
-import Client23 from "../../public/images/ebc.jpg";
-import Client24 from "../../public/images/Riviera.jpg";
-import Client25 from "../../public/images/footerspicelogo.png";
-import Client26 from "../../public/images/chefkenzo.png";
-import Client27 from "../../public/images/eracamp.png";
-import Client28 from "../../public/images/Grandview_resort.jpg";
-import Client29 from "../../public/clientsLogo/468F.png";
-import Client30 from "../../public/clientsLogo/Aaoji.png";
-import Client31 from "../../public/clientsLogo/STERNWHEELER.jpg";
-import Client32 from "../../public/clientsLogo/Season-suites.png";
-import Client33 from "../../public/clientsLogo/emeraldtrail.png";
-import Client34 from "../../public/clientsLogo/kiyostay.png";
-import Client35 from "../../public/clientsLogo/lakehill.png";
-import Client36 from "../../public/clientsLogo/maati.png";
-import Client37 from "../../public/clientsLogo/sprav.jpg";
-import Client38 from "../../public/clientsLogo/Park Cafe.png";
-import Client39 from "../../public/clientsLogo/deuropa.png";
-import Client40 from "../../public/clientsLogo/dhruvees.png";
-import Client41 from "../../public/clientsLogo/dunagiri-retreat.png";
-import Client42 from "../../public/clientsLogo/hilton.png";
-import Client43 from "../../public/clientsLogo/hotel-platinum-shravasti.png";
-import Client44 from "../../public/clientsLogo/mahabir-palace.png";
-import Client45 from "../../public/clientsLogo/oak-climbing.png";
-import Client46 from "../../public/clientsLogo/peace@peak.png";
-import Client47 from "../../public/clientsLogo/tents&trails.png";
-import Client48 from "../../public/clientsLogo/minimalist.png";
 
 export interface ClientData {
-  src: string | StaticImageData;
+  src: string ;
   alt: string;
   className?: string;
   show?: boolean;
+  href?: string
 }
 
 export interface ChooseCardProsData {
@@ -63,213 +18,245 @@ export interface ChooseCardProsData {
 
 export const ClientImages: ClientData[] = [
   {
-    src: Client1,
+    src: "/clientsLogo/ALLURE-NAINITAL-LOGO.png",
     alt: "Client1",
     className: "#000000",
     show: true,
   },
   {
-    src: Client2,
+    src: "/clientsLogo/Client2.png",
     alt: "Client2",
     className: "#ffffff",
   },
   {
-    src: Client3,
+    src: "/clientsLogo/Client3.png",
     alt: "Client3",
+    href:"https://marriott-hotels.marriott.com/"
   },
   {
-    src: Client4,
+    src: "/clientsLogo/BG-logo.jpg",
     alt: "Client4",
+    href:"https://www.bhairahawagardenresort.com/"
   },
   {
-    src: Client5,
+    src: "/clientsLogo/BURKEY-BLACK-LOGO-01.png",
     alt: "Client5",
     show: false,
   },
   {
-    src: Client6,
+    src: "/clientsLogo/Client6.png",
     alt: "Client6",
+    className: "#ffefef",
+    href:"https://www.goldentulip.com/en-us/?sr=SEO_GOOGLE"
   },
   {
-    src: Client8,
+    src: "/clientsLogo/DOUBLE-TREE-LOGO-01.png",
     alt: "Client8",
+    href:"https://www.hilton.com/en/brands/doubletree-by-hilton/"
   },
   {
-    src: Client9,
+    src: "/clientsLogo/Dunagiri-Logo-Square.png",
     alt: "Client9",
+    href:"https://www.dunagiri.com/"
   },
   // {
   //   src: Client10,
   //   alt: "Client10",
   // },
   {
-    src: Client11,
+    src: "/clientsLogo/Hyatt-regency-logo.jpg",
     alt: "Client11",
+    href:"https://www.hyatt.com/hyatt-regency/en-US"
   },
   {
-    src: Client12,
+    src: "/clientsLogo/JW-Mariott-logo.png",
     alt: "Client12",
+    href:"https://jw-marriott.marriott.com/"
   },
   {
-    src: Client13,
+    src: "/clientsLogo/Novotel-Logo.png",
     alt: "Client13",
+    href:"https://www.naturovillewellnessresort.com/"
   },
   {
-    src: Client14,
+    src: "/clientsLogo/Radisson-Logo.png",
     alt: "Client14",
   },
   {
-    src: Client15,
+    src: "/clientsLogo/Ramada-Logo.jpg",
     alt: "Client15",
+    href:"https://www.wyndhamhotels.com/ramada"
   },
   {
-    src: Client16,
+    src: "/clientsLogo/Taj-hotel-logo.png",
     alt: "Client16",
+    href:"https://www.tajhotels.com/en-in"
   },
   // {
   //   src: Client17,
   //   alt: "Client17",
   // },
   {
-    src: Client18,
+    src: "/clientsLogo/peace@peak.jpg",
     alt: "Client18",
   },
   {
-    src: Client19,
+    src: "/clientsLogo/logo_uv-removebg-preview-e1701685619775.webp",
     alt: "Client19",
     show: false,
+    href:"https://www.urbanvenue.in/"
   },
   {
-    src: Client20,
+    src: "/clientsLogo/bunker-house.jpg",
     alt: "Client20",
     show: false,
+    href:"https://thebunkerhouse.in/"
   },
   {
-    src: Client21,
+    src: "/clientsLogo/Red-Rock-villa.jpg",
     alt: "Client21",
   },
   {
-    src: Client22,
+    src: "/clientsLogo/wabi-sabi.jpg",
     alt: "Client22",
+    href:"https://wabisabiresorts.com/"
   },
   {
-    src: Client23,
+    src: "/clientsLogo/ebc.jpg",
     alt: "Client23",
+    href:"https://www.ebcmussoorie.com/"
   },
   {
-    src: Client24,
+    src: "/clientsLogo/Riviera.jpg",
     alt: "Client24",
+    href:"https://www.rivieraresortrishikesh.com/"
   },
   {
-    src: Client25,
+    src: "/clientsLogo/footerspicelogo.png",
     alt: "Client25",
     className: "#21413e",
     show: false,
   },
   {
-    src: Client26,
+    src: "/clientsLogo/chefkenzo.png",
     alt: "Client26",
     show: false,
+    href:"https://kenzok.com/"
   },
   {
-    src: Client27,
+    src: "/clientsLogo/eracamp.png",
     alt: "Client27",
+    href:"https://eracamps.com/"
   },
   {
-    src: Client28,
+    src: "/clientsLogo/Grandview_resort.jpg",
     alt: "Client28",
   },
   {
-    src: Client29,
+    src: "/clientsLogo/468F.png",
     alt: "Client29",
     show: false,
+    href:"https://468f.ca/"
   },
   {
-    src: Client30,
+    src: "/clientsLogo/Aaoji.png",
     alt: "Client30",
     className: "#000000",
     show: false,
+    href:"https://www.aaojirestaurant.com/"
   },
   {
-    src: Client31,
+    src: "/clientsLogo/STERNWHEELER.jpg",
     alt: "Client31",
   },
   {
-    src: Client32,
+    src: "/clientsLogo/Season-suites.png",
     alt: "Client32",
+    href:"https://www.seasonssuites.com/"
   },
   {
-    src: Client33,
+    src: "/clientsLogo/emeraldtrail.png",
     alt: "Client33",
+    href:"https://www.emeraldtrail.in/"
   },
   {
-    src: Client34,
+    src: "/clientsLogo/kiyostay.png",
     alt: "Client34",
+    href:"https://kiyostays.com/"
   },
   {
-    src: Client35,
+    src: "/clientsLogo/lakehill.png",
     alt: "Client35",
-    
+    href:"https://thelakehill.com/"
   },
   {
-    src: Client36,
+    src: "/clientsLogo/maati.png",
     alt: "Client36",
     className: "#000000",
   },
   {
-    src: Client37,
+    src: "/clientsLogo/sprav.jpg",
     alt: "Client37",
     className: "#000000",
+    href:"https://www.sparvhospitality.com/"
   },
   {
-    src: Client38,
+    src:"/clientsLogo/Park Cafe.png",
     alt: "Client38",
     className: "#ffffff",
     show: false,
   },
   {
-    src: Client39,
+    src: "/clientsLogo/deuropa.png",
     alt: "Client39",
+    href:"https://granddeeurope.com/"
   },
   {
-    src: Client40,
+    src: "/clientsLogo/dhruvees.png",
     alt: "Client40",
     className: "#000000",
     show: false,
+    href:"https://www.dhruvees.com/home/"
   },
   {
-    src: Client41,
+    src: "/clientsLogo/dunagiri-retreat.png",
     alt: "Client41",
+    href:"https://www.dunagiri.com"
   },
   {
-    src: Client42,
+    src: "/clientsLogo/hilton.png",
     alt: "Client42",
+    href:"https://www.hilton.com/en/"
   },
   {
-    src: Client43,
+    src: "/clientsLogo/hotel-platinum-shravasti.png",
     alt: "Client43",
+    href:"https://hotelplatinumshravasti.com/"
   },
   {
-    src: Client44,
+    src: "/clientsLogo/mahabir-palace.png",
     alt: "Client44",
     className: "#fff",
+    href:"https://www.mahabirpalace.com/"
   },
   {
-    src: Client45,
+    src: "/clientsLogo/oak-climbing.png",
     alt: "Client45",
+    href:"https://oakclimbingresort.com/"
   },
   {
-    src: Client46,
+    src: "/clientsLogo/peace@peak.png",
     alt: "Client46",
   },
   {
-    src: Client47,
+    src: "/clientsLogo/tents&trails.png",
     alt: "Client47",
   },
   {
-    src: Client48,
+    src: "/clientsLogo/minimalist.png",
     alt: "Client48",
     className: "#ffffffbe",
+    href:"https://minimalisthotels.com/"
   },
   {
     src: "/clientsLogo/magnolia.png",
@@ -279,42 +266,51 @@ export const ClientImages: ClientData[] = [
   {
     src: "/clientsLogo/white-ridge.png",
     alt: "Client50",
+    href:"https://www.whiteridgehotel.com/"
   },
   {
     src: "/clientsLogo/avr.jpg",
     alt: "Client51",
     className: "#ffffff",
+    href:"https://anandvardhanresorts.com/"
   },
   {
     src: "/clientsLogo/tulipInn.png",
     alt: "Client52",
+    href:"https://hotelgreencastle.com/tulip-inn-green-castle-mussoorie.html"
   },
   {
     src: "/clientsLogo/Hotel-Green-Castle.jpg",
     alt: "Client53",
+    href:"https://hotelgreencastle.com/hotel-green-castle.html"
   },
   {
     src: "/clientsLogo/aqua-dunhinda.jpg",
     alt: "Client54",
+    href:"https://www.aquadunhinda.com/"
   },
   {
     src: "/clientsLogo/shreeiyengar.png",
     alt: "Client55",
     show: false,
+    href:"https://shreeiyengarfoods.com/"
   },
   {
     src: "/clientsLogo/kamalfarms.png",
     alt: "Client56",
+    href:"https://kamalfarms.com/"
   },
   {
     src: "/clientsLogo/petal-panyaram.png",
     alt: "Client57",
     show: false,
+    href:"https://petalandpaniyaram.com/"
   },
   {
     src: "/clientsLogo/7Mile.png",
     alt: "Client58",
     show: false,
+    href:"https://7milebar.com.au/"
   },
   {
     src: "/clientsLogo/The-Jharna.png",
@@ -324,6 +320,7 @@ export const ClientImages: ClientData[] = [
     src: "/clientsLogo/chocolate-room.png",
     alt: "Client60",
     show: false,
+    href:"https://www.thechocolateroomindia.com/"
   },
   {
     src: "/clientsLogo/kumaon-bliss.jpg",
@@ -341,20 +338,24 @@ export const ClientImages: ClientData[] = [
   {
     src: "/clientsLogo/luxuryvibes.jpg",
     alt: "Client65",
+    href:"https://luxuryvibesstay.com/"
   },
   {
     src: "/clientsLogo/Mango_grove_Logo.avif",
     alt: "Client66",
     className: "#FFCD62",
+    href:"https://www.mangogrovehotel.com/"
   },
   {
     src: "/clientsLogo/naturoville.png",
     alt: "Client67",
-    className: "#004c5b",
+    className: "#ffffff",
+    href:"https://www.naturovillewellness.com/"
   },
   {
     src: "/clientsLogo/maira.jpeg",
     alt: "Client68",
+    href:"https://www.mairaresort.com/"
   },
   {
     src: "/clientsLogo/campton.png",
@@ -367,19 +368,23 @@ export const ClientImages: ClientData[] = [
   {
     src: "/clientsLogo/muktkeshi-logo.png",
     alt: "Client71",
+    href:"https://www.muktkeshii.com/"
   },
   {
     src: "/clientsLogo/MIRAMAR-logo.jpg",
     alt: "Client72",
+    className: "#ffffff",
   },
   {
     src: "/clientsLogo/nature-on-the-rocks.webp",
     alt: "Client73",
+    href:"https://natureontherocks.in/"
   },
   {
     src: "/clientsLogo/one-off.png",
     alt: "Client74",
     className: "#FBF6E3",
+    href:"https://oneoffhotels.com/"
   },
   {
     src: "/clientsLogo/AravatLogo.png",
@@ -389,10 +394,114 @@ export const ClientImages: ClientData[] = [
     src: "/clientsLogo/opera-house.png",
     alt: "Client76",
     className: "#B39C4D",
+    href:"https://operahouselonavala.com/"
   },
   {
     src: "/clientsLogo/colonels-resort.png",
     alt: "Client77",
     className: "#2F4B26",
+    href:"https://www.colonelsresort.com/index.html"
+  },
+  {
+    src: "/clientsLogo/umaid2.png",
+    alt: "Client78",
+    href:"https://www.umaidpalace.com/"
+  },
+  {
+    src: "/clientsLogo/Manali-se.png",
+    alt: "Client79",
+    href:"https://manali-se.com/",
+    className:"#2b3380"
+  },
+  {
+    src: "/clientsLogo/soni-arena-hotel.png",
+    alt: "Client80",
+    href:"https://soniarenahotel.com/"
+  },
+  {
+    src:"/clientsLogo/surbag.png",
+    alt: "Client81",
+    href:"https://www.suryabagh.com/"
+  },
+  {
+    src: "/clientsLogo/soul-stories.png",
+    alt: "Client82",
+    href:"https://soulstorries.com/"
+  },
+  {
+    src:"/clientsLogo/ZionHotel.png",
+    alt: "Client83",
+    className: "#ffffff",
+    href:"https://www.thezionhotel.com/"
+  },
+  {
+    src: "/clientsLogo/altin-stays.webp",
+    alt: "Altin Stays",
+    className: "#000000",
+    href: "https://altinstays.com/",
+  },
+  {
+    src: "/clientsLogo/anandha inn.webp",
+    alt: "Anandha Inn",
+    href: "https://www.anandhainn.com/",
+  },
+  {
+    src: "/clientsLogo/DLSM.webp",
+    alt: "DLSM",
+    className: "#ffffff",
+    href: "",
+  },
+  {
+    src: "/clientsLogo/hotel-awadha-vilas.webp",
+    alt: "Hotel Awadha Vilas",
+    href: "https://www.hotelawadhvilasayodhya.com/",
+  },
+  {
+    src: "/clientsLogo/infinity.webp",
+    alt: "Infinity",
+    className: "#ffffff",
+    href: "",
+  },
+  {
+    src: "/clientsLogo/la-mount.webp",
+    alt: "La Mount",
+    className: "#ffffff",
+    href: "https://lamountladakh.in/",
+  },
+  {
+    src: "/clientsLogo/lumi-logo.jpg",
+    alt: "Lumi",
+    className: "#ffffff",
+    href: "",
+  },
+  {
+    src: "/clientsLogo/moets-water.webp",
+    alt: "Moets Water",
+    className: "#ffffff",
+    href: "https://waterfrontestatebymoets.com/",
+  },
+  {
+    src: "/clientsLogo/moets.webp",
+    alt: "Moets",
+    className: "#ffffff",
+    href: "",
+  },
+  {
+    src: "/clientsLogo/nothern-nawab.webp",
+    alt: "Northern Nawab",
+    className: "#ffffff",
+    href: "https://www.northernnawab.com/",
+  },
+  {
+    src: "/clientsLogo/revtree.webp",
+    alt: "Revtree",
+    className: "#ffffff",
+    href: "",
+  },
+  {
+    src: "/clientsLogo/stone-hedge.webp",
+    alt: "Stone Hedge",
+    className: "#ffffff",
+    href: "",
   },
 ];

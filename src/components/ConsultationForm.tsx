@@ -2,15 +2,11 @@
 import Container from "./Container";
 import Section from "./Section";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
-import { StaticImageData } from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
+import SwiperCarousel from "./SwiperCarousel";
 
 const ConsultationForm = () => {
   const pathName = usePathname();
@@ -26,37 +22,7 @@ const ConsultationForm = () => {
       }
     >
       <Container>
-        {/* <div
-          className="lg:grid grid-cols-3 gap-6 items-center"
-          id="testimonials"
-        > */}
         <div className="col-span-2">
-          {/* {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? (
-              <div>
-                <h2 className="text-white lg:text-4xl/snug text-2xl">
-                  Are You Looking for the Best {pathName === "/resort/"
-                    ? "Resort"
-                    : pathName === "/hospitality/"
-                      ? "Hospitality"
-                      : pathName === "/landing-page/"
-                        ? "Hotel"
-                        : null} Marketing{" "}
-                  <b className="text-orange-primary">Company {pathName === "/resort/" || pathName === "/hospitality/" || pathName === "/landing-page/" ? "in India" : "?"}</b>
-                </h2>
-                <p className="text-white lg:text-xl text-base  mt-4">
-                  For effective {pathName === "/resort/"
-                    ? "Resort"
-                    : pathName === "/hospitality/"
-                      ? "Hospitality"
-                      : pathName === "/landing-page/"
-                        ? "Hotel"
-                        : null} marketing that stands out, fill out
-                  the form to get in touch with us today! Let’s elevate your brand
-                  together!
-                </p>
-              </div>
-            ) : (
-              <> */}
           <div className="text-white text-3xl">
             <h2>
               Client{" "}
@@ -65,7 +31,7 @@ const ConsultationForm = () => {
               </b>
             </h2>
           </div>
-          <Swiper
+          <SwiperCarousel
             modules={[Pagination, Autoplay]}
             spaceBetween={15}
             slidesPerView={1}
@@ -87,19 +53,11 @@ const ConsultationForm = () => {
                 slidesPerView: 2,
               },
             }}
-          >
-            {data.map((item, index) => (
-              <SwiperSlide key={index} className="py-4 h-full">
-                <Card {...item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          {/* </>)} */}
+            data={data}
+            swiperSlideClassName="py-4 h-full"
+            renderSlide={(item) => <Card {...item} />}
+          />
           <div className="pagination mt-10 flex justify-center items-center gap-1"></div>
-          {/* </div> */}
-          {/* <div className="" id="contactForm">
-            <Form />
-          </div> */}
         </div>
       </Container>
     </Section>
@@ -114,7 +72,7 @@ const Card = ({
   title,
   subtitle,
 }: {
-  src?: string | StaticImageData;
+  src?: string;
   alt?: string;
   title: string;
   subtitle: string;
@@ -140,7 +98,9 @@ const Card = ({
         </div>
         <div className="flex gap-4 items-center">
           <p className="text-black text-lg">
-            {readMore ? subtitle : subtitle.slice(0, 200) + (subtitle.length > 200 ? "..." : "")}
+            {readMore
+              ? subtitle
+              : subtitle.slice(0, 200) + (subtitle.length > 200 ? "..." : "")}
             {subtitle.length > 200 && (
               <button
                 className="text-orange-primary"
@@ -157,7 +117,7 @@ const Card = ({
 };
 
 interface cradData_type {
-  src?: string | StaticImageData;
+  src?: string;
   alt?: string;
   title: string;
   subtitle: string;

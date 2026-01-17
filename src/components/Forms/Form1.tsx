@@ -16,6 +16,7 @@ const Form1 = () => {
   ];
   const shouldRender = paths.includes(pathName);
   return !shouldRender ? <Form1New /> : <Form1Old />;
+  // return <Form1New />;
 };
 
 export default Form1;

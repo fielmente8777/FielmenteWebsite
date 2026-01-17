@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   description:
     "Here's our expertise in the hospitality industries we serve: hotels, restaurants, cloud kitchens, and resorts. Get in touch with our experts!",
   alternates: {
-    canonical: "https://fielmente.com/industries-we-serve",
+    canonical: "https://fielmente.com/industries-we-serve/",
     languages: {
-      "en-US": "https://fielmente.com/industries-we-serve",
+      "en-US": "https://fielmente.com/industries-we-serve/",
     },
   },
   openGraph: {

@@ -10,6 +10,9 @@ import {
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { PopupForm } from "@/app/hospitality/components";
+import { contacts } from "../../../contact";
+import Call from "../Call";
+import Whatsapp from "../WhatsApp";
 
 const LandingFooter = () => {
   const pathName = usePathname();
@@ -59,11 +62,11 @@ const LandingFooter = () => {
           </Link>
           {pathName !== "/UK/" ? (
             <Link
-              href={"tel:+919501868775"}
+              href={"tel:" + contacts.phone_1}
               className="flex items-center text-blue-dark text-lg "
             >
               <OutlinePhoneIcon width={30} height={40} />
-              +919501868775
+              {contacts.phone_1}
             </Link>
           ) : (
             <Link
@@ -89,6 +92,8 @@ const LandingFooter = () => {
         </div>
       </div>
       <PopupForm setShowModal={setShowModal} showModal={showModal} />
+      <Call />
+      <Whatsapp />
     </footer>
   );
 };

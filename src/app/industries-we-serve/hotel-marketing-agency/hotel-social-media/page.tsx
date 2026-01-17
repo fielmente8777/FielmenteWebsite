@@ -22,9 +22,9 @@ export const metadata: Metadata = {
       "Boost your Hotel Social Media Management presence with Fielmente, the leading hotel social media marketing agency in India. Drive engagement and bookings.",
   },
   alternates: {
-    canonical: "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-social-media",
+    canonical: "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
     languages: {
-      "en-US": "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-social-media",
+      "en-US": "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-social-media/",
     },
   }
 };

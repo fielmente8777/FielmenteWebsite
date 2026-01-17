@@ -32,19 +32,21 @@ const Accordion: React.FC<AccordionProps> = ({
         onMouseEnter={() => setIsAccordionOpen(true)}
         onMouseLeave={() => setIsAccordionOpen(false)}
       >
-        <div className={`flex items-center justify-between gap-4 w-full md:py-6 py-4`}>
+        <div
+          className={`flex items-center justify-between gap-4 w-full md:py-6 py-4`}
+        >
           <h3
             className={`font-semibold md:text-2xl text-xl text-primary ${questionClassName}`}
-          >
-            {question}
-          </h3>
+            dangerouslySetInnerHTML={{ __html: question }}
+          />
+
           <span
-            aria-label="accordion icon"
             onClick={() => setIsAccordionOpen(!isAccordionOpen)}
             className={`text-dark text-lg ${
               isAccordionOpen ? "-rotate-180 text-black bg-white" : ""
             }  p-1 duration-300 transition-all ease-in-out`}
           >
+            <span className="sr-only">Accordion</span>
             <OutlineDrpopdown />
           </span>
         </div>

@@ -5,6 +5,8 @@ import Container from "../Container";
 import Link from "next/link";
 import Image from "next/image";
 import { contacts } from "../../../contact";
+import Call from "../Call";
+import Whatsapp from "../WhatsApp";
 // import { PopupForm } from "@/app/hospitality/components";
 
 const PhoneIcon = () => {
@@ -199,8 +201,8 @@ const footerData = {
 
   contactUs: [
     {
-      label: "+91 95018 68775",
-      href: "tel:+919501868775",
+      label: contacts.phone_1,
+      href: "tel:" + contacts.phone_1,
       icon: <PhoneIcon />,
     },
 
@@ -299,7 +301,11 @@ const HospitalityFooter = () => {
             <span>•</span>
             <p className="text-center">
               Design And Development By{" "}
-              <Link target="_blank" href="https://www.eazotel.com/" className="font-semibold">
+              <Link
+                target="_blank"
+                href="https://www.eazotel.com/"
+                className="font-semibold"
+              >
                 Eazotel
               </Link>
             </p>
@@ -307,6 +313,8 @@ const HospitalityFooter = () => {
         </div>
       </Section>
       {/* <PopupForm setShowModal={setShowModal} showModal={showModal} /> */}
+      <Call />
+      <Whatsapp />
     </footer>
   );
 };

@@ -7,10 +7,11 @@ import execute from "../../../../public/images/aerial-view-barista-book-1024x102
 
 const Strategise: React.FC = () => {
   const data = [
-    "Transforming hotels & restaurants into thriving destinations with our expert hospitality marketing solutions and Hotel Marketing Agency.",
+    "Transforming hotels & restaurants into thriving destinations with our expert hospitality marketing solutions and <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency.</a>",
     "We believe that your stories are worth telling and we design compelling ways to showcase your brand. You might be wondering what makes us stand out from the rest.? Well, we are all-rounders. From social media marketing to search engine optimization and paid campaigns, these are just a few of the services to name.",
-    "Since 2020, we have completed 120 projects with a 95% satisfaction rate. But! This is just a start. We, the best restaurant marketing agency in India, personalised strategies, to build trust and drive immense growth to the success of your hotel and restaurant.",
-    "As a leading marketing company for hotels and marketing company for resorts, we specialize in creating impactful campaigns to attract guests. Our expertise as a marketing agency for resorts ensures a personalized approach for your brand. Recognized as a top hotel digital marketing agency and hotel digital marketing company, we deliver measurable results through cutting-edge strategies. Choose Fielmente as your digital marketing agency for hotels and digital marketing company for hotels to transform your hospitality business with proven success and innovation.",
+    "Since 2020, we have completed 120 projects with a 95% satisfaction rate. But! This is just a start. We, the best <a class='inter-link' href='/industries-we-serve/restaurant-marketing-agency/'>restaurant marketing agency</a> in India, personalised strategies, to build trust and drive immense growth to the success of your hotel and restaurant.",
+    `As a leading marketing company for hotels and marketing company for resorts, we specialize in creating impactful campaigns to attract guests. Our expertise as a marketing agency for resorts ensures a personalized approach for your brand. Recognized as a top hotel digital marketing agency and hotel digital marketing company, we deliver measurable results through cutting-edge strategies. Choose Fielmente as your <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>
+    digital marketing agency for hotels</a> to transform your hospitality business with proven success and innovation.`,
   ];
   return (
     <Section className="bg-[#0F110F] text-white lg:py-24">
@@ -41,15 +42,20 @@ const Strategise: React.FC = () => {
       <Container>
         <article className="lg:py-14 py-6">
           <h2 className="lg:text-4xl text-2xl font-bold text-center lg:text-start">
-            Work with India’s Best Hotel Marketing Agency
+            Work with India’s Best{" "}
+            <a
+              className="inter-link"
+              href="/industries-we-serve/hotel-marketing-agency/"
+            >
+              Hotel Marketing Agency
+            </a>
           </h2>
           {data.map((item, index) => (
             <p
               className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start"
               key={index}
-            >
-              {item}
-            </p>
+              dangerouslySetInnerHTML={{ __html: item }}
+            />
           ))}
           {/* <p className="text-[#BCBCBC] text-lg mt-6 text-center lg:text-start">
             Transforming hotels & restaurants into thriving destinations with

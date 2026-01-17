@@ -6,6 +6,8 @@ import { OutLineLocationIcon } from "../Header/landingHeader";
 import { OutLineCall, OutLineEmail } from "@/utils/icons";
 import Form2 from "../Form2";
 import { usePathname } from "next/navigation";
+import Call from "../Call";
+import Whatsapp from "../WhatsApp";
 
 const LandingPageFooter2 = () => {
   const pathName = usePathname();
@@ -123,6 +125,8 @@ const LandingPageFooter2 = () => {
           </div>
         </div>
       </Container>
+      <Call />
+      <Whatsapp />
     </Section>
   );
 };

@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical:
-      "https://fielmente.com/hotelprservices",
+      "https://fielmente.com/hotelprservices/",
     languages: {
       "en-US":
-        "https://fielmente.com/hotelprservices",
+        "https://fielmente.com/hotelprservices/",
     },
   },
 };

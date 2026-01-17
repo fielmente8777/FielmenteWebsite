@@ -2,9 +2,13 @@ import Link from "next/link";
 import { footerData, policyLinks } from "./footerData";
 import Image from "next/image";
 import { Container } from "../sectionComponants";
-
+import { FaWhatsapp } from "react-icons/fa";
+import { MdCall } from "react-icons/md";
+import { contacts } from "../../../contact";
+import Call from "../Call";
+import Whatsapp from "../WhatsApp";
 const Footer2 = () => {
-const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="max_screen_width relative after:bg-primary after:bg-cover after:bg-no-repeat after:bg-center after:w-full after:h-full after:absolute after:inset-0 after:z-[-2]">
       <Container className="md:py-[7.5rem] py-8 relative after:absolute md:after:inset-0 max-md:after:top-6 max-md:after:left-4 max-md:after:w-[90%] after:bg-[url('/map.png')] after:bg-contain after:bg-no-repeat after:opacity-5 md:after:bg-center after:w-full after:h-full after:z-[-1]">
@@ -24,8 +28,8 @@ const currentYear = new Date().getFullYear();
                 sizes="100vw"
               />
             </Link>
-            <p className="text-white md:text-xl">{footerData.description}</p>
-            {footerData.linksData.slice(0, 1).map((item, index) => (
+            {/* <p className="text-white md:text-xl">{footerData.description}</p> */}
+            {/* {footerData.linksData.slice(0, 1).map((item, index) => (
               <div className="flex flex-col gap-2 md:mt-4" key={index}>
                 <h3 className="text-secondary sm_font_s font-medium">
                   {item.title}
@@ -45,7 +49,26 @@ const currentYear = new Date().getFullYear();
                   ))}
                 </ul>
               </div>
-            ))}
+            ))} */}
+            <ul className="flex items-center gap-4">
+              <li className="flex items-center gap-4">
+                <Link
+                  href={`https://wa.me/${contacts.phone_1.replace(/ /g, "")}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
+                  target="_blank"
+                  className="flex items-center justify-center hover:bg-secondary text-secondary text-2xl hover:text-white bg-white rounded-lg w-10 h-10 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 shadow-4d"
+                >
+                  <FaWhatsapp />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`tel:${footerData.linksData[4].listOfLinks[1].href}`}
+                  className="flex items-center justify-center hover:bg-secondary text-secondary text-2xl hover:text-white bg-white rounded-lg w-10 h-10 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 shadow-4d"
+                >
+                  <MdCall />
+                </Link>
+              </li>
+            </ul>
           </div>
           {footerData.linksData.slice(1, 3).map((item, index) => (
             <div className="flex flex-col md:gap-6 gap-4" key={index}>
@@ -111,8 +134,10 @@ const currentYear = new Date().getFullYear();
           </div>
         </Container>
       </div>
+      <Call />
+      <Whatsapp />
     </footer>
   );
-}
+};
 
 export default Footer2;

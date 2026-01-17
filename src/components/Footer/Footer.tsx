@@ -1,10 +1,9 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Footer2 from "./Footer2";
-import LandingFooter from "./LandingFooter";
-import path from "path";
-import LandingPageFooter2 from "./LandingPageFooter2";
 import HospitalityFooter from "./HospitalityFooter";
+import LandingFooter from "./LandingFooter";
+import LandingPageFooter2 from "./LandingPageFooter2";
 
 const Footer = () => {
   const pathName = usePathname();

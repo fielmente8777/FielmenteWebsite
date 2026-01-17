@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     "Elevate your online presence with Fielmente, the leading restaurant social media agency in India. Powerful social media marketing strategies!",
   alternates: {
     canonical:
-      "https://fielmente.com/industries-we-serve/restaurant-marketing-agency/restaurant-social-media",
+      "https://fielmente.com/industries-we-serve/restaurant-marketing-agency/restaurant-social-media/",
     languages: {
       "en-US":
-        "https://fielmente.com/industries-we-serve/restaurant-marketing-agency/restaurant-social-media",
+        "https://fielmente.com/industries-we-serve/restaurant-marketing-agency/restaurant-social-media/",
     },
   },
   openGraph: {

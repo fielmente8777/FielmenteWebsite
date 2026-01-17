@@ -41,9 +41,10 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
             {title}
           </h2>
 
-          <h3 className="md:text-5xl/[4rem] text-2xl font-medium text-white">
-            {subTitle}
-          </h3>
+          <h3
+            className="md:text-5xl/[4rem] text-2xl font-medium text-white"
+            dangerouslySetInnerHTML={{ __html: subTitle ?? "" }}
+          ></h3>
         </div>
 
         <div className="w-full p-2 mt-12 com relative">

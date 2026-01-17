@@ -15,7 +15,7 @@ const Faqs: React.FC<FaqsPropsType> = ({ title, cards }) => {
             ))}
           </div>
         </div>
-        <div className="lg:col-span-1  ">
+        <div className="lg:col-span-1 max-w-5xl mx-auto w-full">
           <Form1 />
         </div>
       </div>

@@ -44,7 +44,7 @@ const Banner: React.FC<BannerPropsType> = ({
         <Container className="bg2">
           <div className="flex flex-col gap-8 bg3 pointer-events-none">
             <div className="flex flex-col md:gap-8 xl:gap-2">
-              <div className="flex items-center justify-center md:text-2xl text-white divide-x divide-white">
+              {/* <div className="flex items-center justify-center md:text-2xl text-white divide-x divide-white">
                 <span className="px-4 flex items-center gap-1">
                   <span className="text-orange-primary">
                     <FillLocationIcon />
@@ -57,14 +57,21 @@ const Banner: React.FC<BannerPropsType> = ({
                     ))}
                   </span>
                 </span>
-                <span className="px-4 fade-text">
+                <span className="px-4 fade-text uppercase">
                   {"PUNE".split("").map((char, i) => (
                     <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
                       {char}
                     </span>
                   ))}
                 </span>
-              </div>
+                <span className="px-4 fade-text uppercase">
+                  {"Dubai".split("").map((char, i) => (
+                    <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                      {char}
+                    </span>
+                  ))}
+                </span>
+              </div> */}
 
               <Headings
                 level={1}
@@ -74,7 +81,7 @@ const Banner: React.FC<BannerPropsType> = ({
 
               <Headings
                 level={2}
-                className="text-white text-center xx_lg_font_s heading"
+                className="text-white text-center xx_lg_font_s heading pointer-events-auto"
                 heading={subTitle}
               />
             </div>

@@ -5,13 +5,13 @@ const Salesiq = () => {
   const pathname = usePathname();
   const url = [
     "/thank-you/",
-    // "/landing-page/",
-    // "/resort/",
+    "/landing-page/",
+    "/resort/",
     "/hospitality/",
-    // "/dubai-restaurant/",
-    // "/restaurant/",
-    // "/UK/",
-    // "/USA/",
+    "/dubai-restaurant/",
+    "/restaurant/",
+    "/UK/",
+    "/USA/",
   ];
   if (url.includes(pathname)) {
     return null;

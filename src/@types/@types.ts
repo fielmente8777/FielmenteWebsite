@@ -71,6 +71,13 @@ export interface howItWorksPropsType {
 export interface ChooseUsPropsType {
   title: string;
   subTitle: string;
+  description: string[];
+  contentData: {
+    heading: string;
+    body: string;
+    points: string[];
+    description?: string;
+}[]
   cards: {
     icon: JSX.Element;
     title: string;

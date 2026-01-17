@@ -5,7 +5,6 @@ import Girl2 from "../../../../public/images/SEO-12.webp";
 
 import Girlwithpen from "../../../../public/images/Girlwithpen.webp";
 
-
 import TrustyBrand from "../../../../public/images/hsdgvc.webp";
 import Manwithlaptop from "../../../../public/images/manwithlaptop.jpg";
 import Wd from "../../../../public/images/WD-10.webp";
@@ -38,10 +37,10 @@ export const metadata: Metadata = {
     "Fielmente: Your trusted hospitality SEO agency, providing targeted marketing services for hotels, restaurants, cloud kitchens, and resorts.",
   alternates: {
     canonical:
-      "https://fielmente.com/hospitality-marketing-services/seo-agency",
+      "https://fielmente.com/hospitality-marketing-services/seo-agency/",
     languages: {
       "en-US":
-        "https://fielmente.com/hospitality-marketing-services/seo-agency",
+        "https://fielmente.com/hospitality-marketing-services/seo-agency/",
     },
   },
   openGraph: {
@@ -57,6 +56,7 @@ const CardData1 = [
       "If you are looking for the best hotel advertisement company, look no further.",
     icon: HotelAds,
     link: "/industries-we-serve/hotel-marketing-agency/hotel-seo",
+    label: "Boost Rankings",
   },
   {
     title: "Cloud Kitchen SEO",
@@ -64,6 +64,7 @@ const CardData1 = [
       "If you are looking for the best cloud kitchen promotion, look no further.",
     icon: CloudKitchenAds,
     link: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-seo",
+    label: "Increase Orders",
   },
   {
     title: "Restaurant SEO",
@@ -71,6 +72,7 @@ const CardData1 = [
       "If you are looking for the best restaurant advertising, look no further.",
     icon: RestaurantAds,
     link: "/",
+    label: "Attract Diners",
   },
 ];
 
@@ -163,7 +165,7 @@ function page() {
                 >
                   Know More
                 </Link> */}
-                <ContactBtn3 text="Know More" />
+                <ContactBtn3 text="Get Hospitality SEO Audit" />
               </div>
             </div>
             <div className="w-full">
@@ -223,49 +225,50 @@ function page() {
 
           {/* Why is SEO Important for Your Hospitality Business?  */}
           <div className="max-width">
-          <div className="lg:grid lg:grid-cols-2 items-center mt-10 ">
-            <div className="w-full">
-              <div className="relative w-[460px] aspect-[4/4] lg:block hidden">
-                <Image
-                  src={Manwithlaptop}
-                  alt="circular-social"
-                  fill
-                  className="object-cover rounded-3xl"
-                />
+            <div className="lg:grid lg:grid-cols-2 items-center mt-10 ">
+              <div className="w-full">
+                <div className="relative w-[460px] aspect-[4/4] lg:block hidden">
+                  <Image
+                    src={Manwithlaptop}
+                    alt="circular-social"
+                    fill
+                    className="object-cover rounded-3xl"
+                  />
+                </div>
+                <div className="relative max-w-[460px] w-full aspect-[4/4] max-md:mx-auto lg:mt-5">
+                  <Image
+                    src={Wd}
+                    alt="circular-social"
+                    fill
+                    className="object-cover rounded-3xl"
+                  />
+                </div>
               </div>
-              <div className="relative max-w-[460px] w-full aspect-[4/4] max-md:mx-auto lg:mt-5">
-                <Image
-                  src={Wd}
-                  alt="circular-social"
-                  fill
-                  className="object-cover rounded-3xl"
-                />
+
+              <div>
+                <h2 className="lg:text-4xl text-3xl font-bold mt-6 lg:mt-0 lg:text-start text-center">
+                  Why is SEO Important for Your Hospitality Business?
+                </h2>
+
+                <p className="lg:text-base text-base mt-8 lg:text-start text-center">
+                  Discover the recipe for success as a restaurant, hotel or
+                  Cloud Kitchen in the digital age with Fielmente, the top
+                  hospitality SEO agency in India.
+                </p>
+                <p className="lg:text-base text-base mt-8 lg:text-start text-center">
+                  Rule the search engine results, attract a steady stream of
+                  customers, and ignite real revenue growth. Rocket your
+                  business with our professional SEO services, going beyond mere
+                  rankings!
+                </p>
+
+                <div className="mt-10 flex flex-col gap-3">
+                  {CardData2.map((item, index) => (
+                    <CardTwo key={index} {...item} />
+                  ))}
+                </div>
               </div>
             </div>
-
-            <div>
-              <h2 className="lg:text-4xl text-3xl font-bold mt-6 lg:mt-0 lg:text-start text-center">
-                Why is SEO Important for Your Hospitality Business?
-              </h2>
-
-              <p className="lg:text-base text-base mt-8 lg:text-start text-center">
-                Discover the recipe for success as a restaurant, hotel or Cloud
-                Kitchen in the digital age with Fielmente, the top hospitality
-                SEO agency in India.
-              </p>
-              <p className="lg:text-base text-base mt-8 lg:text-start text-center">
-                Rule the search engine results, attract a steady stream of
-                customers, and ignite real revenue growth. Rocket your business
-                with our professional SEO services, going beyond mere rankings!
-              </p>
-
-              <div className="mt-10 flex flex-col gap-3">
-                {CardData2.map((item, index) => (
-                  <CardTwo key={index} {...item} />
-                ))}
-              </div>
-            </div>
-          </div>
           </div>
 
           {/* Fielmente's Social Media Marketing Approach**** */}
@@ -288,7 +291,7 @@ function page() {
                 >
                   Get Started
                 </Link> */}
-                <ContactBtn3 text={"Get Started"} />
+                <ContactBtn3 text={"Generate Revenue From SEO"} />
               </div>
             </div>
             <div className="w-full flex md:justify-end">
@@ -339,8 +342,7 @@ function page() {
               >
                 Get Started
               </Link> */}
-                <ContactBtn3 text={"Get Started"} />
-
+              <ContactBtn3 text={"View Hospitality SEO Results"} />
             </div>
             <p className="mt-32 text-center lg:text-4xl text-3xl font-semibold">
               Amplify Your Impact with Our Comprehensive Digital Marketing
@@ -397,7 +399,7 @@ function page() {
                   >
                     Get Started
                   </Link> */}
-                  <ContactBtn3 text={"Get Started"} />
+                  <ContactBtn3 text={"Accelerate Growth"} />
                 </div>
 
                 <p className="text-base text-center mt-10">
@@ -420,7 +422,7 @@ function page() {
   );
 }
 
-const Card = ({ title, subtitle, icon, link }: any) => {
+const Card = ({ title, subtitle, icon, link, label }: { title: string; subtitle: string; icon: any; link: string; label: string }) => {
   return (
     <div className="bg-white px-4 py-12 rounded-xl flex flex-col gap-3">
       <div className="flex justify-center">
@@ -434,7 +436,7 @@ const Card = ({ title, subtitle, icon, link }: any) => {
             href={link}
             className="bg-black px-9 font-medium py-3 rounded-2xl text-white text-xl"
           >
-            Know More
+            {label}
           </Link>
         </div>
       </div>

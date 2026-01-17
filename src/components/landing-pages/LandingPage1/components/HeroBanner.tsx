@@ -22,8 +22,8 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
           <div className="grid lg:grid-cols-12 lg:gap-0 gap-6 text-white items-center poppins">
             <div className="lg:col-span-8 col-span-1 space-y-8 lg:pr-28">
                {/* location */}
-                      <div className="flex items-center md:text-2xl text-white divide-x divide-white">
-                        <span className="pr-4 flex items-center gap-1">
+                      {/* <div className="flex items-center md:text-2xl text-white divide-x divide-white">
+                        <span className="pr-4 flex items-center gap-1 ">
                           <span className="text-orange-primary">
                             <FillLocationIcon />
                           </span>
@@ -35,14 +35,21 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
                             ))}
                           </span>
                         </span>
-                        <span className="px-4 fade-text">
+                        <span className="px-4 fade-text ">
                           {"PUNE".split("").map((char, i) => (
                             <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
                               {char}
                             </span>
                           ))}
                         </span>
-                      </div>
+                        <span className="px-4 fade-text uppercase">
+                          {"Dubai".split("").map((char, i) => (
+                            <span key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                              {char}
+                            </span>
+                          ))}
+                        </span>
+                      </div> */}
               <h2 className="md:text-6xl/tight text-3xl font-semibold md:text-start text-center">
                 {title}
               </h2>
