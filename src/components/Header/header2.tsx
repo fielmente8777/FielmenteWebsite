@@ -49,6 +49,7 @@ const Header2 = () => {
                 <li key={index} className="relative nav">
                   <Link
                     href={link.src ? link.src : "#"}
+                    target={link.src?.startsWith("http") ? "_blank" : "_self"}
                     className="relative text-nowrap py-2 capitalize flex items-center gap-1 text-dark"
                   >
                     {link.linkName}

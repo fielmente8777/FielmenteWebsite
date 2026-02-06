@@ -16,9 +16,9 @@ export const homePageData = {
   bannerData: {
     imgSrc: "/banner_11zon.jpg",
     title: "Fielmente - India’s Leading",
-    subTitle: `<a class="inter-link" href="/" ><span>Hospitality Marketing </span><i>Agency</i></a>`,
+    subTitle: `<i>Agency</i>`,
     description:
-      "Boost Your Online Presence, Drive More Bookings, and Grow Your Hospitality Business with AI-Driven Digital Strategies through India’s best Hospitality Marketing Solutions.",
+      "Boost Your Online Presence, Drive More Bookings, and Grow Your Hospitality Business with AI-Driven Digital Strategies through India’s best Hospitality Marketing Company.",
   },
   marketingPartnersData: {
     cards: [

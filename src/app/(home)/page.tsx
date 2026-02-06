@@ -1,8 +1,13 @@
 import { Section } from "@/components";
 import { Banner } from "@/components/banners";
+import { AddsCard } from "@/components/cards";
+import OurProduct from "@/components/landing-pages/LandingPage1/components/OurProduct";
+import OurServices from "@/components/landing-pages/LandingPage1/components/OurServices";
+import { pageData } from "@/components/landing-pages/LandingPage1/data";
+import { SectionWithContainer } from "@/components/sectionComponants";
+import ChooseUs from "../hospitality/components/chooseUs";
 import {
   AboutCompany,
-  AIPoweredServices,
   ChooseUsNew,
   CountriesWeWorkedIn,
   Faqs,
@@ -15,16 +20,10 @@ import {
   ServicesTitles,
   ServingHospitality,
   Strategise,
-  Testimonials,
+  Testimonials
 } from "./components";
-import { AddsCard } from "@/components/cards";
-import { homePageData } from "./homePageData";
-import OurServices from "@/components/landing-pages/LandingPage1/components/OurServices";
-import OurProduct from "@/components/landing-pages/LandingPage1/components/OurProduct";
-import { pageData } from "@/components/landing-pages/LandingPage1/data";
-import ChooseUs from "../hospitality/components/chooseUs";
 import ChooseUsOld from "./components/ChooseUsOld";
-import { SectionWithContainer } from "@/components/sectionComponants";
+import { homePageData } from "./homePageData";
 
 export default function Home() {
   return (

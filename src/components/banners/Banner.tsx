@@ -8,6 +8,7 @@ import Form from "@/components/Forms/Form";
 import { Container, Section } from "../sectionComponants";
 import { Headings } from "../typography";
 import { FillLocationIcon } from "../../utils/newIcons";
+import AnimatedWord from "@/app/(home)/components/ui/AnimatedWord";
 
 const Banner: React.FC<BannerPropsType> = ({
   title,
@@ -79,11 +80,18 @@ const Banner: React.FC<BannerPropsType> = ({
                 heading={title}
               />
 
-              <Headings
+              {/* <Headings
                 level={2}
                 className="text-white text-center xx_lg_font_s heading pointer-events-auto"
-                heading={subTitle}
-              />
+                heading={`<a className="inter-link" href="/">
+                    ${(<AnimatedWord />)}Marketing<i> Agency</i>
+                  </a>`}
+              /> */}
+              <h2 className="text-white text-center xx_lg_font_s heading pointer-events-auto">
+                <a className="inter-link" href="/">
+                  <span><AnimatedWord /> Marketing </span><i> Agency</i>
+                </a>
+              </h2>
             </div>
             <div className="max-w-5xl mx-auto xl:block hidden pointer-events-auto">
               <Form />

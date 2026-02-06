@@ -73,11 +73,11 @@ export const footerData: FooterLinksPropstype = {
         },
         {
           label: "Our Work",
-          href: "",
+          href: "https://www.eazotel.com/our-work",
         },
         {
           label: "Career",
-          href: "",
+          href: "https://app.eazotel.com/careers",
         },
         {
           label: "Blogs",
@@ -89,17 +89,21 @@ export const footerData: FooterLinksPropstype = {
         },
         {
           label: "Contact Us",
-          href: "/contact-us/",
+          href: "https://www.eazotel.com/contact-us",
         },
-        {
-          label: "Our Team",
-          href: "",
-        },
+        // {
+        //   label: "Our Team",
+        //   href: "",
+        // },
       ],
     },
     {
       title: "Top Services",
       listOfLinks: [
+        {
+          label: "Products",
+          href: "https://www.eazotel.com",
+        },
         {
           label: "Hotel Marketing ",
           href: "/industries-we-serve/hotel-marketing-agency/",
@@ -141,11 +145,11 @@ export const footerData: FooterLinksPropstype = {
     {
       title: "Offices",
       listOfLinks: [
-        {
-          label: contacts.address_4,
-          href: contacts.address_4_mapUrl,
-          icon: <FillLocationIcon />,
-        },
+        // {
+        //   label: contacts.address_4,
+        //   href: contacts.address_4_mapUrl,
+        //   icon: <FillLocationIcon />,
+        // },
         {
           label: contacts.address_1,
           href: contacts.address_1_mapUrl,
@@ -156,11 +160,11 @@ export const footerData: FooterLinksPropstype = {
         //   href: contacts.address_2_mapUrl,
         //   icon: <FillLocationIcon />,
         // },
-        {
-          label: contacts.address_3,
-          href: contacts.address_3_mapUrl,
-          icon: <FillLocationIcon />,
-        },
+        // {
+        //   label: contacts.address_3,
+        //   href: contacts.address_3_mapUrl,
+        //   icon: <FillLocationIcon />,
+        // },
       ],
     },
     {

@@ -570,3 +570,27 @@ input[type="checkbox"]:checked::after {
         }
     }
 }
+
+
+@keyframes wordFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.animate-wordFade {
+  animation: wordFade 2.5s ease-in-out;
+}

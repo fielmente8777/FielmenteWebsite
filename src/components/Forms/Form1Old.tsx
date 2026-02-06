@@ -188,9 +188,9 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
       >
         Let’s work on boosting your hotel’s profitability!
       </p>
-      <span className="absolute top-5 right-7">
+      {/* <span className="absolute top-5 right-7">
         <ChatIcon />
-      </span>
+      </span> */}
 
       {formData.map((data, index) => (
         <div key={index} className="flex flex-col gap-1">

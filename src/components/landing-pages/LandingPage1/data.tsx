@@ -41,7 +41,7 @@ export const pageData = {
   heroBanner: {
     title: `India's Leading Hotel Marketing Agency`,
     // title: `Elevate Your Hospitality Business!`,
-    subTitle: `We help hotels & resorts grow occupancy, reduce OTA dependency, and maximize revenue with AI-powered marketing strategies.`,
+    subTitle: `We help hotels, resorts and homestays to increase occupancy and maximise their revenue by implementing our Digital Marketing & OTA smart strategies.`,
     items: [
       {
         title: `500+`,
