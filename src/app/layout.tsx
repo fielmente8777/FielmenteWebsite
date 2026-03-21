@@ -8,6 +8,7 @@ import { Inter, Poppins } from "next/font/google";
 import Script from "next/script";
 import "../styles/globals.scss";
 import "./newstyle.scss";
+import Whatsapp from "@/components/WhatsApp";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -225,15 +226,13 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         {/* <!-- End Google Tag Manager (noscript) --> */}
-        {/* <Header /> */}
         <DataProvider>
-          {/* <RenderChatBot /> */}
           <NavBar />
 
           {children}
           <Footer />
           {/* <Call /> */}
-          {/* <Whatsapp /> */}
+          <Whatsapp />
           <PopupFormNew />
         </DataProvider>
         <noscript>

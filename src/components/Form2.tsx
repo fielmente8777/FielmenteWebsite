@@ -65,22 +65,20 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
 
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
+          Domain: "abhijeet",
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
-          // Remark: "",
-          // Subject: null,
-          // created_from: "website",
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          Description: userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
+          // email: userEmail,
+          // name: userName,
+          // phone: `${countryCode}${userPhone}`,
+          // message: userMessage,
         },
         {
           headers: {
@@ -89,8 +87,8 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
         }
       );
 
-      // if (data?.Status) {
-      if (data.success) {
+      if (data?.Status) {
+      // if (data.success) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");

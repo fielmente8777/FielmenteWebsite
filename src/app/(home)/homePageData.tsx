@@ -78,7 +78,7 @@ export const homePageData = {
   },
   aboutCompanyData: {
     title: "About Company",
-    subTitle: `Grow Your Hotel’s Direct and OTA Bookings by 30 - 50%`,
+    subTitle: `Grow Your Hotel’s Direct and OTA Bookings by <span class="text-orange-primary">30 - 50%</span>`,
     description: [
       "We help hotels, resorts, and vacation rentals reduce OTA commissions and boost occupancy with AI-driven hospitality marketing strategies.",
       "Let’s Unlock Your Hotel’s Growth",
@@ -87,9 +87,9 @@ export const homePageData = {
       // "Leading marketing agency for hotels and resorts",
       // "120+ hospitality projects delivered since 2020 with results",
       // "95% client satisfaction across all campaigns.",
-      "120+ hotels & resorts served across India, UAE, UK & beyond",
-      "Average 40% increase in direct bookings within 3 months",
       "95% client retention rate from satisfied partners",
+      "Average 40% increase in direct bookings within 3 months",
+      "120+ hotels & resorts served across India, UAE, UK & beyond",
     ],
     imgSrc: ["/im1.png", ""],
     linksData: [
@@ -242,8 +242,7 @@ export const homePageData = {
           "Top hotel marketing company for luxury resorts",
           "Who can grow hotel bookings digitally?",
         ],
-        description:
-          `We optimize your digital presence using <strong>AI-friendly content structures,</strong> semantic SEO, local intent signals, and authority-driven branding ensuring your hotel ranks across both traditional and AI-generated results.`,
+        description: `We optimize your digital presence using <strong>AI-friendly content structures,</strong> semantic SEO, local intent signals, and authority-driven branding ensuring your hotel ranks across both traditional and AI-generated results.`,
       },
       {
         heading: "Result-Driven Restaurant Marketing Agency & Company",
@@ -280,8 +279,7 @@ export const homePageData = {
           "Build topical authority in hospitality marketing",
           "Convert AI traffic into real bookings",
         ],
-        description:
-          `If you’re looking for a <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency,</a> <a class="inter-link" href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Company </a> that understands how AI platforms influence customer decisions—<strong>Fielmente is your growth partner.`,
+        description: `If you’re looking for a <a class="inter-link" href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency,</a> <a class="inter-link" href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Company </a> that understands how AI platforms influence customer decisions—<strong>Fielmente is your growth partner.`,
       },
     ],
 
@@ -331,10 +329,10 @@ export const homePageData = {
     ],
   },
   servicesTitles: [
-    "WEBSITE DESIGN & DEVELOPMENT",
     "SEARCH ENGINE OPTIMIZATION",
-    "SOCIAL MEDIA MANAGEMENT",
     "PERFORMANCE MARKETING",
+    "WEBSITE DESIGN & DEVELOPMENT",
+    "SOCIAL MEDIA MANAGEMENT",
   ],
   countriesWeWorkedIn: {
     title: "COUNTRIES WE WORKED",

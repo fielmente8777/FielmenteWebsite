@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const WORDS = ["Hospitality", "Hotel", "Resort", "Cloud Kitchen", "Restaurant"];
+const WORDS = ["Hospitality", "Hotel", "Resort", "Restaurant"];
 
 export default function AnimatedWord() {
   const [index, setIndex] = useState(0);

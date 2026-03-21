@@ -14,6 +14,7 @@ import {
 } from "@/utils/icons";
 import Link from "next/link";
 import useClickOutside from "@/hooks/useClickOutside";
+import { contacts } from "../../../contact";
 
 const PopUpFormOld = () => {
   const [userName, setUserName] = useState("");
@@ -58,19 +59,20 @@ const PopUpFormOld = () => {
 
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
+          Domain: contacts.formDomain,
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          Description: userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
+          // email: userEmail,
+          // name: userName,
+          // phone: `${countryCode}${userPhone}`,
+          // message: userMessage,
           // Remark: "",
           // Subject: null,
           // created_from: "website",
@@ -81,8 +83,8 @@ const PopUpFormOld = () => {
           },
         }
       );
-      if (data.success) {
-      // if (data?.Status) {
+      // if (data.success) {
+      if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");
@@ -240,7 +242,7 @@ const PopUpFormOld = () => {
 
   const pathname = usePathname();
   const ukno = "+447438375533";
-  const indNo = "+919501868775";
+  const indNo = contacts.phone.length > 1 ? contacts.phone[1] : contacts.phone[0];
 
   return (
     <form
@@ -297,7 +299,7 @@ const PopUpFormOld = () => {
 
       <Link
         target="_blank"
-        href={`https://wa.me/${pathname === "/uk" ? ukno : indNo}`}
+        href={`https://wa.me/${(pathname === "/uk" ? ukno : indNo).replace(/\s+/g, "")}?text=Hi%20Fielmente%20Team!%20I%20would%20like%20to%20know%20more%20about%20your%20hospitality%20marketing%20services.`}
         className="text-blue-dark flex items-center justify-center gap-1 text-md font-semibold px-8 py-2 duration-300 active:scale-75 hover:scale-105 group"
       >
         <span className="mr-2">

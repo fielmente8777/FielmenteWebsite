@@ -1,9 +1,7 @@
 import Container from "@/components/Container";
-import Form from "@/components/Form";
 import HospitalityLandingBannerForm from "@/components/Forms/HospitaltiyLadingBannerForm";
 import Section from "@/components/Section";
-import { FillLocationIcon } from "@/utils/newIcons";
-import React from "react";
+import Image from "next/image";
 
 interface HeroBannerProps {
   title?: string;
@@ -21,8 +19,8 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
         <Container>
           <div className="grid lg:grid-cols-12 lg:gap-0 gap-6 text-white items-center poppins">
             <div className="lg:col-span-8 col-span-1 space-y-8 lg:pr-28">
-               {/* location */}
-                      {/* <div className="flex items-center md:text-2xl text-white divide-x divide-white">
+              {/* location */}
+              {/* <div className="flex items-center md:text-2xl text-white divide-x divide-white">
                         <span className="pr-4 flex items-center gap-1 ">
                           <span className="text-orange-primary">
                             <FillLocationIcon />
@@ -50,12 +48,19 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
                           ))}
                         </span>
                       </div> */}
-              <h2 className="md:text-6xl/tight text-3xl font-semibold md:text-start text-center">
+              <h1 className="md:text-6xl/tight text-3xl font-semibold md:text-start text-center">
                 {title}
-              </h2>
+              </h1>
 
-              <h3 className="text-lg md:text-start text-center">{subTitle}</h3>
-
+              <p className="text-lg md:text-start text-center">{subTitle}</p>
+              <div className="w-[200px] max-md:mx-auto relative aspect-[4/.8]">
+                <Image
+                  src="/Frame48.png"
+                  alt="shape"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               {/* <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" /> */}
 
               {/* <div className="flex items-center justify-between">
@@ -77,10 +82,10 @@ const HeroBanner = ({ title, subTitle, items }: HeroBannerProps) => {
         </Container>
       </div>
 
-      {/* rounded shape  */}
+      {/* rounded shape 
       <div className="h-20 lg:mt-0 -mt-4 overflow-hidden relative rotate-180">
         <div className="w-[7800px] h-[7800px] rounded-full bg-bg absolute top-0 left-1/2 -translate-x-1/2 bg-blue-dark" />
-      </div>
+      </div> */}
     </Section>
   );
 };

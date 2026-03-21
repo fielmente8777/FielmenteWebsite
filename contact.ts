@@ -1,11 +1,13 @@
 export const contacts = {
   email_1: "sachin@fielmente.com",
-  email_2: "bXb3I@example.com",
-  email_3: "bXb3I@example.com",
-  phone_2: "+91 81789 39108",
   phone_1: "+91 95018 68775",
-  phone_3: "+91 1234567890",
-  WhatsAppCta: "https://wa.me/+919501868775?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency",
+  email: ["sachin@fielmente.com"],
+  phone: [
+    // "+91 81789 39108",
+    "+91 95018 68775",
+  ],
+  WhatsAppCta:
+    "https://wa.me/+918178939108?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency",
   address_1:
     "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
   address_1_mapUrl: "",
@@ -23,4 +25,5 @@ export const contacts = {
     linkedin: "https://www.linkedin.com/company/fielmente/",
     twitter: "https://x.com/fieladvisors?lang=en",
   },
+  formDomain: "fielmente",
 };

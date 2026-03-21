@@ -11,6 +11,7 @@ import React, {
 } from "react";
 import CustomCaptchaForm from "./CaptchaForm";
 import { MdArrowDropDown } from "react-icons/md";
+import { contacts } from "../../../contact";
 
 interface FormState {
   userName: string;
@@ -138,12 +139,16 @@ const HospitalityLandingBannerFormNew = () => {
 
       try {
         const { data } = await axios.post(
-          FORM_API,
+          `https://nexon.eazotel.com/eazotel/addcontacts`,
+          // FORM_API,
           {
+            Domain: contacts.formDomain,
             email: formState.userEmail,
-            name: formState.userName,
-            phone: `${formState.countryCode}${formState.userPhone}`,
-            message: formState.userMessage,
+            Name: formState.userName,
+            Contact: `${formState.countryCode}${formState.userPhone}`,
+            Description: formState.userMessage,
+            created_from: "webform",
+            source_url: window.location.href,
           },
           {
             headers: {
@@ -152,8 +157,8 @@ const HospitalityLandingBannerFormNew = () => {
           }
         );
 
-        if (data.success) {
-          // Reset form
+        // if (data.success) {
+        if (data.Status) {
           setFormState({
             userName: "",
             userEmail: "",

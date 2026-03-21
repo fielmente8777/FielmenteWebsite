@@ -4,6 +4,7 @@ import { countries } from "@/utils/countryCode";
 import { ArrowBtn, CallIcon, MailIcon, UserIcon } from "@/utils/newIcons";
 import axios from "axios";
 import React, { useState } from "react";
+import { contacts } from "../../../contact";
 
 const Form = () => {
   const [userName, setUserName] = useState("");
@@ -52,18 +53,18 @@ const Form = () => {
 
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        formApi,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // formApi,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
+          Domain: contacts.formDomain,
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          created_from: "webform",
+          source_url: window.location.href,
+          // email: userEmail,
+          // name: userName,
+          // phone: `${countryCode}${userPhone}`,
         },
         {
           headers: {
@@ -72,7 +73,8 @@ const Form = () => {
         }
       );
 
-      if (data.success) {
+      // if (data.success) {
+      if (data.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");

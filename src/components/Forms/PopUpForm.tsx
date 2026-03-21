@@ -1,7 +1,14 @@
 "use client";
 import { usePathname } from "next/navigation";
 import axios from "axios";
-import React, { useState, useCallback, useMemo, FormEvent, ChangeEvent, useRef } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  FormEvent,
+  ChangeEvent,
+  useRef,
+} from "react";
 import { countries } from "@/utils/countryCode";
 import {
   OutlineCallIcon,
@@ -14,6 +21,7 @@ import {
 import Link from "next/link";
 import useClickOutside from "@/hooks/useClickOutside";
 import CustomCaptchaForm from "./CaptchaForm";
+import { contacts } from "../../../contact";
 
 interface FormState {
   userName: string;
@@ -38,20 +46,24 @@ const PopUpForm = () => {
     userPhone: "",
     countryCode: "+91",
   });
-  
+
   const [formRes, setFormRes] = useState(false);
-  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
+    {}
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [captcha, setCaptcha] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
 
   const codeRef = useRef<HTMLDivElement>(null);
-  
+
   // Constants
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const FORM_API = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
+  const FORM_API =
+    "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
   const UK_NO = "+447438375533";
-  const IND_NO = "+919501868775";
+  const IND_NO =
+    contacts.phone.length > 1 ? contacts.phone[1] : contacts.phone[0];
 
   // Custom hook for click outside
   useClickOutside(codeRef, () => {
@@ -74,220 +86,262 @@ const PopUpForm = () => {
     return "";
   }, []);
 
-  const validateCaptcha = useCallback((input: string, correct: string): string => {
-    if (!input) return "CAPTCHA is required";
-    if (input !== correct) return "CAPTCHA incorrect. Please try again.";
-    return "";
-  }, []);
+  const validateCaptcha = useCallback(
+    (input: string, correct: string): string => {
+      if (!input) return "CAPTCHA is required";
+      if (input !== correct) return "CAPTCHA incorrect. Please try again.";
+      return "";
+    },
+    []
+  );
 
   // Event handlers
-  const handlePhoneChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
-    setFormState(prev => ({ ...prev, userPhone: value }));
-    
-    if (value.length > 0) {
-      setValidationErrors(prev => ({
-        ...prev,
-        phone: validatePhone(value),
-      }));
-    }
-  }, [validatePhone]);
+  const handlePhoneChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+      setFormState((prev) => ({ ...prev, userPhone: value }));
 
-  const handleEmailChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setFormState(prev => ({ ...prev, userEmail: value }));
-    
-    if (value.length > 0) {
-      setValidationErrors(prev => ({
-        ...prev,
-        email: validateEmail(value),
-      }));
-    }
-  }, [validateEmail]);
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          phone: validatePhone(value),
+        }));
+      }
+    },
+    [validatePhone]
+  );
 
-  const handleCaptchaInputChange = useCallback((value: string) => {
-    setCaptchaInput(value);
-    if (value.length > 0) {
-      setValidationErrors(prev => ({
-        ...prev,
-        captcha: validateCaptcha(value, captcha),
-      }));
-    }
-  }, [captcha, validateCaptcha]);
+  const handleEmailChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setFormState((prev) => ({ ...prev, userEmail: value }));
+
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          email: validateEmail(value),
+        }));
+      }
+    },
+    [validateEmail]
+  );
+
+  const handleCaptchaInputChange = useCallback(
+    (value: string) => {
+      setCaptchaInput(value);
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          captcha: validateCaptcha(value, captcha),
+        }));
+      }
+    },
+    [captcha, validateCaptcha]
+  );
 
   const toggleCountryCodeDropdown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsOpen(prev => !prev);
+    setIsOpen((prev) => !prev);
   }, []);
 
   const handleCountryCodeSelect = useCallback((code: string) => {
-    setFormState(prev => ({ ...prev, countryCode: code }));
+    setFormState((prev) => ({ ...prev, countryCode: code }));
     setIsOpen(false);
   }, []);
 
   // Form submission
-  const handleSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Validate all fields
-    const errors: ValidationErrors = {
-      phone: validatePhone(formState.userPhone),
-      email: validateEmail(formState.userEmail),
-      captcha: validateCaptcha(captchaInput, captcha),
-    };
+  const handleSubmit = useCallback(
+    async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-    setValidationErrors(errors);
+      // Validate all fields
+      const errors: ValidationErrors = {
+        phone: validatePhone(formState.userPhone),
+        email: validateEmail(formState.userEmail),
+        captcha: validateCaptcha(captchaInput, captcha),
+      };
 
-    // Check if any errors exist
-    if (Object.values(errors).some(error => error)) {
-      return;
-    }
+      setValidationErrors(errors);
 
-    setFormRes(true);
-
-    try {
-      const { data } = await axios.post(
-        FORM_API,
-        {
-          email: formState.userEmail,
-          name: formState.userName,
-          phone: `${formState.countryCode}${formState.userPhone}`,
-          message: formState.userMessage,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      if (data.success) {
-        // Reset form
-        setFormState({
-          userName: "",
-          userEmail: "",
-          userMessage: "",
-          userPhone: "",
-          countryCode: "+91",
-        });
-        setCaptchaInput("");
-        setValidationErrors({});
-        
-        // Open thank you page
-        window.open("/thank-you/", "_blank");
-      } else {
-        alert("Something went wrong! Please try again.");
+      // Check if any errors exist
+      if (Object.values(errors).some((error) => error)) {
+        return;
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert("An error occurred. Please try again later.");
-    } finally {
-      setFormRes(false);
-    }
-  }, [formState, captchaInput, captcha, validateEmail, validatePhone, validateCaptcha]);
+
+      setFormRes(true);
+
+      try {
+        const { data } = await axios.post(
+          `https://nexon.eazotel.com/eazotel/addcontacts`,
+          // FORM_API,
+          {
+              // email: formState.userEmail,
+              // name: formState.userName,
+              // phone: `${formState.countryCode}${formState.userPhone}`,
+              // message: formState.userMessage,
+              Domain: contacts.formDomain,
+              email: formState.userEmail,
+              Name: formState.userName,
+              Contact: `${formState.countryCode}${formState.userPhone}`,
+              Description: formState.userMessage,
+              created_from: "webform",
+              source_url: window.location.href
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        // if (data.success) {
+        if (data.status) {
+          // Reset form
+          setFormState({
+            userName: "",
+            userEmail: "",
+            userMessage: "",
+            userPhone: "",
+            countryCode: "+91",
+          });
+          setCaptchaInput("");
+          setValidationErrors({});
+
+          // Open thank you page
+          window.open("/thank-you/", "_blank");
+        } else {
+          alert("Something went wrong! Please try again.");
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        alert("An error occurred. Please try again later.");
+      } finally {
+        setFormRes(false);
+      }
+    },
+    [
+      formState,
+      captchaInput,
+      captcha,
+      validateEmail,
+      validatePhone,
+      validateCaptcha,
+    ]
+  );
 
   // Memoized form configuration
-  const formData = useMemo(() => [
-    {
-      tag: "input" as const,
-      icon: <OutlineUserIcon />,
-      type: "text",
-      name: "name",
-      placeholder: "Your Name*",
-      required: true,
-      value: formState.userName,
-      onChange: (e: ChangeEvent<HTMLInputElement>) => 
-        setFormState(prev => ({ ...prev, userName: e.target.value })),
-    },
-    {
-      tag: "div" as const,
-      icon: <OutlineCallIcon />,
-      name: "phone",
-      placeholder: "Your Phone*",
-      required: true,
-      content: (
-        <div className="flex gap-px text-base">
-          {/* Custom country code dropdown */}
-          <div ref={codeRef} className="relative border-white bg-transparent h-auto">
-            <button
-              onClick={toggleCountryCodeDropdown}
-              className="w-max pr-2 h-full flex items-center justify-between gap-2"
-            >
-              <span className="text-start text-blue-dark md:text-lg">
-                {formState.countryCode}
-              </span>
-              <OutlineDrpopdown
-                className={`text-orange-primary transition-transform ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+  const formData = useMemo(
+    () => [
+      {
+        tag: "input" as const,
+        icon: <OutlineUserIcon />,
+        type: "text",
+        name: "name",
+        placeholder: "Your Name*",
+        required: true,
+        value: formState.userName,
+        onChange: (e: ChangeEvent<HTMLInputElement>) =>
+          setFormState((prev) => ({ ...prev, userName: e.target.value })),
+      },
+      {
+        tag: "div" as const,
+        icon: <OutlineCallIcon />,
+        name: "phone",
+        placeholder: "Your Phone*",
+        required: true,
+        content: (
+          <div className="flex gap-px text-base">
+            {/* Custom country code dropdown */}
             <div
-              className={`absolute top-full left-0 right-0 shadow-lg z-10 overflow-hidden transition-all duration-300 ease-in-out ${
-                isOpen
-                  ? "max-h-40 opacity-100 pointer-events-auto w-28 overflow-y-auto hide-scrollbar rounded"
-                  : "max-h-0 opacity-0 pointer-events-none"
-              }`}
+              ref={codeRef}
+              className="relative border-white bg-transparent h-auto"
             >
-              {countries.map((country) => (
-                <button
-                  key={country.name}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleCountryCodeSelect(country.code);
-                  }}
-                  className={`w-full px-1 bg-white text-nowrap py-2 border-b border-clr6 text-left uppercase text-sm font-medium hover:text-clr2 hover:border-clr2 transition-colors duration-300 ease-in-out ${
-                    formState.countryCode === country.code
-                      ? "text-clr2 border-clr2 bg-blue-800"
-                      : ""
+              <button
+                onClick={toggleCountryCodeDropdown}
+                className="w-max pr-2 h-full flex items-center justify-between gap-2"
+              >
+                <span className="text-start text-blue-dark md:text-lg">
+                  {formState.countryCode}
+                </span>
+                <OutlineDrpopdown
+                  className={`text-orange-primary transition-transform ${
+                    isOpen ? "rotate-180" : ""
                   }`}
-                >
-                  {country.name} ({country.code})
-                </button>
-              ))}
+                />
+              </button>
+              <div
+                className={`absolute top-full left-0 right-0 shadow-lg z-10 overflow-hidden transition-all duration-300 ease-in-out ${
+                  isOpen
+                    ? "max-h-40 opacity-100 pointer-events-auto w-28 overflow-y-auto hide-scrollbar rounded"
+                    : "max-h-0 opacity-0 pointer-events-none"
+                }`}
+              >
+                {countries.map((country) => (
+                  <button
+                    key={country.name}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleCountryCodeSelect(country.code);
+                    }}
+                    className={`w-full px-1 bg-white text-nowrap py-2 border-b border-clr6 text-left uppercase text-sm font-medium hover:text-clr2 hover:border-clr2 transition-colors duration-300 ease-in-out ${
+                      formState.countryCode === country.code
+                        ? "text-clr2 border-clr2 bg-blue-800"
+                        : ""
+                    }`}
+                  >
+                    {country.name} ({country.code})
+                  </button>
+                ))}
+              </div>
             </div>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              max="9999999999"
+              placeholder="Your Phone Number*"
+              value={formState.userPhone}
+              onChange={handlePhoneChange}
+              className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
+            />
           </div>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            max="9999999999"
-            placeholder="Your Phone Number*"
-            value={formState.userPhone}
-            onChange={handlePhoneChange}
-            className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
-          />
-        </div>
-      ),
-    },
-    {
-      tag: "input" as const,
-      icon: <OutlineMail />,
-      type: "email",
-      name: "email",
-      placeholder: "Your Email Id*",
-      required: true,
-      value: formState.userEmail,
-      onChange: handleEmailChange,
-    },
-    {
-      tag: "textarea" as const,
-      icon: <OutlineMessageIcon />,
-      type: "text",
-      name: "message",
-      placeholder: "Your Message*",
-      required: true,
-      value: formState.userMessage,
-      onChange: (e: ChangeEvent<HTMLTextAreaElement>) => 
-        setFormState(prev => ({ ...prev, userMessage: e.target.value })),
-    },
-  ], [formState, isOpen, toggleCountryCodeDropdown, handleCountryCodeSelect, handlePhoneChange, handleEmailChange]);
+        ),
+      },
+      {
+        tag: "input" as const,
+        icon: <OutlineMail />,
+        type: "email",
+        name: "email",
+        placeholder: "Your Email Id*",
+        required: true,
+        value: formState.userEmail,
+        onChange: handleEmailChange,
+      },
+      {
+        tag: "textarea" as const,
+        icon: <OutlineMessageIcon />,
+        type: "text",
+        name: "message",
+        placeholder: "Your Message*",
+        required: true,
+        value: formState.userMessage,
+        onChange: (e: ChangeEvent<HTMLTextAreaElement>) =>
+          setFormState((prev) => ({ ...prev, userMessage: e.target.value })),
+      },
+    ],
+    [
+      formState,
+      isOpen,
+      toggleCountryCodeDropdown,
+      handleCountryCodeSelect,
+      handlePhoneChange,
+      handleEmailChange,
+    ]
+  );
 
   // WhatsApp URL based on pathname
-  const whatsappUrl = useMemo(() => {
-    return `https://wa.me/${pathname === "/uk" ? UK_NO : IND_NO}`;
-  }, [pathname]);
+  const whatsappUrl = `https://wa.me/${(pathname === "/uk" ? UK_NO : IND_NO).replace(/\s+/g, "")}?text=Hi%20Fielmente%20Team!%20I%20would%20like%20to%20know%20more%20about%20your%20hospitality%20marketing%20services.`;
 
   return (
     <form
@@ -329,12 +383,16 @@ const PopUpForm = () => {
                     "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-md valid:outline-blue-primary invalid:outline-Saffron-primary",
                 })}
           </div>
-          
+
           {data.name === "phone" && validationErrors.phone && (
-            <p className="text-sm text-red-500 mt-2">{validationErrors.phone}</p>
+            <p className="text-sm text-red-500 mt-2">
+              {validationErrors.phone}
+            </p>
           )}
           {data.name === "email" && validationErrors.email && (
-            <p className="text-sm text-red-500 mt-2">{validationErrors.email}</p>
+            <p className="text-sm text-red-500 mt-2">
+              {validationErrors.email}
+            </p>
           )}
         </div>
       ))}
@@ -349,7 +407,7 @@ const PopUpForm = () => {
         error={validationErrors.captcha || ""}
       />
 
-      <button 
+      <button
         type="submit"
         disabled={formRes}
         className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-3 md:text-lg font-semibold rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary disabled:opacity-70 disabled:cursor-not-allowed"

@@ -37,7 +37,7 @@ const OurServices = ({ title, subTitle, button, items }: OurServicesProps) => {
     <Section className="bg-blue-dark">
       <Container>
         <div className="max-w-5xl mx-auto text-center space-y-8 poppins">
-          <h2 className="bg-[#FFE7DE] text-orange-primary text-sm rounded-full px-4 w-fit mx-auto py-2">
+          <h2 className="bg-white text-[#1c1c1c] text-lg font-semibold rounded-full px-4 w-fit mx-auto py-2">
             {title}
           </h2>
 

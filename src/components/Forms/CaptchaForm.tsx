@@ -39,7 +39,7 @@ const CustomCaptchaForm = ({
   return (
     isOpen && (
       <div className="flex justify-center items-center">
-        <form className="space-y-4 w-full mx-auto px-4 py-3 border rounded bg-white">
+        <div className="space-y-4 w-full mx-auto px-4 py-3 border rounded bg-white">
           {/* CAPTCHA SECTION */}
           <div className="flex flex-col gap-2">
             <label className="font-semibold text-sm text-blue-dark">
@@ -80,14 +80,7 @@ const CustomCaptchaForm = ({
                 </div>
               </div>
 
-              {/* Refresh Button */}
-              {/* <button
-                type="button"
-                onClick={generateCaptcha}
-                className="text-sm text-blue-600 underline"
-              >
-                Refresh
-              </button> */}
+              
             </div>
 
             {/* CAPTCHA Input */}
@@ -102,7 +95,7 @@ const CustomCaptchaForm = ({
 
             {error && <p className="text-red-500 text-sm">{error}</p>}
           </div>
-        </form>
+        </div>
       </div>
     )
   );

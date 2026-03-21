@@ -5,6 +5,7 @@ import axios from "axios";
 import React, { useState, useCallback, useMemo, FormEvent, ChangeEvent } from "react";
 import { countries } from "@/utils/countryCode";
 import CustomCaptchaForm from "./Forms/CaptchaForm";
+import { contacts } from "../../contact";
 
 interface FormState {
   userName: string;
@@ -117,12 +118,20 @@ const FormNew = () => {
 
     try {
       const { data } = await axios.post(
-        FORM_API,
+        "https://nexon.eazotel.com/eazotel/addcontacts",
+        // FORM_API,
         {
+          Domain: contacts.formDomain,
           email: formState.userEmail,
-          name: formState.userName,
-          phone: `${formState.countryCode}${formState.userPhone}`,
-          message: formState.userMessage,
+          Name: formState.userName,
+          Contact: `${formState.countryCode}${formState.userPhone}`,
+          Description: formState.userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
+          // email: formState.userEmail,
+          // name: formState.userName,
+          // phone: `${formState.countryCode}${formState.userPhone}`,
+          // message: formState.userMessage,
         },
         {
           headers: {
@@ -131,7 +140,8 @@ const FormNew = () => {
         }
       );
 
-      if (data.success) {
+      // if (data.success) {
+      if (data.status){
         // Reset form
         setFormState({
           userName: "",

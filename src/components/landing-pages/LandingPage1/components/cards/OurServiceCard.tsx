@@ -22,16 +22,16 @@ export const OurServiceCard = ({
     <div
       className={`flex w-full flex-col gap-4 min-h-[25rem] shadow-md hover:shadow-none rounded-xl p-6 bg-white poppins ${subIconTitle && `border-[0.5px] border-orange-primary`}`}
     >
-      <div className="flex items-center">{icon}</div>
+      <div className="flex items-center justify-center">{icon}</div>
       {subIconTitle && (
         <p className="text-[#F26633] uppercase">{subIconTitle}</p>
       )}
 
-      <h2 className="font-semibold text-2xl text-[#110D3C] ">{title}</h2>
+      <h2 className="font-semibold text-2xl text-[#1C1c1c]  text-center">{title}</h2>
 
-      <p className="text-base text-gray-primary">{subTitle}</p>
+      <p className="text-base text-[#1C1c1c] text-center">{subTitle}</p>
 
-      <Link href={link.href} target="_blank" rel="noopener noreferrer" className="inline-block w-fit mt-auto bg-orange-primary font-medium text-white text-lg/[18px] py-3 px-4 rounded-md">{link.label}</Link>
+      <Link href={link.href} target="_blank" rel="noopener noreferrer" className="flex w-full justify-center mt-auto bg-orange-primary font-medium text-white text-lg/[18px] py-3 px-4 rounded-md">{link.label}</Link>
     </div>
   );
 };

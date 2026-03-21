@@ -4,15 +4,24 @@ import Image, { StaticImageData } from "next/image";
 import consult from "../../../../public/images/partners-sitting-table.webp";
 import strategise from "../../../../public/images/img1.png";
 import execute from "../../../../public/images/aerial-view-barista-book-1024x1024.webp";
+import Link from "next/link";
 
 const Strategise: React.FC = () => {
+  // const data = [
+  //   "Transforming hotels & restaurants into thriving destinations with our expert hospitality marketing solutions and <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency.</a>",
+  //   "We believe that your stories are worth telling and we design compelling ways to showcase your brand. You might be wondering what makes us stand out from the rest.? Well, we are all-rounders. From social media marketing to search engine optimization and paid campaigns, these are just a few of the services to name.",
+  //   "Since 2020, we have completed 120 projects with a 95% satisfaction rate. But! This is just a start. We, the best <a class='inter-link' href='/industries-we-serve/restaurant-marketing-agency/'>restaurant marketing agency</a> in India, personalised strategies, to build trust and drive immense growth to the success of your hotel and restaurant.",
+  //   `As a leading marketing company for hotels and marketing company for resorts, we specialize in creating impactful campaigns to attract guests. Our expertise as a marketing agency for resorts ensures a personalized approach for your brand. Recognized as a top hotel digital marketing agency and hotel digital marketing company, we deliver measurable results through cutting-edge strategies. Choose Fielmente as your <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>
+  //   digital marketing agency for hotels</a> to transform your hospitality business with proven success and innovation.`,
+  // ];
   const data = [
-    "Transforming hotels & restaurants into thriving destinations with our expert hospitality marketing solutions and <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency.</a>",
-    "We believe that your stories are worth telling and we design compelling ways to showcase your brand. You might be wondering what makes us stand out from the rest.? Well, we are all-rounders. From social media marketing to search engine optimization and paid campaigns, these are just a few of the services to name.",
-    "Since 2020, we have completed 120 projects with a 95% satisfaction rate. But! This is just a start. We, the best <a class='inter-link' href='/industries-we-serve/restaurant-marketing-agency/'>restaurant marketing agency</a> in India, personalised strategies, to build trust and drive immense growth to the success of your hotel and restaurant.",
-    `As a leading marketing company for hotels and marketing company for resorts, we specialize in creating impactful campaigns to attract guests. Our expertise as a marketing agency for resorts ensures a personalized approach for your brand. Recognized as a top hotel digital marketing agency and hotel digital marketing company, we deliver measurable results through cutting-edge strategies. Choose Fielmente as your <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>
-    digital marketing agency for hotels</a> to transform your hospitality business with proven success and innovation.`,
+    "Choose Fielmente – a leading Hospitality Marketing Agency, <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>Hotel Marketing Agency</a>, and <a class='inter-link' href='/industries-we-serve/restaurant-marketing-agency/'>Restaurant Marketing Agency</a> as your growth partner. We help hotels, resorts, and restaurants elevate their presence in the digital world with strategies designed specifically for the hospitality industry.",
+    "At Fielmente, your stories are worth telling, and we craft campaigns that make your brand stand out from the rest. From hotel social media marketing and search engine optimization for hotels to paid advertising, website optimization, and complete digital strategy, our services cover every aspect of hospitality marketing. Our team brings experience from diverse domains to ensure maximum brand visibility, higher direct bookings, and measurable return on investment.",
+    "Since 2020, we have completed 120+ hotel marketing projects across India, consistently achieving a 95% satisfaction rate. What began as a focused initiative has grown into one of the best restaurant and hotel marketing agencies in India, known for personalized strategies, strong brand positioning, and performance-driven results.",
+    "As a specialized hospitality marketing company for hotels and restaurants, we design and execute impactful campaigns that attract guests, increase online visibility, and drive revenue. Our expertise in social media marketing, search engine optimization, performance marketing, and content strategy ensures sustainable growth through cutting-edge digital techniques.",
+    "If you’re looking for a trusted <a class='inter-link' href='/industries-we-serve/hotel-marketing-agency/'>hotel marketing agency in India</a>, partner with Fielmente to transform your hospitality business with proven strategies and innovative marketing solutions.",
   ];
+
   return (
     <Section className="bg-[#0F110F] text-white lg:py-24">
       {/* <Container>
@@ -42,13 +51,13 @@ const Strategise: React.FC = () => {
       <Container>
         <article className="lg:py-14 py-6">
           <h2 className="lg:text-4xl text-2xl font-bold text-center lg:text-start">
-            Work with India’s Best{" "}
-            <a
+            Work with India’s Leading{" "}
+            <Link
               className="inter-link"
               href="/industries-we-serve/hotel-marketing-agency/"
             >
               Hotel Marketing Agency
-            </a>
+            </Link>
           </h2>
           {data.map((item, index) => (
             <p

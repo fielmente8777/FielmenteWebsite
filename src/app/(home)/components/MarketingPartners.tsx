@@ -8,7 +8,7 @@ import { Autoplay, FreeMode } from "swiper/modules";
 const MarketingPartners: React.FC<MarketingPartnersPropsType> = ({ cards }) => {
   return (
     <SectionWithContainer
-      sectionClassName="box-shadow md:py-[3rem] py-8"
+      sectionClassName="shadow-md md:py-[3rem] py-8"
       defaultPadding={false}
     >
       {/* <div className="lg:grid hidden grid-cols-5 gap-28">

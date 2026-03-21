@@ -499,37 +499,8 @@ export const pageData = {
   },
 
   OurClient: {
-    title: "OUR CLIENTS",
-    subTitle: "Brands That Trust Us",
+    title: "",
+    subTitle: "OUR CLIENTS",
     items: ClientImages,
   },
-
-  // brand: {
-  //   title: `OUR CLIENTS`,
-  //   subTitle: `Brands That Trust Us`,
-  //   description: ``,
-
-  //   images: [
-  //     {
-  //       src: "/partnersimages/goibibo.png",
-  //       alt: "goibibo-logo",
-  //     },
-  //     {
-  //       src: "/partnersimages/inc.png",
-  //       alt: "google-partner-logo",
-  //     },
-  //     {
-  //       src: "/partnersimages/makemytrip.png",
-  //       alt: "makemytrip-logo",
-  //     },
-  //     {
-  //       src: "/partnersimages/razorpay.png",
-  //       alt: "razorpay-logo",
-  //     },
-  //     {
-  //       src: "/partnersimages/airbnb.png",
-  //       alt: "airbnb-logo",
-  //     },
-  //   ],
-  // },
 };

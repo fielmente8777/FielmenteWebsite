@@ -3,9 +3,12 @@ import { countries } from "@/utils/countryCode";
 import { FillMail, FillPhone, FillUser } from "@/utils/icons";
 import { OutlineDrpopdown } from "@/utils/newIcons";
 import axios from "axios";
+import { Domain } from "domain";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useCallback, useMemo, useState } from "react";
+import { contacts } from "../../../contact";
+import CustomCaptchaForm from "./CaptchaForm";
 
 // Constants
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,6 +19,7 @@ const PHONE_LENGTH = 10;
 const PRODUCTION_WEBHOOK =
   "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
 // const TEST_WEBHOOK = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook";
+const api = "https://nexon.eazotel.com/eazotel/addcontacts";
 
 // Types
 interface FormField {
@@ -31,8 +35,7 @@ interface FormField {
 }
 
 interface FormData {
-  firstName: string;
-  lastName: string;
+  userName: string;
   userEmail: string;
   brandName: string;
   userMessage: string;
@@ -41,11 +44,15 @@ interface FormData {
   agreeToTerms: boolean;
 }
 
+interface ValidationErrors {
+  email?: string;
+  phone?: string;
+  captcha?: string;
+}
+
 const ContactForm = () => {
-  const router = useRouter();
   const [formState, setFormState] = useState<FormData>({
-    firstName: "",
-    lastName: "",
+    userName: "",
     userEmail: "",
     brandName: "",
     userMessage: "",
@@ -57,7 +64,11 @@ const ContactForm = () => {
   const [formRes, setFormRes] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
-
+  const [captcha, setCaptcha] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
+    {}
+  );
   // Handle form field changes
   const handleChange = useCallback(
     (field: keyof FormData) =>
@@ -135,12 +146,46 @@ const ContactForm = () => {
 
     return isValid;
   }, [formState]);
+  const validateCaptcha = useCallback(
+    (input: string, correct: string): string => {
+      if (!input) return "Captcha is required";
+      if (input !== correct) return "Captcha incorrect. Please try again.";
+      return "";
+    },
+    []
+  );
+  const handleCaptchaInputChange = useCallback(
+    (value: string) => {
+      setCaptchaInput(value);
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          captcha: validateCaptcha(value, captcha),
+        }));
+      }
+    },
+    [captcha, validateCaptcha]
+  );
 
+  // Form submission
   // Form submission
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
+      // Validate captcha
+      const captchaError = validateCaptcha(captchaInput, captcha);
+
+      if (captchaError) {
+        setFormRes(false);
+        setValidationErrors((prev) => ({
+          ...prev,
+          captcha: captchaError,
+        }));
+        return;
+      }
+
+      // Validate all fields
       if (!validateForm()) {
         setFormRes(false);
         return;
@@ -149,26 +194,38 @@ const ContactForm = () => {
       setFormRes(true);
 
       try {
-        const payload = {
-          name: `${formState.firstName} ${formState.lastName}`.trim(),
-          email: formState.userEmail,
-          phone: `${formState.countryCode}${formState.userPhone}`,
-          brandName: formState.brandName,
-          message: formState.userMessage,
-          agreeToTerms: formState.agreeToTerms,
-        };
+        // const payload = {
+        //   name: `${formState.firstName} ${formState.lastName}`.trim(),
+        //   email: formState.userEmail,
+        //   phone: `${formState.countryCode}${formState.userPhone}`,
+        //   BusinessName: formState.brandName,
+        //   message: formState.userMessage,
+        //   agreeToTerms: formState.agreeToTerms,
+        // };
 
-        const { data } = await axios.post(PRODUCTION_WEBHOOK, payload, {
-          headers: {
-            "Content-Type": "application/json",
+        const { data } = await axios.post(
+          api,
+          {
+            Domain: contacts.formDomain,
+            Name: formState.userName,
+            email: formState.userEmail,
+            Contact: `${formState.countryCode}${formState.userPhone}`,
+            Description: `BusinessName: ${formState.brandName}\nmessage: ${formState.userMessage}\nagreeToTerms: ${formState.agreeToTerms}`,
+            created_from: "webform",
+            source_url: window.location.href,
           },
-        });
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-        if (data.success) {
+        // if (data.success) {
+        if (data.Status) {
           // Reset form
           setFormState({
-            firstName: "",
-            lastName: "",
+            userName: "",
             userEmail: "",
             brandName: "",
             userMessage: "",
@@ -176,6 +233,9 @@ const ContactForm = () => {
             countryCode: DEFAULT_COUNTRY_CODE,
             agreeToTerms: false,
           });
+
+          setCaptchaInput("");
+          setCaptcha("");
 
           window.open("/thank-you/", "_blank");
         } else {
@@ -188,9 +248,8 @@ const ContactForm = () => {
         setFormRes(false);
       }
     },
-    [formState, validateForm]
+    [formState, validateForm, captchaInput, captcha, validateCaptcha]
   );
-
   // Memoized form fields configuration
   const formFields = useMemo<FormField[]>(
     () => [
@@ -198,21 +257,11 @@ const ContactForm = () => {
         tag: "input",
         icon: <FillUser />,
         type: "text",
-        name: "firstName",
-        placeholder: "First Name",
+        name: "userName",
+        placeholder: "Your Name",
         required: true,
-        value: formState.firstName,
-        onChange: handleChange("firstName"),
-      },
-      {
-        tag: "input",
-        icon: <FillUser />,
-        type: "text",
-        name: "lastName",
-        placeholder: "Last Name",
-        required: true,
-        value: formState.lastName,
-        onChange: handleChange("lastName"),
+        value: formState.userName,
+        onChange: handleChange("userName"),
       },
       {
         tag: "div",
@@ -350,7 +399,15 @@ const ContactForm = () => {
             )}
           </div>
         ))}
-
+        {/* capcha */}
+        <CustomCaptchaForm
+          isOpen={true}
+          captcha={captcha}
+          setCaptcha={setCaptcha}
+          setCaptchaInput={handleCaptchaInputChange}
+          captchaInput={captchaInput}
+          error={validationErrors.captcha || ""}
+        />
         {/* Message field */}
         <div className="flex flex-col gap-1">
           <label

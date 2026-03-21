@@ -106,17 +106,21 @@ export const Nav_Links: SubLinks[] = [
       },
       {
         linkName: "Success Stories",
-        src: "/case-studies/",
+        src: "/case-study/",
       },
-      // {
-      //   linkName: "Press Releases",
-      //   src: "/hotelprservices/",
-      // },
+      {
+        linkName: "Our Clients",
+        src: "/our-clients/",
+      },
+      {
+        linkName: "Our Work",
+        src: "https://www.eazotel.com/our-work",
+      },
     ],
   },
   {
     linkName: "contact us",
-    src: "https://www.eazotel.com/contact-us",
+    src: "/contact-us",
   },
   // {
   //   linkName: "blogs",

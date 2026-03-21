@@ -6,6 +6,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { countries } from "@/utils/countryCode";
 import Form from "./Form";
+import { contacts } from "../../contact";
 
 const FormOld = () => {
   const router = useRouter();
@@ -51,23 +52,22 @@ const FormOld = () => {
 
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
         // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook`, //test
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
+          Domain: contacts.formDomain,
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
-          // Remark: "",
-          // Subject: null,
-          // created_from: "website",
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          Description: userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
+
+          // email: userEmail,
+          // name: userName,
+          // phone: `${countryCode}${userPhone}`,
+          // message: userMessage,
         },
         {
           headers: {
@@ -75,8 +75,8 @@ const FormOld = () => {
           },
         }
       );
-      if (data.success) {
-        // if (data?.Status) {
+      // if (data.success) {
+        if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");
@@ -219,7 +219,7 @@ const FormOld = () => {
           )}
         </div>
       ))}
-      
+
       <button className="w-full text-center bg-orange-primary text-white justify-center border-orange-primary text-md px-8 py-2  font-semibold rounded-md hover:bg-white hover:text-orange-primary duration-300 active:scale-75 hover:scale-105 border border-blue-primary">
         {formRes ? "Loading...." : "Submit"}
       </button>

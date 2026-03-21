@@ -1,9 +1,8 @@
 "use client";
-import React, { memo, useEffect, useState } from "react";
-import { Nav_Links } from "./Nav_Links";
 import Link from "next/link";
+import { memo, useState } from "react";
+import { Nav_Links } from "./Nav_Links";
 
-import { TiArrowSortedDown } from "react-icons/ti";
 import { OutlineDrpopdown } from "@/utils/icons";
 
 function MobileNav({ isOpen, setIsOpen }: any) {

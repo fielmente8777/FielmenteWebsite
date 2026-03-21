@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { countries } from "@/utils/countryCode";
 import axios from "axios";
 import React, { useState } from "react";
+import { contacts } from "../../../contact";
 
 const HospitalityLandingBannerFormOld = () => {
   const router = useRouter();
@@ -49,19 +50,20 @@ const HospitalityLandingBannerFormOld = () => {
 
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
+          Domain: contacts.formDomain,
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          Description: userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
+          // email: userEmail,
+          // name: userName,
+          // phone: `${countryCode}${userPhone}`,
+          // message: userMessage,
           // Remark: "",
           // Subject: null,
           // created_from: "website",
@@ -72,8 +74,8 @@ const HospitalityLandingBannerFormOld = () => {
           },
         }
       );
-      if (data.success) {
-      // if (data?.Status) {
+      // if (data.success) {
+        if (data?.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");

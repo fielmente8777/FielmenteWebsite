@@ -8,6 +8,7 @@ import Form2 from "../Form2";
 import { usePathname } from "next/navigation";
 import Call from "../Call";
 import Whatsapp from "../WhatsApp";
+import { contacts } from "../../../contact";
 
 const LandingPageFooter2 = () => {
   const pathName = usePathname();
@@ -25,16 +26,16 @@ const LandingPageFooter2 = () => {
           label: "SIT Tower, Dubai Silicon Oasis, Dubai - United Arab Emirates",
           icon: <OutLineLocationIcon />,
         },
-        {
-          href: "tel:+91 95018 68775",
-          label: "+91 95018 68775",
+        ...contacts.phone.map((phone) => ({
+          label: phone,
+          href: `tel:${phone}`,
           icon: <OutLineCall />,
-        },
-        {
-          href: "mailto:sachin@fielmente.com",
-          label: "sachin@fielmente.com",
+        })),
+        ...contacts.email.map((email) => ({
+          label: email,
+          href: `mailto:${email}`,
           icon: <OutLineEmail />,
-        },
+        })),
       ],
     };
   } else if (pathName === "/UK/") {
@@ -76,16 +77,16 @@ const LandingPageFooter2 = () => {
           // "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
           icon: <OutLineLocationIcon />,
         },
-        {
-          href: "tel:+91 95018 68775",
-          label: "+91 95018 68775",
+        ...contacts.phone.map((phone) => ({
+          label: phone,
+          href: `tel:${phone}`,
           icon: <OutLineCall />,
-        },
-        {
-          href: "mailto:sachin@fielmente.com",
-          label: "sachin@fielmente.com",
+        })),
+        ...contacts.email.map((email) => ({
+          label: email,
+          href: `mailto:${email}`,
           icon: <OutLineEmail />,
-        },
+        })),
       ],
     };
   }
@@ -125,8 +126,6 @@ const LandingPageFooter2 = () => {
           </div>
         </div>
       </Container>
-      <Call />
-      <Whatsapp />
     </Section>
   );
 };

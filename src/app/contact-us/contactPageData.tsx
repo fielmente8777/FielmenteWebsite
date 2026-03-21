@@ -1,7 +1,7 @@
 import {
-    FillLocationIcon,
-    FillMailIcon,
-    FillPhoneIcon,
+  FillLocationIcon,
+  FillMailIcon,
+  FillPhoneIcon,
 } from "@/utils/newIcons";
 import { contacts } from "../../../contact";
 
@@ -18,26 +18,26 @@ export const contactPageData = {
       {
         title: "Contact Details",
         links: [
-          {
-            label: contacts.phone_1,
-            href: `tel:${contacts.phone_1}`,
+          ...contacts.phone.map((phone) => ({
+            label: phone,
+            href: `tel:${phone}`,
             icon: <FillPhoneIcon />,
-          },
-          {
-            label: contacts.email_1,
-            href: `mailto:${contacts.email_1}`,
+          })),
+          ...contacts.email.map((email) => ({
+            label: email,
+            href: `mailto:${email}`,
             icon: <FillMailIcon />,
-          },
+          })),
         ],
       },
       {
         title: "Our Offices",
         links: [
-          {
-            label: contacts.address_4,
-            href: contacts.address_4_mapUrl,
-            icon: <FillLocationIcon />,
-          },
+          // {
+          //   label: contacts.address_4,
+          //   href: contacts.address_4_mapUrl,
+          //   icon: <FillLocationIcon />,
+          // },
           {
             label: contacts.address_1,
             href: contacts.address_1_mapUrl,
@@ -48,11 +48,11 @@ export const contactPageData = {
           //   href: contacts.address_2_mapUrl,
           //   icon: <FillLocationIcon />,
           // },
-          {
-            label: contacts.address_3,
-            href: contacts.address_3_mapUrl,
-            icon: <FillLocationIcon />,
-          },
+          // {
+          //   label: contacts.address_3,
+          //   href: contacts.address_3_mapUrl,
+          //   icon: <FillLocationIcon />,
+          // },
         ],
       },
     ],

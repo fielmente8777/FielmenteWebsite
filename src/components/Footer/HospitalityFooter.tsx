@@ -180,11 +180,11 @@ const footerData = {
   ],
 
   offices: [
-    {
-      label: contacts.address_4,
-      href: contacts.address_4_mapUrl,
-      icon: <AddressIcon />,
-    },
+    // {
+    //   label: contacts.address_4,
+    //   href: contacts.address_4_mapUrl,
+    //   icon: <AddressIcon />,
+    // },
     {
       label:
         "Suncity Success Tower, Golf Course Ext Rd, Sector 65, Gurugram, Haryana 122005",
@@ -200,17 +200,16 @@ const footerData = {
   ],
 
   contactUs: [
-    {
-      label: contacts.phone_1,
-      href: "tel:" + contacts.phone_1,
+    ...contacts.phone.map((phone) => ({
+      label: phone,
+      href: `tel:${phone}`,
       icon: <PhoneIcon />,
-    },
-
-    {
-      label: "sachin@fielmente.com",
-      href: "mailto:sachin@fielmente.com",
+    })),
+    ...contacts.email.map((email) => ({
+      label: email,
+      href: `mailto:${email}`,
       icon: <MailIcon />,
-    },
+    })),
   ],
 };
 const HospitalityFooter = () => {
@@ -223,16 +222,14 @@ const HospitalityFooter = () => {
             <div className="space-y-8">
               {/* logo  */}
               <div className="flex md:justify-start justify-center items-center gap-2">
-                <div className="relative w-5 h-10">
+                <div className="relative w-[250px] aspect-[4/1.5]">
                   <Image
-                    src={"/footer-fielmente-logo.png"}
+                    src={"/logo2.png"}
                     alt="logo"
                     fill
-                    className="object-contain"
+                    className="object-contain "
                   />
                 </div>
-
-                <h2 className="text-xl text-white font-semibold">Fielmente </h2>
               </div>
 
               {/* follow us  */}
@@ -251,7 +248,7 @@ const HospitalityFooter = () => {
             </div>
 
             <div>
-              <h2 className="text-white text-2xl font-semibold">Our Offices</h2>
+              <h2 className="text-white text-2xl md:text-4xl font-semibold">Our Offices</h2>
 
               <div className="space-y-5 mt-6 text-white">
                 {footerData?.offices?.map((item, index) => (
@@ -259,7 +256,7 @@ const HospitalityFooter = () => {
                     target="_blank"
                     href={item?.href}
                     key={index}
-                    className="flex items-center gap-3"
+                    className="flex gap-2.5 text-xl"
                   >
                     <span>{item?.icon}</span>
                     <p>{item?.label}</p>
@@ -270,7 +267,7 @@ const HospitalityFooter = () => {
 
             <div className="flex lg:justify-center">
               <div>
-                <h2 className="text-white text-2xl font-semibold">
+                <h2 className="text-white text-2xl md:text-4xl font-semibold">
                   Contact Us
                 </h2>
 
@@ -279,7 +276,7 @@ const HospitalityFooter = () => {
                     <Link
                       href={item?.href}
                       key={index}
-                      className="flex items-center gap-3"
+                      className="flex items-center gap-3 text-xl"
                     >
                       <span>{item?.icon}</span>
                       <p>{item?.label}</p>
@@ -294,11 +291,11 @@ const HospitalityFooter = () => {
         <div className="mt-10 space-y-4 pb-4">
           <div className="bg-[linear-gradient(to_right,_#110D3C,_#FFFFFF,_#110D3C)] h-[1px] w-full" />
 
-          <div className="flex justify-center items-center gap-4 text-white">
+          <div className="flex justify-center items-center gap-4 text-lg text-white">
             <p className="text-center">© 2025 Fielmente</p>
             <span>•</span>
             <p className="text-center">All Rights Reserved</p>
-            <span>•</span>
+            {/* <span>•</span>
             <p className="text-center">
               Design And Development By{" "}
               <Link
@@ -308,13 +305,10 @@ const HospitalityFooter = () => {
               >
                 Eazotel
               </Link>
-            </p>
+            </p> */}
           </div>
         </div>
       </Section>
-      {/* <PopupForm setShowModal={setShowModal} showModal={showModal} /> */}
-      <Call />
-      <Whatsapp />
     </footer>
   );
 };

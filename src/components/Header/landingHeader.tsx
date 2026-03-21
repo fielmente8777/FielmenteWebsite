@@ -111,7 +111,7 @@ const LandingHeader = () => {
               sachin@fielmente.com
             </Link>
 
-            {pathName === "/landing-page/" && (
+            {/* {pathName === "/landing-page/" && (
               <Link
                 href={"tel:"+ contacts.phone_1}
                 className={`flex items-center border border-orange-primary px-4 py-2  font-medium rounded-md text-orange-primary`}
@@ -120,7 +120,7 @@ const LandingHeader = () => {
                 <OutLineCall />
                 {contacts.phone_1}
               </Link>
-            )}
+            )} */}
           </div>
 
           {/* mobile view */}

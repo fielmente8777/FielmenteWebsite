@@ -89,7 +89,7 @@ export const footerData: FooterLinksPropstype = {
         },
         {
           label: "Contact Us",
-          href: "https://www.eazotel.com/contact-us",
+          href: "/contact-us",
         },
         // {
         //   label: "Our Team",
@@ -170,16 +170,16 @@ export const footerData: FooterLinksPropstype = {
     {
       title: "Contact",
       listOfLinks: [
-        {
-          label: contacts.phone_1,
-          href: `tel:${contacts.phone_1}`,
+        ...contacts.phone.map((phone) => ({
+          label: phone,
+          href: `tel:${phone}`,
           icon: <FillPhoneIcon />,
-        },
-        {
-          label: contacts.email_1,
-          href: `mailto:${contacts.email_1}`,
+        })),
+        ...contacts.email.map((email) => ({
+          label: email,
+          href: `mailto:${email}`,
           icon: <FillMailIcon />,
-        },
+        })),
       ],
     },
   ],

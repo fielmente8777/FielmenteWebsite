@@ -7,35 +7,37 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
+import { Autoplay, FreeMode } from "swiper/modules";
 
-import goibibo from "../../../../public/images/goibibo-logo.png";
 import agoda from "../../../../public/images/agoda-logo.png";
-import razorpay from "../../../../public/images/razorpay-logo.png";
 import airbnb from "../../../../public/images/airbnb-logo.png";
-import SectionHeading from "./SectionHeading";
-import Container from "./Container";
+import goibibo from "../../../../public/images/goibibo-logo.png";
+import razorpay from "../../../../public/images/razorpay-logo.png";
 import Section from "./Section";
+import SectionHeading from "./SectionHeading";
+import { Container } from "@/components/sectionComponants";
 
 const OurOTAPartners = () => {
   const SectionHeadingDetails = {
-    title: "We Partner with the ",
-    span: "Best",
+    title: "OTA Partners",
   };
   return (
     <Section className="bg-white">
-      <Container>
+      <Container className="demo">
         <SectionHeading {...SectionHeadingDetails} />
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, FreeMode]}
+          freeMode={true}
           spaceBetween={5}
           slidesPerView={2}
           loop={true}
-          speed={900}
+          speed={5000}
           autoplay={{
-            delay: 4000,
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
           }}
           breakpoints={{
             640: {
@@ -58,16 +60,14 @@ const OurOTAPartners = () => {
             <SwiperSlide key={index} className="p-2">
               <Link
                 href={"/"}
-                className="relative w-full lg:aspect-[3/1.5] aspect-[4/4] h-[7rem] rounded-xl flex justify-center items-center hover:shadow-lg shadow-slate-300 transition "
+                className="w-full block relative aspect-[4/2.5] shadow-xl shadow-primary/20 rounded-lg"
               >
                 <Image
                   src={item.src}
                   alt={`${item.alt}`}
-                  // width={100}
-                  // height={100}
                   fill
-                  priority={true}
-                  className="object-contain w-full h-full rounded-md p-3 bg-white"
+                  sizes="100%"
+                  className="object-contain p-2 rounded-lg"
                 />
               </Link>
             </SwiperSlide>

@@ -17,14 +17,18 @@ const IndustryWeServeCard: React.FC<IndustryWeServeProps["items"][0]> = ({
 
       <div className="absolute inset-0 flex items-center justify-center gap-6 md:px-12 px-10">
         <div>
-          <h2 className="text-white text-center font-semibold playfair text-2xl tracking-wide poppins">
-            {title}
+          <h2 className="text-white text-center md:text-3xl text-2xl tracking-wide poppins">
+            <strong>
+              {title}
+              <br />
+              Marketing
+            </strong>
           </h2>
         </div>
       </div>
       {image?.desc && (
         <div className="absolute bottom-0 w-full bg-black/40 translate-y-full group-hover:translate-y-0 py-4 px-6 duration-200 transition-all ease-in-out">
-          <p className="md:text-lg text-white">{image.desc}</p>
+          <p className="md:text-lg text-center text-white">{image.desc}</p>
         </div>
       )}
     </div>

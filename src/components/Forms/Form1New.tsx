@@ -4,8 +4,15 @@ import { countries } from "@/utils/countryCode";
 import { OutlineMessage, OutlineUser } from "@/utils/icons";
 import { OutlineCallIcon, OutlineMail } from "@/utils/newIcons";
 import axios from "axios";
-import React, { useState, useCallback, useMemo, FormEvent, ChangeEvent } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  FormEvent,
+  ChangeEvent,
+} from "react";
 import CustomCaptchaForm from "./CaptchaForm";
+import { contacts } from "../../../contact";
 
 interface FormData {
   userName: string;
@@ -30,16 +37,22 @@ const Form1New = ({ bgWhite = false }: { bgWhite?: boolean }) => {
     userPhone: "",
     countryCode: "+91",
   });
-  
+
   const [formRes, setFormRes] = useState(false);
-  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>(
+    {}
+  );
   const [captcha, setCaptcha] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
 
   // Constants
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // const FORM_API = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook"; // test
-  const FORM_API = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
+  const FORM_API =
+    "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
+
+const api = "https://nexon.eazotel.com/eazotel/addcontacts";
+
 
   // Validation functions
   const validateEmail = useCallback((email: string): string => {
@@ -55,206 +68,242 @@ const Form1New = ({ bgWhite = false }: { bgWhite?: boolean }) => {
     return "";
   }, []);
 
-  const validateCaptcha = useCallback((input: string, correct: string): string => {
-    if (!input) return "Captcha is required";
-    if (input !== correct) return "Captcha incorrect. Please try again.";
-    return "";
-  }, []);
+  const validateCaptcha = useCallback(
+    (input: string, correct: string): string => {
+      if (!input) return "Captcha is required";
+      if (input !== correct) return "Captcha incorrect. Please try again.";
+      return "";
+    },
+    []
+  );
 
   // Event handlers
-  const handlePhoneChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
-    setFormData(prev => ({ ...prev, userPhone: value }));
-    
-    if (value.length > 0) {
-      setValidationErrors(prev => ({
-        ...prev,
-        phone: validatePhone(value),
-      }));
-    }
-  }, [validatePhone]);
+  const handlePhoneChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+      setFormData((prev) => ({ ...prev, userPhone: value }));
 
-  const handleEmailChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setFormData(prev => ({ ...prev, userEmail: value }));
-    
-    if (value.length > 0) {
-      setValidationErrors(prev => ({
-        ...prev,
-        email: validateEmail(value),
-      }));
-    }
-  }, [validateEmail]);
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          phone: validatePhone(value),
+        }));
+      }
+    },
+    [validatePhone]
+  );
 
-  const handleCaptchaInputChange = useCallback((value: string) => {
-    setCaptchaInput(value);
-    if (value.length > 0) {
-      setValidationErrors(prev => ({
-        ...prev,
-        captcha: validateCaptcha(value, captcha),
-      }));
-    }
-  }, [captcha, validateCaptcha]);
+  const handleEmailChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setFormData((prev) => ({ ...prev, userEmail: value }));
+
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          email: validateEmail(value),
+        }));
+      }
+    },
+    [validateEmail]
+  );
+
+  const handleCaptchaInputChange = useCallback(
+    (value: string) => {
+      setCaptchaInput(value);
+      if (value.length > 0) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          captcha: validateCaptcha(value, captcha),
+        }));
+      }
+    },
+    [captcha, validateCaptcha]
+  );
 
   // Memoized form configuration - Moved after handlers are defined
-  const formFields = useMemo(() => [
-    {
-      id: "name",
-      tag: "input" as const,
-      type: "text",
-      name: "name",
-      icon: <OutlineUser />,
-      placeholder: "Your Name*",
-      required: true,
-      value: formData.userName,
-      onChange: (e: ChangeEvent<HTMLInputElement>) => 
-        setFormData(prev => ({ ...prev, userName: e.target.value })),
-    },
-    {
-      id: "phone",
-      tag: "div" as const,
-      name: "phone",
-      icon: <OutlineCallIcon />,
-      placeholder: "Your Phone*",
-      required: true,
-      content: (
-        <div className="flex gap-2 text-base">
-          <select
-            id="countryCode"
-            name="countryCode"
-            value={formData.countryCode}
-            onChange={(e) => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
-            className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
-            style={{ inlineSize: `${formData.countryCode.length + 2}ch` }}
-            aria-label="Country Code"
-          >
-            {countries.map((country, index) => (
-              <option key={index} value={country.code} className="text-black bg-gray-100">
-                {country.code}
-              </option>
-            ))}
-          </select>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            max="9999999999"
-            placeholder="Your Phone Number*"
-            value={formData.userPhone}
-            onChange={handlePhoneChange}
-            className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
-          />
-        </div>
-      ),
-    },
-    {
-      id: "email",
-      tag: "input" as const,
-      type: "email",
-      name: "email",
-      icon: <OutlineMail />,
-      placeholder: "Your Email Id*",
-      required: true,
-      value: formData.userEmail,
-      onChange: handleEmailChange,
-    },
-    {
-      id: "message",
-      tag: "textarea" as const,
-      type: "text",
-      name: "message",
-      icon: <OutlineMessage />,
-      placeholder: "Your Message*",
-      required: true,
-      value: formData.userMessage,
-      onChange: (e: ChangeEvent<HTMLInputElement>) => 
-        setFormData(prev => ({ ...prev, userMessage: e.target.value })),
-    },
-  ], [formData, handlePhoneChange, handleEmailChange]);
+  const formFields = useMemo(
+    () => [
+      {
+        id: "name",
+        tag: "input" as const,
+        type: "text",
+        name: "name",
+        icon: <OutlineUser />,
+        placeholder: "Your Name*",
+        required: true,
+        value: formData.userName,
+        onChange: (e: ChangeEvent<HTMLInputElement>) =>
+          setFormData((prev) => ({ ...prev, userName: e.target.value })),
+      },
+      {
+        id: "phone",
+        tag: "div" as const,
+        name: "phone",
+        icon: <OutlineCallIcon />,
+        placeholder: "Your Phone*",
+        required: true,
+        content: (
+          <div className="flex gap-2 text-base">
+            <select
+              id="countryCode"
+              name="countryCode"
+              value={formData.countryCode}
+              onChange={(e) =>
+                setFormData((prev) => ({
+                  ...prev,
+                  countryCode: e.target.value,
+                }))
+              }
+              className="w-auto bg-transparent rounded-lg text-[#333333] focus:outline-none"
+              style={{ inlineSize: `${formData.countryCode.length + 2}ch` }}
+              aria-label="Country Code"
+            >
+              {countries.map((country, index) => (
+                <option
+                  key={index}
+                  value={country.code}
+                  className="text-black bg-gray-100"
+                >
+                  {country.code}
+                </option>
+              ))}
+            </select>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              max="9999999999"
+              placeholder="Your Phone Number*"
+              value={formData.userPhone}
+              onChange={handlePhoneChange}
+              className="w-full bg-transparent rounded-md placeholder:text-black-primary text-black no-spinner focus:outline-none"
+            />
+          </div>
+        ),
+      },
+      {
+        id: "email",
+        tag: "input" as const,
+        type: "email",
+        name: "email",
+        icon: <OutlineMail />,
+        placeholder: "Your Email Id*",
+        required: true,
+        value: formData.userEmail,
+        onChange: handleEmailChange,
+      },
+      {
+        id: "message",
+        tag: "textarea" as const,
+        type: "text",
+        name: "message",
+        icon: <OutlineMessage />,
+        placeholder: "Your Message*",
+        required: true,
+        value: formData.userMessage,
+        onChange: (e: ChangeEvent<HTMLInputElement>) =>
+          setFormData((prev) => ({ ...prev, userMessage: e.target.value })),
+      },
+    ],
+    [formData, handlePhoneChange, handleEmailChange]
+  );
 
   // Form submission
-  const handleSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    // Validate all fields
-    const errors: ValidationErrors = {
-      email: validateEmail(formData.userEmail),
-      phone: validatePhone(formData.userPhone),
-      captcha: validateCaptcha(captchaInput, captcha),
-    };
+  const handleSubmit = useCallback(
+    async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
 
-    setValidationErrors(errors);
+      // Validate all fields
+      const errors: ValidationErrors = {
+        email: validateEmail(formData.userEmail),
+        phone: validatePhone(formData.userPhone),
+        captcha: validateCaptcha(captchaInput, captcha),
+      };
 
-    // Check if any errors exist
-    if (Object.values(errors).some(error => error)) {
-      return;
-    }
+      setValidationErrors(errors);
 
-    setFormRes(true);
-
-    try {
-      const { data } = await axios.post(
-        FORM_API,
-        {
-          email: formData.userEmail,
-          name: formData.userName,
-          phone: `${formData.countryCode}${formData.userPhone}`,
-          message: formData.userMessage,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      if (data.success) {
-        // Reset form
-        setFormData({
-          userName: "",
-          userEmail: "",
-          userMessage: "",
-          userPhone: "",
-          countryCode: "+91",
-        });
-        setCaptchaInput("");
-        setValidationErrors({});
-        
-        // Open thank you page
-        window.open("/thank-you/", "_blank");
-      } else {
-        alert("Something went wrong! Please try again.");
+      // Check if any errors exist
+      if (Object.values(errors).some((error) => error)) {
+        return;
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      alert("An error occurred. Please try again later.");
-    } finally {
-      setFormRes(false);
-    }
-  }, [formData, captchaInput, captcha, validateEmail, validatePhone, validateCaptcha]);
+
+      setFormRes(true);
+
+      try {
+        const { data } = await axios.post(
+          api,
+          {
+            Domain: contacts.formDomain,
+            email: formData.userEmail,
+            Name: formData.userName,
+            Contact: `${formData.countryCode}${formData.userPhone}`,
+            Description: formData.userMessage,
+            created_from: "webform",
+            source_url: window.location.href,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        // if (data.success) {
+        if (data.Status) {
+          // Reset form
+          setFormData({
+            userName: "",
+            userEmail: "",
+            userMessage: "",
+            userPhone: "",
+            countryCode: "+91",
+          });
+          setCaptchaInput("");
+          setValidationErrors({});
+
+          // Open thank you page
+          window.open("/thank-you/", "_blank");
+        } else {
+          alert("Something went wrong! Please try again.");
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        alert("An error occurred. Please try again later.");
+      } finally {
+        setFormRes(false);
+      }
+    },
+    [
+      formData,
+      captchaInput,
+      captcha,
+      validateEmail,
+      validatePhone,
+      validateCaptcha,
+    ]
+  );
 
   // Styling classes
   const containerClasses = `flex flex-col gap-6 max-md:px-4 p-6 max-md:mt-6 text-base rounded-[20px] w-full relative ${
     bgWhite ? "bg-white" : "bg-primary"
   }`;
 
-  const titleClasses = `text-xl md:text-3xl text-center font-semibold ${
+  const titleClasses = `text-xl md:text-3xl font-semibold ${
     !bgWhite ? "text-white" : "text-primary"
   }`;
 
-  const descriptionClasses = `md:text-xl text-center ${
+  const descriptionClasses = `md:text-xl ${
     !bgWhite ? "text-white" : "text-primary"
   }`;
 
   return (
     <form onSubmit={handleSubmit} className={containerClasses}>
-      <h2 className={titleClasses}>
-        Get A FREE Consultation!
-      </h2>
+      <h2 className={titleClasses}>Get A FREE Consultation!</h2>
       <p className={descriptionClasses}>
         Let&apos;s work on boosting your hotel&apos;s profitability!
       </p>
-      
+
       <span className="absolute top-5 right-7">
         {/* ChatIcon component should be imported if needed */}
         {/* <ChatIcon /> */}
@@ -269,26 +318,25 @@ const Form1New = ({ bgWhite = false }: { bgWhite?: boolean }) => {
             >
               {field.icon}
             </label>
-            
-            {field.tag === "div" ? (
-              field.content
-            ) : (
-              React.createElement(field.tag, {
-                id: field.name,
-                type: field.type,
-                name: field.name,
-                value: field.value,
-                onChange: field.onChange,
-                placeholder: field.placeholder,
-                required: field.required,
-                autoComplete: "off",
-                spellCheck: "false",
-                rows: field.tag === "textarea" ? 3 : undefined,
-                className: "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-[12px] valid:outline-blue-primary invalid:outline-Saffron-primary",
-              })
-            )}
+
+            {field.tag === "div"
+              ? field.content
+              : React.createElement(field.tag, {
+                  id: field.name,
+                  type: field.type,
+                  name: field.name,
+                  value: field.value,
+                  onChange: field.onChange,
+                  placeholder: field.placeholder,
+                  required: field.required,
+                  autoComplete: "off",
+                  spellCheck: "false",
+                  rows: field.tag === "textarea" ? 3 : undefined,
+                  className:
+                    "w-full bg-transparent no-spinner resize-none focus:outline-none rounded-[12px] valid:outline-blue-primary invalid:outline-Saffron-primary",
+                })}
           </div>
-          
+
           {validationErrors[field.name as keyof ValidationErrors] && (
             <p className="text-sm text-red-500 mt-2">
               {validationErrors[field.name as keyof ValidationErrors]}
@@ -296,7 +344,7 @@ const Form1New = ({ bgWhite = false }: { bgWhite?: boolean }) => {
           )}
         </div>
       ))}
-      
+
       <CustomCaptchaForm
         isOpen={true}
         captcha={captcha}
@@ -305,7 +353,7 @@ const Form1New = ({ bgWhite = false }: { bgWhite?: boolean }) => {
         captchaInput={captchaInput}
         error={validationErrors.captcha || ""}
       />
-      
+
       <button
         type="submit"
         disabled={formRes}

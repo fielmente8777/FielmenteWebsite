@@ -37,14 +37,14 @@ const OurValuedClients: React.FC<OurValuedClientsPropsType> = ({
         </div>
 
         {/* Slider */}
-        <div className="space-y-4 rounded-3xl box-shadow overflow-hidden">
-          <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full max-w-[90rem] mx-auto demo" />
+        <div className="space-y-4 rounded-3xl box-shadow overflow-hidden demo">
+          <div className="bg-[linear-gradient(to_right,_#FFFFFF,_#F26633,_#FFFFFF)] h-[0.8px] w-full max-w-[90rem] mx-auto " />
 
           <SwiperCarousel
             data={cards ?? []}
             speed={5000}
             loop
-            freeMode
+            freeMode={true}
             modules={[Autoplay, FreeMode]}
             autoplay={{
               delay: 0,
@@ -59,13 +59,14 @@ const OurValuedClients: React.FC<OurValuedClientsPropsType> = ({
                 spaceBetween: 24,
               },
             }}
+            className="!py-2"
             renderSlide={(item, index) => {
               if (useLink) {
                 return (
                   <Link
                     key={index}
                     href={item.href || "#"} // ✅ guaranteed
-                    className="w-full relative aspect-[4/2.5] block"
+                    className="w-full relative aspect-[4/2.5] block shadow-md shadow-primary/20 rounded-lg"
                   >
                     <Image
                       src={item.src}
@@ -80,7 +81,10 @@ const OurValuedClients: React.FC<OurValuedClientsPropsType> = ({
               }
 
               return (
-                <div key={index} className="w-full relative aspect-[4/2.5]">
+                <div
+                  key={index}
+                  className="w-full relative aspect-[4/2.5] shadow-md shadow-primary/20 rounded-lg"
+                >
                   <Image
                     src={item.src}
                     alt={item.alt || "client logo"}

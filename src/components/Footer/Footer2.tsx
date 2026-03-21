@@ -1,12 +1,9 @@
-import Link from "next/link";
-import { footerData, policyLinks } from "./footerData";
 import Image from "next/image";
-import { Container } from "../sectionComponants";
-import { FaWhatsapp } from "react-icons/fa";
-import { MdCall } from "react-icons/md";
-import { contacts } from "../../../contact";
+import Link from "next/link";
 import Call from "../Call";
+import { Container } from "../sectionComponants";
 import Whatsapp from "../WhatsApp";
+import { footerData, policyLinks } from "./footerData";
 const Footer2 = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -50,10 +47,10 @@ const Footer2 = () => {
                 </ul>
               </div>
             ))} */}
-            <ul className="flex items-center gap-4">
+            {/* <ul className="flex items-center gap-4">
               <li className="flex items-center gap-4">
                 <Link
-                  href={`https://wa.me/${contacts.phone_1.replace(/ /g, "")}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
+                  href={`https://wa.me/${contacts.phone[1].replace(/ /g, "")}?text=Hello+I+would+like+to+know+more+about+Fielmente+Hospitality+Marketing+Agency`}
                   target="_blank"
                   className="flex items-center justify-center hover:bg-secondary text-secondary text-2xl hover:text-white bg-white rounded-lg w-10 h-10 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 shadow-4d"
                 >
@@ -62,13 +59,13 @@ const Footer2 = () => {
               </li>
               <li>
                 <Link
-                  href={`tel:${footerData.linksData[4].listOfLinks[1].href}`}
+                  href={`tel:${contacts.phone[1].replace(/ /g, "")}`}
                   className="flex items-center justify-center hover:bg-secondary text-secondary text-2xl hover:text-white bg-white rounded-lg w-10 h-10 transition-all duration-300 ease-in-out hover:scale-105 active:scale-95 shadow-4d"
                 >
                   <MdCall />
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
           {footerData.linksData.slice(1, 3).map((item, index) => (
             <div className="flex flex-col md:gap-6 gap-4" key={index}>
@@ -134,8 +131,6 @@ const Footer2 = () => {
           </div>
         </Container>
       </div>
-      <Call />
-      <Whatsapp />
     </footer>
   );
 };

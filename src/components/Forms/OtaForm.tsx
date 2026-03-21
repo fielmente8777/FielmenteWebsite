@@ -3,6 +3,7 @@ import { countries } from "@/utils/countryCode";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { contacts } from "../../../contact";
 
 const OtaForm = () => {
   const router = useRouter();
@@ -74,18 +75,20 @@ const OtaForm = () => {
 
     try {
       const { data } = await axios.post(
-        `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
         {
-          // Domain: "fielmente",
-          // email: formData.userEmail,
-          // Name: formData.userName,
-          // Contact: `${countryCode}${formData.userPhone}`,
-          // Description: formData.userMessage,
+          Domain: contacts.formDomain,
           email: formData.userEmail,
-          name: formData.userName,
-          phone: `${countryCode}${formData.userPhone}`,
-          message: formData.userMessage,
+          Name: formData.userName,
+          Contact: `${countryCode}${formData.userPhone}`,
+          Description: formData.userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
+          // email: formData.userEmail,
+          // name: formData.userName,
+          // phone: `${countryCode}${formData.userPhone}`,
+          // message: formData.userMessage,
         },
         {
           headers: {
@@ -94,8 +97,8 @@ const OtaForm = () => {
         }
       );
       console.log("API Response:", data);
-      // if (data.Status)
-      if (data.success) {
+      if (data.Status){
+      // if (data.success) {
         // Reset form
         setFormData({
           userName: "",

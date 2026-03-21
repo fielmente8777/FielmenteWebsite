@@ -20,6 +20,7 @@ const MaximizeGrowth: React.FC<MaximizeGrowthPropsType> = ({
         <SectionHeadingDesc
           title={title}
           subTitle={subTitle}
+          titleColor="[#1c1c1c]"
           textcenter
           subTitleColor="white"
           wrapperClassName="max-w-5xl mx-auto text-color"

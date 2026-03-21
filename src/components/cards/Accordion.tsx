@@ -36,7 +36,7 @@ const Accordion: React.FC<AccordionProps> = ({
           className={`flex items-center justify-between gap-4 w-full md:py-6 py-4`}
         >
           <h3
-            className={`font-semibold md:text-2xl text-xl text-primary ${questionClassName}`}
+            className={`font-semibold md:text-xl text-xl text-primary ${questionClassName}`}
             dangerouslySetInnerHTML={{ __html: question }}
           />
 
@@ -59,7 +59,7 @@ const Accordion: React.FC<AccordionProps> = ({
         >
           <p
             key={index}
-            className={`text-light text-xl font-normal`}
+            className={`text-light text-lg font-normal`}
             dangerouslySetInnerHTML={{ __html: answer }}
           ></p>
         </div>

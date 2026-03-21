@@ -38,6 +38,7 @@ import bg3img1 from "../../public/images/blog/Fielmente-Hospitality-Marketing-Ag
 
 export interface blogtype {
   url?: StaticImageData | string;
+  bnr?: boolean;
   addimg?: StaticImageData;
   description?: string;
   title: string;
@@ -4066,11 +4067,49 @@ Why does this work? Because you’re cutting costs on front-of-house activities
       without any delay.</p>
   </div>`,
   },
+  {
+    url: "/images/blog/caqm-relaxes.jpeg",
+    // date: "13 March 2023",
+    bnr:false,
+    isShow: true,
+    title:
+      "CAQM Relaxes Approved Fuel Norms: What It Means for Hotels & Restaurants in NCR",
+    link: "caqm-relaxes-approved-fuel-norms-hotels-restaurants-ncr",
+    description:'The Commission for Air Quality Management (CAQM) issued an order on 13 March 2026 temporarily relaxing the approved fuel norms for industries, hotels, restaurants, and other establishments operating in the National Capital Region (NCR). This decision comes in response to disruptions in global energy supply and the regulated distribution of natural gas in India.',
+    data: `
+  <div>
+  
+  <p>The Commission for Air Quality Management (CAQM) issued an order on 13 March 2026 temporarily relaxing the approved fuel norms for industries, hotels, restaurants, and other establishments operating in the National Capital Region (NCR). This decision comes in response to disruptions in global energy supply and the regulated distribution of natural gas in India.</p>
+  <img src="/images/blog/caqm-relaxes.jpeg" alt="caqm-relaxes" />
+  
+    <h2>Why This Order Was Issued</h2>
+
+    <p>The Government of India introduced the Natural Gas (Supply Regulation) Order, 2026, which prioritizes the supply of natural gas to essential sectors. Due to these regulations and supply disruptions, many commercial establishments reported operational challenges caused by limited PNG availability. Following consultations with the Ministry of Petroleum and Natural Gas, City Gas Distribution Companies, and Pollution Control Boards, CAQM reviewed the situation and provided temporary flexibility in fuel usage for NCR businesses.</p>
+
+    <h2>Temporary Alternative Fuels Allowed</h2>
+
+    <p>Hotels and restaurants are now permitted to temporarily use alternative fuels instead of natural gas. The allowed fuels include High-Speed Diesel (HSD), Biomass, and RDF Pellets (Refuse-Derived Fuel). If these fuels are unavailable, establishments may also temporarily use coal or kerosene. This relaxation applies to industries, hotels, restaurants, and other enterprises operating across the NCR region, including Delhi.</p>
+
+    <h2>Duration of the Relaxation</h2>
+
+    <p>The permission to use alternative fuels is temporary and valid for one month from the date of the order (13 March 2026), or until further instructions are issued. All other provisions of CAQM Direction No. 65 dated 23 June 2022 will remain unchanged.</p>
+
+    <h2>What This Means for Hotels and Restaurants</h2>
+
+    <p>For hospitality operators in NCR, this decision provides practical operational relief. Hotels and restaurants that rely heavily on PNG for kitchens, boilers, and heating systems can continue operations without interruption by switching to permitted alternative fuels when necessary.</p>
+
+    <h2>Strategic Considerations for Hospitality Businesses</h2>
+
+    <p>The current situation highlights the importance of operational resilience and energy diversification. Hotels and restaurants should evaluate hybrid fuel systems, energy-efficient equipment, and contingency planning to reduce dependence on a single energy source.</p>
+
+    <h3>About Fielmente</h3>
+
+    <p>Fielmente works closely with hospitality businesses across India, helping hotels, restaurants, and resorts navigate industry challenges through digital transformation, operational insights, and growth-driven marketing strategies.</p>
+  </div>`,
+  },
 ];
 
 export const blogData = blog.filter((item) => item.isShow === true);
-
-
 
 // tips-for-engagement-on-social-media-of-cloud-kitchen
 // <a class="hidden" target="_blank" rel="noreferrer" href="https://supportdigitalindia.in/business-whatsapp.php">SDI Business Whatsapp Sender| Bulk Whatsapp Marketing |

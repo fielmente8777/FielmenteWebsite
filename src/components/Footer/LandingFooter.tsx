@@ -1,18 +1,15 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { contacts } from "../../../contact";
 import Logo from "../../../public/images/logo.webp";
 import {
   OutLineLocationIcon,
   OutlineMailIcon,
   OutlinePhoneIcon,
 } from "../Header/landingHeader";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { PopupForm } from "@/app/hospitality/components";
-import { contacts } from "../../../contact";
-import Call from "../Call";
-import Whatsapp from "../WhatsApp";
 
 const LandingFooter = () => {
   const pathName = usePathname();
@@ -61,13 +58,16 @@ const LandingFooter = () => {
             sachin@fielmente.com
           </Link>
           {pathName !== "/UK/" ? (
-            <Link
-              href={"tel:" + contacts.phone_1}
-              className="flex items-center text-blue-dark text-lg "
-            >
-              <OutlinePhoneIcon width={30} height={40} />
-              {contacts.phone_1}
-            </Link>
+            contacts.phone.map((phone, index) => (
+              <Link
+                href={"tel:" + phone}
+                key={index}
+                className="flex items-center text-blue-dark text-lg "
+              >
+                <OutlinePhoneIcon width={30} height={40} />
+                {phone}
+              </Link>
+            ))
           ) : (
             <Link
               href={"tel:+44 7438375533"}
@@ -91,9 +91,6 @@ const LandingFooter = () => {
           {/* <Link href={"/landingpage"} className="text-blue-dark text-lg">Landing</Link> */}
         </div>
       </div>
-      <PopupForm setShowModal={setShowModal} showModal={showModal} />
-      <Call />
-      <Whatsapp />
     </footer>
   );
 };

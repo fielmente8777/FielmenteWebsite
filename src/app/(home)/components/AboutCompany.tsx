@@ -25,8 +25,8 @@ const AboutCompany: React.FC<AboutCompanyPropsType> = ({
       sectionClassName="about-class lg:py-24 max-lg:pt-24 max-md:pb-10"
       defaultPadding={false}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-center">
-        <div className="lg:col-span-3 flex flex-col gap-8 max-w-2xl">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1.53fr] gap-6 items-center">
+        <div className=" flex flex-col gap-8 max-w-2xl">
           <SectionHeadingDesc
             title={title}
             subTitle={subTitle}
@@ -40,12 +40,12 @@ const AboutCompany: React.FC<AboutCompanyPropsType> = ({
               className="object-contain"
             />
           </div>
-          <p className="text-light text-xl">{description[0]}</p>
+          <p className="text-[#1C1c1c] text-xl">{description[0]}</p>
           <ul className="flex flex-col gap-4">
             {listData.map((item, index) => (
               <li
                 key={index}
-                className="flex items-center gap-2 text-light text-xl"
+                className="flex items-center gap-2 text-[#1C1c1c] text-xl"
               >
                 <span className="">
                   <RightTickIcon />
@@ -54,7 +54,7 @@ const AboutCompany: React.FC<AboutCompanyPropsType> = ({
               </li>
             ))}
           </ul>
-          <p className="text-light font-semibold text-xl">{description[1]}</p>
+          <p className="text-[#1C1c1c] font-semibold text-xl">{description[1]}</p>
           <div className="flex gap-4 max-lg:pr-4">
             {linksData.map((item, index) =>
               pathName === "/landing-page/" ? (
@@ -63,7 +63,7 @@ const AboutCompany: React.FC<AboutCompanyPropsType> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   key={index}
-                  className="text-secondary lg:w-fit w-full bg-white py-3 px-8 border border-secondary rounded-lg btn-shadow2"
+                  className="text-white font-medium text-lg hover:text-[#1c1c1c] hover:bg-white border border-[#1c1c1c] lg:w-fit w-full bg-[#1c1c1c] py-3 px-8  rounded-lg"
                 >
                   {item.label}
                 </Link>
@@ -79,10 +79,8 @@ const AboutCompany: React.FC<AboutCompanyPropsType> = ({
             )}
           </div>
         </div>
-        <div className="lg:col-span-2">
-          <div className="relative w-full lg:block hidden aspect-square">
-            <Image src={imgSrc[0]} alt={title} fill className="object-cover" />
-          </div>
+        <div className="relative w-full lg:block hidden aspect-square">
+          <Image src={imgSrc[0]} alt={title} fill className="object-contain" />
         </div>
       </div>
     </SectionWithContainer>

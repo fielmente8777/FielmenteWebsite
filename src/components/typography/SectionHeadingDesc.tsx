@@ -43,8 +43,8 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
           } ${textcenter ? "text-center mx-auto" : ""} ${
             smTextCenter ? "max-md:text-center" : ""
           } ${
-            titleColor ? `text-${titleColor}` : "text-secondary"
-          } shadow-inner uppercase font-medium bg-[#FFE7DE] py-2 px-4 w-fit rounded-full`}
+            titleColor ? `text-${titleColor} bg-white` : "text-white bg-[#1c1c1c]"
+          }  shadow-inner uppercase font-semibold text-lg py-2 px-4 w-fit rounded-full`}
           heading={title}
         />
       )}
@@ -60,7 +60,7 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
             smTextCenter ? "max-md:text-center" : ""
           } ${
             subTitleColor ? `text-${subTitleColor}` : "text-primary"
-          } lg_font_s font-medium`}
+          } lg_font_s font-semibold`}
           heading={subTitle}
         />
       )}
@@ -70,7 +70,7 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
           className={`${descriptionClassName} ${
             textcenter ? "text-center" : ""
           } ${smTextCenter ? "max-md:text-center" : ""} ${
-            descriptionColor ? `text-${descriptionColor}` : "text-light"
+            descriptionColor ? `text-${descriptionColor}` : "text-[#1c1c1c]"
           } md:text-lg text-base`}
           dangerouslySetInnerHTML={{ __html: description }}
         />

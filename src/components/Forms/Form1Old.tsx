@@ -5,8 +5,7 @@ import { OutlineMessage, OutlineUser } from "@/utils/icons";
 import { OutlineCallIcon, OutlineMail } from "@/utils/newIcons";
 import axios from "axios";
 import React, { useState } from "react";
-import CustomCaptchaForm from "./CaptchaForm";
-import { ChatIcon } from "./Form1New";
+import { contacts } from "../../../contact";
 
 const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
   const [userName, setUserName] = useState("");
@@ -38,7 +37,6 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormRes(true);
-    
 
     if (userPhone.length !== 10) {
       setErrorMessage("Phone number must be exactly 10 digits.");
@@ -49,25 +47,23 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
       setEmailErrorMessage("Please enter a valid email address.");
       return;
     }
+
     // const formApi =
     //   "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/jncSLqGC#generic-webhook"; //testapi/
     const formApi =
       "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook";
     try {
       const { data } = await axios.post(
-        // `https://nexon.eazotel.com/eazotel/addcontacts`,
-        formApi,
+        `https://nexon.eazotel.com/eazotel/addcontacts`,
+        // formApi,
         {
-          // Domain: "fielmente",
-          // Domain: "abhijeet",
-          // email: userEmail,
-          // Name: userName,
-          // Contact: `${countryCode}${userPhone}`,
-          // Description: userMessage,
+          Domain: contacts.formDomain,
           email: userEmail,
-          name: userName,
-          phone: `${countryCode}${userPhone}`,
-          message: userMessage,
+          Name: userName,
+          Contact: `${countryCode}${userPhone}`,
+          Description: userMessage,
+          created_from: "webform",
+          source_url: window.location.href,
         },
         {
           headers: {
@@ -76,7 +72,8 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
         }
       );
 
-      if (data.success) {
+      // if (data.success) {
+      if (data.Status) {
         setFormRes(true);
         setUserName("");
         setUserEmail("");
@@ -85,7 +82,7 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
         setCountryCode("+91"); // Reset country code
         setFormRes(false);
         // router.push(`/thank-you/`);
-        window.open("/thank-you/", "_blank");
+        window.open("/thank-you", "_blank");
         // router.push(`/thank-you/?name=${encodeURIComponent(userName)}`);
       } else {
         setFormRes(false);
@@ -179,12 +176,12 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
       className={`flex flex-col gap-6 max-md:px-4 p-6 max-md:mt-6 text-base rounded-[20px] w-full relative ${bgWhite && bgWhite ? "bg-white" : "bg-primary"}`}
     >
       <h2
-        className={`text-xl  md:text-3xl text-center font-semibold ${!bgWhite && !bgWhite ? "text-white" : "text-primary"} `}
+        className={`text-xl  md:text-3xl font-semibold ${!bgWhite && !bgWhite ? "text-white" : "text-primary"} `}
       >
         Get A FREE Consultation!
       </h2>
       <p
-        className={`md:text-xl text-center ${!bgWhite && !bgWhite ? "text-white" : "text-primary"}`}
+        className={`md:text-xl ${!bgWhite && !bgWhite ? "text-white" : "text-primary"}`}
       >
         Let’s work on boosting your hotel’s profitability!
       </p>
@@ -226,7 +223,7 @@ const Form1Old = ({ bgWhite = false }: { bgWhite?: boolean }) => {
           )}
         </div>
       ))}
-     
+
       <button className="w-full text-center bg-secondary text-white justify-center border-orange-primary text-md px-8 py-3  font-semibold rounded-full hover:bg-white hover:text-secondary duration-300 active:scale-75 hover:scale-[1.02] border">
         {formRes ? "Loading...." : <span>Submit</span>}
       </button>

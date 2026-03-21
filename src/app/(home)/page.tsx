@@ -47,18 +47,17 @@ export default function Home() {
       <MaximizeGrowth {...homePageData.maximizeGrowthData} />
 
       <ServicesTitles title={homePageData.servicesTitles} />
-      {/* <Faqs {...homePageData.faqsData} /> */}
       <SectionWithContainer>
         <ChooseUs />
       </SectionWithContainer>
-      <ChooseUsOld />
+      {/* <ChooseUsOld /> */}
       <Strategise />
       <Section
         defaultPadding={false}
         className="relative after:absolute after:bg-[url('/home/bgred.png')] after:bg-cover after:bg-repeat after:opacity-20 after:w-full after:h-full after:-top-[18%] after:right-0 after:z-[-2]"
       >
         <OurValuedClients {...homePageData.ourValuedClientsData} />
-        <Testimonials {...homePageData.testimonialsData} />
+        {/* <Testimonials {...homePageData.testimonialsData} /> */}
       </Section>
       <AddsCard {...homePageData.addscardsData} />
       <Faqs {...homePageData.faqsData} />
