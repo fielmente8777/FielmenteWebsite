@@ -7,9 +7,9 @@
 // });
 const nextConfig = {
    /* config options here */
-  output: "export",
+  // output: "export",
   images: {
-    unoptimized: true,
+    // unoptimized: true,
     // remotePatterns: [
     //   {
     //     protocol: "https",
