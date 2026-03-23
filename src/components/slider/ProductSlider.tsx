@@ -1,14 +1,14 @@
 "use client";
 import { ProductsDataTypes } from "@/@types/@homeType";
-import ProductCard from "@/components/cards/ProductCard";
 import SwiperCarousel from "@/components/slider/SwiperCarousel";
 import { Autoplay } from "swiper/modules";
+import ProductCard from "../cards-new/ProductCard";
 
 const ProductSlider: React.FC<{ cards: ProductsDataTypes["cards"] }> = ({
   cards,
 }) => {
   return (
-    <div className="md:hidden w-full pl-4 mt-6">
+    <div className="md:hidden w-full pl-4 my-6">
       <SwiperCarousel
         data={cards}
         slidesPerView={1.18}

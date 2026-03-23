@@ -36,13 +36,16 @@ const ClientsSlider: React.FC<Props> = ({
             slidesPerView: 3,
           },
           1024: {
-            slidesPerView: lgSlidePerView,
+            slidesPerView: 5,
           },
+          1440: {
+            slidesPerView: lgSlidePerView,
+          }
         }}
         renderSlide={(item, index) => (
           <div
             key={index}
-            className="relative w-full lg:aspect-3/1.5 aspect-4/4 h-5rem rounded-xl flex justify-center items-center hover:shadow-lg shadow-slate-300 transition"
+            className="relative w-full lg:aspect-[3/1.5] aspect-[4/4] h-5rem rounded-xl flex justify-center items-center hover:shadow-lg shadow-slate-300 transition"
             style={{ background: item.className }}
           >
             <Image

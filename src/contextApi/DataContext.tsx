@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import React, { ReactNode } from "react";
 
 export const DataContext = createContext<{
@@ -25,3 +25,12 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 };
 
 export default DataContext;
+
+
+
+export const useAppContext = () => {
+  if (!DataContext) {
+    throw new Error("useAppContext must be used within a AppProvider");
+  }
+  return useContext(DataContext);
+};

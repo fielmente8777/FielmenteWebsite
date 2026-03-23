@@ -4,8 +4,7 @@ import {
   FillLocationIcon,
   FillMailIcon,
   FillPhoneIcon,
-  OutLineInstagramIcon,
-  OutLineXIcon,
+  OutLineXIcon
 } from "@/utils/newIcons";
 import { contacts } from "../../../contact";
 
@@ -21,31 +20,50 @@ interface FooterLinksPropstype {
   linksData: {
     title: string;
     listOfLinks: Link[];
+    icon?: React.ReactNode;
   }[];
 }
 
 export const SocialLinks: Link[] = [
-  {
-    label: Object.keys(contacts.socialContacts)[0],
-    href: contacts.socialContacts.facebook,
-    icon: <FillFaceBookIcon />,
-  },
-  {
-    label: Object.keys(contacts.socialContacts)[1],
-    href: contacts.socialContacts.instagram,
-    icon: <OutLineInstagramIcon />,
-  },
   {
     label: Object.keys(contacts.socialContacts)[2],
     href: contacts.socialContacts.linkedin,
     icon: <FillLinkedinIcon />,
   },
   {
-    label: Object.keys(contacts.socialContacts)[3],
+    label: Object.keys(contacts.socialContacts)[0],
+    href: contacts.socialContacts.facebook,
+    icon: <FillFaceBookIcon />,
+  },
+  {
+    label: Object.keys(contacts.socialContacts)[2],
     href: contacts.socialContacts.twitter,
     icon: <OutLineXIcon />,
   },
 ];
+
+// export const SocialLinks: Link[] = [
+//   {
+//     label: Object.keys(contacts.socialContacts)[0],
+//     href: contacts.socialContacts.facebook,
+//     icon: <FillFaceBookIcon />,
+//   },
+//   {
+//     label: Object.keys(contacts.socialContacts)[1],
+//     href: contacts.socialContacts.instagram,
+//     icon: <OutLineInstagramIcon />,
+//   },
+//   {
+//     label: Object.keys(contacts.socialContacts)[2],
+//     href: contacts.socialContacts.linkedin,
+//     icon: <FillLinkedinIcon />,
+//   },
+//   {
+//     label: Object.keys(contacts.socialContacts)[3],
+//     href: contacts.socialContacts.twitter,
+//     icon: <OutLineXIcon />,
+//   },
+// ];
 
 export const footerData: FooterLinksPropstype = {
   logo: "/logo2.png",
@@ -195,3 +213,38 @@ export const policyLinks = [
     href: "/terms-and-conditions/",
   },
 ];
+
+
+export const landingFooterData: FooterLinksPropstype = {
+  logo: "/logo2-white.png",
+  description: "© Fielmente Hospitality Marketing Agency",
+  linksData: [
+    {
+      title: "Offices",
+      icon: <FillLocationIcon />,
+      listOfLinks: [
+        ...contacts.addressesInIndia.map((address) => ({
+          label: address.address,
+          href: address.mapUrl,
+          icon: <FillLocationIcon />,
+        })),
+      ],
+    },
+    {
+      title: "Contact",
+      icon: <FillPhoneIcon />,
+      listOfLinks: [
+        ...contacts.phone.map((phone) => ({
+          label: phone,
+          href: `tel:${phone}`,
+          icon: <FillPhoneIcon />,
+        })),
+        ...contacts.email.map((email) => ({
+          label: email,
+          href: `mailto:${email}`,
+          icon: <FillMailIcon />,
+        })),
+      ],
+    },
+  ],
+};

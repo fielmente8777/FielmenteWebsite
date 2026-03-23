@@ -3,30 +3,31 @@ import { usePathname } from "next/navigation";
 import Header2 from "./header2";
 import React from "react";
 import LandingHeader from "./landingHeader";
+import LandingNav from "./LandingNav";
 
 const NavBar = () => {
   const pathname = usePathname();
 
   let HeaderComponent = null;
 
-  if (
-    pathname === "/landing-page/" ||
-    // pathname === "/fielmente-lp/" ||
-    pathname === "/resort/" ||
-    pathname === "/hospitality/" ||
-    pathname === "/thank-you/" ||
-    pathname === "/dubai-restaurant/" ||
-    pathname === "/restaurant/" ||
-    pathname === "/UK/"
-  ) {
+  const paths = [
+    "/resort/",
+    "/hospitality/",
+    "/dubai-restaurant/",
+    "/restaurant/",
+    "/UK/",
+    "/USA/",
+  ];
+
+  if (paths.includes(pathname)) {
     HeaderComponent = LandingHeader;
-    // } else if (pathname === "/thank-you/") {
-    //   HeaderComponent = null;
+  } else if (pathname === "/landing-page/") {
+    HeaderComponent = LandingNav;
   } else {
     HeaderComponent = Header2;
   }
 
-   if (pathname === "/thank-you/") {
+  if (pathname === "/thank-you/") {
     return null;
   }
 

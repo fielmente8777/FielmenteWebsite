@@ -4,18 +4,23 @@ import PopupFormNew from "@/components/PopupFormNew";
 import Salesiq from "@/components/zohochatbot/Salesiq";
 import { DataProvider } from "@/contextApi/DataContext";
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "../styles/globals.scss";
 import "./newstyle.scss";
 import Whatsapp from "@/components/WhatsApp";
 
-const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+});
+
 export const metadata: Metadata = {
   title: "Fielmente - India's Leading Hospitality Marketing Agency",
   description:
@@ -222,7 +227,7 @@ export default function RootLayout({
       </head>
 
       <body
-        className={`${inter.className} ${poppins.variable} antialiased`}
+        className={` ${poppins.variable} ${jakarta.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         {/* <!-- End Google Tag Manager (noscript) --> */}

@@ -40,7 +40,7 @@ const BusinessPartnersSlider: React.FC<Props> = ({
         renderSlide={(item, index) => (
           <div
             key={index}
-            className="relative w-full lg:aspect-3/1.5 aspect-4/4 h-5rem rounded-xl flex justify-center items-center hover:shadow-lg shadow-slate-300 transition"
+            className="relative w-full lg:aspect-[3/1.5] aspect-[4/4] h-5rem rounded-xl flex justify-center items-center hover:shadow-lg shadow-slate-300 transition"
           >
             <Image
               src={item.imgSrc}

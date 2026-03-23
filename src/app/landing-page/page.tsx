@@ -1,5 +1,18 @@
-import LandingPage1 from "@/components/landing-pages/LandingPage1/LandingPage1";
 import { Metadata } from "next";
+import { landingPageData } from "./components/pageData";
+import Banner from "./components/Banner";
+import BusinessPartners from "./components/BusinessPartners";
+import AboutSection from "./components/AboutSection";
+import IndustryWeServe from "./components/IndustryWeServe";
+import ReadyToGrow from "./components/ReadyToGrow";
+import ServicesSection from "./components/ServicesSection";
+import OurProducts from "./components/OurProducts";
+import ResultsSection from "./components/ResultsSection";
+import GrowthSection from "./components/GrowthSection";
+import CountriesWeWorked from "./components/CountriesWeWorked";
+import SlidingTitle from "@/components/slider/SlidingTitle";
+import OurClients from "./components/OurClients";
+import ContactSection from "./components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Fielmente : Hospitality Marketing Agency in India",
@@ -41,11 +54,23 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
+  const page = landingPageData[0];
   return (
-    <>
-      {/* <PageComponents /> */}
-      <LandingPage1 />
-    </>
+    <main className="overflow-x-clip">
+      <Banner {...page.heroSection} />
+      <BusinessPartners {...page.businessPartnersData} />
+      <AboutSection {...page.aboutSection} />
+      <IndustryWeServe {...page.industriesSection} />
+      <ReadyToGrow {...page.readyToGrowSection} />
+      <ServicesSection {...page.servicesSection} />
+      <OurProducts {...page.productsData} />
+      <ResultsSection {...page.resultsSection} />
+      <GrowthSection {...page.growthSection} />
+      <CountriesWeWorked {...page.countriesSection} />
+      <SlidingTitle titles={page.servicesTitles} />
+      <OurClients {...page.ourClient} />
+      <ContactSection {...page.contactSection} />
+    </main>
   );
 };
 
