@@ -1,8 +1,8 @@
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { casStudyData } from "../caseData";
 import Link from "next/link";
-import { NextBtnIcon } from "../page";
 import Image from "next/image";
+import { NextBtnIcon } from "../components/icon";
 
 
 interface Params {
