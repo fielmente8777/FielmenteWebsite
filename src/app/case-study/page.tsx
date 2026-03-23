@@ -4,7 +4,7 @@ import { homePageData } from "../(home)/homePageData";
 import Link from "next/link";
 import { casStudyData } from "./caseData";
 import CasStudyCard from "./components/CasStudyCard";
-import { NextBtnIcon } from "./components/icon";
+import { NextBtnIcon } from "../../utils/icon";
 
 export default function CaseStudy() {
   return (
