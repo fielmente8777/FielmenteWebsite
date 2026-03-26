@@ -1,5 +1,5 @@
 import { ServicesSectionProps } from "@/@types/@landingPageType";
-import { CtaBtn } from "@/components/buttons/CtaBtn";
+// import { CtaBtn } from "@/components/buttons/CtaBtn";
 import Image from "next/image";
 
 export const ServiceCard: React.FC<ServicesSectionProps["services"][0]> = ({
@@ -40,7 +40,7 @@ export const ServiceCard: React.FC<ServicesSectionProps["services"][0]> = ({
             <p> {result}</p>
           </div>
         )}
-        <CtaBtn
+        {/* <CtaBtn
           label={cta.label}
           type={cta.type}
           href={cta.href}
@@ -48,7 +48,7 @@ export const ServiceCard: React.FC<ServicesSectionProps["services"][0]> = ({
           iconClass="text-color4"
           className="bg-background-black1 justify-between group-hover:bg-color4 mt-auto text-white w-full rounded-full justify-between!"
           icon="arrow"
-        />
+        /> */}
       </div>
     </div>
   );
