@@ -5,7 +5,7 @@ const Salesiq = () => {
   const pathname = usePathname();
   const url = [
     "/thank-you/",
-    // "/landing-page/",
+    "/landing-page/",
     "/resort/",
     "/hospitality/",
     "/dubai-restaurant/",
