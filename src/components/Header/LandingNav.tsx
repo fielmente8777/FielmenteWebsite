@@ -4,19 +4,20 @@ import { contacts } from "../../../contact";
 
 const LandingNav = () => {
   return (
-    <header className="max_screen_width border border-main-border">
-      <nav className="max_width py-3.75 flex items-center justify-between">
-        <div className="md:w-[8.75rem] w-[6.25rem] aspect-[4/1.59] relative">
-          <Image
-            src="/Logo.png"
-            alt="fielment logo"
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-        </div>
-        {/* <CtaBtn
+    <header className=" border-b fixed top-0 z-50 w-full bg-white  border-main-border">
+      <div className="max_screen_width w-full">
+        <nav className="max_width py-3.75 flex items-center justify-between">
+          <div className="md:w-[8.75rem] w-[6.25rem] aspect-[4/1.59] relative">
+            <Image
+              src="/Logo.png"
+              alt="fielment logo"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </div>
+          {/* <CtaBtn
           label="Get a Free Consulation"
           type="button"
           icon="arrow"
@@ -25,21 +26,22 @@ const LandingNav = () => {
           startIconClass="max-lg:hidden"
           className="w-fit! rounded-full sm:text-xs! sm:px-2! max-lg:py-2 bg-[#1B1B1B] text-white"
         /> */}
-        <Link
-          href={contacts.WhatsAppCta}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium bg-[#1B1B1B] text-white flex items-center gap-2 py-2 px-4 rounded-full md:py-3 text-nowrap max-md:text-xs "
-        >
-          <span className="md:block hidden">
-            <WhatsappIcon />
-          </span>
-          Get a Free Consulation
-          <span className="w-6 bg-white text-primary  max-md:w-5 aspect-square rounded-full flex items-center justify-center">
-            <ArrowBtn />
-          </span>
-        </Link>
-      </nav>
+          <Link
+            href={contacts.WhatsAppCta}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium bg-[#1B1B1B] text-white flex items-center gap-2 py-2 px-4 rounded-full md:py-3 text-nowrap max-md:text-xs "
+          >
+            <span className="md:block hidden">
+              <WhatsappIcon />
+            </span>
+            Get a Free Consulation
+            <span className="w-6 bg-white text-primary  max-md:w-5 aspect-square rounded-full flex items-center justify-center">
+              <ArrowBtn />
+            </span>
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 };

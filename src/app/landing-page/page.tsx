@@ -56,16 +56,16 @@ export const metadata: Metadata = {
 const page = () => {
   const page = landingPageData[0];
   return (
-    <main className="overflow-x-clip">
+    <main className="overflow-x-clip mt-20">
       <Banner {...page.heroSection} />
       <BusinessPartners {...page.businessPartnersData} />
-      <AboutSection {...page.aboutSection} />
+      {/* <AboutSection {...page.aboutSection} /> */}
       <IndustryWeServe {...page.industriesSection} />
       <ReadyToGrow {...page.readyToGrowSection} />
       <ServicesSection {...page.servicesSection} />
       <OurProducts {...page.productsData} />
       <ResultsSection {...page.resultsSection} />
-      <GrowthSection {...page.growthSection} />
+      {/* <GrowthSection {...page.growthSection} /> */}
       <CountriesWeWorked {...page.countriesSection} />
       <SlidingTitle titles={page.servicesTitles} />
       <OurClients {...page.ourClient} />

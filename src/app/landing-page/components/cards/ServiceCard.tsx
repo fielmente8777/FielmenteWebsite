@@ -29,7 +29,7 @@ export const ServiceCard: React.FC<ServicesSectionProps["services"][0]> = ({
           </>
         )}
       </div>
-      <div className="px-[6px] py-2 flex flex-col gap-4 md:min-h-[16rem] min-h-[16.25rem]">
+      <div className="px-[6px] py-2 flex flex-col gap-4 md:min-h-[11rem] min-h-[11.25rem]">
         <h3 className="md:text-[27px] text-xl text-primary font-semibold">{title}</h3>
         <p className="md:text-lg text-sm text-secondary2">{description}</p>
         {result && (

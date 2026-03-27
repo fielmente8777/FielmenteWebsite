@@ -66,7 +66,8 @@ const LandingPgForm = ({ btnBgColor }: { btnBgColor?: string }) => {
     {
       tag: "textarea",
       name: "message",
-      placeholder: "What services you are looking for?",
+      placeholder: "Message ...",
+      // placeholder: "What services you are looking for?",
       required: true,
       value: formData.message,
       onChange: handleChange,
