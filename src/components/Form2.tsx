@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 import { countries } from "@/utils/countryCode";
+import { contacts } from "../../contact";
 
 const Form2 = ({ title, bold }: { title: string; bold: string }) => {
   const router = useRouter();
@@ -68,7 +69,7 @@ const Form2 = ({ title, bold }: { title: string; bold: string }) => {
         `https://nexon.eazotel.com/eazotel/addcontacts`,
         // `https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/7lHAUjtz#generic-webhook`,
         {
-          Domain: "abhijeet",
+          Domain: contacts.formDomain,
           email: userEmail,
           Name: userName,
           Contact: `${countryCode}${userPhone}`,

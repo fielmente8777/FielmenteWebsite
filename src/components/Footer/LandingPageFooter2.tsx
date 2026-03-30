@@ -1,14 +1,12 @@
 "use client";
-import Link from "next/link";
-import Container from "../Container";
-import Section from "../Section";
-import { OutLineLocationIcon } from "../Header/landingHeader";
 import { OutLineCall, OutLineEmail } from "@/utils/icons";
-import Form2 from "../Form2";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Call from "../Call";
-import Whatsapp from "../WhatsApp";
 import { contacts } from "../../../contact";
+import Container from "../Container";
+import Form2 from "../Form2";
+import { OutLineLocationIcon } from "../Header/landingHeader";
+import Section from "../Section";
 
 const LandingPageFooter2 = () => {
   const pathName = usePathname();
