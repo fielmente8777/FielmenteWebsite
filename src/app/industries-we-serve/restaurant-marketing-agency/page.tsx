@@ -288,7 +288,6 @@ function page() {
       <OurClient />
       {/* <Presence {...presenceData} /> */}
       <ConsultationForm />
-      
     </section>
   );
 }

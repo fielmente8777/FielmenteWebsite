@@ -28,6 +28,10 @@ export const Nav_Links: SubLinks[] = [
             linkName: "Hotel SEO",
             src: "/industries-we-serve/hotel-marketing-agency/hotel-seo/",
           },
+          {
+            linkName: "hotel OTA",
+            src: "/hotel-ota-management/",
+          },
         ],
       },
       {
@@ -38,6 +42,10 @@ export const Nav_Links: SubLinks[] = [
             linkName: "Restaurant Social Media",
             src: "/industries-we-serve/restaurant-marketing-agency/restaurant-social-media/",
           },
+          {
+            linkName: "Restaurant Ads",
+            src: "/industries-we-serve/restaurant-marketing-agency/restaurant-google-ads/",
+          },
         ],
       },
       {
@@ -47,6 +55,10 @@ export const Nav_Links: SubLinks[] = [
           {
             linkName: "Cloud Kitchen Social Media",
             src: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-social-media/",
+          },
+          {
+            linkName: "Cloud Kitchen Ads",
+            src: "/industries-we-serve/cloud-kitchen-marketing-agency/cloud-kitchen-google-ads/",
           },
         ],
       },
@@ -79,7 +91,7 @@ export const Nav_Links: SubLinks[] = [
     src: "/hospitality-marketing-services/",
     subLinks: [
       {
-        linkName: " Social Media Marketing",
+        linkName: " Social Media Management",
         src: "/hospitality-marketing-services/social-media-marketing-agency/",
       },
       {
@@ -87,12 +99,8 @@ export const Nav_Links: SubLinks[] = [
         src: "/hospitality-marketing-services/seo-agency/",
       },
       {
-        linkName: "Paid Ad Campaigns",
+        linkName: "Performance Marketing",
         src: "/hospitality-marketing-services/google-ads-agency/",
-      },
-      {
-        linkName: "hotel OTA management",
-        src: "/hotel-ota-management/",
       },
     ],
   },

@@ -1,9 +1,7 @@
 import Image from "next/image";
-import LineDesign from "../../../../../public/images/4tg4fc4.webp";
 import Keyboard from "../../../../../public/images/Keyboard.webp";
 
 import WantToJoin from "../../components/want-to-join";
-
 
 import Promote from "../../../../../public/images/3rf.webp";
 import Contentwriting from "../../../../../public/images/content-writing.webp";
@@ -27,11 +25,13 @@ export const metadata: Metadata = {
       "Drive hotel success with our leading hotel Google Ads agency in India. Maximize ROI with expertly managed campaigns. Partner with us now!",
   },
   alternates: {
-    canonical: "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
+    canonical:
+      "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
     languages: {
-      "en-US": "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
+      "en-US":
+        "https://fielmente.com/industries-we-serve/hotel-marketing-agency/hotel-google-ads/",
     },
-  }
+  },
 };
 
 const faq = [
@@ -201,7 +201,7 @@ function page() {
             <div className="">
               <div className="relative max-w-[500px] mx-auto aspect-[4/3]">
                 <Image
-                  src={LineDesign}
+                  src="/google-ads.png"
                   alt="Line-design"
                   fill
                   className="object-contain"
@@ -212,7 +212,7 @@ function page() {
         </div>
       </div>
 
-      <div >
+      <div>
         <div className="max-width">
           <div className="w-full h-[0.1rem] bg-gray-300"></div>
         </div>

@@ -217,11 +217,11 @@ function page() {
           </div>
 
           {/* cards**** */}
-          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 lg:px-20 border-t pt-6 border-b-gray-700 ">
+          {/* <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 gap-6 mt-10 lg:px-20 border-t pt-6 border-b-gray-700 ">
             {CardData1.map((item, index) => (
               <Card key={index} {...item} />
             ))}
-          </div>
+          </div> */}
 
           {/* Why is SEO Important for Your Hospitality Business?  */}
           <div className="max-width">

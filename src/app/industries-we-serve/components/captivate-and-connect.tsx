@@ -43,6 +43,7 @@ function CaptivateAndConnect({
             src={rightContent?.icon}
             alt="Keyword"
             width={65}
+            height={65}
             className="object-contain"
           />
           <h2 className="text-black text-2xl font-semibold">
@@ -81,6 +82,7 @@ const GrowthCard = ({ title, subtitle, image }: any) => {
         src={image.src}
         alt="Keyword"
         width={65}
+        height={65}
         className="object-contain"
       />
       <h2 className="text-black text-xl font-semibold">{title}</h2>
