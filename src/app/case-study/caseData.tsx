@@ -3,6 +3,11 @@ export const casStudyData = [
     slug: "anand-vardhan-resort",
     className: "object-contain",
     img: "/clientsLogo/avr.jpg",
+    mata: {
+      title: "SEO Success Story for Anand Vardhan Resorts",
+      description:
+        "Fielmente is the best Hotel marketing company in India. We are offering 360-degree hotel marketing consultancy from website designing to online marketing.",
+    },
     title: "SEO Success Story for Anand Vardhan Resorts",
     description:
       "Anand Vardhan Resorts aimed to improve its organic visibility for niche, high-intent keywords related to vegetarian resorts in Naggar and Manali, wellness resorts in Himachal Pradesh, and pure vegetarian resort options. The goal was to attract targeted traffic from travelers searching for vegetarian-friendly and wellness-oriented stays in the region.",
@@ -78,6 +83,11 @@ export const casStudyData = [
   {
     slug: "north-wind-57",
     img: "/ourclient/north-wind.png",
+    metaData:{
+      title: "North Wind 57",
+      description:
+        "Fielmente is the best Hotel marketing company in India. We are offering 360-degree hotel marketing consultancy from website designing to online marketing.",
+    },
     title: "North Wind 57",
     description:
       "North Wind 57 aimed to rank at the top for competitive hotel and resort keywords related to Bir and Bir Billing, increase organic visibility in Google Hotel Pack results, and attract more direct bookings from",
@@ -86,6 +96,12 @@ export const casStudyData = [
     slug: "wabi-sabi-resort",
     img: "/ourclient/wabi-sabi.png",
     title: "Wabi Sabi Resort",
-    description:"Wabi Sabi Resort is a luxurious retreat nestled amidst the serene landscapes of Igatpuri. The resort boasts stunning vistas, an infinity pool, and a harmonious blend of modern amenities and nature's embrace. With its 45"
-  }
+    metaData:{
+      title: "Wabi Sabi Resort",
+      description:
+        "Fielmente is the best Hotel marketing company in India. We are offering 360-degree hotel marketing consultancy from website designing to online marketing.",
+    },
+    description:
+      "Wabi Sabi Resort is a luxurious retreat nestled amidst the serene landscapes of Igatpuri. The resort boasts stunning vistas, an infinity pool, and a harmonious blend of modern amenities and nature's embrace. With its 45",
+  },
 ];
