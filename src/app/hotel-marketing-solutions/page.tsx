@@ -1,12 +1,10 @@
-import React from "react";
-import HotelMarketing from "../industries-we-serve/components/hotel-marketing";
-import BestHotelAgency from "../industries-we-serve/components/best-hotel-agency";
-import { NumberComponent, GotEnquiry, Presence, OurClient, ConsultationForm } from "@/components";
+import { ConsultationForm, GotEnquiry, NumberComponent, OurClient } from "@/components";
+import { DirectBookings, EnhancedCustomerService } from "../../utils/icons";
 import { Needs, NeedSeo } from "../industries-we-serve/components";
-import { EnhancedCustomerService, DirectBookings } from "../../utils/icons";
+import BestHotelAgency from "../industries-we-serve/components/best-hotel-agency";
+import HotelMarketing from "../industries-we-serve/components/hotel-marketing";
 
 import type { Metadata } from "next";
-import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "Best Hotel Marketing Company in India - Fielmente",

@@ -1,12 +1,10 @@
-import React from "react";
-import Agency from "./components/Agency";
-import Hero from "./components/Hero";
-import Milestones from "./components/Milestones";
-import MakeUsUnique from "./components/MakeUsUnique";
-import Form from "./components/Form";
-import type { Metadata } from "next";
-import { PopupForm } from "../hospitality/components";
 import { GotEnquiry } from "@/components";
+import type { Metadata } from "next";
+import Agency from "./components/Agency";
+import Form from "./components/Form";
+import Hero from "./components/Hero";
+import MakeUsUnique from "./components/MakeUsUnique";
+import Milestones from "./components/Milestones";
 
 export const metadata: Metadata = {
   title: "Fielmente Agency | Best Hospitality Marketing Consultants in India",

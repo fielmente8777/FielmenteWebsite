@@ -1,25 +1,22 @@
-import React from "react";
 import {
-  NumberComponent,
-  GotEnquiry,
-  Presence,
-  Section,
-  Container,
-  OurClient,
   ConsultationForm,
+  Container,
+  GotEnquiry,
+  NumberComponent,
+  OurClient,
+  Section
 } from "@/components";
 import {
-  EnhancedCustomerService,
   DirectBookings,
-  ShowcaseMenu,
+  EnhancedCustomerService,
   HighlightOffers,
   Showcase,
+  ShowcaseMenu,
 } from "@/utils/icons";
-import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { Needs, NeedSeo } from "../industries-we-serve/components";
-import { PopupForm } from "../hospitality/components";
 
 export const metadata: Metadata = {
   title: "Restaurant Marketing Agency India | Restuarant Marketing Company",
